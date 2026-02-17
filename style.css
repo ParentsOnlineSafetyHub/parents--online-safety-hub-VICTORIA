@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Source+Sans+3:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600;800;900&family=Inter:wght@400;500;600&display=swap');
 
 body{
   margin:0;
-  font-family: 'Source Sans 3', sans-serif;
-  background:linear-gradient(180deg,#0b1c2d 0%, #11263d 100%);
+  font-family:'Inter', sans-serif;
+  background:radial-gradient(1200px 800px at 20% 0%, #173b63 0%, #0b1c2d 40%, #081526 100%);
   color:#f1f5f9;
 }
 
 .wrap{
-  max-width:960px;
+  max-width:980px;
   margin:auto;
-  padding:80px 20px;
+  padding:75px 20px;
 }
 
 h1{
   text-align:center;
-  font-family:'Montserrat', sans-serif;
-  font-size:52px;
-  font-weight:800;
+  font-family:'Raleway', sans-serif;
+  font-size:54px;
+  font-weight:900;
   margin:0 0 10px 0;
   letter-spacing:1px;
   color:#ffffff;
@@ -28,60 +28,64 @@ h1{
   font-size:22px;
   font-weight:500;
   color:#7dd3fc;
-  margin:0 0 60px 0;
+  margin:0 0 58px 0;
 }
 
 nav{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:16px;
+  gap:14px;
   margin:0 0 65px 0;
 }
 
 nav a{
   text-decoration:none;
-  padding:14px 20px;
-  background:#132f4c;
+  padding:13px 18px;
+  background:linear-gradient(180deg,#1f3a5a 0%, #132f4c 100%);
   color:#e2e8f0;
-  border-radius:14px;
-  font-size:16px;
+  border-radius:16px;
+  font-size:15px;
   font-weight:600;
+  border:1px solid rgba(255,255,255,0.10);
+  box-shadow:0 10px 26px rgba(0,0,0,0.35);
   transition:all 0.25s ease;
-  border:1px solid rgba(255,255,255,0.08);
 }
 
 nav a:hover{
-  background:#2563eb;
+  background:linear-gradient(180deg,#2563eb 0%, #1e40af 100%);
   transform:translateY(-3px);
-  color:white;
+  color:#ffffff;
+  box-shadow:0 14px 30px rgba(37,99,235,0.28);
 }
 
 .card{
-  background:#132f4c;
+  background:linear-gradient(180deg,#132f4c 0%, #0f243a 100%);
   padding:40px;
   border-radius:22px;
   margin:0 0 40px 0;
   box-shadow:0 18px 45px rgba(0,0,0,0.45);
+  border:1px solid rgba(255,255,255,0.10);
 }
 
 .card h2{
-  font-family:'Montserrat', sans-serif;
+  font-family:'Raleway', sans-serif;
   font-size:26px;
-  font-weight:700;
+  font-weight:800;
   margin:0 0 18px 0;
   color:#38bdf8;
+  letter-spacing:0.3px;
 }
 
 .card p{
   font-size:17px;
   line-height:1.7;
-  margin-bottom:18px;
+  margin:0 0 18px 0;
   color:#e2e8f0;
 }
 
 .card ul{
-  margin-left:24px;
+  margin:10px 0 0 24px;
   line-height:1.7;
   font-size:17px;
   color:#cbd5e1;
@@ -90,54 +94,69 @@ nav a:hover{
 .btn{
   display:inline-block;
   padding:16px 28px;
-  margin-top:22px;
-  background:#10b981;
-  color:white;
+  margin-top:18px;
+  background:linear-gradient(90deg,#10b981 0%, #22c55e 100%);
+  color:#0b1c2d;
   text-decoration:none;
   border-radius:16px;
   font-size:16px;
-  font-weight:700;
-  letter-spacing:0.5px;
+  font-weight:800;
+  letter-spacing:0.6px;
   transition:all 0.25s ease;
+  box-shadow:0 14px 30px rgba(16,185,129,0.20);
 }
 
 .btn:hover{
-  background:#059669;
   transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(16,185,129,0.28);
+}
+
+.btn.secondary{
+  background:linear-gradient(90deg,#60a5fa 0%, #38bdf8 100%);
+  color:#0b1c2d;
+  box-shadow:0 14px 30px rgba(56,189,248,0.18);
+}
+
+.btn.secondary:hover{
+  box-shadow:0 18px 40px rgba(56,189,248,0.25);
 }
 
 .share-section{
   text-align:center;
   margin-top:70px;
-  padding:40px 20px;
-  background:#0e2438;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  padding:44px 22px;
+  background:linear-gradient(180deg,#0f243a 0%, #0b1c2d 100%);
+  border-radius:22px;
+  box-shadow:0 14px 40px rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.10);
 }
 
 .share-section h2{
-  font-family:'Montserrat', sans-serif;
+  font-family:'Raleway', sans-serif;
   font-size:24px;
-  margin-bottom:25px;
-  color:#60a5fa;
+  margin:0 0 24px 0;
+  color:#7dd3fc;
+  letter-spacing:0.4px;
 }
 
 .share-btn{
   display:inline-block;
   margin:10px;
-  padding:14px 24px;
+  padding:14px 22px;
   font-size:16px;
-  font-weight:600;
-  background:#1e40af;
-  border-radius:14px;
+  font-weight:700;
+  background:linear-gradient(180deg,#2563eb 0%, #1e40af 100%);
+  border-radius:16px;
   text-decoration:none;
   color:white;
   transition:all 0.25s ease;
+  box-shadow:0 14px 30px rgba(37,99,235,0.18);
+  border:1px solid rgba(255,255,255,0.10);
 }
 
 .share-btn:hover{
-  background:#2563eb;
   transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(37,99,235,0.26);
 }
 
 .copy-row{
@@ -145,15 +164,15 @@ nav a:hover{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:16px;
+  gap:14px;
 }
 
 .copy-input{
-  width:min(600px, 92vw);
+  width:min(640px, 92vw);
   padding:16px;
-  border-radius:14px;
-  border:none;
-  background:#0b1c2d;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:#081526;
   color:#e2e8f0;
   font-size:15px;
 }
@@ -161,7 +180,7 @@ nav a:hover{
 .copy-msg{
   margin-top:18px;
   font-size:14px;
-  color:#7dd3fc;
+  color:#93c5fd;
 }
 
 footer{
