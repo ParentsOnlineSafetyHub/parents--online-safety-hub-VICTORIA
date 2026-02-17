@@ -19,7 +19,7 @@ h1{
   font-size:48px;
   margin:0 0 10px 0;
   font-weight:700;
-  letter-spacing:1px;
+  letter-spacing:0.6px;
   color:#ffffff;
 }
 
@@ -53,7 +53,7 @@ nav a{
 
 nav a:hover{
   background:#2563eb;
-  color:white;
+  color:#ffffff;
   transform:translateY(-2px);
 }
 
@@ -110,29 +110,36 @@ nav a:hover{
 .support-hero{
   text-align:center;
   background:linear-gradient(90deg,#2563eb,#10b981);
-  padding:40px 30px;
+  padding:44px 30px;
   border-radius:20px;
   margin:50px 0;
   box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  border:1px solid rgba(255,255,255,0.12);
 }
 
 .support-hero h2{
   font-family:'Poppins', sans-serif;
-  font-size:28px;
-  margin:0 0 15px 0;
+  font-size:30px;
+  margin:0 0 14px 0;
   color:white;
+  font-weight:700;
+  letter-spacing:0.6px;
 }
 
 .support-hero p{
   color:#e0f2fe;
-  margin-bottom:20px;
+  margin:0 auto 22px auto;
+  max-width:700px;
+  line-height:1.6;
+  font-size:15px;
 }
 
 .support-hero .btn{
   background:white;
-  color:#1e293b;
+  color:#0f172a;
   font-size:16px;
-  padding:16px 28px;
+  padding:16px 30px;
+  margin-top:0;
 }
 
 .support-hero .btn:hover{
@@ -141,13 +148,14 @@ nav a:hover{
 
 .share-section{
   text-align:center;
-  margin-top:50px;
+  margin-top:55px;
 }
 
 .share-section h2{
   font-family:'Poppins', sans-serif;
   font-size:20px;
   color:#38bdf8;
+  margin:0 0 16px 0;
 }
 
 .share-btn{
@@ -160,6 +168,7 @@ nav a:hover{
   text-decoration:none;
   color:#e2e8f0;
   transition:all 0.25s ease;
+  border:1px solid rgba(255,255,255,0.06);
 }
 
 .share-btn:hover{
@@ -181,7 +190,7 @@ nav a:hover{
   padding:14px;
   border-radius:12px;
   border:1px solid #334155;
-  background:#0f172a;
+  background:#0b1220;
   color:#e2e8f0;
 }
 
