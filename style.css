@@ -13,16 +13,17 @@ body{
 
 h1{
   text-align:center;
-  font-size:38px;
-  margin-bottom:10px;
+  font-size:40px;
+  margin:0 0 10px 0;
+  letter-spacing:0.2px;
 }
 
 .tagline{
   text-align:center;
-  font-size:20px;
+  font-size:22px;
   font-weight:500;
   color:#475569;
-  margin-bottom:30px;
+  margin:0 0 34px 0;
 }
 
 nav{
@@ -30,15 +31,15 @@ nav{
   justify-content:center;
   flex-wrap:wrap;
   gap:10px;
-  margin-bottom:40px;
+  margin:0 0 42px 0;
 }
 
 nav a{
   text-decoration:none;
-  padding:8px 14px;
+  padding:9px 14px;
   background:#e2e8f0;
   color:#1e293b;
-  border-radius:6px;
+  border-radius:8px;
   font-size:14px;
 }
 
@@ -49,23 +50,36 @@ nav a:hover{
 .card{
   background:white;
   padding:28px;
-  border-radius:10px;
-  margin-bottom:25px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.05);
+  border-radius:12px;
+  margin:0 0 24px 0;
+  box-shadow:0 4px 14px rgba(0,0,0,0.06);
 }
 
 .card h2{
-  margin-top:0;
+  margin:0 0 10px 0;
+  font-size:20px;
+}
+
+.card p{
+  margin:0 0 12px 0;
+  line-height:1.55;
+  color:#334155;
+}
+
+.card ul{
+  margin:10px 0 0 18px;
+  color:#334155;
+  line-height:1.55;
 }
 
 .btn{
   display:inline-block;
   padding:10px 16px;
-  margin-top:15px;
+  margin-top:12px;
   background:#1e293b;
   color:white;
   text-decoration:none;
-  border-radius:6px;
+  border-radius:8px;
   font-size:14px;
 }
 
@@ -75,22 +89,55 @@ nav a:hover{
 
 .share-section{
   text-align:center;
-  margin-top:40px;
+  margin-top:34px;
+}
+
+.share-section h2{
+  margin:0 0 12px 0;
+  font-size:18px;
 }
 
 .share-btn{
   display:inline-block;
-  margin:5px;
-  padding:8px 14px;
+  margin:6px;
+  padding:9px 14px;
   font-size:14px;
   background:#e2e8f0;
-  border-radius:6px;
+  border-radius:8px;
   text-decoration:none;
+  color:#1e293b;
+  border:1px solid #cbd5e1;
+}
+
+.share-btn:hover{
+  background:#cbd5e1;
+}
+
+.copy-row{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.copy-input{
+  width:min(520px, 92vw);
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #cbd5e1;
+  background:#ffffff;
   color:#1e293b;
 }
 
+.copy-msg{
+  margin-top:10px;
+  color:#64748b;
+  font-size:13px;
+}
+
 footer{
-  margin-top:60px;
+  margin-top:56px;
   text-align:center;
   font-size:13px;
   color:#64748b;
