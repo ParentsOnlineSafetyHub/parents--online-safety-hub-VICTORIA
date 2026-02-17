@@ -1,119 +1,172 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Parents Online Safety Hub (Victoria)</title>
-<link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Source+Sans+3:wght@400;500;600&display=swap');
 
-<div class="wrap">
+body{
+  margin:0;
+  font-family: 'Source Sans 3', sans-serif;
+  background:linear-gradient(180deg,#0b1c2d 0%, #11263d 100%);
+  color:#f1f5f9;
+}
 
-<h1>Parents Online Safety Hub</h1>
-<p class="tagline">Practical Online Safety Education For Victorian Families.</p>
+.wrap{
+  max-width:960px;
+  margin:auto;
+  padding:80px 20px;
+}
 
-<nav>
-<a href="victorian-online-safety-guide.html">Full Guide</a>
-<a href="start.html">Start Here</a>
-<a href="warning.html">Warning Signs</a>
-<a href="reporting.html">Reporting (VIC)</a>
-<a href="downloads.html">Downloads</a>
-<a href="support.html">Support</a>
-</nav>
+h1{
+  text-align:center;
+  font-family:'Montserrat', sans-serif;
+  font-size:52px;
+  font-weight:800;
+  margin:0 0 10px 0;
+  letter-spacing:1px;
+  color:#ffffff;
+}
 
-<div class="card">
-<h2>Why This Website Exists</h2>
-<p>
-Children are growing up in a digital environment that evolves faster than most parents were ever taught to navigate.
-Online gaming, private messaging, livestream platforms and social media introduce risks that many families feel unprepared to manage.
-</p>
-<p>
-Parents Online Safety Hub was created to provide structured, practical guidance that parents can apply immediately.
-</p>
-<p><strong>No Alarmism. No Politics. Just Prevention.</strong></p>
-<p><strong>Prevention Is Better Than Cure.</strong></p>
-</div>
+.tagline{
+  text-align:center;
+  font-size:22px;
+  font-weight:500;
+  color:#7dd3fc;
+  margin:0 0 60px 0;
+}
 
-<div class="card">
-<h2>What You’ll Find Here</h2>
-<ul>
-<li>Clear 10-Minute Safety Setup Instructions</li>
-<li>Recognisable Warning Signs Of Online Grooming</li>
-<li>Victoria-Based Reporting Pathways</li>
-<li>Printable Family Safety Resources</li>
-<li>Ongoing Monthly Prevention Checklists</li>
-</ul>
-<p>
-Everything is written to be simple, practical and usable by parents regardless of technical experience.
-</p>
-</div>
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:16px;
+  margin:0 0 65px 0;
+}
 
-<div class="card">
-<h2>About The Initiative</h2>
-<p>
-Built in Victoria by Graeme (aka Jinglez), this is a community-driven education project focused on strengthening parental confidence in the digital space.
-</p>
-<p>
-The goal is simple: equip families with knowledge before harm occurs.
-</p>
-</div>
+nav a{
+  text-decoration:none;
+  padding:14px 20px;
+  background:#132f4c;
+  color:#e2e8f0;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:600;
+  transition:all 0.25s ease;
+  border:1px solid rgba(255,255,255,0.08);
+}
 
-<div class="support-hero">
-  <h2>Support This Movement</h2>
-  <p>
-    Help Keep This Initiative Independent, Practical, And Expanding Across Australia.
-    Support Covers Hosting, New Resources, And Parent Walkthrough Guides.
-  </p>
-  <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
-    SUPPORT THIS MOVEMENT
-  </a>
-</div>
+nav a:hover{
+  background:#2563eb;
+  transform:translateY(-3px);
+  color:white;
+}
 
-<div class="card">
-<h2>Start Here</h2>
-<p>
-If you only take one step today, review the 10-minute safety setup and apply it across your child’s devices.
-</p>
-<a class="btn" href="victorian-online-safety-guide.html">Read The Full Guide</a>
-</div>
+.card{
+  background:#132f4c;
+  padding:40px;
+  border-radius:22px;
+  margin:0 0 40px 0;
+  box-shadow:0 18px 45px rgba(0,0,0,0.45);
+}
 
-<div class="share-section">
-<h2>Share This Resource</h2>
+.card h2{
+  font-family:'Montserrat', sans-serif;
+  font-size:26px;
+  font-weight:700;
+  margin:0 0 18px 0;
+  color:#38bdf8;
+}
 
-<a class="share-btn" target="_blank" rel="noopener"
-href="https://www.facebook.com/sharer/sharer.php?u=https://parentsonlinesafetyhub.github.io/parents--online-safety-hub-VICTORIA/">
-Facebook</a>
+.card p{
+  font-size:17px;
+  line-height:1.7;
+  margin-bottom:18px;
+  color:#e2e8f0;
+}
 
-<a class="share-btn" target="_blank" rel="noopener"
-href="https://twitter.com/intent/tweet?url=https://parentsonlinesafetyhub.github.io/parents--online-safety-hub-VICTORIA/">
-X</a>
+.card ul{
+  margin-left:24px;
+  line-height:1.7;
+  font-size:17px;
+  color:#cbd5e1;
+}
 
-<a class="share-btn" target="_blank" rel="noopener"
-href="https://www.linkedin.com/sharing/share-offsite/?url=https://parentsonlinesafetyhub.github.io/parents--online-safety-hub-VICTORIA/">
-LinkedIn</a>
+.btn{
+  display:inline-block;
+  padding:16px 28px;
+  margin-top:22px;
+  background:#10b981;
+  color:white;
+  text-decoration:none;
+  border-radius:16px;
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:0.5px;
+  transition:all 0.25s ease;
+}
 
-<a class="share-btn"
-href="mailto:?subject=Parents%20Online%20Safety%20Hub&body=Thought%20this%20might%20help:%20https://parentsonlinesafetyhub.github.io/parents--online-safety-hub-VICTORIA/">
-Email</a>
+.btn:hover{
+  background:#059669;
+  transform:translateY(-3px);
+}
 
-<div class="copy-row">
-<input id="shareLink" class="copy-input" readonly
-value="https://parentsonlinesafetyhub.github.io/parents--online-safety-hub-VICTORIA/" />
-<a class="share-btn" href="#" onclick="copyLink(); return false;">Copy Link</a>
-</div>
+.share-section{
+  text-align:center;
+  margin-top:70px;
+  padding:40px 20px;
+  background:#0e2438;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
 
-<div id="copyMsg" class="copy-msg">
-Copy The Link To Share On Instagram, Snapchat, TikTok, Or Direct Messages.
-</div>
-</div>
+.share-section h2{
+  font-family:'Montserrat', sans-serif;
+  font-size:24px;
+  margin-bottom:25px;
+  color:#60a5fa;
+}
 
-<footer>
-Educational Resource Only. If A Child Is In Immediate Danger, Call 000.
-</footer>
+.share-btn{
+  display:inline-block;
+  margin:10px;
+  padding:14px 24px;
+  font-size:16px;
+  font-weight:600;
+  background:#1e40af;
+  border-radius:14px;
+  text-decoration:none;
+  color:white;
+  transition:all 0.25s ease;
+}
 
-</div>
+.share-btn:hover{
+  background:#2563eb;
+  transform:translateY(-3px);
+}
 
-<script src="app.js"></script>
-</body>
-</html>
+.copy-row{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+
+.copy-input{
+  width:min(600px, 92vw);
+  padding:16px;
+  border-radius:14px;
+  border:none;
+  background:#0b1c2d;
+  color:#e2e8f0;
+  font-size:15px;
+}
+
+.copy-msg{
+  margin-top:18px;
+  font-size:14px;
+  color:#7dd3fc;
+}
+
+footer{
+  margin-top:90px;
+  text-align:center;
+  font-size:14px;
+  color:#94a3b8;
+}
