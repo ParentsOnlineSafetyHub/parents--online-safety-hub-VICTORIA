@@ -60,6 +60,11 @@ nav a:hover{
   font-size:20px;
 }
 
+.card h3{
+  margin:18px 0 8px 0;
+  font-size:16px;
+}
+
 .card p{
   margin:0 0 12px 0;
   line-height:1.55;
@@ -70,6 +75,11 @@ nav a:hover{
   margin:10px 0 0 18px;
   color:#334155;
   line-height:1.55;
+}
+
+.small{
+  font-size:13px;
+  color:#64748b;
 }
 
 .btn{
