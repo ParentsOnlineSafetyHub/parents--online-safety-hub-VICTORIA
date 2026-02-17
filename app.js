@@ -25,7 +25,6 @@ function copyLink() {
 
   const text = input.value || '';
 
-  // Try modern clipboard API first
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(() => {
       if (msg) msg.textContent = 'Link copied ✅';
@@ -35,7 +34,6 @@ function copyLink() {
     return;
   }
 
-  // Fallback for older browsers
   fallbackCopy(input, msg);
 }
 
@@ -43,8 +41,7 @@ function fallbackCopy(input, msg) {
   try {
     input.focus();
     input.select();
-    input.setSelectionRange(0, 99999); // mobile
-
+    input.setSelectionRange(0, 99999);
     const ok = document.execCommand('copy');
     if (msg) msg.textContent = ok ? 'Link copied ✅' : 'Copy failed — please copy manually.';
   } catch (e) {
