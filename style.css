@@ -75,4 +75,45 @@ nav a:hover{border-color:rgba(78,195,255,.6)}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  text
+  text-align:center;
+  gap:10px;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(78,195,255,.35);
+  background: linear-gradient(180deg, rgba(78,195,255,.18), rgba(78,195,255,.08));
+  box-shadow: 0 10px 22px rgba(0,0,0,.24);
+  font-weight:700;
+}
+.btn:hover{border-color:rgba(78,195,255,.7)}
+.btn.secondary{
+  border-color:rgba(255,255,255,.18);
+  background: rgba(255,255,255,.04);
+  font-weight:650;
+}
+.btn.donate{
+  border-color:rgba(57,217,138,.45);
+  background: linear-gradient(180deg, rgba(57,217,138,.22), rgba(57,217,138,.10));
+}
+.btn.danger{
+  border-color:rgba(255,91,110,.55);
+  background: linear-gradient(180deg, rgba(255,91,110,.18), rgba(255,91,110,.08));
+}
+
+hr.sep{
+  border:0;border-top:1px solid var(--border);
+  margin:14px 0;
+}
+
+footer{
+  margin:18px 0 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.footer-actions{
+  margin-top:12px;
+  display:flex;flex-wrap:wrap;gap:10px;
+  justify-content:center;
+}
+.small{font-size:.9rem;color:var(--muted)}
