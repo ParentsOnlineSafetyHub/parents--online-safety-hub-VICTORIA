@@ -1,24 +1,24 @@
-/* ===== Base Reset ===== */
+/* =========================
+   POSH VIC - Style (V3)
+   Minor upgrades: hover life, brighter buttons, better heading fonts
+   ========================= */
 
-* {
-  box-sizing: border-box;
-}
+/* Google font (safe to keep; falls back if blocked) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background: linear-gradient(180deg, #0f1f3d, #122850);
-  color: #f1f5f9;
-}
+:root{
+  --bg1:#071427;          /* deep navy */
+  --bg2:#0b2242;          /* lighter navy */
+  --card:#0f2a55;         /* card blue */
+  --card2:#0c2346;        /* card alt */
+  --text:#eef4ff;
+  --muted:rgba(238,244,255,.78);
 
-/* ===== Layout ===== */
+  /* buttons: lighter / happier */
+  --btnA:#46b8ff;         /* sky */
+  --btnB:#4de0c8;         /* aqua */
+  --btnHoverA:#7ad2ff;    /* brighter sky */
+  --btnHoverB:#7af2dd;    /* brighter aqua */
 
-.wrap {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-h1 {
-  text-align: center;
-  font-size
+  --link:#66c8ff;
+  --dangerA:#ff
