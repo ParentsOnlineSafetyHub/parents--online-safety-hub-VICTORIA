@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
 
 :root{
   /* Background + surfaces */
-  --bgTop:#06152b;
-  --bgMid:#0a2144;
+  --bgTop:#051327;
+  --bgMid:#092a52;
   --bgBot:#061a33;
 
   --cardA:#0f2a55;
@@ -13,7 +13,7 @@
   --text:#f4f7ff;
   --muted:rgba(244,247,255,.78);
 
-  /* Accents (THIS IS YOUR POP) */
+  /* Accents */
   --blue:#39b0ff;
   --cyan:#22e6d3;
   --purple:#7b6dff;
@@ -35,11 +35,12 @@ body{
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color:var(--text);
 
-  /* colourful but still “pro” */
+  /* richer gradient + colour flares (more “alive”) */
   background:
-    radial-gradient(900px 460px at 18% 5%, rgba(57,176,255,.28), transparent 60%),
-    radial-gradient(900px 460px at 88% 10%, rgba(34,230,211,.20), transparent 62%),
-    radial-gradient(900px 520px at 55% 0%, rgba(123,109,255,.16), transparent 65%),
+    radial-gradient(900px 520px at 14% 8%, rgba(57,176,255,.30), transparent 60%),
+    radial-gradient(900px 520px at 86% 12%, rgba(34,230,211,.22), transparent 62%),
+    radial-gradient(950px 600px at 55% 0%, rgba(123,109,255,.18), transparent 65%),
+    radial-gradient(1200px 900px at 50% 120%, rgba(34,230,211,.10), transparent 55%),
     linear-gradient(180deg, var(--bgTop), var(--bgMid) 45%, var(--bgBot));
 }
 
@@ -47,30 +48,42 @@ body{
   max-width:1100px;
   margin:0 auto;
   padding:40px 18px 60px;
-  text-align:center; /* keeps heading/logo centred */
+  text-align:center;
 }
 
-/* ===== LOGO HEADING (centred + LIFE) ===== */
+/* ===== LOGO HEADING (sticker style) ===== */
 h1{
-  font-family: Montserrat, Inter, system-ui, sans-serif;
-  font-size:2.6rem;
-  letter-spacing:1px;
+  /* eye-catching but still readable */
+  font-family: "Luckiest Guy", Montserrat, system-ui, sans-serif;
+  font-size: 3.0rem;
+  letter-spacing: 1px;
   margin: 6px auto 10px;
   display:inline-block;
+  padding: 18px 30px;
+  border-radius: 22px;
 
-  padding:18px 30px;
-  border-radius:20px;
+  /* Sticker outline effect */
+  color: transparent;
+  background: linear-gradient(135deg, #a7f3ff, #39b0ff 35%, #22e6d3 70%, #7b6dff);
+  -webkit-background-clip: text;
+  background-clip: text;
 
-  /* colourful outline + depth */
-  border:2px solid rgba(57,176,255,.55);
-  background:
-    linear-gradient(135deg, rgba(57,176,255,.18), rgba(34,230,211,.10));
+  /* outline + shadow pop */
+  -webkit-text-stroke: 2px rgba(255,255,255,.82);
+  text-shadow:
+    0 6px 0 rgba(0,0,0,.35),
+    0 14px 28px rgba(0,0,0,.55),
+    0 0 22px rgba(57,176,255,.25);
+
+  /* subtle logo plate behind */
+  border: 2px solid rgba(57,176,255,.45);
+  background-color: rgba(8,25,50,.25);
   box-shadow:
     0 0 0 6px rgba(57,176,255,.06),
-    0 14px 40px rgba(0,0,0,.45),
-    0 0 28px rgba(57,176,255,.20);
+    0 14px 40px rgba(0,0,0,.45);
 }
 
+/* tagline stays clean */
 .tagline{
   font-size:1.15rem;
   margin: 0 0 26px;
@@ -96,7 +109,7 @@ h2{
   color:rgba(244,247,255,.70);
 }
 
-/* ===== NAV (better presence) ===== */
+/* ===== NAV (now gets the same aqua hover life) ===== */
 nav{
   display:flex;
   justify-content:center;
@@ -107,27 +120,47 @@ nav{
 
 nav a{
   text-decoration:none;
-  font-weight:700;
-  color:rgba(244,247,255,.88);
-
+  font-weight:800;
+  color:rgba(244,247,255,.90);
   padding:10px 14px;
   border-radius:999px;
 
-  background:rgba(255,255,255,.06);
+  background: rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.10);
 
-  transition: all .22s ease;
+  position: relative;
+  overflow: hidden;
+
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+
+/* little shine sweep like buttons */
+nav a::after{
+  content:"";
+  position:absolute;
+  top:-70%;
+  left:-80%;
+  width:60%;
+  height:240%;
+  background: rgba(255,255,255,.16);
+  transform: rotate(22deg);
+  transition: left .38s ease;
+  pointer-events:none;
 }
 
 nav a:hover{
   transform: translateY(-2px);
-  background: rgba(57,176,255,.16);
-  border-color: rgba(57,176,255,.35);
-  box-shadow: 0 12px 24px rgba(0,0,0,.28);
+  background: rgba(34,230,211,.18);
+  border-color: rgba(34,230,211,.45);
+  box-shadow: 0 14px 28px rgba(0,0,0,.30), 0 0 18px rgba(34,230,211,.14);
   color:#fff;
 }
 
-/* ===== Cards (more contrast, not grey) ===== */
+nav a:hover::after{
+  left:140%;
+}
+
+/* ===== Cards ===== */
 .card{
   background: linear-gradient(180deg, var(--cardA), var(--cardB));
   border:1px solid rgba(255,255,255,.10);
@@ -146,7 +179,7 @@ nav a:hover{
   margin-top:14px;
 }
 
-/* ===== BUTTONS (colour + hover LIFE) ===== */
+/* ===== Buttons (colour + hover LIFE) ===== */
 .btn{
   position:relative;
   display:inline-flex;
@@ -158,7 +191,7 @@ nav a:hover{
 
   border-radius:14px;
   text-decoration:none;
-  font-weight:800;
+  font-weight:900;
 
   color:#05243f;
   background: linear-gradient(135deg, var(--btn1), var(--btn2));
@@ -169,7 +202,6 @@ nav a:hover{
   overflow:hidden;
 }
 
-/* shiny sweep */
 .btn::after{
   content:"";
   position:absolute;
@@ -186,7 +218,7 @@ nav a:hover{
 .btn:hover{
   transform: translateY(-4px);
   box-shadow: var(--shadow2);
-  filter: saturate(1.08) brightness(1.02);
+  filter: saturate(1.10) brightness(1.03);
   background: linear-gradient(135deg, var(--btn1h), var(--btn2h));
 }
 
@@ -194,28 +226,21 @@ nav a:hover{
   left:130%;
 }
 
-/* Secondary = still colourful, just calmer */
 .btn.secondary{
-  color: rgba(244,247,255,.92);
+  color: rgba(244,247,255,.95);
   background: linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.08));
   border:1px solid rgba(255,255,255,.14);
 }
 
 .btn.secondary:hover{
-  background: linear-gradient(135deg, rgba(57,176,255,.22), rgba(34,230,211,.12));
+  background: linear-gradient(135deg, rgba(57,176,255,.24), rgba(34,230,211,.12));
 }
 
-/* Danger */
 .btn.danger{
   color:#fff;
   background: linear-gradient(135deg, #ff3b6a, #ffb020);
 }
 
-.btn.danger:hover{
-  filter: brightness(1.05) saturate(1.05);
-}
-
-/* Donate CTA */
 .btn.donate{
   font-size:1.12rem;
   padding:16px 18px;
@@ -233,7 +258,6 @@ nav a:hover{
   color: var(--blue);
   text-decoration:none;
 }
-
 .breadcrumb a:hover{ text-decoration: underline; }
 
 /* Footer */
