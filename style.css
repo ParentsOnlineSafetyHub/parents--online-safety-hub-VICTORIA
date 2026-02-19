@@ -1,24 +1,188 @@
-/* =========================
-   POSH VIC - Style (V3)
-   Minor upgrades: hover life, brighter buttons, better heading fonts
-   ========================= */
-
-/* Google font (safe to keep; falls back if blocked) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
 
 :root{
-  --bg1:#071427;          /* deep navy */
-  --bg2:#0b2242;          /* lighter navy */
-  --card:#0f2a55;         /* card blue */
-  --card2:#0c2346;        /* card alt */
-  --text:#eef4ff;
-  --muted:rgba(238,244,255,.78);
+  --bg1:#071427;
+  --bg2:#0c1f3f;
+  --card:#112b55;
 
-  /* buttons: lighter / happier */
-  --btnA:#46b8ff;         /* sky */
-  --btnB:#4de0c8;         /* aqua */
-  --btnHoverA:#7ad2ff;    /* brighter sky */
-  --btnHoverB:#7af2dd;    /* brighter aqua */
+  --text:#f2f6ff;
+  --muted:rgba(242,246,255,.75);
 
-  --link:#66c8ff;
-  --dangerA:#ff
+  --btnA:#3fb7ff;
+  --btnB:#2de0c8;
+
+  --btnHoverA:#6cd0ff;
+  --btnHoverB:#5ff5df;
+
+  --accent:#66c8ff;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 500px at 20% 0%, rgba(63,183,255,.15), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+  color:var(--text);
+}
+
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px 60px;
+}
+
+/* ===== HEADING WITH LIFE ===== */
+
+h1{
+  font-family: Montserrat, sans-serif;
+  font-size:2.6rem;
+  text-align:center;
+  letter-spacing:1px;
+  padding:18px 28px;
+  margin:10px auto 15px;
+  display:inline-block;
+  border:2px solid rgba(102,200,255,.4);
+  border-radius:18px;
+  background:linear-gradient(135deg, rgba(63,183,255,.15), rgba(45,224,200,.08));
+  box-shadow:0 0 25px rgba(63,183,255,.25);
+}
+
+.tagline{
+  text-align:center;
+  font-size:1.15rem;
+  margin-bottom:30px;
+  color:var(--muted);
+}
+
+/* ===== NAV ===== */
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:35px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.25s ease;
+}
+
+nav a:hover{
+  background:rgba(63,183,255,.2);
+  transform:translateY(-2px);
+}
+
+/* ===== CARDS ===== */
+
+.card{
+  background:var(--card);
+  padding:24px;
+  border-radius:16px;
+  margin-bottom:22px;
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.card h2{
+  font-family:Montserrat, sans-serif;
+  margin-top:0;
+  font-size:1.35rem;
+}
+
+.note{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* ===== BUTTON GRID ===== */
+
+.btn-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:16px;
+  margin-top:16px;
+}
+
+/* ===== BUTTONS WITH LIFE ===== */
+
+.btn{
+  position:relative;
+  padding:14px 18px;
+  text-align:center;
+  font-weight:700;
+  text-decoration:none;
+  border-radius:14px;
+  background:linear-gradient(135deg, var(--btnA), var(--btnB));
+  color:#06233f;
+  transition:.25s ease;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
+}
+
+/* moving shine */
+.btn::after{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:-75%;
+  width:50%;
+  height:200%;
+  background:rgba(255,255,255,.25);
+  transform:rotate(25deg);
+  transition:left .4s ease;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 35px rgba(0,0,0,.45);
+  background:linear-gradient(135deg, var(--btnHoverA), var(--btnHoverB));
+}
+
+.btn:hover::after{
+  left:120%;
+}
+
+.btn.secondary{
+  background:linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.05));
+  color:var(--text);
+}
+
+.btn.secondary:hover{
+  background:linear-gradient(135deg, rgba(63,183,255,.3), rgba(45,224,200,.15));
+}
+
+.btn.danger{
+  background:linear-gradient(135deg, #ff4d6d, #ff9f1c);
+  color:white;
+}
+
+.btn.danger:hover{
+  filter:brightness(1.05);
+}
+
+.btn.donate{
+  font-size:1.1rem;
+  padding:16px 20px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+  text-align:center;
+  margin-top:40px;
+  padding-top:25px;
+  border-top:1px solid rgba(255,255,255,.15);
+}
+
+.footer-actions{
+  margin-top:15px;
+}
