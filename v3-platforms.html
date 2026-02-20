@@ -23,37 +23,34 @@
     </nav>
 
     <div class="card">
-      <h2>Search platforms</h2>
-      <p class="note">Type Xbox, PlayStation, Nintendo, PC or VR.</p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-        <input id="pSearch" type="text" placeholder="Search…" autocomplete="off"
-               style="flex:1; min-width:240px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.06); color:#f4f7ff; outline:none;">
-        <button id="pClear" class="btn secondary" type="button" style="min-width:140px;">Clear</button>
+      <h2>Start here (strongest protection)</h2>
+      <p class="note">
+        Device-level controls are your biggest win: installs, screen time, content filters.
+      </p>
+      <div class="btn-grid">
+        <a class="btn" href="v3-device-controls.html">Device Controls (Apple / Android / Windows)</a>
       </div>
     </div>
 
     <div class="card">
       <h2>Choose your platform</h2>
       <div class="btn-grid">
-        <a class="btn filter-item" href="v3-platform-xbox.html" data-tags="xbox console microsoft family safety">Xbox</a>
-        <a class="btn filter-item" href="v3-platform-playstation.html" data-tags="playstation ps4 ps5 sony family">PlayStation</a>
-        <a class="btn filter-item" href="v3-platform-nintendo.html" data-tags="nintendo switch family controls">Nintendo</a>
-        <a class="btn filter-item" href="v3-platform-pc.html" data-tags="pc windows gaming parental controls">PC</a>
-        <a class="btn filter-item" href="v3-platform-vr.html" data-tags="vr headset meta quest steamvr chat">VR / Headsets</a>
+        <a class="btn secondary" href="v3-platform-xbox.html">Xbox</a>
+        <a class="btn secondary" href="v3-platform-playstation.html">PlayStation</a>
+        <a class="btn secondary" href="v3-platform-nintendo.html">Nintendo</a>
+        <a class="btn secondary" href="v3-platform-pc.html">PC</a>
+        <a class="btn secondary" href="v3-platform-vr.html">VR / Headsets</a>
       </div>
-      <p class="note" style="margin-top:12px;">
-        Golden rule: <strong>turn off/limit chat first</strong> and keep friends/messages to known people only.
-      </p>
     </div>
 
     <div class="card">
       <h2>Platform PDFs</h2>
       <div class="btn-grid">
-        <a class="btn secondary filter-item" href="POSH_V3_Xbox_Checklist.pdf" data-tags="xbox pdf v3">Xbox Checklist (V3 PDF)</a>
-        <a class="btn secondary filter-item" href="POSH_V3_PlayStation_Checklist.pdf" data-tags="playstation pdf v3">PlayStation Checklist (V3 PDF)</a>
-        <a class="btn secondary filter-item" href="POSH_V3_Nintendo_Checklist.pdf" data-tags="nintendo pdf v3">Nintendo Checklist (V3 PDF)</a>
-        <a class="btn secondary filter-item" href="POSH_V3_PC_Gaming_Checklist.pdf" data-tags="pc pdf v3 windows">PC Checklist (V3 PDF)</a>
-        <a class="btn secondary filter-item" href="POSH_V3_VR_Checklist.pdf" data-tags="vr pdf v3">VR Checklist (V3 PDF)</a>
+        <a class="btn secondary" href="POSH_V3_Xbox_Checklist.pdf">Xbox Checklist (V3 PDF)</a>
+        <a class="btn secondary" href="POSH_V3_PlayStation_Checklist.pdf">PlayStation Checklist (V3 PDF)</a>
+        <a class="btn secondary" href="POSH_V3_Nintendo_Checklist.pdf">Nintendo Checklist (V3 PDF)</a>
+        <a class="btn secondary" href="POSH_V3_PC_Gaming_Checklist.pdf">PC Checklist (V3 PDF)</a>
+        <a class="btn secondary" href="POSH_V3_VR_Checklist.pdf">VR Checklist (V3 PDF)</a>
       </div>
     </div>
 
@@ -68,26 +65,5 @@
     </footer>
 
   </div>
-
-  <script>
-    (function(){
-      const input = document.getElementById('pSearch');
-      const clearBtn = document.getElementById('pClear');
-      const items = Array.from(document.querySelectorAll('.filter-item'));
-      function norm(s){ return (s || '').toLowerCase().trim(); }
-      function run(){
-        const q = norm(input.value);
-        items.forEach(el => {
-          const text = norm(el.textContent);
-          const tags = norm(el.getAttribute('data-tags'));
-          const hit = !q || text.includes(q) || tags.includes(q);
-          el.style.display = hit ? '' : 'none';
-        });
-      }
-      input.addEventListener('input', run);
-      clearBtn.addEventListener('click', () => { input.value=''; run(); input.focus(); });
-      run();
-    })();
-  </script>
 </body>
 </html>
