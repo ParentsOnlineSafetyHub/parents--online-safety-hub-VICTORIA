@@ -1,62 +1,103 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Social Apps • POSH</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Social Apps • POSH</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-<h1>Social Apps</h1>
-<p class="tagline">DMs, group chats, and live features are common entry points.</p>
+    <h1>Parents Online Safety Hub</h1>
+    <p class="tagline"><strong>Social Apps</strong> — DMs, groups and “friend adds” need strict boundaries.</p>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="v3-platforms.html">Platforms</a>
-  <a href="v3-gaming.html">Gaming</a>
-  <a href="v3-socials.html">Social Apps</a>
-  <a href="downloads.html">Downloads</a>
-  <a href="v3-reporting.html">Reporting</a>
-  <a href="v3-support.html">Support</a>
-</nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="v3-platforms.html">Platforms</a>
+      <a href="v3-gaming.html">Gaming</a>
+      <a href="v3-socials.html">Social Apps</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="v3-reporting.html">Reporting</a>
+      <a href="v3-support.html">Support</a>
+    </nav>
 
-<div class="breadcrumb"><a href="index.html">Home</a> › <span>Social Apps</span></div>
+    <div class="card">
+      <h2>Search social apps</h2>
+      <p class="note">Type an app name (Discord, Instagram, TikTok, YouTube Kids…).</p>
 
-<div class="card">
-  <h2>Start here</h2>
-  <div class="btn-grid">
-    <a class="btn" href="v3-social-discord.html">Discord</a>
-    <a class="btn" href="v3-social-youtube.html">YouTube</a>
-    <a class="btn" href="v3-social-youtubekids.html">YouTube Kids</a>
-    <a class="btn" href="v3-social-tiktok.html">TikTok</a>
-    <a class="btn" href="v3-social-instagram.html">Instagram</a>
-    <a class="btn" href="v3-social-snapchat.html">Snapchat</a>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+        <input id="sSearch" type="text" placeholder="Search…" autocomplete="off"
+               style="flex:1; min-width:240px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.06); color:#f4f7ff; outline:none;">
+        <button id="sClear" class="btn secondary" type="button" style="min-width:140px;">Clear</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Top risk (start here)</h2>
+      <div class="btn-grid">
+        <a class="btn filter-item" href="POSH_V3_Discord_Checklist.pdf" data-tags="discord chat servers dms">Discord (V3 PDF)</a>
+        <a class="btn filter-item" href="POSH_V3_YouTube_Checklist.pdf" data-tags="youtube comments messages">YouTube (V3 PDF)</a>
+        <a class="btn filter-item" href="POSH_V3_YouTube_Kids_Checklist.pdf" data-tags="youtube kids youtubekids children">YouTube Kids (V3 PDF)</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Popular apps</h2>
+      <div class="btn-grid">
+        <a class="btn secondary filter-item" href="POSH_V3_Instagram_Checklist.pdf" data-tags="instagram dms privacy">Instagram (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Messenger_Checklist.pdf" data-tags="messenger facebook chat">Messenger (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Messenger_Kids_Checklist.pdf" data-tags="messenger kids children">Messenger Kids (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_TikTok_Checklist.pdf" data-tags="tiktok dms live">TikTok (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Twitch_Checklist.pdf" data-tags="twitch chat streaming">Twitch (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Telegram_Checklist.pdf" data-tags="telegram groups chat">Telegram (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_WhatsApp_Checklist.pdf" data-tags="whatsapp groups chat">WhatsApp (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Facebook_Checklist.pdf" data-tags="facebook social groups">Facebook (V3 PDF)</a>
+      </div>
+      <p class="note" style="margin-top:12px;">Missing PDFs will 404 until their filenames match your repo — quickest fix is to rename hrefs to the exact file names you uploaded.</p>
+    </div>
+
+    <div class="card">
+      <h2>All social downloads</h2>
+      <div class="btn-grid">
+        <a class="btn secondary filter-item" href="downloads.html" data-tags="downloads all pdf">Go to Downloads (All PDFs)</a>
+      </div>
+    </div>
+
+    <footer>
+      Built in Victoria. Designed for Australia.<br/>
+      <span class="small">Contact: allthewaycarpentry@gmail.com</span>
+      <div class="footer-actions">
+        <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
+          Support this movement
+        </a>
+      </div>
+    </footer>
+
   </div>
-</div>
 
-<div class="card">
-  <h2>More apps</h2>
-  <div class="btn-grid">
-    <a class="btn secondary" href="v3-social-facebook.html">Facebook</a>
-    <a class="btn secondary" href="v3-social-messenger.html">Messenger</a>
-    <a class="btn secondary" href="v3-social-messengerkids.html">Messenger Kids</a>
-    <a class="btn secondary" href="v3-social-whatsapp.html">WhatsApp</a>
-    <a class="btn secondary" href="v3-social-telegram.html">Telegram</a>
-    <a class="btn secondary" href="v3-social-twitch.html">Twitch</a>
-    <a class="btn secondary" href="v3-social-steam.html">Steam</a>
-  </div>
-</div>
+  <script>
+    (function(){
+      const input = document.getElementById('sSearch');
+      const clearBtn = document.getElementById('sClear');
+      const items = Array.from(document.querySelectorAll('.filter-item'));
 
-<footer>
-  Built in Victoria. Designed for Australia.<br/>
-  <span class="small">Contact: allthewaycarpentry@gmail.com</span>
-  <div class="footer-actions">
-    <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">Support this movement</a>
-  </div>
-</footer>
+      function norm(s){ return (s || '').toLowerCase().trim(); }
 
-</div>
+      function run(){
+        const q = norm(input.value);
+        items.forEach(el => {
+          const text = norm(el.textContent);
+          const tags = norm(el.getAttribute('data-tags'));
+          const hit = !q || text.includes(q) || tags.includes(q);
+          el.style.display = hit ? '' : 'none';
+        });
+      }
+
+      input.addEventListener('input', run);
+      clearBtn.addEventListener('click', () => { input.value=''; run(); input.focus(); });
+      run();
+    })();
+  </script>
 </body>
 </html>
