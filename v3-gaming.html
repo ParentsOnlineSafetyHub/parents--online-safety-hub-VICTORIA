@@ -1,60 +1,90 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Gaming • POSH</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Gaming • POSH</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-<h1>Gaming</h1>
-<p class="tagline">Games with chat or parties need extra scrutiny.</p>
+    <h1>Parents Online Safety Hub</h1>
+    <p class="tagline"><strong>Gaming</strong> — if it has chat/party/DMs, lock it down.</p>
 
- <nav>
-  <a href="index.html">Home</a>
-  <a href="v3-platforms.html">Platforms</a>
-  <a href="v3-gaming.html">Gaming</a>
-  <a href="v3-socials.html">Social Apps</a>
-  <a href="downloads.html">Downloads</a>
-  <a href="v3-reporting.html">Reporting</a>
-  <a href="v3-support.html">Support</a>
-</nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="v3-platforms.html">Platforms</a>
+      <a href="v3-gaming.html">Gaming</a>
+      <a href="v3-socials.html">Social Apps</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="v3-reporting.html">Reporting</a>
+      <a href="v3-support.html">Support</a>
+    </nav>
 
+    <div class="card">
+      <h2>Search games</h2>
+      <p class="note">Type a game name (Roblox, Minecraft, Fortnite…).</p>
 
-<div class="breadcrumb"><a href="index.html">Home</a> › <span>Gaming</span></div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+        <input id="gSearch" type="text" placeholder="Search…" autocomplete="off"
+               style="flex:1; min-width:240px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.06); color:#f4f7ff; outline:none;">
+        <button id="gClear" class="btn secondary" type="button" style="min-width:140px;">Clear</button>
+      </div>
+    </div>
 
-<div class="card">
-  <h2>Most common starting point</h2>
-  <div class="btn-grid">
-    <a class="btn" href="POSH_V3_Roblox_Checklist.pdf">Roblox</a>
-    <a class="btn" href="POSH_V3_Minecraft_Checklist.pdf">Minecraft</a>
-    <a class="btn" href="POSH_V3_Fortnite_Checklist.pdf">Fortnite</a>
-    <a class="btn" href="POSH_V3_Twitch_Checklist.pdf">Twitch</a>
-    <a class="btn" href="POSH_V3_Discord_Checklist.pdf">Discord</a>
+    <div class="card">
+      <h2>Top risk (start here)</h2>
+      <div class="btn-grid">
+        <a class="btn filter-item" href="POSH_V3_Roblox_Checklist.pdf" data-tags="roblox game chat friends dms">Roblox (V3 PDF)</a>
+        <a class="btn filter-item" href="POSH_V3_Minecraft_Checklist.pdf" data-tags="minecraft servers chat">Minecraft (V3 PDF)</a>
+        <a class="btn filter-item" href="POSH_V3_Fortnite_Checklist.pdf" data-tags="fortnite voice chat parties epic">Fortnite (V3 PDF)</a>
+      </div>
+      <p class="note" style="margin-top:12px;">Do the platform first: <a href="v3-platforms.html" style="color:var(--blue); font-weight:800;">Platforms hub</a>.</p>
+    </div>
+
+    <div class="card">
+      <h2>More games (add as you publish PDFs)</h2>
+      <div class="btn-grid">
+        <a class="btn secondary filter-item" href="downloads.html" data-tags="downloads all pdf">Go to Downloads (All PDFs)</a>
+      </div>
+      <p class="note" style="margin-top:12px;">We’ll expand this page as new game PDFs land (COD, GTA, etc) using your exact filenames.</p>
+    </div>
+
+    <footer>
+      Built in Victoria. Designed for Australia.<br/>
+      <span class="small">Contact: allthewaycarpentry@gmail.com</span>
+      <div class="footer-actions">
+        <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
+          Support this movement
+        </a>
+      </div>
+    </footer>
+
   </div>
-</div>
 
-<div class="card">
-  <h2>More games</h2>
-  <div class="btn-grid">
-    <a class="btn secondary" href="POSH_V3_Call_of_Duty_Checklist.pdf">Call of Duty</a>
-    <a class="btn secondary" href="POSH_V3_GTA_Online_Checklist.pdf">GTA Online</a>
-    <a class="btn secondary" href="POSH_V3_Apex_Legends_Checklist.pdf">Apex Legends</a>
-    <a class="btn secondary" href="POSH_V3_Valorant_Checklist.pdf">Valorant</a>
-    <a class="btn secondary" href="POSH_V3_PUBG_Checklist.pdf">PUBG</a>
-  </div>
-</div>
+  <script>
+    (function(){
+      const input = document.getElementById('gSearch');
+      const clearBtn = document.getElementById('gClear');
+      const items = Array.from(document.querySelectorAll('.filter-item'));
 
-<footer>
-  Built in Victoria. Designed for Australia.<br/>
-  <span class="small">Contact: allthewaycarpentry@gmail.com</span>
-  <div class="footer-actions">
-    <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">Support this movement</a>
-  </div>
-</footer>
+      function norm(s){ return (s || '').toLowerCase().trim(); }
 
-</div>
+      function run(){
+        const q = norm(input.value);
+        items.forEach(el => {
+          const text = norm(el.textContent);
+          const tags = norm(el.getAttribute('data-tags'));
+          const hit = !q || text.includes(q) || tags.includes(q);
+          el.style.display = hit ? '' : 'none';
+        });
+      }
+
+      input.addEventListener('input', run);
+      clearBtn.addEventListener('click', () => { input.value=''; run(); input.focus(); });
+      run();
+    })();
+  </script>
 </body>
 </html>
