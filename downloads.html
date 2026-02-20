@@ -1,102 +1,119 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Downloads • POSH</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Downloads • POSH</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-  <div class="footer-actions">
-  <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
-    Support this movement
-  </a>
-</div>
 <body>
+  <div class="wrap">
 
-<div class="wrap">
+    <h1>Parents Online Safety Hub</h1>
+    <p class="tagline"><strong>Downloads</strong> — printable checklists + guides.</p>
 
-<h1>Downloads</h1>
-<p class="tagline">KISS: Platform → Game → Checklist</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="v3-platforms.html">Platforms</a>
+      <a href="v3-gaming.html">Gaming</a>
+      <a href="v3-socials.html">Social Apps</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="v3-reporting.html">Reporting</a>
+      <a href="v3-support.html">Support</a>
+    </nav>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="v3-platforms.html">Platforms</a>
-  <a href="v3-gaming.html">Gaming</a>
-  <a href="v3-socials.html">Social Apps</a>
-  <a href="downloads.html">Downloads</a>
-  <a href="v3-reporting.html">Reporting</a>
-  <a href="v3-support.html">Support</a>
-</nav>
+    <div class="card">
+      <h2>Search downloads</h2>
+      <p class="note">Type a platform/game/app (e.g. <strong>Roblox</strong>, <strong>Discord</strong>, <strong>YouTube Kids</strong>).</p>
 
-<div class="breadcrumb">
-<a href="index.html">Home</a> › <span>Downloads</span>
-</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+        <input id="dlSearch" type="text" placeholder="Search…" autocomplete="off"
+               style="flex:1; min-width:240px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.06); color:#f4f7ff; outline:none;">
+        <button id="dlClear" class="btn secondary" type="button" style="min-width:140px;">Clear</button>
+      </div>
+    </div>
 
-<div class="card">
-<h2>Start Here (Most Used / Highest Risk)</h2>
-<p class="note">These are the ones we see most often where kids get exposed through chat, DMs, live features, or random contact.</p>
+    <div class="card">
+      <h2>Top priority (highest exposure)</h2>
+      <div class="btn-grid" id="dlTop">
+        <a class="btn filter-item" href="POSH_V3_Roblox_Checklist.pdf" data-tags="roblox game gaming kids chat">Roblox (V3 PDF)</a>
+        <a class="btn filter-item" href="POSH_V3_Minecraft_Checklist.pdf" data-tags="minecraft game gaming java bedrock chat">Minecraft (V3 PDF)</a>
+        <a class="btn filter-item" href="POSH_V3_Fortnite_Checklist.pdf" data-tags="fortnite game gaming epic voice chat parties">Fortnite (V3 PDF)</a>
+        <a class="btn filter-item" href="POSH_V3_Discord_Checklist.pdf" data-tags="discord social chat servers dms">Discord (V3 PDF)</a>
+        <a class="btn filter-item" href="POSH_V3_YouTube_Checklist.pdf" data-tags="youtube social video comments">YouTube (V3 PDF)</a>
+        <a class="btn filter-item" href="POSH_V3_YouTube_Kids_Checklist.pdf" data-tags="youtube kids youtubekids children">YouTube Kids (V3 PDF)</a>
+      </div>
+    </div>
 
-<div class="btn-grid">
-  <a class="btn" href="POSH_V3_Roblox_Checklist.pdf">Roblox (V3)</a>
-  <a class="btn" href="POSH_V3_Minecraft_Checklist.pdf">Minecraft (V3)</a>
-  <a class="btn" href="POSH_V3_Fortnite_Checklist.pdf">Fortnite (V3)</a>
-  <a class="btn" href="POSH_V3_Discord_Checklist.pdf">Discord (V3)</a>
-  <a class="btn" href="POSH_V3_YouTube_Checklist.pdf">YouTube (V3)</a>
-  <a class="btn" href="POSH_V3_YouTube_Kids_Checklist.pdf">YouTube Kids (V3)</a>
-  <a class="btn" href="POSH_V3_Twitch_Checklist.pdf">Twitch (V3)</a>
-</div>
+    <div class="card">
+      <h2>Platforms (console + PC + VR)</h2>
+      <div class="btn-grid">
+        <a class="btn secondary filter-item" href="POSH_V3_Xbox_Checklist.pdf" data-tags="xbox platform console parental settings">Xbox (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_PlayStation_Checklist.pdf" data-tags="playstation ps4 ps5 platform console family">PlayStation (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Nintendo_Checklist.pdf" data-tags="nintendo switch platform console">Nintendo (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_PC_Gaming_Checklist.pdf" data-tags="pc windows platform gaming">PC Gaming (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_VR_Checklist.pdf" data-tags="vr headset platform chat">VR / Headsets (V3 PDF)</a>
+      </div>
+    </div>
 
-</div>
+    <div class="card">
+      <h2>Social apps (common entry points)</h2>
+      <div class="btn-grid">
+        <a class="btn secondary filter-item" href="POSH_V3_Instagram_Checklist.pdf" data-tags="instagram social dms">Instagram (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Messenger_Checklist.pdf" data-tags="facebook messenger social chat dms">Messenger (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Messenger_Kids_Checklist.pdf" data-tags="messenger kids children">Messenger Kids (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_TikTok_Checklist.pdf" data-tags="tiktok social dms live">TikTok (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Twitch_Checklist.pdf" data-tags="twitch streaming chat">Twitch (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Telegram_Checklist.pdf" data-tags="telegram social chat groups">Telegram (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_WhatsApp_Checklist.pdf" data-tags="whatsapp social chat groups">WhatsApp (V3 PDF)</a>
+        <a class="btn secondary filter-item" href="POSH_V3_Facebook_Checklist.pdf" data-tags="facebook social messenger groups">Facebook (V3 PDF)</a>
+      </div>
+      <p class="note" style="margin-top:12px;">If any button 404s, it means the PDF filename in your repo differs — rename the button href to match your exact file name.</p>
+    </div>
 
-<div class="card">
-<h2>Main Guide</h2>
-<div class="btn-grid">
-  <a class="btn secondary" href="Victorian_Child_Online_Safety_Guide.pdf">Victorian Child Online Safety Guide (PDF)</a>
-</div>
-</div>
+    <div class="card">
+      <h2>Main guide</h2>
+      <div class="btn-grid">
+        <a class="btn secondary filter-item" href="Victorian_Child_Online_Safety_Guide.pdf" data-tags="victoria guide pdf main">Victorian Online Safety Guide (PDF)</a>
+        <a class="btn secondary filter-item" href="v3-guide.html" data-tags="victoria guide read online">Read Guide Online</a>
+        <a class="btn secondary filter-item" href="checklist.html" data-tags="checklist read online printable">Read Checklist Online</a>
+      </div>
+    </div>
 
-<div class="card">
-<h2>Platforms (Do These First)</h2>
-<p class="note">Platform settings affect every game. Lock the platform first, then lock the game.</p>
-<div class="btn-grid">
-  <a class="btn" href="POSH_V3_Xbox_Checklist.pdf">Xbox (V3)</a>
-  <a class="btn" href="POSH_V3_PlayStation_Checklist.pdf">PlayStation (V3)</a>
-  <a class="btn" href="POSH_V3_Nintendo_Checklist.pdf">Nintendo (V3)</a>
-  <a class="btn" href="POSH_V3_PC_Gaming_Checklist.pdf">PC Gaming (V3)</a>
-  <a class="btn" href="POSH_V3_VR_Checklist.pdf">VR (V3)</a>
-</div>
-</div>
+    <footer>
+      Built in Victoria. Designed for Australia.<br/>
+      <span class="small">Contact: allthewaycarpentry@gmail.com</span>
+      <div class="footer-actions">
+        <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
+          Support this movement
+        </a>
+      </div>
+    </footer>
 
-<div class="card">
-<h2>Games (Popular + Chat Exposure)</h2>
-<div class="btn-grid">
-  <a class="btn" href="POSH_V3_Roblox_Checklist.pdf">Roblox</a>
-  <a class="btn" href="POSH_V3_Fortnite_Checklist.pdf">Fortnite</a>
-  <a class="btn" href="POSH_V3_Minecraft_Checklist.pdf">Minecraft</a>
-  <a class="btn" href="POSH_V3_Call_of_Duty_Checklist.pdf">Call of Duty</a>
-  <a class="btn" href="POSH_V3_GTA_Online_Checklist.pdf">GTA Online</a>
-  <a class="btn" href="POSH_V3_Apex_Legends_Checklist.pdf">Apex Legends</a>
-  <a class="btn" href="POSH_V3_Valorant_Checklist.pdf">Valorant</a>
-  <a class="btn" href="POSH_V3_Rocket_League_Checklist.pdf">Rocket League</a>
-  <a class="btn" href="POSH_V3_Overwatch_Checklist.pdf">Overwatch</a>
-  <a class="btn" href="POSH_V3_PUBG_Checklist.pdf">PUBG</a>
-  <a class="btn" href="POSH_V3_Clash_of_Clans_Checklist.pdf">Clash of Clans</a>
-  <a class="btn" href="POSH_V3_Brawl_Stars_Checklist.pdf">Brawl Stars</a>
-</div>
-</div>
+  </div>
 
-<div class="card">
-<h2>Social & Messaging Apps</h2>
-<div class="btn-grid">
-  <a class="btn" href="POSH_V3_Discord_Checklist.pdf">Discord</a>
-  <a class="btn" href="POSH_V3_Snapchat_Checklist.pdf">Snapchat</a>
-  <a class="btn" href="POSH_V3_TikTok_Checklist.pdf">TikTok</a>
-  <a class="btn" href="POSH_V3_Instagram_Checklist.pdf">Instagram</a>
-  <a class="btn" href="POSH_V3_Facebook_Checklist.pdf">Facebook</a>
-  <a class="btn" href="POSH_V3_Messenger_Checklist.pdf">Messenger</a>
-  <a class="btn" href="POSH_V3_Messenger_Kids_Checklist.pdf">Messenger Kids</a>
-  <a class="btn" href="POSH_V3_WhatsApp_Checklist.pdf">WhatsApp</a>
-  <a class="btn" href="POSH_V3_Telegram_Checklist.pdf">Telegram</a>
-  <a class="btn" href="POSH_V3_Reddit_Checklist.pdf">Reddit</a>
-  <a class="btn" href="POSH_V3_Signal_Checklist.pdf">Signal</a>
-  <a class="btn" href="POSH_V3_Threads_Checklist.pdf">Threads</a>
+  <script>
+    (function(){
+      const input = document.getElementById('dlSearch');
+      const clearBtn = document.getElementById('dlClear');
+      const items = Array.from(document.querySelectorAll('.filter-item'));
+
+      function norm(s){ return (s || '').toLowerCase().trim(); }
+
+      function run(){
+        const q = norm(input.value);
+        items.forEach(el => {
+          const text = norm(el.textContent);
+          const tags = norm(el.getAttribute('data-tags'));
+          const hit = !q || text.includes(q) || tags.includes(q);
+          el.style.display = hit ? '' : 'none';
+        });
+      }
+
+      input.addEventListener('input', run);
+      clearBtn.addEventListener('click', () => { input.value=''; run(); input.focus(); });
+      run();
+    })();
+  </script>
+</body>
+</html>
