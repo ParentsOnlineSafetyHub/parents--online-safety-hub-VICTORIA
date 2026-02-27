@@ -3,97 +3,68 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Social Apps • POSH</title>
+  <title>Social Apps Hub • POSH Aussie</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <h1>Parents Online Safety Hub</h1>
-    <p class="tagline"><strong>Social Apps</strong> — lock DMs, groups, strangers and live features.</p>
+  <h1>POSH Aussie</h1>
+  <p class="tagline"><strong>Social Apps Hub</strong> — click an app and follow the step-by-step locks.</p>
 
-    <nav>
-  <a href="index.html">Home</a>
-  <a href="v3-start.html">Start</a>
-  <a href="v3-house-rules.html">House Rules</a>
-  <a href="v3-redflags.html">Red Flags</a>
-  <a href="v3-device-controls.html">Device Controls</a>
-  <a href="v3-platforms.html">Platforms</a>
-  <a href="v3-gaming.html">Gaming</a>
-  <a href="v3-socials.html">Social Apps</a>
-  <a href="downloads.html">Downloads</a>
-  <a href="v3-reporting.html">Reporting</a>
-  <a href="v3-support.html">Support</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="v3-start.html">Start</a>
+    <a href="v3-house-rules.html">House Rules</a>
+    <a href="v3-redflags.html">Red Flags</a>
+    <a href="v3-device-controls.html">Device Controls</a>
+    <a href="v3-platforms.html">Platforms</a>
+    <a href="v3-gaming.html">Gaming</a>
+    <a href="v3-socials.html">Social Apps</a>
+    <a href="v3-mindset.html">Mindset</a>
+    <a href="v3-reporting.html">Reporting</a>
+    <a href="v3-downloads.html">Downloads</a>
+    <a href="v3-support.html">Support</a>
+  </nav>
 
-    <div class="card">
-      <h2>Search social apps</h2>
-      <p class="note">Type Discord, YouTube Kids, Instagram, TikTok…</p>
-
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-        <input id="sSearch" type="text" placeholder="Search…" autocomplete="off"
-               style="flex:1; min-width:240px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.06); color:#f4f7ff; outline:none;">
-        <button id="sClear" class="btn secondary" type="button" style="min-width:140px;">Clear</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Start here (highest exposure)</h2>
-      <p class="note">Use the on-site guides or download the printable PDFs.</p>
-
-      <div class="btn-grid">
-        <a class="btn filter-item" href="v3-social-discord.html" data-tags="discord guide sbs servers dms">Discord (On-site guide)</a>
-        <a class="btn filter-item" href="v3-social-youtube.html" data-tags="youtube guide comments">YouTube (On-site guide)</a>
-        <a class="btn filter-item" href="v3-social-youtube-kids.html" data-tags="youtube kids youtubekids guide">YouTube Kids (On-site guide)</a>
-
-        <a class="btn secondary filter-item" href="POSH_V3_Discord_Checklist.pdf" data-tags="discord pdf">Discord (V3 PDF)</a>
-        <a class="btn secondary filter-item" href="POSH_V3_YouTube_Checklist.pdf" data-tags="youtube pdf">YouTube (V3 PDF)</a>
-        <a class="btn secondary filter-item" href="POSH_V3_YouTube_Kids_Checklist.pdf" data-tags="youtube kids pdf">YouTube Kids (V3 PDF)</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>More social downloads</h2>
-      <div class="btn-grid">
-        <a class="btn secondary filter-item" href="downloads.html" data-tags="downloads all pdf">Go to Downloads (All PDFs)</a>
-      </div>
-      <p class="note" style="margin-top:12px;">We’ll keep adding on-site guides for Instagram, TikTok, Messenger, Snapchat next.</p>
-    </div>
-
-    <footer>
-      Built in Victoria. Designed for Australia.<br/>
-      <span class="small">Contact: allthewaycarpentry@gmail.com</span>
-      <div class="footer-actions">
-        <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
-          Support this movement
-        </a>
-      </div>
-    </footer>
-
+  <div class="card">
+    <h2>Most important rule</h2>
+    <p class="note"><strong>If it has chat, DMs, calls, or groups — it needs scrutiny.</strong></p>
   </div>
 
-  <script>
-    (function(){
-      const input = document.getElementById('sSearch');
-      const clearBtn = document.getElementById('sClear');
-      const items = Array.from(document.querySelectorAll('.filter-item'));
+  <div class="card">
+    <h2>Social app guides</h2>
+    <div class="btn-grid">
+      <a class="btn" href="v3-social-discord.html">Discord</a>
+      <a class="btn" href="v3-social-telegram.html">Telegram</a>
+      <a class="btn" href="v3-social-whatsapp.html">WhatsApp</a>
+      <a class="btn" href="v3-social-tiktok.html">TikTok</a>
+      <a class="btn" href="v3-social-twitch.html">Twitch</a>
+      <a class="btn" href="v3-social-instagram.html">Instagram</a>
+      <a class="btn" href="v3-social-facebook.html">Facebook</a>
+      <a class="btn" href="v3-social-messenger.html">Messenger</a>
+      <a class="btn" href="v3-social-messengerkids.html">Messenger Kids</a>
+      <a class="btn" href="v3-social-youtube.html">YouTube</a>
+      <a class="btn" href="v3-social-youtubekids.html">YouTube Kids</a>
+      <a class="btn" href="v3-social-steam.html">Steam</a>
+    </div>
+    <p class="note" style="margin-top:12px;">
+      If you want the safest start: lock device controls first, then return here.
+    </p>
+    <div class="btn-grid" style="margin-top:10px;">
+      <a class="btn secondary" href="v3-device-controls.html">Device Controls</a>
+      <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
+    </div>
+  </div>
 
-      function norm(s){ return (s || '').toLowerCase().trim(); }
+  <footer>
+    Built in Victoria. Designed for Australia.<br/>
+    <span class="small">Contact: allthewaycarpentry@gmail.com</span>
+    <div class="footer-actions">
+      <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">Support POSH Aussie</a>
+    </div>
+  </footer>
 
-      function run(){
-        const q = norm(input.value);
-        items.forEach(el => {
-          const text = norm(el.textContent);
-          const tags = norm(el.getAttribute('data-tags'));
-          const hit = !q || text.includes(q) || tags.includes(q);
-          el.style.display = hit ? '' : 'none';
-        });
-      }
-
-      input.addEventListener('input', run);
-      clearBtn.addEventListener('click', () => { input.value=''; run(); input.focus(); });
-      run();
-    })();
-  </script>
+</div>
 </body>
 </html>
