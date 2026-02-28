@@ -3,58 +3,63 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Gaming • POSH</title>
+  <title>Gaming Hub • POSH Aussie</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
-  <script src="app.js"></script>
 <body>
   <div class="wrap">
 
-    <h1>Parents Online Safety Hub</h1>
-    <p class="tagline"><strong>Gaming</strong> — lock platform first, then game settings, then chat.</p>
+    <h1>POSH Aussie</h1>
+    <p class="tagline"><strong>Gaming Hub</strong> — if it has chat, voice, or DMs, it needs supervision.</p>
 
- <div id="nav"></div>
-    
+    <div id="nav"></div>
+
     <div class="card">
-      <h2>Search games</h2>
-      <p class="note">Type Roblox, Minecraft, Fortnite…</p>
-
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-        <input id="gSearch" type="text" placeholder="Search…" autocomplete="off"
-               style="flex:1; min-width:240px; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.06); color:#f4f7ff; outline:none;">
-        <button id="gClear" class="btn secondary" type="button" style="min-width:140px;">Clear</button>
+      <h2>Most exposed games</h2>
+      <p class="note">
+        These games allow voice chat, text chat, direct messaging, or open multiplayer.
+        Lock platform settings first, then lock each game.
+      </p>
+      <div class="btn-grid">
+        <a class="btn" href="v3-game-roblox.html">Roblox</a>
+        <a class="btn" href="v3-game-minecraft.html">Minecraft</a>
+        <a class="btn" href="v3-game-fortnite.html">Fortnite</a>
+        <a class="btn" href="games-cod.html">Call of Duty</a>
+        <a class="btn" href="games-gta.html">GTA</a>
       </div>
     </div>
 
     <div class="card">
-      <h2>Start here (highest exposure)</h2>
-      <p class="note">These three are the most common “chat + strangers” risk points. Use the on-site guides or download PDFs.</p>
-
-      <div class="btn-grid">
-        <a class="btn filter-item" href="v3-game-roblox.html" data-tags="roblox guide step by step sbs">Roblox (On-site guide)</a>
-        <a class="btn filter-item" href="v3-game-minecraft.html" data-tags="minecraft guide step by step sbs servers">Minecraft (On-site guide)</a>
-        <a class="btn filter-item" href="v3-game-fortnite.html" data-tags="fortnite guide step by step sbs voice chat">Fortnite (On-site guide)</a>
-
-        <a class="btn secondary filter-item" href="POSH_V3_Roblox_Checklist.pdf" data-tags="roblox pdf">Roblox (V3 PDF)</a>
-        <a class="btn secondary filter-item" href="POSH_V3_Minecraft_Checklist.pdf" data-tags="minecraft pdf">Minecraft (V3 PDF)</a>
-        <a class="btn secondary filter-item" href="POSH_V3_Fortnite_Checklist.pdf" data-tags="fortnite pdf">Fortnite (V3 PDF)</a>
-      </div>
-
-      <p class="note" style="margin-top:12px;">
-        Do platform controls first: <a href="v3-platforms.html" style="color:var(--blue); font-weight:900;">Platforms hub</a>.
+      <h2>Golden rule</h2>
+      <p class="note">
+        If a game allows:
+      </p>
+      <p class="note">
+        • Voice chat<br/>
+        • Private messaging<br/>
+        • Friend requests<br/>
+        • Public servers<br/>
+        • Mods or external downloads
+      </p>
+      <p class="note">
+        It must be locked down before regular use.
       </p>
     </div>
 
     <div class="card">
-      <h2>More game downloads</h2>
+      <h2>Strongest protection</h2>
+      <p class="note">
+        Start with device and platform controls.
+      </p>
       <div class="btn-grid">
-        <a class="btn secondary filter-item" href="downloads.html" data-tags="downloads all pdf">Go to Downloads (All PDFs)</a>
+        <a class="btn secondary" href="v3-platforms.html">Platform Controls</a>
+        <a class="btn secondary" href="v3-device-controls.html">Device Controls</a>
+        <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
       </div>
-      <p class="note" style="margin-top:12px;">We’ll keep adding on-site guides the same way as you roll out more PDFs.</p>
     </div>
 
     <footer>
-      Built in Victoria. Designed for Australia.<br/>
+      Built in Victoria. Designed for Australia. Ruby is Awesome!<br/>
       <span class="small">Contact: allthewaycarpentry@gmail.com</span>
       <div class="footer-actions">
         <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
@@ -65,28 +70,6 @@
 
   </div>
 
-  <script>
-    (function(){
-      const input = document.getElementById('gSearch');
-      const clearBtn = document.getElementById('gClear');
-      const items = Array.from(document.querySelectorAll('.filter-item'));
-
-      function norm(s){ return (s || '').toLowerCase().trim(); }
-
-      function run(){
-        const q = norm(input.value);
-        items.forEach(el => {
-          const text = norm(el.textContent);
-          const tags = norm(el.getAttribute('data-tags'));
-          const hit = !q || text.includes(q) || tags.includes(q);
-          el.style.display = hit ? '' : 'none';
-        });
-      }
-
-      input.addEventListener('input', run);
-      clearBtn.addEventListener('click', () => { input.value=''; run(); input.focus(); });
-      run();
-    })();
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
