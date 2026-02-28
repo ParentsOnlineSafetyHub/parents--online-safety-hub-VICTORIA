@@ -1,155 +1,103 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Device Controls • POSH Aussie</title>
-  <link rel="stylesheet" href="style.css"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Device Controls • POSH Aussie</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
-  <script src="app.js"></script>
 <body>
-  <div class="wrap">
 
-    <h1>POSH Aussie</h1>
-    <p class="tagline"><strong>Device Controls</strong> — lock the device first (KISS: Device → Platform → Apps).</p>
+<div class="wrap">
 
-    <div id="nav"></div>
+<h1>POSH Aussie</h1>
+<p class="tagline"><strong>Device Controls</strong> — Lock the device first. Keep it simple.</p>
 
-    <div class="card">
-      <h2>Why Device Controls Matter</h2>
-      <p class="note">
-        Most problems happen because default settings are open.
-        Device-level controls give you the strongest baseline: time limits, content filters, purchase locks,
-        and safer defaults — before you even touch an app.
-      </p>
-    </div>
+<div id="nav"></div>
 
-    <div class="card">
-      <h2>Choose your device type</h2>
-      <p class="note">Pick the closest match. (We’ll keep expanding these guides.)</p>
+<div class="card">
+<h2>Why Device Controls Matter</h2>
+<p class="note">
+Most problems happen because default settings are open.
+Device-level controls give you the strongest baseline:
+time limits, content filters, purchase approvals and safer defaults —
+before you even touch an app.
+</p>
+</div>
 
-      <div class="btn-grid">
-        <a class="btn" href="#apple">Apple (iPhone / iPad)</a>
-        <a class="btn" href="#android">Android (Samsung / Google / etc.)</a>
-        <a class="btn" href="#windows">Windows Laptop/PC</a>
-        <a class="btn" href="#chromebook">Chromebook</a>
-      </div>
-    </div>
+<div class="card">
+<h2>Choose your device type</h2>
+<p class="note">Pick the closest match for your household.</p>
 
-    <div class="card" id="apple">
-      <h2>Apple: Screen Time (iPhone/iPad)</h2>
+<div class="btn-grid">
+<a class="btn" href="#apple">Apple (iPhone / iPad)</a>
+<a class="btn" href="#android">Android (Samsung / Google / etc.)</a>
+<a class="btn" href="#windows">Windows Laptop / PC</a>
+<a class="btn" href="#chromebook">Chromebook</a>
+</div>
+</div>
 
-      <p class="note"><strong>1) Turn on Screen Time</strong><br/>
-        Settings → Screen Time → Turn On → This is My Child’s iPhone/iPad.
-      </p>
+<!-- Apple -->
+<div class="card" id="apple">
+<h2>Apple: Screen Time</h2>
+<p class="note"><strong>1) Turn on Screen Time</strong><br>
+Settings → Screen Time → Turn On → This is My Child’s Device</p>
 
-      <p class="note"><strong>2) Set a Screen Time Passcode</strong><br/>
-        Settings → Screen Time → Use Screen Time Passcode (keep this private).
-      </p>
+<p class="note"><strong>2) Set a Passcode</strong><br>
+Screen Time → Use Screen Time Passcode (keep private)</p>
 
-      <p class="note"><strong>3) Downtime (bedtime lock)</strong><br/>
-        Screen Time → Downtime → set bedtime hours (e.g., 8pm–7am).
-      </p>
+<p class="note"><strong>3) Downtime</strong><br>
+Screen Time → Downtime → Set bedtime lock hours</p>
 
-      <p class="note"><strong>4) App Limits</strong><br/>
-        Screen Time → App Limits → set daily limits for Social, Games, Entertainment.
-      </p>
+<p class="note"><strong>4) App Limits</strong><br>
+Screen Time → App Limits → Set daily limits</p>
 
-      <p class="note"><strong>5) Content & Privacy Restrictions</strong><br/>
-        Screen Time → Content & Privacy Restrictions → ON<br/>
-        • iTunes/App Store Purchases → Don’t Allow<br/>
-        • Allowed Apps → turn off what you don’t want<br/>
-        • Content Restrictions → age-appropriate
-      </p>
+<p class="note"><strong>5) Content & Privacy</strong><br>
+Screen Time → Content & Privacy Restrictions → ON</p>
+</div>
 
-      <p class="note"><strong>6) Communication Limits (recommended)</strong><br/>
-        Screen Time → Communication Limits → contacts-only where possible.
-      </p>
-    </div>
+<!-- Android -->
+<div class="card" id="android">
+<h2>Android: Google Family Link</h2>
+<p class="note"><strong>1) Install Family Link</strong></p>
+<p class="note"><strong>2) Set Screen Time + Bedtime</strong></p>
+<p class="note"><strong>3) Require App Approval</strong></p>
+<p class="note"><strong>4) Enable Content Restrictions</strong></p>
+</div>
 
-    <div class="card" id="android">
-      <h2>Android: Family Link (recommended)</h2>
+<!-- Windows -->
+<div class="card" id="windows">
+<h2>Windows: Microsoft Family Safety</h2>
+<p class="note">Add child account → Enable screen time → Turn on web filters → Require purchase approval</p>
+</div>
 
-      <p class="note"><strong>1) Install Google Family Link</strong><br/>
-        Parent phone: install “Family Link”<br/>
-        Child phone: follow setup prompts.
-      </p>
+<!-- Chromebook -->
+<div class="card" id="chromebook">
+<h2>Chromebook</h2>
+<p class="note">Supervise using Family Link → Enable SafeSearch → Set time limits</p>
+</div>
 
-      <p class="note"><strong>2) Screen time & bedtime</strong><br/>
-        Family Link → Screen time → Daily limit + Bedtime.
-      </p>
+<div class="card">
+<h2>Next Step</h2>
+<div class="btn-grid">
+<a class="btn" href="v3-platforms.html">Go to Platforms</a>
+<a class="btn secondary" href="v3-gaming.html">Go to Gaming</a>
+<a class="btn secondary" href="v3-socials.html">Go to Social Apps</a>
+</div>
+</div>
 
-      <p class="note"><strong>3) App approvals</strong><br/>
-        Family Link → Controls → Google Play → Require approval for downloads/purchases.
-      </p>
+<footer>
+Built in Victoria. Designed for Australia. Ruby is Awesome!<br/>
+<span class="small">Contact: allthewaycarpentry@gmail.com</span>
+<div class="footer-actions">
+<a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
+Support POSH Aussie
+</a>
+</div>
+</footer>
 
-      <p class="note"><strong>4) Content restrictions</strong><br/>
-        Family Link → Controls → Content restrictions → set age ratings + block explicit content.
-      </p>
+</div>
 
-      <p class="note"><strong>5) Location (optional)</strong><br/>
-        Family Link → Location → on (if appropriate for your family).
-      </p>
-    </div>
-
-    <div class="card" id="windows">
-      <h2>Windows: Microsoft Family Safety</h2>
-
-      <p class="note"><strong>1) Add the child account</strong><br/>
-        Settings → Accounts → Family → Add a family member.
-      </p>
-
-      <p class="note"><strong>2) Screen time</strong><br/>
-        Use Microsoft Family Safety to set device/app limits.
-      </p>
-
-      <p class="note"><strong>3) Content filters</strong><br/>
-        Enable web filters and block adult content.
-      </p>
-
-      <p class="note"><strong>4) Purchases</strong><br/>
-        Require approval for purchases and disable saved payment methods.
-      </p>
-    </div>
-
-    <div class="card" id="chromebook">
-      <h2>Chromebook: Family Link + Google controls</h2>
-
-      <p class="note"><strong>1) Manage with Family Link</strong><br/>
-        Chromebooks can be supervised using Family Link (child account required).
-      </p>
-
-      <p class="note"><strong>2) SafeSearch & content filters</strong><br/>
-        Turn on SafeSearch, restrict sites, and control extensions.
-      </p>
-
-      <p class="note"><strong>3) Time limits</strong><br/>
-        Set daily limits + bedtime lock.
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>Next step</h2>
-      <p class="note">
-        Once the device is locked, move to Platforms → then Games/Social apps.
-      </p>
-      <div class="btn-grid">
-        <a class="btn" href="v3-platforms.html">Go to Platforms</a>
-        <a class="btn secondary" href="v3-gaming.html">Go to Gaming</a>
-        <a class="btn secondary" href="v3-socials.html">Go to Social Apps</a>
-      </div>
-    </div>
-
-    <footer>
-      Built in Victoria. Designed for Australia.<br/>
-      <span class="small">Contact: allthewaycarpentry@gmail.com</span>
-      <div class="footer-actions">
-        <a class="btn donate" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
-          Support POSH Aussie
-        </a>
-      </div>
-    </footer>
-
-  </div>
+<script src="app.js"></script>
 </body>
 </html>
