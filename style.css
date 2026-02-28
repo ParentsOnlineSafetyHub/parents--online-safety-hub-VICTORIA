@@ -45,11 +45,11 @@ body{
   text-align:center;
 }
 
-/* ===== LOGO ===== */
+/* ===== POSH Brand Heading (bigger + bordered) ===== */
 h1{
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 2.7rem;
+  font-size: 2.55rem;
   letter-spacing: 1px;
   margin: 10px auto 16px;
   display:inline-block;
@@ -91,6 +91,7 @@ h2{
 .note{
   color:var(--muted);
   line-height:1.65;
+  text-align:left;
 }
 
 .small{
@@ -166,7 +167,7 @@ nav a:hover::after{
   margin-top:14px;
 }
 
-/* Step numbers */
+/* Step numbers for the core path */
 .btn::before { content:""; }
 .btn[href*="age-guide"]::before { content:"① "; }
 .btn[href*="device-controls"]::before { content:"② "; }
