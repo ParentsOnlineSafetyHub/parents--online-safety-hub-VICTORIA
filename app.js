@@ -1,4 +1,20 @@
-// POSH minimal JS (kept simple on purpose)
-(function(){
-  // optional: allow ?v=## cache-busting with nothing extra needed
-})();
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("nav").innerHTML = `
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="v3-start.html">Start</a>
+      <a href="v3-house-rules.html">House Rules</a>
+      <a href="v3-redflags.html">Red Flags</a>
+      <a href="v3-device-controls.html">Device Controls</a>
+      <a href="v3-platforms.html">Platforms</a>
+      <a href="v3-gaming.html">Gaming</a>
+      <a href="v3-socials.html">Social Apps</a>
+      <a href="v3-videochat.html">Video Chat</a>
+      <a href="v3-mindset.html">Mindset</a>
+      <a href="v3-reporting.html">Reporting</a>
+      <a href="v3-downloads.html">Downloads</a>
+      <a href="v3-subscriptions.html">Cancel Subs</a>
+      <a href="v3-support.html">Support</a>
+    </nav>
+  `;
+});
