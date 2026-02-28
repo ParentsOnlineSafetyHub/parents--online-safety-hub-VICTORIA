@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
 
 :root{
-  /* Background + surfaces */
   --bgTop:#051327;
   --bgMid:#092a52;
   --bgBot:#061a33;
@@ -9,16 +8,13 @@
   --cardA:#0f2a55;
   --cardB:#0c2346;
 
-  /* Text */
   --text:#f4f7ff;
   --muted:rgba(244,247,255,.78);
 
-  /* Accents */
   --blue:#39b0ff;
   --cyan:#22e6d3;
   --purple:#7b6dff;
 
-  /* Buttons */
   --btn1:#3fb7ff;
   --btn2:#21e6d2;
   --btn1h:#6fd0ff;
@@ -35,12 +31,10 @@ body{
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color:var(--text);
 
-  /* richer gradient + colour flares (more “alive”) */
   background:
-    radial-gradient(900px 520px at 14% 8%, rgba(57,176,255,.30), transparent 60%),
-    radial-gradient(900px 520px at 86% 12%, rgba(34,230,211,.22), transparent 62%),
-    radial-gradient(950px 600px at 55% 0%, rgba(123,109,255,.18), transparent 65%),
-    radial-gradient(1200px 900px at 50% 120%, rgba(34,230,211,.10), transparent 55%),
+    radial-gradient(900px 520px at 14% 8%, rgba(57,176,255,.25), transparent 60%),
+    radial-gradient(900px 520px at 86% 12%, rgba(34,230,211,.20), transparent 62%),
+    radial-gradient(950px 600px at 55% 0%, rgba(123,109,255,.15), transparent 65%),
     linear-gradient(180deg, var(--bgTop), var(--bgMid) 45%, var(--bgBot));
 }
 
@@ -51,32 +45,28 @@ body{
   text-align:center;
 }
 
-/* ===== LOGO HEADING (Refined Pop – Mature) ===== */
+/* ===== LOGO ===== */
 h1{
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 2.8rem;
+  font-size: 2.7rem;
   letter-spacing: 1px;
-  margin: 8px auto 14px;
+  margin: 10px auto 16px;
   display:inline-block;
-  padding: 16px 28px;
-  border-radius: 18px;
+  padding: 14px 26px;
+  border-radius: 16px;
 
-  /* refined gradient text */
   background: linear-gradient(135deg, #8fd8ff, #39b0ff 40%, #22e6d3 85%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 
-  /* subtle outline */
   -webkit-text-stroke: 1px rgba(255,255,255,.55);
 
-  /* depth without cartoon */
   text-shadow:
     0 4px 0 rgba(0,0,0,.25),
-    0 12px 24px rgba(0,0,0,.45);
+    0 10px 22px rgba(0,0,0,.45);
 
-  /* subtle badge container */
   border: 2px solid rgba(57,176,255,.35);
   background-color: rgba(8,25,50,.25);
   box-shadow:
@@ -84,22 +74,6 @@ h1{
     0 10px 30px rgba(0,0,0,.45);
 }
 
-  /* outline + shadow pop */
-  -webkit-text-stroke: 2px rgba(255,255,255,.82);
-  text-shadow:
-    0 6px 0 rgba(0,0,0,.35),
-    0 14px 28px rgba(0,0,0,.55),
-    0 0 22px rgba(57,176,255,.25);
-
-  /* subtle logo plate behind */
-  border: 2px solid rgba(57,176,255,.45);
-  background-color: rgba(8,25,50,.25);
-  box-shadow:
-    0 0 0 6px rgba(57,176,255,.06),
-    0 14px 40px rgba(0,0,0,.45);
-}
-
-/* tagline stays clean */
 .tagline{
   font-size:1.15rem;
   margin: 0 0 26px;
@@ -111,13 +85,12 @@ h2{
   font-size:1.35rem;
   margin:0 0 12px;
   letter-spacing:.2px;
-  text-align:left;
+  text-align:center;
 }
 
 .note{
   color:var(--muted);
   line-height:1.65;
-  text-align:left;
 }
 
 .small{
@@ -125,7 +98,7 @@ h2{
   color:rgba(244,247,255,.70);
 }
 
-/* ===== NAV (now gets the same aqua hover life) ===== */
+/* ===== NAV ===== */
 nav{
   display:flex;
   justify-content:center;
@@ -147,10 +120,9 @@ nav a{
   position: relative;
   overflow: hidden;
 
-  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
 }
 
-/* little shine sweep like buttons */
 nav a::after{
   content:"";
   position:absolute;
@@ -161,14 +133,13 @@ nav a::after{
   background: rgba(255,255,255,.16);
   transform: rotate(22deg);
   transition: left .38s ease;
-  pointer-events:none;
 }
 
 nav a:hover{
   transform: translateY(-2px);
   background: rgba(34,230,211,.18);
   border-color: rgba(34,230,211,.45);
-  box-shadow: 0 14px 28px rgba(0,0,0,.30), 0 0 18px rgba(34,230,211,.14);
+  box-shadow: 0 12px 24px rgba(0,0,0,.30);
   color:#fff;
 }
 
@@ -195,7 +166,13 @@ nav a:hover::after{
   margin-top:14px;
 }
 
-/* ===== Buttons (colour + hover LIFE) ===== */
+/* Step numbers */
+.btn::before { content:""; }
+.btn[href*="age-guide"]::before { content:"① "; }
+.btn[href*="device-controls"]::before { content:"② "; }
+.btn[href*="house-rules"]::before { content:"③ "; }
+
+/* ===== Buttons ===== */
 .btn{
   position:relative;
   display:inline-flex;
@@ -214,7 +191,7 @@ nav a:hover::after{
   border:1px solid rgba(255,255,255,.18);
 
   box-shadow: 0 10px 22px rgba(0,0,0,.30);
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease, background .18s ease;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
   overflow:hidden;
 }
 
@@ -228,13 +205,12 @@ nav a:hover::after{
   background: rgba(255,255,255,.22);
   transform: rotate(22deg);
   transition: left .38s ease;
-  pointer-events:none;
 }
 
 .btn:hover{
   transform: translateY(-4px);
   box-shadow: var(--shadow2);
-  filter: saturate(1.10) brightness(1.03);
+  filter: saturate(1.08) brightness(1.03);
   background: linear-gradient(135deg, var(--btn1h), var(--btn2h));
 }
 
