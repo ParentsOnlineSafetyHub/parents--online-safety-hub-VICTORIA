@@ -35,6 +35,7 @@ body{
     radial-gradient(900px 520px at 14% 8%, rgba(57,176,255,.25), transparent 60%),
     radial-gradient(900px 520px at 86% 12%, rgba(34,230,211,.20), transparent 62%),
     radial-gradient(950px 600px at 55% 0%, rgba(123,109,255,.15), transparent 65%),
+    radial-gradient(1100px 760px at 50% 120%, rgba(34,230,211,.10), transparent 55%),
     linear-gradient(180deg, var(--bgTop), var(--bgMid) 45%, var(--bgBot));
 }
 
@@ -45,39 +46,50 @@ body{
   text-align:center;
 }
 
-/* ===== POSH Brand Heading (bigger + bordered) ===== */
-h1{
+/* ===== Header System: POSH (brand) + Page Title (dominant) ===== */
+.brand{
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 2.55rem;
-  letter-spacing: 1px;
-  margin: 10px auto 16px;
-  display:inline-block;
-  padding: 14px 26px;
+  font-size: 1.15rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 14px;
+
+  background: rgba(8,25,50,.20);
+  border: 2px solid rgba(57,176,255,.30);
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+
+  color: var(--blue);
+  margin: 6px auto 10px;
+}
+
+.page-title{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 2.20rem;
+  letter-spacing: .8px;
+
+  display: inline-block;
+  padding: 12px 22px;
   border-radius: 16px;
 
-  background: linear-gradient(135deg, #8fd8ff, #39b0ff 40%, #22e6d3 85%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  background: rgba(8,25,50,.26);
+  border: 2px solid rgba(34,230,211,.28);
+  box-shadow: 0 14px 34px rgba(0,0,0,.42);
 
-  -webkit-text-stroke: 1px rgba(255,255,255,.55);
-
-  text-shadow:
-    0 4px 0 rgba(0,0,0,.25),
-    0 10px 22px rgba(0,0,0,.45);
-
-  border: 2px solid rgba(57,176,255,.35);
-  background-color: rgba(8,25,50,.25);
-  box-shadow:
-    0 0 0 5px rgba(57,176,255,.05),
-    0 10px 30px rgba(0,0,0,.45);
+  color: var(--text);
+  margin: 0 auto 12px;
+  text-align: center;
 }
 
 .tagline{
-  font-size:1.15rem;
+  font-size:1.10rem;
   margin: 0 0 26px;
   color:var(--muted);
+  text-align:center;
 }
 
 h2{
@@ -121,7 +133,7 @@ nav a{
   position: relative;
   overflow: hidden;
 
-  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
 }
 
 nav a::after{
@@ -134,13 +146,14 @@ nav a::after{
   background: rgba(255,255,255,.16);
   transform: rotate(22deg);
   transition: left .38s ease;
+  pointer-events:none;
 }
 
 nav a:hover{
   transform: translateY(-2px);
   background: rgba(34,230,211,.18);
   border-color: rgba(34,230,211,.45);
-  box-shadow: 0 12px 24px rgba(0,0,0,.30);
+  box-shadow: 0 12px 24px rgba(0,0,0,.30), 0 0 18px rgba(34,230,211,.12);
   color:#fff;
 }
 
@@ -192,7 +205,7 @@ nav a:hover::after{
   border:1px solid rgba(255,255,255,.18);
 
   box-shadow: 0 10px 22px rgba(0,0,0,.30);
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease, background .18s ease;
   overflow:hidden;
 }
 
@@ -206,6 +219,7 @@ nav a:hover::after{
   background: rgba(255,255,255,.22);
   transform: rotate(22deg);
   transition: left .38s ease;
+  pointer-events:none;
 }
 
 .btn:hover{
@@ -239,7 +253,7 @@ nav a:hover::after{
   padding:16px 18px;
 }
 
-/* Breadcrumb */
+/* ===== Breadcrumb ===== */
 .breadcrumb{
   text-align:left;
   font-size:.92rem;
@@ -251,9 +265,12 @@ nav a:hover::after{
   color: var(--blue);
   text-decoration:none;
 }
-.breadcrumb a:hover{ text-decoration: underline; }
 
-/* Footer */
+.breadcrumb a:hover{
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
 footer{
   margin-top:30px;
   padding-top:20px;
