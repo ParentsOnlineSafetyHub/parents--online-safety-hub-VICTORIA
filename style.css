@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
 
 :root{
   --bgTop:#051327;
@@ -13,7 +13,6 @@
 
   --blue:#39b0ff;
   --cyan:#22e6d3;
-  --purple:#7b6dff;
 
   --btn1:#3fb7ff;
   --btn2:#21e6d2;
@@ -32,10 +31,8 @@ body{
   color:var(--text);
 
   background:
-    radial-gradient(900px 520px at 14% 8%, rgba(57,176,255,.25), transparent 60%),
-    radial-gradient(900px 520px at 86% 12%, rgba(34,230,211,.20), transparent 62%),
-    radial-gradient(950px 600px at 55% 0%, rgba(123,109,255,.15), transparent 65%),
-    radial-gradient(1100px 760px at 50% 120%, rgba(34,230,211,.10), transparent 55%),
+    radial-gradient(900px 520px at 14% 8%, rgba(57,176,255,.22), transparent 60%),
+    radial-gradient(900px 520px at 86% 12%, rgba(34,230,211,.18), transparent 62%),
     linear-gradient(180deg, var(--bgTop), var(--bgMid) 45%, var(--bgBot));
 }
 
@@ -46,237 +43,145 @@ body{
   text-align:center;
 }
 
-/* ===== Header System: POSH (brand) + Page Title (dominant) ===== */
+/* ===== HEADER SYSTEM (LOCKED + CONSISTENT) ===== */
+
 .brand{
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 1.15rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  font-family:"Montserrat", sans-serif;
+  font-weight:900;
+  font-size:1.1rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
 
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 14px;
+  display:inline-block;
+  padding:8px 18px;
+  margin:0 auto 14px;
 
-  background: rgba(8,25,50,.20);
-  border: 2px solid rgba(57,176,255,.30);
-  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+  border-radius:14px;
+  border:2px solid rgba(57,176,255,.35);
+  background:rgba(8,25,50,.25);
 
-  color: var(--blue);
-  margin: 6px auto 10px;
+  color:var(--blue);
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
 }
 
 .page-title{
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 2.20rem;
-  letter-spacing: .8px;
+  font-family:"Montserrat", sans-serif;
+  font-weight:900;
+  font-size:2.3rem;
+  letter-spacing:.5px;
 
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 16px;
+  display:inline-block;
+  padding:12px 26px;
+  margin:0 auto 12px;
 
-  background: rgba(8,25,50,.26);
-  border: 2px solid rgba(34,230,211,.28);
-  box-shadow: 0 14px 34px rgba(0,0,0,.42);
+  border-radius:18px;
+  border:2px solid rgba(34,230,211,.35);
+  background:rgba(8,25,50,.30);
 
-  color: var(--text);
-  margin: 0 auto 12px;
-  text-align: center;
+  color:var(--text);
+  box-shadow:0 12px 30px rgba(0,0,0,.5);
 }
 
 .tagline{
-  font-size:1.10rem;
-  margin: 0 0 26px;
+  font-size:1.05rem;
+  margin:0 0 30px;
   color:var(--muted);
-  text-align:center;
-}
-
-h2{
-  font-family: Montserrat, Inter, system-ui, sans-serif;
-  font-size:1.35rem;
-  margin:0 0 12px;
-  letter-spacing:.2px;
-  text-align:center;
-}
-
-.note{
-  color:var(--muted);
-  line-height:1.65;
-  text-align:left;
-}
-
-.small{
-  font-size:.9rem;
-  color:rgba(244,247,255,.70);
 }
 
 /* ===== NAV ===== */
+
 nav{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
   gap:12px;
-  margin: 0 auto 28px;
+  margin:0 auto 28px;
 }
 
 nav a{
   text-decoration:none;
   font-weight:800;
-  color:rgba(244,247,255,.90);
+  color:rgba(244,247,255,.9);
   padding:10px 14px;
   border-radius:999px;
-
-  background: rgba(255,255,255,.06);
+  background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.10);
-
-  position: relative;
-  overflow: hidden;
-
-  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  top:-70%;
-  left:-80%;
-  width:60%;
-  height:240%;
-  background: rgba(255,255,255,.16);
-  transform: rotate(22deg);
-  transition: left .38s ease;
-  pointer-events:none;
+  transition:.2s ease;
 }
 
 nav a:hover{
-  transform: translateY(-2px);
-  background: rgba(34,230,211,.18);
-  border-color: rgba(34,230,211,.45);
-  box-shadow: 0 12px 24px rgba(0,0,0,.30), 0 0 18px rgba(34,230,211,.12);
-  color:#fff;
+  background:rgba(34,230,211,.18);
+  border-color:rgba(34,230,211,.45);
+  transform:translateY(-2px);
 }
 
-nav a:hover::after{
-  left:140%;
-}
+/* ===== CARDS ===== */
 
-/* ===== Cards ===== */
 .card{
-  background: linear-gradient(180deg, var(--cardA), var(--cardB));
+  background:linear-gradient(180deg, var(--cardA), var(--cardB));
   border:1px solid rgba(255,255,255,.10);
   border-radius:18px;
   padding:24px 22px;
-  margin: 0 0 18px;
-  box-shadow: var(--shadow);
+  margin:0 0 20px;
+  box-shadow:var(--shadow);
   text-align:left;
 }
 
-/* ===== Button Grid ===== */
+h2{
+  font-family:Montserrat, sans-serif;
+  font-size:1.3rem;
+  margin:0 0 12px;
+  text-align:center;
+}
+
+.note{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* ===== BUTTONS ===== */
+
 .btn-grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
   gap:14px;
   margin-top:14px;
 }
 
-/* Step numbers for the core path */
-.btn::before { content:""; }
-.btn[href*="age-guide"]::before { content:"① "; }
-.btn[href*="device-controls"]::before { content:"② "; }
-.btn[href*="house-rules"]::before { content:"③ "; }
-
-/* ===== Buttons ===== */
 .btn{
-  position:relative;
   display:inline-flex;
-  align-items:center;
   justify-content:center;
-
+  align-items:center;
   min-height:48px;
   padding:14px 16px;
-
   border-radius:14px;
   text-decoration:none;
   font-weight:900;
-
   color:#05243f;
-  background: linear-gradient(135deg, var(--btn1), var(--btn2));
-  border:1px solid rgba(255,255,255,.18);
-
-  box-shadow: 0 10px 22px rgba(0,0,0,.30);
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease, background .18s ease;
-  overflow:hidden;
-}
-
-.btn::after{
-  content:"";
-  position:absolute;
-  top:-60%;
-  left:-70%;
-  width:55%;
-  height:220%;
-  background: rgba(255,255,255,.22);
-  transform: rotate(22deg);
-  transition: left .38s ease;
-  pointer-events:none;
+  background:linear-gradient(135deg,var(--btn1),var(--btn2));
+  box-shadow:0 10px 22px rgba(0,0,0,.3);
+  transition:.2s ease;
 }
 
 .btn:hover{
-  transform: translateY(-4px);
-  box-shadow: var(--shadow2);
-  filter: saturate(1.08) brightness(1.03);
-  background: linear-gradient(135deg, var(--btn1h), var(--btn2h));
-}
-
-.btn:hover::after{
-  left:130%;
+  transform:translateY(-4px);
+  box-shadow:var(--shadow2);
+  background:linear-gradient(135deg,var(--btn1h),var(--btn2h));
 }
 
 .btn.secondary{
-  color: rgba(244,247,255,.95);
-  background: linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.08));
-  border:1px solid rgba(255,255,255,.14);
+  color:var(--text);
+  background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.08));
 }
 
-.btn.secondary:hover{
-  background: linear-gradient(135deg, rgba(57,176,255,.24), rgba(34,230,211,.12));
-}
+/* ===== FOOTER ===== */
 
-.btn.danger{
-  color:#fff;
-  background: linear-gradient(135deg, #ff3b6a, #ffb020);
-}
-
-.btn.donate{
-  font-size:1.12rem;
-  padding:16px 18px;
-}
-
-/* ===== Breadcrumb ===== */
-.breadcrumb{
-  text-align:left;
-  font-size:.92rem;
-  color:rgba(244,247,255,.70);
-  margin: 8px 0 14px;
-}
-
-.breadcrumb a{
-  color: var(--blue);
-  text-decoration:none;
-}
-
-.breadcrumb a:hover{
-  text-decoration: underline;
-}
-
-/* ===== Footer ===== */
 footer{
   margin-top:30px;
   padding-top:20px;
   border-top:1px solid rgba(255,255,255,.12);
   text-align:center;
-  color:rgba(244,247,255,.82);
+  color:rgba(244,247,255,.8);
 }
 
 .footer-actions{
