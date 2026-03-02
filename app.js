@@ -6,6 +6,7 @@
     <a href="v3-age-guide.html">Age Guide</a>
     <a href="v3-house-rules.html">House Rules</a>
     <a href="v3-redflags.html">Red Flags</a>
+    <a href="v3-algorithm-awareness.html">Algorithm Awareness</a>
     <a href="v3-device-controls.html">Device Controls</a>
     <a href="v3-platforms.html">Platforms</a>
     <a href="v3-gaming.html">Gaming</a>
