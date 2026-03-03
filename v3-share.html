@@ -10,4 +10,136 @@
   <div class="wrap">
 
     <div class="brand">POSH</div>
-    <h1 class="page-title">Share POSH</h1
+    <h1 class="page-title">Share POSH</h1>
+    <p class="tagline"><strong>Awareness spreads protection.</strong> Share with one parent today.</p>
+
+    <div id="nav"></div>
+
+    <div class="card">
+      <h2>Copy the POSH link</h2>
+      <p class="note">Use this link in posts, DMs, group chats, school communities, and parent circles.</p>
+
+      <div class="btn-grid">
+        <button class="btn" id="copyLinkBtn" type="button">Copy POSH Link</button>
+        <a class="btn secondary" href="v3-start.html">Start Here</a>
+        <a class="btn secondary" href="v3-downloads.html">Downloads</a>
+      </div>
+
+      <p class="note" style="margin-top:12px;">
+        Link: <span id="poshLink" style="word-break:break-all;"></span>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Post templates (copy & paste)</h2>
+      <p class="note">Short posts win. Use one of these and swap in your own words if you want.</p>
+
+      <div class="card" style="margin:14px 0 0;">
+        <h2 style="margin-bottom:8px;">Template 1 (short)</h2>
+        <p class="note" id="t1">
+POSH is a free hub helping parents lock down kids’ device + app settings step-by-step.
+Default settings aren’t built for safety. This makes it simple.
+
+Start here: 
+        </p>
+        <div class="btn-grid">
+          <button class="btn secondary" type="button" data-copy="t1">Copy Template 1</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin:14px 0 0;">
+        <h2 style="margin-bottom:8px;">Template 2 (community)</h2>
+        <p class="note" id="t2">
+Parents — if your kids use games or social apps, please lock the basics.
+POSH gives clear, step-by-step settings for device controls, platforms, and the highest risk apps.
+
+Start here:
+        </p>
+        <div class="btn-grid">
+          <button class="btn secondary" type="button" data-copy="t2">Copy Template 2</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin:14px 0 0;">
+        <h2 style="margin-bottom:8px;">Template 3 (direct)</h2>
+        <p class="note" id="t3">
+If it has DMs, groups, chat, or live calls — it needs locking and supervision.
+POSH is a free, simple hub for parents to reduce online risk.
+
+Start here:
+        </p>
+        <div class="btn-grid">
+          <button class="btn secondary" type="button" data-copy="t3">Copy Template 3</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Share destinations</h2>
+      <p class="note">Aim for groups and communities where parents already gather.</p>
+      <p class="note">✅ Local community Facebook groups</p>
+      <p class="note">✅ School parent groups / class chats</p>
+      <p class="note">✅ Sporting clubs</p>
+      <p class="note">✅ Parent friends in DMs</p>
+      <p class="note">✅ Workplace parent circles</p>
+    </div>
+
+    <div class="card">
+      <h2>Support keeps POSH running</h2>
+      <p class="note">If you want POSH to stay updated and expand Australia-wide, support helps keep the work moving.</p>
+      <div class="btn-grid">
+        <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">Support POSH</a>
+        <a class="btn secondary" href="v3-why-posh-exists.html">Why POSH Exists</a>
+      </div>
+    </div>
+
+    <footer>
+      Built in Victoria. Designed for Australia.<br/>
+      <span class="small">Contact: allthewaycarpentry@gmail.com</span>
+      <div class="footer-actions">
+        <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">Support this movement</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+
+  <script>
+    (function () {
+      const siteLink = window.location.origin + "/";
+      const linkEl = document.getElementById("poshLink");
+      if (linkEl) linkEl.textContent = siteLink;
+
+      const copy = async (text) => {
+        try {
+          await navigator.clipboard.writeText(text);
+          return true;
+        } catch (e) {
+          return false;
+        }
+      };
+
+      const copyBtn = document.getElementById("copyLinkBtn");
+      if (copyBtn) {
+        copyBtn.addEventListener("click", async () => {
+          const ok = await copy(siteLink);
+          copyBtn.textContent = ok ? "Copied!" : "Copy failed";
+          setTimeout(() => (copyBtn.textContent = "Copy POSH Link"), 1200);
+        });
+      }
+
+      document.querySelectorAll("[data-copy]").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const id = btn.getAttribute("data-copy");
+          const el = document.getElementById(id);
+          const text = (el ? el.textContent : "").trim() + "\n" + siteLink;
+          const ok = await copy(text);
+          btn.textContent = ok ? "Copied!" : "Copy failed";
+          setTimeout(() => (btn.textContent = "Copy " + (id === "t1" ? "Template 1" : id === "t2" ? "Template 2" : "Template 3")), 1200);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
