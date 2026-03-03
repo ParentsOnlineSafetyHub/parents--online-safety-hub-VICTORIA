@@ -112,7 +112,7 @@ h2{
   color:rgba(244,247,255,.70);
 }
 
-/* ===== Hero (full logo shown) ===== */
+/* ===== Hero (full logo shown + centered) ===== */
 .hero{
   position: relative;
   width: 100%;
@@ -123,15 +123,17 @@ h2{
   border: 1px solid rgba(255,255,255,.10);
   box-shadow: var(--shadow);
   background: rgba(0,0,0,.35);
+  text-align: center;
 }
 
 .hero-img{
-  width: 80%;
+  width: 100%;
   display: block;
+  margin: 0 auto;
 }
 
 .hero-img-contain{
-  height: 600px;
+  height: 360px;
   object-fit: contain;
   object-position: center center;
 }
@@ -139,10 +141,9 @@ h2{
 .under-hero-actions{
   display:flex;
   justify-content:center;
-  gap:8px;
+  gap:12px;
   flex-wrap:wrap;
 }
-
 /* ===== NAV ===== */
 nav{
   display:flex;
