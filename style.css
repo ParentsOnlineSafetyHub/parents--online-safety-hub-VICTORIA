@@ -1,3 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --bgTop:#051327;
+  --bgMid:#092a52;
+  --bgBot:#061a33;
+
+  --cardA:#0f2a55;
+  --cardB:#0c2346;
+
+  --text:#f4f7ff;
+  --muted:rgba(244,247,255,.78);
+
+  --blue:#39b0ff;
+  --cyan:#22e6d3;
+
+  --btn1:#3fb7ff;
+  --btn2:#21e6d2;
+  --btn1h:#6fd0ff;
+  --btn2h:#66ffe6;
+
+  --shadow:0 10px 26px rgba(0,0,0,.38);
+  --shadow2:0 18px 48px rgba(0,0,0,.52);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+
+  background:
+    radial-gradient(900px 520px at 14% 8%, rgba(57,176,255,.22), transparent 60%),
+    radial-gradient(900px 520px at 86% 12%, rgba(34,230,211,.18), transparent 62%),
+    linear-gradient(180deg, var(--bgTop), var(--bgMid) 45%, var(--bgBot));
+}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:40px 18px 60px;
+  text-align:center;
+}
+
+/* ===== HEADER SYSTEM (CONSISTENT) ===== */
+
+.brand{
+  font-family:"Montserrat", sans-serif;
+  font-weight:900;
+  font-size:1.1rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
+
+  display:inline-block;
+  padding:8px 18px;
+  margin:0 auto 14px;
+
+  border-radius:14px;
+  border:2px solid rgba(57,176,255,.35);
+  background:rgba(8,25,50,.25);
+
+  color:var(--blue);
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+
+.page-title{
+  font-family:"Montserrat", sans-serif;
+  font-weight:900;
+  font-size:2.3rem;
+  letter-spacing:.5px;
+
+  display:inline-block;
+  padding:12px 26px;
+  margin:0 auto 12px;
+
+  border-radius:18px;
+  border:2px solid rgba(34,230,211,.35);
+  background:rgba(8,25,50,.30);
+
+  color:var(--text);
+  box-shadow:0 12px 30px rgba(0,0,0,.5);
+}
+
+.tagline{
+  font-size:1.05rem;
+  margin:0 0 30px;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* ===== HERO (HOMEPAGE BANNER) ===== */
+
 .hero{
   position: relative;
   width: 100%;
@@ -48,6 +141,129 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+
+/* ===== NAV ===== */
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:0 auto 28px;
+}
+
+nav a{
+  text-decoration:none;
+  font-weight:800;
+  color:rgba(244,247,255,.90);
+  padding:10px 14px;
+  border-radius:999px;
+
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+
+  position: relative;
+  overflow: hidden;
+
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+
+nav a:hover{
+  transform: translateY(-2px);
+  background: rgba(34,230,211,.18);
+  border-color: rgba(34,230,211,.45);
+  box-shadow: 0 12px 24px rgba(0,0,0,.30);
+  color:#fff;
+}
+
+/* ===== CARDS ===== */
+
+.card{
+  background: linear-gradient(180deg, var(--cardA), var(--cardB));
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  padding:24px 22px;
+  margin: 0 0 20px;
+  box-shadow: var(--shadow);
+  text-align:left;
+}
+
+h2{
+  font-family:Montserrat, sans-serif;
+  font-size:1.3rem;
+  margin:0 0 12px;
+  text-align:center;
+}
+
+.note{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* ===== BUTTONS ===== */
+
+.btn-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:14px;
+  margin-top:14px;
+}
+
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:48px;
+  padding:14px 16px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  color:#05243f;
+  background:linear-gradient(135deg,var(--btn1),var(--btn2));
+  box-shadow:0 10px 22px rgba(0,0,0,.3);
+  transition:.2s ease;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow2);
+  background:linear-gradient(135deg,var(--btn1h),var(--btn2h));
+}
+
+.btn.secondary{
+  color:var(--text);
+  background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.08));
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.btn.secondary:hover{
+  background:linear-gradient(135deg,rgba(57,176,255,.22),rgba(34,230,211,.12));
+}
+
+.small{
+  font-size:.9rem;
+  color:rgba(244,247,255,.70);
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+  margin-top:30px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);
+  text-align:center;
+  color:rgba(244,247,255,.80);
+}
+
+.footer-actions{
+  margin-top:14px;
+  display:flex;
+  justify-content:center;
+}
+
+/* ===== MOBILE ===== */
 
 @media (max-width: 560px){
   .hero-img{ height: 240px; }
