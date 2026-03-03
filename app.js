@@ -16,6 +16,7 @@
     <a href="v3-mindset.html">Mindset</a>
     <a href="v3-reporting.html">Reporting</a>
     <a href="v3-downloads.html">Downloads</a>
+    <a href="v3-share.html">Share POSH</a>
     <a href="v3-cancel-subscriptions.html">Cancel Subscriptions</a>
     <a href="v3-support.html">Support</a>
   </nav>
