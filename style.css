@@ -131,7 +131,7 @@ h2{
 }
 
 .hero-img-contain{
-  height: 360px;
+  height: 300px;
   object-fit: contain;
   object-position: center center;
 }
