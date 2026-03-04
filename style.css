@@ -222,22 +222,23 @@ nav a:hover::after{ left:140%; }
 .home-mantra{
   font-family:"Montserrat", sans-serif;
   font-weight:900;
-  font-size:1.05rem;
-  letter-spacing:1.6px;
+  font-size:1.18rem;         /* bigger */
+  letter-spacing:2px;        /* more premium spacing */
   text-transform: uppercase;
 
-  /* gold accent to match your logo */
   color: var(--gold);
-  text-shadow: 0 8px 18px rgba(0,0,0,.45);
+  text-shadow:
+    0 10px 24px rgba(0,0,0,.55),
+    0 0 18px rgba(217,182,90,.18);  /* subtle gold glow */
 
   margin: 0 0 12px;
 }
 
 .home-subline{
-  color: rgba(244,247,255,.78);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  max-width: 860px;
+  color: rgba(244,247,255,.82);
+  font-size: 1.10rem;        /* slightly bigger */
+  line-height: 1.65;
+  max-width: 880px;
   margin: 0 auto;
 }
 /* ===== Buttons ===== */
