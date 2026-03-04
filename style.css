@@ -213,9 +213,9 @@ nav a:hover::after{ left:140%; }
 .home-kicker{
   font-family:"Montserrat", sans-serif;
   font-weight:900;
-  font-size:1.45rem;
-  letter-spacing:.6px;
-  color: rgba(244,247,255,.94);
+  font-size:1.55rem;
+  letter-spacing:.7px;
+  color: rgba(244,247,255,.95);
   margin: 2px 0 10px;
 }
 
