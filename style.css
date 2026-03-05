@@ -1,3 +1,4 @@
+/* style.css (FULL REPLACE) */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap');
 
 :root{
@@ -51,19 +52,19 @@ body{
 .brand{
   font-family:"Montserrat", sans-serif;
   font-weight:900;
-  font-size:1.35rem;          /* taller + stronger */
+  font-size:1.35rem;
   letter-spacing:6px;
   text-transform:uppercase;
 
   display:inline-block;
-  padding:14px 22px;          /* taller badge */
+  padding:14px 22px;
   margin: 6px auto 14px;
 
   border-radius:16px;
-  border:2px solid rgba(217,182,90,.38);   /* gold edge to match hero vibe */
+  border:2px solid rgba(217,182,90,.38);
   background:rgba(8,25,50,.28);
 
-  color:var(--gold);          /* gold brand */
+  color:var(--gold);
   text-shadow:
     0 10px 24px rgba(0,0,0,.55),
     0 0 18px rgba(217,182,90,.16);
@@ -76,7 +77,7 @@ body{
 .page-title{
   font-family:"Montserrat", sans-serif;
   font-weight:900;
-  font-size:2.55rem;          /* clearer page navigation */
+  font-size:2.55rem;
   letter-spacing:.6px;
 
   display:inline-block;
@@ -92,7 +93,7 @@ body{
 }
 
 .tagline{
-  font-size:1.16rem;          /* slightly bigger */
+  font-size:1.16rem;
   margin: 0 0 18px;
   color:rgba(244,247,255,.82);
   text-align:center;
@@ -107,15 +108,21 @@ h2{
   text-align:center;
 }
 
+h3{
+  font-family: Montserrat, Inter, system-ui, sans-serif;
+  margin:0;
+  letter-spacing:.2px;
+}
+
 .note{
   color:var(--muted);
   line-height:1.7;
   text-align:left;
-  font-size:1.08rem;          /* global readability bump */
+  font-size:1.08rem;
 }
 
 .card p{
-  font-size:1.08rem;          /* global readability bump */
+  font-size:1.08rem;
   line-height:1.7;
 }
 
@@ -155,6 +162,7 @@ h2{
   justify-content:center;
   gap:12px;
   flex-wrap:wrap;
+  margin-bottom: 18px;
 }
 
 /* ===== Home Intro Text (ties to hero) ===== */
@@ -165,7 +173,7 @@ h2{
 .home-kicker{
   font-family:"Montserrat", sans-serif;
   font-weight:900;
-  font-size:1.75rem;          /* bigger + bolder */
+  font-size:1.75rem;
   letter-spacing:.6px;
   color: rgba(244,247,255,.96);
   margin: 6px 0 10px;
@@ -174,7 +182,7 @@ h2{
 .home-mantra{
   font-family:"Montserrat", sans-serif;
   font-weight:900;
-  font-size:1.32rem;          /* bigger and clearly part of hero */
+  font-size:1.32rem;
   letter-spacing:2.2px;
   text-transform: uppercase;
 
@@ -188,7 +196,7 @@ h2{
 
 .home-subline{
   color: rgba(244,247,255,.82);
-  font-size: 1.12rem;         /* bigger readability */
+  font-size: 1.12rem;
   line-height: 1.65;
   max-width: 900px;
   margin: 0 auto;
@@ -253,7 +261,7 @@ nav a:hover::after{ left:140%; }
   text-align:left;
 }
 
-/* ===== HERO WARNING (Home) ===== */
+/* ===== HERO WARNING (Home + hubs) ===== */
 .hero-warning{
   text-align:center;
   border: 2px solid rgba(217,182,90,.35);
@@ -273,7 +281,7 @@ nav a:hover::after{ left:140%; }
 .hero-warning .golden-rule{
   font-family:"Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 1.22rem;       /* bigger + hero-level */
+  font-size: 1.22rem;
   letter-spacing: 1.6px;
   text-transform: uppercase;
   color: var(--gold);
@@ -296,7 +304,7 @@ nav a:hover::after{ left:140%; }
   margin: 8px 0;
   color: rgba(244,247,255,.90);
   line-height: 1.65;
-  font-size: 1.12rem;       /* bigger */
+  font-size: 1.12rem;
   text-align:center;
 }
 
@@ -311,14 +319,6 @@ nav a:hover::after{ left:140%; }
   margin: 10px 0 0;
 }
 
-.hero-warning .quick-actions{
-  margin-top: 14px;
-}
-
-.hero-warning .quick-actions .btn{
-  min-width: 220px;
-}
-
 /* ===== Buttons ===== */
 .btn-grid{
   display:grid;
@@ -326,11 +326,6 @@ nav a:hover::after{ left:140%; }
   gap:14px;
   margin-top:14px;
 }
-
-.btn::before { content:""; }
-.btn[href*="age-guide"]::before { content:"① "; }
-.btn[href*="device-controls"]::before { content:"② "; }
-.btn[href*="house-rules"]::before { content:"③ "; }
 
 .btn{
   position:relative;
@@ -387,6 +382,120 @@ nav a:hover::after{ left:140%; }
   background: linear-gradient(135deg, rgba(57,176,255,.24), rgba(34,230,211,.12));
 }
 
+/* ===== Callouts + Lists ===== */
+.callout{
+  border-left: 4px solid rgba(34,230,211,.70);
+  background: rgba(8,25,50,.22);
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+.list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(244,247,255,.80);
+  line-height: 1.65;
+}
+
+/* ===== Badges (used across Index/Awareness) ===== */
+.badges{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin: 12px 0 0;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 12px;
+  border-radius:999px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(244,247,255,.90);
+  font-weight: 900;
+  letter-spacing: .3px;
+  text-align:center;
+}
+
+.badge.gold{
+  border-color: rgba(217,182,90,.35);
+  background: rgba(217,182,90,.10);
+  color: rgba(244,247,255,.95);
+}
+
+.badge.danger{
+  border-color: rgba(255,59,106,.35);
+  background: rgba(255,59,106,.14);
+  color: rgba(244,247,255,.95);
+}
+
+/* ===== Network Path ===== */
+.network{
+  text-align:center;
+}
+
+.network-flow{
+  max-width: 760px;
+  margin: 14px auto 0;
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+
+.pill{
+  display:inline-block;
+  width: 100%;
+  max-width: 640px;
+  padding: 12px 14px;
+  margin: 8px auto;
+  border-radius: 14px;
+  font-weight: 900;
+  letter-spacing: .2px;
+  color: rgba(244,247,255,.94);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.arrow{
+  opacity:.85;
+  color: rgba(244,247,255,.85);
+  font-weight: 900;
+  padding: 2px 0;
+}
+
+/* ===== Media Cards + Embeds ===== */
+.media-card{
+  margin-top: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(8,25,50,.22);
+  padding: 16px 14px;
+  box-shadow: 0 14px 34px rgba(0,0,0,.35);
+}
+
+.media-title{
+  text-align:center;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.embed{
+  width:100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.embed iframe{
+  width:100%;
+  display:block;
+  border:0;
+}
+
 /* ===== Footer ===== */
 footer{
   margin-top:30px;
@@ -409,389 +518,8 @@ footer{
   .tagline{ font-size: 1.08rem; }
   .hero-img-contain{ height: 250px; }
   .home-kicker{ font-size: 1.55rem; }
-  .home-mantra{ font-size: 1.18rem; }
+  .home-mantra{ font-size: 1.14rem; }
   .home-subline{ font-size: 1.05rem; }
   .note, .card p{ font-size: 1.04rem; }
-}
-/* ===== Predator Tactics Breakdown ===== */
-.tactics{
-  border: 2px solid rgba(217,182,90,.28);
-  background:
-    radial-gradient(900px 520px at 50% 0%, rgba(217,182,90,.08), transparent 60%),
-    linear-gradient(180deg, rgba(15,42,85,.92), rgba(12,35,70,.92));
-}
-
-.tactics h2{
-  color: rgba(244,247,255,.98);
-}
-
-.tactics-sub{
-  text-align:center;
-  color: rgba(244,247,255,.82);
-  max-width: 920px;
-  margin: 0 auto 16px;
-  line-height: 1.65;
-  font-size: 1.08rem;
-}
-
-.step-list{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap:14px;
-  margin-top:14px;
-}
-
-.step{
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.18);
-  padding:16px 16px 14px;
-  box-shadow: 0 10px 26px rgba(0,0,0,.28);
-  text-align:left;
-}
-
-.step-top{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:10px;
-}
-
-.step-num{
-  width:38px;
-  height:38px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:"Montserrat", sans-serif;
-  font-weight:900;
-  color:#05243f;
-  background: linear-gradient(135deg, var(--btn1), var(--btn2));
-  box-shadow: 0 12px 24px rgba(0,0,0,.35);
-  flex: 0 0 auto;
-}
-
-.step-title{
-  font-family:"Montserrat", sans-serif;
-  font-weight:900;
-  font-size:1.05rem;
-  letter-spacing:.2px;
-  margin:0;
-  color: rgba(244,247,255,.96);
-}
-
-.step p{
-  margin: 0;
-  color: rgba(244,247,255,.78);
-  line-height: 1.65;
-  font-size: 1.05rem;
-}
-
-.badges{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:14px;
-}
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 14px;
-  border-radius:999px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  color: rgba(244,247,255,.90);
-  font-weight:900;
-}
-
-.badge.danger{
-  background: rgba(255,59,106,.14);
-  border: 1px solid rgba(255,59,106,.35);
-}
-
-.badge.gold{
-  background: rgba(217,182,90,.12);
-  border: 1px solid rgba(217,182,90,.35);
-  color: rgba(244,247,255,.95);
-}
-
-.do-box{
-  margin-top:16px;
-  border-radius:16px;
-  border: 1px solid rgba(34,230,211,.25);
-  background: rgba(8,25,50,.22);
-  padding: 14px 16px;
-}
-
-.do-title{
-  font-family:"Montserrat", sans-serif;
-  font-weight:900;
-  color: rgba(244,247,255,.96);
-  margin:0 0 10px;
-  text-align:center;
-}
-
-.do-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap:10px;
-}
-
-.do-item{
-  border-radius:14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.16);
-  padding: 12px 12px;
-  color: rgba(244,247,255,.82);
-  line-height: 1.6;
-  font-size: 1.03rem;
-}
-
-.media-card{
-  background: linear-gradient(180deg, rgba(15,42,85,.92), rgba(12,35,70,.92));
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:18px;
-  padding:20px;
-  margin-top:14px;
-  box-shadow: var(--shadow);
-}
-
-.media-card h3{
-  font-family:"Montserrat", sans-serif;
-  font-weight:800;
-  font-size:1.15rem;
-  margin:0 0 10px;
-  text-align:center;
-}
-
-.media-card p{
-  font-size:1.05rem;
-  color:rgba(244,247,255,.82);
-  text-align:center;
-  margin:0 0 12px;
-}
-/* ===== Awareness Video / Media Cards ===== */
-.media-card{
-  background: linear-gradient(180deg, rgba(15,42,85,.92), rgba(12,35,70,.92));
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:18px;
-  padding:20px;
-  margin-top:14px;
-  box-shadow: var(--shadow);
-}
-
-.media-card h3{
-  font-family:"Montserrat", sans-serif;
-  font-weight:800;
-  font-size:1.15rem;
-  margin:0 0 10px;
-  text-align:center;
-}
-
-.media-card p{
-  font-size:1.05rem;
-  color:rgba(244,247,255,.82);
-  text-align:center;
-  margin-bottom:12px;
-}
-/* Responsive embeds (Spotify/YouTube) */
-.embed{
-  width:100%;
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.embed iframe{
-  width:100%;
-  display:block;
-  border:0;
-}
-/* ===== Predator Network Map ===== */
-.flow{
-  text-align:center;
-  border: 2px solid rgba(217,182,90,.35);
-  background:
-    radial-gradient(900px 520px at 50% 0%, rgba(217,182,90,.10), transparent 60%),
-    linear-gradient(180deg, rgba(15,42,85,.92), rgba(12,35,70,.92));
-  box-shadow: 0 18px 48px rgba(0,0,0,.52);
-}
-
-.flow-map{
-  max-width: 720px;
-  margin: 14px auto 0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-}
-
-.flow-node{
-  width:100%;
-  border-radius:16px;
-  padding:14px 16px;
-  border:1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.22);
-  box-shadow: 0 10px 22px rgba(0,0,0,.28);
-}
-
-.flow-node.danger{
-  border: 1px solid rgba(255,59,106,.42);
-  background: rgba(255,59,106,.10);
-}
-
-.flow-title{
-  font-family:"Montserrat", sans-serif;
-  font-weight:900;
-  letter-spacing:.4px;
-  color: rgba(244,247,255,.96);
-  font-size: 1.18rem;
-  margin-bottom: 4px;
-}
-
-.flow-sub{
-  color: rgba(244,247,255,.78);
-  font-size: 1.02rem;
-}
-
-.flow-arrow{
-  font-size: 1.6rem;
-  font-weight:900;
-  color: var(--gold);
-  text-shadow: 0 12px 26px rgba(0,0,0,.60);
-  line-height: 1;
-}
-
-@media (max-width: 560px){
-  .flow-title{ font-size: 1.10rem; }
-  .flow-sub{ font-size: 1.00rem; }
-}
-.tactics-sub{
-  color: rgba(244,247,255,.80);
-  line-height: 1.7;
-  font-size: 1.08rem;
-  text-align: left;
-  margin: 0 0 14px;
-}
-
-.badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  justify-content:center;
-  margin: 10px 0 18px;
-}
-
-.badge{
-  display:inline-block;
-  padding:10px 14px;
-  border-radius:999px;
-  background: rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
-  color: rgba(244,247,255,.92);
-  font-weight: 900;
-  letter-spacing: .2px;
-  font-size: .98rem;
-}
-
-.badge.gold{
-  background: rgba(217,182,90,.14);
-  border-color: rgba(217,182,90,.35);
-  color: var(--gold);
-}
-
-.badge.danger{
-  background: rgba(255,59,106,.14);
-  border-color: rgba(255,59,106,.35);
-  color: rgba(244,247,255,.96);
-}
-
-.step-list{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap:14px;
-  margin-top: 16px;
-}
-
-.step{
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.18);
-  padding: 16px 16px 14px;
-}
-
-.step-top{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom: 8px;
-}
-
-.step-num{
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight: 900;
-  color:#05243f;
-  background: linear-gradient(135deg, var(--btn1), var(--btn2));
-}
-
-.step-title{
-  margin:0;
-  font-family:"Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 1.12rem;
-  color: rgba(244,247,255,.96);
-}
-
-.step p{
-  margin: 0;
-  color: rgba(244,247,255,.78);
-  line-height: 1.65;
-  font-size: 1.05rem;
-}
-
-.do-box{
-  text-align:left;
-}
-
-.do-title{
-  text-align:center;
-}
-
-.do-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap:12px;
-  margin-top: 14px;
-}
-
-.do-item{
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.18);
-  padding: 12px 14px;
-  color: rgba(244,247,255,.86);
-  line-height: 1.6;
-}
-
-.media-card{
-  margin-top: 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.18);
-  padding: 16px 16px 14px;
-}
-
-.media-card h3{
-  margin: 0 0 8px;
-  font-family:"Montserrat", sans-serif;
-  font-weight: 900;
-  color: rgba(244,247,255,.96);
+  .pill{ font-size: 0.98rem; }
 }
