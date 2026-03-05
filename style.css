@@ -610,3 +610,62 @@ footer{
   display:block;
   border:0;
 }
+/* ===== Predator Network Map ===== */
+.flow{
+  text-align:center;
+  border: 2px solid rgba(217,182,90,.35);
+  background:
+    radial-gradient(900px 520px at 50% 0%, rgba(217,182,90,.10), transparent 60%),
+    linear-gradient(180deg, rgba(15,42,85,.92), rgba(12,35,70,.92));
+  box-shadow: 0 18px 48px rgba(0,0,0,.52);
+}
+
+.flow-map{
+  max-width: 720px;
+  margin: 14px auto 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.flow-node{
+  width:100%;
+  border-radius:16px;
+  padding:14px 16px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.22);
+  box-shadow: 0 10px 22px rgba(0,0,0,.28);
+}
+
+.flow-node.danger{
+  border: 1px solid rgba(255,59,106,.42);
+  background: rgba(255,59,106,.10);
+}
+
+.flow-title{
+  font-family:"Montserrat", sans-serif;
+  font-weight:900;
+  letter-spacing:.4px;
+  color: rgba(244,247,255,.96);
+  font-size: 1.18rem;
+  margin-bottom: 4px;
+}
+
+.flow-sub{
+  color: rgba(244,247,255,.78);
+  font-size: 1.02rem;
+}
+
+.flow-arrow{
+  font-size: 1.6rem;
+  font-weight:900;
+  color: var(--gold);
+  text-shadow: 0 12px 26px rgba(0,0,0,.60);
+  line-height: 1;
+}
+
+@media (max-width: 560px){
+  .flow-title{ font-size: 1.10rem; }
+  .flow-sub{ font-size: 1.00rem; }
+}
