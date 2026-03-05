@@ -12,8 +12,8 @@
     <a href="v3-socials.html">Social Apps</a>
     <a href="v3-videochat.html">Video & Live</a>
     <a href="v3-algorithm-awareness.html">Algorithm Awareness</a>
+    <a href="v3-awareness.html">Awareness Hub</a>
     <a href="v3-predators.html">Predators</a>
-    <a href="v3-grooming.html">Grooming</a>
     <a href="v3-mindset.html">Mindset</a>
     <a href="v3-reporting.html">Reporting</a>
     <a href="v3-downloads.html">Downloads</a>
