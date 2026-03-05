@@ -3,6 +3,7 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="v3-start.html">Start</a>
+    <a href="v3-safety-score.html">Safety Score</a>
     <a href="v3-age-guide.html">Age Guide</a>
     <a href="v3-house-rules.html">House Rules</a>
     <a href="v3-redflags.html">Red Flags</a>
