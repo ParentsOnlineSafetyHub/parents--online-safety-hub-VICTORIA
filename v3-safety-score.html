@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Safety Score • POSH</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="brand">POSH</div>
+    <h1 class="page-title">Safety Score</h1>
+    <p class="tagline"><strong>10 checks.</strong> Clear score. Clear next steps.</p>
+
+    <div id="nav"></div>
+
+    <div class="card hero-warning">
+      <h2>Golden Rule</h2>
+      <div class="rule-box">
+        <p><strong>If someone asks your child to move chats off the game/app</strong> (Discord / Snapchat / Telegram / WhatsApp / Instagram DMs) — <strong>that’s a RED FLAG.</strong></p>
+        <p>Your child should <strong>tell you immediately</strong>. No punishment. No blame. Just safety.</p>
+      </div>
+      <div class="danger-line">Move chat off-platform = grooming escalation risk</div>
+    </div>
+
+    <div class="card">
+      <h2>Answer these (takes 60 seconds)</h2>
+      <p class="note" style="text-align:center;">
+        Be honest — this is not about judgment. It’s about reducing risk fast.
+      </p>
+
+      <form id="scoreForm" class="quiz">
+
+        <div class="q">
+          <div class="q-title">1) Device controls are ON (Screen Time / Family Link / Family Safety)</div>
+          <div class="q-options">
+            <label><input type="radio" name="q1" value="yes" required> Yes</label>
+            <label><input type="radio" name="q1" value="some"> Some</label>
+            <label><input type="radio" name="q1" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">2) App installs are restricted (child can’t freely install anything)</div>
+          <div class="q-options">
+            <label><input type="radio" name="q2" value="yes" required> Yes</label>
+            <label><input type="radio" name="q2" value="some"> Some</label>
+            <label><input type="radio" name="q2" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">3) DMs / private messages are OFF or friends-only on main apps/games</div>
+          <div class="q-options">
+            <label><input type="radio" name="q3" value="yes" required> Yes</label>
+            <label><input type="radio" name="q3" value="some"> Some</label>
+            <label><input type="radio" name="q3" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">4) Voice chat is OFF or friends-only (games + Discord/VR apps)</div>
+          <div class="q-options">
+            <label><input type="radio" name="q4" value="yes" required> Yes</label>
+            <label><input type="radio" name="q4" value="some"> Some</label>
+            <label><input type="radio" name="q4" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">5) Friends list is real-life people only (parent-approved)</div>
+          <div class="q-options">
+            <label><input type="radio" name="q5" value="yes" required> Yes</label>
+            <label><input type="radio" name="q5" value="some"> Some</label>
+            <label><input type="radio" name="q5" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">6) No secret accounts (parents can check anytime)</div>
+          <div class="q-options">
+            <label><input type="radio" name="q6" value="yes" required> Yes</label>
+            <label><input type="radio" name="q6" value="some"> Not sure</label>
+            <label><input type="radio" name="q6" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">7) Devices charge overnight in a shared area (not bedrooms)</div>
+          <div class="q-options">
+            <label><input type="radio" name="q7" value="yes" required> Yes</label>
+            <label><input type="radio" name="q7" value="some"> Sometimes</label>
+            <label><input type="radio" name="q7" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">8) Location sharing is OFF (unless truly needed)</div>
+          <div class="q-options">
+            <label><input type="radio" name="q8" value="yes" required> Yes</label>
+            <label><input type="radio" name="q8" value="some"> Some apps</label>
+            <label><input type="radio" name="q8" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">9) Your child knows: “You won’t be in trouble for telling me”</div>
+          <div class="q-options">
+            <label><input type="radio" name="q9" value="yes" required> Yes</label>
+            <label><input type="radio" name="q9" value="some"> I’ve said it once</label>
+            <label><input type="radio" name="q9" value="no"> Not yet</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">10) Off-platform rule is clear (no moving to Discord/Snap/Telegram)</div>
+          <div class="q-options">
+            <label><input type="radio" name="q10" value="yes" required> Yes</label>
+            <label><input type="radio" name="q10" value="some"> Kind of</label>
+            <label><input type="radio" name="q10" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="btn-grid" style="margin-top:16px;">
+          <button class="btn" type="submit">Calculate POSH Safety Score</button>
+          <button class="btn secondary" type="button" id="resetBtn">Reset</button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="card" id="results" style="display:none;">
+      <h2>Your POSH Safety Score</h2>
+
+      <div class="score-wrap">
+        <div class="score-ring" aria-hidden="true">
+          <div class="score-num" id="scoreNum">0</div>
+          <div class="score-label">/ 100</div>
+        </div>
+
+        <div class="score-text">
+          <div class="score-grade" id="scoreGrade">—</div>
+          <p class="note" id="scoreSummary" style="text-align:left;"></p>
+          <div class="badges" style="justify-content:center;">
+            <div class="badge gold" id="topRiskBadge" style="display:none;"></div>
+            <div class="badge danger" id="dangerBadge" style="display:none;">High grooming exposure risk</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout" id="topFixBox" style="margin-top:14px;"></div>
+
+      <h2 style="margin-top:18px;">Fast Fix Buttons</h2>
+      <div class="btn-grid">
+        <a class="btn" href="v3-device-controls.html">Device Controls</a>
+        <a class="btn secondary" href="v3-gaming.html">Gaming Hub</a>
+        <a class="btn secondary" href="v3-socials.html">Social Apps Hub</a>
+        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+        <a class="btn secondary" href="v3-reporting.html">Reporting</a>
+      </div>
+
+      <p class="small" style="margin-top:12px;">
+        Tip: run this score monthly. Small consistent improvements reduce risk the fastest.
+      </p>
+    </div>
+
+    <footer>
+      Built in Victoria. Designed for Australia.<br/>
+      <span class="small">Contact: allthewaycarpentry@gmail.com</span>
+      <div class="footer-actions">
+        <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">Support this movement</a>
+      </div>
+    </footer>
+
+  </div>
+
+<script>
+(function(){
+  const form = document.getElementById("scoreForm");
+  const results = document.getElementById("results");
+  const scoreNum = document.getElementById("scoreNum");
+  const scoreGrade = document.getElementById("scoreGrade");
+  const scoreSummary = document.getElementById("scoreSummary");
+  const topFixBox = document.getElementById("topFixBox");
+  const topRiskBadge = document.getElementById("topRiskBadge");
+  const dangerBadge = document.getElementById("dangerBadge");
+  const resetBtn = document.getElementById("resetBtn");
+
+  const weights = {
+    q1: 12,  // device controls
+    q2: 10,  // restrict installs
+    q3: 12,  // DMs
+    q4: 10,  // voice
+    q5: 10,  // friends real-life
+    q6: 10,  // no secret accounts
+    q7: 8,   // charge in shared area
+    q8: 8,   // location off
+    q9: 10,  // kid can tell parent
+    q10: 10  // off-platform rule
+  };
+
+  function points(value, w){
+    if(value === "yes") return w;
+    if(value === "some") return Math.round(w * 0.5);
+    return 0;
+  }
+
+  function readAnswers(){
+    const data = {};
+    Object.keys(weights).forEach(k => {
+      const el = form.querySelector('input[name="'+k+'"]:checked');
+      data[k] = el ? el.value : null;
+    });
+    return data;
+  }
+
+  function calcScore(ans){
+    let total = 0;
+    Object.keys(weights).forEach(k => total += points(ans[k], weights[k]));
+    return total;
+  }
+
+  function worstRisks(ans){
+    const risks = Object.keys(weights).map(k => {
+      const w = weights[k];
+      const earned = points(ans[k], w);
+      return { key:k, missing: (w - earned), weight:w, value: ans[k] };
+    }).sort((a,b)=> b.missing - a.missing);
+    return risks;
+  }
+
+  const riskText = {
+    q1: {title:"Device controls OFF", fix:"Turn on Screen Time / Family Link / Family Safety today. This controls installs, filters, and limits.", link:"v3-device-controls.html"},
+    q2: {title:"Installs not restricted", fix:"Lock app installs so kids can’t add new apps without permission.", link:"v3-device-controls.html"},
+    q3: {title:"DMs not locked", fix:"Set DMs to friends-only or OFF across games and social apps. This removes most stranger contact.", link:"v3-socials.html"},
+    q4: {title:"Voice chat exposed", fix:"Turn voice chat OFF or friends-only (games + Discord/VR). Voice is where manipulation escalates fast.", link:"v3-gaming.html"},
+    q5: {title:"Friends list not real-life only", fix:"Friends must be real-life people only. Remove unknowns immediately.", link:"v3-house-rules.html"},
+    q6: {title:"Secret accounts possible", fix:"Make a clear rule: no secret accounts. Parents can check anytime.", link:"v3-house-rules.html"},
+    q7: {title:"Devices in bedrooms at night", fix:"Devices charge overnight in a shared area. This reduces late-night exposure + secrecy.", link:"v3-house-rules.html"},
+    q8: {title:"Location sharing ON", fix:"Turn location sharing OFF unless truly needed. Predators use location data.", link:"v3-socials.html"},
+    q9: {title:"Child may fear telling you", fix:"Repeat: “You won’t be in trouble for telling me.” Kids stay silent when they fear punishment.", link:"v3-redflags.html"},
+    q10:{title:"Off-platform rule missing", fix:"Set the Golden Rule: never move to Discord/Snap/Telegram/WhatsApp with strangers. Tell parent immediately.", link:"index.html"}
+  };
+
+  function grade(score){
+    if(score >= 85) return {label:"Strong", summary:"Your setup is strong. Keep the Golden Rule and do a quick settings check weekly (5 minutes)."};
+    if(score >= 65) return {label:"Good (needs tightening)", summary:"You’re doing a lot right. Tighten DMs/voice/friends lists to reduce stranger access fast."};
+    if(score >= 45) return {label:"At Risk", summary:"Stranger access is likely. Lock DMs and voice today, then apply device controls and house rules."};
+    return {label:"High Risk", summary:"Your child may have open access to strangers. Start with device controls + lock DMs/voice immediately."};
+  }
+
+  function save(ans, score){
+    try{
+      localStorage.setItem("poshScoreAnswers", JSON.stringify(ans));
+      localStorage.setItem("poshScoreValue", String(score));
+      localStorage.setItem("poshScoreTime", String(Date.now()));
+    }catch(e){}
+  }
+
+  function load(){
+    try{
+      const raw = localStorage.getItem("poshScoreAnswers");
+      if(!raw) return;
+      const ans = JSON.parse(raw);
+      Object.keys(ans).forEach(k => {
+        const v = ans[k];
+        if(!v) return;
+        const el = form.querySelector('input[name="'+k+'"][value="'+v+'"]');
+        if(el) el.checked = true;
+      });
+    }catch(e){}
+  }
+
+  function show(score, ans){
+    const g = grade(score);
+    scoreNum.textContent = score;
+    scoreGrade.textContent = g.label;
+    scoreSummary.textContent = g.summary;
+
+    const risks = worstRisks(ans);
+    const top = risks[0];
+    const topInfo = riskText[top.key];
+
+    topRiskBadge.style.display = "inline-flex";
+    topRiskBadge.textContent = "Top risk: " + topInfo.title;
+
+    dangerBadge.style.display = (score < 55) ? "inline-flex" : "none";
+
+    topFixBox.innerHTML =
+      "<strong>Top fix right now:</strong> " + topInfo.fix +
+      ' <div style="margin-top:12px;" class="btn-grid">' +
+      '<a class="btn" href="'+topInfo.link+'">Fix this now</a>' +
+      '<a class="btn secondary" href="v3-reporting.html">If something already happened</a>' +
+      '</div>';
+
+    results.style.display = "block";
+    results.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const ans = readAnswers();
+    const score = calcScore(ans);
+    save(ans, score);
+    show(score, ans);
+  });
+
+  resetBtn.addEventListener("click", function(){
+    form.reset();
+    results.style.display = "none";
+    try{
+      localStorage.removeItem("poshScoreAnswers");
+      localStorage.removeItem("poshScoreValue");
+      localStorage.removeItem("poshScoreTime");
+    }catch(e){}
+  });
+
+  load();
+})();
+</script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
