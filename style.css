@@ -669,3 +669,129 @@ footer{
   .flow-title{ font-size: 1.10rem; }
   .flow-sub{ font-size: 1.00rem; }
 }
+.tactics-sub{
+  color: rgba(244,247,255,.80);
+  line-height: 1.7;
+  font-size: 1.08rem;
+  text-align: left;
+  margin: 0 0 14px;
+}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin: 10px 0 18px;
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:999px;
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  color: rgba(244,247,255,.92);
+  font-weight: 900;
+  letter-spacing: .2px;
+  font-size: .98rem;
+}
+
+.badge.gold{
+  background: rgba(217,182,90,.14);
+  border-color: rgba(217,182,90,.35);
+  color: var(--gold);
+}
+
+.badge.danger{
+  background: rgba(255,59,106,.14);
+  border-color: rgba(255,59,106,.35);
+  color: rgba(244,247,255,.96);
+}
+
+.step-list{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:14px;
+  margin-top: 16px;
+}
+
+.step{
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  padding: 16px 16px 14px;
+}
+
+.step-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom: 8px;
+}
+
+.step-num{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 900;
+  color:#05243f;
+  background: linear-gradient(135deg, var(--btn1), var(--btn2));
+}
+
+.step-title{
+  margin:0;
+  font-family:"Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1.12rem;
+  color: rgba(244,247,255,.96);
+}
+
+.step p{
+  margin: 0;
+  color: rgba(244,247,255,.78);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.do-box{
+  text-align:left;
+}
+
+.do-title{
+  text-align:center;
+}
+
+.do-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:12px;
+  margin-top: 14px;
+}
+
+.do-item{
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  padding: 12px 14px;
+  color: rgba(244,247,255,.86);
+  line-height: 1.6;
+}
+
+.media-card{
+  margin-top: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  padding: 16px 16px 14px;
+}
+
+.media-card h3{
+  margin: 0 0 8px;
+  font-family:"Montserrat", sans-serif;
+  font-weight: 900;
+  color: rgba(244,247,255,.96);
+}
