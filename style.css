@@ -51,33 +51,37 @@ body{
 .brand{
   font-family:"Montserrat", sans-serif;
   font-weight:900;
-  font-size:1.1rem;
-  letter-spacing:4px;
+  font-size:1.35rem;          /* taller + stronger */
+  letter-spacing:6px;
   text-transform:uppercase;
 
   display:inline-block;
-  padding:10px 18px;
-  margin: 8px auto 14px;
+  padding:14px 22px;          /* taller badge */
+  margin: 6px auto 14px;
 
-  border-radius:14px;
-  border:2px solid rgba(57,176,255,.35);
-  background:rgba(8,25,50,.25);
+  border-radius:16px;
+  border:2px solid rgba(217,182,90,.38);   /* gold edge to match hero vibe */
+  background:rgba(8,25,50,.28);
 
-  color:var(--blue);
+  color:var(--gold);          /* gold brand */
+  text-shadow:
+    0 10px 24px rgba(0,0,0,.55),
+    0 0 18px rgba(217,182,90,.16);
+
   box-shadow:
-    0 0 0 6px rgba(57,176,255,.06),
-    0 12px 34px rgba(0,0,0,.40);
+    0 0 0 6px rgba(217,182,90,.05),
+    0 14px 38px rgba(0,0,0,.45);
 }
 
 .page-title{
   font-family:"Montserrat", sans-serif;
   font-weight:900;
-  font-size:2.3rem;
-  letter-spacing:.5px;
+  font-size:2.55rem;          /* clearer page navigation */
+  letter-spacing:.6px;
 
   display:inline-block;
   padding:12px 26px;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
 
   border-radius:18px;
   border:2px solid rgba(34,230,211,.30);
@@ -88,15 +92,16 @@ body{
 }
 
 .tagline{
-  font-size:1.10rem;
-  margin: 0 0 16px;
-  color:var(--muted);
+  font-size:1.16rem;          /* slightly bigger */
+  margin: 0 0 18px;
+  color:rgba(244,247,255,.82);
   text-align:center;
 }
 
+/* Headings */
 h2{
   font-family: Montserrat, Inter, system-ui, sans-serif;
-  font-size:1.35rem;
+  font-size:1.42rem;
   margin:0 0 12px;
   letter-spacing:.2px;
   text-align:center;
@@ -104,12 +109,18 @@ h2{
 
 .note{
   color:var(--muted);
-  line-height:1.65;
+  line-height:1.7;
   text-align:left;
+  font-size:1.08rem;          /* global readability bump */
+}
+
+.card p{
+  font-size:1.08rem;          /* global readability bump */
+  line-height:1.7;
 }
 
 .small{
-  font-size:.9rem;
+  font-size:.95rem;
   color:rgba(244,247,255,.70);
 }
 
@@ -118,7 +129,7 @@ h2{
   position: relative;
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto 8px;
+  margin: 0 auto 10px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.10);
@@ -132,8 +143,9 @@ h2{
   margin: 0 auto;
 }
 
+/* tight hero height */
 .hero-img-contain{
-  height: clamp(220px, 30vw, 320px);
+  height: clamp(210px, 28vw, 300px);
   object-fit: contain;
   object-position: center center;
 }
@@ -143,6 +155,43 @@ h2{
   justify-content:center;
   gap:12px;
   flex-wrap:wrap;
+}
+
+/* ===== Home Intro Text (ties to hero) ===== */
+.home-intro{
+  text-align:center;
+}
+
+.home-kicker{
+  font-family:"Montserrat", sans-serif;
+  font-weight:900;
+  font-size:1.75rem;          /* bigger + bolder */
+  letter-spacing:.6px;
+  color: rgba(244,247,255,.96);
+  margin: 6px 0 10px;
+}
+
+.home-mantra{
+  font-family:"Montserrat", sans-serif;
+  font-weight:900;
+  font-size:1.32rem;          /* bigger and clearly part of hero */
+  letter-spacing:2.2px;
+  text-transform: uppercase;
+
+  color: var(--gold);
+  text-shadow:
+    0 12px 26px rgba(0,0,0,.60),
+    0 0 18px rgba(217,182,90,.18);
+
+  margin: 0 0 12px;
+}
+
+.home-subline{
+  color: rgba(244,247,255,.82);
+  font-size: 1.12rem;         /* bigger readability */
+  line-height: 1.65;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* ===== NAV ===== */
@@ -204,40 +253,70 @@ nav a:hover::after{ left:140%; }
   text-align:left;
 }
 
-.home-intro{
+/* ===== HERO WARNING (Home) ===== */
+.hero-warning{
+  text-align:center;
+  border: 2px solid rgba(217,182,90,.35);
+  background:
+    radial-gradient(900px 520px at 50% 0%, rgba(217,182,90,.10), transparent 60%),
+    linear-gradient(180deg, rgba(15,42,85,.92), rgba(12,35,70,.92));
+  box-shadow: 0 18px 48px rgba(0,0,0,.52);
+}
+
+.hero-warning h2{
+  margin-bottom: 10px;
+  font-size: 1.70rem;
+  letter-spacing: .4px;
+  color: rgba(244,247,255,.98);
+}
+
+.hero-warning .golden-rule{
+  font-family:"Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 1.22rem;       /* bigger + hero-level */
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 10px 0 12px;
+  text-shadow:
+    0 12px 26px rgba(0,0,0,.60),
+    0 0 18px rgba(217,182,90,.18);
+}
+
+.hero-warning .rule-box{
+  margin: 0 auto 12px;
+  max-width: 960px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.22);
+}
+
+.hero-warning .rule-box p{
+  margin: 8px 0;
+  color: rgba(244,247,255,.90);
+  line-height: 1.65;
+  font-size: 1.12rem;       /* bigger */
   text-align:center;
 }
 
-.home-kicker{
-  font-family:"Montserrat", sans-serif;
-  font-weight:900;
-  font-size:1.45rem;
-  letter-spacing:.6px;
-  color: rgba(244,247,255,.94);
-  margin: 2px 0 10px;
+.hero-warning .danger-line{
+  display:inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,59,106,.16);
+  border: 1px solid rgba(255,59,106,.35);
+  color: rgba(244,247,255,.95);
+  font-weight: 900;
+  margin: 10px 0 0;
 }
 
-.home-mantra{
-  font-family:"Montserrat", sans-serif;
-  font-weight:900;
-  font-size:1.18rem;
-  letter-spacing:2px;
-  text-transform: uppercase;
-
-  color: var(--gold);
-  text-shadow:
-    0 10px 24px rgba(0,0,0,.55),
-    0 0 18px rgba(217,182,90,.18);
-
-  margin: 0 0 12px;
+.hero-warning .quick-actions{
+  margin-top: 14px;
 }
 
-.home-subline{
-  color: rgba(244,247,255,.78);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  max-width: 860px;
-  margin: 0 auto;
+.hero-warning .quick-actions .btn{
+  min-width: 220px;
 }
 
 /* ===== Buttons ===== */
@@ -259,7 +338,7 @@ nav a:hover::after{ left:140%; }
   align-items:center;
   justify-content:center;
 
-  min-height:48px;
+  min-height:50px;
   padding:14px 16px;
 
   border-radius:14px;
@@ -323,51 +402,14 @@ footer{
   justify-content:center;
 }
 
-/* ===== NEW: Golden Rule + Callouts ===== */
-.rule{
-  border: 2px solid rgba(217,182,90,.38);
-  background: rgba(8,25,50,.35);
-  box-shadow: 0 16px 40px rgba(0,0,0,.45);
-}
-
-.rule h2{
-  color: var(--gold);
-  letter-spacing: .5px;
-}
-
-.rule .rule-big{
-  font-family:"Montserrat", sans-serif;
-  font-weight:900;
-  font-size:1.25rem;
-  color: rgba(244,247,255,.96);
-  text-align:center;
-  margin: 6px 0 12px;
-}
-
-.rule .rule-line{
-  text-align:center;
-  color: rgba(244,247,255,.80);
-  line-height:1.6;
-  margin: 0;
-}
-
-.callout{
-  border-left: 4px solid rgba(34,230,211,.70);
-  background: rgba(8,25,50,.22);
-  padding: 12px 14px;
-  border-radius: 12px;
-  margin-top: 12px;
-}
-
-.list{
-  margin: 10px 0 0;
-  padding-left: 18px;
-  color: rgba(244,247,255,.80);
-  line-height: 1.6;
-}
-
+/* ===== Mobile ===== */
 @media (max-width: 560px){
-  .hero-img-contain{ height: 260px; }
-  .home-mantra{ font-size: 1.08rem; }
-  .rule .rule-big{ font-size: 1.12rem; }
+  .brand{ font-size: 1.18rem; padding: 12px 18px; }
+  .page-title{ font-size: 2.15rem; }
+  .tagline{ font-size: 1.08rem; }
+  .hero-img-contain{ height: 250px; }
+  .home-kicker{ font-size: 1.55rem; }
+  .home-mantra{ font-size: 1.18rem; }
+  .home-subline{ font-size: 1.05rem; }
+  .note, .card p{ font-size: 1.04rem; }
 }
