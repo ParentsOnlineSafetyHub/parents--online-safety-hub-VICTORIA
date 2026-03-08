@@ -719,3 +719,9 @@ footer{
     font-size: 2.8rem;
   }
 }
+nav a.nav-active{
+  background: rgba(217,182,90,.18);
+  border-color: rgba(217,182,90,.42);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,.30), 0 0 18px rgba(217,182,90,.16);
+}
