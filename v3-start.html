@@ -11,21 +11,21 @@
 
     <div class="brand">POSH</div>
     <h1 class="page-title">Start Here</h1>
-    <p class="tagline"><strong>Not sure where to start?</strong> Answer a few quick questions and POSH will guide you.</p>
+    <p class="tagline"><strong>Answer a few quick questions</strong> — get your POSH Start Score and the right next steps fast.</p>
 
     <div id="nav"></div>
 
     <div class="card hero-warning">
-      <h2>This takes less than 1 minute</h2>
+      <h2>Your fastest starting point</h2>
       <div class="rule-box">
         <p>You do <strong>not</strong> need to read the whole site first.</p>
-        <p>Pick your child’s age, what they mainly use, and whether something already feels wrong.</p>
+        <p>This guide gives you a quick score, shows what matters most, and points you where to go next.</p>
       </div>
-      <div class="danger-line">If something already feels wrong, act early</div>
+      <div class="danger-line">More clarity = faster action = safer children</div>
     </div>
 
     <div class="card">
-      <h2>Quick Parent Check</h2>
+      <h2>Quick Parent Guide</h2>
 
       <form id="startGuideForm">
 
@@ -50,7 +50,7 @@
         </div>
 
         <div class="q">
-          <div class="q-title">3) What app or game worries you most?</div>
+          <div class="q-title">3) Which app or game worries you most?</div>
           <div class="q-options">
             <label><input type="radio" name="app" value="roblox" required> Roblox</label>
             <label><input type="radio" name="app" value="discord"> Discord</label>
@@ -66,12 +66,30 @@
           <div class="q-title">4) Is there already a concern?</div>
           <div class="q-options">
             <label><input type="radio" name="risk" value="yes" required> Yes — something feels off</label>
-            <label><input type="radio" name="risk" value="no"> No — I just want to set things up safely</label>
+            <label><input type="radio" name="risk" value="no"> No — I’m setting things up safely</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">5) Have you already locked down device settings?</div>
+          <div class="q-options">
+            <label><input type="radio" name="device" value="yes" required> Yes</label>
+            <label><input type="radio" name="device" value="some"> Somewhat</label>
+            <label><input type="radio" name="device" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">6) Does your child know they won’t be in trouble for telling you about online issues?</div>
+          <div class="q-options">
+            <label><input type="radio" name="trust" value="yes" required> Yes</label>
+            <label><input type="radio" name="trust" value="some"> I’ve said it once</label>
+            <label><input type="radio" name="trust" value="no"> Not clearly</label>
           </div>
         </div>
 
         <div class="btn-grid" style="margin-top:16px;">
-          <button class="btn" type="submit">Show My Starting Path</button>
+          <button class="btn" type="submit">Show My POSH Start Score</button>
           <button class="btn secondary" type="button" id="resetGuideBtn">Reset</button>
         </div>
 
@@ -79,13 +97,41 @@
     </div>
 
     <div class="card" id="guideResults" style="display:none;">
-      <h2>Your POSH Starting Path</h2>
+      <h2>Your POSH Start Result</h2>
 
-      <div class="callout" id="guideSummary"></div>
+      <div class="score-wrap">
+        <div class="score-ring">
+          <div class="score-num" id="startScoreNum">0</div>
+          <div class="score-label">/ 100</div>
+        </div>
+
+        <div class="score-text">
+          <div class="score-grade" id="startScoreGrade">—</div>
+          <p class="note" id="startScoreSummary" style="text-align:left;"></p>
+          <div class="badges" style="justify-content:center;">
+            <div class="badge gold" id="startScoreBadge">POSH Start Score</div>
+            <div class="badge danger" id="urgentBadge" style="display:none;">Act early now</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout" id="guideSummary" style="margin-top:14px;"></div>
 
       <div class="btn-grid" id="guideButtons" style="margin-top:14px;"></div>
 
       <div class="callout" id="guideUrgent" style="margin-top:14px; display:none;"></div>
+
+      <div class="card" style="margin-top:18px;">
+        <h2 style="margin-bottom:10px;">Help protect more children</h2>
+        <p class="note" style="text-align:center;">
+          If this helped you, share POSH with another parent. Awareness spreads safety.
+        </p>
+        <div class="btn-grid">
+          <a class="btn" href="v3-share.html">Share POSH Now</a>
+          <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au" target="_blank" rel="noopener">Share on Facebook</a>
+          <a class="btn secondary" href="v3-downloads.html">Download Parent Guides</a>
+        </div>
+      </div>
     </div>
 
     <div class="card">
@@ -116,6 +162,11 @@
       const summary = document.getElementById("guideSummary");
       const buttons = document.getElementById("guideButtons");
       const urgent = document.getElementById("guideUrgent");
+
+      const startScoreNum = document.getElementById("startScoreNum");
+      const startScoreGrade = document.getElementById("startScoreGrade");
+      const startScoreSummary = document.getElementById("startScoreSummary");
+      const urgentBadge = document.getElementById("urgentBadge");
 
       const ageLinks = {
         under10: ["v3-age-guide.html", "Age Guide"],
@@ -152,20 +203,74 @@
         return '<a class="btn' + (secondary ? ' secondary' : '') + '" href="' + href + '">' + text + '</a>';
       }
 
+      function scoreValue(value, yesPoints, somePoints) {
+        if (value === "yes") return yesPoints;
+        if (value === "some") return somePoints;
+        return 0;
+      }
+
+      function getStartScore(data) {
+        let total = 0;
+
+        total += data.risk === "no" ? 20 : 0;
+        total += scoreValue(data.device, 20, 10);
+        total += scoreValue(data.trust, 20, 10);
+
+        if (data.age === "under10") total += 20;
+        else if (data.age === "10to12") total += 15;
+        else if (data.age === "13to15") total += 10;
+        else total += 5;
+
+        if (data.type === "mixed") total += 5;
+        else total += 10;
+
+        if (data.app === "other") total += 15;
+        else if (["roblox","discord","vrchat","snapchat"].includes(data.app)) total += 5;
+        else total += 10;
+
+        return Math.min(100, total);
+      }
+
+      function grade(score) {
+        if (score >= 80) return {
+          label: "Strong Start",
+          summary: "You already have some protective structure in place. Tighten the main risk areas and keep building."
+        };
+        if (score >= 55) return {
+          label: "Needs Tightening",
+          summary: "You are part way there. Focus on device safety, clear rules, and the highest-risk app first."
+        };
+        return {
+          label: "Action Needed",
+          summary: "Your child may have more exposure than you realise. Start with the urgent pages and lock things down now."
+        };
+      }
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const age = form.querySelector('input[name="age"]:checked')?.value;
-        const type = form.querySelector('input[name="type"]:checked')?.value;
-        const app = form.querySelector('input[name="app"]:checked')?.value;
-        const risk = form.querySelector('input[name="risk"]:checked')?.value;
+        const data = {
+          age: form.querySelector('input[name="age"]:checked')?.value,
+          type: form.querySelector('input[name="type"]:checked')?.value,
+          app: form.querySelector('input[name="app"]:checked')?.value,
+          risk: form.querySelector('input[name="risk"]:checked')?.value,
+          device: form.querySelector('input[name="device"]:checked')?.value,
+          trust: form.querySelector('input[name="trust"]:checked')?.value
+        };
 
-        const ageLink = ageLinks[age];
-        const typeLink = typeLinks[type];
-        const appLink = appLinks[app];
+        const score = getStartScore(data);
+        const g = grade(score);
+
+        const ageLink = ageLinks[data.age];
+        const typeLink = typeLinks[data.type];
+        const appLink = appLinks[data.app];
+
+        startScoreNum.textContent = score;
+        startScoreGrade.textContent = g.label;
+        startScoreSummary.textContent = g.summary;
 
         summary.innerHTML =
-          "<strong>Recommended order for a parent of a " + ageText[age] + " child:</strong><br>" +
+          "<strong>Recommended order for a parent of a " + ageText[data.age] + " child:</strong><br>" +
           "1) Start with <strong>" + ageLink[1] + "</strong><br>" +
           "2) Then go to <strong>" + typeLink[1] + "</strong><br>" +
           "3) Then lock down <strong>" + appLink[1] + "</strong><br>" +
@@ -178,15 +283,17 @@
           makeBtn("v3-house-rules.html", "House Rules", true) +
           makeBtn("v3-device-controls.html", "Device Safety", true);
 
-        if (risk === "yes") {
+        if (data.risk === "yes" || score < 55) {
           urgent.style.display = "block";
+          urgentBadge.style.display = "inline-flex";
           urgent.innerHTML =
-            "<strong>Because something already feels wrong:</strong><br>" +
-            "Go to <strong>Red Flags</strong> and <strong>Report & Get Help</strong> immediately. Save evidence, stay calm, and reassure your child they are not in trouble.<br><br>" +
+            "<strong>Priority action now:</strong><br>" +
+            "Go straight to <strong>Red Flags</strong> and <strong>Report & Get Help</strong> if something already feels wrong. Save evidence, stay calm, and reassure your child they are not in trouble.<br><br>" +
             makeBtn("v3-redflags.html", "Red Flags", false) + " " +
             makeBtn("v3-reporting.html", "Report & Get Help", true);
         } else {
           urgent.style.display = "none";
+          urgentBadge.style.display = "none";
           urgent.innerHTML = "";
         }
 
@@ -201,6 +308,10 @@
         buttons.innerHTML = "";
         urgent.innerHTML = "";
         urgent.style.display = "none";
+        urgentBadge.style.display = "none";
+        startScoreNum.textContent = "0";
+        startScoreGrade.textContent = "—";
+        startScoreSummary.textContent = "";
       });
     })();
   </script>
