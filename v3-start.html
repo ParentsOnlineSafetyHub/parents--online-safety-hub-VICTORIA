@@ -11,17 +11,17 @@
 
     <div class="brand">POSH</div>
     <h1 class="page-title">Start Here</h1>
-    <p class="tagline"><strong>Answer a few quick questions</strong> — POSH will point you to the right place.</p>
+    <p class="tagline"><strong>Not sure where to start?</strong> Answer a few quick questions and POSH will guide you.</p>
 
     <div id="nav"></div>
 
     <div class="card hero-warning">
-      <h2>Fastest Parent Path</h2>
+      <h2>This takes less than 1 minute</h2>
       <div class="rule-box">
         <p>You do <strong>not</strong> need to read the whole site first.</p>
-        <p>Pick your child’s age, choose their main apps/games, and POSH will guide you to the right pages.</p>
+        <p>Pick your child’s age, what they mainly use, and whether something already feels wrong.</p>
       </div>
-      <div class="danger-line">If something already feels wrong, go straight to Red Flags + Report & Get Help</div>
+      <div class="danger-line">If something already feels wrong, act early</div>
     </div>
 
     <div class="card">
@@ -50,7 +50,7 @@
         </div>
 
         <div class="q">
-          <div class="q-title">3) What app/game worries you most?</div>
+          <div class="q-title">3) What app or game worries you most?</div>
           <div class="q-options">
             <label><input type="radio" name="app" value="roblox" required> Roblox</label>
             <label><input type="radio" name="app" value="discord"> Discord</label>
@@ -58,7 +58,7 @@
             <label><input type="radio" name="app" value="snapchat"> Snapchat</label>
             <label><input type="radio" name="app" value="minecraft"> Minecraft</label>
             <label><input type="radio" name="app" value="fortnite"> Fortnite</label>
-            <label><input type="radio" name="app" value="other"> General / not listed</label>
+            <label><input type="radio" name="app" value="other"> General help</label>
           </div>
         </div>
 
@@ -66,7 +66,7 @@
           <div class="q-title">4) Is there already a concern?</div>
           <div class="q-options">
             <label><input type="radio" name="risk" value="yes" required> Yes — something feels off</label>
-            <label><input type="radio" name="risk" value="no"> No — I’m just setting this up properly</label>
+            <label><input type="radio" name="risk" value="no"> No — I just want to set things up safely</label>
           </div>
         </div>
 
@@ -89,12 +89,12 @@
     </div>
 
     <div class="card">
-      <h2>Manual Start</h2>
+      <h2>Don’t want to use the guide?</h2>
       <div class="btn-grid">
-        <a class="btn" href="v3-age-guide.html">Age Guide</a>
-        <a class="btn secondary" href="v3-safety-score.html">Safety Check</a>
-        <a class="btn secondary" href="v3-device-controls.html">Device Safety</a>
+        <a class="btn" href="v3-safety-score.html">Safety Check</a>
+        <a class="btn secondary" href="v3-age-guide.html">Age Guide</a>
         <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+        <a class="btn secondary" href="v3-device-controls.html">Device Safety</a>
       </div>
     </div>
 
@@ -182,8 +182,7 @@
           urgent.style.display = "block";
           urgent.innerHTML =
             "<strong>Because something already feels wrong:</strong><br>" +
-            "Go to <strong>Red Flags</strong> and <strong>Report & Get Help</strong> immediately. " +
-            "Save evidence, stay calm, and reassure your child they are not in trouble.<br><br>" +
+            "Go to <strong>Red Flags</strong> and <strong>Report & Get Help</strong> immediately. Save evidence, stay calm, and reassure your child they are not in trouble.<br><br>" +
             makeBtn("v3-redflags.html", "Red Flags", false) + " " +
             makeBtn("v3-reporting.html", "Report & Get Help", true);
         } else {
