@@ -11,12 +11,12 @@
 
     <div class="brand">POSH</div>
     <h1 class="page-title">Safety Check</h1>
-    <p class="tagline"><strong>10 checks.</strong> Clear score. Clear next steps.</p>
+    <p class="tagline"><strong>10 quick checks.</strong> Clear score. Clear next steps.</p>
 
     <div id="nav"></div>
 
     <div class="card hero-warning">
-      <h2>Fast Risk Scan</h2>
+      <h2>Fast risk scan</h2>
       <div class="rule-box">
         <p>This takes about 60 seconds.</p>
         <p>Be honest — the goal is not perfection, it’s reducing risk quickly.</p>
@@ -30,7 +30,7 @@
       <form id="scoreForm" class="quiz">
 
         <div class="q">
-          <div class="q-title">1) Device controls are ON (Screen Time / Family Link / Family Safety)</div>
+          <div class="q-title">1) Device safety controls are ON (Screen Time / Family Link / Family Safety)</div>
           <div class="q-options">
             <label><input type="radio" name="q1" value="yes" required> Yes</label>
             <label><input type="radio" name="q1" value="some"> Some</label>
@@ -75,7 +75,7 @@
         </div>
 
         <div class="q">
-          <div class="q-title">6) No secret accounts</div>
+          <div class="q-title">6) There are no secret accounts</div>
           <div class="q-options">
             <label><input type="radio" name="q6" value="yes" required> Yes</label>
             <label><input type="radio" name="q6" value="some"> Not sure</label>
@@ -111,7 +111,7 @@
         </div>
 
         <div class="q">
-          <div class="q-title">10) The off-platform rule is clear (no moving to Discord/Snap/Telegram with strangers)</div>
+          <div class="q-title">10) The off-platform rule is clear (no moving to Discord / Snap / Telegram with strangers)</div>
           <div class="q-options">
             <label><input type="radio" name="q10" value="yes" required> Yes</label>
             <label><input type="radio" name="q10" value="some"> Kind of</label>
@@ -154,6 +154,10 @@
         <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
         <a class="btn secondary" href="v3-reporting.html">Report & Get Help</a>
       </div>
+
+      <p class="small" style="margin-top:12px;">
+        You do not need to fix everything today. Fix the biggest risk first.
+      </p>
     </div>
 
     <footer>
@@ -222,14 +226,14 @@
     q7: {title:"Devices in bedrooms overnight", fix:"Charge devices overnight in a shared area.", link:"v3-house-rules.html"},
     q8: {title:"Location sharing risk", fix:"Turn location sharing OFF unless truly needed.", link:"v3-socials.html"},
     q9: {title:"Child may fear telling you", fix:"Repeat often: 'You won’t be in trouble for telling me.'", link:"v3-parent-scripts.html"},
-    q10:{title:"Off-platform rule missing", fix:"Set the Golden Rule: no moving to Discord/Snap/Telegram with strangers.", link:"v3-playbook.html"}
+    q10:{title:"Off-platform rule missing", fix:"Set the Golden Rule: no moving to Discord / Snap / Telegram with strangers.", link:"v3-playbook.html"}
   };
 
   function grade(score){
     if(score >= 85) return {label:"Strong", summary:"Your current setup is strong. Keep doing weekly 5-minute checks."};
     if(score >= 65) return {label:"Good (needs tightening)", summary:"You’re doing a lot right. Tighten DMs, voice, and friends lists."};
     if(score >= 45) return {label:"At Risk", summary:"Stranger access is likely. Lock DMs and voice today, then apply house rules."};
-    return {label:"High Risk", summary:"Your child may have open access to strangers. Start with device safety + house rules now."};
+    return {label:"High Risk", summary:"Your child may have open access to strangers. Start with device safety and house rules now."};
   }
 
   form.addEventListener("submit", function(e){
