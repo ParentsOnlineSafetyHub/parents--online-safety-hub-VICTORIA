@@ -14,10 +14,11 @@
     <a href="v3-house-rules.html">House Rules</a>
     <a href="v3-age-guide.html">Age Guide</a>
 
+    <a href="v3-devices.html">Devices</a>
     <a href="v3-device-controls.html">Device Safety</a>
     <a href="v3-platforms.html">Platforms</a>
 
-    <a href="v3-gaming.html">Gaming</a>
+    <a href="v3-gaming.html">Gaming Safety</a>
     <a href="v3-socials.html">Social Media & Chat</a>
     <a href="v3-videochat.html">Live Video & Streaming</a>
 
@@ -43,7 +44,6 @@
 
     navLinks.forEach((link) => {
       const linkPage = link.getAttribute("href");
-
       if (linkPage === currentPage) {
         link.classList.add("nav-active");
         link.setAttribute("aria-current", "page");
