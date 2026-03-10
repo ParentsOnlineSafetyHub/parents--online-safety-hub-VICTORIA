@@ -19,6 +19,7 @@
     <a href="v3-platforms.html">Platforms</a>
 
     <a href="v3-gaming.html">Gaming Safety</a>
+    <a href="v3-all-games.html">All Games Directory</a>
     <a href="v3-socials.html">Social Media & Chat</a>
     <a href="v3-videochat.html">Live Video & Streaming</a>
 
