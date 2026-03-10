@@ -144,16 +144,37 @@
       </div>
     </div>
 
+    <div class="card">
+      <h2>Next safety steps</h2>
+      <div class="btn-grid">
+        <a class="btn" href="v3-redflags.html">Red Flags</a>
+        <a class="btn secondary" href="v3-reporting.html">Report & Get Help</a>
+        <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
+        <a class="btn secondary" href="index.html">Back to Home Page</a>
+      </div>
+
+      <div class="btn-grid" style="margin-top:14px;">
+        <a class="btn secondary" href="v3-all-games.html">All Games Directory</a>
+        <a class="btn secondary" href="v3-downloads.html">All PDF Downloads</a>
+        <a class="btn secondary" href="v3-safety-score.html">Safety Check</a>
+        <a class="btn secondary" href="v3-start.html">Start Here</a>
+      </div>
+    </div>
+
+    <div class="card home-intro">
+      <h2>What POSH is really about</h2>
+      <div class="home-subline">
+        POSH is about child safety in the digital world.
+        <br/><br/>
+        That includes games, social media, private chats, livestreams, algorithm-driven content, misinformation, online grooming, manipulation, and digital communities.
+        <br/><br/>
+        The goal is simple:
+        help parents reduce exposure, spot warning signs early, and make safer decisions for their children.
+      </div>
+    </div>
+
     <footer>
-      <div class="card home-intro">
-  <h2>What POSH is really about</h2>
-  <div class="home-subline">
-    POSH is about child safety in the digital world.
-
-    That includes games, social media, private chats, livestreams, algorithm-driven content, misinformation, online grooming, manipulation, and digital communities.
-
-    The goal is simple:
-    help parents reduce exposure, spot warning signs early, and make safer decisions for their children.
+      Built in Victoria. Designed for Australia.<br/>
       <span class="small">Contact: allthewaycarpentry@gmail.com</span>
       <div class="footer-actions">
         <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">Support this movement</a>
@@ -194,7 +215,7 @@
       };
 
       const typeLinks = {
-        gaming: ["v3-gaming.html", "Gaming"],
+        gaming: ["v3-gaming.html", "Gaming Safety"],
         social: ["v3-socials.html", "Social Media & Chat"],
         video: ["v3-videochat.html", "Live Video & Streaming"],
         mixed: ["v3-platforms.html", "Platforms"]
@@ -233,21 +254,25 @@
         else total += 10;
 
         if (data.app === "other") total += 15;
-        else if (["roblox","discord","vrchat","snapchat"].includes(data.app)) total += 5;
+        else if (["roblox", "discord", "vrchat", "snapchat"].includes(data.app)) total += 5;
         else total += 10;
 
         return Math.min(100, total);
       }
 
       function grade(score) {
-        if (score >= 80) return {
-          label: "Strong Start",
-          summary: "You already have some protective structure in place. Tighten the main risk areas and keep building."
-        };
-        if (score >= 55) return {
-          label: "Needs Tightening",
-          summary: "You are part way there. Focus on device safety, clear rules, and the highest-risk app first."
-        };
+        if (score >= 80) {
+          return {
+            label: "Strong Start",
+            summary: "You already have some protective structure in place. Tighten the main risk areas and keep building."
+          };
+        }
+        if (score >= 55) {
+          return {
+            label: "Needs Tightening",
+            summary: "You are part way there. Focus on device safety, clear rules, and the highest-risk app first."
+          };
+        }
         return {
           label: "Action Needed",
           summary: "Your child may have more exposure than you realise. Start with the urgent pages and lock things down now."
@@ -327,24 +352,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-
-<div class="card">
-  <h2>Next safety steps</h2>
-  <div class="btn-grid">
-    <a class="btn" href="v3-redflags.html">Red Flags</a>
-    <a class="btn secondary" href="v3-reporting.html">Report & Get Help</a>
-    <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
-    <a class="btn secondary" href="index.html">Back to Home Page</a>
-  </div>
-</div>
-<div class="card home-intro">
-  <h2>What POSH is really about</h2>
-  <div class="home-subline">
-    POSH is about child safety in the digital world.
-
-    That includes games, social media, private chats, livestreams, algorithm-driven content, misinformation, online grooming, manipulation, and digital communities.
-
-    The goal is simple:
-    help parents reduce exposure, spot warning signs early, and make safer decisions for their children.
-  </div>
-</div>
