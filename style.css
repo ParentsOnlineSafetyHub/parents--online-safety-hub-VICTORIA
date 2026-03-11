@@ -206,7 +206,7 @@ p{
 }
 
 /* ===== NAV ===== */
-nav{
+.wrap > nav{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
@@ -251,7 +251,86 @@ nav a:hover{
 nav a:hover::after{
   left:140%;
 }
+/* ===== Accordion Navigation ===== */
+.nav-accordion{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin: 0 auto 28px;
+  max-width: 980px;
+}
 
+.nav-group{
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  background: rgba(255,255,255,.05);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+.nav-group summary{
+  list-style:none;
+  cursor:pointer;
+  padding:16px 18px;
+  font-family:"Montserrat", sans-serif;
+  font-weight:800;
+  font-size:1rem;
+  letter-spacing:.2px;
+  color:var(--text);
+  background: linear-gradient(180deg, rgba(15,42,85,.92), rgba(12,35,70,.92));
+  border-bottom:1px solid rgba(255,255,255,.08);
+  text-align:left;
+}
+
+.nav-group summary::-webkit-details-marker{
+  display:none;
+}
+
+.nav-group summary::after{
+  content:"+";
+  float:right;
+  font-size:1.2rem;
+  color:var(--gold);
+}
+
+.nav-group[open] summary::after{
+  content:"−";
+}
+
+.nav-group nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  padding:16px;
+  justify-content:flex-start;
+  margin:0;
+}
+
+.nav-group nav a{
+  text-decoration:none;
+  font-weight:800;
+  color:rgba(244,247,255,.90);
+  padding:10px 14px;
+  border-radius:999px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.nav-group nav a:hover{
+  transform: translateY(-2px);
+  background: rgba(34,230,211,.18);
+  border-color: rgba(34,230,211,.45);
+  box-shadow: 0 14px 28px rgba(0,0,0,.30), 0 0 18px rgba(34,230,211,.14);
+  color:#fff;
+}
+
+.nav-group nav a.nav-active{
+  background: rgba(217,182,90,.18);
+  border-color: rgba(217,182,90,.42);
+  color:#fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,.30), 0 0 18px rgba(217,182,90,.16);
+}
 /* ===== Cards ===== */
 .card{
   background: linear-gradient(180deg, var(--cardA), var(--cardB));
@@ -719,9 +798,4 @@ footer{
     font-size: 2.8rem;
   }
 }
-nav a.nav-active{
-  background: rgba(217,182,90,.18);
-  border-color: rgba(217,182,90,.42);
-  color: #fff;
-  box-shadow: 0 14px 28px rgba(0,0,0,.30), 0 0 18px rgba(217,182,90,.16);
-}
+
