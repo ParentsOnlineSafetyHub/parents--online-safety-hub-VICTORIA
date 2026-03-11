@@ -1,439 +1,156 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Start Here • POSH</title>
-  <link rel="stylesheet" href="style.css"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Start Here • POSH</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="wrap">
 
-    <div class="brand">POSH</div>
-    <h1 class="page-title">Start Here</h1>
-    <p class="tagline"><strong>Answer a few quick questions</strong> — get your POSH Start Score and the right next steps fast.</p>
+<div class="wrap">
 
-    <div id="nav"></div>
+  <div class="brand">POSH</div>
+  <h1 class="page-title">Start Here</h1>
+  <p class="tagline"><strong>Answer a few quick questions</strong> — get your POSH Start Score and the right next steps fast.</p>
 
-    <div class="card hero-warning">
-      <h2>Your fastest starting point</h2>
-      <div class="rule-box">
-        <p>You do <strong>not</strong> need to read the whole site first.</p>
-        <p>This guide gives you a quick score, shows what matters most, and points you where to go next.</p>
-      </div>
-      <div class="danger-line">More clarity = faster action = safer children</div>
+  <div id="nav"></div>
+
+  <!-- INTRO / FAST START -->
+  <div class="card home-intro home-intro-hero">
+    <div class="home-subline">
+      Use this guide to quickly understand your child’s exposure, what matters most, and where to focus your next actions.
     </div>
-<div class="card">
-
-<h2>How grooming usually starts (30 seconds)</h2>
-
-<p class="note" style="text-align:center;">
-It rarely begins with something obviously dangerous.
-</p>
-
-<div class="badges">
-<div class="badge">Friendly conversation</div>
-<div class="badge">Shared game</div>
-<div class="badge">Compliments</div>
-<div class="badge">Small gifts</div>
-</div>
-
-<p class="note" style="text-align:center;">
-Then the conversation slowly moves somewhere private.
-</p>
-
-<div class="network-flow">
-
-<div class="pill">Game Chat</div>
-<div class="arrow">↓</div>
-
-<div class="pill">Discord / Snapchat</div>
-<div class="arrow">↓</div>
-
-<div class="pill">Private Messages</div>
-<div class="arrow">↓</div>
-
-<div class="pill">Secrets / Pressure</div>
-
-</div>
-
-<div class="callout">
-<strong>Critical warning sign:</strong>
-If someone tries to move a child from a public space (game, server, group chat) into private messaging, risk increases quickly.
-</div>
-
-<div class="btn-grid" style="margin-top:14px;">
-<a class="btn" href="v3-playbook.html">How Grooming Escalates</a>
-<a class="btn secondary" href="v3-redflags.html">Red Flags</a>
-<a class="btn secondary" href="v3-reporting.html">Report & Get Help</a>
-</div>
-
-</div>    <div class="card">
-      <h2>Quick Parent Guide</h2>
-
-      <form id="startGuideForm">
-
-        <div class="q">
-          <div class="q-title">1) How old is your child?</div>
-          <div class="q-options">
-            <label><input type="radio" name="age" value="under10" required> Under 10</label>
-            <label><input type="radio" name="age" value="10to12"> 10–12</label>
-            <label><input type="radio" name="age" value="13to15"> 13–15</label>
-            <label><input type="radio" name="age" value="16plus"> 16+</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">2) What do they mainly use?</div>
-          <div class="q-options">
-            <label><input type="radio" name="type" value="gaming" required> Mostly games</label>
-            <label><input type="radio" name="type" value="social"> Mostly social/chat apps</label>
-            <label><input type="radio" name="type" value="video"> Live video / streaming</label>
-            <label><input type="radio" name="type" value="mixed"> Mixed use</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">3) Which app or game worries you most?</div>
-          <div class="q-options">
-            <label><input type="radio" name="app" value="roblox" required> Roblox</label>
-            <label><input type="radio" name="app" value="discord"> Discord</label>
-            <label><input type="radio" name="app" value="vrchat"> VRChat</label>
-            <label><input type="radio" name="app" value="snapchat"> Snapchat</label>
-            <label><input type="radio" name="app" value="minecraft"> Minecraft</label>
-            <label><input type="radio" name="app" value="fortnite"> Fortnite</label>
-            <label><input type="radio" name="app" value="other"> General help</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">4) Is there already a concern?</div>
-          <div class="q-options">
-            <label><input type="radio" name="risk" value="yes" required> Yes — something feels off</label>
-            <label><input type="radio" name="risk" value="no"> No — I’m setting things up safely</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">5) Have you already locked down device settings?</div>
-          <div class="q-options">
-            <label><input type="radio" name="device" value="yes" required> Yes</label>
-            <label><input type="radio" name="device" value="some"> Somewhat</label>
-            <label><input type="radio" name="device" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">6) Does your child know they won’t be in trouble for telling you about online issues?</div>
-          <div class="q-options">
-            <label><input type="radio" name="trust" value="yes" required> Yes</label>
-            <label><input type="radio" name="trust" value="some"> I’ve said it once</label>
-            <label><input type="radio" name="trust" value="no"> Not clearly</label>
-          </div>
-        </div>
-
-        <div class="btn-grid" style="margin-top:16px;">
-          <button class="btn" type="submit">Show My POSH Start Score</button>
-          <button class="btn secondary" type="button" id="resetGuideBtn">Reset</button>
-        </div>
-
-      </form>
+    <div class="callout home-callout">
+      <strong>Quick action matters:</strong> awareness + protective steps = safer kids
     </div>
-
-    <div class="card" id="guideResults" style="display:none;">
-      <h2>Your POSH Start Result</h2>
-
-      <div class="score-wrap">
-        <div class="score-ring">
-          <div class="score-num" id="startScoreNum">0</div>
-          <div class="score-label">/ 100</div>
-        </div>
-
-        <div class="score-text">
-          <div class="score-grade" id="startScoreGrade">—</div>
-          <p class="note" id="startScoreSummary" style="text-align:left;"></p>
-          <div class="badges" style="justify-content:center;">
-            <div class="badge gold" id="startScoreBadge">POSH Start Score</div>
-            <div class="badge danger" id="urgentBadge" style="display:none;">Act early now</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="callout" id="guideSummary" style="margin-top:14px;"></div>
-
-      <div class="btn-grid" id="guideButtons" style="margin-top:14px;"></div>
-
-      <div class="callout" id="guideUrgent" style="margin-top:14px; display:none;"></div>
-
-      <div class="card" style="margin-top:18px;">
-        <h2 style="margin-bottom:10px;">Help protect more children</h2>
-        <p class="note" style="text-align:center;">
-          If this helped you, share POSH with another parent. Awareness spreads safety.
-        </p>
-        <div class="btn-grid">
-          <a class="btn" href="v3-share.html">Share POSH Now</a>
-          <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au" target="_blank" rel="noopener">Share on Facebook</a>
-          <a class="btn secondary" href="v3-downloads.html">Download Parent Guides</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Don’t want to use the guide?</h2>
-      <div class="btn-grid">
-        <a class="btn" href="v3-safety-score.html">Safety Check</a>
-        <a class="btn secondary" href="v3-age-guide.html">Age Guide</a>
-        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
-        <a class="btn secondary" href="v3-device-controls.html">Device Safety</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Next safety steps</h2>
-      <div class="btn-grid">
-        <a class="btn" href="v3-redflags.html">Red Flags</a>
-        <a class="btn secondary" href="v3-reporting.html">Report & Get Help</a>
-        <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
-        <a class="btn secondary" href="index.html">Back to Home Page</a>
-      </div>
-
-      <div class="btn-grid" style="margin-top:14px;">
-        <a class="btn secondary" href="v3-all-games.html">All Games Directory</a>
-        <a class="btn secondary" href="v3-downloads.html">All PDF Downloads</a>
-        <a class="btn secondary" href="v3-safety-score.html">Safety Check</a>
-        <a class="btn secondary" href="v3-start.html">Start Here</a>
-      </div>
-    </div>
-
-    <div class="card home-intro">
-      <h2>What POSH is really about</h2>
-      <div class="home-subline">
-        POSH is about child safety in the digital world.
-        <br/><br/>
-        That includes games, social media, private chats, livestreams, algorithm-driven content, misinformation, online grooming, manipulation, and digital communities.
-        <br/><br/>
-        The goal is simple:
-        help parents reduce exposure, spot warning signs early, and make safer decisions for their children.
-      </div>
-    </div>
-<div class="card hero-warning">
-
-<h2>Help protect another child</h2>
-
-<div class="rule-box">
-<p>Many parents simply haven't been shown how online grooming and manipulation actually starts.</p>
-
-<p>Sharing awareness early can help another family prevent harm.</p>
-</div>
-
-<div class="danger-line">
-One parent sharing this can protect another child
-</div>
-
-<div class="btn-grid" style="margin-top:14px;">
-
-<a class="btn" href="v3-share.html">Share POSH</a>
-
-<a class="btn secondary"
-href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au"
-target="_blank"
-rel="noopener">
-Share on Facebook
-</a>
-
-<a class="btn secondary"
-href="https://twitter.com/intent/tweet?url=https://poshaussie.com.au"
-target="_blank"
-rel="noopener">
-Share on X
-</a>
-
-<a class="btn secondary"
-href="https://www.linkedin.com/sharing/share-offsite/?url=https://poshaussie.com.au"
-target="_blank"
-rel="noopener">
-Share on LinkedIn
-</a>
-
-</div>
-
-</div>
-    <footer>
-      Built in Victoria. Designed for Australia.<br/>
-      <span class="small">Contact: allthewaycarpentry@gmail.com</span>
-      <div class="footer-actions">
-        <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">Support this movement</a>
-      </div>
-    </footer>
-
   </div>
 
-  <script>
-    (function () {
-      const form = document.getElementById("startGuideForm");
-      const resetBtn = document.getElementById("resetGuideBtn");
-      const results = document.getElementById("guideResults");
-      const summary = document.getElementById("guideSummary");
-      const buttons = document.getElementById("guideButtons");
-      const urgent = document.getElementById("guideUrgent");
+  <!-- QUESTIONS FORM -->
+  <div class="card center-card">
+    <form id="startGuideForm">
 
-      const startScoreNum = document.getElementById("startScoreNum");
-      const startScoreGrade = document.getElementById("startScoreGrade");
-      const startScoreSummary = document.getElementById("startScoreSummary");
-      const urgentBadge = document.getElementById("urgentBadge");
+      <!-- Question 1 -->
+      <div class="q">
+        <div class="q-title">1) How old is your child?</div>
+        <div class="q-options">
+          <label><input type="radio" name="age" value="under10" required> Under 10</label>
+          <label><input type="radio" name="age" value="10to12"> 10–12</label>
+          <label><input type="radio" name="age" value="13to15"> 13–15</label>
+          <label><input type="radio" name="age" value="16plus"> 16+</label>
+        </div>
+      </div>
 
-      const ageLinks = {
-        under10: ["v3-age-guide.html", "Age Guide"],
-        "10to12": ["v3-age-guide.html", "Age Guide"],
-        "13to15": ["v3-age-guide.html", "Age Guide"],
-        "16plus": ["v3-age-guide.html", "Age Guide"]
-      };
+      <!-- Question 2 -->
+      <div class="q">
+        <div class="q-title">2) What do they mainly use?</div>
+        <div class="q-options">
+          <label><input type="radio" name="type" value="gaming" required> Mostly games</label>
+          <label><input type="radio" name="type" value="social"> Mostly social/chat apps</label>
+          <label><input type="radio" name="type" value="video"> Live video / streaming</label>
+          <label><input type="radio" name="type" value="mixed"> Mixed use</label>
+        </div>
+      </div>
 
-      const appLinks = {
-        roblox: ["v3-game-roblox.html", "Roblox Safety"],
-        discord: ["v3-social-discord.html", "Discord Safety"],
-        vrchat: ["v3-game-vrchat.html", "VRChat Safety"],
-        snapchat: ["v3-social-snapchat.html", "Snapchat Safety"],
-        minecraft: ["v3-game-minecraft.html", "Minecraft Safety"],
-        fortnite: ["v3-game-fortnite.html", "Fortnite Safety"],
-        other: ["v3-socials.html", "Social Media & Chat"]
-      };
+      <!-- Question 3 -->
+      <div class="q">
+        <div class="q-title">3) Which app or game worries you most?</div>
+        <div class="q-options">
+          <label><input type="radio" name="app" value="roblox" required> Roblox</label>
+          <label><input type="radio" name="app" value="discord"> Discord</label>
+          <label><input type="radio" name="app" value="vrchat"> VRChat</label>
+          <label><input type="radio" name="app" value="snapchat"> Snapchat</label>
+          <label><input type="radio" name="app" value="minecraft"> Minecraft</label>
+          <label><input type="radio" name="app" value="fortnite"> Fortnite</label>
+          <label><input type="radio" name="app" value="other"> General help</label>
+        </div>
+      </div>
 
-      const typeLinks = {
-        gaming: ["v3-gaming.html", "Gaming Safety"],
-        social: ["v3-socials.html", "Social Media & Chat"],
-        video: ["v3-videochat.html", "Live Video & Streaming"],
-        mixed: ["v3-platforms.html", "Platforms"]
-      };
+      <!-- Question 4 -->
+      <div class="q">
+        <div class="q-title">4) Is there already a concern?</div>
+        <div class="q-options">
+          <label><input type="radio" name="risk" value="yes" required> Yes — something feels off</label>
+          <label><input type="radio" name="risk" value="no"> No — I’m setting things up safely</label>
+        </div>
+      </div>
 
-      const ageText = {
-        under10: "Under 10",
-        "10to12": "10–12",
-        "13to15": "13–15",
-        "16plus": "16+"
-      };
+      <!-- Question 5 -->
+      <div class="q">
+        <div class="q-title">5) Have you already locked down device settings?</div>
+        <div class="q-options">
+          <label><input type="radio" name="device" value="yes" required> Yes</label>
+          <label><input type="radio" name="device" value="some"> Somewhat</label>
+          <label><input type="radio" name="device" value="no"> No</label>
+        </div>
+      </div>
 
-      function makeBtn(href, text, secondary) {
-        return '<a class="btn' + (secondary ? ' secondary' : '') + '" href="' + href + '">' + text + '</a>';
-      }
+      <!-- Question 6 -->
+      <div class="q">
+        <div class="q-title">6) Does your child know they won’t be in trouble for telling you about online issues?</div>
+        <div class="q-options">
+          <label><input type="radio" name="trust" value="yes" required> Yes</label>
+          <label><input type="radio" name="trust" value="some"> I’ve said it once</label>
+          <label><input type="radio" name="trust" value="no"> Not clearly</label>
+        </div>
+      </div>
 
-      function scoreValue(value, yesPoints, somePoints) {
-        if (value === "yes") return yesPoints;
-        if (value === "some") return somePoints;
-        return 0;
-      }
+      <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
+        <button class="btn" type="submit">Show My POSH Start Score</button>
+        <button class="btn secondary" type="button" id="resetGuideBtn">Reset</button>
+      </div>
 
-      function getStartScore(data) {
-        let total = 0;
+    </form>
+  </div>
 
-        total += data.risk === "no" ? 20 : 0;
-        total += scoreValue(data.device, 20, 10);
-        total += scoreValue(data.trust, 20, 10);
+  <!-- RESULTS -->
+  <div class="card center-card" id="guideResults" style="display:none;">
+    <h2>Your POSH Start Result</h2>
 
-        if (data.age === "under10") total += 20;
-        else if (data.age === "10to12") total += 15;
-        else if (data.age === "13to15") total += 10;
-        else total += 5;
+    <div class="score-wrap">
+      <div class="score-ring">
+        <div class="score-num" id="startScoreNum">0</div>
+        <div class="score-label">/ 100</div>
+      </div>
 
-        if (data.type === "mixed") total += 5;
-        else total += 10;
+      <div class="score-text">
+        <div class="score-grade" id="startScoreGrade">—</div>
+        <p class="note" id="startScoreSummary" style="text-align:left;"></p>
+        <div class="badges" style="justify-content:center;">
+          <div class="badge gold" id="startScoreBadge">POSH Start Score</div>
+          <div class="badge danger" id="urgentBadge" style="display:none;">Act early now</div>
+        </div>
+      </div>
+    </div>
 
-        if (data.app === "other") total += 15;
-        else if (["roblox", "discord", "vrchat", "snapchat"].includes(data.app)) total += 5;
-        else total += 10;
+    <div class="callout" id="guideSummary" style="margin-top:14px;"></div>
+    <div class="btn-grid" id="guideButtons" style="margin-top:14px;"></div>
+    <div class="callout" id="guideUrgent" style="margin-top:14px; display:none;"></div>
 
-        return Math.min(100, total);
-      }
+    <!-- SHARE PROMPT -->
+    <div class="card hero-warning" style="margin-top:18px;">
+      <h2>Help protect more children</h2>
+      <p class="note" style="text-align:center;">
+        If this helped you, share POSH with another parent. Awareness spreads safety.
+      </p>
+      <div class="btn-grid btn-grid-soft">
+        <a class="btn" href="v3-share.html">Share POSH Now</a>
+        <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au" target="_blank" rel="noopener">Share on Facebook</a>
+        <a class="btn secondary" href="v3-downloads.html">Download Parent Guides</a>
+      </div>
+    </div>
+  </div>
 
-      function grade(score) {
-        if (score >= 80) {
-          return {
-            label: "Strong Start",
-            summary: "You already have some protective structure in place. Tighten the main risk areas and keep building."
-          };
-        }
-        if (score >= 55) {
-          return {
-            label: "Needs Tightening",
-            summary: "You are part way there. Focus on device safety, clear rules, and the highest-risk app first."
-          };
-        }
-        return {
-          label: "Action Needed",
-          summary: "Your child may have more exposure than you realise. Start with the urgent pages and lock things down now."
-        };
-      }
+  <footer>
+    Built in Victoria. Designed for Australia.<br/>
+    <span class="small">Contact: allthewaycarpentry@gmail.com</span>
+    <div class="footer-actions">
+      <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">Support this movement</a>
+    </div>
+  </footer>
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+</div>
 
-        const data = {
-          age: form.querySelector('input[name="age"]:checked')?.value,
-          type: form.querySelector('input[name="type"]:checked')?.value,
-          app: form.querySelector('input[name="app"]:checked')?.value,
-          risk: form.querySelector('input[name="risk"]:checked')?.value,
-          device: form.querySelector('input[name="device"]:checked')?.value,
-          trust: form.querySelector('input[name="trust"]:checked')?.value
-        };
-
-        const score = getStartScore(data);
-        const g = grade(score);
-
-        const ageLink = ageLinks[data.age];
-        const typeLink = typeLinks[data.type];
-        const appLink = appLinks[data.app];
-
-        startScoreNum.textContent = score;
-        startScoreGrade.textContent = g.label;
-        startScoreSummary.textContent = g.summary;
-
-        summary.innerHTML =
-          "<strong>Recommended order for a parent of a " + ageText[data.age] + " child:</strong><br>" +
-          "1) Start with <strong>" + ageLink[1] + "</strong><br>" +
-          "2) Then go to <strong>" + typeLink[1] + "</strong><br>" +
-          "3) Then lock down <strong>" + appLink[1] + "</strong><br>" +
-          "4) Finish with <strong>House Rules</strong> and <strong>Device Safety</strong>";
-
-        buttons.innerHTML =
-          makeBtn(ageLink[0], ageLink[1], false) +
-          makeBtn(typeLink[0], typeLink[1], true) +
-          makeBtn(appLink[0], appLink[1], true) +
-          makeBtn("v3-house-rules.html", "House Rules", true) +
-          makeBtn("v3-device-controls.html", "Device Safety", true);
-
-        if (data.risk === "yes" || score < 55) {
-          urgent.style.display = "block";
-          urgentBadge.style.display = "inline-flex";
-          urgent.innerHTML =
-            "<strong>Priority action now:</strong><br>" +
-            "Go straight to <strong>Red Flags</strong> and <strong>Report & Get Help</strong> if something already feels wrong. Save evidence, stay calm, and reassure your child they are not in trouble.<br><br>" +
-            makeBtn("v3-redflags.html", "Red Flags", false) + " " +
-            makeBtn("v3-reporting.html", "Report & Get Help", true);
-        } else {
-          urgent.style.display = "none";
-          urgentBadge.style.display = "none";
-          urgent.innerHTML = "";
-        }
-
-        results.style.display = "block";
-        results.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-
-      resetBtn.addEventListener("click", function () {
-        form.reset();
-        results.style.display = "none";
-        summary.innerHTML = "";
-        buttons.innerHTML = "";
-        urgent.innerHTML = "";
-        urgent.style.display = "none";
-        urgentBadge.style.display = "none";
-        startScoreNum.textContent = "0";
-        startScoreGrade.textContent = "—";
-        startScoreSummary.textContent = "";
-      });
-    })();
-  </script>
-
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
