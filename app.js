@@ -1,6 +1,7 @@
 (function () {
   const navHTML = `
   <nav>
+
     <a href="index.html">Home</a>
 
     <a href="v3-start.html">Start Here</a>
@@ -20,12 +21,14 @@
 
     <a href="v3-gaming.html">Gaming Safety</a>
     <a href="v3-all-games.html">All Games Directory</a>
+
     <a href="v3-socials.html">Social Media & Chat</a>
     <a href="v3-videochat.html">Live Video & Streaming</a>
 
-    <a href="v3-algorithm-awareness.html">Algorithm Risks</a>
     <a href="v3-predators.html">Predators & Grooming</a>
     <a href="v3-awareness.html">Safety Awareness</a>
+    <a href="v3-real-investigations.html">Real Investigations</a>
+    <a href="v3-algorithm-awareness.html">Algorithm Risks</a>
 
     <a href="v3-mindset.html">Parent Mindset</a>
 
@@ -33,18 +36,23 @@
     <a href="v3-cancel-subscriptions.html">Cancel Subscriptions</a>
 
     <a href="v3-support.html">Support</a>
+
   </nav>
   `;
 
   const target = document.getElementById("nav");
+
   if (target) {
     target.innerHTML = navHTML;
 
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const currentPage =
+      window.location.pathname.split("/").pop() || "index.html";
+
     const navLinks = target.querySelectorAll("a");
 
     navLinks.forEach((link) => {
       const linkPage = link.getAttribute("href");
+
       if (linkPage === currentPage) {
         link.classList.add("nav-active");
         link.setAttribute("aria-current", "page");
