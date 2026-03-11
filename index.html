@@ -325,7 +325,23 @@ You can follow the guided pathway, or explore safety topics in your own order.
 </div>
 
 </div>
+<div class="card">
 
+<h2>POSH visitor tally</h2>
+
+<p class="note" style="text-align:center;">
+People visiting POSH helps spread awareness about online child safety.
+</p>
+
+<div id="visitor-tally" class="badges" style="justify-content:center; font-size:22px; font-weight:bold;">
+Loading visitor count...
+</div>
+
+<p class="small" style="margin-top:12px; text-align:center;">
+This counter helps us understand whether the message is reaching families.
+</p>
+
+</div>
 <footer>
 
 Built in Victoria. Designed for Australia.<br/>
@@ -343,6 +359,24 @@ Contact: allthewaycarpentry@gmail.com
 </div>
 
 <script src="app.js"></script>
+<script>
 
+var tallyWait = setInterval(function () {
+
+  if (window.goatcounter && window.goatcounter.visit_count) {
+
+    clearInterval(tallyWait);
+
+    window.goatcounter.visit_count({
+      append: "#visitor-tally",
+      type: "html",
+      path: "index.html"
+    });
+
+  }
+
+}, 100);
+
+</script>
 </body>
 </html>
