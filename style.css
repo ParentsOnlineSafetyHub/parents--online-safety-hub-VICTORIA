@@ -251,13 +251,14 @@ nav a:hover{
 nav a:hover::after{
   left:140%;
 }
-/* ===== Accordion Navigation ===== */
+/* ===== Navigation Groups / Dropdown Buttons ===== */
 .nav-accordion{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:14px;
   margin: 0 auto 28px;
-  max-width: 980px;
+  max-width: 1100px;
+  align-items:start;
 }
 
 .nav-group{
@@ -273,13 +274,17 @@ nav a:hover::after{
   cursor:pointer;
   padding:16px 18px;
   font-family:"Montserrat", sans-serif;
-  font-weight:800;
-  font-size:1rem;
-  letter-spacing:.2px;
+  font-weight:900;
+  font-size:1.05rem;
+  letter-spacing:.3px;
   color:var(--text);
-  background: linear-gradient(180deg, rgba(15,42,85,.92), rgba(12,35,70,.92));
-  border-bottom:1px solid rgba(255,255,255,.08);
-  text-align:left;
+  text-align:center;
+  border-radius:18px;
+  background: linear-gradient(180deg, rgba(15,42,85,.96), rgba(12,35,70,.96));
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow: 0 14px 28px rgba(0,0,0,.30);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  position:relative;
 }
 
 .nav-group summary::-webkit-details-marker{
@@ -288,8 +293,12 @@ nav a:hover::after{
 
 .nav-group summary::after{
   content:"+";
-  float:right;
+  position:absolute;
+  right:16px;
+  top:50%;
+  transform:translateY(-50%);
   font-size:1.2rem;
+  font-weight:900;
   color:var(--gold);
 }
 
@@ -297,13 +306,27 @@ nav a:hover::after{
   content:"−";
 }
 
+.nav-group summary:hover{
+  transform: translateY(-2px);
+  border-color: rgba(34,230,211,.35);
+  box-shadow: 0 18px 34px rgba(0,0,0,.34), 0 0 18px rgba(34,230,211,.12);
+}
+
+.nav-group[open] summary{
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background: linear-gradient(180deg, rgba(20,52,98,.96), rgba(12,35,70,.96));
+}
+
 .nav-group nav{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
   padding:16px;
-  justify-content:flex-start;
+  justify-content:center;
   margin:0;
+  background: rgba(6,20,40,.32);
 }
 
 .nav-group nav a{
@@ -735,10 +758,11 @@ footer{
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 700px){
-  .btn-grid{
+@media (max-width: 900px){
+  .nav-accordion{
     grid-template-columns: 1fr;
   }
+}
 
   .q-options{
     flex-direction:column;
