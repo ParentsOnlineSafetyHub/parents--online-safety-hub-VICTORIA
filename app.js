@@ -49,27 +49,47 @@
 
   const target = document.getElementById("nav");
 
-  if (target) {
-    target.innerHTML = navHTML;
+  if (!target) return;
 
-    const currentPage =
-      window.location.pathname.split("/").pop() || "index.html";
+  target.innerHTML = navHTML;
 
-    const navLinks = target.querySelectorAll("a");
-    const navGroups = target.querySelectorAll(".nav-group");
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const navLinks = target.querySelectorAll("a");
+  const navGroups = target.querySelectorAll(".nav-group");
 
-    navLinks.forEach((link) => {
-      const linkPage = link.getAttribute("href");
+  navLinks.forEach((link) => {
+    const linkPage = link.getAttribute("href");
 
-      if (linkPage === currentPage) {
-        link.classList.add("nav-active");
-        link.setAttribute("aria-current", "page");
+    if (linkPage === currentPage) {
+      link.classList.add("nav-active");
+      link.setAttribute("aria-current", "page");
 
-        const parentDetails = link.closest(".nav-group");
-        if (parentDetails) {
-          parentDetails.open = true;
-        }
+      const parentDetails = link.closest(".nav-group");
+      if (parentDetails) {
+        parentDetails.open = true;
+      }
+    }
+  });
+
+  navGroups.forEach((group) => {
+    group.addEventListener("toggle", () => {
+      if (group.open) {
+        navGroups.forEach((otherGroup) => {
+          if (otherGroup !== group) {
+            otherGroup.open = false;
+          }
+        });
       }
     });
-  }
+  });
+
+  document.addEventListener("click", (event) => {
+    const clickedInsideNav = target.contains(event.target);
+
+    if (!clickedInsideNav) {
+      navGroups.forEach((group) => {
+        group.open = false;
+      });
+    }
+  });
 })();
