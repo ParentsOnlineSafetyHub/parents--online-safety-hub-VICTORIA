@@ -26,7 +26,9 @@
   --shadow2:0 18px 48px rgba(0,0,0,.52);
 }
 
-*{ box-sizing:border-box; }
+*{
+  box-sizing:border-box;
+}
 
 html{
   scroll-behavior:smooth;
@@ -101,8 +103,11 @@ a{
 }
 
 /* ===== Typography ===== */
-h2{
+h1,h2,h3{
   font-family:Montserrat, Inter, system-ui, sans-serif;
+}
+
+h2{
   font-size:1.42rem;
   margin:0 0 12px;
   letter-spacing:.2px;
@@ -110,7 +115,6 @@ h2{
 }
 
 h3{
-  font-family:Montserrat, Inter, system-ui, sans-serif;
   margin:0;
   letter-spacing:.2px;
 }
@@ -129,7 +133,6 @@ p{
 .card p{
   font-size:1.08rem;
   line-height:1.7;
-  text-align:center;
 }
 
 .small{
@@ -169,11 +172,31 @@ p{
   justify-content:center;
   gap:10px;
   flex-wrap:wrap;
-  margin-bottom:18px;
+  margin-bottom:10px;
+}
+
+.under-hero-actions-soft .btn,
+.btn-grid-soft .btn{
+  min-height:40px;
+  padding:9px 14px;
+  font-size:.90rem;
+  border-radius:12px;
+  font-weight:800;
 }
 
 /* ===== Home Intro ===== */
 .home-intro{
+  text-align:center;
+}
+
+.home-intro-hero{
+  margin-top:18px;
+  text-align:center;
+}
+
+.home-intro-hero .home-kicker,
+.home-intro-hero .home-mantra,
+.home-intro-hero .home-subline{
   text-align:center;
 }
 
@@ -210,6 +233,15 @@ p{
   text-align:center;
 }
 
+.home-callout{
+  max-width:860px;
+  margin:18px auto 0;
+  text-align:center;
+  border-left:none;
+  border:1px solid rgba(34,230,211,.24);
+  background:rgba(8,25,50,.30);
+}
+
 /* ===== Navigation Groups / Dropdown Buttons ===== */
 .nav-accordion{
   position:relative;
@@ -218,13 +250,13 @@ p{
   align-items:flex-start;
   flex-wrap:wrap;
   gap:10px;
-  margin:0 auto 28px;
+  margin:18px auto 28px;
   max-width:1100px;
-  z-index:20;
+  z-index:40;
 }
 
 .nav-group{
-  position:static;
+  position:relative;
 }
 
 .nav-group summary{
@@ -277,16 +309,18 @@ p{
   top:calc(100% + 10px);
   left:50%;
   transform:translateX(-50%);
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  width:min(760px, calc(100vw - 32px));
-  max-width:calc(100vw - 32px);
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+  gap:10px;
+  width:min(760px, calc(100vw - 36px));
+  max-width:calc(100vw - 36px);
+  max-height:min(70vh, 420px);
+  overflow:auto;
   padding:16px;
   justify-content:center;
   border-radius:18px;
   border:1px solid rgba(255,255,255,.10);
-  background:rgba(6,20,40,.97);
+  background:rgba(6,20,40,.98);
   box-shadow:0 18px 40px rgba(0,0,0,.40);
   z-index:60;
 }
@@ -296,10 +330,11 @@ p{
   font-weight:800;
   color:rgba(244,247,255,.90);
   padding:10px 14px;
-  border-radius:999px;
+  border-radius:14px;
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.10);
   transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+  text-align:center;
 }
 
 .nav-group nav a::after{
@@ -330,6 +365,18 @@ p{
   margin:0 0 18px;
   box-shadow:var(--shadow);
   text-align:left;
+}
+
+.center-card{
+  text-align:center;
+}
+
+.center-card h2,
+.center-card p,
+.center-card .note,
+.center-card .small,
+.center-card .callout{
+  text-align:center;
 }
 
 /* ===== Warning Cards ===== */
@@ -421,6 +468,7 @@ p{
   -webkit-appearance:none;
   width:auto;
   max-width:100%;
+  text-align:center;
 }
 
 button.btn{
@@ -481,6 +529,15 @@ button.btn{
   text-align:left;
 }
 
+.center-callout{
+  max-width:860px;
+  margin:16px auto 0;
+  text-align:center;
+  border-left:none;
+  border:1px solid rgba(34,230,211,.24);
+  background:rgba(8,25,50,.26);
+}
+
 .list{
   margin:10px 0 0;
   padding-left:18px;
@@ -526,6 +583,12 @@ button.btn{
   border-color:rgba(255,59,106,.35);
   background:rgba(255,59,106,.14);
   color:rgba(244,247,255,.95);
+}
+
+.visitor-tally{
+  justify-content:center;
+  font-size:22px;
+  font-weight:bold;
 }
 
 /* ===== Network Path ===== */
@@ -724,6 +787,36 @@ button.btn{
   text-align:center;
 }
 
+/* ===== Why POSH ===== */
+.why-posh-block{
+  text-align:center;
+  padding:34px 26px;
+  border:2px solid rgba(217,182,90,.26);
+  background:
+    radial-gradient(900px 420px at 50% 0%, rgba(217,182,90,.08), transparent 62%),
+    linear-gradient(180deg, rgba(15,42,85,.96), rgba(12,35,70,.96));
+  box-shadow:0 18px 48px rgba(0,0,0,.52);
+}
+
+.why-posh-title{
+  font-size:2rem;
+  margin-bottom:16px;
+  color:rgba(244,247,255,.98);
+}
+
+.why-posh-copy{
+  max-width:900px;
+  margin:0 auto;
+  font-size:1.2rem;
+  line-height:1.85;
+  color:rgba(244,247,255,.92);
+  text-align:center;
+}
+
+.why-posh-copy strong{
+  color:var(--gold);
+}
+
 /* ===== Footer ===== */
 footer{
   margin-top:30px;
@@ -743,6 +836,7 @@ footer{
 @media (max-width:900px){
   .nav-group nav{
     width:min(94vw, 680px);
+    max-width:94vw;
   }
 }
 
@@ -754,12 +848,12 @@ footer{
 
   .nav-accordion{
     flex-direction:column;
-    align-items:center;
+    align-items:stretch;
   }
 
   .nav-group{
     width:100%;
-    max-width:520px;
+    max-width:none;
   }
 
   .nav-group summary{
@@ -768,9 +862,13 @@ footer{
 
   .nav-group nav{
     position:static;
+    left:auto;
     transform:none;
     width:100%;
+    max-width:100%;
+    max-height:none;
     margin-top:10px;
+    grid-template-columns:1fr;
   }
 
   .btn-grid{
@@ -780,6 +878,15 @@ footer{
 
   .btn{
     width:100%;
+  }
+
+  .why-posh-title{
+    font-size:1.7rem;
+  }
+
+  .why-posh-copy{
+    font-size:1.08rem;
+    line-height:1.75;
   }
 }
 
@@ -811,6 +918,7 @@ footer{
 
   .home-mantra{
     font-size:1.14rem;
+    letter-spacing:1.2px;
   }
 
   .home-subline{
