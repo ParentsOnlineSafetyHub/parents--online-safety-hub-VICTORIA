@@ -100,3 +100,36 @@
     }
   });
 })();
+/* ===============================
+   POSH GLOBAL FOOTER
+================================ */
+
+const footerHTML = `
+<footer>
+
+  Built to educate parents. Designed to Protect our Children.<br/>
+
+  <span class="small">
+  Contact: allthewaycarpentry@gmail.com
+  </span>
+
+  <div class="footer-actions">
+
+    <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
+      Support this movement
+    </a>
+
+  </div>
+
+</footer>
+`;
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const footer = document.getElementById("footer");
+
+  if(footer){
+    footer.innerHTML = footerHTML;
+  }
+
+});
