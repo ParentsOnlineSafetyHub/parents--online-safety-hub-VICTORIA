@@ -619,7 +619,12 @@ button.btn{
   border:1px solid rgba(255,255,255,.12);
   text-align:center;
 }
-
+.pill.danger{
+  border:2px solid rgba(255,91,125,.45);
+  background:rgba(255,91,125,.12);
+  color:rgba(244,247,255,.98);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
 .arrow{
   opacity:.85;
   color:rgba(244,247,255,.85);
