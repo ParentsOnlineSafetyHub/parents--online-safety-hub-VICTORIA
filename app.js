@@ -47,89 +47,85 @@
     </div>
   `;
 
-  const target = document.getElementById("nav");
-  if (!target) return;
+  const footerHTML = `
+    <footer>
+      Built to educate parents. Designed to Protect our Children.<br/>
+      <span class="small">
+        Contact: allthewaycarpentry@gmail.com
+      </span>
 
-  target.innerHTML = navHTML;
+      <div class="footer-actions">
+        <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
+          Support this movement
+        </a>
+      </div>
+    </footer>
+  `;
 
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  const navLinks = target.querySelectorAll("a");
-  const navGroups = target.querySelectorAll(".nav-group");
+  document.addEventListener("DOMContentLoaded", function () {
+    const navTarget = document.getElementById("nav");
+    const footerTarget = document.getElementById("footer");
 
-  navLinks.forEach((link) => {
-    const linkPage = link.getAttribute("href");
+    /* ===============================
+       GLOBAL NAV
+    ============================== */
+    if (navTarget) {
+      navTarget.innerHTML = navHTML;
 
-    if (linkPage === currentPage) {
-      link.classList.add("nav-active");
-      link.setAttribute("aria-current", "page");
+      const currentPage = window.location.pathname.split("/").pop() || "index.html";
+      const navLinks = navTarget.querySelectorAll("a");
+      const navGroups = navTarget.querySelectorAll(".nav-group");
 
-      const parentDetails = link.closest(".nav-group");
-      if (parentDetails) {
-        parentDetails.open = true;
-      }
-    }
-  });
+      navLinks.forEach((link) => {
+        const linkPage = link.getAttribute("href");
 
-  navGroups.forEach((group) => {
-    group.addEventListener("toggle", () => {
-      if (group.open) {
-        navGroups.forEach((otherGroup) => {
-          if (otherGroup !== group) {
-            otherGroup.open = false;
+        if (linkPage === currentPage) {
+          link.classList.add("nav-active");
+          link.setAttribute("aria-current", "page");
+
+          const parentDetails = link.closest(".nav-group");
+          if (parentDetails) {
+            parentDetails.open = true;
+          }
+        }
+      });
+
+      navGroups.forEach((group) => {
+        group.addEventListener("toggle", () => {
+          if (group.open) {
+            navGroups.forEach((otherGroup) => {
+              if (otherGroup !== group) {
+                otherGroup.open = false;
+              }
+            });
           }
         });
-      }
-    });
-  });
+      });
 
-  document.addEventListener("click", (event) => {
-    const clickedInsideNav = target.contains(event.target);
+      document.addEventListener("click", (event) => {
+        const clickedInsideNav = navTarget.contains(event.target);
 
-    if (!clickedInsideNav) {
-      navGroups.forEach((group) => {
-        group.open = false;
+        if (!clickedInsideNav) {
+          navGroups.forEach((group) => {
+            group.open = false;
+          });
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          navGroups.forEach((group) => {
+            group.open = false;
+          });
+        }
       });
     }
-  });
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      navGroups.forEach((group) => {
-        group.open = false;
-      });
+    /* ===============================
+       GLOBAL FOOTER
+    ============================== */
+    if (footerTarget) {
+      footerTarget.innerHTML = footerHTML;
     }
   });
 })();
-/* ===============================
-   POSH GLOBAL FOOTER
-================================ */
-
-const footerHTML = `
-<footer>
-
-  Built to educate parents. Designed to Protect our Children.<br/>
-
-  <span class="small">
-  Contact: allthewaycarpentry@gmail.com
-  </span>
-
-  <div class="footer-actions">
-
-    <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
-      Support this movement
-    </a>
-
-  </div>
-
-</footer>
-`;
-
-document.addEventListener("DOMContentLoaded", function(){
-
-  const footer = document.getElementById("footer");
-
-  if(footer){
-    footer.innerHTML = footerHTML;
-  }
-
-});
