@@ -545,7 +545,15 @@ button.btn{
   line-height:1.65;
   text-align:left;
 }
+.center-card .list{
+  max-width:860px;
+  margin:10px auto 0;
+  text-align:left;
+}
 
+.center-card .list li{
+  text-align:left;
+}
 .list li{
   margin-bottom:8px;
 }
