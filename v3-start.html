@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Start Here • POSH</title>
+<meta name="description" content="Answer a few quick questions and get your POSH Start Score, the right next steps, and the most relevant child safety pages fast." />
+<link rel="canonical" href="https://poshaussie.com.au/v3-start.html" />
 <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -59,7 +61,7 @@
       </div>
 
       <div class="q">
-        <div class="q-title">3) Which app or game worries you most?</div>
+        <div class="q-title">3) Which app, game, or platform worries you most?</div>
         <div class="q-options">
           <label><input type="radio" name="app" value="roblox" required> Roblox</label>
           <label><input type="radio" name="app" value="discord"> Discord</label>
@@ -67,6 +69,9 @@
           <label><input type="radio" name="app" value="snapchat"> Snapchat</label>
           <label><input type="radio" name="app" value="minecraft"> Minecraft</label>
           <label><input type="radio" name="app" value="fortnite"> Fortnite</label>
+          <label><input type="radio" name="app" value="youtube"> YouTube</label>
+          <label><input type="radio" name="app" value="tiktok"> TikTok</label>
+          <label><input type="radio" name="app" value="streaming"> Netflix / Disney+ / Prime / Tubi</label>
           <label><input type="radio" name="app" value="other"> General help</label>
         </div>
       </div>
@@ -178,7 +183,7 @@
     if(data.type === "video") score -= 10;
 
     const highRiskApps = ["roblox", "discord", "vrchat", "snapchat"];
-    const medRiskApps = ["fortnite", "minecraft"];
+    const medRiskApps = ["fortnite", "minecraft", "youtube", "tiktok", "streaming"];
     if(highRiskApps.includes(data.app)) score -= 10;
     if(medRiskApps.includes(data.app)) score -= 5;
 
@@ -206,13 +211,13 @@
     if(score >= 40){
       return {
         label: "At Risk",
-        summary: "Your child likely has multiple exposure points. Focus on device settings, private contact rules, and the highest-risk app first."
+        summary: "Your child likely has multiple exposure points. Focus on device settings, private contact rules, and the highest-risk app or platform first."
       };
     }
     return {
       label: "High Risk",
-      summary: "There are urgent gaps in protection. Start with the highest-risk app, device controls, and reassurance that your child can tell the truth safely."
-    };
+      summary: "There are urgent gaps in protection. Start with the highest-risk app or platform, device controls, and reassurance that your child can tell the truth safely."
+      };
   }
 
   function appPath(app){
@@ -223,6 +228,9 @@
       snapchat: "v3-social-snapchat.html",
       minecraft: "v3-game-minecraft.html",
       fortnite: "v3-game-fortnite.html",
+      youtube: "v3-social-youtube.html",
+      tiktok: "v3-social-tiktok.html",
+      streaming: "v3-streaming-video.html",
       other: "v3-redflags.html"
     };
     return paths[app] || "v3-redflags.html";
@@ -236,6 +244,9 @@
       snapchat: "Snapchat Safety",
       minecraft: "Minecraft Safety",
       fortnite: "Fortnite Safety",
+      youtube: "YouTube Safety",
+      tiktok: "TikTok Safety",
+      streaming: "Streaming & Video Apps",
       other: "General Help"
     };
     return labels[app] || "App Safety";
@@ -280,6 +291,10 @@
       parts.push("Your child also needs a very clear message that honesty will not be punished first.");
     }
 
+    if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
+      parts.push("Content exposure, autoplay, recommendation drift, and binge loops may matter just as much as direct contact.");
+    }
+
     if(score < 50){
       parts.push("Focus on the biggest risk first, not everything at once.");
     }
@@ -301,6 +316,8 @@
 
     if(data.trust !== "yes"){
       buttons.push('<a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>');
+    } else if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
+      buttons.push('<a class="btn secondary" href="v3-algorithm-awareness.html">Algorithm Risks</a>');
     } else {
       buttons.push('<a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>');
     }
@@ -310,6 +327,10 @@
 
   function buildUrgent(data){
     if(data.risk !== "yes") return "";
+
+    if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
+      return "If something already feels wrong, do not ignore it just because it looks like “only content” or “just videos.” Repeated exposure, recommendation drift, and manipulative content can still affect your child heavily over time. Move early, reduce access, and check the most relevant page now.";
+    }
 
     return "If something already feels wrong, do not wait for it to become obvious. Stay calm, preserve evidence, reassure your child they are not in trouble, and move to the most relevant safety page now.";
   }
