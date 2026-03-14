@@ -1,127 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://poshaussie.com.au/</loc>
-</url>
-
-<!-- CORE PAGES -->
-
-<url>
-<loc>https://poshaussie.com.au/v3-start.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-safety-score.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-redflags.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-playbook.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-parent-scripts.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-house-rules.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-age-guide.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-device-controls.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-platforms.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-gaming.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-all-games.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-socials.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-videochat.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-awareness.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-algorithm-awareness.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-real-investigations.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-reporting.html</loc>
-</url>
-
+  <!-- HOMEPAGE -->
   <url>
-<loc>https://poshaussie.com.au/v3-reporting-australia.html</loc>
-</url>
+    <loc>https://poshaussie.com.au/</loc>
+  </url>
 
-  
-<url>
-<loc>https://poshaussie.com.au/v3-downloads.html</loc>
-</url>
+  <!-- CORE HUBS -->
+  <url>
+    <loc>https://poshaussie.com.au/v3-start.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-safety-score.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-redflags.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-playbook.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-parent-scripts.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-house-rules.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-age-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-device-controls.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-platforms.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-gaming.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-all-games.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-socials.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-all-applications.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-videochat.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-awareness.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-algorithm-awareness.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-real-investigations.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-reporting.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-reporting-australia.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-downloads.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-cancel-subscriptions.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-support.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-share.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-sextortion.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-predators.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-mindset.html</loc>
+  </url>
 
-<url>
-<loc>https://poshaussie.com.au/v3-cancel-subscriptions.html</loc>
-</url>
+  <!-- GAME PAGES -->
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-roblox.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-fortnite.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-minecraft.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-vrchat.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-cod.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-gta.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-overwatch.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-pubg.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-rainbowsix.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-rocketleague.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-valorant.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-halo.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-gorillatag.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-recroom.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-garrysmod.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-splatoon.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-terraria.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-game-rust.html</loc>
+  </url>
 
-<url>
-<loc>https://poshaussie.com.au/v3-support.html</loc>
-</url>
+  <!-- SOCIAL / APP PAGES -->
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-discord.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-snapchat.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-instagram.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-tiktok.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-telegram.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-youtube.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-youtubekids.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-twitch.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-facebook.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-messenger.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-messengerkids.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-whatsapp.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-reddit.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-pinterest.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-social-steam.html</loc>
+  </url>
 
-<!-- SOCIAL APP GUIDES -->
-
-<url>
-<loc>https://poshaussie.com.au/v3-social-discord.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-social-tiktok.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-social-steam.html</loc>
-</url>
-
-<!-- GAME GUIDES -->
-
-<url>
-<loc>https://poshaussie.com.au/v3-game-roblox.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-game-fortnite.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-game-minecraft.html</loc>
-</url>
-
-<url>
-<loc>https://poshaussie.com.au/v3-game-vrchat.html</loc>
-</url>
+  <!-- VIDEO / LIVE COMMS -->
+  <url>
+    <loc>https://poshaussie.com.au/v3-video-facetime.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-video-googlemeet.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-video-skype.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-video-teams.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-video-webex.html</loc>
+  </url>
+  <url>
+    <loc>https://poshaussie.com.au/v3-video-zoom.html</loc>
+  </url>
 
 </urlset>
