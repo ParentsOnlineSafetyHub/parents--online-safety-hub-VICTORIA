@@ -49,15 +49,25 @@
 
   const footerHTML = `
     <footer>
-      Built to educate parents. Designed to Protect our Children.<br/>
-      <span class="small">
-        Contact: allthewaycarpentry@gmail.com
-      </span>
+      <div class="footer-cta-block">
+        <h3 class="footer-cta-title">Help Protect More Children</h3>
+        <p class="footer-cta-text">
+          POSH exists to help parents act earlier, understand more, and protect children online with clearer guidance and practical tools.
+        </p>
 
-      <div class="footer-actions">
-        <a class="btn" href="https://gofund.me/dbe68f536" target="_blank" rel="noopener">
-          Support this movement
-        </a>
+        <div class="footer-actions">
+          <a class="btn" href="v3-support.html">Support POSH</a>
+          <a class="btn secondary" href="v3-community.html">Join Community</a>
+          <a class="btn secondary" href="v3-downloads.html">Download Guides</a>
+          <a class="btn secondary" href="v3-share.html">Share POSH</a>
+        </div>
+      </div>
+
+      <div class="footer-meta">
+        Built to educate parents. Designed to protect our children.<br/>
+        <span class="small">
+          Contact: allthewaycarpentry@gmail.com
+        </span>
       </div>
     </footer>
   `;
