@@ -8,6 +8,7 @@
           <a href="index.html">Home</a>
           <a href="v3-start.html">Start Here</a>
           <a href="v3-safety-score.html">Safety Check</a>
+          <a href="v3-what-now.html">What To Do Now</a>
           <a href="v3-redflags.html">Red Flags</a>
           <a href="v3-reporting.html">Report &amp; Get Help</a>
           <a href="v3-parent-scripts.html">Parent Scripts</a>
@@ -26,6 +27,7 @@
           <a href="v3-all-games.html">All Games Directory</a>
           <a href="v3-socials.html">Social Media &amp; Chat</a>
           <a href="v3-videochat.html">Live Video &amp; Streaming</a>
+          <a href="v3-streaming-video.html">Streaming &amp; Video Apps</a>
         </nav>
       </details>
 
@@ -37,10 +39,12 @@
           <a href="v3-awareness.html">Safety Awareness</a>
           <a href="v3-real-investigations.html">Real Investigations</a>
           <a href="v3-algorithm-awareness.html">Algorithm Risks</a>
+          <a href="v3-dangerous-apps.html">Dangerous Apps</a>
           <a href="v3-mindset.html">Parent Mindset</a>
           <a href="v3-downloads.html">Downloads</a>
           <a href="v3-cancel-subscriptions.html">Cancel Subscriptions</a>
           <a href="v3-support.html">Support</a>
+          <a href="v3-community.html">Have Your Say</a>
         </nav>
       </details>
 
@@ -76,9 +80,6 @@
     const navTarget = document.getElementById("nav");
     const footerTarget = document.getElementById("footer");
 
-    /* ===============================
-       GLOBAL NAV
-    ============================== */
     if (navTarget) {
       navTarget.innerHTML = navHTML;
 
@@ -131,9 +132,6 @@
       });
     }
 
-    /* ===============================
-       GLOBAL FOOTER
-    ============================== */
     if (footerTarget) {
       footerTarget.innerHTML = footerHTML;
     }
