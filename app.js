@@ -93,11 +93,6 @@
         if (linkPage === currentPage) {
           link.classList.add("nav-active");
           link.setAttribute("aria-current", "page");
-
-          const parentDetails = link.closest(".nav-group");
-          if (parentDetails) {
-            parentDetails.open = true;
-          }
         }
       });
 
