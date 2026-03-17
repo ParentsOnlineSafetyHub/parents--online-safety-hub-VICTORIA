@@ -243,7 +243,7 @@ p{
   background:rgba(8,25,50,.30);
 }
 
-/* ===== Navigation Groups ===== */
+/* ===== Navigation Groups / Dropdown Buttons ===== */
 .nav-accordion{
   position:relative;
   display:flex;
@@ -311,9 +311,9 @@ p{
   left:50%;
   transform:translateX(-50%);
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns:1fr;
   gap:10px;
-  width:min(760px, calc(100vw - 36px));
+  width:min(340px, calc(100vw - 36px));
   max-width:calc(100vw - 36px);
   max-height:min(70vh, 420px);
   overflow:auto;
@@ -336,6 +336,10 @@ p{
   border:1px solid rgba(255,255,255,.10);
   transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
   text-align:center;
+}
+
+.nav-group nav a::after{
+  display:none;
 }
 
 .nav-group nav a:hover{
@@ -391,6 +395,19 @@ p{
   font-size:1.70rem;
   letter-spacing:.4px;
   color:rgba(244,247,255,.98);
+}
+
+.hero-warning .golden-rule{
+  font-family:"Montserrat", sans-serif;
+  font-weight:900;
+  font-size:1.22rem;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin:10px 0 12px;
+  text-shadow:
+    0 12px 26px rgba(0,0,0,.60),
+    0 0 18px rgba(217,182,90,.18);
 }
 
 .hero-warning .rule-box{
@@ -657,7 +674,8 @@ button.btn{
   border:0;
 }
 
-/* ===== Score / Quiz / Forms ===== */
+/* ===== Quiz / Start Here / Safety Check ===== */
+.quiz .q,
 .q{
   margin:16px 0;
   padding:14px;
@@ -700,6 +718,7 @@ button.btn{
   transform:scale(1.15);
 }
 
+/* ===== Safety Score ===== */
 .score-wrap{
   display:flex;
   gap:16px;
@@ -838,8 +857,8 @@ footer{
 /* ===== Responsive ===== */
 @media (max-width:900px){
   .nav-group nav{
-    width:min(94vw, 680px);
-    max-width:94vw;
+    width:min(340px, calc(100vw - 36px));
+    max-width:calc(100vw - 36px);
   }
 }
 
