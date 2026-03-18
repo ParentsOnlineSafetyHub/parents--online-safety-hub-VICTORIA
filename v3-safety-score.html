@@ -1,349 +1,89 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Safety Check • POSH</title>
-  <meta name="description" content="Take the POSH Safety Check to quickly scan online child safety risks, identify the biggest exposure point, and get clear next steps fast." />
-  <link rel="canonical" href="https://poshaussie.com.au/v3-safety-score.html" />
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <div class="wrap">
-
-    <div class="brand">POSH</div>
-    <h1 class="page-title">Safety Check</h1>
-    <p class="tagline"><strong>10 quick checks.</strong> Clear score. Clear next steps.</p>
-
-    <div id="nav"></div>
-
-    <div class="card hero-warning center-card">
-      <h2>Fast risk scan</h2>
-      <div class="rule-box">
-        <p>This takes about 60 seconds.</p>
-        <p>Be honest — the goal is not perfection, it’s reducing risk quickly.</p>
-      </div>
-
-      <div class="danger-line">A few quick fixes can dramatically reduce child exposure online</div>
-    </div>
-
-    <div class="card center-card">
-      <h2>Answer these 10 questions</h2>
-
-      <form id="scoreForm" class="quiz">
-
-        <div class="q">
-          <div class="q-title">1) Device safety controls are ON (Screen Time / Family Link / Family Safety)</div>
-          <div class="q-options">
-            <label><input type="radio" name="q1" value="yes" required> Yes</label>
-            <label><input type="radio" name="q1" value="some"> Some</label>
-            <label><input type="radio" name="q1" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">2) App installs are restricted</div>
-          <div class="q-options">
-            <label><input type="radio" name="q2" value="yes" required> Yes</label>
-            <label><input type="radio" name="q2" value="some"> Some</label>
-            <label><input type="radio" name="q2" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">3) DMs/private messages are OFF or friends-only</div>
-          <div class="q-options">
-            <label><input type="radio" name="q3" value="yes" required> Yes</label>
-            <label><input type="radio" name="q3" value="some"> Some</label>
-            <label><input type="radio" name="q3" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">4) Voice chat is OFF or friends-only</div>
-          <div class="q-options">
-            <label><input type="radio" name="q4" value="yes" required> Yes</label>
-            <label><input type="radio" name="q4" value="some"> Some</label>
-            <label><input type="radio" name="q4" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">5) Friends list is real-life people only (parent-approved)</div>
-          <div class="q-options">
-            <label><input type="radio" name="q5" value="yes" required> Yes</label>
-            <label><input type="radio" name="q5" value="some"> Some</label>
-            <label><input type="radio" name="q5" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">6) There are no secret accounts</div>
-          <div class="q-options">
-            <label><input type="radio" name="q6" value="yes" required> Yes</label>
-            <label><input type="radio" name="q6" value="some"> Not sure</label>
-            <label><input type="radio" name="q6" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">7) Devices charge overnight in a shared area</div>
-          <div class="q-options">
-            <label><input type="radio" name="q7" value="yes" required> Yes</label>
-            <label><input type="radio" name="q7" value="some"> Sometimes</label>
-            <label><input type="radio" name="q7" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">8) Location sharing is OFF</div>
-          <div class="q-options">
-            <label><input type="radio" name="q8" value="yes" required> Yes</label>
-            <label><input type="radio" name="q8" value="some"> Some apps</label>
-            <label><input type="radio" name="q8" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">9) Your child knows: “You won’t be in trouble for telling me”</div>
-          <div class="q-options">
-            <label><input type="radio" name="q9" value="yes" required> Yes</label>
-            <label><input type="radio" name="q9" value="some"> I’ve said it once</label>
-            <label><input type="radio" name="q9" value="no"> Not yet</label>
-          </div>
-        </div>
-
-        <div class="q">
-          <div class="q-title">10) The off-platform rule is clear (no moving to Discord / Snap / Telegram with strangers)</div>
-          <div class="q-options">
-            <label><input type="radio" name="q10" value="yes" required> Yes</label>
-            <label><input type="radio" name="q10" value="some"> Kind of</label>
-            <label><input type="radio" name="q10" value="no"> No</label>
-          </div>
-        </div>
-
-        <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
-          <button class="btn" type="submit">Calculate Safety Check</button>
-          <button class="btn secondary" type="button" id="resetBtn">Reset</button>
-        </div>
-
-      </form>
-    </div>
-
-    <div class="card center-card" id="results" style="display:none;">
-      <h2>Your POSH Safety Check Result</h2>
-
-      <div class="score-wrap">
-        <div class="score-ring">
-          <div class="score-num" id="scoreNum">0</div>
-          <div class="score-label">/ 100</div>
-        </div>
-
-        <div class="score-text">
-          <div class="score-grade" id="scoreGrade">—</div>
-          <p class="note" id="scoreSummary" style="text-align:left;"></p>
-          <div class="badges" style="justify-content:center;">
-            <div class="badge gold" id="topRiskBadge" style="display:none;"></div>
-            <div class="badge danger" id="dangerBadge" style="display:none;">High grooming exposure risk</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="callout center-callout" id="topFixBox" style="margin-top:14px;"></div>
-
-      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
-        <a class="btn" href="v3-device-controls.html">Device Safety</a>
-        <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
-        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
-        <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
-      </div>
-
-      <p class="small" style="margin-top:12px;">
-        You do not need to fix everything today. Fix the biggest risk first.
-      </p>
-    </div>
-
-    <div class="card center-card">
-      <h2>If a child seems confused, scared, or shut down</h2>
-
-      <p class="note">
-        A safety score is useful, but some situations are more about behaviour, pressure, secrecy, or fear than device settings alone.
-      </p>
-
-      <div class="callout center-callout">
-        If a child does not know how to explain what is happening, start with understanding first — then move into action.
-      </div>
-
-      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
-        <a class="btn" href="v3-definitions.html">Understanding What’s Happening</a>
-        <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
-        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
-      </div>
-    </div>
-
-    <div class="card hero-warning center-card">
-      <h2>Help protect another child</h2>
-
-      <div class="rule-box">
-        <p>Many parents simply haven't been shown how online grooming and manipulation actually starts.</p>
-        <p>Sharing awareness early can help another family prevent harm.</p>
-      </div>
-
-      <div class="danger-line">
-        One parent sharing this can protect another child
-      </div>
-
-      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
-        <a class="btn" href="v3-share.html">Share POSH</a>
-
-        <a class="btn secondary"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au"
-        target="_blank"
-        rel="noopener">
-        Share on Facebook
-        </a>
-
-        <a class="btn secondary"
-        href="https://twitter.com/intent/tweet?url=https://poshaussie.com.au"
-        target="_blank"
-        rel="noopener">
-        Share on X
-        </a>
-
-        <a class="btn secondary"
-        href="https://www.linkedin.com/sharing/share-offsite/?url=https://poshaussie.com.au"
-        target="_blank"
-        rel="noopener">
-        Share on LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="card center-card">
-      <h2>Keep exploring child safety</h2>
-
-      <p class="note">
-        Your score is a starting point, not the whole picture. Keep exploring the site in the direction that feels most relevant to your child.
-      </p>
-
-      <div class="btn-grid btn-grid-soft">
-        <a class="btn" href="index.html">Back to Home Page</a>
-        <a class="btn secondary" href="v3-all-games.html">All Games Directory</a>
-        <a class="btn secondary" href="v3-downloads.html">All PDF Downloads</a>
-      </div>
-
-      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
-        <a class="btn secondary" href="v3-start.html">Start Here</a>
-        <a class="btn secondary" href="v3-safety-score.html">Safety Check</a>
-        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
-        <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
-      </div>
-    </div>
-
-    <div id="footer"></div>
-
+<div class="q">
+  <div class="q-title">1) Do you use parental controls on your child’s device?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q1" value="yes" required> Yes</label>
+    <label><input type="radio" name="q1" value="some"> Some</label>
+    <label><input type="radio" name="q1" value="no"> No</label>
   </div>
+</div>
 
-<script>
-(function(){
-  const form = document.getElementById("scoreForm");
-  const results = document.getElementById("results");
-  const scoreNum = document.getElementById("scoreNum");
-  const scoreGrade = document.getElementById("scoreGrade");
-  const scoreSummary = document.getElementById("scoreSummary");
-  const topFixBox = document.getElementById("topFixBox");
-  const topRiskBadge = document.getElementById("topRiskBadge");
-  const dangerBadge = document.getElementById("dangerBadge");
-  const resetBtn = document.getElementById("resetBtn");
+<div class="q">
+  <div class="q-title">2) Can your child install apps without your approval?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q2" value="yes" required> Yes</label>
+    <label><input type="radio" name="q2" value="some"> Sometimes</label>
+    <label><input type="radio" name="q2" value="no"> No</label>
+  </div>
+</div>
 
-  const weights = {
-    q1: 12, q2: 10, q3: 12, q4: 10, q5: 10,
-    q6: 10, q7: 8, q8: 8, q9: 10, q10: 10
-  };
+<div class="q">
+  <div class="q-title">3) Can strangers send your child private messages?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q3" value="yes" required> Yes</label>
+    <label><input type="radio" name="q3" value="some"> On some apps</label>
+    <label><input type="radio" name="q3" value="no"> No</label>
+  </div>
+</div>
 
-  function points(value, w){
-    if(value === "yes") return w;
-    if(value === "some") return Math.round(w * 0.5);
-    return 0;
-  }
+<div class="q">
+  <div class="q-title">4) Can strangers talk to your child through voice chat?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q4" value="yes" required> Yes</label>
+    <label><input type="radio" name="q4" value="some"> Sometimes</label>
+    <label><input type="radio" name="q4" value="no"> No</label>
+  </div>
+</div>
 
-  function readAnswers(){
-    const data = {};
-    Object.keys(weights).forEach(k => {
-      const el = form.querySelector('input[name="'+k+'"]:checked');
-      data[k] = el ? el.value : null;
-    });
-    return data;
-  }
+<div class="q">
+  <div class="q-title">5) Does your child have online friends you do not know?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q5" value="yes" required> Yes</label>
+    <label><input type="radio" name="q5" value="some"> A few</label>
+    <label><input type="radio" name="q5" value="no"> No</label>
+  </div>
+</div>
 
-  function calcScore(ans){
-    let total = 0;
-    Object.keys(weights).forEach(k => total += points(ans[k], weights[k]));
-    return total;
-  }
+<div class="q">
+  <div class="q-title">6) Does your child have any hidden or second accounts?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q6" value="yes" required> Yes</label>
+    <label><input type="radio" name="q6" value="some"> Not sure</label>
+    <label><input type="radio" name="q6" value="no"> No</label>
+  </div>
+</div>
 
-  function worstRisks(ans){
-    return Object.keys(weights).map(k => {
-      const w = weights[k];
-      const earned = points(ans[k], w);
-      return { key:k, missing:(w-earned) };
-    }).sort((a,b) => b.missing - a.missing);
-  }
+<div class="q">
+  <div class="q-title">7) Does your child keep their device in their bedroom overnight?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q7" value="yes" required> Yes</label>
+    <label><input type="radio" name="q7" value="some"> Sometimes</label>
+    <label><input type="radio" name="q7" value="no"> No</label>
+  </div>
+</div>
 
-  const riskText = {
-    q1: {title:"Device safety not set up", fix:"Turn on Screen Time / Family Link / Family Safety today.", link:"v3-device-controls.html"},
-    q2: {title:"App installs not restricted", fix:"Lock app installs so new apps can’t be added without approval.", link:"v3-device-controls.html"},
-    q3: {title:"DMs not locked", fix:"Set DMs to friends-only or OFF across apps and games.", link:"v3-socials.html"},
-    q4: {title:"Voice chat exposed", fix:"Turn voice chat OFF or friends-only across games and chat apps.", link:"v3-gaming.html"},
-    q5: {title:"Friends list not controlled", fix:"Friends should be real-life people only.", link:"v3-house-rules.html"},
-    q6: {title:"Secret account risk", fix:"Set the rule: no secret accounts. Parents can check anytime.", link:"v3-house-rules.html"},
-    q7: {title:"Devices in bedrooms overnight", fix:"Charge devices overnight in a shared area.", link:"v3-house-rules.html"},
-    q8: {title:"Location sharing risk", fix:"Turn location sharing OFF unless truly needed.", link:"v3-socials.html"},
-    q9: {title:"Child may fear telling you", fix:"Repeat often: 'You won’t be in trouble for telling me.'", link:"v3-parent-scripts.html"},
-    q10:{title:"Off-platform rule missing", fix:"Set the Golden Rule: no moving to Discord / Snap / Telegram with strangers.", link:"v3-playbook.html"}
-  };
+<div class="q">
+  <div class="q-title">8) Is location sharing turned on in any of your child’s apps?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q8" value="yes" required> Yes</label>
+    <label><input type="radio" name="q8" value="some"> On some apps</label>
+    <label><input type="radio" name="q8" value="no"> No</label>
+  </div>
+</div>
 
-  function grade(score){
-    if(score >= 85) return {label:"Strong", summary:"Your current setup is strong. Keep doing weekly 5-minute checks."};
-    if(score >= 65) return {label:"Good (needs tightening)", summary:"You’re doing a lot right. Tighten DMs, voice, and friends lists."};
-    if(score >= 45) return {label:"At Risk", summary:"Stranger access is likely. Lock DMs and voice today, then apply house rules."};
-    return {label:"High Risk", summary:"Your child may have open access to strangers. Start with device safety and house rules now."};
-  }
+<div class="q">
+  <div class="q-title">9) Would your child feel safe telling you if something went wrong online?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q9" value="yes" required> Yes</label>
+    <label><input type="radio" name="q9" value="some"> I think so</label>
+    <label><input type="radio" name="q9" value="no"> No</label>
+  </div>
+</div>
 
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-    const ans = readAnswers();
-    const score = calcScore(ans);
-    const g = grade(score);
-    const top = worstRisks(ans)[0];
-    const info = riskText[top.key];
-
-    scoreNum.textContent = score;
-    scoreGrade.textContent = g.label;
-    scoreSummary.textContent = g.summary;
-
-    topRiskBadge.style.display = "inline-flex";
-    topRiskBadge.textContent = "Top risk: " + info.title;
-    dangerBadge.style.display = score < 55 ? "inline-flex" : "none";
-
-    topFixBox.innerHTML =
-      "<strong>Top fix right now:</strong> " + info.fix +
-      '<div class="btn-grid btn-grid-soft" style="margin-top:12px;">' +
-      '<a class="btn" href="'+info.link+'">Fix This Now</a>' +
-      '<a class="btn secondary" href="v3-reporting.html">If Something Already Happened</a>' +
-      '</div>';
-
-    results.style.display = "block";
-    results.scrollIntoView({behavior:"smooth", block:"start"});
-  });
-
-  resetBtn.addEventListener("click", function(){
-    form.reset();
-    results.style.display = "none";
-  });
-})();
-</script>
-
-<script src="app.js"></script>
-</body>
-</html>
+<div class="q">
+  <div class="q-title">10) Does your child know not to move chats to Discord, Snap, Telegram, WhatsApp, or other private apps with strangers?</div>
+  <div class="q-options">
+    <label><input type="radio" name="q10" value="yes" required> Yes</label>
+    <label><input type="radio" name="q10" value="some"> Kind of</label>
+    <label><input type="radio" name="q10" value="no"> No</label>
+  </div>
+</div>
