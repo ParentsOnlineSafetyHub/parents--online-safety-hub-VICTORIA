@@ -1,89 +1,474 @@
-<div class="q">
-  <div class="q-title">1) Do you use parental controls on your child’s device?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q1" value="yes" required> Yes</label>
-    <label><input type="radio" name="q1" value="some"> Some</label>
-    <label><input type="radio" name="q1" value="no"> No</label>
-  </div>
-</div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Safety Check • POSH</title>
+  <meta name="description" content="Take the POSH Safety Check to quickly scan online child safety risks, identify the biggest exposure point, and get clear next steps fast." />
+  <link rel="canonical" href="https://poshaussie.com.au/v3-safety-score.html" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="wrap">
 
-<div class="q">
-  <div class="q-title">2) Can your child install apps without your approval?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q2" value="yes" required> Yes</label>
-    <label><input type="radio" name="q2" value="some"> Sometimes</label>
-    <label><input type="radio" name="q2" value="no"> No</label>
-  </div>
-</div>
+    <div class="brand">POSH</div>
+    <h1 class="page-title">Safety Check</h1>
+    <p class="tagline"><strong>10 quick checks.</strong> Clear score. Clear next steps.</p>
 
-<div class="q">
-  <div class="q-title">3) Can strangers send your child private messages?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q3" value="yes" required> Yes</label>
-    <label><input type="radio" name="q3" value="some"> On some apps</label>
-    <label><input type="radio" name="q3" value="no"> No</label>
-  </div>
-</div>
+    <div id="nav"></div>
 
-<div class="q">
-  <div class="q-title">4) Can strangers talk to your child through voice chat?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q4" value="yes" required> Yes</label>
-    <label><input type="radio" name="q4" value="some"> Sometimes</label>
-    <label><input type="radio" name="q4" value="no"> No</label>
-  </div>
-</div>
+    <div class="card hero-warning center-card">
+      <h2>How safe is your child online right now?</h2>
+      <div class="rule-box">
+        <p>This takes about 60 seconds.</p>
+        <p>Be honest — this is not about perfect parenting. It is about spotting the biggest risk first and reducing it fast.</p>
+      </div>
+      <div class="danger-line">A few quick fixes can dramatically reduce child exposure online</div>
+    </div>
 
-<div class="q">
-  <div class="q-title">5) Does your child have online friends you do not know?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q5" value="yes" required> Yes</label>
-    <label><input type="radio" name="q5" value="some"> A few</label>
-    <label><input type="radio" name="q5" value="no"> No</label>
-  </div>
-</div>
+    <div class="card center-card">
+      <h2>Answer these 10 questions</h2>
+      <p class="note" style="margin-top:-4px;">
+        Answer based on what is true <strong>most of the time</strong>.
+      </p>
 
-<div class="q">
-  <div class="q-title">6) Does your child have any hidden or second accounts?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q6" value="yes" required> Yes</label>
-    <label><input type="radio" name="q6" value="some"> Not sure</label>
-    <label><input type="radio" name="q6" value="no"> No</label>
-  </div>
-</div>
+      <form id="scoreForm" class="quiz">
 
-<div class="q">
-  <div class="q-title">7) Does your child keep their device in their bedroom overnight?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q7" value="yes" required> Yes</label>
-    <label><input type="radio" name="q7" value="some"> Sometimes</label>
-    <label><input type="radio" name="q7" value="no"> No</label>
-  </div>
-</div>
+        <div class="q">
+          <div class="q-title">1) Do you use parental controls on your child’s device?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q1" value="yes" required> Yes</label>
+            <label><input type="radio" name="q1" value="some"> Some</label>
+            <label><input type="radio" name="q1" value="no"> No</label>
+          </div>
+        </div>
 
-<div class="q">
-  <div class="q-title">8) Is location sharing turned on in any of your child’s apps?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q8" value="yes" required> Yes</label>
-    <label><input type="radio" name="q8" value="some"> On some apps</label>
-    <label><input type="radio" name="q8" value="no"> No</label>
-  </div>
-</div>
+        <div class="q">
+          <div class="q-title">2) Can your child install apps without your approval?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q2" value="yes" required> Yes</label>
+            <label><input type="radio" name="q2" value="some"> Sometimes</label>
+            <label><input type="radio" name="q2" value="no"> No</label>
+          </div>
+        </div>
 
-<div class="q">
-  <div class="q-title">9) Would your child feel safe telling you if something went wrong online?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q9" value="yes" required> Yes</label>
-    <label><input type="radio" name="q9" value="some"> I think so</label>
-    <label><input type="radio" name="q9" value="no"> No</label>
-  </div>
-</div>
+        <div class="q">
+          <div class="q-title">3) Can strangers send your child private messages?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q3" value="yes" required> Yes</label>
+            <label><input type="radio" name="q3" value="some"> On some apps</label>
+            <label><input type="radio" name="q3" value="no"> No</label>
+          </div>
+        </div>
 
-<div class="q">
-  <div class="q-title">10) Does your child know not to move chats to Discord, Snap, Telegram, WhatsApp, or other private apps with strangers?</div>
-  <div class="q-options">
-    <label><input type="radio" name="q10" value="yes" required> Yes</label>
-    <label><input type="radio" name="q10" value="some"> Kind of</label>
-    <label><input type="radio" name="q10" value="no"> No</label>
+        <div class="q">
+          <div class="q-title">4) Can strangers talk to your child through voice chat?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q4" value="yes" required> Yes</label>
+            <label><input type="radio" name="q4" value="some"> Sometimes</label>
+            <label><input type="radio" name="q4" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">5) Does your child have online friends you do not know?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q5" value="yes" required> Yes</label>
+            <label><input type="radio" name="q5" value="some"> A few</label>
+            <label><input type="radio" name="q5" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">6) Does your child have any hidden or second accounts?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q6" value="yes" required> Yes</label>
+            <label><input type="radio" name="q6" value="some"> Not sure</label>
+            <label><input type="radio" name="q6" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">7) Does your child keep their device in their bedroom overnight?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q7" value="yes" required> Yes</label>
+            <label><input type="radio" name="q7" value="some"> Sometimes</label>
+            <label><input type="radio" name="q7" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">8) Is location sharing turned on in any of your child’s apps?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q8" value="yes" required> Yes</label>
+            <label><input type="radio" name="q8" value="some"> On some apps</label>
+            <label><input type="radio" name="q8" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">9) Would your child feel safe telling you if something went wrong online?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q9" value="yes" required> Yes</label>
+            <label><input type="radio" name="q9" value="some"> I think so</label>
+            <label><input type="radio" name="q9" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="q">
+          <div class="q-title">10) Does your child know not to move chats to Discord, Snap, Telegram, WhatsApp, or other private apps with strangers?</div>
+          <div class="q-options">
+            <label><input type="radio" name="q10" value="yes" required> Yes</label>
+            <label><input type="radio" name="q10" value="some"> Kind of</label>
+            <label><input type="radio" name="q10" value="no"> No</label>
+          </div>
+        </div>
+
+        <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
+          <button class="btn" type="submit">Calculate Safety Check</button>
+          <button class="btn secondary" type="button" id="resetBtn">Reset</button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="card center-card" id="results" style="display:none;">
+      <h2>Your POSH Safety Check Result</h2>
+
+      <div class="score-wrap">
+        <div class="score-ring">
+          <div class="score-num" id="scoreNum">0</div>
+          <div class="score-label">/ 100</div>
+        </div>
+
+        <div class="score-text">
+          <div class="score-grade" id="scoreGrade">—</div>
+          <p class="note" id="scoreSummary" style="text-align:left;"></p>
+          <div class="badges" style="justify-content:center;">
+            <div class="badge gold" id="topRiskBadge" style="display:none;"></div>
+            <div class="badge danger" id="dangerBadge" style="display:none;">High grooming exposure risk</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout center-callout" id="topFixBox" style="margin-top:14px;"></div>
+      <div class="callout center-callout" id="whyThisMattersBox" style="margin-top:14px; display:none;"></div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+        <a class="btn" href="v3-device-controls.html">Device Safety</a>
+        <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
+        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+        <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
+      </div>
+
+      <p class="small" style="margin-top:12px;">
+        You do not need to fix everything today. Fix the biggest risk first.
+      </p>
+    </div>
+
+    <div class="card center-card">
+      <h2>If a child seems confused, scared, or shut down</h2>
+
+      <p class="note">
+        A safety score is useful, but some situations are more about behaviour, pressure, secrecy, fear, or emotional withdrawal than device settings alone.
+      </p>
+
+      <div class="callout center-callout">
+        If a child does not know how to explain what is happening, start with understanding first — then move into action.
+      </div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+        <a class="btn" href="v3-definitions.html">Understanding What’s Happening</a>
+        <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
+        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+      </div>
+    </div>
+
+    <div class="card hero-warning center-card">
+      <h2>Help protect another child</h2>
+
+      <div class="rule-box">
+        <p>Many parents simply have not been shown how online grooming and manipulation actually starts.</p>
+        <p>Sharing awareness early can help another family prevent harm.</p>
+      </div>
+
+      <div class="danger-line">
+        One parent sharing this can protect another child
+      </div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+        <a class="btn" href="v3-share.html">Share POSH</a>
+
+        <a class="btn secondary"
+           href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au"
+           target="_blank"
+           rel="noopener">
+          Share on Facebook
+        </a>
+
+        <a class="btn secondary"
+           href="https://twitter.com/intent/tweet?url=https://poshaussie.com.au"
+           target="_blank"
+           rel="noopener">
+          Share on X
+        </a>
+
+        <a class="btn secondary"
+           href="https://www.linkedin.com/sharing/share-offsite/?url=https://poshaussie.com.au"
+           target="_blank"
+           rel="noopener">
+          Share on LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="card center-card">
+      <h2>Keep exploring child safety</h2>
+
+      <p class="note">
+        Your score is a starting point, not the whole picture. Keep exploring the site in the direction that feels most relevant to your child.
+      </p>
+
+      <div class="btn-grid btn-grid-soft">
+        <a class="btn" href="index.html">Back to Home Page</a>
+        <a class="btn secondary" href="v3-all-games.html">All Games Directory</a>
+        <a class="btn secondary" href="v3-downloads.html">All PDF Downloads</a>
+      </div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+        <a class="btn secondary" href="v3-start.html">Start Here</a>
+        <a class="btn secondary" href="v3-safety-score.html">Safety Check</a>
+        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+        <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
   </div>
-</div>
+
+<script>
+(function(){
+  const form = document.getElementById("scoreForm");
+  const results = document.getElementById("results");
+  const scoreNum = document.getElementById("scoreNum");
+  const scoreGrade = document.getElementById("scoreGrade");
+  const scoreSummary = document.getElementById("scoreSummary");
+  const topFixBox = document.getElementById("topFixBox");
+  const topRiskBadge = document.getElementById("topRiskBadge");
+  const dangerBadge = document.getElementById("dangerBadge");
+  const whyThisMattersBox = document.getElementById("whyThisMattersBox");
+  const resetBtn = document.getElementById("resetBtn");
+
+  const weights = {
+    q1: 8,
+    q2: 8,
+    q3: 14,
+    q4: 10,
+    q5: 12,
+    q6: 12,
+    q7: 6,
+    q8: 6,
+    q9: 12,
+    q10: 12
+  };
+
+  const positiveQuestions = ["q1", "q9", "q10"];
+  const negativeQuestions = ["q2", "q3", "q4", "q5", "q6", "q7", "q8"];
+
+  function points(key, value, weight){
+    const isPositive = positiveQuestions.includes(key);
+    const isNegative = negativeQuestions.includes(key);
+
+    if(isPositive){
+      if(value === "yes") return weight;
+      if(value === "some") return Math.round(weight * 0.5);
+      return 0;
+    }
+
+    if(isNegative){
+      if(value === "no") return weight;
+      if(value === "some") return Math.round(weight * 0.5);
+      return 0;
+    }
+
+    return 0;
+  }
+
+  function readAnswers(){
+    const data = {};
+    Object.keys(weights).forEach(k => {
+      const el = form.querySelector('input[name="' + k + '"]:checked');
+      data[k] = el ? el.value : null;
+    });
+    return data;
+  }
+
+  function calcScore(ans){
+    let total = 0;
+    Object.keys(weights).forEach(k => {
+      total += points(k, ans[k], weights[k]);
+    });
+    return total;
+  }
+
+  function worstRisks(ans){
+    return Object.keys(weights).map(k => {
+      const earned = points(k, ans[k], weights[k]);
+      return {
+        key: k,
+        missing: weights[k] - earned,
+        value: ans[k]
+      };
+    }).sort((a, b) => b.missing - a.missing);
+  }
+
+  function countHighTriggers(ans){
+    let count = 0;
+
+    if(ans.q3 !== "no") count++;
+    if(ans.q5 !== "no") count++;
+    if(ans.q6 !== "no") count++;
+    if(ans.q9 !== "yes") count++;
+    if(ans.q10 !== "yes") count++;
+
+    return count;
+  }
+
+  const riskText = {
+    q1: {
+      title: "Parental controls are not fully set up",
+      fix: "Turn on Screen Time, Family Link, or Microsoft Family Safety today.",
+      why: "Parental controls reduce access to risky apps, settings changes, and unsupervised online activity.",
+      link: "v3-device-controls.html"
+    },
+    q2: {
+      title: "Your child can install apps without approval",
+      fix: "Lock app installs so new apps cannot be added without parent approval.",
+      why: "Risk can escalate quickly when a child downloads a new chat or social app without you knowing.",
+      link: "v3-device-controls.html"
+    },
+    q3: {
+      title: "Strangers can send private messages",
+      fix: "Set private messages to friends-only or OFF across games, social apps, and chat platforms.",
+      why: "Private messages are one of the most common starting points for grooming and manipulation.",
+      link: "v3-socials.html"
+    },
+    q4: {
+      title: "Strangers can talk through voice chat",
+      fix: "Turn voice chat OFF or restrict it tightly to approved contacts only.",
+      why: "Voice chat builds fast trust and can create secrecy before parents notice what is happening.",
+      link: "v3-gaming.html"
+    },
+    q5: {
+      title: "Your child has online friends you do not know",
+      fix: "Set the rule that online friends must be real-life people or parent-approved contacts.",
+      why: "Predators often present themselves as friendly players, helpers, or kids the same age.",
+      link: "v3-house-rules.html"
+    },
+    q6: {
+      title: "There may be hidden or second accounts",
+      fix: "Set the rule: no secret accounts, no hidden profiles, and parents can check anytime.",
+      why: "Secrecy reduces parent visibility and creates space for risk to grow.",
+      link: "v3-house-rules.html"
+    },
+    q7: {
+      title: "Devices stay in bedrooms overnight",
+      fix: "Move overnight charging to a shared family area starting tonight.",
+      why: "Late-night unsupervised access increases secrecy and emotionally loaded conversations.",
+      link: "v3-house-rules.html"
+    },
+    q8: {
+      title: "Location sharing may be turned on",
+      fix: "Turn location sharing OFF unless there is a clear reason to keep it on.",
+      why: "Location data can reveal routines and real-world details that children should not be sharing widely.",
+      link: "v3-socials.html"
+    },
+    q9: {
+      title: "Your child may not feel safe telling you",
+      fix: "Repeat clearly and often: 'You will not be in trouble for telling me. We will deal with it together.'",
+      why: "If a child fears blame or punishment, they are far less likely to speak up early.",
+      link: "v3-parent-scripts.html"
+    },
+    q10: {
+      title: "The off-platform rule is not clear enough",
+      fix: "Set the Golden Rule: no moving chats to Discord, Snap, Telegram, WhatsApp, or private apps with strangers.",
+      why: "Moving off-platform is a major escalation point because it gives strangers more privacy and control.",
+      link: "v3-playbook.html"
+    }
+  };
+
+  function getGrade(score, triggerCount){
+    if(score >= 85 && triggerCount <= 1){
+      return {
+        label: "Strong",
+        summary: "Your setup is strong. Keep checking in regularly and keep communication open."
+      };
+    }
+
+    if(score >= 65 && triggerCount <= 2){
+      return {
+        label: "Good (needs tightening)",
+        summary: "You are doing a lot right, but there are still weak points that could allow access, secrecy, or off-platform contact."
+      };
+    }
+
+    if(score >= 45 || triggerCount >= 3){
+      return {
+        label: "At Risk",
+        summary: "There are clear exposure points here. Focus on private messaging, unknown contacts, secrecy, and the off-platform rule first."
+      };
+    }
+
+    return {
+      label: "High Risk",
+      summary: "Your child may have multiple open pathways for stranger access, secrecy, or manipulation. Start with the biggest risk today."
+    };
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const ans = readAnswers();
+    const score = calcScore(ans);
+    const ranked = worstRisks(ans);
+    const top = ranked[0];
+    const info = riskText[top.key];
+    const triggerCount = countHighTriggers(ans);
+    const g = getGrade(score, triggerCount);
+
+    scoreNum.textContent = score;
+    scoreGrade.textContent = g.label;
+    scoreSummary.textContent = g.summary;
+
+    topRiskBadge.style.display = "inline-flex";
+    topRiskBadge.textContent = "Biggest risk detected: " + info.title;
+
+    dangerBadge.style.display = (score < 55 || triggerCount >= 3) ? "inline-flex" : "none";
+
+    topFixBox.innerHTML =
+      "<strong>Top fix right now:</strong> " + info.fix +
+      '<div class="btn-grid btn-grid-soft" style="margin-top:12px;">' +
+      '<a class="btn" href="' + info.link + '">Fix This Now</a>' +
+      '<a class="btn secondary" href="v3-reporting.html">If Something Already Happened</a>' +
+      '</div>';
+
+    whyThisMattersBox.style.display = "block";
+    whyThisMattersBox.innerHTML =
+      "<strong>Why this matters:</strong> " + info.why;
+
+    results.style.display = "block";
+    results.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  resetBtn.addEventListener("click", function(){
+    form.reset();
+    results.style.display = "none";
+    whyThisMattersBox.style.display = "none";
+  });
+})();
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
