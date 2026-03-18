@@ -217,7 +217,7 @@
     return {
       label: "High Risk",
       summary: "There are urgent gaps in protection. Start with the highest-risk app or platform, device controls, and reassurance that your child can tell the truth safely."
-      };
+    };
   }
 
   function appPath(app){
@@ -320,6 +320,10 @@
       buttons.push('<a class="btn secondary" href="v3-algorithm-awareness.html">Algorithm Risks</a>');
     } else {
       buttons.push('<a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>');
+    }
+
+    if(data.risk === "yes"){
+      buttons.push('<a class="btn secondary" href="v3-definitions.html">Understanding What’s Happening</a>');
     }
 
     return buttons.join("");
