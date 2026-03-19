@@ -3,285 +3,212 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
 <title>First 24 Hours • POSH</title>
-<meta name="description" content="What should a parent do in the first 24 hours if something feels wrong online? Use this POSH guide to stay calm, protect your child, preserve evidence, and take the right next steps." />
-<link rel="canonical" href="https://poshaussie.com.au/v3-first-24-hours.html" />
+
+<meta name="description" content="What should a parent do in the first 24 hours if something feels wrong online? Stay calm, protect your child, preserve evidence, and take the right next steps." />
+
+<link rel="canonical" href="https://poshaussie.com.au/v3-first-24-hours.html"/>
+
 <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
 <div class="wrap">
 
   <div class="brand">POSH</div>
+
   <h1 class="page-title">First 24 Hours</h1>
+
   <p class="tagline">
-    <strong>If something feels wrong, the first day matters.</strong> Stay calm, protect the child, preserve evidence, and take the next right step.
+    <strong>If something feels wrong, the first day matters.</strong>
+    Stay calm, protect the child, preserve evidence, and take the next right step.
   </p>
 
   <div id="nav"></div>
 
+  <!-- PANIC ENTRY -->
+  <div class="btn-grid btn-grid-soft">
+    <a class="btn" href="v3-what-now.html">I Need Help Right Now</a>
+    <a class="btn secondary" href="v3-real-scenarios.html">Identify What This Is</a>
+  </div>
+
   <div class="card hero-warning center-card">
     <h2>Why the first 24 hours matter</h2>
+
     <div class="rule-box">
-      <p>When parents panic, they often move too fast, ask too many questions at once, or delete the very evidence they may later need.</p>
-      <p>This page is here to help you slow the panic down and move in the right order.</p>
+      <p>When parents panic, they often move too fast or delete the very evidence they may later need.</p>
+      <p>This page helps you slow down and act in the right order.</p>
     </div>
-    <div class="danger-line">Calm action protects children better than panic action</div>
+
+    <div class="danger-line">
+      Calm action protects children better than panic action
+    </div>
+  </div>
+
+  <!-- CONFIDENCE BLOCK -->
+  <div class="card center-card">
+    <h2>You don’t need to get this perfect</h2>
+
+    <p class="note">
+      Most parents worry about doing the wrong thing. Staying calm and following a simple order protects your child more than reacting perfectly.
+    </p>
+
+    <div class="callout center-callout">
+      You’re already doing the right thing by paying attention early.
+    </div>
   </div>
 
   <div class="callout center-callout">
     <strong>Start here:</strong><br/>
-    Your first job is not to know everything. Your first job is to protect the child, stay calm, and avoid making the situation harder.
+    Protect the child, stay calm, and avoid making the situation harder.
   </div>
 
-  <div class="callout center-callout">
-    <strong>If this situation is active right now:</strong><br/>
-    Focus on safety first, preserve what matters, and move step-by-step below. You do not need the whole answer before you begin protecting the child.
-  </div>
-
+  <!-- STEP 1 -->
   <div class="card center-card">
     <h2>Step 1 — Stay calm in front of the child</h2>
 
     <p class="note">
-      Even if you feel sick, angry, shocked, or scared, try not to show panic straight away. Children are far more likely to shut down if they think they are in trouble or if they feel they caused chaos.
+      Children shut down if they think they are in trouble or caused chaos.
     </p>
 
     <div class="callout center-callout">
-      <strong>Start with:</strong> “You’re not in trouble. I’m glad you told me. We’ll deal with this together.”
+      <strong>Say:</strong> “You’re not in trouble. I’m glad you told me.”
     </div>
   </div>
 
+  <!-- STEP 2 -->
   <div class="card center-card">
     <h2>Step 2 — Make the child safer immediately</h2>
 
     <p class="note">
-      If the risk is active, reduce contact first. That may mean moving the device closer to you, pausing access to one app, turning off chat, or staying with the child while you assess what is happening.
-    </p>
-
-    <p class="note">
-      Focus on immediate safety, not punishment.
+      Reduce contact first. Stay with the child, pause apps, or limit access.
     </p>
 
     <div class="callout center-callout">
-      <strong>Priority:</strong> reduce exposure first, then work out the details.
+      <strong>Priority:</strong> reduce exposure first
     </div>
 
     <div class="btn-grid btn-grid-soft">
       <a class="btn" href="v3-device-controls.html">Device Safety</a>
       <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
-      <a class="btn secondary" href="v3-parent-scripts.html">What To Say</a>
-      <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
     </div>
   </div>
 
+  <!-- STEP 3 -->
   <div class="card center-card">
     <h2>Step 3 — Do not delete anything yet</h2>
 
     <p class="note">
-      Parents often want to block, delete, wipe chats, remove apps, or throw the phone away immediately. That reaction is understandable, but it can destroy important evidence.
+      Deleting chats or blocking too early can destroy important evidence.
     </p>
 
-    <p class="note">
-      If messages, usernames, threats, images, links, or account names are visible, preserve them first.
-    </p>
-
-    <div class="callout center-callout">
-      <strong>Remember:</strong> screenshot first, document first, then decide the next move.
+    <div class="danger-line">
+      Deleting too early can remove the only evidence you have
     </div>
   </div>
 
+  <!-- STEP 4 -->
   <div class="card center-card">
     <h2>Step 4 — Preserve the evidence</h2>
 
-    <p class="note">
-      Save what you can while it is still visible. Keep it simple and organised.
-    </p>
-
     <ul class="list">
-      <li>Screenshot usernames, profiles, chats, threats, and requests</li>
-      <li>Capture the app or platform name</li>
-      <li>Note the date and time</li>
-      <li>Save links, profile names, and group names if visible</li>
-      <li>Write down what the child tells you in their own words</li>
+      <li>Screenshot chats and usernames</li>
+      <li>Capture app/platform name</li>
+      <li>Note date and time</li>
+      <li>Write what the child tells you</li>
     </ul>
 
-    <div class="callout center-callout">
-      You are not trying to build a perfect case file. You are trying to stop key details from disappearing.
-    </div>
-
     <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="v3-evidence-reporting.html">Save &amp; Report Properly</a>
-      <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
-      <a class="btn secondary" href="v3-reporting-australia.html">Australia Reporting</a>
+      <a class="btn" href="v3-evidence-reporting.html">Save & Report Properly</a>
     </div>
   </div>
 
+  <!-- STEP 5 -->
   <div class="card center-card">
     <h2>Step 5 — Ask calm, simple questions</h2>
 
-    <p class="note">
-      Do not launch into a full interrogation. The goal is to understand enough to guide the next step, not force the child to explain everything at once.
-    </p>
-
     <div class="rule-box">
-      <p><strong>Helpful questions:</strong></p>
       <p>“Can you show me what happened?”</p>
       <p>“Who is this person?”</p>
-      <p>“Did they ask you to move to another app?”</p>
       <p>“Did they ask you to keep anything secret?”</p>
-      <p>“Has this happened more than once?”</p>
-    </div>
-
-    <div class="callout center-callout">
-      Keep your tone steady. Children often tell more when they do not feel cornered.
     </div>
   </div>
 
+  <!-- STEP 6 -->
   <div class="card center-card">
     <h2>Step 6 — Do not blame the child</h2>
 
-    <p class="note">
-      Even if they broke a rule, hid something, or kept it from you, blame can shut the whole process down. Shame and fear often protect the problem instead of the child.
-    </p>
-
     <div class="callout center-callout">
-      <strong>Say:</strong> “We’ll sort this out.”<br/>
-      <strong>Avoid:</strong> “Why would you do that?” or “I told you this would happen.”
+      Blame shuts the process down. Stay supportive.
     </div>
   </div>
 
+  <!-- STEP 7 -->
   <div class="card center-card">
-    <h2>Step 7 — Work out what type of situation this is</h2>
-
-    <p class="note">
-      You do not need every detail yet, but you do need to sort the situation into the right lane.
-    </p>
+    <h2>Step 7 — Identify the situation</h2>
 
     <div class="btn-grid btn-grid-soft">
       <a class="btn" href="v3-real-scenarios.html">Real Scenarios</a>
-      <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
       <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
-      <a class="btn secondary" href="v3-definitions.html">Understanding What’s Happening</a>
-    </div>
-
-    <div class="callout center-callout">
-      The faster you identify the pattern, the easier it becomes to choose the right response.
     </div>
   </div>
 
+  <!-- STEP 8 -->
   <div class="card center-card">
-    <h2>Step 8 — Escalate sooner if the risk is active</h2>
+    <h2>Step 8 — Escalate early if needed</h2>
 
     <p class="note">
-      If there are sexual messages, threats, blackmail, coercion, image requests, real-world meet-up talk, or intense emotional pressure, move faster.
+      If there are threats, sexual messages, or pressure, act quickly.
     </p>
 
-    <p class="note">
-      In those situations, evidence preservation and reporting may matter more than trying to handle it privately.
-    </p>
+    <div class="callout center-callout">
+      Some situations escalate quietly — act early if something feels off.
+    </div>
 
     <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="v3-evidence-reporting.html">Save &amp; Report Properly</a>
-      <a class="btn secondary" href="v3-reporting.html">Worldwide Reporting</a>
+      <a class="btn" href="v3-reporting.html">Worldwide Reporting</a>
       <a class="btn secondary" href="v3-reporting-australia.html">Australia Reporting</a>
-      <a class="btn secondary" href="v3-sextortion.html">Sextortion</a>
     </div>
   </div>
 
-  <div class="card center-card">
-    <h2>What not to do in the first 24 hours</h2>
-
-    <ul class="list">
-      <li>Do not panic in front of the child</li>
-      <li>Do not shame or blame them</li>
-      <li>Do not delete chats or remove evidence too early</li>
-      <li>Do not assume silence means nothing happened</li>
-      <li>Do not force a full explanation immediately</li>
-      <li>Do not confront the suspected person directly if reporting may matter</li>
-    </ul>
-
-    <div class="callout center-callout">
-      The wrong first move can close the child down or erase what you may need later.
-    </div>
-  </div>
-
+  <!-- FLOW -->
   <div class="card network center-card">
-    <h2>The first 24-hour order</h2>
+    <h2>The correct order</h2>
 
     <div class="network-flow">
       <div class="pill">Stay calm</div>
       <div class="arrow">↓</div>
-
-      <div class="pill">Protect the child</div>
+      <div class="pill">Protect child</div>
       <div class="arrow">↓</div>
-
       <div class="pill">Preserve evidence</div>
       <div class="arrow">↓</div>
-
-      <div class="pill">Ask simple questions</div>
+      <div class="pill">Ask questions</div>
       <div class="arrow">↓</div>
-
-      <div class="pill">Choose the right lane</div>
-      <div class="arrow">↓</div>
-
-      <div class="pill danger">Act early, not emotionally</div>
+      <div class="pill danger">Act early</div>
     </div>
   </div>
 
+  <!-- NEXT -->
   <div class="card center-card">
-    <h2>What to do next from here</h2>
-
-    <p class="note">
-      Once you have stabilised the situation, the next step is usually evidence, reporting, or calm guidance for the child.
-    </p>
+    <h2>What next</h2>
 
     <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="v3-evidence-reporting.html">Save &amp; Report Properly</a>
+      <a class="btn" href="v3-evidence-reporting.html">Evidence & Reporting</a>
       <a class="btn secondary" href="v3-parent-scripts.html">What To Say</a>
-      <a class="btn secondary" href="v3-reporting.html">Worldwide Reporting</a>
-      <a class="btn secondary" href="v3-reporting-australia.html">Australia Reporting</a>
-    </div>
-
-    <div class="callout center-callout">
-      You do not need the whole plan right now. You only need the next right move.
+      <a class="btn secondary" href="v3-safety-score.html">Check Overall Risk</a>
     </div>
   </div>
 
-  <div class="card center-card">
-    <h2>If you still feel overwhelmed</h2>
-
-    <p class="note">
-      If you are struggling to know what matters most right now, start with the pages below.
-    </p>
-
-    <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="v3-what-now.html">What To Do Now</a>
-      <a class="btn secondary" href="v3-real-scenarios.html">Real Scenarios</a>
-      <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
-      <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
-    </div>
-
-    <div class="callout center-callout">
-      If the risk feels active, serious, or escalating, move toward evidence preservation and reporting sooner rather than later.
-    </div>
-  </div>
-
+  <!-- SHARE -->
   <div class="card hero-warning center-card">
-    <h2>Help another parent stay calm and act earlier</h2>
-
-    <div class="rule-box">
-      <p>Many parents make harder situations worse simply because no one showed them what to do first.</p>
-      <p>Sharing a page like this can help another family move from panic into protection.</p>
-    </div>
-
-    <div class="danger-line">
-      A calmer first response can change the outcome
-    </div>
+    <h2>Help another parent</h2>
 
     <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="v3-share.html">Share POSH</a>
-      <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au" target="_blank" rel="noopener">Share on Facebook</a>
-      <a class="btn secondary" href="v3-downloads.html">Parent Guides</a>
+      <a class="btn secondary"
+         href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au/v3-first-24-hours.html"
+         target="_blank">Share</a>
     </div>
   </div>
 
@@ -290,5 +217,6 @@
 </div>
 
 <script src="app.js"></script>
+
 </body>
 </html>
