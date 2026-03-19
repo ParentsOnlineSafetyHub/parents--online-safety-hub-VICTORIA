@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Start Here Fast • POSH</title>
+<meta name="description" content="A fast POSH entry system for worried parents. Answer a few quick questions and get the right next step immediately." />
+<link rel="canonical" href="https://poshaussie.com.au/v3-entry-system.html"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="brand">POSH</div>
+  <h1 class="page-title">Start Here Fast</h1>
+  <p class="tagline">
+    <strong>If something feels wrong, start here.</strong> Answer a few quick questions and POSH will point you to the right next step.
+  </p>
+
+  <div id="nav"></div>
+
+  <div class="card hero-warning center-card">
+    <h2>Why this page exists</h2>
+    <div class="rule-box">
+      <p>When parents feel overwhelmed, they often lose time trying to work out which page matters first.</p>
+      <p>This page is designed to sort you into the right lane quickly.</p>
+    </div>
+    <div class="danger-line">Clarity first. Action next.</div>
+  </div>
+
+  <div class="callout center-callout">
+    <strong>You do not need the whole answer right now.</strong><br/>
+    You only need the next right step.
+  </div>
+
+  <div class="card center-card">
+    <h2>Quick concern check</h2>
+    <p class="note" style="margin-top:-4px;">
+      Answer based on what is true right now.
+    </p>
+
+    <form id="entryForm" class="quiz">
+
+      <div class="q">
+        <div class="q-title">1) Does something already feel wrong?</div>
+        <div class="q-options">
+          <label><input type="radio" name="q1" value="yes" required> Yes</label>
+          <label><input type="radio" name="q1" value="no"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">2) Has your child been hiding, deleting, or protecting messages or chats?</div>
+        <div class="q-options">
+          <label><input type="radio" name="q2" value="yes" required> Yes</label>
+          <label><input type="radio" name="q2" value="no"> No</label>
+          <label><input type="radio" name="q2" value="unsure"> Not sure</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">3) Is there a specific person, app, or “online friend” you are worried about?</div>
+        <div class="q-options">
+          <label><input type="radio" name="q3" value="yes" required> Yes</label>
+          <label><input type="radio" name="q3" value="no"> No</label>
+          <label><input type="radio" name="q3" value="unsure"> Not sure</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">4) Has your child been asked to keep something secret, move apps, or talk privately?</div>
+        <div class="q-options">
+          <label><input type="radio" name="q4" value="yes" required> Yes</label>
+          <label><input type="radio" name="q4" value="no"> No</label>
+          <label><input type="radio" name="q4" value="unsure"> Not sure</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">5) Do you need help understanding the risk, or do you need help acting right now?</div>
+        <div class="q-options">
+          <label><input type="radio" name="q5" value="understand" required> I need to understand what this is</label>
+          <label><input type="radio" name="q5" value="act"> I need to know what to do right now</label>
+          <label><input type="radio" name="q5" value="prevent"> I want to prevent problems before they start</label>
+        </div>
+      </div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
+        <button class="btn" type="submit">Show My Best Next Step</button>
+        <button class="btn secondary" type="button" id="resetBtn">Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="card center-card" id="results" style="display:none;">
+    <h2>Your best next step</h2>
+
+    <div class="callout center-callout" id="resultSummary"></div>
+
+    <div class="btn-grid btn-grid-soft" id="resultButtons" style="margin-top:14px;"></div>
+
+    <div class="callout center-callout" id="resultNote" style="margin-top:14px;"></div>
+  </div>
+
+  <div class="card center-card">
+    <h2>Common fast pathways</h2>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-real-scenarios.html">Something Feels Off</a>
+      <a class="btn secondary" href="v3-first-24-hours.html">Something Is Happening Now</a>
+      <a class="btn secondary" href="v3-safety-score.html">I Want to Check Risk</a>
+      <a class="btn secondary" href="v3-how-to-explain-grooming-and-predators-to-a-child.html">How To Explain This to My Child</a>
+    </div>
+  </div>
+
+  <div class="card hero-warning center-card">
+    <h2>Help another parent find the right first step</h2>
+
+    <div class="rule-box">
+      <p>Many parents do not act because they do not know where to begin.</p>
+      <p>Giving them the right entry point can change what happens next.</p>
+    </div>
+
+    <div class="danger-line">
+      The right first step can change the whole outcome
+    </div>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-share.html">Share POSH</a>
+      <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au/v3-entry-system.html" target="_blank" rel="noopener">Share on Facebook</a>
+      <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+</div>
+
+<script>
+(function(){
+  const form = document.getElementById("entryForm");
+  const resetBtn = document.getElementById("resetBtn");
+  const results = document.getElementById("results");
+  const resultSummary = document.getElementById("resultSummary");
+  const resultButtons = document.getElementById("resultButtons");
+  const resultNote = document.getElementById("resultNote");
+
+  function getValue(name){
+    const checked = form.querySelector('input[name="' + name + '"]:checked');
+    return checked ? checked.value : "";
+  }
+
+  function button(href, label, cls){
+    return '<a class="' + cls + '" href="' + href + '">' + label + '</a>';
+  }
+
+  function getPath(data){
+    const activeRisk =
+      data.q1 === "yes" &&
+      (data.q2 === "yes" || data.q3 === "yes" || data.q4 === "yes");
+
+    if (data.q5 === "act" || activeRisk) {
+      return {
+        summary: "You appear to need the action pathway. Start by staying calm, protecting the child, and moving into the first response steps now.",
+        buttons:
+          button("v3-first-24-hours.html", "First 24 Hours", "btn") +
+          button("v3-evidence-reporting.html", "Save & Report Properly", "btn secondary") +
+          button("v3-parent-scripts.html", "What To Say", "btn secondary") +
+          button("v3-reporting-australia.html", "Australia Reporting", "btn secondary"),
+        note: "If something already feels active, serious, or escalating, do not wait for perfect proof before acting protectively."
+      };
+    }
+
+    if (data.q5 === "understand" || data.q3 === "yes" || data.q4 === "unsure" || data.q2 === "unsure") {
+      return {
+        summary: "You appear to need the understanding pathway. Start by identifying the pattern, then move into action if it becomes clearer.",
+        buttons:
+          button("v3-real-scenarios.html", "Real Scenarios", "btn") +
+          button("v3-redflags.html", "Red Flags", "btn secondary") +
+          button("v3-grooming.html", "Grooming Signs", "btn secondary") +
+          button("v3-what-now.html", "What To Do Now", "btn secondary"),
+        note: "You do not need to label everything perfectly before taking safer steps."
+      };
+    }
+
+    return {
+      summary: "You appear to be in the prevention pathway. This is the best time to strengthen safety before a problem grows.",
+      buttons:
+        button("v3-safety-score.html", "Safety Check", "btn") +
+        button("v3-device-controls.html", "Device Safety", "btn secondary") +
+        button("v3-house-rules.html", "House Rules", "btn secondary") +
+        button("v3-how-to-set-parental-controls-and-passwords.html", "Parental Controls", "btn secondary"),
+      note: "Prevention works best when settings, conversations, and boundaries all support each other."
+    };
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const data = {
+      q1: getValue("q1"),
+      q2: getValue("q2"),
+      q3: getValue("q3"),
+      q4: getValue("q4"),
+      q5: getValue("q5")
+    };
+
+    const path = getPath(data);
+
+    resultSummary.textContent = path.summary;
+    resultButtons.innerHTML = path.buttons;
+    resultNote.textContent = path.note;
+
+    results.style.display = "block";
+    results.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  resetBtn.addEventListener("click", function(){
+    form.reset();
+    results.style.display = "none";
+    resultSummary.textContent = "";
+    resultButtons.innerHTML = "";
+    resultNote.textContent = "";
+  });
+})();
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
