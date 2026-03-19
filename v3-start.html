@@ -37,6 +37,20 @@
     </div>
   </div>
 
+  <div class="card hero-warning center-card">
+    <h2>Choose the fastest lane</h2>
+    <div class="rule-box">
+      <p>If you already know what kind of help you need, use one of these fast pathways.</p>
+      <p>If not, take the Start Score below and POSH will point you in the right direction.</p>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn" href="v3-safety-score.html">Quick Safety Check</a>
+      <a class="btn secondary" href="v3-real-scenarios.html">Something Feels Off</a>
+      <a class="btn secondary" href="v3-first-24-hours.html">Something Is Happening Now</a>
+    </div>
+  </div>
+
   <div class="card center-card">
     <h2>Answer these 6 questions</h2>
     <p class="note" style="margin-top:-4px;">
@@ -135,8 +149,19 @@
     </div>
 
     <div class="callout center-callout" id="guideSummary" style="margin-top:14px;"></div>
-    <div class="btn-grid btn-grid-soft" id="guideButtons" style="margin-top:14px;"></div>
+
+    <div class="card hero-warning center-card" id="pathwayBox" style="margin-top:18px;">
+      <h2>Your best pathway now</h2>
+      <p class="note" id="pathwayText"></p>
+      <div class="btn-grid btn-grid-soft" id="guideButtons" style="margin-top:14px;"></div>
+    </div>
+
     <div class="callout center-callout" id="guideUrgent" style="margin-top:14px; display:none;"></div>
+
+    <div class="card center-card" style="margin-top:18px;">
+      <h2>Keep moving in the right order</h2>
+      <div class="btn-grid btn-grid-soft" id="guideSupportButtons"></div>
+    </div>
 
     <div class="card hero-warning center-card" style="margin-top:18px;">
       <h2>Help protect more children</h2>
@@ -166,8 +191,10 @@
   const scoreSummary = document.getElementById("startScoreSummary");
   const guideSummary = document.getElementById("guideSummary");
   const guideButtons = document.getElementById("guideButtons");
+  const guideSupportButtons = document.getElementById("guideSupportButtons");
   const guideUrgent = document.getElementById("guideUrgent");
   const urgentBadge = document.getElementById("urgentBadge");
+  const pathwayText = document.getElementById("pathwayText");
 
   function getValue(name){
     const checked = form.querySelector('input[name="' + name + '"]:checked');
@@ -313,16 +340,69 @@
     return parts.join(" ");
   }
 
-  function buildButtons(data){
+  function buildUrgent(data){
+    if(data.risk !== "yes") return "";
+
+    if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
+      return "If something already feels wrong, do not ignore it just because it looks like only content or just videos. Repeated exposure, recommendation drift, and manipulative content can still affect your child heavily over time. Move early, reduce access, and check the most relevant page now.";
+    }
+
+    return "If something already feels wrong, do not wait for it to become obvious. Stay calm, preserve evidence, reassure your child they are not in trouble, and move to the most relevant safety page now.";
+  }
+
+  function getPathway(data, score){
+    if(data.risk === "yes" && (score < 60 || data.trust !== "yes")){
+      return {
+        text: "You appear to be in the concern or active-situation pathway. Start by identifying the pattern, then move into the first response steps and evidence preservation if needed.",
+        primary: [
+          { href: "v3-real-scenarios.html", label: "Identify the Situation", cls: "btn" },
+          { href: "v3-first-24-hours.html", label: "First 24 Hours", cls: "btn secondary" },
+          { href: "v3-evidence-reporting.html", label: "Save & Report Properly", cls: "btn secondary" },
+          { href: "v3-parent-scripts.html", label: "What To Say", cls: "btn secondary" }
+        ]
+      };
+    }
+
+    if(data.risk === "yes"){
+      return {
+        text: "You are in the concern pathway. Start with recognition first, then move into action if the pattern looks real or escalates.",
+        primary: [
+          { href: "v3-real-scenarios.html", label: "Real Scenarios", cls: "btn" },
+          { href: "v3-redflags.html", label: "Red Flags", cls: "btn secondary" },
+          { href: "v3-what-now.html", label: "What To Do Now", cls: "btn secondary" },
+          { href: "v3-first-24-hours.html", label: "Act Early", cls: "btn secondary" }
+        ]
+      };
+    }
+
+    return {
+      text: "You are in the prevention pathway. Build your strongest base first, then tighten the platform, app, and communication layers.",
+      primary: [
+        { href: "v3-safety-score.html", label: "Quick Safety Check", cls: "btn" },
+        { href: "v3-device-controls.html", label: "Device Safety", cls: "btn secondary" },
+        { href: "v3-house-rules.html", label: "House Rules", cls: "btn secondary" },
+        { href: "v3-redflags.html", label: "Understand Risks", cls: "btn secondary" }
+      ]
+    };
+  }
+
+  function buildButtons(data, score){
+    const pathway = getPathway(data, score);
+    return pathway.primary.map(function(item){
+      return '<a class="' + item.cls + '" href="' + item.href + '">' + item.label + '</a>';
+    }).join("");
+  }
+
+  function buildSupportButtons(data){
     const buttons = [];
 
-    buttons.push('<a class="btn" href="' + appPath(data.app) + '">' + appLabel(data.app) + '</a>');
+    buttons.push('<a class="btn secondary" href="' + appPath(data.app) + '">' + appLabel(data.app) + '</a>');
     buttons.push('<a class="btn secondary" href="' + typePath(data.type) + '">' + typeLabel(data.type) + '</a>');
 
     if(data.device !== "yes"){
       buttons.push('<a class="btn secondary" href="v3-device-controls.html">Device Safety</a>');
     } else {
-      buttons.push('<a class="btn secondary" href="v3-redflags.html">Red Flags</a>');
+      buttons.push('<a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>');
     }
 
     if(data.trust !== "yes"){
@@ -330,10 +410,6 @@
     } else if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
       buttons.push('<a class="btn secondary" href="v3-algorithm-awareness.html">Algorithm Risks</a>');
     } else {
-      buttons.push('<a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>');
-    }
-
-    if(data.age){
       buttons.push('<a class="btn secondary" href="v3-age-guide.html">Age Guide</a>');
     }
 
@@ -342,16 +418,6 @@
     }
 
     return buttons.join("");
-  }
-
-  function buildUrgent(data){
-    if(data.risk !== "yes") return "";
-
-    if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
-      return "If something already feels wrong, do not ignore it just because it looks like “only content” or “just videos.” Repeated exposure, recommendation drift, and manipulative content can still affect your child heavily over time. Move early, reduce access, and check the most relevant page now.";
-    }
-
-    return "If something already feels wrong, do not wait for it to become obvious. Stay calm, preserve evidence, reassure your child they are not in trouble, and move to the most relevant safety page now.";
   }
 
   form.addEventListener("submit", function(e){
@@ -368,12 +434,15 @@
 
     const score = calcScore(data);
     const grade = getGrade(score);
+    const pathway = getPathway(data, score);
 
     scoreNum.textContent = score;
     scoreGrade.textContent = grade.label;
     scoreSummary.textContent = grade.summary;
     guideSummary.textContent = buildSummary(data, score);
-    guideButtons.innerHTML = buildButtons(data);
+    pathwayText.textContent = pathway.text;
+    guideButtons.innerHTML = buildButtons(data, score);
+    guideSupportButtons.innerHTML = buildSupportButtons(data);
 
     const urgentText = buildUrgent(data);
     if(urgentText){
@@ -398,6 +467,8 @@
     scoreSummary.textContent = "";
     guideSummary.textContent = "";
     guideButtons.innerHTML = "";
+    guideSupportButtons.innerHTML = "";
+    pathwayText.textContent = "";
     guideUrgent.style.display = "none";
     guideUrgent.textContent = "";
     urgentBadge.style.display = "none";
