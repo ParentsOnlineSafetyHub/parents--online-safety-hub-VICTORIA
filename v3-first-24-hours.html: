@@ -34,6 +34,11 @@
     Your first job is not to know everything. Your first job is to protect the child, stay calm, and avoid making the situation harder.
   </div>
 
+  <div class="callout center-callout">
+    <strong>If this situation is active right now:</strong><br/>
+    Focus on safety first, preserve what matters, and move step-by-step below. You do not need the whole answer before you begin protecting the child.
+  </div>
+
   <div class="card center-card">
     <h2>Step 1 — Stay calm in front of the child</h2>
 
@@ -64,6 +69,7 @@
     <div class="btn-grid btn-grid-soft">
       <a class="btn" href="v3-device-controls.html">Device Safety</a>
       <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
+      <a class="btn secondary" href="v3-parent-scripts.html">What To Say</a>
       <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
     </div>
   </div>
@@ -101,6 +107,11 @@
 
     <div class="callout center-callout">
       You are not trying to build a perfect case file. You are trying to stop key details from disappearing.
+    </div>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-evidence-reporting.html">Save &amp; Report Properly</a>
+      <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
     </div>
   </div>
 
@@ -169,10 +180,10 @@
     </p>
 
     <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="v3-reporting.html">Report &amp; Get Help</a>
+      <a class="btn" href="v3-evidence-reporting.html">Save &amp; Report Properly</a>
+      <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
       <a class="btn secondary" href="v3-reporting-australia.html">Australia Reporting</a>
       <a class="btn secondary" href="v3-sextortion.html">Sextortion</a>
-      <a class="btn secondary" href="v3-playbook.html">Predator Playbook</a>
     </div>
   </div>
 
@@ -217,6 +228,25 @@
   </div>
 
   <div class="card center-card">
+    <h2>What to do next from here</h2>
+
+    <p class="note">
+      Once you have stabilised the situation, the next step is usually evidence, reporting, or calm guidance for the child.
+    </p>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-evidence-reporting.html">Save &amp; Report Properly</a>
+      <a class="btn secondary" href="v3-parent-scripts.html">What To Say</a>
+      <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
+      <a class="btn secondary" href="v3-real-scenarios.html">Identify the Situation</a>
+    </div>
+
+    <div class="callout center-callout">
+      You do not need the whole plan right now. You only need the next right move.
+    </div>
+  </div>
+
+  <div class="card center-card">
     <h2>If you still feel overwhelmed</h2>
 
     <p class="note">
@@ -231,7 +261,7 @@
     </div>
 
     <div class="callout center-callout">
-      You do not need the whole plan right now. You only need the next right move.
+      If the risk feels active, serious, or escalating, move toward evidence preservation and reporting sooner rather than later.
     </div>
   </div>
 
