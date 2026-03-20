@@ -51,6 +51,7 @@
   <url><loc>https://poshaussie.com.au/v3-founder.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-why-posh-exists.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-warning.html</loc></url>
+  <url><loc>https://poshaussie.com.au/online-safety-foundations.html</loc></url>
 
   <!-- HIGH INTENT SEO / PARENT SEARCH PAGES -->
   <url><loc>https://poshaussie.com.au/v3-should-i-read-my-childs-messages.html</loc></url>
@@ -71,6 +72,7 @@
   <url><loc>https://poshaussie.com.au/v3-why-discord.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-why-fortnite.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-why-roblox.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-checklist.html</loc></url>
 
   <!-- HARD CONVERSATIONS / TRUST -->
   <url><loc>https://poshaussie.com.au/v3-what-to-say-if-your-child-opens-up.html</loc></url>
@@ -78,6 +80,7 @@
   <url><loc>https://poshaussie.com.au/v3-what-to-say-if-your-child-thinks-it-was-their-fault.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-what-to-say-if-your-child-is-embarrassed-to-tell-you.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-how-to-explain-grooming-and-predators-to-a-child.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-it-is-not-about-not-trusting-your-child.html</loc></url>
 
   <!-- ACTION / RESPONSE -->
   <url><loc>https://poshaussie.com.au/v3-real-scenarios.html</loc></url>
@@ -95,6 +98,7 @@
   <url><loc>https://poshaussie.com.au/v3-how-to-set-parental-controls-android.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-best-parental-control-apps.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-how-to-monitor-without-breaking-trust.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-how-to-monitor-your-childs-device-without-spying.html</loc></url>
 
   <!-- DEVICE PAGES -->
   <url><loc>https://poshaussie.com.au/v3-devices.html</loc></url>
@@ -110,6 +114,13 @@
   <url><loc>https://poshaussie.com.au/v3-platform-xbox.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-platform-nintendo.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-platform-vr.html</loc></url>
+
+  <!-- LEGACY PLATFORM / GAMING PAGES -->
+  <url><loc>https://poshaussie.com.au/V3gaming-nintendo.html</loc></url>
+  <url><loc>https://poshaussie.com.au/V3gaming-pc.html</loc></url>
+  <url><loc>https://poshaussie.com.au/V3gaming-playstation.html</loc></url>
+  <url><loc>https://poshaussie.com.au/V3gaming-vr.html</loc></url>
+  <url><loc>https://poshaussie.com.au/V3gaming-xbox.html</loc></url>
 
   <!-- GAME PAGES -->
   <url><loc>https://poshaussie.com.au/v3-game-roblox.html</loc></url>
