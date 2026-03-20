@@ -92,7 +92,7 @@
       <div class="q">
         <label style="display:flex; gap:10px; align-items:flex-start;">
           <input type="checkbox" id="displayName" />
-          <span>Display my first name publicly in the supporter or opposition list</span>
+          <span>Display my first name publicly</span>
         </label>
       </div>
 
@@ -100,17 +100,10 @@
         <button class="btn" type="submit">Submit My Position</button>
       </div>
     </form>
-
-    <div class="callout center-callout" style="margin-top:16px;">
-      Public names only appear if you choose to display your first name.
-    </div>
   </div>
 
   <div class="card center-card">
     <h2>Visible support</h2>
-    <p class="note">
-      People who choose to display their first name will appear below.
-    </p>
 
     <div class="btn-grid btn-grid-soft" style="margin-bottom:14px;">
       <a class="btn secondary" href="#" onclick="showList('support'); return false;">Show Supporters</a>
@@ -121,34 +114,19 @@
     <div id="petitionList" class="card center-card" style="margin-top:14px;"></div>
   </div>
 
-  <div class="card hero-warning center-card">
-    <h2>Help this grow</h2>
-
-    <div class="rule-box">
-      <p>Big numbers create public pressure.</p>
-      <p>Visible support helps show that this is not a fringe concern. It is a practical child safety issue.</p>
-    </div>
-
-    <div class="danger-line">
-      Many voices create traction. Traction creates change.
-    </div>
-
-    <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="v3-policy-parent-approval-for-digital-gifting.html">Read Policy Page</a>
-      <a class="btn secondary" href="v3-community.html">Community Voice</a>
-      <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au/v3-petition-parent-approval-digital-gifting.html" target="_blank" rel="noopener">Share on Facebook</a>
-    </div>
-  </div>
-
   <div id="footer"></div>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 (function(){
+
+  // 🔴 IMPORTANT: PASTE YOUR REAL ANON KEY BELOW
   const supabaseUrl = "https://xgpqdddhcrrztezjfipl.supabase.co";
-  const supabaseKey = "xgpqdddhcrrztezjfipl";
+  const supabaseKey = "PASTE_YOUR_REAL_ANON_PUBLIC_KEY_HERE";
+
   const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
   const form = document.getElementById("petitionForm");
@@ -177,30 +155,31 @@
       .select("position");
 
     if(error){
-      console.error("Count load error:", error);
+      console.error("COUNT ERROR:", error);
+      alert("Count error: " + error.message);
       return;
     }
 
-    const support = data.filter(item => item.position === "support").length;
-    const oppose = data.filter(item => item.position === "oppose").length;
+    const support = data.filter(x => x.position === "support").length;
+    const oppose = data.filter(x => x.position === "oppose").length;
 
     supportCount.textContent = support;
     opposeCount.textContent = oppose + " against";
     supportHeadline.textContent = support;
   }
 
-  async function loadList(type = "support"){
+  async function loadList(type){
     const { data, error } = await supabase
       .from("petition_digital_gifting")
-      .select("first_name, comment, position, display_name, created_at")
+      .select("*")
       .eq("position", type)
       .eq("display_name", true)
       .order("created_at", { ascending: false })
       .limit(20);
 
     if(error){
-      console.error("List load error:", error);
-      petitionList.innerHTML = '<p class="note">Unable to load the public list right now.</p>';
+      console.error("LIST ERROR:", error);
+      alert("List error: " + error.message);
       return;
     }
 
@@ -209,18 +188,16 @@
       : "<strong>Showing opposition</strong>";
 
     if(!data.length){
-      petitionList.innerHTML = '<p class="note">No public names shown yet.</p>';
+      petitionList.innerHTML = '<p class="note">No public names yet.</p>';
       return;
     }
 
-    petitionList.innerHTML = data.map(function(item){
-      return `
-        <div class="callout center-callout" style="margin-top:12px;">
-          <strong>${sanitize(item.first_name || "Anonymous")}</strong><br/>
-          ${item.comment ? sanitize(item.comment) : "No public comment provided."}
-        </div>
-      `;
-    }).join("");
+    petitionList.innerHTML = data.map(item => `
+      <div class="callout center-callout" style="margin-top:12px;">
+        <strong>${sanitize(item.first_name || "Anonymous")}</strong><br/>
+        ${item.comment ? sanitize(item.comment) : ""}
+      </div>
+    `).join("");
   }
 
   window.showList = function(type){
@@ -231,49 +208,43 @@
   form.addEventListener("submit", async function(e){
     e.preventDefault();
 
-    const positionEl = form.querySelector('input[name="position"]:checked');
-    if(!positionEl){
-      alert("Please choose your position first.");
+    const position = form.querySelector('input[name="position"]:checked')?.value;
+
+    if(!position){
+      alert("Select a position");
       return;
     }
 
-    const position = positionEl.value;
     const first_name = document.getElementById("firstName").value.trim();
     const email = document.getElementById("email").value.trim();
     const comment = document.getElementById("comment").value.trim();
     const display_name = document.getElementById("displayName").checked;
 
     if(position === "oppose" && (!first_name || !email)){
-      alert("For opposition entries, first name and email are required.");
+      alert("Opposition requires name and email");
       return;
     }
 
-    const payload = {
-      position,
-      first_name: first_name || null,
-      email: email || null,
-      comment: comment || null,
-      display_name
-    };
-
     const { error } = await supabase
       .from("petition_digital_gifting")
-      .insert([payload]);
+      .insert([{ position, first_name, email, comment, display_name }]);
 
     if(error){
-      console.error("Submit error:", error);
-      alert("There was a problem submitting your position. Check your Supabase table, policies, and anon key.");
+      console.error("SUBMIT ERROR FULL:", error);
+      alert("Submit error: " + error.message);
       return;
     }
 
     form.reset();
     await loadCounts();
     await loadList(currentList);
-    alert("Your position has been added.");
+
+    alert("Position submitted successfully");
   });
 
   loadCounts();
-  loadList(currentList);
+  loadList("support");
+
 })();
 </script>
 
