@@ -114,6 +114,25 @@
     <div id="petitionList" class="card center-card" style="margin-top:14px;"></div>
   </div>
 
+  <div class="card hero-warning center-card">
+    <h2>Help this grow</h2>
+
+    <div class="rule-box">
+      <p>Big numbers create public pressure.</p>
+      <p>Visible support helps show that this is not a fringe concern. It is a practical child safety issue.</p>
+    </div>
+
+    <div class="danger-line">
+      Many voices create traction. Traction creates change.
+    </div>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-policy-parent-approval-for-digital-gifting.html">Read Policy Page</a>
+      <a class="btn secondary" href="v3-community.html">Community Voice</a>
+      <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au/v3-petition-parent-approval-digital-gifting.html" target="_blank" rel="noopener">Share on Facebook</a>
+    </div>
+  </div>
+
   <div id="footer"></div>
 
 </div>
@@ -122,11 +141,8 @@
 
 <script>
 (function(){
-
-  // 🔴 IMPORTANT: PASTE YOUR REAL ANON KEY BELOW
   const supabaseUrl = "https://xgpqdddhcrrztezjfipl.supabase.co";
-  const supabaseKey = "PASTE_YOUR_REAL_ANON_PUBLIC_KEY_HERE";
-
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhncHFkZGRoY3JyenRlempmaXBsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5NzU0MTgsImV4cCI6MjA4OTU1MTQxOH0.fx8mbqBs_2u5xKlL0jb1kqi8f03GpafVw_s0hiUuA-s";
   const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
   const form = document.getElementById("petitionForm");
@@ -156,7 +172,7 @@
 
     if(error){
       console.error("COUNT ERROR:", error);
-      alert("Count error: " + error.message);
+      alert("Count error: " + (error.message || "Unknown error"));
       return;
     }
 
@@ -179,7 +195,8 @@
 
     if(error){
       console.error("LIST ERROR:", error);
-      alert("List error: " + error.message);
+      petitionList.innerHTML = '<p class="note">Unable to load the public list right now.</p>';
+      alert("List error: " + (error.message || "Unknown error"));
       return;
     }
 
@@ -227,11 +244,17 @@
 
     const { error } = await supabase
       .from("petition_digital_gifting")
-      .insert([{ position, first_name, email, comment, display_name }]);
+      .insert([{
+        position,
+        first_name: first_name || null,
+        email: email || null,
+        comment: comment || null,
+        display_name
+      }]);
 
     if(error){
       console.error("SUBMIT ERROR FULL:", error);
-      alert("Submit error: " + error.message);
+      alert("Submit error: " + (error.message || "Unknown error"));
       return;
     }
 
