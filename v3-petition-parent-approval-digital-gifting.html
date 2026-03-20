@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Petition • Parent Approval for Digital Gifting • POSH</title>
+<meta name="description" content="Support the POSH petition calling for parental approval before children can receive digital gifts in games and apps across Australia." />
+<link rel="canonical" href="https://poshaussie.com.au/v3-petition-parent-approval-digital-gifting.html"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="brand">POSH</div>
+  <h1 class="page-title">Petition Support</h1>
+  <p class="tagline">
+    <strong>Parent Approval for Digital Gifting</strong><br/>
+    Support a safer standard for child accounts in Australia.
+  </p>
+
+  <div id="nav"></div>
+
+  <div class="card hero-warning center-card">
+    <h2>The petition question</h2>
+    <div class="rule-box">
+      <p>Should Australian laws require parental approval before children can receive digital gifts, in-game currency, skins, or online items from others?</p>
+    </div>
+    <div class="danger-line">
+      This is about safer child accounts, earlier protection, and interrupting a common grooming entry point
+    </div>
+  </div>
+
+  <div class="card center-card">
+    <h2>Live support panel</h2>
+
+    <div class="score-wrap">
+      <div class="score-ring">
+        <div class="score-num" id="supportCount">0</div>
+        <div class="score-label">support</div>
+      </div>
+
+      <div class="score-text">
+        <div class="score-grade" id="opposeCount">0 against</div>
+        <p class="note" style="text-align:left;">
+          This visible panel shows current support and opposition inside this petition page interface.
+        </p>
+        <div class="badges" style="justify-content:center;">
+          <div class="badge gold">POSH Petition</div>
+          <div class="badge danger">Child Safety Reform</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card center-card">
+    <h2>Add your position</h2>
+
+    <p class="note">
+      First name and email are optional for supporters.<br/>
+      For opposition entries, name and email are required.
+    </p>
+
+    <form id="petitionForm">
+      <div class="q">
+        <div class="q-title">Choose your position</div>
+        <div class="q-options">
+          <label><input type="radio" name="position" value="support" required> I support this</label>
+          <label><input type="radio" name="position" value="oppose" required> I oppose this</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">First name</div>
+        <input id="firstName" type="text" placeholder="Optional for supporters" style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.08); color:rgba(244,247,255,.95);" />
+      </div>
+
+      <div class="q">
+        <div class="q-title">Email</div>
+        <input id="email" type="email" placeholder="Optional for supporters" style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.08); color:rgba(244,247,255,.95);" />
+      </div>
+
+      <div class="q">
+        <div class="q-title">Short comment</div>
+        <textarea id="comment" rows="4" placeholder="Optional" style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.08); color:rgba(244,247,255,.95);"></textarea>
+      </div>
+
+      <div class="q">
+        <label style="display:flex; gap:10px; align-items:flex-start;">
+          <input type="checkbox" id="displayName" />
+          <span>Display my first name publicly in the supporter/opposition list</span>
+        </label>
+      </div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
+        <button class="btn" type="submit">Submit My Position</button>
+        <button class="btn secondary" type="button" id="clearDemoBtn">Clear Demo Data</button>
+      </div>
+    </form>
+
+    <div class="callout center-callout" style="margin-top:16px;">
+      This page is currently using browser-based demo storage. For a real public petition counter, connect this page to a live database or form service.
+    </div>
+  </div>
+
+  <div class="card center-card">
+    <h2>Visible support</h2>
+    <p class="note">
+      People who choose to display their first name will appear below.
+    </p>
+
+    <div class="btn-grid btn-grid-soft" style="margin-bottom:14px;">
+      <a class="btn secondary" href="#" onclick="showList('supporters'); return false;">Show Supporters</a>
+      <a class="btn secondary" href="#" onclick="showList('opponents'); return false;">Show Opposition</a>
+    </div>
+
+    <div id="listTitle" class="callout center-callout">Showing supporters</div>
+    <div id="petitionList" class="card center-card" style="margin-top:14px;"></div>
+  </div>
+
+  <div class="card hero-warning center-card">
+    <h2>Help this grow</h2>
+
+    <div class="rule-box">
+      <p>Big numbers create public pressure.</p>
+      <p>Visible support helps show that this is not a fringe concern. It is a practical child safety issue.</p>
+    </div>
+
+    <div class="danger-line">
+      Many voices create traction. Traction creates change.
+    </div>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-policy-parent-approval-for-digital-gifting.html">Read Policy Page</a>
+      <a class="btn secondary" href="v3-community.html">Community Voice</a>
+      <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au/v3-petition-parent-approval-digital-gifting.html" target="_blank" rel="noopener">Share on Facebook</a>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+</div>
+
+<script>
+(function(){
+  const STORAGE_KEY = "posh_digital_gifting_petition_v1";
+
+  const form = document.getElementById("petitionForm");
+  const firstNameInput = document.getElementById("firstName");
+  const emailInput = document.getElementById("email");
+  const commentInput = document.getElementById("comment");
+  const displayNameInput = document.getElementById("displayName");
+  const supportCount = document.getElementById("supportCount");
+  const opposeCount = document.getElementById("opposeCount");
+  const petitionList = document.getElementById("petitionList");
+  const listTitle = document.getElementById("listTitle");
+  const clearDemoBtn = document.getElementById("clearDemoBtn");
+
+  let currentList = "supporters";
+
+  function loadData(){
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      try {
+        return JSON.parse(raw);
+      } catch(e){
+        return { supporters: [], opponents: [] };
+      }
+    }
+    return { supporters: [], opponents: [] };
+  }
+
+  function saveData(data){
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }
+
+  function sanitize(text){
+    return String(text || "").replace(/[<>&"]/g, function(ch){
+      return ({
+        "<":"&lt;",
+        ">":"&gt;",
+        "&":"&amp;",
+        "\"":"&quot;"
+      })[ch];
+    });
+  }
+
+  function renderCounts(){
+    const data = loadData();
+    supportCount.textContent = data.supporters.length;
+    opposeCount.textContent = data.opponents.length + " against";
+  }
+
+  function renderList(){
+    const data = loadData();
+    const items = currentList === "supporters" ? data.supporters : data.opponents;
+    const visible = items.filter(item => item.displayName && item.firstName);
+
+    if(currentList === "supporters"){
+      listTitle.innerHTML = "<strong>Showing supporters</strong>";
+    } else {
+      listTitle.innerHTML = "<strong>Showing opposition</strong>";
+    }
+
+    if(!visible.length){
+      petitionList.innerHTML = '<p class="note">No public names shown yet.</p>';
+      return;
+    }
+
+    petitionList.innerHTML = visible.map(function(item){
+      return `
+        <div class="callout center-callout" style="margin-top:12px;">
+          <strong>${sanitize(item.firstName)}</strong><br/>
+          ${item.comment ? sanitize(item.comment) : "No public comment provided."}
+        </div>
+      `;
+    }).join("");
+  }
+
+  window.showList = function(type){
+    currentList = type;
+    renderList();
+  };
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const position = form.querySelector('input[name="position"]:checked');
+    if(!position) return;
+
+    const pos = position.value;
+    const firstName = firstNameInput.value.trim();
+    const email = emailInput.value.trim();
+    const comment = commentInput.value.trim();
+    const displayName = displayNameInput.checked;
+
+    if(pos === "oppose"){
+      if(!firstName || !email){
+        alert("For opposition entries, first name and email are required.");
+        return;
+      }
+    }
+
+    const data = loadData();
+    const entry = {
+      firstName,
+      email,
+      comment,
+      displayName,
+      createdAt: new Date().toISOString()
+    };
+
+    if(pos === "support"){
+      data.supporters.unshift(entry);
+    } else {
+      data.opponents.unshift(entry);
+    }
+
+    saveData(data);
+    renderCounts();
+    renderList();
+    form.reset();
+
+    alert("Your position has been added to this petition page.");
+  });
+
+  clearDemoBtn.addEventListener("click", function(){
+    localStorage.removeItem(STORAGE_KEY);
+    renderCounts();
+    renderList();
+    form.reset();
+  });
+
+  renderCounts();
+  renderList();
+})();
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
