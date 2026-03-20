@@ -142,7 +142,7 @@
 <script>
 (function(){
   const supabaseUrl = "https://xgpqdddhcrrztezjfipl.supabase.co";
-  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhncHFkZGRoY3JyenRlempmaXBsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5NzU0MTgsImV4cCI6MjA4OTU1MTQxOH0.fx8mbqBs_2u5xKlL0jb1kqi8f03GpafVw_s0hiUuA-s";
+  const supabaseKey = "YOUR_CURRENT_ANON_KEY_HERE";
   const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
   const form = document.getElementById("petitionForm");
@@ -249,7 +249,8 @@
         first_name: first_name || null,
         email: email || null,
         comment: comment || null,
-        display_name
+        display_name,
+        created_at: new Date().toISOString()
       }]);
 
     if(error){
