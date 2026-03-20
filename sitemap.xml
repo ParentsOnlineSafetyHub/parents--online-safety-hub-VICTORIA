@@ -6,15 +6,18 @@
 
   <!-- CORE HUBS -->
   <url><loc>https://poshaussie.com.au/v3-start.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-entry-system.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-parent-questions.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-safety-score.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-10-signs-targeted-online.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-redflags.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-playbook.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-parent-scripts.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-parent-conversations.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-house-rules.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-age-guide.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-device-controls.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-parental-controls-by-device.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-platforms.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-gaming.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-all-games.html</loc></url>
@@ -38,8 +41,10 @@
   <url><loc>https://poshaussie.com.au/v3-sextortion.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-predators.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-mindset.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-guide.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-community.html</loc></url>
 
-  <!-- 🔥 HIGH INTENT SEO PAGES -->
+  <!-- HIGH INTENT SEO / PARENT SEARCH PAGES -->
   <url><loc>https://poshaussie.com.au/v3-should-i-read-my-childs-messages.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-my-child-deleted-messages-should-i-be-worried.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-my-child-is-hiding-messages-what-should-i-do.html</loc></url>
@@ -50,13 +55,50 @@
   <url><loc>https://poshaussie.com.au/v3-when-an-online-friend-becomes-a-risk.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-how-to-check-a-device-without-causing-panic.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-how-to-rebuild-trust-after-an-online-scare.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-what-to-do-if-your-child-deletes-everything.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-if-you-do-nothing.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-parent-mistakes.html</loc></url>
 
-  <!-- 🛠️ DEVICE / CONTROL SEO -->
+  <!-- HARD CONVERSATIONS / TRUST -->
+  <url><loc>https://poshaussie.com.au/v3-what-to-say-if-your-child-opens-up.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-when-your-child-wont-talk.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-what-to-say-if-your-child-thinks-it-was-their-fault.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-what-to-say-if-your-child-is-embarrassed-to-tell-you.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-how-to-explain-grooming-and-predators-to-a-child.html</loc></url>
+
+  <!-- ACTION / RESPONSE -->
+  <url><loc>https://poshaussie.com.au/v3-real-scenarios.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-first-24-hours.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-evidence-reporting.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-what-now.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-definitions.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-grooming.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-known-person-risk.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-real-life-risk.html</loc></url>
+
+  <!-- DEVICE / CONTROL SEO -->
   <url><loc>https://poshaussie.com.au/v3-how-to-set-parental-controls-and-passwords.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-how-to-set-parental-controls-iphone.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-how-to-set-parental-controls-android.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-best-parental-control-apps.html</loc></url>
-  <url><loc>https://poshaussie.com.au/v3-how-to-monitor-your-childs-device-without-spying.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-how-to-monitor-without-breaking-trust.html</loc></url>
 
-  <!-- 🎮 GAME PAGES -->
+  <!-- DEVICE PAGES -->
+  <url><loc>https://poshaussie.com.au/v3-devices.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-device-iphone.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-device-ipad.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-device-apple.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-device-android.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-device-windows.html</loc></url>
+
+  <!-- PLATFORM PAGES -->
+  <url><loc>https://poshaussie.com.au/v3-platform-pc.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-platform-playstation.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-platform-xbox.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-platform-nintendo.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-platform-vr.html</loc></url>
+
+  <!-- GAME PAGES -->
   <url><loc>https://poshaussie.com.au/v3-game-roblox.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-game-fortnite.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-game-minecraft.html</loc></url>
@@ -75,8 +117,19 @@
   <url><loc>https://poshaussie.com.au/v3-game-splatoon.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-game-terraria.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-game-rust.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-amongus.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-animalcrossing.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-apex.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-counterstrike.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-destiny2.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-fallguys.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-fivem.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-brawlstars.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-clashofclans.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-game-risks-by-age.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-is-roblox-safe-for-my-child.html</loc></url>
 
-  <!-- 📱 SOCIAL / APPS -->
+  <!-- SOCIAL / APP PAGES -->
   <url><loc>https://poshaussie.com.au/v3-social-discord.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-social-snapchat.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-social-instagram.html</loc></url>
@@ -92,8 +145,30 @@
   <url><loc>https://poshaussie.com.au/v3-social-reddit.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-social-pinterest.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-social-steam.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-social-bluesky.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-social-threads.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-social-signal.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-social-wechat.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-social-yubo.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-social-character-ai.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-social-replika.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-social-omegle-alternatives.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-is-discord-safe-for-kids.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-safe-apps-and-games-for-kids.html</loc></url>
 
-  <!-- 🎥 VIDEO / COMMS -->
+  <!-- AI CLUSTER -->
+  <url><loc>https://poshaussie.com.au/v3-ai-chat-risks-for-children.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-is-chatgpt-safe-for-kids.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-ai-fake-relationships.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-ai-roleplay-bots.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-can-ai-chats-make-kids-more-secretive.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-how-to-talk-to-your-child-about-ai.html</loc></url>
+
+  <!-- POLICY / REFORM -->
+  <url><loc>https://poshaussie.com.au/v3-policy-parent-approval-for-digital-gifting.html</loc></url>
+  <url><loc>https://poshaussie.com.au/v3-policy-safer-defaults-for-child-accounts.html</loc></url>
+
+  <!-- VIDEO / COMMS -->
   <url><loc>https://poshaussie.com.au/v3-video-facetime.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-video-googlemeet.html</loc></url>
   <url><loc>https://poshaussie.com.au/v3-video-skype.html</loc></url>
