@@ -78,11 +78,12 @@
       </div>
 
       <div class="q">
-        <div class="q-title">5) Do you need help understanding the risk, or do you need help acting right now?</div>
+        <div class="q-title">5) What do you need most right now?</div>
         <div class="q-options">
           <label><input type="radio" name="q5" value="understand" required> I need to understand what this is</label>
           <label><input type="radio" name="q5" value="act"> I need to know what to do right now</label>
           <label><input type="radio" name="q5" value="prevent"> I want to prevent problems before they start</label>
+          <label><input type="radio" name="q5" value="talk"> I need the right words for my child</label>
         </div>
       </div>
 
@@ -111,6 +112,20 @@
       <a class="btn secondary" href="v3-first-24-hours.html">Something Is Happening Now</a>
       <a class="btn secondary" href="v3-safety-score.html">I Want to Check Risk</a>
       <a class="btn secondary" href="v3-how-to-explain-grooming-and-predators-to-a-child.html">How To Explain This to My Child</a>
+    </div>
+  </div>
+
+  <div class="card center-card">
+    <h2>One reminder before you move</h2>
+
+    <div class="callout center-callout">
+      <strong>Children are more likely to tell the truth when they believe they will be protected, not punished first.</strong>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
+      <a class="btn secondary" href="v3-it-is-not-about-not-trusting-your-child.html">Trust Your Child, Still Protect Them</a>
+      <a class="btn secondary" href="v3-mindset.html">Parent Mindset</a>
     </div>
   </div>
 
@@ -172,6 +187,18 @@
       };
     }
 
+    if (data.q5 === "talk") {
+      return {
+        summary: "You appear to need the conversation pathway. Start with calm words that keep your child talking, not shutting down.",
+        buttons:
+          button("v3-parent-scripts.html", "Parent Scripts", "btn") +
+          button("v3-what-to-say-if-your-child-opens-up.html", "If Your Child Opens Up", "btn secondary") +
+          button("v3-when-your-child-wont-talk.html", "When Your Child Won’t Talk", "btn secondary") +
+          button("v3-how-to-explain-grooming-and-predators-to-a-child.html", "Explain It to a Child", "btn secondary"),
+        note: "Children speak sooner when they feel protected, not punished."
+      };
+    }
+
     if (data.q5 === "understand" || data.q3 === "yes" || data.q4 === "unsure" || data.q2 === "unsure") {
       return {
         summary: "You appear to need the understanding pathway. Start by identifying the pattern, then move into action if it becomes clearer.",
@@ -190,7 +217,7 @@
         button("v3-safety-score.html", "Safety Check", "btn") +
         button("v3-device-controls.html", "Device Safety", "btn secondary") +
         button("v3-house-rules.html", "House Rules", "btn secondary") +
-        button("v3-how-to-set-parental-controls-and-passwords.html", "Parental Controls", "btn secondary"),
+        button("v3-how-to-monitor-without-breaking-trust.html", "Monitor Without Breaking Trust", "btn secondary"),
       note: "Prevention works best when settings, conversations, and boundaries all support each other."
     };
   }
