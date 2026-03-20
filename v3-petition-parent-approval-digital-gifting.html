@@ -43,13 +43,17 @@
       <div class="score-text">
         <div class="score-grade" id="opposeCount">0 against</div>
         <p class="note" style="text-align:left;">
-          This visible panel shows current support and opposition inside this petition page interface.
+          This panel shows live public support and opposition recorded through this petition page.
         </p>
         <div class="badges" style="justify-content:center;">
           <div class="badge gold">POSH Petition</div>
           <div class="badge danger">Child Safety Reform</div>
         </div>
       </div>
+    </div>
+
+    <div class="callout center-callout" style="margin-top:16px;">
+      <strong><span id="supportHeadline">0</span> parents already support this change</strong>
     </div>
   </div>
 
@@ -58,7 +62,7 @@
 
     <p class="note">
       First name and email are optional for supporters.<br/>
-      For opposition entries, name and email are required.
+      For opposition entries, first name and email are required.
     </p>
 
     <form id="petitionForm">
@@ -88,18 +92,17 @@
       <div class="q">
         <label style="display:flex; gap:10px; align-items:flex-start;">
           <input type="checkbox" id="displayName" />
-          <span>Display my first name publicly in the supporter/opposition list</span>
+          <span>Display my first name publicly in the supporter or opposition list</span>
         </label>
       </div>
 
       <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
         <button class="btn" type="submit">Submit My Position</button>
-        <button class="btn secondary" type="button" id="clearDemoBtn">Clear Demo Data</button>
       </div>
     </form>
 
     <div class="callout center-callout" style="margin-top:16px;">
-      This page is currently using browser-based demo storage. For a real public petition counter, connect this page to a live database or form service.
+      Public names only appear if you choose to display your first name.
     </div>
   </div>
 
@@ -110,8 +113,8 @@
     </p>
 
     <div class="btn-grid btn-grid-soft" style="margin-bottom:14px;">
-      <a class="btn secondary" href="#" onclick="showList('supporters'); return false;">Show Supporters</a>
-      <a class="btn secondary" href="#" onclick="showList('opponents'); return false;">Show Opposition</a>
+      <a class="btn secondary" href="#" onclick="showList('support'); return false;">Show Supporters</a>
+      <a class="btn secondary" href="#" onclick="showList('oppose'); return false;">Show Opposition</a>
     </div>
 
     <div id="listTitle" class="callout center-callout">Showing supporters</div>
@@ -141,38 +144,21 @@
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function(){
-  const STORAGE_KEY = "posh_digital_gifting_petition_v1";
+  const supabaseUrl = "https://xgpqdddhcrrztezjfipl.supabase.co";
+  const supabaseKey = "xgpqdddhcrrztezjfipl";
+  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
   const form = document.getElementById("petitionForm");
-  const firstNameInput = document.getElementById("firstName");
-  const emailInput = document.getElementById("email");
-  const commentInput = document.getElementById("comment");
-  const displayNameInput = document.getElementById("displayName");
   const supportCount = document.getElementById("supportCount");
   const opposeCount = document.getElementById("opposeCount");
+  const supportHeadline = document.getElementById("supportHeadline");
   const petitionList = document.getElementById("petitionList");
   const listTitle = document.getElementById("listTitle");
-  const clearDemoBtn = document.getElementById("clearDemoBtn");
 
-  let currentList = "supporters";
-
-  function loadData(){
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if(raw){
-      try {
-        return JSON.parse(raw);
-      } catch(e){
-        return { supporters: [], opponents: [] };
-      }
-    }
-    return { supporters: [], opponents: [] };
-  }
-
-  function saveData(data){
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  }
+  let currentList = "support";
 
   function sanitize(text){
     return String(text || "").replace(/[<>&"]/g, function(ch){
@@ -185,32 +171,52 @@
     });
   }
 
-  function renderCounts(){
-    const data = loadData();
-    supportCount.textContent = data.supporters.length;
-    opposeCount.textContent = data.opponents.length + " against";
-  }
+  async function loadCounts(){
+    const { data, error } = await supabase
+      .from("petition_digital_gifting")
+      .select("position");
 
-  function renderList(){
-    const data = loadData();
-    const items = currentList === "supporters" ? data.supporters : data.opponents;
-    const visible = items.filter(item => item.displayName && item.firstName);
-
-    if(currentList === "supporters"){
-      listTitle.innerHTML = "<strong>Showing supporters</strong>";
-    } else {
-      listTitle.innerHTML = "<strong>Showing opposition</strong>";
+    if(error){
+      console.error("Count load error:", error);
+      return;
     }
 
-    if(!visible.length){
+    const support = data.filter(item => item.position === "support").length;
+    const oppose = data.filter(item => item.position === "oppose").length;
+
+    supportCount.textContent = support;
+    opposeCount.textContent = oppose + " against";
+    supportHeadline.textContent = support;
+  }
+
+  async function loadList(type = "support"){
+    const { data, error } = await supabase
+      .from("petition_digital_gifting")
+      .select("first_name, comment, position, display_name, created_at")
+      .eq("position", type)
+      .eq("display_name", true)
+      .order("created_at", { ascending: false })
+      .limit(20);
+
+    if(error){
+      console.error("List load error:", error);
+      petitionList.innerHTML = '<p class="note">Unable to load the public list right now.</p>';
+      return;
+    }
+
+    listTitle.innerHTML = type === "support"
+      ? "<strong>Showing supporters</strong>"
+      : "<strong>Showing opposition</strong>";
+
+    if(!data.length){
       petitionList.innerHTML = '<p class="note">No public names shown yet.</p>';
       return;
     }
 
-    petitionList.innerHTML = visible.map(function(item){
+    petitionList.innerHTML = data.map(function(item){
       return `
         <div class="callout center-callout" style="margin-top:12px;">
-          <strong>${sanitize(item.firstName)}</strong><br/>
+          <strong>${sanitize(item.first_name || "Anonymous")}</strong><br/>
           ${item.comment ? sanitize(item.comment) : "No public comment provided."}
         </div>
       `;
@@ -219,60 +225,55 @@
 
   window.showList = function(type){
     currentList = type;
-    renderList();
+    loadList(type);
   };
 
-  form.addEventListener("submit", function(e){
+  form.addEventListener("submit", async function(e){
     e.preventDefault();
 
-    const position = form.querySelector('input[name="position"]:checked');
-    if(!position) return;
-
-    const pos = position.value;
-    const firstName = firstNameInput.value.trim();
-    const email = emailInput.value.trim();
-    const comment = commentInput.value.trim();
-    const displayName = displayNameInput.checked;
-
-    if(pos === "oppose"){
-      if(!firstName || !email){
-        alert("For opposition entries, first name and email are required.");
-        return;
-      }
+    const positionEl = form.querySelector('input[name="position"]:checked');
+    if(!positionEl){
+      alert("Please choose your position first.");
+      return;
     }
 
-    const data = loadData();
-    const entry = {
-      firstName,
-      email,
-      comment,
-      displayName,
-      createdAt: new Date().toISOString()
+    const position = positionEl.value;
+    const first_name = document.getElementById("firstName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const comment = document.getElementById("comment").value.trim();
+    const display_name = document.getElementById("displayName").checked;
+
+    if(position === "oppose" && (!first_name || !email)){
+      alert("For opposition entries, first name and email are required.");
+      return;
+    }
+
+    const payload = {
+      position,
+      first_name: first_name || null,
+      email: email || null,
+      comment: comment || null,
+      display_name
     };
 
-    if(pos === "support"){
-      data.supporters.unshift(entry);
-    } else {
-      data.opponents.unshift(entry);
+    const { error } = await supabase
+      .from("petition_digital_gifting")
+      .insert([payload]);
+
+    if(error){
+      console.error("Submit error:", error);
+      alert("There was a problem submitting your position. Check your Supabase table, policies, and anon key.");
+      return;
     }
 
-    saveData(data);
-    renderCounts();
-    renderList();
     form.reset();
-
-    alert("Your position has been added to this petition page.");
+    await loadCounts();
+    await loadList(currentList);
+    alert("Your position has been added.");
   });
 
-  clearDemoBtn.addEventListener("click", function(){
-    localStorage.removeItem(STORAGE_KEY);
-    renderCounts();
-    renderList();
-    form.reset();
-  });
-
-  renderCounts();
-  renderList();
+  loadCounts();
+  loadList(currentList);
 })();
 </script>
 
