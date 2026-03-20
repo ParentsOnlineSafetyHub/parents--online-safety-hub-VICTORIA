@@ -48,6 +48,7 @@
       <a class="btn" href="v3-safety-score.html">Quick Safety Check</a>
       <a class="btn secondary" href="v3-real-scenarios.html">Something Feels Off</a>
       <a class="btn secondary" href="v3-first-24-hours.html">Something Is Happening Now</a>
+      <a class="btn secondary" href="v3-parent-scripts.html">I Need the Right Words</a>
     </div>
   </div>
 
@@ -176,6 +177,20 @@
     </div>
   </div>
 
+  <div class="card center-card">
+    <h2>One reminder before you move</h2>
+
+    <div class="callout center-callout">
+      <strong>Children are more likely to tell the truth when they believe they will be protected, not punished first.</strong>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
+      <a class="btn secondary" href="v3-it-is-not-about-not-trusting-your-child.html">Trust Your Child, Still Protect Them</a>
+      <a class="btn secondary" href="v3-mindset.html">Parent Mindset</a>
+    </div>
+  </div>
+
   <div id="footer"></div>
 
 </div>
@@ -237,21 +252,18 @@
         summary: "You already have some useful protective steps in place. Keep tightening the app, platform, and trust areas that still need work."
       };
     }
-
     if(score >= 60){
       return {
         label: "Needs Tightening",
         summary: "There is a decent base here, but some important gaps still increase your child’s exposure."
       };
     }
-
     if(score >= 40){
       return {
         label: "At Risk",
         summary: "Your child likely has multiple exposure points. Focus on device settings, contact rules, and the highest-risk app or platform first."
       };
     }
-
     return {
       label: "High Risk",
       summary: "There are urgent gaps in protection. Start with the highest-risk app or platform, device controls, and reassurance that your child can tell you the truth safely."
@@ -405,8 +417,9 @@
       buttons.push('<a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>');
     }
 
-    if(data.trust !== "yes"){
+    if(data.trust === "no" || data.trust === "some"){
       buttons.push('<a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>');
+      buttons.push('<a class="btn secondary" href="v3-it-is-not-about-not-trusting-your-child.html">Trust Your Child, Still Protect Them</a>');
     } else if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
       buttons.push('<a class="btn secondary" href="v3-algorithm-awareness.html">Algorithm Risks</a>');
     } else {
