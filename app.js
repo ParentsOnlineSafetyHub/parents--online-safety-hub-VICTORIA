@@ -1,5 +1,16 @@
 (function () {
   const navHTML = `
+    <div class="nav-search-wrap">
+      <input
+        type="text"
+        id="poshSearch"
+        class="nav-search-input"
+        placeholder="Search apps, games, devices, PDFs or topics"
+        autocomplete="off"
+      />
+      <div id="poshSearchResults" class="nav-search-results"></div>
+    </div>
+
     <div class="nav-accordion">
 
       <details class="nav-group">
@@ -155,13 +166,145 @@
         });
       });
 
+      const searchInput = document.getElementById("poshSearch");
+      const searchResults = document.getElementById("poshSearchResults");
+
+      const searchIndex = [
+        { title: "Home", href: "index.html", keywords: "home posh main page" },
+        { title: "Start Here", href: "v3-start.html", keywords: "start first steps safety" },
+        { title: "Start Here Fast", href: "v3-entry-system.html", keywords: "quick fast entry start" },
+        { title: "Safety Check", href: "v3-safety-score.html", keywords: "score audit checklist safety check" },
+        { title: "What To Do Now", href: "v3-what-now.html", keywords: "what now immediate help" },
+        { title: "First 24 Hours", href: "v3-first-24-hours.html", keywords: "urgent first 24 hours evidence response" },
+        { title: "Red Flags", href: "v3-redflags.html", keywords: "warning signs red flags grooming risk" },
+        { title: "Report & Get Help", href: "v3-reporting.html", keywords: "report help police support evidence" },
+        { title: "Parent Scripts", href: "v3-parent-scripts.html", keywords: "what to say talk to child scripts" },
+        { title: "House Rules", href: "v3-house-rules.html", keywords: "rules boundaries family device rules" },
+        { title: "Age Guide", href: "v3-age-guide.html", keywords: "age suitable age guide children teens" },
+        { title: "Parent Mindset", href: "v3-mindset.html", keywords: "mindset parent thinking awareness" },
+
+        { title: "Devices", href: "v3-devices.html", keywords: "devices phone tablet ipad iphone android windows" },
+        { title: "Device Safety", href: "v3-device-controls.html", keywords: "device safety controls phone tablet laptop pc" },
+        { title: "Parental Controls by Device", href: "v3-parental-controls-by-device.html", keywords: "controls by device parental controls" },
+        { title: "Set Controls & Passwords", href: "v3-how-to-set-parental-controls-and-passwords.html", keywords: "passwords controls lock settings" },
+        { title: "iPhone Controls", href: "v3-how-to-set-parental-controls-iphone.html", keywords: "iphone apple screen time ios" },
+        { title: "Android Controls", href: "v3-how-to-set-parental-controls-android.html", keywords: "android google family link samsung" },
+        { title: "Monitor Without Breaking Trust", href: "v3-how-to-monitor-without-breaking-trust.html", keywords: "monitor trust check child calmly" },
+        { title: "Check a Device Calmly", href: "v3-how-to-check-a-device-without-causing-panic.html", keywords: "check device calmly without panic" },
+        { title: "Best Parental Control Apps", href: "v3-best-parental-control-apps.html", keywords: "best parental control apps qustodio bark family link" },
+        { title: "Platforms", href: "v3-platforms.html", keywords: "platforms xbox playstation nintendo steam" },
+
+        { title: "Gaming Safety", href: "v3-gaming.html", keywords: "gaming games game safety" },
+        { title: "All Games Directory", href: "v3-all-games.html", keywords: "all games roblox fortnite minecraft vrchat" },
+        { title: "Social Media & Chat", href: "v3-socials.html", keywords: "socials social media chat messaging" },
+        { title: "All Applications", href: "v3-all-applications.html", keywords: "all apps applications directory" },
+        { title: "Live Video & Streaming", href: "v3-videochat.html", keywords: "video chat livestream ome tv zoom facetime" },
+        { title: "Streaming & Video Apps", href: "v3-streaming-video.html", keywords: "streaming netflix disney youtube twitch" },
+        { title: "Dangerous Apps", href: "v3-dangerous-apps.html", keywords: "dangerous apps risky apps snapchat discord telegram" },
+        { title: "Safe Apps & Games", href: "v3-safe-apps-and-games-for-kids.html", keywords: "safe apps safe games kids" },
+        { title: "AI Chat Risks", href: "v3-ai-chat-risks-for-children.html", keywords: "ai chat character ai replika bots" },
+        { title: "Is ChatGPT Safe for Kids?", href: "v3-is-chatgpt-safe-for-kids.html", keywords: "chatgpt kids safe ai" },
+
+        { title: "Predators & Grooming", href: "v3-predators.html", keywords: "predators grooming exploitation" },
+        { title: "Predator Playbook", href: "v3-playbook.html", keywords: "playbook grooming escalation pattern" },
+        { title: "Understanding What’s Happening", href: "v3-definitions.html", keywords: "definitions explain predator victim manipulation" },
+        { title: "Known Person Risk", href: "v3-known-person-risk.html", keywords: "known person trusted adult family risk" },
+        { title: "Real Life Risk", href: "v3-real-life-risk.html", keywords: "offline real life risk" },
+        { title: "Behaviour Patterns Hub", href: "v3-behaviours-hub.html", keywords: "behaviour patterns control isolation manipulation" },
+        { title: "Early Behaviour Red Flags", href: "v3-early-behaviours-that-can-signal-red-flags.html", keywords: "early behaviour warning signs" },
+        { title: "Acting Out of Character", href: "v3-why-my-child-is-acting-out-of-character.html", keywords: "acting out of character changed behaviour" },
+        { title: "Why Kids Don’t Recognise Risk", href: "v3-why-kids-dont-recognise-risk.html", keywords: "kids dont recognise risk miss warning signs" },
+        { title: "Trust Before Control", href: "v3-how-adults-build-trust-before-control.html", keywords: "trust before control grooming" },
+        { title: "Manipulation Behaviours", href: "v3-manipulation-behaviours.html", keywords: "manipulation behaviours guilt pressure secrecy" },
+        { title: "Controlling Behaviours", href: "v3-controlling-behaviours.html", keywords: "control controlling isolation narrative" },
+        { title: "Emotional Manipulation", href: "v3-emotional-manipulation.html", keywords: "emotional manipulation guilt control" },
+        { title: "Toxic Behaviour Patterns", href: "v3-toxic-behaviour-patterns.html", keywords: "toxic behaviour patterns" },
+        { title: "Why Isolation Hits Children Harder", href: "v3-why-isolation-hits-children-harder.html", keywords: "isolation child risk" },
+        { title: "Turned Against a Safe Parent", href: "v3-when-a-child-is-turned-against-a-safe-parent.html", keywords: "turned against safe parent" },
+        { title: "Self Harm & Suicide Warning Signs", href: "v3-self-harm-and-suicide-warning-signs.html", keywords: "self harm suicide warning signs" },
+        { title: "Why Kids Self Harm", href: "v3-why-kids-self-harm.html", keywords: "why kids self harm" },
+
+        { title: "Safety Awareness", href: "v3-awareness.html", keywords: "awareness online safety risks parents" },
+        { title: "Real Investigations", href: "v3-real-investigations.html", keywords: "real investigations shawn ryan vigilance elite" },
+        { title: "Algorithm Risks", href: "v3-algorithm-awareness.html", keywords: "algorithm recommendations tiktok youtube exposure" },
+        { title: "Downloads", href: "v3-downloads.html", keywords: "pdf downloads printable guides checklist" },
+        { title: "Cancel Subscriptions", href: "v3-cancel-subscriptions.html", keywords: "subscriptions recurring charges apple google microsoft" },
+        { title: "Support", href: "v3-support.html", keywords: "support donate posh" },
+        { title: "Have Your Say", href: "v3-community.html", keywords: "community facebook group discussion" },
+        { title: "Share POSH", href: "v3-share.html", keywords: "share posh facebook x social" }
+      ];
+
+      function renderSearchResults(matches) {
+        if (!matches.length) {
+          searchResults.innerHTML = '<div class="nav-search-empty">No results found</div>';
+          searchResults.classList.add("show");
+          return;
+        }
+
+        searchResults.innerHTML = matches
+          .slice(0, 10)
+          .map(
+            (item) => `
+              <a class="nav-search-result" href="${item.href}">
+                ${item.title}
+              </a>
+            `
+          )
+          .join("");
+
+        searchResults.classList.add("show");
+      }
+
+      function clearSearchResults() {
+        searchResults.innerHTML = "";
+        searchResults.classList.remove("show");
+      }
+
+      if (searchInput && searchResults) {
+        searchInput.addEventListener("input", function () {
+          const query = this.value.trim().toLowerCase();
+
+          if (!query) {
+            clearSearchResults();
+            return;
+          }
+
+          const matches = searchIndex.filter((item) => {
+            const haystack = `${item.title} ${item.keywords} ${item.href}`.toLowerCase();
+            return haystack.includes(query);
+          });
+
+          renderSearchResults(matches);
+        });
+
+        searchInput.addEventListener("focus", function () {
+          const query = this.value.trim().toLowerCase();
+
+          if (!query) return;
+
+          const matches = searchIndex.filter((item) => {
+            const haystack = `${item.title} ${item.keywords} ${item.href}`.toLowerCase();
+            return haystack.includes(query);
+          });
+
+          renderSearchResults(matches);
+        });
+      }
+
       document.addEventListener("click", (event) => {
         const clickedInsideNav = navTarget.contains(event.target);
+        const clickedInsideSearch =
+          searchInput && searchResults &&
+          (searchInput.contains(event.target) || searchResults.contains(event.target));
 
         if (!clickedInsideNav) {
           navGroups.forEach((group) => {
             group.open = false;
           });
+        }
+
+        if (!clickedInsideSearch && searchResults) {
+          clearSearchResults();
         }
       });
 
@@ -170,6 +313,10 @@
           navGroups.forEach((group) => {
             group.open = false;
           });
+
+          if (searchResults) {
+            clearSearchResults();
+          }
         }
       });
     }
