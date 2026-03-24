@@ -313,9 +313,9 @@ p{
   display:grid;
   grid-template-columns:1fr;
   gap:10px;
-  width:min(340px, calc(100vw - 36px));
+  width:min(360px, calc(100vw - 36px));
   max-width:calc(100vw - 36px);
-  max-height:min(70vh, 420px);
+  max-height:min(72vh, 460px);
   overflow:auto;
   padding:16px;
   justify-content:center;
@@ -324,6 +324,23 @@ p{
   background:rgba(6,20,40,.98);
   box-shadow:0 18px 40px rgba(0,0,0,.40);
   z-index:60;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(217,182,90,.42) rgba(255,255,255,.06);
+}
+
+.nav-group nav::-webkit-scrollbar{
+  width:10px;
+}
+
+.nav-group nav::-webkit-scrollbar-track{
+  background:rgba(255,255,255,.05);
+  border-radius:999px;
+}
+
+.nav-group nav::-webkit-scrollbar-thumb{
+  background:rgba(217,182,90,.35);
+  border-radius:999px;
+  border:2px solid rgba(6,20,40,.98);
 }
 
 .nav-group nav a{
@@ -857,7 +874,7 @@ footer{
 /* ===== Responsive ===== */
 @media (max-width:900px){
   .nav-group nav{
-    width:min(340px, calc(100vw - 36px));
+    width:min(360px, calc(100vw - 36px));
     max-width:calc(100vw - 36px);
   }
 }
