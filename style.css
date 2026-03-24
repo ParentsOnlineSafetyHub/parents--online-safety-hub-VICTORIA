@@ -317,6 +317,16 @@ p{
   color:rgba(244,247,255,.68);
 }
 
+.nav-search-view-all{
+  background:rgba(217,182,90,.10);
+  color:rgba(244,247,255,.98);
+  font-weight:800;
+}
+
+.nav-search-view-all:hover{
+  background:rgba(217,182,90,.18);
+}
+
 .nav-accordion{
   position:relative;
   display:flex;
@@ -445,6 +455,18 @@ p{
   border-color:rgba(217,182,90,.42);
   color:#fff;
   box-shadow:0 14px 28px rgba(0,0,0,.30), 0 0 18px rgba(217,182,90,.16);
+}
+
+/* ===== Search Results Page ===== */
+.search-result-card{
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.search-result-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(34,230,211,.30) !important;
+  background:rgba(255,255,255,.08) !important;
+  box-shadow:0 16px 30px rgba(0,0,0,.28) !important;
 }
 
 /* ===== Cards ===== */
