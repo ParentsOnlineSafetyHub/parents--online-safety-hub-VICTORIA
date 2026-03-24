@@ -183,7 +183,7 @@
         { title: "Age Guide", href: "v3-age-guide.html", keywords: "age suitable age guide children teens" },
         { title: "Parent Mindset", href: "v3-mindset.html", keywords: "mindset parent thinking awareness" },
 
-        { title: "Devices", href: "v3-devices.html", keywords: "devices phone tablet ipad iphone android windows" },
+        { title: "Devices", href: "v3-devices.html", keywords: "devices phone tablet ipad iphone android windows computer" },
         { title: "Device Safety", href: "v3-device-controls.html", keywords: "device safety controls phone tablet laptop pc" },
         { title: "Parental Controls by Device", href: "v3-parental-controls-by-device.html", keywords: "controls by device parental controls" },
         { title: "Set Controls & Passwords", href: "v3-how-to-set-parental-controls-and-passwords.html", keywords: "passwords controls lock settings" },
@@ -198,7 +198,7 @@
         { title: "All Games Directory", href: "v3-all-games.html", keywords: "all games roblox fortnite minecraft vrchat" },
         { title: "Social Media & Chat", href: "v3-socials.html", keywords: "socials social media chat messaging" },
         { title: "All Applications", href: "v3-all-applications.html", keywords: "all apps applications directory" },
-        { title: "Live Video & Streaming", href: "v3-videochat.html", keywords: "video chat livestream ome tv zoom facetime" },
+        { title: "Live Video & Streaming", href: "v3-videochat.html", keywords: "video chat livestream ome tv zoom facetime meet teams" },
         { title: "Streaming & Video Apps", href: "v3-streaming-video.html", keywords: "streaming netflix disney youtube twitch" },
         { title: "Dangerous Apps", href: "v3-dangerous-apps.html", keywords: "dangerous apps risky apps snapchat discord telegram" },
         { title: "Safe Apps & Games", href: "v3-safe-apps-and-games-for-kids.html", keywords: "safe apps safe games kids" },
@@ -241,17 +241,21 @@
           return;
         }
 
-        searchResults.innerHTML = matches
-          .slice(0, 10)
-          .map(
-            (item) => `
-              <a class="nav-search-result" href="${item.href}">
-                ${item.title}
-              </a>
-            `
-          )
-          .join("");
+        const quickResults = matches.slice(0, 8).map(
+          (item) => `
+            <a class="nav-search-result" href="${item.href}">
+              ${item.title}
+            </a>
+          `
+        ).join("");
 
+        const viewAll = `
+          <a class="nav-search-result nav-search-view-all" href="v3-search.html?q=${encodeURIComponent(searchInput.value.trim())}">
+            View all results
+          </a>
+        `;
+
+        searchResults.innerHTML = quickResults + viewAll;
         searchResults.classList.add("show");
       }
 
@@ -260,41 +264,52 @@
         searchResults.classList.remove("show");
       }
 
+      function findMatches(query) {
+        const q = query.trim().toLowerCase();
+        if (!q) return [];
+
+        return searchIndex.filter((item) => {
+          const haystack = `${item.title} ${item.keywords} ${item.href}`.toLowerCase();
+          return haystack.includes(q);
+        });
+      }
+
+      function goToSearchPage(query) {
+        const trimmed = query.trim();
+        if (!trimmed) return;
+        window.location.href = `v3-search.html?q=${encodeURIComponent(trimmed)}`;
+      }
+
       if (searchInput && searchResults) {
         searchInput.addEventListener("input", function () {
-          const query = this.value.trim().toLowerCase();
+          const matches = findMatches(this.value);
 
-          if (!query) {
+          if (!this.value.trim()) {
             clearSearchResults();
             return;
           }
-
-          const matches = searchIndex.filter((item) => {
-            const haystack = `${item.title} ${item.keywords} ${item.href}`.toLowerCase();
-            return haystack.includes(query);
-          });
 
           renderSearchResults(matches);
         });
 
         searchInput.addEventListener("focus", function () {
-          const query = this.value.trim().toLowerCase();
+          if (!this.value.trim()) return;
+          renderSearchResults(findMatches(this.value));
+        });
 
-          if (!query) return;
-
-          const matches = searchIndex.filter((item) => {
-            const haystack = `${item.title} ${item.keywords} ${item.href}`.toLowerCase();
-            return haystack.includes(query);
-          });
-
-          renderSearchResults(matches);
+        searchInput.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            goToSearchPage(this.value);
+          }
         });
       }
 
       document.addEventListener("click", (event) => {
         const clickedInsideNav = navTarget.contains(event.target);
         const clickedInsideSearch =
-          searchInput && searchResults &&
+          searchInput &&
+          searchResults &&
           (searchInput.contains(event.target) || searchResults.contains(event.target));
 
         if (!clickedInsideNav) {
