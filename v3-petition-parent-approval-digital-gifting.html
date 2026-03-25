@@ -13,24 +13,52 @@
 <div class="wrap">
 
   <div class="brand">POSH</div>
+
   <h1 class="page-title">Petition Support</h1>
+
   <p class="tagline">
     <strong>Parent Approval for Digital Gifting</strong><br/>
-    Support a safer standard for child accounts in Australia.
+    A safer standard for child accounts in Australia.
   </p>
 
   <div id="nav"></div>
 
+  <!-- 🔥 POSITIONING -->
+  <div class="callout center-callout">
+    <strong>This is a practical safety change.</strong><br/>
+    Not a ban. Not overreach.<br/>
+    Just one extra step that stops a known risk early.
+  </div>
+
+  <!-- CORE QUESTION -->
   <div class="card hero-warning center-card">
     <h2>The petition question</h2>
     <div class="rule-box">
       <p>Should Australian laws require parental approval before children can receive digital gifts, in-game currency, skins, or online items from others?</p>
     </div>
     <div class="danger-line">
-      This is about safer child accounts, earlier protection, and interrupting a common grooming entry point
+      This targets a known grooming entry point — early trust-building through gifting
     </div>
   </div>
 
+  <!-- 🔥 WHY THIS MATTERS -->
+  <div class="card center-card">
+    <h2>Why this matters in real life</h2>
+
+    <ul class="list">
+      <li>Predators often use gifts to build trust with children</li>
+      <li>“Free Robux”, skins, or items create emotional connection</li>
+      <li>This can lead to private chats and secrecy</li>
+      <li>Parents often don’t know it’s happening early</li>
+    </ul>
+
+    <div class="callout center-callout">
+      This is not about the gift.<br/>
+      It’s about what the gift is used to start.
+    </div>
+  </div>
+
+  <!-- LIVE PANEL -->
   <div class="card center-card">
     <h2>Live support panel</h2>
 
@@ -43,7 +71,7 @@
       <div class="score-text">
         <div class="score-grade" id="opposeCount">0 against</div>
         <p class="note" style="text-align:left;">
-          This panel shows live public support and opposition recorded through this petition page.
+          This reflects real positions submitted through this page.
         </p>
         <div class="badges" style="justify-content:center;">
           <div class="badge gold">POSH Petition</div>
@@ -53,19 +81,21 @@
     </div>
 
     <div class="callout center-callout" style="margin-top:16px;">
-      <strong><span id="supportHeadline">0</span> parents already support this change</strong>
+      <strong><span id="supportHeadline">0</span> people support this change</strong>
     </div>
   </div>
 
+  <!-- FORM -->
   <div class="card center-card">
     <h2>Add your position</h2>
 
     <p class="note">
-      First name and email are optional for supporters.<br/>
-      For opposition entries, first name and email are required.
+      Supporters can stay anonymous.<br/>
+      Opposition requires name and email for accountability.
     </p>
 
     <form id="petitionForm">
+
       <div class="q">
         <div class="q-title">Choose your position</div>
         <div class="q-options">
@@ -99,179 +129,44 @@
       <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
         <button class="btn" type="submit">Submit My Position</button>
       </div>
+
     </form>
   </div>
 
+  <!-- LIST -->
   <div class="card center-card">
     <h2>Visible support</h2>
 
     <div class="btn-grid btn-grid-soft" style="margin-bottom:14px;">
-      <a class="btn secondary" href="#" onclick="showList('support'); return false;">Show Supporters</a>
-      <a class="btn secondary" href="#" onclick="showList('oppose'); return false;">Show Opposition</a>
+      <a class="btn secondary" href="#" onclick="showList('support'); return false;">Supporters</a>
+      <a class="btn secondary" href="#" onclick="showList('oppose'); return false;">Opposition</a>
     </div>
 
     <div id="listTitle" class="callout center-callout">Showing supporters</div>
     <div id="petitionList" class="card center-card" style="margin-top:14px;"></div>
   </div>
 
+  <!-- 🔥 MOVEMENT PUSH -->
   <div class="card hero-warning center-card">
-    <h2>Help this grow</h2>
+    <h2>This only works if people see it</h2>
 
     <div class="rule-box">
-      <p>Big numbers create public pressure.</p>
-      <p>Visible support helps show that this is not a fringe concern. It is a practical child safety issue.</p>
+      <p>Big numbers create pressure.</p>
+      <p>Pressure creates attention.</p>
+      <p>Attention creates change.</p>
     </div>
 
     <div class="danger-line">
-      Many voices create traction. Traction creates change.
+      One share can bring the next 10 supporters
     </div>
 
     <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="v3-policy-parent-approval-for-digital-gifting.html">Read Policy Page</a>
+      <a class="btn" href="v3-policy-parent-approval-for-digital-gifting.html">Read Policy</a>
       <a class="btn secondary" href="v3-community.html">Community Voice</a>
-      <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au/v3-petition-parent-approval-digital-gifting.html" target="_blank" rel="noopener">Share on Facebook</a>
+      <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au/v3-petition-parent-approval-digital-gifting.html" target="_blank">Share</a>
     </div>
   </div>
 
   <div id="footer"></div>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-(function(){
-  const supabaseUrl = "https://xgpqdddhcrrztezjfipl.supabase.co";
-  const supabaseKey = "sb_publishable_gCR07JQ_kDLR3IlziIUUdw_Q5buFr32";
-  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-
-  const form = document.getElementById("petitionForm");
-  const supportCount = document.getElementById("supportCount");
-  const opposeCount = document.getElementById("opposeCount");
-  const supportHeadline = document.getElementById("supportHeadline");
-  const petitionList = document.getElementById("petitionList");
-  const listTitle = document.getElementById("listTitle");
-
-  let currentList = "support";
-
-  function sanitize(text){
-    return String(text || "").replace(/[<>&"]/g, function(ch){
-      return ({
-        "<":"&lt;",
-        ">":"&gt;",
-        "&":"&amp;",
-        "\"":"&quot;"
-      })[ch];
-    });
-  }
-
-  async function loadCounts(){
-    const { data, error } = await supabase
-      .from("petition_digital_gifting")
-      .select("position");
-
-    if(error){
-      console.error("COUNT ERROR:", error);
-      alert("Count error: " + (error.message || "Unknown error"));
-      return;
-    }
-
-    const support = data.filter(x => x.position === "support").length;
-    const oppose = data.filter(x => x.position === "oppose").length;
-
-    supportCount.textContent = support;
-    opposeCount.textContent = oppose + " against";
-    supportHeadline.textContent = support;
-  }
-
-  async function loadList(type){
-    const { data, error } = await supabase
-      .from("petition_digital_gifting")
-      .select("*")
-      .eq("position", type)
-      .eq("display_name", true)
-      .order("created_at", { ascending: false })
-      .limit(20);
-
-    if(error){
-      console.error("LIST ERROR:", error);
-      petitionList.innerHTML = '<p class="note">Unable to load the public list right now.</p>';
-      alert("List error: " + (error.message || "Unknown error"));
-      return;
-    }
-
-    listTitle.innerHTML = type === "support"
-      ? "<strong>Showing supporters</strong>"
-      : "<strong>Showing opposition</strong>";
-
-    if(!data.length){
-      petitionList.innerHTML = '<p class="note">No public names yet.</p>';
-      return;
-    }
-
-    petitionList.innerHTML = data.map(item => `
-      <div class="callout center-callout" style="margin-top:12px;">
-        <strong>${sanitize(item.first_name || "Anonymous")}</strong><br/>
-        ${item.comment ? sanitize(item.comment) : ""}
-      </div>
-    `).join("");
-  }
-
-  window.showList = function(type){
-    currentList = type;
-    loadList(type);
-  };
-
-  form.addEventListener("submit", async function(e){
-    e.preventDefault();
-
-    const position = form.querySelector('input[name="position"]:checked')?.value;
-
-    if(!position){
-      alert("Select a position");
-      return;
-    }
-
-    const first_name = document.getElementById("firstName").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const comment = document.getElementById("comment").value.trim();
-    const display_name = document.getElementById("displayName").checked;
-
-    if(position === "oppose" && (!first_name || !email)){
-      alert("Opposition requires name and email");
-      return;
-    }
-
-    const { error } = await supabase
-      .from("petition_digital_gifting")
-      .insert([{
-        position,
-        first_name: first_name || null,
-        email: email || null,
-        comment: comment || null,
-        display_name,
-        created_at: new Date().toISOString()
-      }]);
-
-    if(error){
-      console.error("SUBMIT ERROR FULL:", error);
-      alert("Submit error: " + (error.message || "Unknown error"));
-      return;
-    }
-
-    form.reset();
-    await loadCounts();
-    await loadList(currentList);
-
-    alert("Position submitted successfully");
-  });
-
-  loadCounts();
-  loadList("support");
-
-})();
-</script>
-
-<script src="app.js"></script>
-</body>
-</html>
