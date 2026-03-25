@@ -13,17 +13,31 @@
 
     <div class="brand">POSH</div>
     <h1 class="page-title">Safety Check</h1>
-    <p class="tagline"><strong>10 quick checks.</strong> Clear score. Clear next steps.</p>
+    <p class="tagline"><strong>10 quick checks.</strong> Clear score. Clear next step.</p>
 
     <div id="nav"></div>
+
+    <div class="card hero-warning center-card">
+      <h2>Need help urgently?</h2>
+      <div class="btn-grid btn-grid-soft">
+        <a class="btn" href="v3-first-24-hours.html">Act Now</a>
+        <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
+        <a class="btn secondary" href="v3-redflags.html">See Red Flags</a>
+      </div>
+    </div>
 
     <div class="card hero-warning center-card">
       <h2>How safe is your child online right now?</h2>
       <div class="rule-box">
         <p>This takes about 60 seconds.</p>
-        <p>Be honest — this is not about perfect parenting. It is about spotting the biggest risk first and reducing it fast.</p>
+        <p>Be honest. This is not about perfect parenting. It is about spotting the biggest risk first and reducing it fast.</p>
       </div>
-      <div class="danger-line">A few quick fixes can dramatically reduce child exposure online</div>
+      <div class="danger-line">Fix the biggest risk first</div>
+    </div>
+
+    <div class="callout center-callout">
+      <strong>If something already feels wrong:</strong><br/>
+      Use this as a quick scan — then move into the action pages. Do not wait for perfect certainty.
     </div>
 
     <div class="card center-card">
@@ -153,6 +167,7 @@
 
       <div class="callout center-callout" id="topFixBox" style="margin-top:14px;"></div>
       <div class="callout center-callout" id="whyThisMattersBox" style="margin-top:14px; display:none;"></div>
+      <div class="callout center-callout" id="nextMoveBox" style="margin-top:14px; display:none;"></div>
 
       <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
         <a class="btn" href="v3-device-controls.html">Device Safety</a>
@@ -226,7 +241,7 @@
       <h2>Keep exploring child safety</h2>
 
       <p class="note">
-        Your score is a starting point, not the whole picture. Keep exploring the site in the direction that feels most relevant to your child.
+        Your score is a starting point, not the full story. Keep exploring in the direction that feels most relevant to your child.
       </p>
 
       <div class="btn-grid btn-grid-soft">
@@ -258,6 +273,7 @@
   const topRiskBadge = document.getElementById("topRiskBadge");
   const dangerBadge = document.getElementById("dangerBadge");
   const whyThisMattersBox = document.getElementById("whyThisMattersBox");
+  const nextMoveBox = document.getElementById("nextMoveBox");
   const resetBtn = document.getElementById("resetBtn");
 
   const weights = {
@@ -325,13 +341,12 @@
 
   function countHighTriggers(ans){
     let count = 0;
-
     if(ans.q3 !== "no") count++;
+    if(ans.q4 !== "no") count++;
     if(ans.q5 !== "no") count++;
     if(ans.q6 !== "no") count++;
     if(ans.q9 !== "yes") count++;
     if(ans.q10 !== "yes") count++;
-
     return count;
   }
 
@@ -339,7 +354,7 @@
     q1: {
       title: "Parental controls are not fully set up",
       fix: "Turn on Screen Time, Family Link, or Microsoft Family Safety today.",
-      why: "Parental controls reduce access to risky apps, settings changes, and unsupervised online activity.",
+      why: "Parental controls reduce access to risky apps, setting changes, and unsupervised online activity.",
       link: "v3-device-controls.html"
     },
     q2: {
@@ -386,7 +401,7 @@
     },
     q9: {
       title: "Your child may not feel safe telling you",
-      fix: "Repeat clearly and often: 'You will not be in trouble for telling me. We will deal with it together.'",
+      fix: "Repeat clearly and often: ‘You will not be in trouble for telling me. We will deal with it together.’",
       why: "If a child fears blame or punishment, they are far less likely to speak up early.",
       link: "v3-parent-scripts.html"
     },
@@ -426,6 +441,39 @@
     };
   }
 
+  function nextMove(score, triggerCount, topKey){
+    if(score < 45 || triggerCount >= 4){
+      return {
+        text: "This setup needs urgent tightening. Start with your biggest exposure point now, then review red flags and reporting steps in case something is already active.",
+        links: [
+          { href: riskText[topKey].link, label: "Fix Biggest Risk" },
+          { href: "v3-redflags.html", label: "Check Red Flags" },
+          { href: "v3-reporting.html", label: "Report & Get Help" }
+        ]
+      };
+    }
+
+    if(score < 65 || triggerCount >= 3){
+      return {
+        text: "Your child has meaningful exposure points. Tighten privacy, communication, and house-rule gaps before risk grows quietly.",
+        links: [
+          { href: riskText[topKey].link, label: "Fix Biggest Risk" },
+          { href: "v3-house-rules.html", label: "House Rules" },
+          { href: "v3-gaming.html", label: "Gaming Safety" }
+        ]
+      };
+    }
+
+    return {
+      text: "Your setup is in a better place than most. Keep reinforcing trust, visibility, and the off-platform rule so small risks do not grow.",
+      links: [
+        { href: "v3-house-rules.html", label: "House Rules" },
+        { href: "v3-parent-scripts.html", label: "Parent Scripts" },
+        { href: "v3-redflags.html", label: "Red Flags" }
+      ]
+    };
+  }
+
   form.addEventListener("submit", function(e){
     e.preventDefault();
 
@@ -436,6 +484,7 @@
     const info = riskText[top.key];
     const triggerCount = countHighTriggers(ans);
     const g = getGrade(score, triggerCount);
+    const next = nextMove(score, triggerCount, top.key);
 
     scoreNum.textContent = score;
     scoreGrade.textContent = g.label;
@@ -457,6 +506,13 @@
     whyThisMattersBox.innerHTML =
       "<strong>Why this matters:</strong> " + info.why;
 
+    nextMoveBox.style.display = "block";
+    nextMoveBox.innerHTML =
+      "<strong>Best next move:</strong> " + next.text +
+      '<div class="btn-grid btn-grid-soft" style="margin-top:12px;">' +
+      next.links.map(link => '<a class="btn secondary" href="' + link.href + '">' + link.label + '</a>').join("") +
+      '</div>';
+
     results.style.display = "block";
     results.scrollIntoView({ behavior: "smooth", block: "start" });
   });
@@ -465,6 +521,7 @@
     form.reset();
     results.style.display = "none";
     whyThisMattersBox.style.display = "none";
+    nextMoveBox.style.display = "none";
   });
 })();
 </script>
