@@ -4,8 +4,13 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Search POSH • POSH</title>
-  <meta name="description" content="Search POSH pages, apps, games, devices, downloads, and child safety topics." />
+  <meta name="description" content="Search POSH pages, apps, games, devices, downloads, behaviour topics, urgent warning signs, and child safety guidance." />
   <link rel="canonical" href="https://poshaussie.com.au/v3-search.html" />
+  <meta property="og:title" content="Search POSH" />
+  <meta property="og:description" content="Search POSH pages, apps, games, devices, downloads, and child safety topics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-search.html" />
+  <meta property="og:site_name" content="POSH" />
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -21,19 +26,20 @@
       <h2>Search the site</h2>
 
       <div class="search-page-form" style="max-width:760px; margin:0 auto;">
-        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center;">
+        <div class="search-page-row">
           <input
             type="text"
             id="searchPageInput"
+            class="search-page-input"
             placeholder="Search apps, games, devices, PDFs or topics"
-            style="flex:1 1 420px; min-width:260px; padding:12px 14px; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.08); color:rgba(244,247,255,.95); font:inherit; outline:none;"
+            aria-label="Search POSH pages"
           />
           <button class="btn" id="searchPageBtn" type="button">Search</button>
         </div>
       </div>
 
       <div class="callout center-callout" style="margin-top:16px;">
-        Try words like <strong>Discord</strong>, <strong>Roblox</strong>, <strong>iPhone</strong>, <strong>downloads</strong>, <strong>algorithm</strong>, <strong>grooming</strong>, or <strong>subscriptions</strong>.
+        Try words like <strong>Discord</strong>, <strong>Roblox</strong>, <strong>iPhone</strong>, <strong>downloads</strong>, <strong>algorithm</strong>, <strong>grooming</strong>, <strong>urgent</strong>, <strong>dependency</strong>, or <strong>subscriptions</strong>.
       </div>
     </div>
 
@@ -41,10 +47,10 @@
       <h2 id="searchResultsHeading">Search results</h2>
       <p class="note" id="searchQueryText">Type something above to search POSH.</p>
 
-      <div id="searchResultsList" class="search-results-list" style="max-width:860px; margin:18px auto 0; display:grid; gap:12px;"></div>
+      <div id="searchResultsList" class="search-results-list"></div>
 
       <div id="searchNoResults" class="callout center-callout" style="display:none; margin-top:16px;">
-        No results found yet. Try a broader word like the app name, game name, or topic.
+        No results found yet. Try a broader word like the app name, game name, device, or topic.
       </div>
     </div>
 
@@ -78,23 +84,26 @@
         { title: "Start Here", href: "v3-start.html", type: "Page", keywords: "start first steps safety" },
         { title: "Start Here Fast", href: "v3-entry-system.html", type: "Page", keywords: "quick fast entry start" },
         { title: "Safety Check", href: "v3-safety-score.html", type: "Page", keywords: "score audit checklist safety check" },
-        { title: "What To Do Now", href: "v3-what-now.html", type: "Page", keywords: "what now immediate help" },
-        { title: "First 24 Hours", href: "v3-first-24-hours.html", type: "Page", keywords: "urgent first 24 hours evidence response" },
+        { title: "What To Do Now", href: "v3-what-now.html", type: "Page", keywords: "what now immediate help next steps" },
+        { title: "First 24 Hours", href: "v3-first-24-hours.html", type: "Page", keywords: "urgent first 24 hours evidence response crisis" },
+        { title: "POSH Response System", href: "v3-posh-response-system.html", type: "System", keywords: "response system notice check secure talk monitor escalate" },
+        { title: "Urgent Warning Signs", href: "v3-urgent-warning-signs.html", type: "Topic", keywords: "urgent warning signs act now immediate danger concern" },
+        { title: "Exposure vs Danger", href: "v3-exposure-vs-danger.html", type: "Topic", keywords: "exposure vs danger high exposure active danger risk levels" },
         { title: "Red Flags", href: "v3-redflags.html", type: "Topic", keywords: "warning signs red flags grooming risk" },
-        { title: "Report & Get Help", href: "v3-reporting.html", type: "Page", keywords: "report help police support evidence" },
+        { title: "Report & Get Help", href: "v3-reporting.html", type: "Page", keywords: "report help police support evidence hotline" },
         { title: "Parent Scripts", href: "v3-parent-scripts.html", type: "Topic", keywords: "what to say talk to child scripts" },
         { title: "House Rules", href: "v3-house-rules.html", type: "Topic", keywords: "rules boundaries family device rules" },
         { title: "Age Guide", href: "v3-age-guide.html", type: "Topic", keywords: "age suitable age guide children teens" },
-        { title: "Parent Mindset", href: "v3-mindset.html", type: "Topic", keywords: "mindset parent thinking awareness" },
+        { title: "Parent Mindset", href: "v3-mindset.html", type: "Topic", keywords: "mindset parent thinking awareness calm structure" },
 
         { title: "Devices", href: "v3-devices.html", type: "Device", keywords: "devices phone tablet ipad iphone android windows computer" },
         { title: "Device Safety", href: "v3-device-controls.html", type: "Device", keywords: "device safety controls phone tablet laptop pc" },
         { title: "Parental Controls by Device", href: "v3-parental-controls-by-device.html", type: "Device", keywords: "controls by device parental controls" },
-        { title: "Set Controls & Passwords", href: "v3-how-to-set-parental-controls-and-passwords.html", type: "Device", keywords: "passwords controls lock settings" },
+        { title: "Set Controls & Passwords", href: "v3-how-to-set-parental-controls-and-passwords.html", type: "Device", keywords: "passwords controls lock settings restrictions" },
         { title: "iPhone Controls", href: "v3-how-to-set-parental-controls-iphone.html", type: "Device", keywords: "iphone apple screen time ios" },
         { title: "Android Controls", href: "v3-how-to-set-parental-controls-android.html", type: "Device", keywords: "android google family link samsung" },
         { title: "Monitor Without Breaking Trust", href: "v3-how-to-monitor-without-breaking-trust.html", type: "Topic", keywords: "monitor trust check child calmly" },
-        { title: "Check a Device Calmly", href: "v3-how-to-check-a-device-without-causing-panic.html", type: "Topic", keywords: "check device calmly without panic" },
+        { title: "Check a Device Calmly", href: "v3-how-to-check-a-device-without-causing-panic.html", type: "Topic", keywords: "check device calmly without panic evidence support" },
         { title: "Best Parental Control Apps", href: "v3-best-parental-control-apps.html", type: "Device", keywords: "best parental control apps qustodio bark family link" },
         { title: "Platforms", href: "v3-platforms.html", type: "Platform", keywords: "platforms xbox playstation nintendo steam" },
 
@@ -105,37 +114,40 @@
         { title: "Live Video & Streaming", href: "v3-videochat.html", type: "App", keywords: "video chat livestream ome tv zoom facetime meet teams" },
         { title: "Streaming & Video Apps", href: "v3-streaming-video.html", type: "App", keywords: "streaming netflix disney youtube twitch" },
         { title: "Dangerous Apps", href: "v3-dangerous-apps.html", type: "App", keywords: "dangerous apps risky apps snapchat discord telegram" },
-        { title: "Safe Apps & Games", href: "v3-safe-apps-and-games-for-kids.html", type: "App", keywords: "safe apps safe games kids" },
+        { title: "Safe Apps & Games", href: "v3-safe-apps-and-games-for-kids.html", type: "App", keywords: "safe apps safe games kids safer choices" },
         { title: "AI Chat Risks", href: "v3-ai-chat-risks-for-children.html", type: "AI", keywords: "ai chat character ai replika bots" },
         { title: "Is ChatGPT Safe for Kids?", href: "v3-is-chatgpt-safe-for-kids.html", type: "AI", keywords: "chatgpt kids safe ai" },
 
-        { title: "Predators & Grooming", href: "v3-predators.html", type: "Topic", keywords: "predators grooming exploitation" },
+        { title: "Predators & Grooming", href: "v3-predators.html", type: "Topic", keywords: "predators grooming exploitation risk" },
         { title: "Predator Playbook", href: "v3-playbook.html", type: "Topic", keywords: "playbook grooming escalation pattern" },
-        { title: "Understanding What’s Happening", href: "v3-definitions.html", type: "Topic", keywords: "definitions explain predator victim manipulation" },
+        { title: "Understanding What’s Happening", href: "v3-definitions.html", type: "Topic", keywords: "definitions explain predator victim manipulation behaviour" },
+        { title: "Double Life Online", href: "v3-double-life-online.html", type: "Topic", keywords: "double life online hidden accounts secret identity secrecy" },
+        { title: "Online Dependency", href: "v3-when-a-child-becomes-dependent-on-someone-online.html", type: "Topic", keywords: "online dependency emotional dependence attachment hidden relationship" },
         { title: "Known Person Risk", href: "v3-known-person-risk.html", type: "Topic", keywords: "known person trusted adult family risk" },
-        { title: "Real Life Risk", href: "v3-real-life-risk.html", type: "Topic", keywords: "offline real life risk" },
-        { title: "Behaviour Patterns Hub", href: "v3-behaviours-hub.html", type: "Topic", keywords: "behaviour patterns control isolation manipulation" },
+        { title: "Real Life Risk", href: "v3-real-life-risk.html", type: "Topic", keywords: "offline real life risk meeting in person" },
+        { title: "Behaviour Patterns Hub", href: "v3-behaviours-hub.html", type: "Topic", keywords: "behaviour patterns control isolation manipulation hub" },
         { title: "Early Behaviour Red Flags", href: "v3-early-behaviours-that-can-signal-red-flags.html", type: "Topic", keywords: "early behaviour warning signs" },
-        { title: "Acting Out of Character", href: "v3-why-my-child-is-acting-out-of-character.html", type: "Topic", keywords: "acting out of character changed behaviour" },
+        { title: "Acting Out of Character", href: "v3-why-my-child-is-acting-out-of-character.html", type: "Topic", keywords: "acting out of character changed behaviour shift" },
         { title: "Why Kids Don’t Recognise Risk", href: "v3-why-kids-dont-recognise-risk.html", type: "Topic", keywords: "kids dont recognise risk miss warning signs" },
-        { title: "Trust Before Control", href: "v3-how-adults-build-trust-before-control.html", type: "Topic", keywords: "trust before control grooming" },
+        { title: "Trust Before Control", href: "v3-how-adults-build-trust-before-control.html", type: "Topic", keywords: "trust before control grooming manipulation" },
         { title: "Manipulation Behaviours", href: "v3-manipulation-behaviours.html", type: "Topic", keywords: "manipulation behaviours guilt pressure secrecy" },
         { title: "Controlling Behaviours", href: "v3-controlling-behaviours.html", type: "Topic", keywords: "control controlling isolation narrative" },
-        { title: "Emotional Manipulation", href: "v3-emotional-manipulation.html", type: "Topic", keywords: "emotional manipulation guilt control" },
-        { title: "Toxic Behaviour Patterns", href: "v3-toxic-behaviour-patterns.html", type: "Topic", keywords: "toxic behaviour patterns" },
-        { title: "Why Isolation Hits Children Harder", href: "v3-why-isolation-hits-children-harder.html", type: "Topic", keywords: "isolation child risk" },
-        { title: "Turned Against a Safe Parent", href: "v3-when-a-child-is-turned-against-a-safe-parent.html", type: "Topic", keywords: "turned against safe parent" },
-        { title: "Self Harm & Suicide Warning Signs", href: "v3-self-harm-and-suicide-warning-signs.html", type: "Topic", keywords: "self harm suicide warning signs" },
-        { title: "Why Kids Self Harm", href: "v3-why-kids-self-harm.html", type: "Topic", keywords: "why kids self harm" },
+        { title: "Emotional Manipulation", href: "v3-emotional-manipulation.html", type: "Topic", keywords: "emotional manipulation guilt control influence" },
+        { title: "Toxic Behaviour Patterns", href: "v3-toxic-behaviour-patterns.html", type: "Topic", keywords: "toxic behaviour patterns control pressure secrecy" },
+        { title: "Why Isolation Hits Children Harder", href: "v3-why-isolation-hits-children-harder.html", type: "Topic", keywords: "isolation child risk dependency" },
+        { title: "Turned Against a Safe Parent", href: "v3-when-a-child-is-turned-against-a-safe-parent.html", type: "Topic", keywords: "turned against safe parent alienation manipulation" },
+        { title: "Self Harm & Suicide Warning Signs", href: "v3-self-harm-and-suicide-warning-signs.html", type: "Topic", keywords: "self harm suicide warning signs emotional collapse" },
+        { title: "Why Kids Self Harm", href: "v3-why-kids-self-harm.html", type: "Topic", keywords: "why kids self harm causes distress coping" },
 
-        { title: "Safety Awareness", href: "v3-awareness.html", type: "Topic", keywords: "awareness online safety risks parents" },
-        { title: "Real Investigations", href: "v3-real-investigations.html", type: "Topic", keywords: "real investigations shawn ryan vigilance elite" },
+        { title: "Safety Awareness", href: "v3-awareness.html", type: "Topic", keywords: "awareness online safety risks parents education" },
+        { title: "Real Investigations", href: "v3-real-investigations.html", type: "Topic", keywords: "real investigations shawn ryan vigilance elite research" },
         { title: "Algorithm Risks", href: "v3-algorithm-awareness.html", type: "Topic", keywords: "algorithm recommendations tiktok youtube exposure" },
         { title: "Downloads", href: "v3-downloads.html", type: "PDF", keywords: "pdf downloads printable guides checklist" },
-        { title: "Cancel Subscriptions", href: "v3-cancel-subscriptions.html", type: "PDF", keywords: "subscriptions recurring charges apple google microsoft" },
-        { title: "Support", href: "v3-support.html", type: "Page", keywords: "support donate posh" },
-        { title: "Have Your Say", href: "v3-community.html", type: "Page", keywords: "community facebook group discussion" },
-        { title: "Share POSH", href: "v3-share.html", type: "Page", keywords: "share posh facebook x social" }
+        { title: "Cancel Subscriptions", href: "v3-cancel-subscriptions.html", type: "Guide", keywords: "subscriptions recurring charges apple google microsoft" },
+        { title: "Support", href: "v3-support.html", type: "Page", keywords: "support donate posh movement" },
+        { title: "Have Your Say", href: "v3-community.html", type: "Page", keywords: "community facebook group discussion voice" },
+        { title: "Share POSH", href: "v3-share.html", type: "Page", keywords: "share posh facebook x social movement" },
+        { title: "Why POSH Exists", href: "v3-why-posh-exists.html", type: "Page", keywords: "why posh exists mission purpose movement" }
       ];
 
       function getQueryParam(name) {
@@ -153,14 +165,51 @@
         window.history.replaceState({}, "", url);
       }
 
+      function tokenize(text) {
+        return text
+          .toLowerCase()
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+      }
+
+      function scoreMatch(item, query) {
+        const q = query.toLowerCase().trim();
+        const tokens = tokenize(q);
+        const title = item.title.toLowerCase();
+        const type = item.type.toLowerCase();
+        const keywords = item.keywords.toLowerCase();
+        const href = item.href.toLowerCase();
+
+        let score = 0;
+
+        if (title === q) score += 100;
+        if (title.includes(q)) score += 40;
+        if (keywords.includes(q)) score += 25;
+        if (type.includes(q)) score += 12;
+        if (href.includes(q)) score += 8;
+
+        tokens.forEach((token) => {
+          if (title.includes(token)) score += 12;
+          if (keywords.includes(token)) score += 6;
+          if (type.includes(token)) score += 4;
+          if (href.includes(token)) score += 3;
+        });
+
+        return score;
+      }
+
       function findMatches(query) {
-        const q = query.trim().toLowerCase();
+        const q = query.trim();
         if (!q) return [];
 
-        return searchIndex.filter((item) => {
-          const haystack = `${item.title} ${item.type} ${item.keywords} ${item.href}`.toLowerCase();
-          return haystack.includes(q);
-        });
+        return searchIndex
+          .map((item) => ({
+            ...item,
+            score: scoreMatch(item, q)
+          }))
+          .filter((item) => item.score > 0)
+          .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title));
       }
 
       function renderResults(query) {
@@ -193,12 +242,12 @@
         noResults.style.display = "none";
 
         resultsList.innerHTML = matches.map((item) => `
-          <a href="${item.href}" class="search-result-card" style="display:block; text-decoration:none; text-align:left; padding:16px 18px; border-radius:16px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.05); box-shadow:0 10px 24px rgba(0,0,0,.20);">
-            <div style="display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap;">
-              <strong style="font-size:1.02rem; color:rgba(244,247,255,.96);">${item.title}</strong>
-              <span style="display:inline-flex; align-items:center; justify-content:center; padding:7px 10px; border-radius:999px; background:rgba(34,230,211,.12); border:1px solid rgba(34,230,211,.24); color:rgba(244,247,255,.88); font-size:.84rem; font-weight:800;">${item.type}</span>
+          <a href="${item.href}" class="search-result-card search-result-link">
+            <div class="search-result-top">
+              <strong class="search-result-title">${item.title}</strong>
+              <span class="search-result-type">${item.type}</span>
             </div>
-            <div style="margin-top:8px; color:rgba(244,247,255,.68); font-size:.94rem;">${item.href}</div>
+            <div class="search-result-url">${item.href}</div>
           </a>
         `).join("");
       }
