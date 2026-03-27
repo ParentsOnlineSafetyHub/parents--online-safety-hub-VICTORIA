@@ -79,77 +79,6 @@
   <script src="app.js"></script>
   <script>
     (function () {
-      const searchIndex = [
-        { title: "Home", href: "index.html", type: "Page", keywords: "home posh main page" },
-        { title: "Start Here", href: "v3-start.html", type: "Page", keywords: "start first steps safety" },
-        { title: "Start Here Fast", href: "v3-entry-system.html", type: "Page", keywords: "quick fast entry start" },
-        { title: "Safety Check", href: "v3-safety-score.html", type: "Page", keywords: "score audit checklist safety check" },
-        { title: "What To Do Now", href: "v3-what-now.html", type: "Page", keywords: "what now immediate help next steps" },
-        { title: "First 24 Hours", href: "v3-first-24-hours.html", type: "Page", keywords: "urgent first 24 hours evidence response crisis" },
-        { title: "POSH Response System", href: "v3-posh-response-system.html", type: "System", keywords: "response system notice check secure talk monitor escalate" },
-        { title: "Urgent Warning Signs", href: "v3-urgent-warning-signs.html", type: "Topic", keywords: "urgent warning signs act now immediate danger concern" },
-        { title: "Exposure vs Danger", href: "v3-exposure-vs-danger.html", type: "Topic", keywords: "exposure vs danger high exposure active danger risk levels" },
-        { title: "Red Flags", href: "v3-redflags.html", type: "Topic", keywords: "warning signs red flags grooming risk" },
-        { title: "Report & Get Help", href: "v3-reporting.html", type: "Page", keywords: "report help police support evidence hotline" },
-        { title: "Parent Scripts", href: "v3-parent-scripts.html", type: "Topic", keywords: "what to say talk to child scripts" },
-        { title: "House Rules", href: "v3-house-rules.html", type: "Topic", keywords: "rules boundaries family device rules" },
-        { title: "Age Guide", href: "v3-age-guide.html", type: "Topic", keywords: "age suitable age guide children teens" },
-        { title: "Parent Mindset", href: "v3-mindset.html", type: "Topic", keywords: "mindset parent thinking awareness calm structure" },
-
-        { title: "Devices", href: "v3-devices.html", type: "Device", keywords: "devices phone tablet ipad iphone android windows computer" },
-        { title: "Device Safety", href: "v3-device-controls.html", type: "Device", keywords: "device safety controls phone tablet laptop pc" },
-        { title: "Parental Controls by Device", href: "v3-parental-controls-by-device.html", type: "Device", keywords: "controls by device parental controls" },
-        { title: "Set Controls & Passwords", href: "v3-how-to-set-parental-controls-and-passwords.html", type: "Device", keywords: "passwords controls lock settings restrictions" },
-        { title: "iPhone Controls", href: "v3-how-to-set-parental-controls-iphone.html", type: "Device", keywords: "iphone apple screen time ios" },
-        { title: "Android Controls", href: "v3-how-to-set-parental-controls-android.html", type: "Device", keywords: "android google family link samsung" },
-        { title: "Monitor Without Breaking Trust", href: "v3-how-to-monitor-without-breaking-trust.html", type: "Topic", keywords: "monitor trust check child calmly" },
-        { title: "Check a Device Calmly", href: "v3-how-to-check-a-device-without-causing-panic.html", type: "Topic", keywords: "check device calmly without panic evidence support" },
-        { title: "Best Parental Control Apps", href: "v3-best-parental-control-apps.html", type: "Device", keywords: "best parental control apps qustodio bark family link" },
-        { title: "Platforms", href: "v3-platforms.html", type: "Platform", keywords: "platforms xbox playstation nintendo steam" },
-
-        { title: "Gaming Safety", href: "v3-gaming.html", type: "Game", keywords: "gaming games game safety" },
-        { title: "All Games Directory", href: "v3-all-games.html", type: "Game", keywords: "all games roblox fortnite minecraft vrchat" },
-        { title: "Social Media & Chat", href: "v3-socials.html", type: "App", keywords: "socials social media chat messaging" },
-        { title: "All Applications", href: "v3-all-applications.html", type: "App", keywords: "all apps applications directory" },
-        { title: "Live Video & Streaming", href: "v3-videochat.html", type: "App", keywords: "video chat livestream ome tv zoom facetime meet teams" },
-        { title: "Streaming & Video Apps", href: "v3-streaming-video.html", type: "App", keywords: "streaming netflix disney youtube twitch" },
-        { title: "Dangerous Apps", href: "v3-dangerous-apps.html", type: "App", keywords: "dangerous apps risky apps snapchat discord telegram" },
-        { title: "Safe Apps & Games", href: "v3-safe-apps-and-games-for-kids.html", type: "App", keywords: "safe apps safe games kids safer choices" },
-        { title: "AI Chat Risks", href: "v3-ai-chat-risks-for-children.html", type: "AI", keywords: "ai chat character ai replika bots" },
-        { title: "Is ChatGPT Safe for Kids?", href: "v3-is-chatgpt-safe-for-kids.html", type: "AI", keywords: "chatgpt kids safe ai" },
-
-        { title: "Predators & Grooming", href: "v3-predators.html", type: "Topic", keywords: "predators grooming exploitation risk" },
-        { title: "Predator Playbook", href: "v3-playbook.html", type: "Topic", keywords: "playbook grooming escalation pattern" },
-        { title: "Understanding What’s Happening", href: "v3-definitions.html", type: "Topic", keywords: "definitions explain predator victim manipulation behaviour" },
-        { title: "Double Life Online", href: "v3-double-life-online.html", type: "Topic", keywords: "double life online hidden accounts secret identity secrecy" },
-        { title: "Online Dependency", href: "v3-when-a-child-becomes-dependent-on-someone-online.html", type: "Topic", keywords: "online dependency emotional dependence attachment hidden relationship" },
-        { title: "Known Person Risk", href: "v3-known-person-risk.html", type: "Topic", keywords: "known person trusted adult family risk" },
-        { title: "Real Life Risk", href: "v3-real-life-risk.html", type: "Topic", keywords: "offline real life risk meeting in person" },
-        { title: "Behaviour Patterns Hub", href: "v3-behaviours-hub.html", type: "Topic", keywords: "behaviour patterns control isolation manipulation hub" },
-        { title: "Early Behaviour Red Flags", href: "v3-early-behaviours-that-can-signal-red-flags.html", type: "Topic", keywords: "early behaviour warning signs" },
-        { title: "Acting Out of Character", href: "v3-why-my-child-is-acting-out-of-character.html", type: "Topic", keywords: "acting out of character changed behaviour shift" },
-        { title: "Why Kids Don’t Recognise Risk", href: "v3-why-kids-dont-recognise-risk.html", type: "Topic", keywords: "kids dont recognise risk miss warning signs" },
-        { title: "Trust Before Control", href: "v3-how-adults-build-trust-before-control.html", type: "Topic", keywords: "trust before control grooming manipulation" },
-        { title: "Manipulation Behaviours", href: "v3-manipulation-behaviours.html", type: "Topic", keywords: "manipulation behaviours guilt pressure secrecy" },
-        { title: "Controlling Behaviours", href: "v3-controlling-behaviours.html", type: "Topic", keywords: "control controlling isolation narrative" },
-        { title: "Emotional Manipulation", href: "v3-emotional-manipulation.html", type: "Topic", keywords: "emotional manipulation guilt control influence" },
-        { title: "Toxic Behaviour Patterns", href: "v3-toxic-behaviour-patterns.html", type: "Topic", keywords: "toxic behaviour patterns control pressure secrecy" },
-        { title: "Why Isolation Hits Children Harder", href: "v3-why-isolation-hits-children-harder.html", type: "Topic", keywords: "isolation child risk dependency" },
-        { title: "Turned Against a Safe Parent", href: "v3-when-a-child-is-turned-against-a-safe-parent.html", type: "Topic", keywords: "turned against safe parent alienation manipulation" },
-        { title: "Self Harm & Suicide Warning Signs", href: "v3-self-harm-and-suicide-warning-signs.html", type: "Topic", keywords: "self harm suicide warning signs emotional collapse" },
-        { title: "Why Kids Self Harm", href: "v3-why-kids-self-harm.html", type: "Topic", keywords: "why kids self harm causes distress coping" },
-
-        { title: "Safety Awareness", href: "v3-awareness.html", type: "Topic", keywords: "awareness online safety risks parents education" },
-        { title: "Real Investigations", href: "v3-real-investigations.html", type: "Topic", keywords: "real investigations shawn ryan vigilance elite research" },
-        { title: "Algorithm Risks", href: "v3-algorithm-awareness.html", type: "Topic", keywords: "algorithm recommendations tiktok youtube exposure" },
-        { title: "Downloads", href: "v3-downloads.html", type: "PDF", keywords: "pdf downloads printable guides checklist" },
-        { title: "Cancel Subscriptions", href: "v3-cancel-subscriptions.html", type: "Guide", keywords: "subscriptions recurring charges apple google microsoft" },
-        { title: "Support", href: "v3-support.html", type: "Page", keywords: "support donate posh movement" },
-        { title: "Have Your Say", href: "v3-community.html", type: "Page", keywords: "community facebook group discussion voice" },
-        { title: "Share POSH", href: "v3-share.html", type: "Page", keywords: "share posh facebook x social movement" },
-        { title: "Why POSH Exists", href: "v3-why-posh-exists.html", type: "Page", keywords: "why posh exists mission purpose movement" }
-      ];
-
       function getQueryParam(name) {
         const params = new URLSearchParams(window.location.search);
         return params.get(name) || "";
@@ -177,9 +106,9 @@
         const q = query.toLowerCase().trim();
         const tokens = tokenize(q);
         const title = item.title.toLowerCase();
-        const type = item.type.toLowerCase();
-        const keywords = item.keywords.toLowerCase();
-        const href = item.href.toLowerCase();
+        const type = (item.type || "").toLowerCase();
+        const keywords = (item.keywords || "").toLowerCase();
+        const href = (item.href || "").toLowerCase();
 
         let score = 0;
 
@@ -199,11 +128,11 @@
         return score;
       }
 
-      function findMatches(query) {
+      function findMatches(query, index) {
         const q = query.trim();
         if (!q) return [];
 
-        return searchIndex
+        return index
           .map((item) => ({
             ...item,
             score: scoreMatch(item, q)
@@ -212,7 +141,7 @@
           .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title));
       }
 
-      function renderResults(query) {
+      function renderResults(query, searchIndex) {
         const heading = document.getElementById("searchResultsHeading");
         const queryText = document.getElementById("searchQueryText");
         const resultsList = document.getElementById("searchResultsList");
@@ -228,7 +157,7 @@
           return;
         }
 
-        const matches = findMatches(trimmed);
+        const matches = findMatches(trimmed, searchIndex);
 
         heading.textContent = `Search results for: ${trimmed}`;
         queryText.textContent = `${matches.length} result${matches.length === 1 ? "" : "s"} found`;
@@ -252,11 +181,11 @@
         `).join("");
       }
 
-      function runSearch() {
+      function runSearch(searchIndex) {
         const input = document.getElementById("searchPageInput");
         const query = input.value.trim();
         updateQueryParam(query);
-        renderResults(query);
+        renderResults(query, searchIndex);
       }
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -264,21 +193,25 @@
         const button = document.getElementById("searchPageBtn");
         const initialQuery = getQueryParam("q");
 
+        const searchIndex = Array.isArray(window.POSH_SEARCH_INDEX) ? window.POSH_SEARCH_INDEX : [];
+
         if (input) {
           input.value = initialQuery;
         }
 
-        renderResults(initialQuery);
+        renderResults(initialQuery, searchIndex);
 
         if (button) {
-          button.addEventListener("click", runSearch);
+          button.addEventListener("click", function () {
+            runSearch(searchIndex);
+          });
         }
 
         if (input) {
           input.addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
               event.preventDefault();
-              runSearch();
+              runSearch(searchIndex);
             }
           });
         }
