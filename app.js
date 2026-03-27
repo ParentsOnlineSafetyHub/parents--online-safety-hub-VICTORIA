@@ -7,6 +7,7 @@
         class="nav-search-input"
         placeholder="Search apps, games, devices, PDFs or topics"
         autocomplete="off"
+        aria-label="Search POSH"
       />
       <div id="poshSearchResults" class="nav-search-results"></div>
     </div>
@@ -16,88 +17,88 @@
       <details class="nav-group">
         <summary>Start &amp; Safety</summary>
         <nav>
-          <a href="index.html">Home</a>
-          <a href="v3-start.html">Start Here</a>
-          <a href="v3-entry-system.html">Start Here Fast</a>
-          <a href="v3-safety-score.html">Safety Check</a>
-          <a href="v3-what-now.html">What To Do Now</a>
-          <a href="v3-first-24-hours.html">First 24 Hours</a>
-          <a href="v3-redflags.html">Red Flags</a>
-          <a href="v3-reporting.html">Report &amp; Get Help</a>
-          <a href="v3-parent-scripts.html">Parent Scripts</a>
-          <a href="v3-house-rules.html">House Rules</a>
-          <a href="v3-age-guide.html">Age Guide</a>
-          <a href="v3-mindset.html">Parent Mindset</a>
+          <a href="index.html" data-keywords="home posh main page">Home</a>
+          <a href="v3-start.html" data-keywords="start first steps safety">Start Here</a>
+          <a href="v3-entry-system.html" data-keywords="quick fast entry start">Start Here Fast</a>
+          <a href="v3-safety-score.html" data-keywords="score audit checklist safety check">Safety Check</a>
+          <a href="v3-what-now.html" data-keywords="what now immediate help">What To Do Now</a>
+          <a href="v3-first-24-hours.html" data-keywords="urgent first 24 hours evidence response">First 24 Hours</a>
+          <a href="v3-redflags.html" data-keywords="warning signs red flags grooming risk">Red Flags</a>
+          <a href="v3-reporting.html" data-keywords="report help police support evidence">Report &amp; Get Help</a>
+          <a href="v3-parent-scripts.html" data-keywords="what to say talk to child scripts">Parent Scripts</a>
+          <a href="v3-house-rules.html" data-keywords="rules boundaries family device rules">House Rules</a>
+          <a href="v3-age-guide.html" data-keywords="age suitable age guide children teens">Age Guide</a>
+          <a href="v3-mindset.html" data-keywords="mindset parent thinking awareness">Parent Mindset</a>
         </nav>
       </details>
 
       <details class="nav-group">
         <summary>Devices &amp; Platform Controls</summary>
         <nav>
-          <a href="v3-devices.html">Devices</a>
-          <a href="v3-device-controls.html">Device Safety</a>
-          <a href="v3-parental-controls-by-device.html">Parental Controls by Device</a>
-          <a href="v3-how-to-set-parental-controls-and-passwords.html">Set Controls &amp; Passwords</a>
-          <a href="v3-how-to-set-parental-controls-iphone.html">iPhone Controls</a>
-          <a href="v3-how-to-set-parental-controls-android.html">Android Controls</a>
-          <a href="v3-how-to-monitor-without-breaking-trust.html">Monitor Without Breaking Trust</a>
-          <a href="v3-how-to-check-a-device-without-causing-panic.html">Check a Device Calmly</a>
-          <a href="v3-best-parental-control-apps.html">Best Parental Control Apps</a>
-          <a href="v3-platforms.html">Platforms</a>
+          <a href="v3-devices.html" data-keywords="devices phone tablet ipad iphone android windows computer">Devices</a>
+          <a href="v3-device-controls.html" data-keywords="device safety controls phone tablet laptop pc">Device Safety</a>
+          <a href="v3-parental-controls-by-device.html" data-keywords="controls by device parental controls">Parental Controls by Device</a>
+          <a href="v3-how-to-set-parental-controls-and-passwords.html" data-keywords="passwords controls lock settings">Set Controls &amp; Passwords</a>
+          <a href="v3-how-to-set-parental-controls-iphone.html" data-keywords="iphone apple screen time ios">iPhone Controls</a>
+          <a href="v3-how-to-set-parental-controls-android.html" data-keywords="android google family link samsung">Android Controls</a>
+          <a href="v3-how-to-monitor-without-breaking-trust.html" data-keywords="monitor trust check child calmly">Monitor Without Breaking Trust</a>
+          <a href="v3-how-to-check-a-device-without-causing-panic.html" data-keywords="check device calmly without panic">Check a Device Calmly</a>
+          <a href="v3-best-parental-control-apps.html" data-keywords="best parental control apps qustodio bark family link">Best Parental Control Apps</a>
+          <a href="v3-platforms.html" data-keywords="platforms xbox playstation nintendo steam">Platforms</a>
         </nav>
       </details>
 
       <details class="nav-group">
         <summary>Games, Apps &amp; Streaming</summary>
         <nav>
-          <a href="v3-gaming.html">Gaming Safety</a>
-          <a href="v3-all-games.html">All Games Directory</a>
-          <a href="v3-socials.html">Social Media &amp; Chat</a>
-          <a href="v3-all-applications.html">All Applications</a>
-          <a href="v3-videochat.html">Live Video &amp; Streaming</a>
-          <a href="v3-streaming-video.html">Streaming &amp; Video Apps</a>
-          <a href="v3-dangerous-apps.html">Dangerous Apps</a>
-          <a href="v3-safe-apps-and-games-for-kids.html">Safe Apps &amp; Games</a>
-          <a href="v3-ai-chat-risks-for-children.html">AI Chat Risks</a>
-          <a href="v3-is-chatgpt-safe-for-kids.html">Is ChatGPT Safe for Kids?</a>
+          <a href="v3-gaming.html" data-keywords="gaming games game safety">Gaming Safety</a>
+          <a href="v3-all-games.html" data-keywords="all games roblox fortnite minecraft vrchat">All Games Directory</a>
+          <a href="v3-socials.html" data-keywords="socials social media chat messaging">Social Media &amp; Chat</a>
+          <a href="v3-all-applications.html" data-keywords="all apps applications directory">All Applications</a>
+          <a href="v3-videochat.html" data-keywords="video chat livestream ome tv zoom facetime meet teams">Live Video &amp; Streaming</a>
+          <a href="v3-streaming-video.html" data-keywords="streaming netflix disney youtube twitch">Streaming &amp; Video Apps</a>
+          <a href="v3-dangerous-apps.html" data-keywords="dangerous apps risky apps snapchat discord telegram">Dangerous Apps</a>
+          <a href="v3-safe-apps-and-games-for-kids.html" data-keywords="safe apps safe games kids">Safe Apps &amp; Games</a>
+          <a href="v3-ai-chat-risks-for-children.html" data-keywords="ai chat character ai replika bots">AI Chat Risks</a>
+          <a href="v3-is-chatgpt-safe-for-kids.html" data-keywords="chatgpt kids safe ai">Is ChatGPT Safe for Kids?</a>
         </nav>
       </details>
 
       <details class="nav-group">
         <summary>Behaviour, Grooming &amp; Risk</summary>
         <nav>
-          <a href="v3-predators.html">Predators &amp; Grooming</a>
-          <a href="v3-playbook.html">Predator Playbook</a>
-          <a href="v3-definitions.html">Understanding What’s Happening</a>
-          <a href="v3-known-person-risk.html">Known Person Risk</a>
-          <a href="v3-real-life-risk.html">Real Life Risk</a>
-          <a href="v3-behaviours-hub.html">Behaviour Patterns Hub</a>
-          <a href="v3-early-behaviours-that-can-signal-red-flags.html">Early Behaviour Red Flags</a>
-          <a href="v3-why-my-child-is-acting-out-of-character.html">Acting Out of Character</a>
-          <a href="v3-why-kids-dont-recognise-risk.html">Why Kids Don’t Recognise Risk</a>
-          <a href="v3-how-adults-build-trust-before-control.html">Trust Before Control</a>
-          <a href="v3-manipulation-behaviours.html">Manipulation Behaviours</a>
-          <a href="v3-controlling-behaviours.html">Controlling Behaviours</a>
-          <a href="v3-emotional-manipulation.html">Emotional Manipulation</a>
-          <a href="v3-toxic-behaviour-patterns.html">Toxic Behaviour Patterns</a>
-          <a href="v3-why-isolation-hits-children-harder.html">Why Isolation Hits Children Harder</a>
-          <a href="v3-when-a-child-is-turned-against-a-safe-parent.html">Turned Against a Safe Parent</a>
-          <a href="v3-self-harm-and-suicide-warning-signs.html">Self Harm &amp; Suicide Warning Signs</a>
-          <a href="v3-why-kids-self-harm.html">Why Kids Self Harm</a>
+          <a href="v3-predators.html" data-keywords="predators grooming exploitation">Predators &amp; Grooming</a>
+          <a href="v3-playbook.html" data-keywords="playbook grooming escalation pattern">Predator Playbook</a>
+          <a href="v3-definitions.html" data-keywords="definitions explain predator victim manipulation">Understanding What’s Happening</a>
+          <a href="v3-known-person-risk.html" data-keywords="known person trusted adult family risk">Known Person Risk</a>
+          <a href="v3-real-life-risk.html" data-keywords="offline real life risk">Real Life Risk</a>
+          <a href="v3-behaviours-hub.html" data-keywords="behaviour patterns control isolation manipulation">Behaviour Patterns Hub</a>
+          <a href="v3-early-behaviours-that-can-signal-red-flags.html" data-keywords="early behaviour warning signs">Early Behaviour Red Flags</a>
+          <a href="v3-why-my-child-is-acting-out-of-character.html" data-keywords="acting out of character changed behaviour">Acting Out of Character</a>
+          <a href="v3-why-kids-dont-recognise-risk.html" data-keywords="kids dont recognise risk miss warning signs">Why Kids Don’t Recognise Risk</a>
+          <a href="v3-how-adults-build-trust-before-control.html" data-keywords="trust before control grooming">Trust Before Control</a>
+          <a href="v3-manipulation-behaviours.html" data-keywords="manipulation behaviours guilt pressure secrecy">Manipulation Behaviours</a>
+          <a href="v3-controlling-behaviours.html" data-keywords="control controlling isolation narrative">Controlling Behaviours</a>
+          <a href="v3-emotional-manipulation.html" data-keywords="emotional manipulation guilt control">Emotional Manipulation</a>
+          <a href="v3-toxic-behaviour-patterns.html" data-keywords="toxic behaviour patterns">Toxic Behaviour Patterns</a>
+          <a href="v3-why-isolation-hits-children-harder.html" data-keywords="isolation child risk">Why Isolation Hits Children Harder</a>
+          <a href="v3-when-a-child-is-turned-against-a-safe-parent.html" data-keywords="turned against safe parent">Turned Against a Safe Parent</a>
+          <a href="v3-self-harm-and-suicide-warning-signs.html" data-keywords="self harm suicide warning signs">Self Harm &amp; Suicide Warning Signs</a>
+          <a href="v3-why-kids-self-harm.html" data-keywords="why kids self harm">Why Kids Self Harm</a>
         </nav>
       </details>
 
       <details class="nav-group">
         <summary>Awareness &amp; Resources</summary>
         <nav>
-          <a href="v3-awareness.html">Safety Awareness</a>
-          <a href="v3-real-investigations.html">Real Investigations</a>
-          <a href="v3-algorithm-awareness.html">Algorithm Risks</a>
-          <a href="v3-downloads.html">Downloads</a>
-          <a href="v3-cancel-subscriptions.html">Cancel Subscriptions</a>
-          <a href="v3-support.html">Support</a>
-          <a href="v3-community.html">Have Your Say</a>
-          <a href="v3-share.html">Share POSH</a>
+          <a href="v3-awareness.html" data-keywords="awareness online safety risks parents">Safety Awareness</a>
+          <a href="v3-real-investigations.html" data-keywords="real investigations shawn ryan vigilance elite">Real Investigations</a>
+          <a href="v3-algorithm-awareness.html" data-keywords="algorithm recommendations tiktok youtube exposure">Algorithm Risks</a>
+          <a href="v3-downloads.html" data-keywords="pdf downloads printable guides checklist">Downloads</a>
+          <a href="v3-cancel-subscriptions.html" data-keywords="subscriptions recurring charges apple google microsoft">Cancel Subscriptions</a>
+          <a href="v3-support.html" data-keywords="support donate posh">Support</a>
+          <a href="v3-community.html" data-keywords="community facebook group discussion">Have Your Say</a>
+          <a href="v3-share.html" data-keywords="share posh facebook x social">Share POSH</a>
         </nav>
       </details>
 
@@ -122,9 +123,7 @@
 
       <div class="footer-meta">
         Built to educate parents. Designed to protect our children.<br/>
-        <span class="small">
-          Contact: allthewaycarpentry@gmail.com
-        </span>
+        <span class="small">Contact: allthewaycarpentry@gmail.com</span>
       </div>
     </footer>
   `;
@@ -136,121 +135,111 @@
     if (navTarget) {
       navTarget.innerHTML = navHTML;
 
-      const currentPage = window.location.pathname.split("/").pop() || "index.html";
+      const currentPage = (
+        window.location.pathname.split("/").pop() || "index.html"
+      ).split("?")[0].split("#")[0];
+
       const navLinks = navTarget.querySelectorAll("a");
       const navGroups = navTarget.querySelectorAll(".nav-group");
 
       navLinks.forEach((link) => {
-        const linkPage = link.getAttribute("href");
+        const href = (link.getAttribute("href") || "").split("?")[0].split("#")[0];
 
-        if (linkPage === currentPage) {
+        if (href === currentPage) {
           link.classList.add("nav-active");
           link.setAttribute("aria-current", "page");
 
           const parentGroup = link.closest(".nav-group");
-          if (parentGroup) {
-            parentGroup.open = true;
-          }
+          if (parentGroup) parentGroup.open = true;
         }
       });
 
       navGroups.forEach((group) => {
         group.addEventListener("toggle", () => {
-          if (group.open) {
-            navGroups.forEach((otherGroup) => {
-              if (otherGroup !== group) {
-                otherGroup.open = false;
-              }
-            });
-          }
+          if (!group.open) return;
+
+          navGroups.forEach((otherGroup) => {
+            if (otherGroup !== group) otherGroup.open = false;
+          });
         });
       });
 
       const searchInput = document.getElementById("poshSearch");
       const searchResults = document.getElementById("poshSearchResults");
+      let activeIndex = -1;
+      let currentMatches = [];
 
-      const searchIndex = [
-        { title: "Home", href: "index.html", keywords: "home posh main page" },
-        { title: "Start Here", href: "v3-start.html", keywords: "start first steps safety" },
-        { title: "Start Here Fast", href: "v3-entry-system.html", keywords: "quick fast entry start" },
-        { title: "Safety Check", href: "v3-safety-score.html", keywords: "score audit checklist safety check" },
-        { title: "What To Do Now", href: "v3-what-now.html", keywords: "what now immediate help" },
-        { title: "First 24 Hours", href: "v3-first-24-hours.html", keywords: "urgent first 24 hours evidence response" },
-        { title: "Red Flags", href: "v3-redflags.html", keywords: "warning signs red flags grooming risk" },
-        { title: "Report & Get Help", href: "v3-reporting.html", keywords: "report help police support evidence" },
-        { title: "Parent Scripts", href: "v3-parent-scripts.html", keywords: "what to say talk to child scripts" },
-        { title: "House Rules", href: "v3-house-rules.html", keywords: "rules boundaries family device rules" },
-        { title: "Age Guide", href: "v3-age-guide.html", keywords: "age suitable age guide children teens" },
-        { title: "Parent Mindset", href: "v3-mindset.html", keywords: "mindset parent thinking awareness" },
+      const searchIndex = Array.from(navTarget.querySelectorAll(".nav-group nav a")).map((link) => ({
+        title: link.textContent.trim(),
+        href: link.getAttribute("href"),
+        keywords: link.dataset.keywords || ""
+      }));
 
-        { title: "Devices", href: "v3-devices.html", keywords: "devices phone tablet ipad iphone android windows computer" },
-        { title: "Device Safety", href: "v3-device-controls.html", keywords: "device safety controls phone tablet laptop pc" },
-        { title: "Parental Controls by Device", href: "v3-parental-controls-by-device.html", keywords: "controls by device parental controls" },
-        { title: "Set Controls & Passwords", href: "v3-how-to-set-parental-controls-and-passwords.html", keywords: "passwords controls lock settings" },
-        { title: "iPhone Controls", href: "v3-how-to-set-parental-controls-iphone.html", keywords: "iphone apple screen time ios" },
-        { title: "Android Controls", href: "v3-how-to-set-parental-controls-android.html", keywords: "android google family link samsung" },
-        { title: "Monitor Without Breaking Trust", href: "v3-how-to-monitor-without-breaking-trust.html", keywords: "monitor trust check child calmly" },
-        { title: "Check a Device Calmly", href: "v3-how-to-check-a-device-without-causing-panic.html", keywords: "check device calmly without panic" },
-        { title: "Best Parental Control Apps", href: "v3-best-parental-control-apps.html", keywords: "best parental control apps qustodio bark family link" },
-        { title: "Platforms", href: "v3-platforms.html", keywords: "platforms xbox playstation nintendo steam" },
+      function tokenize(text) {
+        return text
+          .toLowerCase()
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+      }
 
-        { title: "Gaming Safety", href: "v3-gaming.html", keywords: "gaming games game safety" },
-        { title: "All Games Directory", href: "v3-all-games.html", keywords: "all games roblox fortnite minecraft vrchat" },
-        { title: "Social Media & Chat", href: "v3-socials.html", keywords: "socials social media chat messaging" },
-        { title: "All Applications", href: "v3-all-applications.html", keywords: "all apps applications directory" },
-        { title: "Live Video & Streaming", href: "v3-videochat.html", keywords: "video chat livestream ome tv zoom facetime meet teams" },
-        { title: "Streaming & Video Apps", href: "v3-streaming-video.html", keywords: "streaming netflix disney youtube twitch" },
-        { title: "Dangerous Apps", href: "v3-dangerous-apps.html", keywords: "dangerous apps risky apps snapchat discord telegram" },
-        { title: "Safe Apps & Games", href: "v3-safe-apps-and-games-for-kids.html", keywords: "safe apps safe games kids" },
-        { title: "AI Chat Risks", href: "v3-ai-chat-risks-for-children.html", keywords: "ai chat character ai replika bots" },
-        { title: "Is ChatGPT Safe for Kids?", href: "v3-is-chatgpt-safe-for-kids.html", keywords: "chatgpt kids safe ai" },
+      function scoreMatch(item, query) {
+        const q = query.toLowerCase().trim();
+        const tokens = tokenize(q);
+        const title = item.title.toLowerCase();
+        const keywords = item.keywords.toLowerCase();
+        const href = item.href.toLowerCase();
+        const haystack = `${title} ${keywords} ${href}`;
 
-        { title: "Predators & Grooming", href: "v3-predators.html", keywords: "predators grooming exploitation" },
-        { title: "Predator Playbook", href: "v3-playbook.html", keywords: "playbook grooming escalation pattern" },
-        { title: "Understanding What’s Happening", href: "v3-definitions.html", keywords: "definitions explain predator victim manipulation" },
-        { title: "Known Person Risk", href: "v3-known-person-risk.html", keywords: "known person trusted adult family risk" },
-        { title: "Real Life Risk", href: "v3-real-life-risk.html", keywords: "offline real life risk" },
-        { title: "Behaviour Patterns Hub", href: "v3-behaviours-hub.html", keywords: "behaviour patterns control isolation manipulation" },
-        { title: "Early Behaviour Red Flags", href: "v3-early-behaviours-that-can-signal-red-flags.html", keywords: "early behaviour warning signs" },
-        { title: "Acting Out of Character", href: "v3-why-my-child-is-acting-out-of-character.html", keywords: "acting out of character changed behaviour" },
-        { title: "Why Kids Don’t Recognise Risk", href: "v3-why-kids-dont-recognise-risk.html", keywords: "kids dont recognise risk miss warning signs" },
-        { title: "Trust Before Control", href: "v3-how-adults-build-trust-before-control.html", keywords: "trust before control grooming" },
-        { title: "Manipulation Behaviours", href: "v3-manipulation-behaviours.html", keywords: "manipulation behaviours guilt pressure secrecy" },
-        { title: "Controlling Behaviours", href: "v3-controlling-behaviours.html", keywords: "control controlling isolation narrative" },
-        { title: "Emotional Manipulation", href: "v3-emotional-manipulation.html", keywords: "emotional manipulation guilt control" },
-        { title: "Toxic Behaviour Patterns", href: "v3-toxic-behaviour-patterns.html", keywords: "toxic behaviour patterns" },
-        { title: "Why Isolation Hits Children Harder", href: "v3-why-isolation-hits-children-harder.html", keywords: "isolation child risk" },
-        { title: "Turned Against a Safe Parent", href: "v3-when-a-child-is-turned-against-a-safe-parent.html", keywords: "turned against safe parent" },
-        { title: "Self Harm & Suicide Warning Signs", href: "v3-self-harm-and-suicide-warning-signs.html", keywords: "self harm suicide warning signs" },
-        { title: "Why Kids Self Harm", href: "v3-why-kids-self-harm.html", keywords: "why kids self harm" },
+        let score = 0;
 
-        { title: "Safety Awareness", href: "v3-awareness.html", keywords: "awareness online safety risks parents" },
-        { title: "Real Investigations", href: "v3-real-investigations.html", keywords: "real investigations shawn ryan vigilance elite" },
-        { title: "Algorithm Risks", href: "v3-algorithm-awareness.html", keywords: "algorithm recommendations tiktok youtube exposure" },
-        { title: "Downloads", href: "v3-downloads.html", keywords: "pdf downloads printable guides checklist" },
-        { title: "Cancel Subscriptions", href: "v3-cancel-subscriptions.html", keywords: "subscriptions recurring charges apple google microsoft" },
-        { title: "Support", href: "v3-support.html", keywords: "support donate posh" },
-        { title: "Have Your Say", href: "v3-community.html", keywords: "community facebook group discussion" },
-        { title: "Share POSH", href: "v3-share.html", keywords: "share posh facebook x social" }
-      ];
+        if (title === q) score += 100;
+        if (title.includes(q)) score += 40;
+        if (keywords.includes(q)) score += 25;
+        if (href.includes(q)) score += 10;
+
+        tokens.forEach((token) => {
+          if (title.includes(token)) score += 12;
+          if (keywords.includes(token)) score += 6;
+          if (href.includes(token)) score += 3;
+        });
+
+        return score;
+      }
+
+      function findMatches(query) {
+        const q = query.trim();
+        if (!q) return [];
+
+        return searchIndex
+          .map((item) => ({
+            ...item,
+            score: scoreMatch(item, q)
+          }))
+          .filter((item) => item.score > 0)
+          .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title));
+      }
 
       function renderSearchResults(matches) {
-        if (!matches.length) {
-          searchResults.innerHTML = '<div class="nav-search-empty">No results found</div>';
+        currentMatches = matches.slice(0, 8);
+        activeIndex = -1;
+
+        if (!currentMatches.length) {
+          searchResults.innerHTML = `<div class="nav-search-empty">No results found</div>`;
           searchResults.classList.add("show");
           return;
         }
 
-        const quickResults = matches.slice(0, 8).map(
-          (item) => `
-            <a class="nav-search-result" href="${item.href}">
+        const quickResults = currentMatches
+          .map((item, index) => `
+            <a class="nav-search-result" href="${item.href}" data-index="${index}">
               ${item.title}
             </a>
-          `
-        ).join("");
+          `)
+          .join("");
 
         const viewAll = `
-          <a class="nav-search-result nav-search-view-all" href="v3-search.html?q=${encodeURIComponent(searchInput.value.trim())}">
+          <a class="nav-search-result nav-search-view-all" href="v3-search.html?q=${encodeURIComponent(searchInput.value.trim())}" data-index="view-all">
             View all results
           </a>
         `;
@@ -260,18 +249,20 @@
       }
 
       function clearSearchResults() {
+        currentMatches = [];
+        activeIndex = -1;
         searchResults.innerHTML = "";
         searchResults.classList.remove("show");
       }
 
-      function findMatches(query) {
-        const q = query.trim().toLowerCase();
-        if (!q) return [];
+      function updateActiveResult() {
+        const items = searchResults.querySelectorAll(".nav-search-result");
 
-        return searchIndex.filter((item) => {
-          const haystack = `${item.title} ${item.keywords} ${item.href}`.toLowerCase();
-          return haystack.includes(q);
-        });
+        items.forEach((item) => item.classList.remove("active"));
+
+        if (activeIndex >= 0 && items[activeIndex]) {
+          items[activeIndex].classList.add("active");
+        }
       }
 
       function goToSearchPage(query) {
@@ -282,14 +273,12 @@
 
       if (searchInput && searchResults) {
         searchInput.addEventListener("input", function () {
-          const matches = findMatches(this.value);
-
           if (!this.value.trim()) {
             clearSearchResults();
             return;
           }
 
-          renderSearchResults(matches);
+          renderSearchResults(findMatches(this.value));
         });
 
         searchInput.addEventListener("focus", function () {
@@ -298,8 +287,32 @@
         });
 
         searchInput.addEventListener("keydown", function (event) {
+          const resultItems = searchResults.querySelectorAll(".nav-search-result");
+
+          if (event.key === "ArrowDown") {
+            event.preventDefault();
+            if (!resultItems.length) return;
+            activeIndex = Math.min(activeIndex + 1, resultItems.length - 1);
+            updateActiveResult();
+            return;
+          }
+
+          if (event.key === "ArrowUp") {
+            event.preventDefault();
+            if (!resultItems.length) return;
+            activeIndex = Math.max(activeIndex - 1, 0);
+            updateActiveResult();
+            return;
+          }
+
           if (event.key === "Enter") {
             event.preventDefault();
+
+            if (activeIndex >= 0 && resultItems[activeIndex]) {
+              window.location.href = resultItems[activeIndex].getAttribute("href");
+              return;
+            }
+
             goToSearchPage(this.value);
           }
         });
@@ -307,18 +320,11 @@
 
       document.addEventListener("click", (event) => {
         const clickedInsideNav = navTarget.contains(event.target);
-        const clickedInsideSearch =
-          searchInput &&
-          searchResults &&
-          (searchInput.contains(event.target) || searchResults.contains(event.target));
 
         if (!clickedInsideNav) {
           navGroups.forEach((group) => {
             group.open = false;
           });
-        }
-
-        if (!clickedInsideSearch && searchResults) {
           clearSearchResults();
         }
       });
@@ -328,10 +334,8 @@
           navGroups.forEach((group) => {
             group.open = false;
           });
-
-          if (searchResults) {
-            clearSearchResults();
-          }
+          clearSearchResults();
+          if (searchInput) searchInput.blur();
         }
       });
     }
