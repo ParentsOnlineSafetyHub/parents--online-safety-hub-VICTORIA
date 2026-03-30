@@ -1,7 +1,7 @@
 (function () {
 
   /* =========================
-     FULL NAV (RESTORED)
+     FULL NAV (YOUR EXACT NAV)
   ========================= */
 
   const navHTML = `
@@ -12,6 +12,7 @@
         class="nav-search-input"
         placeholder="Search apps, games, devices, PDFs or topics"
         autocomplete="off"
+        aria-label="Search POSH"
       />
       <div id="poshSearchResults" class="nav-search-results"></div>
     </div>
@@ -19,149 +20,121 @@
     <div class="nav-accordion">
 
       <details class="nav-group">
-        <summary>Start Here & Immediate Help</summary>
+        <summary>Start Here &amp; Immediate Help</summary>
         <nav>
-          <a href="index.html" data-type="Page" data-keywords="home main posh">Home</a>
-          <a href="v3-start.html" data-type="Page" data-keywords="start first safety">Start Here</a>
-          <a href="v3-safety-score.html" data-type="Tool" data-keywords="score checklist audit">Safety Check</a>
-          <a href="v3-first-24-hours.html" data-type="Urgent" data-keywords="urgent crisis help now">First 24 Hours</a>
-          <a href="v3-urgent-warning-signs.html" data-type="Urgent" data-keywords="warning danger signs urgent">Urgent Warning Signs</a>
-          <a href="v3-reporting.html" data-type="Help" data-keywords="report police help evidence">Report & Get Help</a>
+          <a href="index.html" data-type="Page" data-keywords="home posh main page">Home</a>
+          <a href="v3-start.html" data-type="Page" data-keywords="start first steps safety">Start Here</a>
+          <a href="v3-entry-system.html" data-type="Page" data-keywords="quick fast entry start">Start Here Fast</a>
+          <a href="v3-safety-score.html" data-type="Page" data-keywords="score audit checklist safety check">Safety Check</a>
+          <a href="v3-what-now.html" data-type="Page" data-keywords="what now immediate help next steps">What To Do Now</a>
+          <a href="v3-first-24-hours.html" data-type="Page" data-keywords="urgent first 24 hours evidence response crisis">First 24 Hours</a>
+          <a href="v3-posh-response-system.html" data-type="System" data-keywords="response system notice check secure talk monitor escalate">POSH Response System</a>
+          <a href="v3-urgent-warning-signs.html" data-type="Topic" data-keywords="urgent warning signs act now danger immediate concern">Urgent Warning Signs</a>
+          <a href="v3-exposure-vs-danger.html" data-type="Topic" data-keywords="exposure vs danger risk levels high exposure active danger">Exposure vs Danger</a>
+          <a href="v3-reporting.html" data-type="Page" data-keywords="report help police support evidence hotline">Report &amp; Get Help</a>
         </nav>
       </details>
 
       <details class="nav-group">
-        <summary>Behaviour & Risk</summary>
+        <summary>Parents, Conversations &amp; House Rules</summary>
         <nav>
-          <a href="v3-redflags.html" data-type="Topic" data-keywords="red flags grooming warning">Red Flags</a>
-          <a href="v3-playbook.html" data-type="Topic" data-keywords="grooming playbook pattern">Predator Playbook</a>
-          <a href="v3-predators.html" data-type="Topic" data-keywords="predators grooming risk">Predators</a>
-          <a href="v3-behaviours-hub.html" data-type="Topic" data-keywords="behaviour patterns manipulation">Behaviour Hub</a>
+          <a href="v3-parent-scripts.html" data-type="Topic" data-keywords="what to say talk to child scripts conversation help">Parent Scripts</a>
+          <a href="v3-parent-conversations.html" data-type="Topic" data-keywords="conversations difficult talks calm discussion">Parent Conversations</a>
+          <a href="v3-what-to-say-if-your-child-opens-up.html" data-type="Topic" data-keywords="child opens up what to say disclosure support">If Your Child Opens Up</a>
+          <a href="v3-when-your-child-wont-talk.html" data-type="Topic" data-keywords="child wont talk silence shutdown">If Your Child Won’t Talk</a>
+          <a href="v3-house-rules.html" data-type="Topic" data-keywords="rules boundaries family device rules expectations">House Rules</a>
+          <a href="v3-age-guide.html" data-type="Topic" data-keywords="age suitable age guide children teens">Age Guide</a>
+          <a href="v3-mindset.html" data-type="Topic" data-keywords="mindset parent thinking awareness calm structure">Parent Mindset</a>
+          <a href="v3-how-to-monitor-without-breaking-trust.html" data-type="Topic" data-keywords="monitor trust check child calmly">Monitor Without Breaking Trust</a>
+          <a href="v3-how-to-check-a-device-without-causing-panic.html" data-type="Topic" data-keywords="check device calmly without panic evidence support">Check a Device Calmly</a>
+          <a href="v3-how-to-rebuild-trust-after-an-online-scare.html" data-type="Topic" data-keywords="rebuild trust after online scare repair connection">Rebuild Trust After an Online Scare</a>
         </nav>
       </details>
 
       <details class="nav-group">
-        <summary>Devices & Apps</summary>
+        <summary>Behaviour, Grooming &amp; Risk</summary>
         <nav>
-          <a href="v3-device-controls.html" data-type="Device" data-keywords="device safety phone controls">Device Safety</a>
-          <a href="v3-parental-controls.html" data-type="Device" data-keywords="parental controls monitor safety">Parental Controls</a>
-          <a href="v3-all-applications.html" data-type="App" data-keywords="apps list directory">All Applications</a>
-          <a href="v3-all-games.html" data-type="Game" data-keywords="games roblox fortnite minecraft">All Games</a>
+          <a href="v3-redflags.html" data-type="Topic" data-keywords="warning signs red flags grooming risk">Red Flags</a>
+          <a href="v3-predators.html" data-type="Topic" data-keywords="predators grooming exploitation risk">Predators &amp; Grooming</a>
+          <a href="v3-playbook.html" data-type="Topic" data-keywords="playbook grooming escalation pattern">Predator Playbook</a>
+          <a href="v3-definitions.html" data-type="Topic" data-keywords="definitions explain predator victim manipulation behaviour">Understanding What’s Happening</a>
+          <a href="v3-double-life-online.html" data-type="Topic" data-keywords="double life online hidden accounts secret identity secrecy">Double Life Online</a>
+          <a href="v3-when-a-child-becomes-dependent-on-someone-online.html" data-type="Topic" data-keywords="online dependency emotional dependence attachment hidden relationship">Online Dependency</a>
+          <a href="v3-known-person-risk.html" data-type="Topic" data-keywords="known person trusted adult family risk">Known Person Risk</a>
+          <a href="v3-real-life-risk.html" data-type="Topic" data-keywords="offline real life risk meeting in person">Real Life Risk</a>
+          <a href="v3-behaviours-hub.html" data-type="Topic" data-keywords="behaviour patterns control isolation manipulation hub">Behaviour Patterns Hub</a>
+          <a href="v3-early-behaviours-that-can-signal-red-flags.html" data-type="Topic" data-keywords="early behaviour warning signs">Early Behaviour Red Flags</a>
+          <a href="v3-why-my-child-is-acting-out-of-character.html" data-type="Topic" data-keywords="acting out of character changed behaviour shift">Acting Out of Character</a>
+          <a href="v3-why-kids-dont-recognise-risk.html" data-type="Topic" data-keywords="kids dont recognise risk miss warning signs">Why Kids Don’t Recognise Risk</a>
+          <a href="v3-how-adults-build-trust-before-control.html" data-type="Topic" data-keywords="trust before control grooming manipulation">Trust Before Control</a>
+          <a href="v3-manipulation-behaviours.html" data-type="Topic" data-keywords="manipulation behaviours guilt pressure secrecy">Manipulation Behaviours</a>
+          <a href="v3-controlling-behaviours.html" data-type="Topic" data-keywords="control controlling isolation narrative">Controlling Behaviours</a>
+          <a href="v3-emotional-manipulation.html" data-type="Topic" data-keywords="emotional manipulation guilt control influence">Emotional Manipulation</a>
+          <a href="v3-toxic-behaviour-patterns.html" data-type="Topic" data-keywords="toxic behaviour patterns control pressure secrecy">Toxic Behaviour Patterns</a>
+          <a href="v3-why-isolation-hits-children-harder.html" data-type="Topic" data-keywords="isolation child risk dependency">Why Isolation Hits Children Harder</a>
+          <a href="v3-when-a-child-is-turned-against-a-safe-parent.html" data-type="Topic" data-keywords="turned against safe parent alienation manipulation">Turned Against a Safe Parent</a>
+          <a href="v3-self-harm-and-suicide-warning-signs.html" data-type="Topic" data-keywords="self harm suicide warning signs emotional collapse">Self Harm &amp; Suicide Warning Signs</a>
+          <a href="v3-why-kids-self-harm.html" data-type="Topic" data-keywords="why kids self harm causes distress coping">Why Kids Self Harm</a>
         </nav>
       </details>
 
       <details class="nav-group">
-        <summary>Parents & Support</summary>
+        <summary>Devices, Platforms, Apps &amp; Games</summary>
         <nav>
-          <a href="v3-parent-scripts.html" data-type="Guide" data-keywords="scripts what to say">Parent Scripts</a>
-          <a href="v3-house-rules.html" data-type="Guide" data-keywords="rules boundaries kids">House Rules</a>
-          <a href="v3-downloads.html" data-type="PDF" data-keywords="downloads guides pdf">Downloads</a>
-          <a href="v3-awareness.html" data-type="Topic" data-keywords="awareness education">Awareness</a>
+          <a href="v3-devices.html" data-type="Device">Devices</a>
+          <a href="v3-device-controls.html" data-type="Device">Device Safety</a>
+          <a href="v3-parental-controls-by-device.html" data-type="Device">Parental Controls by Device</a>
+          <a href="v3-how-to-set-parental-controls-and-passwords.html" data-type="Device">Set Controls & Passwords</a>
+          <a href="v3-how-to-set-parental-controls-iphone.html" data-type="Device">iPhone Controls</a>
+          <a href="v3-how-to-set-parental-controls-android.html" data-type="Device">Android Controls</a>
+          <a href="v3-best-parental-control-apps.html" data-type="Device">Best Parental Control Apps</a>
+          <a href="v3-platforms.html" data-type="Platform">Platforms</a>
+          <a href="v3-gaming.html" data-type="Game">Gaming Safety</a>
+          <a href="v3-all-games.html" data-type="Game">All Games Directory</a>
+          <a href="v3-socials.html" data-type="App">Social Media & Chat</a>
+          <a href="v3-all-applications.html" data-type="App">All Applications</a>
+          <a href="v3-videochat.html" data-type="App">Live Video & Streaming</a>
+          <a href="v3-streaming-video.html" data-type="App">Streaming & Video Apps</a>
+          <a href="v3-dangerous-apps.html" data-type="App">Dangerous Apps</a>
+          <a href="v3-safe-apps-and-games-for-kids.html" data-type="App">Safe Apps & Games</a>
+          <a href="v3-ai-chat-risks-for-children.html" data-type="AI">AI Chat Risks</a>
+          <a href="v3-is-chatgpt-safe-for-kids.html" data-type="AI">Is ChatGPT Safe for Kids?</a>
         </nav>
       </details>
 
     </div>
   `;
 
-
   const footerHTML = `
     <footer>
       <div class="footer-meta">
-        POSH • Parents Online Safety Hub<br/>
-        Built to help parents act earlier and protect children.
+        Built to educate parents. Designed to protect our children.<br/>
+        <span class="small">Contact: allthewaycarpentry@gmail.com</span>
       </div>
     </footer>
   `;
 
   /* =========================
-     SEARCH ENGINE (UPGRADED)
+     SEARCH ENGINE
   ========================= */
 
-  function expandQuery(query) {
-    const map = {
-      grooming: ["predator", "red flags", "playbook"],
-      predator: ["grooming", "danger"],
-      urgent: ["danger", "help", "first 24 hours"],
-      discord: ["chat", "dm"],
-      roblox: ["game", "chat"]
-    };
-
-    let expanded = [query.toLowerCase()];
-
-    Object.keys(map).forEach(key => {
-      if (query.toLowerCase().includes(key)) {
-        expanded = expanded.concat(map[key]);
-      }
-    });
-
-    return expanded;
+  function tokenize(text) {
+    return text.toLowerCase().split(/\s+/);
   }
 
-  function score(item, queries) {
+  function score(item, query) {
     let s = 0;
-
-    queries.forEach(q => {
-      if (item.title.includes(q)) s += 40;
-      if (item.keywords.includes(q)) s += 25;
-      if (item.type.includes(q)) s += 10;
-    });
-
+    const q = query.toLowerCase();
+    if (item.title.toLowerCase().includes(q)) s += 50;
+    if ((item.keywords || "").includes(q)) s += 30;
     return s;
   }
 
-  function classify(item) {
-    const k = item.keywords;
-
-    if (k.includes("urgent") || k.includes("danger")) return "🚨 Urgent";
-    if (k.includes("warning")) return "⚠️ Warning Signs";
-    if (item.type === "device" || item.type === "app" || item.type === "game") return "📱 Devices & Apps";
-    if (item.type === "pdf" || item.type === "guide") return "📘 Guides";
-    return "🧠 Learn";
-  }
-
-  function buildIndex(root) {
-    return Array.from(root.querySelectorAll(".nav-group nav a")).map(link => ({
-      title: link.textContent.toLowerCase(),
-      href: link.getAttribute("href"),
-      type: (link.dataset.type || "").toLowerCase(),
-      keywords: (link.dataset.keywords || "").toLowerCase()
-    }));
-  }
-
-  function runSearch(query, index) {
-    const queries = expandQuery(query);
-
-    const results = index
-      .map(item => ({
-        ...item,
-        score: score(item, queries)
-      }))
-      .filter(r => r.score > 0)
+  function search(query, index) {
+    return index
+      .map(i => ({ ...i, score: score(i, query) }))
+      .filter(i => i.score > 0)
       .sort((a, b) => b.score - a.score);
-
-    return results;
-  }
-
-  function render(results) {
-    const groups = {};
-
-    results.forEach(r => {
-      const group = classify(r);
-      if (!groups[group]) groups[group] = [];
-      groups[group].push(r);
-    });
-
-    let html = "";
-
-    Object.keys(groups).forEach(group => {
-      html += `<div class="search-group"><h3>${group}</h3>`;
-      groups[group].forEach(r => {
-        html += `<a href="${r.href}" class="search-result-card">${r.title}</a>`;
-      });
-      html += `</div>`;
-    });
-
-    return html;
   }
 
   /* =========================
@@ -170,31 +143,26 @@
 
   document.addEventListener("DOMContentLoaded", function () {
 
-    const nav = document.getElementById("nav");
-    const footer = document.getElementById("footer");
+    document.getElementById("nav").innerHTML = navHTML;
+    document.getElementById("footer").innerHTML = footerHTML;
 
-    if (nav) nav.innerHTML = navHTML;
-    if (footer) footer.innerHTML = footerHTML;
-
-    const index = buildIndex(document);
-
-    window.POSH_SEARCH_INDEX = index;
+    const index = window.POSH_SEARCH_DATA || [];
 
     const input = document.getElementById("poshSearch");
-    const resultsBox = document.getElementById("poshSearchResults");
+    const results = document.getElementById("poshSearchResults");
 
-    if (!input || !resultsBox) return;
+    if (input) {
+      input.addEventListener("input", function () {
+        const q = this.value;
+        if (!q) return results.innerHTML = "";
 
-    input.addEventListener("input", function () {
-      const q = this.value.trim();
-      if (!q) {
-        resultsBox.innerHTML = "";
-        return;
-      }
+        const matches = search(q, index).slice(0, 8);
 
-      const results = runSearch(q, index);
-      resultsBox.innerHTML = render(results).slice(0, 2000);
-    });
+        results.innerHTML = matches.map(m =>
+          `<a href="${m.href}" class="nav-search-result">${m.title}</a>`
+        ).join("");
+      });
+    }
 
   });
 
