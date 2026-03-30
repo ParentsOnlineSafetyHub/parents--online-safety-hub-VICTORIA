@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Search POSH • POSH</title>
   <meta name="description" content="Search POSH pages, apps, games, devices, downloads, behaviour topics, urgent warning signs, and child safety guidance." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-search.html" />
   <meta property="og:title" content="Search POSH" />
-  <meta property="og:description" content="Search POSH pages, apps, games, devices, downloads, and child safety topics." />
+  <meta property="og:description" content="Search POSH pages, apps, games, devices, downloads, behaviour topics, urgent warning signs, and child safety guidance." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://poshaussie.com.au/v3-search.html" />
   <meta property="og:site_name" content="POSH" />
@@ -18,7 +19,10 @@
 
     <div class="brand">POSH</div>
     <h1 class="page-title">Search POSH</h1>
-    <p class="tagline"><strong>Find the page, app, game, device, PDF, or topic faster.</strong> Use search to jump straight to what matters most.</p>
+    <p class="tagline">
+      <strong>Find the page, app, game, device, PDF, or topic faster.</strong><br/>
+      Search across child safety pages, urgent help, platforms, devices, downloads, and parent guidance.
+    </p>
 
     <div id="nav"></div>
 
@@ -31,15 +35,30 @@
             type="text"
             id="searchPageInput"
             class="search-page-input"
-            placeholder="Search apps, games, devices, PDFs or topics"
+            placeholder="Search apps, games, devices, PDFs, grooming, urgent help, parent questions"
             aria-label="Search POSH pages"
+            autocomplete="off"
           />
           <button class="btn" id="searchPageBtn" type="button">Search</button>
         </div>
       </div>
 
       <div class="callout center-callout" style="margin-top:16px;">
-        Try words like <strong>Discord</strong>, <strong>Roblox</strong>, <strong>iPhone</strong>, <strong>downloads</strong>, <strong>algorithm</strong>, <strong>grooming</strong>, <strong>urgent</strong>, <strong>dependency</strong>, or <strong>subscriptions</strong>.
+        Try words like <strong>Discord</strong>, <strong>Roblox</strong>, <strong>iPhone</strong>, <strong>grooming</strong>, <strong>urgent</strong>, <strong>deleted messages</strong>, <strong>parental controls</strong>, <strong>downloads</strong>, <strong>AI</strong>, or <strong>behaviour changes</strong>.
+      </div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+        <button class="btn secondary search-chip" type="button" data-search="urgent help">Urgent Help</button>
+        <button class="btn secondary search-chip" type="button" data-search="grooming">Grooming</button>
+        <button class="btn secondary search-chip" type="button" data-search="parental controls">Parental Controls</button>
+        <button class="btn secondary search-chip" type="button" data-search="downloads">Downloads</button>
+      </div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+        <button class="btn secondary search-chip" type="button" data-search="roblox">Roblox</button>
+        <button class="btn secondary search-chip" type="button" data-search="discord">Discord</button>
+        <button class="btn secondary search-chip" type="button" data-search="device safety">Device Safety</button>
+        <button class="btn secondary search-chip" type="button" data-search="parent questions">Parent Questions</button>
       </div>
     </div>
 
@@ -50,7 +69,7 @@
       <div id="searchResultsList" class="search-results-list"></div>
 
       <div id="searchNoResults" class="callout center-callout" style="display:none; margin-top:16px;">
-        No results found yet. Try a broader word like the app name, game name, device, or topic.
+        No results found yet. Try a broader word like the app name, game name, device, urgent topic, or parent concern.
       </div>
     </div>
 
@@ -59,14 +78,21 @@
 
       <div class="btn-grid btn-grid-soft">
         <a class="btn" href="v3-start.html">Start Here</a>
+        <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
+        <a class="btn secondary" href="v3-first-24-hours.html">First 24 Hours</a>
+        <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
+      </div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
         <a class="btn secondary" href="v3-all-applications.html">All Applications</a>
         <a class="btn secondary" href="v3-all-games.html">All Games</a>
         <a class="btn secondary" href="v3-downloads.html">All PDF Downloads</a>
+        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
       </div>
 
       <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
         <a class="btn secondary" href="v3-device-controls.html">Device Safety</a>
-        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+        <a class="btn secondary" href="v3-parental-controls.html">Parental Controls</a>
         <a class="btn secondary" href="v3-awareness.html">Safety Awareness</a>
         <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
       </div>
@@ -79,6 +105,168 @@
   <script src="app.js"></script>
   <script>
     (function () {
+      const SYNONYMS = {
+        urgent: [
+          "first 24 hours",
+          "reporting",
+          "evidence",
+          "red flags",
+          "what to do now",
+          "immediate action",
+          "help now"
+        ],
+        help: [
+          "reporting",
+          "what to do now",
+          "first 24 hours",
+          "parent scripts"
+        ],
+        grooming: [
+          "groomed",
+          "predator",
+          "predators",
+          "playbook",
+          "signs",
+          "targeted",
+          "red flags",
+          "isolated"
+        ],
+        groomed: [
+          "grooming",
+          "predator",
+          "playbook",
+          "signs"
+        ],
+        predator: [
+          "grooming",
+          "playbook",
+          "targeted",
+          "contact"
+        ],
+        report: [
+          "reporting",
+          "evidence",
+          "first 24 hours",
+          "get help"
+        ],
+        reporting: [
+          "report",
+          "evidence",
+          "first 24 hours",
+          "get help"
+        ],
+        device: [
+          "devices",
+          "iphone",
+          "android",
+          "ipad",
+          "tablet",
+          "windows",
+          "xbox",
+          "device safety"
+        ],
+        devices: [
+          "device",
+          "iphone",
+          "android",
+          "ipad",
+          "tablet",
+          "windows",
+          "xbox"
+        ],
+        phone: [
+          "iphone",
+          "android",
+          "device"
+        ],
+        parental: [
+          "controls",
+          "screen time",
+          "family link",
+          "restrictions",
+          "passwords"
+        ],
+        controls: [
+          "parental",
+          "screen time",
+          "family link",
+          "restrictions",
+          "device safety"
+        ],
+        pdf: [
+          "downloads",
+          "download",
+          "guide",
+          "guides"
+        ],
+        downloads: [
+          "pdf",
+          "download",
+          "guides"
+        ],
+        app: [
+          "apps",
+          "application",
+          "applications"
+        ],
+        apps: [
+          "app",
+          "application",
+          "applications"
+        ],
+        game: [
+          "games",
+          "gaming"
+        ],
+        games: [
+          "game",
+          "gaming"
+        ],
+        ai: [
+          "chatgpt",
+          "chatbot",
+          "roleplay",
+          "character ai",
+          "replika"
+        ],
+        chatgpt: [
+          "ai",
+          "ai chat",
+          "chatbot"
+        ],
+        behaviour: [
+          "behavior",
+          "behaviour changes",
+          "acting different",
+          "hide things",
+          "wont talk"
+        ],
+        behavior: [
+          "behaviour",
+          "behaviour changes",
+          "acting different",
+          "hide things",
+          "wont talk"
+        ],
+        messages: [
+          "deleted messages",
+          "hiding messages",
+          "chat",
+          "dm",
+          "private messages"
+        ],
+        robux: [
+          "roblox",
+          "gifts",
+          "digital gifting"
+        ],
+        trust: [
+          "monitor without breaking trust",
+          "not trusting your child",
+          "rebuild trust"
+        ]
+      };
+
       function getQueryParam(name) {
         const params = new URLSearchParams(window.location.search);
         return params.get(name) || "";
@@ -94,51 +282,201 @@
         window.history.replaceState({}, "", url);
       }
 
-      function tokenize(text) {
-        return text
+      function normalize(text) {
+        return (text || "")
           .toLowerCase()
-          .trim()
-          .split(/\s+/)
-          .filter(Boolean);
+          .replace(/&/g, " and ")
+          .replace(/['’]/g, "")
+          .replace(/[^a-z0-9\s-]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
       }
 
-      function scoreMatch(item, query) {
-        const q = query.toLowerCase().trim();
-        const tokens = tokenize(q);
-        const title = item.title.toLowerCase();
-        const type = (item.type || "").toLowerCase();
-        const keywords = (item.keywords || "").toLowerCase();
-        const href = (item.href || "").toLowerCase();
+      function tokenize(text) {
+        return normalize(text).split(/\s+/).filter(Boolean);
+      }
+
+      function unique(arr) {
+        return [...new Set(arr.filter(Boolean))];
+      }
+
+      function buildExpandedTokens(query) {
+        const baseTokens = tokenize(query);
+        let expanded = [...baseTokens];
+
+        baseTokens.forEach((token) => {
+          if (SYNONYMS[token]) {
+            expanded.push(...SYNONYMS[token]);
+          }
+
+          if (token.endsWith("s")) {
+            expanded.push(token.slice(0, -1));
+          } else {
+            expanded.push(token + "s");
+          }
+
+          if (token === "wont") expanded.push("won't", "wont talk", "wont-talk");
+          if (token === "kid") expanded.push("kids", "child", "children");
+          if (token === "child") expanded.push("children", "kid", "kids");
+          if (token === "safe") expanded.push("safety", "safer");
+        });
+
+        return unique(expanded.map(normalize));
+      }
+
+      function itemSearchText(item) {
+        return normalize([
+          item.title || "",
+          item.type || "",
+          item.href || "",
+          item.keywords || "",
+          item.description || "",
+          item.category || "",
+          item.tags || "",
+          item.group || ""
+        ].join(" "));
+      }
+
+      function exactPhraseScore(item, normalizedQuery) {
+        const title = normalize(item.title || "");
+        const keywords = normalize(item.keywords || "");
+        const description = normalize(item.description || "");
+        const type = normalize(item.type || "");
+        const href = normalize(item.href || "");
 
         let score = 0;
 
-        if (title === q) score += 100;
-        if (title.includes(q)) score += 40;
-        if (keywords.includes(q)) score += 25;
-        if (type.includes(q)) score += 12;
-        if (href.includes(q)) score += 8;
+        if (title === normalizedQuery) score += 160;
+        if (title.startsWith(normalizedQuery)) score += 80;
+        if (title.includes(normalizedQuery)) score += 55;
+        if (keywords.includes(normalizedQuery)) score += 34;
+        if (description.includes(normalizedQuery)) score += 22;
+        if (type.includes(normalizedQuery)) score += 16;
+        if (href.includes(normalizedQuery)) score += 12;
 
-        tokens.forEach((token) => {
-          if (title.includes(token)) score += 12;
-          if (keywords.includes(token)) score += 6;
-          if (type.includes(token)) score += 4;
-          if (href.includes(token)) score += 3;
+        return score;
+      }
+
+      function tokenScore(item, expandedTokens) {
+        const title = normalize(item.title || "");
+        const type = normalize(item.type || "");
+        const keywords = normalize(item.keywords || "");
+        const description = normalize(item.description || "");
+        const href = normalize(item.href || "");
+        const category = normalize(item.category || "");
+        const group = normalize(item.group || "");
+
+        let score = 0;
+
+        expandedTokens.forEach((token) => {
+          if (!token) return;
+
+          if (title === token) score += 50;
+          if (title.startsWith(token)) score += 20;
+          if (title.includes(token)) score += 16;
+
+          if (keywords.includes(token)) score += 10;
+          if (description.includes(token)) score += 7;
+          if (type.includes(token)) score += 6;
+          if (category.includes(token)) score += 6;
+          if (group.includes(token)) score += 5;
+          if (href.includes(token)) score += 4;
         });
 
         return score;
+      }
+
+      function phraseIntentBoost(item, normalizedQuery) {
+        const text = itemSearchText(item);
+        let score = 0;
+
+        if (normalizedQuery.includes("urgent") || normalizedQuery.includes("help now")) {
+          if (text.includes("first 24 hours")) score += 28;
+          if (text.includes("reporting")) score += 24;
+          if (text.includes("evidence")) score += 18;
+          if (text.includes("red flags")) score += 16;
+        }
+
+        if (normalizedQuery.includes("parent questions") || normalizedQuery.includes("what parents are searching")) {
+          if (text.includes("parent questions")) score += 35;
+        }
+
+        if (normalizedQuery.includes("safe apps") || normalizedQuery.includes("safe games")) {
+          if (text.includes("safe apps and games")) score += 35;
+          if (text.includes("dangerous apps")) score += 10;
+          if (text.includes("all applications")) score += 8;
+          if (text.includes("all games")) score += 8;
+        }
+
+        if (normalizedQuery.includes("parental controls")) {
+          if (text.includes("parental controls")) score += 40;
+          if (text.includes("device safety")) score += 14;
+          if (text.includes("controls and passwords")) score += 12;
+        }
+
+        if (normalizedQuery.includes("deleted messages")) {
+          if (text.includes("deleted messages")) score += 40;
+          if (text.includes("hiding messages")) score += 15;
+        }
+
+        if (normalizedQuery.includes("hiding messages")) {
+          if (text.includes("hiding messages")) score += 40;
+          if (text.includes("deleted messages")) score += 15;
+          if (text.includes("hide things")) score += 10;
+        }
+
+        if (normalizedQuery.includes("wont talk") || normalizedQuery.includes("won t talk")) {
+          if (text.includes("wont talk")) score += 40;
+          if (text.includes("opens up")) score += 12;
+          if (text.includes("parent scripts")) score += 10;
+        }
+
+        return score;
+      }
+
+      function scoreMatch(item, query) {
+        const normalizedQuery = normalize(query);
+        const expandedTokens = buildExpandedTokens(query);
+
+        let score = 0;
+        score += exactPhraseScore(item, normalizedQuery);
+        score += tokenScore(item, expandedTokens);
+        score += phraseIntentBoost(item, normalizedQuery);
+
+        return score;
+      }
+
+      function dedupeResults(results) {
+        const seen = new Set();
+        return results.filter((item) => {
+          const key = item.href || item.title;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
       }
 
       function findMatches(query, index) {
         const q = query.trim();
         if (!q) return [];
 
-        return index
-          .map((item) => ({
-            ...item,
-            score: scoreMatch(item, q)
-          }))
-          .filter((item) => item.score > 0)
-          .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title));
+        return dedupeResults(
+          index
+            .map((item) => ({
+              ...item,
+              score: scoreMatch(item, q)
+            }))
+            .filter((item) => item.score > 0)
+            .sort((a, b) => b.score - a.score || (a.title || "").localeCompare(b.title || ""))
+        ).slice(0, 80);
+      }
+
+      function escapeHtml(str) {
+        return String(str || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
       }
 
       function renderResults(query, searchIndex) {
@@ -170,20 +508,37 @@
 
         noResults.style.display = "none";
 
-        resultsList.innerHTML = matches.map((item) => `
-          <a href="${item.href}" class="search-result-card search-result-link">
-            <div class="search-result-top">
-              <strong class="search-result-title">${item.title}</strong>
-              <span class="search-result-type">${item.type}</span>
-            </div>
-            <div class="search-result-url">${item.href}</div>
-          </a>
-        `).join("");
+        resultsList.innerHTML = matches.map((item) => {
+          const description = item.description
+            ? `<div class="search-result-desc" style="margin-top:8px;">${escapeHtml(item.description)}</div>`
+            : "";
+
+          const metaBits = [
+            item.type ? `<span class="search-result-type">${escapeHtml(item.type)}</span>` : "",
+            item.category ? `<span class="search-result-type">${escapeHtml(item.category)}</span>` : ""
+          ].filter(Boolean).join("");
+
+          return `
+            <a href="${escapeHtml(item.href)}" class="search-result-card search-result-link">
+              <div class="search-result-top">
+                <strong class="search-result-title">${escapeHtml(item.title)}</strong>
+                <span class="search-result-type-wrap">${metaBits}</span>
+              </div>
+              <div class="search-result-url">${escapeHtml(item.href)}</div>
+              ${description}
+            </a>
+          `;
+        }).join("");
       }
 
-      function runSearch(searchIndex) {
+      function runSearch(searchIndex, forcedQuery) {
         const input = document.getElementById("searchPageInput");
-        const query = input.value.trim();
+        const query = typeof forcedQuery === "string" ? forcedQuery.trim() : input.value.trim();
+
+        if (input && typeof forcedQuery === "string") {
+          input.value = query;
+        }
+
         updateQueryParam(query);
         renderResults(query, searchIndex);
       }
@@ -192,6 +547,7 @@
         const input = document.getElementById("searchPageInput");
         const button = document.getElementById("searchPageBtn");
         const initialQuery = getQueryParam("q");
+        const chipButtons = Array.from(document.querySelectorAll(".search-chip"));
 
         const searchIndex = Array.isArray(window.POSH_SEARCH_INDEX) ? window.POSH_SEARCH_INDEX : [];
 
@@ -214,7 +570,21 @@
               runSearch(searchIndex);
             }
           });
+
+          input.addEventListener("input", function () {
+            const liveValue = input.value.trim();
+            if (!liveValue) {
+              updateQueryParam("");
+              renderResults("", searchIndex);
+            }
+          });
         }
+
+        chipButtons.forEach((chip) => {
+          chip.addEventListener("click", function () {
+            runSearch(searchIndex, chip.getAttribute("data-search") || "");
+          });
+        });
       });
     })();
   </script>
