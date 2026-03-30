@@ -1,140 +1,163 @@
 (function () {
 
   /* =========================
-     NAV + FOOTER (UNCHANGED)
+     FULL NAV (RESTORED)
   ========================= */
 
-  const navHTML = `...KEEP YOUR EXISTING NAV HTML EXACTLY AS IS...`;
-  const footerHTML = `...KEEP YOUR EXISTING FOOTER HTML EXACTLY AS IS...`;
+  const navHTML = `
+    <div class="nav-search-wrap">
+      <input
+        type="text"
+        id="poshSearch"
+        class="nav-search-input"
+        placeholder="Search apps, games, devices, PDFs or topics"
+        autocomplete="off"
+      />
+      <div id="poshSearchResults" class="nav-search-results"></div>
+    </div>
+
+    <div class="nav-accordion">
+
+      <details class="nav-group">
+        <summary>Start Here & Immediate Help</summary>
+        <nav>
+          <a href="index.html" data-type="Page" data-keywords="home main posh">Home</a>
+          <a href="v3-start.html" data-type="Page" data-keywords="start first safety">Start Here</a>
+          <a href="v3-safety-score.html" data-type="Tool" data-keywords="score checklist audit">Safety Check</a>
+          <a href="v3-first-24-hours.html" data-type="Urgent" data-keywords="urgent crisis help now">First 24 Hours</a>
+          <a href="v3-urgent-warning-signs.html" data-type="Urgent" data-keywords="warning danger signs urgent">Urgent Warning Signs</a>
+          <a href="v3-reporting.html" data-type="Help" data-keywords="report police help evidence">Report & Get Help</a>
+        </nav>
+      </details>
+
+      <details class="nav-group">
+        <summary>Behaviour & Risk</summary>
+        <nav>
+          <a href="v3-redflags.html" data-type="Topic" data-keywords="red flags grooming warning">Red Flags</a>
+          <a href="v3-playbook.html" data-type="Topic" data-keywords="grooming playbook pattern">Predator Playbook</a>
+          <a href="v3-predators.html" data-type="Topic" data-keywords="predators grooming risk">Predators</a>
+          <a href="v3-behaviours-hub.html" data-type="Topic" data-keywords="behaviour patterns manipulation">Behaviour Hub</a>
+        </nav>
+      </details>
+
+      <details class="nav-group">
+        <summary>Devices & Apps</summary>
+        <nav>
+          <a href="v3-device-controls.html" data-type="Device" data-keywords="device safety phone controls">Device Safety</a>
+          <a href="v3-parental-controls.html" data-type="Device" data-keywords="parental controls monitor safety">Parental Controls</a>
+          <a href="v3-all-applications.html" data-type="App" data-keywords="apps list directory">All Applications</a>
+          <a href="v3-all-games.html" data-type="Game" data-keywords="games roblox fortnite minecraft">All Games</a>
+        </nav>
+      </details>
+
+      <details class="nav-group">
+        <summary>Parents & Support</summary>
+        <nav>
+          <a href="v3-parent-scripts.html" data-type="Guide" data-keywords="scripts what to say">Parent Scripts</a>
+          <a href="v3-house-rules.html" data-type="Guide" data-keywords="rules boundaries kids">House Rules</a>
+          <a href="v3-downloads.html" data-type="PDF" data-keywords="downloads guides pdf">Downloads</a>
+          <a href="v3-awareness.html" data-type="Topic" data-keywords="awareness education">Awareness</a>
+        </nav>
+      </details>
+
+    </div>
+  `;
+
+
+  const footerHTML = `
+    <footer>
+      <div class="footer-meta">
+        POSH • Parents Online Safety Hub<br/>
+        Built to help parents act earlier and protect children.
+      </div>
+    </footer>
+  `;
 
   /* =========================
-     SEARCH CORE
+     SEARCH ENGINE (UPGRADED)
   ========================= */
 
-  function tokenize(text) {
-    return text.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  }
-
   function expandQuery(query) {
-    const q = query.toLowerCase();
-
-    const expansions = {
-      grooming: ["predator", "manipulation", "red flags", "playbook"],
-      predator: ["grooming", "manipulation", "danger"],
-      discord: ["chat", "dm", "private messaging"],
-      roblox: ["game", "chat", "kids game"],
+    const map = {
+      grooming: ["predator", "red flags", "playbook"],
+      predator: ["grooming", "danger"],
       urgent: ["danger", "help", "first 24 hours"],
-      selfharm: ["mental health", "distress", "warning signs"]
+      discord: ["chat", "dm"],
+      roblox: ["game", "chat"]
     };
 
-    let expanded = [q];
+    let expanded = [query.toLowerCase()];
 
-    Object.keys(expansions).forEach(key => {
-      if (q.includes(key)) {
-        expanded = expanded.concat(expansions[key]);
+    Object.keys(map).forEach(key => {
+      if (query.toLowerCase().includes(key)) {
+        expanded = expanded.concat(map[key]);
       }
     });
 
     return expanded;
   }
 
-  function scoreMatch(item, queries) {
-    const title = item.title.toLowerCase();
-    const keywords = (item.keywords || "").toLowerCase();
-    const type = (item.type || "").toLowerCase();
-
-    let score = 0;
+  function score(item, queries) {
+    let s = 0;
 
     queries.forEach(q => {
-      if (title.includes(q)) score += 50;
-      if (keywords.includes(q)) score += 25;
-      if (type.includes(q)) score += 10;
+      if (item.title.includes(q)) s += 40;
+      if (item.keywords.includes(q)) s += 25;
+      if (item.type.includes(q)) s += 10;
     });
 
-    return score;
+    return s;
   }
 
-  function classifyIntent(item) {
-    const type = (item.type || "").toLowerCase();
-    const keywords = (item.keywords || "").toLowerCase();
+  function classify(item) {
+    const k = item.keywords;
 
-    if (keywords.includes("urgent") || keywords.includes("danger")) return "urgent";
-    if (keywords.includes("warning") || keywords.includes("red flag")) return "warning";
-    if (type === "device" || type === "app" || type === "game") return "platform";
-    if (type === "pdf" || type === "guide") return "guide";
-    if (keywords.includes("what to do") || keywords.includes("help")) return "action";
-
-    return "education";
+    if (k.includes("urgent") || k.includes("danger")) return "🚨 Urgent";
+    if (k.includes("warning")) return "⚠️ Warning Signs";
+    if (item.type === "device" || item.type === "app" || item.type === "game") return "📱 Devices & Apps";
+    if (item.type === "pdf" || item.type === "guide") return "📘 Guides";
+    return "🧠 Learn";
   }
 
-  function groupResults(results) {
-    const groups = {
-      urgent: [],
-      warning: [],
-      action: [],
-      platform: [],
-      education: [],
-      guide: []
-    };
-
-    results.forEach(item => {
-      const group = classifyIntent(item);
-      groups[group].push(item);
-    });
-
-    return groups;
-  }
-
-  function buildSearchIndex(root) {
+  function buildIndex(root) {
     return Array.from(root.querySelectorAll(".nav-group nav a")).map(link => ({
-      title: link.textContent.trim(),
+      title: link.textContent.toLowerCase(),
       href: link.getAttribute("href"),
-      type: link.dataset.type || "Page",
-      keywords: link.dataset.keywords || ""
+      type: (link.dataset.type || "").toLowerCase(),
+      keywords: (link.dataset.keywords || "").toLowerCase()
     }));
   }
 
-  function findMatches(query, index) {
-    if (!query.trim()) return [];
+  function runSearch(query, index) {
+    const queries = expandQuery(query);
 
-    const expandedQueries = expandQuery(query);
-
-    return index
+    const results = index
       .map(item => ({
         ...item,
-        score: scoreMatch(item, expandedQueries)
+        score: score(item, queries)
       }))
-      .filter(item => item.score > 0)
+      .filter(r => r.score > 0)
       .sort((a, b) => b.score - a.score);
+
+    return results;
   }
 
-  function renderGroupedResults(groups) {
-    const labels = {
-      urgent: "🚨 Urgent Help",
-      warning: "⚠️ Warning Signs",
-      action: "🛠 What To Do",
-      platform: "📱 Apps, Games & Devices",
-      education: "🧠 Learn & Understand",
-      guide: "📘 Guides & Downloads"
-    };
+  function render(results) {
+    const groups = {};
+
+    results.forEach(r => {
+      const group = classify(r);
+      if (!groups[group]) groups[group] = [];
+      groups[group].push(r);
+    });
 
     let html = "";
 
-    Object.keys(groups).forEach(key => {
-      if (!groups[key].length) return;
-
-      html += `<div class="search-group">`;
-      html += `<h3>${labels[key]}</h3>`;
-
-      groups[key].forEach(item => {
-        html += `
-          <a href="${item.href}" class="search-result-card">
-            <strong>${item.title}</strong>
-            <div class="search-result-type">${item.type}</div>
-          </a>
-        `;
+    Object.keys(groups).forEach(group => {
+      html += `<div class="search-group"><h3>${group}</h3>`;
+      groups[group].forEach(r => {
+        html += `<a href="${r.href}" class="search-result-card">${r.title}</a>`;
       });
-
       html += `</div>`;
     });
 
@@ -147,50 +170,31 @@
 
   document.addEventListener("DOMContentLoaded", function () {
 
-    const navTarget = document.getElementById("nav");
-    const footerTarget = document.getElementById("footer");
+    const nav = document.getElementById("nav");
+    const footer = document.getElementById("footer");
 
-    if (navTarget) {
-      navTarget.innerHTML = navHTML;
-    }
+    if (nav) nav.innerHTML = navHTML;
+    if (footer) footer.innerHTML = footerHTML;
 
-    if (footerTarget) {
-      footerTarget.innerHTML = footerHTML;
-    }
+    const index = buildIndex(document);
 
-    const searchInput = document.getElementById("poshSearch");
-    const searchResults = document.getElementById("poshSearchResults");
+    window.POSH_SEARCH_INDEX = index;
 
-    const searchPageList = document.getElementById("searchResultsList");
+    const input = document.getElementById("poshSearch");
+    const resultsBox = document.getElementById("poshSearchResults");
 
-    const index = buildSearchIndex(document);
+    if (!input || !resultsBox) return;
 
-    function runSearch(query) {
-      const matches = findMatches(query, index);
-      const grouped = groupResults(matches);
-
-      if (searchResults) {
-        searchResults.innerHTML = renderGroupedResults(grouped);
-        searchResults.classList.add("show");
+    input.addEventListener("input", function () {
+      const q = this.value.trim();
+      if (!q) {
+        resultsBox.innerHTML = "";
+        return;
       }
 
-      if (searchPageList) {
-        searchPageList.innerHTML = renderGroupedResults(grouped);
-      }
-    }
-
-    if (searchInput) {
-      searchInput.addEventListener("input", function () {
-        if (!this.value.trim()) return;
-        runSearch(this.value);
-      });
-
-      searchInput.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-          window.location.href = `v3-search.html?q=${encodeURIComponent(this.value.trim())}`;
-        }
-      });
-    }
+      const results = runSearch(q, index);
+      resultsBox.innerHTML = render(results).slice(0, 2000);
+    });
 
   });
 
