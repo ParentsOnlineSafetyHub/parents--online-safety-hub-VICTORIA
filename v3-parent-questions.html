@@ -4,77 +4,94 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Parent Questions • POSH</title>
-  <meta name="description" content="Search real questions parents are asking about child safety, grooming, apps, devices, and online risks. Get clear answers and take action." />
+  <meta name="description" content="Real questions parents are asking about online safety, grooming, apps, behaviour changes, and protecting children." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-parent-questions.html" />
   <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
 
+<body>
 <div class="wrap">
 
   <div class="brand">POSH</div>
   <h1 class="page-title">Parent Questions</h1>
+
   <p class="tagline">
-    <strong>Real questions. Real concerns. Real answers.</strong><br/>
-    Search what parents are actually worried about and get clear direction.
+    <strong>Search what parents are really worried about.</strong><br/>
+    Behaviour changes, hidden apps, grooming signs, device safety, and what to do next.
   </p>
 
   <div id="nav"></div>
 
-  <!-- SEARCH INPUT -->
+  <!-- SEARCH -->
   <div class="card center-card">
     <h2>Search Parent Questions</h2>
 
-    <div class="search-page-form" style="max-width:760px; margin:0 auto;">
+    <div class="search-page-form" style="max-width:760px;margin:0 auto;">
       <div class="search-page-row">
         <input
           type="text"
-          id="parentSearchInput"
+          id="parentQuestionInput"
           class="search-page-input"
-          placeholder="Search: grooming, roblox, wont talk, deleted messages, unsafe apps..."
+          placeholder="e.g. my child won’t talk, hiding messages, grooming signs"
           autocomplete="off"
         />
-        <button class="btn" id="parentSearchBtn">Search</button>
+        <button class="btn" id="parentQuestionBtn" type="button">Search</button>
       </div>
     </div>
 
-    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
-      <button class="btn secondary search-chip" data-search="grooming">Grooming</button>
-      <button class="btn secondary search-chip" data-search="roblox">Roblox</button>
-      <button class="btn secondary search-chip" data-search="won't talk">Won’t Talk</button>
-      <button class="btn secondary search-chip" data-search="deleted messages">Deleted Messages</button>
-    </div>
-
-    <div class="btn-grid btn-grid-soft" style="margin-top:10px;">
-      <button class="btn secondary search-chip" data-search="parental controls">Parental Controls</button>
-      <button class="btn secondary search-chip" data-search="dangerous apps">Dangerous Apps</button>
-      <button class="btn secondary search-chip" data-search="device safety">Device Safety</button>
-      <button class="btn secondary search-chip" data-search="online friends">Online Friends</button>
+    <div class="callout center-callout" style="margin-top:16px;">
+      Try searches like:
+      <strong>“won’t talk”</strong>,
+      <strong>“deleted messages”</strong>,
+      <strong>“grooming signs”</strong>,
+      <strong>“roblox chat”</strong>,
+      <strong>“device safety”</strong>
     </div>
   </div>
 
   <!-- RESULTS -->
   <div class="card center-card">
-    <h2 id="resultsHeading">Results</h2>
-    <p id="resultsCount" class="note">Search to see matching questions.</p>
+    <h2 id="parentResultsHeading">Results</h2>
+    <p class="note" id="parentResultsCount">Search above to find answers.</p>
 
-    <div id="resultsList" class="search-results-list"></div>
+    <div id="parentResultsList" class="search-results-list"></div>
 
-    <div id="noResults" class="callout center-callout" style="display:none;">
-      No matching questions found. Try broader terms like “grooming”, “apps”, or “behaviour”.
+    <div id="parentNoResults" class="callout center-callout" style="display:none;margin-top:16px;">
+      No results found. Try different wording or broader terms.
+    </div>
+  </div>
+
+  <!-- QUICK QUESTIONS -->
+  <div class="card center-card">
+    <h2>Common Questions</h2>
+
+    <div class="btn-grid btn-grid-soft">
+      <button class="btn secondary quick-q" data-q="child wont talk">My child won’t talk</button>
+      <button class="btn secondary quick-q" data-q="deleted messages">Deleted messages</button>
+      <button class="btn secondary quick-q" data-q="grooming signs">Grooming signs</button>
+      <button class="btn secondary quick-q" data-q="roblox chat">Roblox chat risk</button>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:12px;">
+      <button class="btn secondary quick-q" data-q="hiding apps">Hidden apps</button>
+      <button class="btn secondary quick-q" data-q="device safety">Device safety</button>
+      <button class="btn secondary quick-q" data-q="parental controls">Parental controls</button>
+      <button class="btn secondary quick-q" data-q="what to do now">What should I do now?</button>
     </div>
   </div>
 
   <!-- CTA -->
   <div class="card center-card">
-    <h2>Not sure where to start?</h2>
+    <h2>Still Not Sure?</h2>
+    <p class="center-text">
+      If something feels off, trust that instinct. Start with a quick safety check or follow the guided response system.
+    </p>
 
-    <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="v3-start.html">Start Here</a>
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn" href="v3-safety-score.html">Run Safety Check</a>
       <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
-      <a class="btn secondary" href="v3-redflags.html">Check Red Flags</a>
-      <a class="btn secondary" href="v3-device-controls.html">Secure Devices</a>
+      <a class="btn secondary" href="v3-first-24-hours.html">First 24 Hours</a>
     </div>
   </div>
 
@@ -83,151 +100,108 @@
 </div>
 
 <script src="app.js"></script>
+<script src="search-index.js"></script>
 
 <script>
 (function(){
 
-  const QUESTIONS = [
-    {
-      q: "My child won’t talk to me anymore — should I be worried?",
-      keywords: "child wont talk silent withdrawn shutdown behaviour change",
-      link: "v3-when-your-child-wont-talk.html"
-    },
-    {
-      q: "How do I know if my child is being groomed online?",
-      keywords: "grooming signs predator red flags behaviour secret chats",
-      link: "v3-redflags.html"
-    },
-    {
-      q: "Is Roblox safe for kids?",
-      keywords: "roblox safe kids gaming online chat strangers robux risk",
-      link: "v3-game-roblox.html"
-    },
-    {
-      q: "Why is my child hiding their screen or messages?",
-      keywords: "hiding screen deleted messages secret behaviour device",
-      link: "v3-redflags.html"
-    },
-    {
-      q: "What should I do if I find inappropriate messages?",
-      keywords: "inappropriate messages report evidence child safety urgent",
-      link: "v3-first-24-hours.html"
-    },
-    {
-      q: "Are parental controls enough to keep my child safe?",
-      keywords: "parental controls limits safety monitoring apps risk",
-      link: "v3-parental-controls.html"
-    },
-    {
-      q: "What apps should I be worried about?",
-      keywords: "dangerous apps snapchat discord telegram hidden chats risk",
-      link: "v3-dangerous-apps.html"
-    },
-    {
-      q: "How do predators gain a child’s trust?",
-      keywords: "predators grooming trust manipulation isolate secrets",
-      link: "v3-playbook.html"
-    },
-    {
-      q: "Should I check my child’s phone?",
-      keywords: "check device trust privacy child safety monitor",
-      link: "v3-how-to-check-a-device-without-causing-panic.html"
-    },
-    {
-      q: "My child is acting different — what does it mean?",
-      keywords: "acting different behaviour change red flags warning signs",
-      link: "v3-why-my-child-is-acting-out-of-character.html"
-    }
-  ];
+  function escapeHTML(str){
+    return String(str || "")
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;");
+  }
 
-  function sanitize(input){
-    return input
-      .replace(/</g, "")
-      .replace(/>/g, "")
-      .replace(/"/g, "")
-      .replace(/'/g, "")
-      .trim()
-      .toLowerCase();
+  function normalize(text){
+    return (text || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g," ")
+      .replace(/\s+/g," ")
+      .trim();
+  }
+
+  function score(item, query){
+    const q = normalize(query);
+    const text = normalize(
+      item.title + " " +
+      item.description + " " +
+      item.keywords + " " +
+      item.category
+    );
+
+    let s = 0;
+
+    if(text.includes(q)) s += 40;
+
+    q.split(" ").forEach(t=>{
+      if(text.includes(t)) s += 10;
+    });
+
+    return s;
   }
 
   function search(query){
-    const clean = sanitize(query);
+    if(!query.trim()) return [];
 
-    if(!clean) return [];
-
-    return QUESTIONS.map(item => {
-      let score = 0;
-
-      if(item.q.toLowerCase().includes(clean)) score += 50;
-      if(item.keywords.includes(clean)) score += 25;
-
-      clean.split(" ").forEach(word => {
-        if(item.q.toLowerCase().includes(word)) score += 10;
-        if(item.keywords.includes(word)) score += 5;
-      });
-
-      return { ...item, score };
-    })
-    .filter(i => i.score > 0)
-    .sort((a,b)=>b.score-a.score)
-    .slice(0, 20);
+    return window.POSH_SEARCH_INDEX
+      .map(item => ({
+        ...item,
+        score: score(item, query)
+      }))
+      .filter(i => i.score > 0)
+      .sort((a,b)=>b.score-a.score)
+      .slice(0,50);
   }
 
-  function render(results, query){
-    const list = document.getElementById("resultsList");
-    const count = document.getElementById("resultsCount");
-    const noResults = document.getElementById("noResults");
+  function render(query){
+    const list = document.getElementById("parentResultsList");
+    const count = document.getElementById("parentResultsCount");
+    const no = document.getElementById("parentNoResults");
 
-    if(!query){
-      list.innerHTML = "";
-      count.textContent = "Search to see matching questions.";
-      noResults.style.display = "none";
-      return;
-    }
+    const results = search(query);
+
+    count.textContent = results.length + " result" + (results.length===1?"":"s");
 
     if(!results.length){
       list.innerHTML = "";
-      count.textContent = "0 results";
-      noResults.style.display = "block";
+      no.style.display = "block";
       return;
     }
 
-    noResults.style.display = "none";
-    count.textContent = results.length + " results";
+    no.style.display = "none";
 
-    list.innerHTML = results.map(item => `
-      <a href="${item.link}" class="search-result-card search-result-link">
-        <strong>${item.q}</strong>
+    list.innerHTML = results.map(item=>`
+      <a href="${escapeHTML(item.href)}" class="search-result-card search-result-link">
+        <div class="search-result-top">
+          <strong class="search-result-title">${escapeHTML(item.title)}</strong>
+          <span class="search-result-type">${escapeHTML(item.category)}</span>
+        </div>
+        <div class="search-result-url">${escapeHTML(item.href)}</div>
+        <div style="margin-top:6px;">${escapeHTML(item.description)}</div>
       </a>
     `).join("");
   }
 
-  function runSearch(force){
-    const input = document.getElementById("parentSearchInput");
-    const query = force || input.value;
-    const results = search(query);
-    render(results, query);
-  }
+  document.addEventListener("DOMContentLoaded",function(){
 
-  document.addEventListener("DOMContentLoaded", function(){
+    const input = document.getElementById("parentQuestionInput");
+    const btn = document.getElementById("parentQuestionBtn");
 
-    const input = document.getElementById("parentSearchInput");
-    const button = document.getElementById("parentSearchBtn");
-    const chips = document.querySelectorAll(".search-chip");
+    btn.addEventListener("click",()=>render(input.value));
 
-    button.addEventListener("click", () => runSearch());
-
-    input.addEventListener("keydown", function(e){
-      if(e.key === "Enter"){
+    input.addEventListener("keydown",(e)=>{
+      if(e.key==="Enter"){
         e.preventDefault();
-        runSearch();
+        render(input.value);
       }
     });
 
-    chips.forEach(chip=>{
-      chip.addEventListener("click", function(){
-        input.value = this.getAttribute("data-search");
-        runSearch(this.getAttribute("data-search"));
+    document.querySelectorAll(".quick-q").forEach(b=>{
+      b.addEventListener("click",()=>{
+        const q = b.getAttribute("data-q");
+        input.value = q;
+        render(q);
       });
     });
 
