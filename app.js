@@ -1,7 +1,7 @@
 (function () {
 
   /* =========================
-     FULL NAV (UNCHANGED)
+     NAV + FOOTER (UNCHANGED STRUCTURE)
   ========================= */
 
   const navHTML = `
@@ -79,7 +79,7 @@
   `;
 
   /* =========================
-     SECURITY (XSS SAFE)
+     SECURITY
   ========================= */
 
   function escapeHTML(str) {
@@ -91,7 +91,7 @@
   }
 
   /* =========================
-     SEARCH ENGINE (HARDENED)
+     SEARCH ENGINE
   ========================= */
 
   function normalize(text) {
@@ -111,42 +111,16 @@
   }
 
   function search(query, index) {
-    if (!Array.isArray(index)) return [];
-
     return index
       .map(i => ({ ...i, score: score(i, query) }))
       .filter(i => i.score > 0)
       .sort((a, b) => b.score - a.score);
   }
 
-  /* =========================
-     REDIRECT SEARCH
-  ========================= */
-
   function goToSearchPage(query) {
     const q = query.trim();
     if (!q) return;
     window.location.href = `v3-search.html?q=${encodeURIComponent(q)}`;
-  }
-
-  /* =========================
-     ENGAGEMENT BOOST (NON-INTRUSIVE)
-  ========================= */
-
-  function addSearchHints(input) {
-    const hints = [
-      "Try: Snapchat risks",
-      "Try: Roblox safety",
-      "Try: warning signs",
-      "Try: device controls"
-    ];
-
-    let i = 0;
-    setInterval(() => {
-      if (!input || input === document.activeElement) return;
-      input.placeholder = hints[i % hints.length];
-      i++;
-    }, 4000);
   }
 
   /* =========================
@@ -168,8 +142,6 @@
 
     if (!input || !results) return;
 
-    addSearchHints(input);
-
     /* LIVE SEARCH */
     input.addEventListener("input", function () {
       const q = this.value.trim();
@@ -182,12 +154,6 @@
 
       const matches = search(q, index).slice(0, 8);
 
-      if (!matches.length) {
-        results.innerHTML = `<div class="nav-search-empty">No results found</div>`;
-        results.classList.add("show");
-        return;
-      }
-
       results.innerHTML = matches.map(m => `
         <a href="${escapeHTML(m.href)}" class="nav-search-result">
           ${escapeHTML(m.title)}
@@ -197,7 +163,7 @@
       results.classList.add("show");
     });
 
-    /* ENTER → SEARCH PAGE */
+    /* ENTER → FULL SEARCH */
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -218,6 +184,7 @@
       if (e.key === "Escape") {
         results.innerHTML = "";
         results.classList.remove("show");
+        input.blur();
       }
     });
 
