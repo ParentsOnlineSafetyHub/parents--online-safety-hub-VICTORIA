@@ -50,18 +50,6 @@
     </div>
   </div>
 
-  <!-- RESULTS -->
-  <div class="card center-card">
-    <h2 id="parentResultsHeading">Results</h2>
-    <p class="note" id="parentResultsCount">Search above to find answers.</p>
-
-    <div id="parentResultsList" class="search-results-list"></div>
-
-    <div id="parentNoResults" class="callout center-callout" style="display:none;margin-top:16px;">
-      No results found. Try different wording or broader terms.
-    </div>
-  </div>
-
   <!-- QUICK QUESTIONS -->
   <div class="card center-card">
     <h2>Common Questions</h2>
@@ -100,108 +88,46 @@
 </div>
 
 <script src="app.js"></script>
-<script src="search-index.js"></script>
 
 <script>
 (function(){
 
-  function escapeHTML(str){
+  function sanitizeInput(str){
     return String(str || "")
-      .replace(/&/g,"&amp;")
-      .replace(/</g,"&lt;")
-      .replace(/>/g,"&gt;")
-      .replace(/"/g,"&quot;");
-  }
-
-  function normalize(text){
-    return (text || "")
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]/g," ")
-      .replace(/\s+/g," ")
+      .replace(/[<>]/g, "")
       .trim();
   }
 
-  function score(item, query){
-    const q = normalize(query);
-    const text = normalize(
-      item.title + " " +
-      item.description + " " +
-      item.keywords + " " +
-      item.category
-    );
-
-    let s = 0;
-
-    if(text.includes(q)) s += 40;
-
-    q.split(" ").forEach(t=>{
-      if(text.includes(t)) s += 10;
-    });
-
-    return s;
+  function goToSearch(query){
+    const clean = sanitizeInput(query);
+    if(!clean) return;
+    window.location.href = "v3-search.html?q=" + encodeURIComponent(clean);
   }
 
-  function search(query){
-    if(!query.trim()) return [];
-
-    return window.POSH_SEARCH_INDEX
-      .map(item => ({
-        ...item,
-        score: score(item, query)
-      }))
-      .filter(i => i.score > 0)
-      .sort((a,b)=>b.score-a.score)
-      .slice(0,50);
-  }
-
-  function render(query){
-    const list = document.getElementById("parentResultsList");
-    const count = document.getElementById("parentResultsCount");
-    const no = document.getElementById("parentNoResults");
-
-    const results = search(query);
-
-    count.textContent = results.length + " result" + (results.length===1?"":"s");
-
-    if(!results.length){
-      list.innerHTML = "";
-      no.style.display = "block";
-      return;
-    }
-
-    no.style.display = "none";
-
-    list.innerHTML = results.map(item=>`
-      <a href="${escapeHTML(item.href)}" class="search-result-card search-result-link">
-        <div class="search-result-top">
-          <strong class="search-result-title">${escapeHTML(item.title)}</strong>
-          <span class="search-result-type">${escapeHTML(item.category)}</span>
-        </div>
-        <div class="search-result-url">${escapeHTML(item.href)}</div>
-        <div style="margin-top:6px;">${escapeHTML(item.description)}</div>
-      </a>
-    `).join("");
-  }
-
-  document.addEventListener("DOMContentLoaded",function(){
+  document.addEventListener("DOMContentLoaded", function(){
 
     const input = document.getElementById("parentQuestionInput");
     const btn = document.getElementById("parentQuestionBtn");
 
-    btn.addEventListener("click",()=>render(input.value));
+    if(btn){
+      btn.addEventListener("click", function(){
+        goToSearch(input.value);
+      });
+    }
 
-    input.addEventListener("keydown",(e)=>{
-      if(e.key==="Enter"){
-        e.preventDefault();
-        render(input.value);
-      }
-    });
+    if(input){
+      input.addEventListener("keydown", function(e){
+        if(e.key === "Enter"){
+          e.preventDefault();
+          goToSearch(input.value);
+        }
+      });
+    }
 
-    document.querySelectorAll(".quick-q").forEach(b=>{
-      b.addEventListener("click",()=>{
-        const q = b.getAttribute("data-q");
-        input.value = q;
-        render(q);
+    document.querySelectorAll(".quick-q").forEach(button=>{
+      button.addEventListener("click", function(){
+        const q = button.getAttribute("data-q") || "";
+        goToSearch(q);
       });
     });
 
