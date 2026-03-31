@@ -79,7 +79,7 @@
   `;
 
   /* =========================
-     SECURITY
+     SAFE HTML
   ========================= */
 
   function escapeHTML(str) {
@@ -91,7 +91,7 @@
   }
 
   /* =========================
-     SEARCH ENGINE
+     SEARCH ENGINE (UNCHANGED LOGIC)
   ========================= */
 
   function normalize(text) {
@@ -124,6 +124,21 @@
   }
 
   /* =========================
+     ENGAGEMENT (NO STRUCTURE CHANGE)
+  ========================= */
+
+  function enhanceLinks() {
+    const links = document.querySelectorAll("a.btn");
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        // lightweight engagement signal (future analytics hook)
+        link.classList.add("clicked");
+      });
+    });
+  }
+
+  /* =========================
      INIT
   ========================= */
 
@@ -140,53 +155,48 @@
     const input = document.getElementById("poshSearch");
     const results = document.getElementById("poshSearchResults");
 
-    if (!input || !results) return;
+    if (input && results) {
 
-    /* LIVE SEARCH */
-    input.addEventListener("input", function () {
-      const q = this.value.trim();
+      /* LIVE SEARCH */
+      input.addEventListener("input", function () {
+        const q = this.value.trim();
 
-      if (!q) {
-        results.innerHTML = "";
-        results.classList.remove("show");
-        return;
-      }
+        if (!q) {
+          results.innerHTML = "";
+          results.classList.remove("show");
+          return;
+        }
 
-      const matches = search(q, index).slice(0, 8);
+        const matches = search(q, index).slice(0, 8);
 
-      results.innerHTML = matches.map(m => `
-        <a href="${escapeHTML(m.href)}" class="nav-search-result">
-          ${escapeHTML(m.title)}
-        </a>
-      `).join("");
+        results.innerHTML = matches.map(m => `
+          <a href="${escapeHTML(m.href)}" class="nav-search-result">
+            ${escapeHTML(m.title)}
+          </a>
+        `).join("");
 
-      results.classList.add("show");
-    });
+        results.classList.add("show");
+      });
 
-    /* ENTER → FULL SEARCH */
-    input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        goToSearchPage(input.value);
-      }
-    });
+      /* ENTER KEY */
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          goToSearchPage(input.value);
+        }
+      });
 
-    /* CLICK OUTSIDE CLOSE */
-    document.addEventListener("click", function (e) {
-      if (!nav.contains(e.target)) {
-        results.innerHTML = "";
-        results.classList.remove("show");
-      }
-    });
+      /* CLICK OUTSIDE */
+      document.addEventListener("click", function (e) {
+        if (!nav.contains(e.target)) {
+          results.innerHTML = "";
+          results.classList.remove("show");
+        }
+      });
+    }
 
-    /* ESC KEY CLOSE */
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        results.innerHTML = "";
-        results.classList.remove("show");
-        input.blur();
-      }
-    });
+    /* LIGHT ENGAGEMENT ONLY */
+    enhanceLinks();
 
   });
 
