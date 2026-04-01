@@ -20,22 +20,22 @@
         <summary>Start Here &amp; Immediate Help</summary>
         <nav>
           <a href="index.html" data-type="Page" data-keywords="home posh main page parents online safety hub homepage">Home</a>
-          <a href="v3-start.html" data-type="Page" data-keywords="start first steps safety start here score quiz guidance">Start Here</a>
-          <a href="v3-entry-system.html" data-type="Page" data-keywords="start here fast quick concern check fast entry immediate guidance">Start Here Fast</a>
-          <a href="v3-parent-questions.html" data-type="Hub" data-keywords="parent questions concerns search real questions worries help">Parent Questions</a>
-          <a href="v3-safety-score.html" data-type="Tool" data-keywords="safety score check audit checklist risk quiz test">Safety Check</a>
+          <a href="v3-start.html" data-type="Page" data-keywords="start here first steps quiz score guidance">Start Here</a>
+          <a href="v3-entry-system.html" data-type="Page" data-keywords="start here fast quick concern check fast entry">Start Here Fast</a>
+          <a href="v3-parent-questions.html" data-type="Hub" data-keywords="parent questions concerns search real questions worries">Parent Questions</a>
+          <a href="v3-safety-score.html" data-type="Tool" data-keywords="safety score audit checklist risk quiz test">Safety Check</a>
           <a href="v3-what-now.html" data-type="Action" data-keywords="what now immediate help next steps act now">What To Do Now</a>
           <a href="v3-first-24-hours.html" data-type="Urgent" data-keywords="first 24 hours urgent help evidence response crisis immediate action">First 24 Hours</a>
           <a href="v3-posh-response-system.html" data-type="System" data-keywords="posh response system notice check secure talk monitor escalate">POSH Response System</a>
           <a href="v3-urgent-warning-signs.html" data-type="Topic" data-keywords="urgent warning signs danger immediate concern act now">Urgent Warning Signs</a>
-          <a href="v3-exposure-vs-danger.html" data-type="Topic" data-keywords="exposure vs danger risk levels high exposure active danger">Exposure vs Danger</a>
+          <a href="v3-exposure-vs-danger.html" data-type="Topic" data-keywords="exposure danger risk levels high exposure active danger">Exposure vs Danger</a>
           <a href="v3-real-scenarios.html" data-type="Topic" data-keywords="real scenarios examples identify pattern situation">Real Scenarios</a>
           <a href="v3-reporting.html" data-type="Page" data-keywords="report help police support evidence hotline get help">Report &amp; Get Help</a>
           <a href="v3-reporting-australia.html" data-type="Page" data-keywords="reporting australia esafety police report australia">Report in Australia</a>
           <a href="v3-reporting-uk.html" data-type="Page" data-keywords="reporting uk report united kingdom">Report in the UK</a>
           <a href="v3-reporting-usa.html" data-type="Page" data-keywords="reporting usa report united states america">Report in the USA</a>
-          <a href="v3-reporting-europe.html" data-type="Page" data-keywords="reporting europe report european support">Report in Europe</a>
-          <a href="v3-evidence-reporting.html" data-type="Guide" data-keywords="evidence reporting save screenshots report properly preserve evidence">Evidence &amp; Reporting</a>
+          <a href="v3-reporting-europe.html" data-type="Page" data-keywords="reporting europe report support">Report in Europe</a>
+          <a href="v3-evidence-reporting.html" data-type="Guide" data-keywords="evidence reporting save screenshots preserve evidence report properly">Evidence &amp; Reporting</a>
         </nav>
       </details>
 
@@ -58,7 +58,7 @@
           <a href="v3-how-to-monitor-your-childs-device-without-spying.html" data-type="Topic" data-keywords="monitor child device without spying">Monitor a Device Without Spying</a>
           <a href="v3-how-to-check-a-device-without-causing-panic.html" data-type="Topic" data-keywords="check device calmly without panic evidence support">Check a Device Calmly</a>
           <a href="v3-how-to-rebuild-trust-after-an-online-scare.html" data-type="Topic" data-keywords="rebuild trust after online scare repair connection">Rebuild Trust After an Online Scare</a>
-          <a href="v3-parent-mistakes.html" data-type="Topic" data-keywords="parent mistakes common parent mistakes">Common Parent Mistakes</a>
+          <a href="v3-parent-mistakes.html" data-type="Topic" data-keywords="common parent mistakes what parents get wrong">Common Parent Mistakes</a>
           <a href="v3-what-most-parents-get-wrong.html" data-type="Topic" data-keywords="what most parents get wrong">What Most Parents Get Wrong</a>
           <a href="v3-why-kids-dont-ask-for-help.html" data-type="Topic" data-keywords="why kids dont ask for help">Why Kids Don’t Ask for Help</a>
           <a href="v3-why-kids-hide-things.html" data-type="Topic" data-keywords="why kids hide things secrecy hiding">Why Kids Hide Things</a>
@@ -125,6 +125,7 @@
           <a href="v3-device-android.html" data-type="Device" data-keywords="device android">Android Devices</a>
           <a href="v3-device-windows.html" data-type="Device" data-keywords="device windows">Windows Devices</a>
           <a href="v3-device-controls.html" data-type="Device" data-keywords="device safety controls phone tablet laptop pc">Device Safety</a>
+          <a href="v3-parental-controls.html" data-type="Device" data-keywords="parental controls overview restrictions">Parental Controls</a>
           <a href="v3-parental-controls-by-device.html" data-type="Device" data-keywords="controls by device parental controls">Parental Controls by Device</a>
           <a href="v3-how-to-set-parental-controls-and-passwords.html" data-type="Device" data-keywords="passwords controls lock settings restrictions">Set Controls &amp; Passwords</a>
           <a href="v3-how-to-set-parental-controls-iphone.html" data-type="Device" data-keywords="iphone apple screen time ios">iPhone Controls</a>
@@ -289,8 +290,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\\s-]/g, " ")
-      .replace(/\\s+/g, " ")
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .replace(/\s+/g, " ")
       .trim();
   }
 
@@ -311,7 +312,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\\s+/).filter(Boolean);
+    const tokens = q.split(/\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -434,7 +435,7 @@
       const quickResults = matches.map(function (item) {
         return '<a href="' + escapeHTML(item.href) + '" class="nav-search-result">' +
           escapeHTML(item.title) +
-        '</a>';
+        "</a>";
       }).join("");
 
       const viewAll = '<a href="v3-search.html?q=' + encodeURIComponent(q) + '" class="nav-search-result nav-search-view-all">View all results</a>';
