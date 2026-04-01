@@ -118,4 +118,389 @@
       <div class="q">
         <div class="q-title">5) Device safety controls?</div>
         <div class="q-options">
-          <label><input type="radio" name="device" value="yes" required> Yes
+          <label><input type="radio" name="device" value="yes" required> Yes</label>
+          <label><input type="radio" name="device" value="some"> Some</label>
+          <label><input type="radio" name="device" value="no"> No</label>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-title">6) Would they tell you?</div>
+        <div class="q-options">
+          <label><input type="radio" name="trust" value="yes" required> Yes</label>
+          <label><input type="radio" name="trust" value="some"> Maybe</label>
+          <label><input type="radio" name="trust" value="no"> No</label>
+        </div>
+      </div>
+
+      <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
+        <button class="btn" type="submit">Show My POSH Start Score</button>
+        <button class="btn secondary" type="button" id="resetGuideBtn">Reset</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="card center-card" id="guideResults" style="display:none;">
+    <h2>Your POSH Start Result</h2>
+
+    <div class="score-wrap">
+      <div class="score-ring">
+        <div class="score-num" id="startScoreNum">0</div>
+        <div class="score-label">/ 100</div>
+      </div>
+
+      <div class="score-text">
+        <div class="score-grade" id="startScoreGrade">—</div>
+        <p class="note" id="startScoreSummary" style="text-align:left;"></p>
+        <div class="badges" style="justify-content:center;">
+          <div class="badge gold" id="startScoreBadge">POSH Start Score</div>
+          <div class="badge danger" id="urgentBadge" style="display:none;">Act early now</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout center-callout" id="guideSummary" style="margin-top:14px;"></div>
+
+    <div class="card hero-warning center-card" id="pathwayBox" style="margin-top:18px;">
+      <h2>Your best pathway now</h2>
+      <p class="note" id="pathwayText"></p>
+      <div class="btn-grid btn-grid-soft" id="guideButtons" style="margin-top:14px;"></div>
+    </div>
+
+    <div class="callout center-callout" id="guideUrgent" style="margin-top:14px; display:none;"></div>
+
+    <div class="card center-card" style="margin-top:18px;">
+      <h2>Keep moving in the right order</h2>
+      <div class="btn-grid btn-grid-soft" id="guideSupportButtons"></div>
+    </div>
+
+    <div class="card hero-warning center-card" style="margin-top:18px;">
+      <h2>Help protect more children</h2>
+      <p class="note">
+        If this helped you, share POSH with another parent. Awareness spreads safety.
+      </p>
+      <div class="btn-grid btn-grid-soft">
+        <a class="btn" href="v3-share.html">Share POSH Now</a>
+        <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au" target="_blank" rel="noopener">Share on Facebook</a>
+        <a class="btn secondary" href="v3-downloads.html">Download Parent Guides</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card center-card">
+    <h2>One reminder before you move</h2>
+
+    <div class="callout center-callout">
+      <strong>Children are more likely to tell the truth when they believe they will be protected, not punished first.</strong>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
+      <a class="btn secondary" href="v3-it-is-not-about-not-trusting-your-child.html">Trust Your Child, Still Protect Them</a>
+      <a class="btn secondary" href="v3-mindset.html">Parent Mindset</a>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+</div>
+
+<script>
+(function(){
+  const form = document.getElementById("startGuideForm");
+  const resetBtn = document.getElementById("resetGuideBtn");
+  const results = document.getElementById("guideResults");
+
+  const scoreNum = document.getElementById("startScoreNum");
+  const scoreGrade = document.getElementById("startScoreGrade");
+  const scoreSummary = document.getElementById("startScoreSummary");
+  const guideSummary = document.getElementById("guideSummary");
+  const guideButtons = document.getElementById("guideButtons");
+  const guideSupportButtons = document.getElementById("guideSupportButtons");
+  const guideUrgent = document.getElementById("guideUrgent");
+  const urgentBadge = document.getElementById("urgentBadge");
+  const pathwayText = document.getElementById("pathwayText");
+
+  function getValue(name){
+    const checked = form.querySelector('input[name="' + name + '"]:checked');
+    return checked ? checked.value : "";
+  }
+
+  function calcScore(data){
+    let score = 100;
+
+    if(data.risk === "yes") score -= 25;
+
+    if(data.device === "some") score -= 10;
+    if(data.device === "no") score -= 20;
+
+    if(data.trust === "some") score -= 10;
+    if(data.trust === "no") score -= 20;
+
+    if(data.type === "mixed") score -= 8;
+    if(data.type === "social") score -= 12;
+    if(data.type === "video") score -= 10;
+
+    const highRiskApps = ["roblox", "discord", "vrchat", "snapchat"];
+    const medRiskApps = ["fortnite", "minecraft", "youtube", "tiktok", "streaming"];
+
+    if(highRiskApps.includes(data.app)) score -= 10;
+    if(medRiskApps.includes(data.app)) score -= 5;
+
+    if(data.age === "10to12") score -= 5;
+    if(data.age === "13to15") score -= 8;
+    if(data.age === "16plus") score -= 4;
+
+    if(score < 0) score = 0;
+    return score;
+  }
+
+  function getGrade(score){
+    if(score >= 80){
+      return {
+        label: "Strong Start",
+        summary: "You already have some useful protective steps in place. Keep tightening the app, platform, and trust areas that still need work."
+      };
+    }
+    if(score >= 60){
+      return {
+        label: "Needs Tightening",
+        summary: "There is a decent base here, but some important gaps still increase your child’s exposure."
+      };
+    }
+    if(score >= 40){
+      return {
+        label: "At Risk",
+        summary: "Your child likely has multiple exposure points. Focus on device settings, contact rules, and the highest-risk app or platform first."
+      };
+    }
+    return {
+      label: "High Risk",
+      summary: "There are urgent gaps in protection. Start with the highest-risk app or platform, device controls, and reassurance that your child can tell you the truth safely."
+    };
+  }
+
+  function appPath(app){
+    const paths = {
+      roblox: "v3-game-roblox.html",
+      discord: "v3-social-discord.html",
+      vrchat: "v3-game-vrchat.html",
+      snapchat: "v3-social-snapchat.html",
+      minecraft: "v3-game-minecraft.html",
+      fortnite: "v3-game-fortnite.html",
+      youtube: "v3-social-youtube.html",
+      tiktok: "v3-social-tiktok.html",
+      streaming: "v3-streaming-video.html",
+      other: "v3-redflags.html"
+    };
+    return paths[app] || "v3-redflags.html";
+  }
+
+  function appLabel(app){
+    const labels = {
+      roblox: "Roblox Safety",
+      discord: "Discord Safety",
+      vrchat: "VRChat Safety",
+      snapchat: "Snapchat Safety",
+      minecraft: "Minecraft Safety",
+      fortnite: "Fortnite Safety",
+      youtube: "YouTube Safety",
+      tiktok: "TikTok Safety",
+      streaming: "Streaming Safety",
+      other: "General Help"
+    };
+    return labels[app] || "App Safety";
+  }
+
+  function typePath(type){
+    const paths = {
+      gaming: "v3-gaming.html",
+      social: "v3-socials.html",
+      video: "v3-streaming-video.html",
+      mixed: "v3-age-guide.html"
+    };
+    return paths[type] || "v3-start.html";
+  }
+
+  function typeLabel(type){
+    const labels = {
+      gaming: "Gaming Safety",
+      social: "Social Media & Chat",
+      video: "Streaming & Video Apps",
+      mixed: "Age Guide"
+    };
+    return labels[type] || "Main Guidance";
+  }
+
+  function buildSummary(data, score){
+    const parts = [];
+
+    if(data.risk === "yes"){
+      parts.push("Because something already feels off, move early and calmly instead of waiting for stronger proof.");
+    } else {
+      parts.push("You are in prevention mode, which is the best time to tighten settings before a problem grows.");
+    }
+
+    if(data.device === "no"){
+      parts.push("Device controls should be one of your first priorities.");
+    } else if(data.device === "some"){
+      parts.push("Your device controls need tightening so they become a stronger first safety layer.");
+    }
+
+    if(data.trust !== "yes"){
+      parts.push("Your child also needs a very clear message that honesty will not be punished.");
+    }
+
+    if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
+      parts.push("Content exposure, autoplay, recommendation drift, and binge loops may matter just as much as direct contact.");
+    }
+
+    if(score < 50){
+      parts.push("Fix the biggest risk first, not everything at once.");
+    }
+
+    return parts.join(" ");
+  }
+
+  function buildUrgent(data){
+    if(data.risk !== "yes") return "";
+
+    if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
+      return "If something already feels wrong, do not ignore it just because it looks like only content or just videos. Repeated exposure, recommendation drift, and manipulative content can still affect your child heavily over time. Move early, reduce access, and check the most relevant page now.";
+    }
+
+    return "If something already feels wrong, do not wait for it to become obvious. Stay calm, preserve evidence, reassure your child they are not in trouble, and move to the most relevant safety page now.";
+  }
+
+  function getPathway(data, score){
+    if(data.risk === "yes" && (score < 60 || data.trust !== "yes")){
+      return {
+        text: "You appear to be in the concern or active-situation pathway. Start by identifying the pattern, then move into the first response steps and evidence preservation if needed.",
+        primary: [
+          { href: "v3-real-scenarios.html", label: "Identify the Situation", cls: "btn" },
+          { href: "v3-first-24-hours.html", label: "First 24 Hours", cls: "btn secondary" },
+          { href: "v3-evidence-reporting.html", label: "Save &amp; Report Properly", cls: "btn secondary" },
+          { href: "v3-parent-scripts.html", label: "What To Say", cls: "btn secondary" }
+        ]
+      };
+    }
+
+    if(data.risk === "yes"){
+      return {
+        text: "You are in the concern pathway. Start with recognition first, then move into action if the pattern looks real or escalates.",
+        primary: [
+          { href: "v3-real-scenarios.html", label: "Real Scenarios", cls: "btn" },
+          { href: "v3-redflags.html", label: "Red Flags", cls: "btn secondary" },
+          { href: "v3-what-now.html", label: "What To Do Now", cls: "btn secondary" },
+          { href: "v3-first-24-hours.html", label: "Act Early", cls: "btn secondary" }
+        ]
+      };
+    }
+
+    return {
+      text: "You are in the prevention pathway. Build your strongest base first, then tighten the platform, app, and communication layers.",
+      primary: [
+        { href: "v3-safety-score.html", label: "Quick Safety Check", cls: "btn" },
+        { href: "v3-device-controls.html", label: "Device Safety", cls: "btn secondary" },
+        { href: "v3-house-rules.html", label: "House Rules", cls: "btn secondary" },
+        { href: "v3-redflags.html", label: "Understand Risks", cls: "btn secondary" }
+      ]
+    };
+  }
+
+  function buildButtons(data, score){
+    const pathway = getPathway(data, score);
+    return pathway.primary.map(function(item){
+      return '<a class="' + item.cls + '" href="' + item.href + '">' + item.label + '</a>';
+    }).join("");
+  }
+
+  function buildSupportButtons(data){
+    const buttons = [];
+
+    buttons.push('<a class="btn secondary" href="' + appPath(data.app) + '">' + appLabel(data.app) + '</a>');
+    buttons.push('<a class="btn secondary" href="' + typePath(data.type) + '">' + typeLabel(data.type) + '</a>');
+
+    if(data.device !== "yes"){
+      buttons.push('<a class="btn secondary" href="v3-device-controls.html">Device Safety</a>');
+    } else {
+      buttons.push('<a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>');
+    }
+
+    if(data.trust === "no" || data.trust === "some"){
+      buttons.push('<a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>');
+      buttons.push('<a class="btn secondary" href="v3-it-is-not-about-not-trusting-your-child.html">Trust Your Child, Still Protect Them</a>');
+    } else if(data.type === "video" || data.app === "streaming" || data.app === "youtube" || data.app === "tiktok"){
+      buttons.push('<a class="btn secondary" href="v3-algorithm-awareness.html">Algorithm Risks</a>');
+    } else {
+      buttons.push('<a class="btn secondary" href="v3-age-guide.html">Age Guide</a>');
+    }
+
+    if(data.risk === "yes"){
+      buttons.push('<a class="btn secondary" href="v3-definitions.html">Understanding What’s Happening</a>');
+    }
+
+    return buttons.join("");
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const data = {
+      age: getValue("age"),
+      type: getValue("type"),
+      app: getValue("app"),
+      risk: getValue("risk"),
+      device: getValue("device"),
+      trust: getValue("trust")
+    };
+
+    const score = calcScore(data);
+    const grade = getGrade(score);
+    const pathway = getPathway(data, score);
+
+    scoreNum.textContent = score;
+    scoreGrade.textContent = grade.label;
+    scoreSummary.textContent = grade.summary;
+    guideSummary.textContent = buildSummary(data, score);
+    pathwayText.textContent = pathway.text;
+    guideButtons.innerHTML = buildButtons(data, score);
+    guideSupportButtons.innerHTML = buildSupportButtons(data);
+
+    const urgentText = buildUrgent(data);
+    if(urgentText){
+      urgentBadge.style.display = "inline-flex";
+      guideUrgent.style.display = "block";
+      guideUrgent.innerHTML = "<strong>Urgent note:</strong> " + urgentText;
+    } else {
+      urgentBadge.style.display = "none";
+      guideUrgent.style.display = "none";
+      guideUrgent.textContent = "";
+    }
+
+    results.style.display = "block";
+    results.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  resetBtn.addEventListener("click", function(){
+    form.reset();
+    results.style.display = "none";
+    scoreNum.textContent = "0";
+    scoreGrade.textContent = "—";
+    scoreSummary.textContent = "";
+    guideSummary.textContent = "";
+    guideButtons.innerHTML = "";
+    guideSupportButtons.innerHTML = "";
+    pathwayText.textContent = "";
+    guideUrgent.style.display = "none";
+    guideUrgent.textContent = "";
+    urgentBadge.style.display = "none";
+  });
+})();
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
