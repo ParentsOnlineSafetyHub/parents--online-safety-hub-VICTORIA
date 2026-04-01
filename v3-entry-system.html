@@ -7,6 +7,11 @@
 <meta name="description" content="A fast POSH entry system for worried parents. Answer a few quick questions and get the right next step immediately." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://poshaussie.com.au/v3-entry-system.html"/>
+<meta property="og:title" content="Start Here Fast • POSH" />
+<meta property="og:description" content="Answer a few quick questions and POSH will point you to the right next step." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://poshaussie.com.au/v3-entry-system.html" />
+<meta property="og:site_name" content="POSH" />
 <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -35,6 +40,13 @@
       <p>This page is designed to sort you into the right lane quickly.</p>
     </div>
     <div class="danger-line">Clarity first. Action next.</div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn" href="v3-start.html">Full Start Guide</a>
+      <a class="btn secondary" href="v3-safety-score.html">Safety Check</a>
+      <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
+      <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
+    </div>
   </div>
 
   <div class="card center-card">
@@ -114,6 +126,29 @@
       <h2>Keep moving in the right order</h2>
       <div class="btn-grid btn-grid-soft" id="supportButtons"></div>
     </div>
+
+    <div class="card center-card" style="margin-top:18px;">
+      <h2>Research the area that matters most</h2>
+      <div class="btn-grid btn-grid-soft">
+        <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
+        <a class="btn secondary" href="v3-all-games.html">All Games</a>
+        <a class="btn secondary" href="v3-all-applications.html">All Applications</a>
+        <a class="btn secondary" href="v3-downloads.html">Downloads</a>
+      </div>
+    </div>
+
+    <div class="card hero-warning center-card" style="margin-top:18px;">
+      <h2>Help protect more children</h2>
+      <p class="note">
+        If this helped you, share POSH with another parent. Awareness spreads safety.
+      </p>
+      <div class="btn-grid btn-grid-soft">
+        <a class="btn" href="v3-share.html">Share POSH Now</a>
+        <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au/v3-entry-system.html" target="_blank" rel="noopener">Share on Facebook</a>
+        <a class="btn secondary" href="v3-downloads.html">Download Parent Guides</a>
+        <a class="btn secondary" href="v3-support.html">Support POSH</a>
+      </div>
+    </div>
   </div>
 
   <div class="card center-card">
@@ -172,7 +207,9 @@
 </div>
 
 <script>
-(function(){
+(function () {
+  "use strict";
+
   const form = document.getElementById("entryForm");
   const resetBtn = document.getElementById("resetBtn");
   const results = document.getElementById("results");
@@ -182,12 +219,12 @@
   const resultPathway = document.getElementById("resultPathway");
   const supportButtons = document.getElementById("supportButtons");
 
-  function getValue(name){
+  function getValue(name) {
     const checked = form.querySelector('input[name="' + name + '"]:checked');
     return checked ? checked.value : "";
   }
 
-  function escapeHtml(str){
+  function escapeHtml(str) {
     return String(str || "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
@@ -196,11 +233,11 @@
       .replace(/'/g, "&#39;");
   }
 
-  function button(href, label, cls){
+  function button(href, label, cls) {
     return '<a class="' + escapeHtml(cls) + '" href="' + escapeHtml(href) + '">' + escapeHtml(label) + '</a>';
   }
 
-  function getPath(data){
+  function getPath(data) {
     const activeRisk =
       data.q1 === "yes" &&
       (data.q2 === "yes" || data.q3 === "yes" || data.q4 === "yes");
@@ -276,7 +313,7 @@
     };
   }
 
-  form.addEventListener("submit", function(e){
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const data = {
@@ -299,7 +336,7 @@
     results.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
-  resetBtn.addEventListener("click", function(){
+  resetBtn.addEventListener("click", function () {
     form.reset();
     results.style.display = "none";
     resultSummary.textContent = "";
