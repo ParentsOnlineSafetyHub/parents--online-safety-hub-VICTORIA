@@ -71,7 +71,6 @@
 
     <form id="startGuideForm">
 
-      <!-- Q1 -->
       <div class="q">
         <div class="q-title">1) How old is your child?</div>
         <div class="q-options">
@@ -82,7 +81,6 @@
         </div>
       </div>
 
-      <!-- Q2 -->
       <div class="q">
         <div class="q-title">2) What do they mostly use?</div>
         <div class="q-options">
@@ -93,7 +91,6 @@
         </div>
       </div>
 
-      <!-- Q3 -->
       <div class="q">
         <div class="q-title">3) What worries you most?</div>
         <div class="q-options">
@@ -110,7 +107,6 @@
         </div>
       </div>
 
-      <!-- Q4 -->
       <div class="q">
         <div class="q-title">4) Are you already worried?</div>
         <div class="q-options">
@@ -119,115 +115,7 @@
         </div>
       </div>
 
-      <!-- Q5 -->
       <div class="q">
         <div class="q-title">5) Device safety controls?</div>
         <div class="q-options">
-          <label><input type="radio" name="device" value="yes" required> Yes</label>
-          <label><input type="radio" name="device" value="some"> Some</label>
-          <label><input type="radio" name="device" value="no"> No</label>
-        </div>
-      </div>
-
-      <!-- Q6 -->
-      <div class="q">
-        <div class="q-title">6) Would they tell you?</div>
-        <div class="q-options">
-          <label><input type="radio" name="trust" value="yes" required> Yes</label>
-          <label><input type="radio" name="trust" value="some"> Maybe</label>
-          <label><input type="radio" name="trust" value="no"> No</label>
-        </div>
-      </div>
-
-      <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
-        <button class="btn" type="submit">Show My Score</button>
-        <button class="btn secondary" type="button" id="resetGuideBtn">Reset</button>
-      </div>
-
-    </form>
-  </div>
-
-  <!-- RESULTS -->
-  <div class="card center-card" id="guideResults" style="display:none;">
-    <h2>Your POSH Start Result</h2>
-
-    <div class="score-wrap">
-      <div class="score-ring">
-        <div class="score-num" id="startScoreNum">0</div>
-        <div class="score-label">/ 100</div>
-      </div>
-
-      <div class="score-text">
-        <div class="score-grade" id="startScoreGrade">—</div>
-        <p class="note" id="startScoreSummary"></p>
-      </div>
-    </div>
-
-    <div class="callout center-callout" id="guideSummary"></div>
-
-    <div class="btn-grid btn-grid-soft" id="guideButtons"></div>
-  </div>
-
-  <div id="footer"></div>
-
-</div>
-
-<script>
-(function(){
-
-const form = document.getElementById("startGuideForm");
-const results = document.getElementById("guideResults");
-
-function val(name){
-  return form.querySelector(`[name="${name}"]:checked`)?.value || "";
-}
-
-function calc(data){
-  let s = 100;
-
-  if(data.risk === "yes") s -= 25;
-  if(data.device === "no") s -= 20;
-  if(data.device === "some") s -= 10;
-  if(data.trust === "no") s -= 20;
-  if(data.trust === "some") s -= 10;
-
-  if(data.type === "social") s -= 12;
-  if(data.type === "video") s -= 10;
-  if(data.type === "mixed") s -= 8;
-
-  return Math.max(0, s);
-}
-
-form.addEventListener("submit", e=>{
-  e.preventDefault();
-
-  const data = {
-    age: val("age"),
-    type: val("type"),
-    app: val("app"),
-    risk: val("risk"),
-    device: val("device"),
-    trust: val("trust")
-  };
-
-  const score = calc(data);
-
-  document.getElementById("startScoreNum").textContent = score;
-  document.getElementById("startScoreGrade").textContent =
-    score >= 80 ? "Strong" :
-    score >= 60 ? "Needs Work" :
-    score >= 40 ? "At Risk" : "High Risk";
-
-  document.getElementById("startScoreSummary").textContent =
-    "Focus on your highest-risk area first.";
-
-  results.style.display = "block";
-  results.scrollIntoView({behavior:"smooth"});
-});
-
-})();
-</script>
-
-<script src="app.js"></script>
-</body>
-</html>
+          <label><input type="radio" name="device" value="yes" required> Yes
