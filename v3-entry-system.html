@@ -32,7 +32,7 @@
     <h2>Why this page exists</h2>
     <div class="rule-box">
       <p>When parents feel overwhelmed, they often lose time trying to work out which page matters first.</p>
-      <p>This page sorts you into the right lane quickly so you can move sooner and more clearly.</p>
+      <p>This page is designed to sort you into the right lane quickly.</p>
     </div>
     <div class="danger-line">Clarity first. Action next.</div>
   </div>
@@ -63,7 +63,7 @@
       </div>
 
       <div class="q">
-        <div class="q-title">3) Is there a specific person, app, game, or “online friend” you are worried about?</div>
+        <div class="q-title">3) Is there a specific person, app, or “online friend” you are worried about?</div>
         <div class="q-options">
           <label><input type="radio" name="q3" value="yes" required> Yes</label>
           <label><input type="radio" name="q3" value="no"> No</label>
@@ -102,7 +102,7 @@
 
     <div class="callout center-callout" id="resultSummary"></div>
 
-    <div class="card hero-warning center-card" style="margin-top:16px;">
+    <div class="card hero-warning center-card" style="margin-top:18px;">
       <h2>Your best pathway now</h2>
       <p class="note" id="resultPathway"></p>
       <div class="btn-grid btn-grid-soft" id="resultButtons" style="margin-top:14px;"></div>
@@ -110,8 +110,8 @@
 
     <div class="callout center-callout" id="resultNote" style="margin-top:14px;"></div>
 
-    <div class="card center-card" style="margin-top:16px;">
-      <h2>Helpful next pages</h2>
+    <div class="card center-card" style="margin-top:18px;">
+      <h2>Keep moving in the right order</h2>
       <div class="btn-grid btn-grid-soft" id="supportButtons"></div>
     </div>
   </div>
@@ -124,6 +124,13 @@
       <a class="btn secondary" href="v3-first-24-hours.html">Something Is Happening Now</a>
       <a class="btn secondary" href="v3-safety-score.html">I Want to Check Risk</a>
       <a class="btn secondary" href="v3-how-to-explain-grooming-and-predators-to-a-child.html">How To Explain This to My Child</a>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
+      <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+      <a class="btn secondary" href="v3-playbook.html">Predator Playbook</a>
+      <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
     </div>
   </div>
 
@@ -170,9 +177,9 @@
   const resetBtn = document.getElementById("resetBtn");
   const results = document.getElementById("results");
   const resultSummary = document.getElementById("resultSummary");
-  const resultPathway = document.getElementById("resultPathway");
   const resultButtons = document.getElementById("resultButtons");
   const resultNote = document.getElementById("resultNote");
+  const resultPathway = document.getElementById("resultPathway");
   const supportButtons = document.getElementById("supportButtons");
 
   function getValue(name){
@@ -180,8 +187,17 @@
     return checked ? checked.value : "";
   }
 
+  function escapeHtml(str){
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
   function button(href, label, cls){
-    return '<a class="' + cls + '" href="' + href + '">' + label + '</a>';
+    return '<a class="' + escapeHtml(cls) + '" href="' + escapeHtml(href) + '">' + escapeHtml(label) + '</a>';
   }
 
   function getPath(data){
@@ -192,71 +208,71 @@
     if (data.q5 === "act" || activeRisk) {
       return {
         summary: "You appear to need the action pathway. Start by staying calm, protecting the child, and moving into the first response steps now.",
-        pathway: "This looks more like a live concern than a general learning situation. Move into protection, evidence preservation, and calm communication first.",
+        pathway: "You are in the concern or active-situation lane. Reduce harm first, preserve evidence, and move into the most relevant action pages without delay.",
         buttons:
           button("v3-first-24-hours.html", "First 24 Hours", "btn") +
-          button("v3-evidence-reporting.html", "Save &amp; Report Properly", "btn secondary") +
+          button("v3-evidence-reporting.html", "Save & Report Properly", "btn secondary") +
           button("v3-parent-scripts.html", "What To Say", "btn secondary") +
-          button("v3-reporting.html", "Report &amp; Get Help", "btn secondary"),
+          button("v3-reporting.html", "Report & Get Help", "btn secondary"),
+        note: "If something already feels active, serious, or escalating, do not wait for perfect proof before acting protectively.",
         support:
           button("v3-real-scenarios.html", "Identify the Pattern", "btn secondary") +
           button("v3-redflags.html", "Red Flags", "btn secondary") +
           button("v3-how-to-check-a-device-without-causing-panic.html", "Check a Device Calmly", "btn secondary") +
-          button("v3-what-now.html", "What To Do Now", "btn secondary"),
-        note: "If something already feels active, serious, or escalating, do not wait for perfect proof before acting protectively."
+          button("v3-what-now.html", "What To Do Now", "btn secondary")
       };
     }
 
     if (data.q5 === "talk") {
       return {
         summary: "You appear to need the conversation pathway. Start with calm words that keep your child talking, not shutting down.",
-        pathway: "Your next move is likely about tone, trust, and keeping the child open instead of accidentally pushing them deeper into silence.",
+        pathway: "You are in the trust and communication lane. The goal now is to keep the child feeling safe enough to speak honestly.",
         buttons:
           button("v3-parent-scripts.html", "Parent Scripts", "btn") +
           button("v3-what-to-say-if-your-child-opens-up.html", "If Your Child Opens Up", "btn secondary") +
           button("v3-when-your-child-wont-talk.html", "When Your Child Won’t Talk", "btn secondary") +
           button("v3-how-to-explain-grooming-and-predators-to-a-child.html", "Explain It to a Child", "btn secondary"),
+        note: "Children speak sooner when they feel protected, not punished.",
         support:
           button("v3-it-is-not-about-not-trusting-your-child.html", "Trust Your Child, Still Protect Them", "btn secondary") +
           button("v3-how-to-monitor-without-breaking-trust.html", "Monitor Without Breaking Trust", "btn secondary") +
           button("v3-mindset.html", "Parent Mindset", "btn secondary") +
-          button("v3-parent-conversations.html", "Parent Conversations", "btn secondary"),
-        note: "Children speak sooner when they feel protected, not punished."
+          button("v3-house-rules.html", "House Rules", "btn secondary")
       };
     }
 
     if (data.q5 === "understand" || data.q3 === "yes" || data.q4 === "unsure" || data.q2 === "unsure") {
       return {
         summary: "You appear to need the understanding pathway. Start by identifying the pattern, then move into action if it becomes clearer.",
-        pathway: "This looks like a situation where understanding the behaviour, the app, the contact pattern, or the risk level comes first.",
+        pathway: "You are in the recognition lane. Build clarity first, then move into the response pages if the pattern becomes clearer or more serious.",
         buttons:
           button("v3-real-scenarios.html", "Real Scenarios", "btn") +
           button("v3-redflags.html", "Red Flags", "btn secondary") +
           button("v3-playbook.html", "Predator Playbook", "btn secondary") +
           button("v3-what-now.html", "What To Do Now", "btn secondary"),
+        note: "You do not need to label everything perfectly before taking safer steps.",
         support:
           button("v3-definitions.html", "Understanding What’s Happening", "btn secondary") +
-          button("v3-parent-questions.html", "Parent Questions", "btn secondary") +
-          button("v3-known-person-risk.html", "Known Person Risk", "btn secondary") +
-          button("v3-exposure-vs-danger.html", "Exposure vs Danger", "btn secondary"),
-        note: "You do not need to label everything perfectly before taking safer steps."
+          button("v3-predators.html", "Predators & Grooming", "btn secondary") +
+          button("v3-urgent-warning-signs.html", "Urgent Warning Signs", "btn secondary") +
+          button("v3-parent-questions.html", "Parent Questions", "btn secondary")
       };
     }
 
     return {
       summary: "You appear to be in the prevention pathway. This is the best time to strengthen safety before a problem grows.",
-      pathway: "You are in the strongest position right now because you can improve safety before pressure, secrecy, or escalation gets deeper.",
+      pathway: "You are in the prevention lane. Build the strongest base first through device safety, house rules, app awareness, and calm conversations.",
       buttons:
         button("v3-safety-score.html", "Safety Check", "btn") +
         button("v3-device-controls.html", "Device Safety", "btn secondary") +
         button("v3-house-rules.html", "House Rules", "btn secondary") +
         button("v3-how-to-monitor-without-breaking-trust.html", "Monitor Without Breaking Trust", "btn secondary"),
+      note: "Prevention works best when settings, conversations, and boundaries all support each other.",
       support:
         button("v3-parental-controls-by-device.html", "Parental Controls by Device", "btn secondary") +
-        button("v3-safe-apps-and-games-for-kids.html", "Safe Apps &amp; Games", "btn secondary") +
+        button("v3-best-parental-control-apps.html", "Best Parental Control Apps", "btn secondary") +
         button("v3-age-guide.html", "Age Guide", "btn secondary") +
-        button("v3-parent-scripts.html", "Parent Scripts", "btn secondary"),
-      note: "Prevention works best when settings, conversations, and boundaries all support each other."
+        button("v3-all-applications.html", "All Applications", "btn secondary")
     };
   }
 
@@ -276,8 +292,8 @@
     resultSummary.textContent = path.summary;
     resultPathway.textContent = path.pathway;
     resultButtons.innerHTML = path.buttons;
-    supportButtons.innerHTML = path.support;
     resultNote.textContent = path.note;
+    supportButtons.innerHTML = path.support;
 
     results.style.display = "block";
     results.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -289,8 +305,8 @@
     resultSummary.textContent = "";
     resultPathway.textContent = "";
     resultButtons.innerHTML = "";
-    supportButtons.innerHTML = "";
     resultNote.textContent = "";
+    supportButtons.innerHTML = "";
   });
 })();
 </script>
