@@ -1,7 +1,7 @@
 (function () {
 
   /* =========================
-     NAV + FOOTER (UNCHANGED STRUCTURE)
+     NAV + FOOTER
   ========================= */
 
   const navHTML = `
@@ -71,6 +71,20 @@
 
   const footerHTML = `
     <footer>
+      <div class="footer-cta-block">
+        <h3 class="footer-cta-title">Help Protect More Children</h3>
+        <p class="footer-cta-text">
+          POSH exists to help parents act earlier, understand more, and protect children online with clearer guidance and practical tools.
+        </p>
+
+        <div class="footer-actions">
+          <a class="btn" href="v3-support.html">Support POSH</a>
+          <a class="btn secondary" href="v3-community.html">Join Community</a>
+          <a class="btn secondary" href="v3-downloads.html">Download Guides</a>
+          <a class="btn secondary" href="v3-share.html">Share POSH</a>
+        </div>
+      </div>
+
       <div class="footer-meta">
         Built to educate parents. Designed to protect our children.<br/>
         <span class="small">Contact: allthewaycarpentry@gmail.com</span>
@@ -87,7 +101,12 @@
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function safeText(value) {
+    return String(value || "").trim();
   }
 
   /* =========================
@@ -95,36 +114,77 @@
   ========================= */
 
   function normalize(text) {
-    return (text || "").toLowerCase().trim();
+    return String(text || "")
+      .toLowerCase()
+      .replace(/&/g, " and ")
+      .replace(/['’]/g, "")
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function tokenize(text) {
+    return normalize(text).split(/\s+/).filter(Boolean);
   }
 
   function score(item, query) {
     const q = normalize(query);
+    const tokens = tokenize(query);
+
+    const title = normalize(item.title);
+    const keywords = normalize(item.keywords);
+    const description = normalize(item.description);
+    const category = normalize(item.category);
+    const href = normalize(item.href);
+
     let s = 0;
 
-    if (normalize(item.title).includes(q)) s += 50;
-    if ((item.keywords || "").toLowerCase().includes(q)) s += 30;
-    if ((item.description || "").toLowerCase().includes(q)) s += 20;
-    if ((item.category || "").toLowerCase().includes(q)) s += 10;
+    if (!q) return 0;
+
+    if (title === q) s += 120;
+    if (title.startsWith(q)) s += 80;
+    if (title.includes(q)) s += 50;
+    if (keywords.includes(q)) s += 30;
+    if (description.includes(q)) s += 20;
+    if (category.includes(q)) s += 10;
+    if (href.includes(q)) s += 6;
+
+    tokens.forEach(function (token) {
+      if (!token) return;
+
+      if (title.includes(token)) s += 12;
+      if (keywords.includes(token)) s += 8;
+      if (description.includes(token)) s += 5;
+      if (category.includes(token)) s += 4;
+      if (href.includes(token)) s += 2;
+    });
 
     return s;
   }
 
   function search(query, index) {
     return index
-      .map(function (i) {
-        return { ...i, score: score(i, query) };
+      .map(function (item) {
+        return {
+          title: safeText(item.title),
+          href: safeText(item.href),
+          keywords: safeText(item.keywords),
+          description: safeText(item.description),
+          category: safeText(item.category),
+          score: score(item, query)
+        };
       })
-      .filter(function (i) {
-        return i.score > 0;
+      .filter(function (item) {
+        return item.score > 0 && item.href;
       })
       .sort(function (a, b) {
-        return b.score - a.score;
+        if (b.score !== a.score) return b.score - a.score;
+        return a.title.localeCompare(b.title);
       });
   }
 
   function goToSearchPage(query) {
-    const q = query.trim();
+    const q = safeText(query);
     if (!q) return;
     window.location.href = "v3-search.html?q=" + encodeURIComponent(q);
   }
@@ -155,7 +215,7 @@
     const navLinks = navRoot.querySelectorAll(".nav-group nav a");
 
     navLinks.forEach(function (link) {
-      const href = (link.getAttribute("href") || "")
+      const href = safeText(link.getAttribute("href"))
         .split("?")[0]
         .split("#")[0];
 
@@ -187,14 +247,52 @@
 
   function buildFallbackSearchIndex(navRoot) {
     return Array.from(navRoot.querySelectorAll(".nav-group nav a")).map(function (link) {
+      const title = safeText(link.textContent);
+      const href = safeText(link.getAttribute("href"));
+
       return {
-        title: (link.textContent || "").trim(),
-        href: link.getAttribute("href") || "#",
-        keywords: (link.textContent || "").trim().toLowerCase(),
+        title: title,
+        href: href || "#",
+        keywords: title.toLowerCase(),
         description: "",
         category: ""
       };
     });
+  }
+
+  /* =========================
+     QUICK SEARCH DROPDOWN
+  ========================= */
+
+  function renderQuickResults(container, matches, query) {
+    if (!matches.length) {
+      container.innerHTML = '<div class="nav-search-result nav-search-empty">No results found</div>';
+      container.classList.add("show");
+      return;
+    }
+
+    const quickMatches = matches.slice(0, 8);
+
+    const itemsHTML = quickMatches.map(function (item, index) {
+      return (
+        '<a href="' + escapeHTML(item.href) + '" class="nav-search-result" data-result-index="' + index + '">' +
+          escapeHTML(item.title) +
+        '</a>'
+      );
+    }).join("");
+
+    const viewAllHTML =
+      '<a href="v3-search.html?q=' + encodeURIComponent(query) + '" class="nav-search-result nav-search-view-all" data-result-index="' + quickMatches.length + '">' +
+        'View all results' +
+      '</a>';
+
+    container.innerHTML = itemsHTML + viewAllHTML;
+    container.classList.add("show");
+  }
+
+  function clearQuickResults(container) {
+    container.innerHTML = "";
+    container.classList.remove("show");
   }
 
   /* =========================
@@ -225,54 +323,80 @@
     }
 
     if (input && results) {
+      let activeIndex = -1;
+
+      function updateActiveResult() {
+        const items = results.querySelectorAll(".nav-search-result");
+        items.forEach(function (item) {
+          item.classList.remove("active");
+        });
+
+        if (activeIndex >= 0 && items[activeIndex]) {
+          items[activeIndex].classList.add("active");
+        }
+      }
 
       input.addEventListener("input", function () {
-        const q = this.value.trim();
+        const q = safeText(this.value);
+        activeIndex = -1;
 
         if (!q) {
-          results.innerHTML = "";
-          results.classList.remove("show");
+          clearQuickResults(results);
           return;
         }
 
-        const matches = search(q, index).slice(0, 8);
+        const matches = search(q, index);
+        renderQuickResults(results, matches, q);
+      });
 
-        if (!matches.length) {
-          results.innerHTML = '<div class="nav-search-result nav-search-empty">No results found</div>';
-          results.classList.add("show");
-          return;
-        }
+      input.addEventListener("focus", function () {
+        const q = safeText(this.value);
+        activeIndex = -1;
 
-        results.innerHTML = matches.map(function (m) {
-          return `
-            <a href="${escapeHTML(m.href)}" class="nav-search-result">
-              ${escapeHTML(m.title)}
-            </a>
-          `;
-        }).join("");
+        if (!q) return;
 
-        results.classList.add("show");
+        const matches = search(q, index);
+        renderQuickResults(results, matches, q);
       });
 
       input.addEventListener("keydown", function (e) {
+        const visibleItems = results.querySelectorAll(".nav-search-result");
+
         if (e.key === "Enter") {
           e.preventDefault();
+
+          if (activeIndex >= 0 && visibleItems[activeIndex]) {
+            window.location.href = visibleItems[activeIndex].getAttribute("href");
+            return;
+          }
+
           goToSearchPage(input.value);
         }
 
         if (e.key === "Escape") {
-          results.innerHTML = "";
-          results.classList.remove("show");
+          clearQuickResults(results);
           input.blur();
+        }
+
+        if (e.key === "ArrowDown") {
+          if (!visibleItems.length) return;
+          e.preventDefault();
+          activeIndex = Math.min(activeIndex + 1, visibleItems.length - 1);
+          updateActiveResult();
+        }
+
+        if (e.key === "ArrowUp") {
+          if (!visibleItems.length) return;
+          e.preventDefault();
+          activeIndex = Math.max(activeIndex - 1, 0);
+          updateActiveResult();
         }
       });
 
       document.addEventListener("click", function (e) {
         const clickedInsideNavSearch = e.target.closest(".nav-search-wrap");
-
         if (!clickedInsideNavSearch) {
-          results.innerHTML = "";
-          results.classList.remove("show");
+          clearQuickResults(results);
         }
       });
     }
