@@ -91,7 +91,7 @@
   }
 
   /* =========================
-     SEARCH ENGINE (UNCHANGED LOGIC)
+     SEARCH ENGINE
   ========================= */
 
   function normalize(text) {
@@ -112,29 +112,88 @@
 
   function search(query, index) {
     return index
-      .map(i => ({ ...i, score: score(i, query) }))
-      .filter(i => i.score > 0)
-      .sort((a, b) => b.score - a.score);
+      .map(function (i) {
+        return { ...i, score: score(i, query) };
+      })
+      .filter(function (i) {
+        return i.score > 0;
+      })
+      .sort(function (a, b) {
+        return b.score - a.score;
+      });
   }
 
   function goToSearchPage(query) {
     const q = query.trim();
     if (!q) return;
-    window.location.href = `v3-search.html?q=${encodeURIComponent(q)}`;
+    window.location.href = "v3-search.html?q=" + encodeURIComponent(q);
   }
 
   /* =========================
-     ENGAGEMENT (NO STRUCTURE CHANGE)
+     ENGAGEMENT
   ========================= */
 
   function enhanceLinks() {
     const links = document.querySelectorAll("a.btn");
 
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        // lightweight engagement signal (future analytics hook)
+    links.forEach(function (link) {
+      link.addEventListener("click", function () {
         link.classList.add("clicked");
       });
+    });
+  }
+
+  /* =========================
+     NAV HELPERS
+  ========================= */
+
+  function markActiveNav(navRoot) {
+    const currentPage = (window.location.pathname.split("/").pop() || "index.html")
+      .split("?")[0]
+      .split("#")[0];
+
+    const navLinks = navRoot.querySelectorAll(".nav-group nav a");
+
+    navLinks.forEach(function (link) {
+      const href = (link.getAttribute("href") || "")
+        .split("?")[0]
+        .split("#")[0];
+
+      if (href === currentPage) {
+        link.classList.add("nav-active");
+        link.setAttribute("aria-current", "page");
+
+        const parentGroup = link.closest(".nav-group");
+        if (parentGroup) parentGroup.open = true;
+      }
+    });
+  }
+
+  function setupAccordion(navRoot) {
+    const groups = navRoot.querySelectorAll(".nav-group");
+
+    groups.forEach(function (group) {
+      group.addEventListener("toggle", function () {
+        if (!group.open) return;
+
+        groups.forEach(function (other) {
+          if (other !== group) {
+            other.open = false;
+          }
+        });
+      });
+    });
+  }
+
+  function buildFallbackSearchIndex(navRoot) {
+    return Array.from(navRoot.querySelectorAll(".nav-group nav a")).map(function (link) {
+      return {
+        title: (link.textContent || "").trim(),
+        href: link.getAttribute("href") || "#",
+        keywords: (link.textContent || "").trim().toLowerCase(),
+        description: "",
+        category: ""
+      };
     });
   }
 
@@ -147,17 +206,26 @@
     const nav = document.getElementById("nav");
     const footer = document.getElementById("footer");
 
-    if (nav) nav.innerHTML = navHTML;
-    if (footer) footer.innerHTML = footerHTML;
+    if (nav) {
+      nav.innerHTML = navHTML;
+      markActiveNav(nav);
+      setupAccordion(nav);
+    }
 
-    const index = window.POSH_SEARCH_INDEX || [];
+    if (footer) {
+      footer.innerHTML = footerHTML;
+    }
 
     const input = document.getElementById("poshSearch");
     const results = document.getElementById("poshSearchResults");
 
+    let index = window.POSH_SEARCH_INDEX || [];
+    if ((!Array.isArray(index) || !index.length) && nav) {
+      index = buildFallbackSearchIndex(nav);
+    }
+
     if (input && results) {
 
-      /* LIVE SEARCH */
       input.addEventListener("input", function () {
         const q = this.value.trim();
 
@@ -169,33 +237,46 @@
 
         const matches = search(q, index).slice(0, 8);
 
-        results.innerHTML = matches.map(m => `
-          <a href="${escapeHTML(m.href)}" class="nav-search-result">
-            ${escapeHTML(m.title)}
-          </a>
-        `).join("");
+        if (!matches.length) {
+          results.innerHTML = '<div class="nav-search-result nav-search-empty">No results found</div>';
+          results.classList.add("show");
+          return;
+        }
+
+        results.innerHTML = matches.map(function (m) {
+          return `
+            <a href="${escapeHTML(m.href)}" class="nav-search-result">
+              ${escapeHTML(m.title)}
+            </a>
+          `;
+        }).join("");
 
         results.classList.add("show");
       });
 
-      /* ENTER KEY */
       input.addEventListener("keydown", function (e) {
         if (e.key === "Enter") {
           e.preventDefault();
           goToSearchPage(input.value);
         }
+
+        if (e.key === "Escape") {
+          results.innerHTML = "";
+          results.classList.remove("show");
+          input.blur();
+        }
       });
 
-      /* CLICK OUTSIDE */
       document.addEventListener("click", function (e) {
-        if (!nav.contains(e.target)) {
+        const clickedInsideNavSearch = e.target.closest(".nav-search-wrap");
+
+        if (!clickedInsideNavSearch) {
           results.innerHTML = "";
           results.classList.remove("show");
         }
       });
     }
 
-    /* LIGHT ENGAGEMENT ONLY */
     enhanceLinks();
 
   });
