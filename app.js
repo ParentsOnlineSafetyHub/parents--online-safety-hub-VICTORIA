@@ -19,23 +19,23 @@
       <details class="nav-group">
         <summary>Start Here &amp; Immediate Help</summary>
         <nav>
-          <a href="index.html" data-type="Page" data-keywords="home posh main page parents online safety hub">Home</a>
-          <a href="v3-start.html" data-type="Page" data-keywords="start first steps safety start here quiz score">Start Here</a>
-          <a href="v3-entry-system.html" data-type="Page" data-keywords="quick fast entry start fast concern check">Start Here Fast</a>
-          <a href="v3-parent-questions.html" data-type="Hub" data-keywords="parent questions search concerns real questions">Parent Questions</a>
-          <a href="v3-safety-score.html" data-type="Tool" data-keywords="score audit checklist safety check risk quiz">Safety Check</a>
-          <a href="v3-what-now.html" data-type="Action" data-keywords="what now immediate help next steps">What To Do Now</a>
-          <a href="v3-first-24-hours.html" data-type="Urgent" data-keywords="urgent first 24 hours evidence response crisis">First 24 Hours</a>
-          <a href="v3-posh-response-system.html" data-type="System" data-keywords="response system notice check secure talk monitor escalate">POSH Response System</a>
-          <a href="v3-urgent-warning-signs.html" data-type="Topic" data-keywords="urgent warning signs act now danger immediate concern">Urgent Warning Signs</a>
+          <a href="index.html" data-type="Page" data-keywords="home posh main page parents online safety hub homepage">Home</a>
+          <a href="v3-start.html" data-type="Page" data-keywords="start first steps safety start here score quiz guidance">Start Here</a>
+          <a href="v3-entry-system.html" data-type="Page" data-keywords="start here fast quick concern check fast entry immediate guidance">Start Here Fast</a>
+          <a href="v3-parent-questions.html" data-type="Hub" data-keywords="parent questions concerns search real questions worries help">Parent Questions</a>
+          <a href="v3-safety-score.html" data-type="Tool" data-keywords="safety score check audit checklist risk quiz test">Safety Check</a>
+          <a href="v3-what-now.html" data-type="Action" data-keywords="what now immediate help next steps act now">What To Do Now</a>
+          <a href="v3-first-24-hours.html" data-type="Urgent" data-keywords="first 24 hours urgent help evidence response crisis immediate action">First 24 Hours</a>
+          <a href="v3-posh-response-system.html" data-type="System" data-keywords="posh response system notice check secure talk monitor escalate">POSH Response System</a>
+          <a href="v3-urgent-warning-signs.html" data-type="Topic" data-keywords="urgent warning signs danger immediate concern act now">Urgent Warning Signs</a>
           <a href="v3-exposure-vs-danger.html" data-type="Topic" data-keywords="exposure vs danger risk levels high exposure active danger">Exposure vs Danger</a>
-          <a href="v3-real-scenarios.html" data-type="Topic" data-keywords="real scenarios examples identify what this is">Real Scenarios</a>
-          <a href="v3-reporting.html" data-type="Page" data-keywords="report help police support evidence hotline">Report &amp; Get Help</a>
-          <a href="v3-reporting-australia.html" data-type="Page" data-keywords="reporting australia esafety police">Report in Australia</a>
-          <a href="v3-reporting-uk.html" data-type="Page" data-keywords="reporting uk support">Report in the UK</a>
-          <a href="v3-reporting-usa.html" data-type="Page" data-keywords="reporting usa support">Report in the USA</a>
-          <a href="v3-reporting-europe.html" data-type="Page" data-keywords="reporting europe support">Report in Europe</a>
-          <a href="v3-evidence-reporting.html" data-type="Guide" data-keywords="evidence reporting save screenshots report properly">Evidence &amp; Reporting</a>
+          <a href="v3-real-scenarios.html" data-type="Topic" data-keywords="real scenarios examples identify pattern situation">Real Scenarios</a>
+          <a href="v3-reporting.html" data-type="Page" data-keywords="report help police support evidence hotline get help">Report &amp; Get Help</a>
+          <a href="v3-reporting-australia.html" data-type="Page" data-keywords="reporting australia esafety police report australia">Report in Australia</a>
+          <a href="v3-reporting-uk.html" data-type="Page" data-keywords="reporting uk report united kingdom">Report in the UK</a>
+          <a href="v3-reporting-usa.html" data-type="Page" data-keywords="reporting usa report united states america">Report in the USA</a>
+          <a href="v3-reporting-europe.html" data-type="Page" data-keywords="reporting europe report european support">Report in Europe</a>
+          <a href="v3-evidence-reporting.html" data-type="Guide" data-keywords="evidence reporting save screenshots report properly preserve evidence">Evidence &amp; Reporting</a>
         </nav>
       </details>
 
@@ -43,29 +43,30 @@
         <summary>Parents, Conversations &amp; House Rules</summary>
         <nav>
           <a href="v3-parent-scripts.html" data-type="Topic" data-keywords="what to say talk to child scripts conversation help">Parent Scripts</a>
-          <a href="v3-parent-conversations.html" data-type="Topic" data-keywords="conversations difficult talks calm discussion">Parent Conversations</a>
+          <a href="v3-parent-conversations.html" data-type="Topic" data-keywords="parent conversations difficult talks calm discussion">Parent Conversations</a>
           <a href="v3-what-to-say-if-your-child-opens-up.html" data-type="Topic" data-keywords="child opens up what to say disclosure support">If Your Child Opens Up</a>
           <a href="v3-when-your-child-wont-talk.html" data-type="Topic" data-keywords="child wont talk silence shutdown">If Your Child Won’t Talk</a>
           <a href="v3-what-to-say-if-your-child-thinks-it-was-their-fault.html" data-type="Topic" data-keywords="child thinks it was their fault shame blame">If They Think It Was Their Fault</a>
           <a href="v3-what-to-say-if-your-child-is-embarrassed-to-tell-you.html" data-type="Topic" data-keywords="embarrassed to tell you disclosure shame">If They’re Embarrassed to Tell You</a>
           <a href="v3-how-to-talk-so-your-child-opens-up.html" data-type="Topic" data-keywords="talk so child opens up communication trust">How To Talk So Your Child Opens Up</a>
-          <a href="v3-how-to-explain-grooming-and-predators-to-a-child.html" data-type="Topic" data-keywords="explain grooming predators to child">Explain Grooming to a Child</a>
+          <a href="v3-how-to-explain-grooming-and-predators-to-a-child.html" data-type="Topic" data-keywords="explain grooming predators child simple terms">Explain Grooming to a Child</a>
           <a href="v3-house-rules.html" data-type="Topic" data-keywords="rules boundaries family device rules expectations">House Rules</a>
           <a href="v3-age-guide.html" data-type="Topic" data-keywords="age suitable age guide children teens">Age Guide</a>
           <a href="v3-mindset.html" data-type="Topic" data-keywords="mindset parent thinking awareness calm structure">Parent Mindset</a>
-          <a href="v3-it-is-not-about-not-trusting-your-child.html" data-type="Topic" data-keywords="not about not trusting your child trust protect">Trust Your Child, Still Protect Them</a>
+          <a href="v3-it-is-not-about-not-trusting-your-child.html" data-type="Topic" data-keywords="trust child still protect not about not trusting">Trust Your Child, Still Protect Them</a>
           <a href="v3-how-to-monitor-without-breaking-trust.html" data-type="Topic" data-keywords="monitor trust check child calmly">Monitor Without Breaking Trust</a>
-          <a href="v3-how-to-monitor-your-childs-device-without-spying.html" data-type="Topic" data-keywords="monitor device without spying">Monitor a Device Without Spying</a>
+          <a href="v3-how-to-monitor-your-childs-device-without-spying.html" data-type="Topic" data-keywords="monitor child device without spying">Monitor a Device Without Spying</a>
           <a href="v3-how-to-check-a-device-without-causing-panic.html" data-type="Topic" data-keywords="check device calmly without panic evidence support">Check a Device Calmly</a>
           <a href="v3-how-to-rebuild-trust-after-an-online-scare.html" data-type="Topic" data-keywords="rebuild trust after online scare repair connection">Rebuild Trust After an Online Scare</a>
-          <a href="v3-parent-mistakes.html" data-type="Topic" data-keywords="parent mistakes what parents get wrong">Common Parent Mistakes</a>
-          <a href="v3-what-most-parents-get-wrong.html" data-type="Topic" data-keywords="most parents get wrong">What Most Parents Get Wrong</a>
+          <a href="v3-parent-mistakes.html" data-type="Topic" data-keywords="parent mistakes common parent mistakes">Common Parent Mistakes</a>
+          <a href="v3-what-most-parents-get-wrong.html" data-type="Topic" data-keywords="what most parents get wrong">What Most Parents Get Wrong</a>
           <a href="v3-why-kids-dont-ask-for-help.html" data-type="Topic" data-keywords="why kids dont ask for help">Why Kids Don’t Ask for Help</a>
-          <a href="v3-why-kids-hide-things.html" data-type="Topic" data-keywords="why kids hide things secrecy">Why Kids Hide Things</a>
+          <a href="v3-why-kids-hide-things.html" data-type="Topic" data-keywords="why kids hide things secrecy hiding">Why Kids Hide Things</a>
           <a href="v3-why-behaviour-changes.html" data-type="Topic" data-keywords="why behaviour changes">Why Behaviour Changes</a>
           <a href="v3-neurodivergent-communication.html" data-type="Topic" data-keywords="neurodivergent communication">Neurodivergent Communication</a>
-          <a href="v3-adhd-and-online-safety-communication.html" data-type="Topic" data-keywords="adhd communication online safety">ADHD &amp; Online Safety Communication</a>
-          <a href="v3-autism-and-online-safety-communication.html" data-type="Topic" data-keywords="autism communication online safety">Autism &amp; Online Safety Communication</a>
+          <a href="v3-adhd-and-online-safety-communication.html" data-type="Topic" data-keywords="adhd online safety communication">ADHD &amp; Online Safety Communication</a>
+          <a href="v3-autism-and-online-safety-communication.html" data-type="Topic" data-keywords="autism online safety communication">Autism &amp; Online Safety Communication</a>
+          <a href="v3-what-to-do-if-your-child-tells-you-something-serious.html" data-type="Topic" data-keywords="child tells you something serious what to do">If Your Child Tells You Something Serious</a>
         </nav>
       </details>
 
@@ -107,26 +108,28 @@
           <a href="v3-when-it-goes-deeper.html" data-type="Topic" data-keywords="when it goes deeper more serious">When It Goes Deeper</a>
           <a href="v3-if-you-do-nothing.html" data-type="Topic" data-keywords="if you do nothing consequences">If You Do Nothing</a>
           <a href="v3-secret-accounts.html" data-type="Topic" data-keywords="secret accounts hidden accounts alt accounts">Secret Accounts</a>
+          <a href="v3-should-i-read-my-childs-messages.html" data-type="Topic" data-keywords="should i read my childs messages">Should I Read My Child’s Messages?</a>
+          <a href="v3-my-child-deleted-messages-should-i-be-worried.html" data-type="Topic" data-keywords="my child deleted messages should i be worried">Deleted Messages: Should I Be Worried?</a>
+          <a href="v3-my-child-is-hiding-messages-what-should-i-do.html" data-type="Topic" data-keywords="my child is hiding messages what should i do">My Child Is Hiding Messages</a>
+          <a href="v3-what-to-do-if-your-child-deletes-everything.html" data-type="Topic" data-keywords="what to do if your child deletes everything">If Your Child Deletes Everything</a>
         </nav>
       </details>
 
       <details class="nav-group">
-        <summary>Devices, Platforms, Apps &amp; Games</summary>
+        <summary>Devices, Platforms, Games &amp; Apps</summary>
         <nav>
           <a href="v3-devices.html" data-type="Device" data-keywords="devices phone tablet ipad iphone android windows computer">Devices</a>
-          <a href="v3-device-controls.html" data-type="Device" data-keywords="device safety controls phone tablet laptop pc">Device Safety</a>
-          <a href="v3-parental-controls.html" data-type="Device" data-keywords="parental controls overview restrictions">Parental Controls</a>
-          <a href="v3-parental-controls-by-device.html" data-type="Device" data-keywords="controls by device parental controls">Parental Controls by Device</a>
-          <a href="v3-how-to-set-parental-controls-and-passwords.html" data-type="Device" data-keywords="passwords controls lock settings restrictions">Set Controls &amp; Passwords</a>
-          <a href="v3-how-to-set-parental-controls-iphone.html" data-type="Device" data-keywords="iphone apple screen time ios">iPhone Controls</a>
-          <a href="v3-how-to-set-parental-controls-android.html" data-type="Device" data-keywords="android google family link samsung">Android Controls</a>
-          <a href="v3-how-to-set-parental-controls-ipad.html" data-type="Device" data-keywords="ipad tablet screen time apple">iPad Controls</a>
-          <a href="v3-best-parental-control-apps.html" data-type="Device" data-keywords="best parental control apps bark qustodio family link">Best Parental Control Apps</a>
           <a href="v3-device-iphone.html" data-type="Device" data-keywords="device iphone">iPhone</a>
           <a href="v3-device-ipad.html" data-type="Device" data-keywords="device ipad">iPad</a>
           <a href="v3-device-apple.html" data-type="Device" data-keywords="device apple">Apple Devices</a>
           <a href="v3-device-android.html" data-type="Device" data-keywords="device android">Android Devices</a>
           <a href="v3-device-windows.html" data-type="Device" data-keywords="device windows">Windows Devices</a>
+          <a href="v3-device-controls.html" data-type="Device" data-keywords="device safety controls phone tablet laptop pc">Device Safety</a>
+          <a href="v3-parental-controls-by-device.html" data-type="Device" data-keywords="controls by device parental controls">Parental Controls by Device</a>
+          <a href="v3-how-to-set-parental-controls-and-passwords.html" data-type="Device" data-keywords="passwords controls lock settings restrictions">Set Controls &amp; Passwords</a>
+          <a href="v3-how-to-set-parental-controls-iphone.html" data-type="Device" data-keywords="iphone apple screen time ios">iPhone Controls</a>
+          <a href="v3-how-to-set-parental-controls-android.html" data-type="Device" data-keywords="android google family link samsung">Android Controls</a>
+          <a href="v3-best-parental-control-apps.html" data-type="Device" data-keywords="best parental control apps bark qustodio family link">Best Parental Control Apps</a>
 
           <a href="v3-platforms.html" data-type="Platform" data-keywords="platforms xbox playstation nintendo steam">Platforms</a>
           <a href="v3-platform-pc.html" data-type="Platform" data-keywords="pc platform">PC</a>
@@ -166,13 +169,19 @@
           <a href="v3-game-brawlstars.html" data-type="Game" data-keywords="brawl stars">Brawl Stars</a>
           <a href="v3-game-clashofclans.html" data-type="Game" data-keywords="clash of clans">Clash of Clans</a>
           <a href="v3-is-roblox-safe-for-my-child.html" data-type="Game" data-keywords="is roblox safe for my child">Is Roblox Safe?</a>
+          <a href="v3-why-roblox.html" data-type="Game" data-keywords="why roblox">Why Roblox?</a>
+          <a href="v3-why-fortnite.html" data-type="Game" data-keywords="why fortnite">Why Fortnite?</a>
 
           <a href="v3-socials.html" data-type="App" data-keywords="socials social media chat messaging">Social Media &amp; Chat</a>
           <a href="v3-all-applications.html" data-type="App" data-keywords="all apps applications directory">All Applications</a>
+          <a href="v3-videochat.html" data-type="App" data-keywords="video chat livestream facetime zoom meet teams">Live Video &amp; Streaming</a>
+          <a href="v3-streaming-video.html" data-type="App" data-keywords="streaming netflix disney youtube twitch">Streaming &amp; Video Apps</a>
+          <a href="v3-streaming-netflix.html" data-type="Streaming" data-keywords="netflix">Netflix</a>
+          <a href="v3-streaming-disneyplus.html" data-type="Streaming" data-keywords="disney plus disney+">Disney+</a>
+          <a href="v3-streaming-primevideo.html" data-type="Streaming" data-keywords="prime video">Prime Video</a>
+          <a href="v3-streaming-tubi.html" data-type="Streaming" data-keywords="tubi">Tubi</a>
           <a href="v3-dangerous-apps.html" data-type="App" data-keywords="dangerous apps risky apps hidden chats">Dangerous Apps</a>
           <a href="v3-safe-apps-and-games-for-kids.html" data-type="App" data-keywords="safe apps safe games kids safer choices">Safe Apps &amp; Games</a>
-          <a href="v3-videochat.html" data-type="App" data-keywords="video chat livestream facetime zoom google meet">Live Video &amp; Streaming</a>
-          <a href="v3-streaming-video.html" data-type="App" data-keywords="streaming netflix disney youtube twitch">Streaming &amp; Video Apps</a>
           <a href="v3-social-discord.html" data-type="App" data-keywords="discord">Discord</a>
           <a href="v3-social-snapchat.html" data-type="App" data-keywords="snapchat">Snapchat</a>
           <a href="v3-social-instagram.html" data-type="App" data-keywords="instagram">Instagram</a>
@@ -193,10 +202,9 @@
           <a href="v3-social-signal.html" data-type="App" data-keywords="signal">Signal</a>
           <a href="v3-social-wechat.html" data-type="App" data-keywords="wechat">WeChat</a>
           <a href="v3-social-yubo.html" data-type="App" data-keywords="yubo">Yubo</a>
-          <a href="v3-social-character-ai.html" data-type="AI" data-keywords="character ai">Character AI</a>
-          <a href="v3-social-replika.html" data-type="AI" data-keywords="replika">Replika</a>
           <a href="v3-social-omegle-alternatives.html" data-type="App" data-keywords="omegle alternatives">Omegle Alternatives</a>
           <a href="v3-is-discord-safe-for-kids.html" data-type="App" data-keywords="is discord safe for kids">Is Discord Safe?</a>
+          <a href="v3-why-discord.html" data-type="App" data-keywords="why discord">Why Discord?</a>
 
           <a href="v3-video-facetime.html" data-type="Video" data-keywords="facetime">FaceTime</a>
           <a href="v3-video-googlemeet.html" data-type="Video" data-keywords="google meet">Google Meet</a>
@@ -205,17 +213,14 @@
           <a href="v3-video-webex.html" data-type="Video" data-keywords="webex">Webex</a>
           <a href="v3-video-zoom.html" data-type="Video" data-keywords="zoom">Zoom</a>
 
-          <a href="v3-streaming-netflix.html" data-type="Streaming" data-keywords="netflix">Netflix</a>
-          <a href="v3-streaming-disneyplus.html" data-type="Streaming" data-keywords="disney plus disney+">Disney+</a>
-          <a href="v3-streaming-primevideo.html" data-type="Streaming" data-keywords="prime video">Prime Video</a>
-          <a href="v3-streaming-tubi.html" data-type="Streaming" data-keywords="tubi">Tubi</a>
-
           <a href="v3-ai-chat-risks-for-children.html" data-type="AI" data-keywords="ai chat risks children bots">AI Chat Risks</a>
           <a href="v3-is-chatgpt-safe-for-kids.html" data-type="AI" data-keywords="chatgpt safe kids">Is ChatGPT Safe for Kids?</a>
           <a href="v3-ai-fake-relationships.html" data-type="AI" data-keywords="ai fake relationships">AI Fake Relationships</a>
           <a href="v3-ai-roleplay-bots.html" data-type="AI" data-keywords="ai roleplay bots">AI Roleplay Bots</a>
           <a href="v3-can-ai-chats-make-kids-more-secretive.html" data-type="AI" data-keywords="ai chats more secretive">Can AI Chats Make Kids More Secretive?</a>
           <a href="v3-how-to-talk-to-your-child-about-ai.html" data-type="AI" data-keywords="talk to child about ai">How To Talk to Your Child About AI</a>
+          <a href="v3-social-character-ai.html" data-type="AI" data-keywords="character ai">Character AI</a>
+          <a href="v3-social-replika.html" data-type="AI" data-keywords="replika">Replika</a>
         </nav>
       </details>
 
@@ -235,9 +240,9 @@
           <a href="v3-founder.html" data-type="Page" data-keywords="founder jinglez">Founder</a>
           <a href="v3-why-posh-exists.html" data-type="Page" data-keywords="why posh exists mission purpose">Why POSH Exists</a>
           <a href="v3-warning.html" data-type="Page" data-keywords="warning disclaimer">Warning &amp; Disclaimer</a>
+          <a href="online-safety-foundations.html" data-type="Page" data-keywords="online safety foundations">Online Safety Foundations</a>
           <a href="v3-share.html" data-type="Page" data-keywords="share posh facebook movement">Share POSH</a>
           <a href="v3-support.html" data-type="Page" data-keywords="support donate gofundme stripe help posh">Support POSH</a>
-          <a href="online-safety-foundations.html" data-type="Page" data-keywords="online safety foundations">Online Safety Foundations</a>
           <a href="v3-policy-parent-approval-for-digital-gifting.html" data-type="Policy" data-keywords="parent approval digital gifting policy">Parent Approval for Digital Gifting</a>
           <a href="v3-petition-parent-approval-digital-gifting.html" data-type="Policy" data-keywords="petition parent approval digital gifting">Digital Gifting Petition</a>
           <a href="v3-policy-safer-defaults-for-child-accounts.html" data-type="Policy" data-keywords="safer defaults child accounts policy">Safer Defaults for Child Accounts</a>
@@ -284,8 +289,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\s-]/g, " ")
-      .replace(/\s+/g, " ")
+      .replace(/[^a-z0-9\\s-]/g, " ")
+      .replace(/\\s+/g, " ")
       .trim();
   }
 
@@ -306,7 +311,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\s+/).filter(Boolean);
+    const tokens = q.split(/\\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -320,11 +325,11 @@
 
   function search(query, index) {
     return index
-      .map(function (i) {
-        return Object.assign({}, i, { score: score(i, query) });
+      .map(function (item) {
+        return Object.assign({}, item, { score: score(item, query) });
       })
-      .filter(function (i) {
-        return i.score > 0;
+      .filter(function (item) {
+        return item.score > 0;
       })
       .sort(function (a, b) {
         if (b.score !== a.score) return b.score - a.score;
@@ -364,7 +369,9 @@
         link.setAttribute("aria-current", "page");
 
         const parentGroup = link.closest(".nav-group");
-        if (parentGroup) parentGroup.open = true;
+        if (parentGroup) {
+          parentGroup.open = true;
+        }
       }
     });
   }
@@ -424,34 +431,34 @@
         return;
       }
 
-      const items = matches.map(function (m) {
-        return '<a href="' + escapeHTML(m.href) + '" class="nav-search-result">' +
-          escapeHTML(m.title) +
-        "</a>";
+      const quickResults = matches.map(function (item) {
+        return '<a href="' + escapeHTML(item.href) + '" class="nav-search-result">' +
+          escapeHTML(item.title) +
+        '</a>';
       }).join("");
 
       const viewAll = '<a href="v3-search.html?q=' + encodeURIComponent(q) + '" class="nav-search-result nav-search-view-all">View all results</a>';
 
-      results.innerHTML = items + viewAll;
+      results.innerHTML = quickResults + viewAll;
       results.classList.add("show");
     });
 
-    input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") {
-        e.preventDefault();
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
         goToSearchPage(input.value);
       }
 
-      if (e.key === "Escape") {
+      if (event.key === "Escape") {
         results.innerHTML = "";
         results.classList.remove("show");
         input.blur();
       }
     });
 
-    document.addEventListener("click", function (e) {
-      const clickedInsideNav = e.target.closest(".nav-search-wrap");
-      if (!clickedInsideNav) {
+    document.addEventListener("click", function (event) {
+      const clickedInsideSearch = event.target.closest(".nav-search-wrap");
+      if (!clickedInsideSearch) {
         results.innerHTML = "";
         results.classList.remove("show");
       }
