@@ -4,9 +4,16 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Parent Questions • POSH</title>
-  <meta name="description" content="Real questions parents are asking about online safety, grooming, apps, behaviour changes, and protecting children." />
+  <meta name="description" content="Real questions parents are asking about online safety, grooming, apps, behaviour changes, device safety, and what to do next." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-parent-questions.html" />
+
+  <meta property="og:title" content="Parent Questions • POSH" />
+  <meta property="og:description" content="Search what parents are really worried about and get to the right POSH guidance faster." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-parent-questions.html" />
+  <meta property="og:site_name" content="POSH" />
+
   <link rel="stylesheet" href="style.css"/>
 </head>
 
@@ -18,10 +25,16 @@
 
   <p class="tagline">
     <strong>Search what parents are really worried about.</strong><br/>
-    Behaviour changes, hidden apps, grooming signs, device safety, and what to do next.
+    Behaviour changes, hidden apps, grooming signs, device safety, trust, and what to do next.
   </p>
 
   <div id="nav"></div>
+
+  <div class="callout center-callout">
+    <strong>How to use this page:</strong><br/>
+    Search the concern in plain words.<br/>
+    You do not need the perfect wording to find the right next step.
+  </div>
 
   <!-- SEARCH -->
   <div class="card center-card">
@@ -35,6 +48,7 @@
           class="search-page-input"
           placeholder="e.g. my child won’t talk, hiding messages, grooming signs"
           autocomplete="off"
+          aria-label="Search parent questions"
         />
         <button class="btn" id="parentQuestionBtn" type="button">Search</button>
       </div>
@@ -48,9 +62,16 @@
       <strong>“roblox chat”</strong>,
       <strong>“device safety”</strong>
     </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="v3-search.html?q=child+wont+talk">Search: Child Won’t Talk</a>
+      <a class="btn secondary" href="v3-search.html?q=deleted+messages">Search: Deleted Messages</a>
+      <a class="btn secondary" href="v3-search.html?q=grooming+signs">Search: Grooming Signs</a>
+      <a class="btn secondary" href="v3-search.html?q=device+safety">Search: Device Safety</a>
+    </div>
   </div>
 
-  <!-- QUICK QUESTIONS -->
+  <!-- COMMON QUESTIONS -->
   <div class="card center-card">
     <h2>Common Questions</h2>
 
@@ -69,17 +90,77 @@
     </div>
   </div>
 
-  <!-- CTA -->
+  <!-- DIRECT HIGH-INTENT LINKS -->
+  <div class="card center-card">
+    <h2>Parents often need these pages fast</h2>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-when-your-child-wont-talk.html">When Your Child Won’t Talk</a>
+      <a class="btn secondary" href="v3-my-child-deleted-messages-should-i-be-worried.html">Deleted Messages</a>
+      <a class="btn secondary" href="v3-signs-my-child-is-being-groomed-online.html">Signs of Grooming</a>
+      <a class="btn secondary" href="v3-how-to-check-a-device-without-causing-panic.html">Check a Device Calmly</a>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:12px;">
+      <a class="btn secondary" href="v3-dangerous-apps.html">Dangerous Apps</a>
+      <a class="btn secondary" href="v3-secret-accounts.html">Hidden Accounts</a>
+      <a class="btn secondary" href="v3-how-to-monitor-without-breaking-trust.html">Monitor Without Breaking Trust</a>
+      <a class="btn secondary" href="v3-parent-scripts.html">What To Say</a>
+    </div>
+  </div>
+
+  <!-- IF THEY ARE OVERWHELMED -->
+  <div class="card hero-warning center-card">
+    <h2>If you feel overwhelmed</h2>
+
+    <div class="rule-box">
+      <p>You do not need to understand the whole site before acting.</p>
+      <p>Pick the page that matches your concern most closely, then keep following the next step buttons.</p>
+    </div>
+
+    <div class="danger-line">
+      The right next step matters more than reading everything at once
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn" href="v3-start.html">Start Here</a>
+      <a class="btn secondary" href="v3-entry-system.html">Start Here Fast</a>
+      <a class="btn secondary" href="v3-real-scenarios.html">Real Scenarios</a>
+      <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
+    </div>
+  </div>
+
+  <!-- STILL NOT SURE -->
   <div class="card center-card">
     <h2>Still Not Sure?</h2>
     <p class="center-text">
-      If something feels off, trust that instinct. Start with a quick safety check or follow the guided response system.
+      If something feels off, trust that instinct. Start with a quick safety check or move into the guided response pages.
     </p>
 
     <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
       <a class="btn" href="v3-safety-score.html">Run Safety Check</a>
       <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
       <a class="btn secondary" href="v3-first-24-hours.html">First 24 Hours</a>
+      <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
+    </div>
+  </div>
+
+  <!-- EXPLORE MORE -->
+  <div class="card center-card">
+    <h2>Explore by topic</h2>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+      <a class="btn secondary" href="v3-playbook.html">Predator Playbook</a>
+      <a class="btn secondary" href="v3-all-applications.html">All Applications</a>
+      <a class="btn secondary" href="v3-all-games.html">All Games</a>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:12px;">
+      <a class="btn secondary" href="v3-device-controls.html">Device Safety</a>
+      <a class="btn secondary" href="v3-parental-controls-by-device.html">Controls by Device</a>
+      <a class="btn secondary" href="v3-downloads.html">Downloads</a>
+      <a class="btn secondary" href="v3-search.html">Full Site Search</a>
     </div>
   </div>
 
@@ -90,49 +171,47 @@
 <script src="app.js"></script>
 
 <script>
-(function(){
+(function () {
+  "use strict";
 
-  function sanitizeInput(str){
+  function sanitizeInput(str) {
     return String(str || "")
       .replace(/[<>]/g, "")
       .trim();
   }
 
-  function goToSearch(query){
+  function goToSearch(query) {
     const clean = sanitizeInput(query);
-    if(!clean) return;
+    if (!clean) return;
     window.location.href = "v3-search.html?q=" + encodeURIComponent(clean);
   }
 
-  document.addEventListener("DOMContentLoaded", function(){
-
+  document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("parentQuestionInput");
     const btn = document.getElementById("parentQuestionBtn");
 
-    if(btn){
-      btn.addEventListener("click", function(){
-        goToSearch(input.value);
+    if (btn) {
+      btn.addEventListener("click", function () {
+        goToSearch(input ? input.value : "");
       });
     }
 
-    if(input){
-      input.addEventListener("keydown", function(e){
-        if(e.key === "Enter"){
+    if (input) {
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
           e.preventDefault();
           goToSearch(input.value);
         }
       });
     }
 
-    document.querySelectorAll(".quick-q").forEach(button=>{
-      button.addEventListener("click", function(){
+    document.querySelectorAll(".quick-q").forEach(function (button) {
+      button.addEventListener("click", function () {
         const q = button.getAttribute("data-q") || "";
         goToSearch(q);
       });
     });
-
   });
-
 })();
 </script>
 
