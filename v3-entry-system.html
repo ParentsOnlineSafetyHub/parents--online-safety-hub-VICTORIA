@@ -114,7 +114,7 @@
 
     <div class="callout center-callout" id="resultSummary"></div>
 
-    <div class="card hero-warning center-card" style="margin-top:18px;">
+    <div class="card hero-warning center-card" id="pathwayCard" style="margin-top:18px;">
       <h2>Your best pathway now</h2>
       <p class="note" id="resultPathway"></p>
       <div class="btn-grid btn-grid-soft" id="resultButtons" style="margin-top:14px;"></div>
@@ -129,7 +129,7 @@
 
     <div class="card center-card" style="margin-top:18px;">
       <h2>Research the area that matters most</h2>
-      <div class="btn-grid btn-grid-soft">
+      <div class="btn-grid btn-grid-soft" id="researchButtons">
         <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
         <a class="btn secondary" href="v3-all-games.html">All Games</a>
         <a class="btn secondary" href="v3-all-applications.html">All Applications</a>
@@ -218,6 +218,8 @@
   const resultNote = document.getElementById("resultNote");
   const resultPathway = document.getElementById("resultPathway");
   const supportButtons = document.getElementById("supportButtons");
+  const researchButtons = document.getElementById("researchButtons");
+  const pathwayCard = document.getElementById("pathwayCard");
 
   function getValue(name) {
     const checked = form.querySelector('input[name="' + name + '"]:checked');
@@ -256,7 +258,13 @@
           button("v3-real-scenarios.html", "Identify the Pattern", "btn secondary") +
           button("v3-redflags.html", "Red Flags", "btn secondary") +
           button("v3-how-to-check-a-device-without-causing-panic.html", "Check a Device Calmly", "btn secondary") +
-          button("v3-what-now.html", "What To Do Now", "btn secondary")
+          button("v3-what-now.html", "What To Do Now", "btn secondary"),
+        research:
+          button("v3-parent-questions.html", "Parent Questions", "btn secondary") +
+          button("v3-my-child-deleted-messages-should-i-be-worried.html", "Deleted Messages", "btn secondary") +
+          button("v3-secret-accounts.html", "Hidden Accounts", "btn secondary") +
+          button("v3-downloads.html", "Downloads", "btn secondary"),
+        urgent: true
       };
     }
 
@@ -274,7 +282,13 @@
           button("v3-it-is-not-about-not-trusting-your-child.html", "Trust Your Child, Still Protect Them", "btn secondary") +
           button("v3-how-to-monitor-without-breaking-trust.html", "Monitor Without Breaking Trust", "btn secondary") +
           button("v3-mindset.html", "Parent Mindset", "btn secondary") +
-          button("v3-house-rules.html", "House Rules", "btn secondary")
+          button("v3-house-rules.html", "House Rules", "btn secondary"),
+        research:
+          button("v3-parent-questions.html", "Parent Questions", "btn secondary") +
+          button("v3-how-to-talk-so-your-child-opens-up.html", "Help Them Open Up", "btn secondary") +
+          button("v3-why-kids-dont-ask-for-help.html", "Why Kids Don’t Ask for Help", "btn secondary") +
+          button("v3-downloads.html", "Downloads", "btn secondary"),
+        urgent: false
       };
     }
 
@@ -292,7 +306,13 @@
           button("v3-definitions.html", "Understanding What’s Happening", "btn secondary") +
           button("v3-predators.html", "Predators & Grooming", "btn secondary") +
           button("v3-urgent-warning-signs.html", "Urgent Warning Signs", "btn secondary") +
-          button("v3-parent-questions.html", "Parent Questions", "btn secondary")
+          button("v3-parent-questions.html", "Parent Questions", "btn secondary"),
+        research:
+          button("v3-signs-my-child-is-being-groomed-online.html", "Signs of Grooming", "btn secondary") +
+          button("v3-how-predators-contact-kids-online.html", "How Predators Make Contact", "btn secondary") +
+          button("v3-when-an-online-friend-becomes-a-risk.html", "Online Friend Risk", "btn secondary") +
+          button("v3-downloads.html", "Downloads", "btn secondary"),
+        urgent: false
       };
     }
 
@@ -309,7 +329,13 @@
         button("v3-parental-controls-by-device.html", "Parental Controls by Device", "btn secondary") +
         button("v3-best-parental-control-apps.html", "Best Parental Control Apps", "btn secondary") +
         button("v3-age-guide.html", "Age Guide", "btn secondary") +
-        button("v3-all-applications.html", "All Applications", "btn secondary")
+        button("v3-all-applications.html", "All Applications", "btn secondary"),
+      research:
+        button("v3-parent-questions.html", "Parent Questions", "btn secondary") +
+        button("v3-all-games.html", "All Games", "btn secondary") +
+        button("v3-all-applications.html", "All Applications", "btn secondary") +
+        button("v3-downloads.html", "Downloads", "btn secondary"),
+      urgent: false
     };
   }
 
@@ -331,6 +357,13 @@
     resultButtons.innerHTML = path.buttons;
     resultNote.textContent = path.note;
     supportButtons.innerHTML = path.support;
+    researchButtons.innerHTML = path.research;
+
+    if (path.urgent) {
+      pathwayCard.classList.add("hero-warning");
+    } else {
+      pathwayCard.classList.remove("hero-warning");
+    }
 
     results.style.display = "block";
     results.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -344,6 +377,13 @@
     resultButtons.innerHTML = "";
     resultNote.textContent = "";
     supportButtons.innerHTML = "";
+    pathwayCard.classList.remove("hero-warning");
+    researchButtons.innerHTML =
+      '<a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>' +
+      '<a class="btn secondary" href="v3-all-games.html">All Games</a>' +
+      '<a class="btn secondary" href="v3-all-applications.html">All Applications</a>' +
+      '<a class="btn secondary" href="v3-downloads.html">Downloads</a>';
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
 </script>
