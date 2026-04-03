@@ -34,7 +34,7 @@ keywords: "what do i say if my child tells me something serious child opens up w
 
 {
 question: "How do predators contact kids online?",
-answer: "They often make contact through games, social media, chats, livestreams, friend systems, or by pretending to be another child.",
+answer: "They often make contact through games, social media, chats, livestreams, friend systems, comments, or by pretending to be another child.",
 href: "v3-how-predators-contact-kids-online.html",
 keywords: "how do predators contact kids online apps games chat social media grooming tactics how predators make contact online how online predators approach children"
 },
@@ -104,7 +104,7 @@ keywords: "what games are dangerous for kids online dangerous games kids roblox 
 
 {
 question: "Is Roblox safe for kids?",
-answer: "Roblox can be safer with controls, but chat, user-generated games, friend requests, and off-platform movement all create risks.",
+answer: "Roblox can be safer with controls, but chat, user-generated games, friend requests, gifting, and off-platform movement all create risks.",
 href: "v3-is-roblox-safe-for-my-child.html",
 keywords: "is roblox safe for kids roblox safe for kids risks roblox chat predators gaming safety roblox guide is roblox safe for my child"
 },
@@ -119,8 +119,8 @@ keywords: "how do i talk to my child about online safety talk to child about onl
 {
 question: "What should I do if my child is hiding things on their phone?",
 answer: "Stay calm, watch for patterns, avoid immediate confrontation, and move into red flags, device checks, and trust-based conversations.",
-href: "v3-why-kids-hide-things.html",
-keywords: "what should i do if my child is hiding things on their phone child hiding things phone secret behaviour warning signs device secrecy kids why kids hide things"
+href: "v3-my-child-is-hiding-messages-what-should-i-do.html",
+keywords: "what should i do if my child is hiding things on their phone child hiding things phone secret behaviour warning signs device secrecy kids my child is hiding things on their phone"
 },
 
 {
@@ -289,6 +289,55 @@ question: "Is ChatGPT safe for kids?",
 answer: "ChatGPT can be useful, but safe use depends on age, supervision, purpose, and whether it replaces healthy guidance from real adults.",
 href: "v3-is-chatgpt-safe-for-kids.html",
 keywords: "is chatgpt safe for kids chatgpt children safe ai chatbot risks benefits parental guidance"
+},
+
+{
+question: "What are the warning signs of sextortion?",
+answer: "Warning signs include secrecy, panic, threats, urgent money demands, pressure to send more, or fear after sharing images.",
+href: "v3-sextortion.html",
+keywords: "what are the warning signs of sextortion sextortion signs blackmail image threats child online"
+},
+
+{
+question: "What should I do if my child is being blackmailed online?",
+answer: "Stay calm, stop further contact, save evidence, do not pay, and move into reporting and first-response steps immediately.",
+href: "v3-sextortion.html",
+keywords: "what should i do if my child is being blackmailed online blackmail online child sextortion what now"
+},
+
+{
+question: "How do I know if my child has a secret account?",
+answer: "Look for hidden apps, second profiles, unusual logins, deleted notifications, sudden privacy around devices, and defensive behaviour.",
+href: "v3-secret-accounts.html",
+keywords: "how do i know if my child has a secret account secret account hidden profile second account child online"
+},
+
+{
+question: "Why are behaviour changes important in online safety?",
+answer: "Behaviour changes often show up before the full story does. Mood shifts, secrecy, panic, withdrawal, and defensiveness can all matter.",
+href: "v3-why-behaviour-changes.html",
+keywords: "why are behaviour changes important in online safety behaviour changes child online warning signs mood shifts secrecy"
+},
+
+{
+question: "What if something feels off but I cannot prove it?",
+answer: "You do not need perfect proof to start protecting your child. Start with patterns, safer settings, calm questions, and the right next step.",
+href: "v3-real-scenarios.html",
+keywords: "what if something feels off but i cannot prove it feels off no proof online risk child concern what now"
+},
+
+{
+question: "What should I do now if I feel overwhelmed?",
+answer: "Start with one clear step: use Start Here, the Safety Check, or the First 24 Hours page depending on how urgent it feels.",
+href: "v3-what-now.html",
+keywords: "what should i do now if i feel overwhelmed overwhelmed parent online safety what now where do i start"
+},
+
+{
+question: "Why do kids not recognise online danger?",
+answer: "Kids often focus on attention, belonging, curiosity, or fun first. That makes manipulation and grooming harder for them to spot early.",
+href: "v3-why-kids-dont-recognise-risk.html",
+keywords: "why do kids not recognise online danger why kids dont recognise risk online grooming manipulation children"
 }
 
 ];
