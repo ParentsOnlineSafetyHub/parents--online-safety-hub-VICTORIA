@@ -19,8 +19,8 @@
       <details class="nav-group">
         <summary>Start Here &amp; Immediate Help</summary>
         <nav>
-          <a href="index.html" data-type="Page" data-keywords="home posh main page parents online safety hub homepage">Home</a>
-          <a href="v3-start.html" data-type="Page" data-keywords="start here first steps quiz score guidance">Start Here</a>
+          <a href="index.html" data-type="Page" data-keywords="home posh main page homepage parents online safety hub">Home</a>
+          <a href="v3-start.html" data-type="Page" data-keywords="start here first steps quiz score start guide">Start Here</a>
           <a href="v3-entry-system.html" data-type="Page" data-keywords="start here fast quick concern check fast entry">Start Here Fast</a>
           <a href="v3-parent-questions.html" data-type="Hub" data-keywords="parent questions concerns search real questions worries">Parent Questions</a>
           <a href="v3-safety-score.html" data-type="Tool" data-keywords="safety score audit checklist risk quiz test">Safety Check</a>
@@ -290,8 +290,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\s-]/g, " ")
-      .replace(/\s+/g, " ")
+      .replace(/[^a-z0-9\\s-]/g, " ")
+      .replace(/\\s+/g, " ")
       .trim();
   }
 
@@ -312,7 +312,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\s+/).filter(Boolean);
+    const tokens = q.split(/\\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -368,17 +368,16 @@
       if (href === currentPage) {
         link.classList.add("nav-active");
         link.setAttribute("aria-current", "page");
-
-        const parentGroup = link.closest(".nav-group");
-        if (parentGroup) {
-          parentGroup.open = true;
-        }
       }
     });
   }
 
   function setupAccordion(navRoot) {
     const groups = navRoot.querySelectorAll(".nav-group");
+
+    groups.forEach(function (group) {
+      group.open = false;
+    });
 
     groups.forEach(function (group) {
       group.addEventListener("toggle", function () {
