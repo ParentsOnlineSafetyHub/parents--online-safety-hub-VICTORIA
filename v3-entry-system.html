@@ -114,7 +114,7 @@
 
     <div class="callout center-callout" id="resultSummary"></div>
 
-    <div class="card hero-warning center-card" id="pathwayCard" style="margin-top:18px;">
+    <div class="card hero-warning center-card" style="margin-top:18px;">
       <h2>Your best pathway now</h2>
       <p class="note" id="resultPathway"></p>
       <div class="btn-grid btn-grid-soft" id="resultButtons" style="margin-top:14px;"></div>
@@ -219,7 +219,12 @@
   const resultPathway = document.getElementById("resultPathway");
   const supportButtons = document.getElementById("supportButtons");
   const researchButtons = document.getElementById("researchButtons");
-  const pathwayCard = document.getElementById("pathwayCard");
+
+  const defaultResearchButtons =
+    '<a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>' +
+    '<a class="btn secondary" href="v3-all-games.html">All Games</a>' +
+    '<a class="btn secondary" href="v3-all-applications.html">All Applications</a>' +
+    '<a class="btn secondary" href="v3-downloads.html">Downloads</a>';
 
   function getValue(name) {
     const checked = form.querySelector('input[name="' + name + '"]:checked');
@@ -263,8 +268,7 @@
           button("v3-parent-questions.html", "Parent Questions", "btn secondary") +
           button("v3-my-child-deleted-messages-should-i-be-worried.html", "Deleted Messages", "btn secondary") +
           button("v3-secret-accounts.html", "Hidden Accounts", "btn secondary") +
-          button("v3-downloads.html", "Downloads", "btn secondary"),
-        urgent: true
+          button("v3-downloads.html", "Downloads", "btn secondary")
       };
     }
 
@@ -287,8 +291,7 @@
           button("v3-parent-questions.html", "Parent Questions", "btn secondary") +
           button("v3-how-to-talk-so-your-child-opens-up.html", "Help Them Open Up", "btn secondary") +
           button("v3-why-kids-dont-ask-for-help.html", "Why Kids Don’t Ask for Help", "btn secondary") +
-          button("v3-downloads.html", "Downloads", "btn secondary"),
-        urgent: false
+          button("v3-downloads.html", "Downloads", "btn secondary")
       };
     }
 
@@ -311,8 +314,7 @@
           button("v3-signs-my-child-is-being-groomed-online.html", "Signs of Grooming", "btn secondary") +
           button("v3-how-predators-contact-kids-online.html", "How Predators Make Contact", "btn secondary") +
           button("v3-when-an-online-friend-becomes-a-risk.html", "Online Friend Risk", "btn secondary") +
-          button("v3-downloads.html", "Downloads", "btn secondary"),
-        urgent: false
+          button("v3-downloads.html", "Downloads", "btn secondary")
       };
     }
 
@@ -334,8 +336,7 @@
         button("v3-parent-questions.html", "Parent Questions", "btn secondary") +
         button("v3-all-games.html", "All Games", "btn secondary") +
         button("v3-all-applications.html", "All Applications", "btn secondary") +
-        button("v3-downloads.html", "Downloads", "btn secondary"),
-      urgent: false
+        button("v3-downloads.html", "Downloads", "btn secondary")
     };
   }
 
@@ -359,12 +360,6 @@
     supportButtons.innerHTML = path.support;
     researchButtons.innerHTML = path.research;
 
-    if (path.urgent) {
-      pathwayCard.classList.add("hero-warning");
-    } else {
-      pathwayCard.classList.remove("hero-warning");
-    }
-
     results.style.display = "block";
     results.scrollIntoView({ behavior: "smooth", block: "start" });
   });
@@ -377,12 +372,7 @@
     resultButtons.innerHTML = "";
     resultNote.textContent = "";
     supportButtons.innerHTML = "";
-    pathwayCard.classList.remove("hero-warning");
-    researchButtons.innerHTML =
-      '<a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>' +
-      '<a class="btn secondary" href="v3-all-games.html">All Games</a>' +
-      '<a class="btn secondary" href="v3-all-applications.html">All Applications</a>' +
-      '<a class="btn secondary" href="v3-downloads.html">Downloads</a>';
+    researchButtons.innerHTML = defaultResearchButtons;
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })();
