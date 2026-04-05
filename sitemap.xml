@@ -1,59 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- HOMEPAGE -->
   <url>
     <loc>https://poshaussie.com.au/</loc>
     <lastmod>2026-04-05</lastmod>
   </url>
 
-  <!-- CORE HUBS -->
-  <url><loc>https://poshaussie.com.au/v3-start.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-entry-system.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-parent-questions.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-safety-score.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-10-signs-targeted-online.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-redflags.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-playbook.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-parent-scripts.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-parent-conversations.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-house-rules.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-age-guide.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-device-controls.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-parental-controls-by-device.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-platforms.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-gaming.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-all-games.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-socials.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-all-applications.html</loc><lastmod>2026-04-05</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-start.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-safety-score.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-redflags.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-playbook.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-parent-scripts.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-parent-conversations.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-house-rules.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-platforms.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-gaming.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-socials.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-all-games.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-all-applications.html</loc><lastmod>2026-03-27</lastmod></url>
 
-  <!-- SOCIAL PAGES -->
-  <url><loc>https://poshaussie.com.au/v3-social-tiktok.html</loc><lastmod>2026-04-05</lastmod></url>
-
-  <!-- NEW CORE CONTENT -->
+  <url><loc>https://poshaussie.com.au/v3-awareness.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-algorithm-awareness.html</loc><lastmod>2026-03-27</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-brainrot.html</loc><lastmod>2026-04-05</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-why-kids-cant-stop-scrolling.html</loc><lastmod>2026-04-05</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-how-manipulative-groups-recruit-children-online.html</loc><lastmod>2026-04-05</lastmod></url>
 
-  <!-- AWARENESS -->
-  <url><loc>https://poshaussie.com.au/v3-awareness.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-algorithm-awareness.html</loc><lastmod>2026-04-05</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-signs-my-child-is-being-groomed-online.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-how-predators-contact-kids-online.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-signs-your-child-is-being-isolated-online.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-when-an-online-friend-becomes-a-risk.html</loc><lastmod>2026-03-27</lastmod></url>
 
-  <!-- REPORTING -->
-  <url><loc>https://poshaussie.com.au/v3-reporting.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-reporting-australia.html</loc><lastmod>2026-04-05</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-social-tiktok.html</loc><lastmod>2026-04-05</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-social-discord.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-social-snapchat.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-social-instagram.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-social-youtube.html</loc><lastmod>2026-03-27</lastmod></url>
 
-  <!-- HIGH INTENT -->
-  <url><loc>https://poshaussie.com.au/v3-signs-my-child-is-being-groomed-online.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-how-predators-contact-kids-online.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-signs-your-child-is-being-isolated-online.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-when-an-online-friend-becomes-a-risk.html</loc><lastmod>2026-04-05</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-reporting.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-reporting-australia.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-first-24-hours.html</loc><lastmod>2026-03-27</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-evidence-reporting.html</loc><lastmod>2026-03-27</lastmod></url>
 
-  <!-- TRUST / COMMUNICATION -->
-  <url><loc>https://poshaussie.com.au/v3-how-to-talk-so-your-child-opens-up.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-why-kids-hide-things.html</loc><lastmod>2026-04-05</lastmod></url>
-
-  <!-- ACTION -->
-  <url><loc>https://poshaussie.com.au/v3-first-24-hours.html</loc><lastmod>2026-04-05</lastmod></url>
-  <url><loc>https://poshaussie.com.au/v3-evidence-reporting.html</loc><lastmod>2026-04-05</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-how-to-talk-so-your-child-opens-up.html</loc><lastmod>2026-03-28</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-what-to-do-if-your-child-tells-you-something-serious.html</loc><lastmod>2026-03-28</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-why-kids-hide-things.html</loc><lastmod>2026-03-28</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-why-behaviour-changes.html</loc><lastmod>2026-03-28</lastmod></url>
 
 </urlset>
