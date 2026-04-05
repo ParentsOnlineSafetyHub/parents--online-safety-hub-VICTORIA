@@ -4,9 +4,316 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>TikTok Safety • POSH</title>
-  <meta name="description" content="Learn why TikTok can create risk for children through algorithm exposure, live interaction, private messages, trends, and repeated emotional influence." />
+  <meta name="description" content="Learn why TikTok can create risk for children through algorithm exposure, live interaction, private messages, trends, parasocial influence, and repeated emotional manipulation." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-social-tiktok.html"/>
+  <meta property="og:title" content="TikTok Safety • POSH" />
+  <meta property="og:description" content="Understand how TikTok can expose children to fast-moving risks through its feed, trends, messages, live interactions, and emotional influence." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-social-tiktok.html" />
+  <meta property="og:site_name" content="POSH" />
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    :root{
+      --bgTop:#051327;
+      --bgMid:#092a52;
+      --bgBot:#061a33;
+      --card:rgba(255,255,255,.08);
+      --cardBorder:rgba(255,255,255,.14);
+      --text:#ecf4ff;
+      --muted:#bfd4ea;
+      --cyan:#67e8f9;
+      --blue:#60a5fa;
+      --gold:#facc15;
+      --red:#fb7185;
+      --green:#4ade80;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(103,232,249,.10), transparent 26%),
+        radial-gradient(circle at top right, rgba(96,165,250,.12), transparent 24%),
+        linear-gradient(180deg,var(--bgTop),var(--bgMid) 48%,var(--bgBot));
+      min-height:100vh;
+    }
+
+    .wrap{
+      width:min(var(--max),calc(100% - 28px));
+      margin:0 auto;
+      padding:28px 0 64px;
+    }
+
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#fff;
+      font-size:.95rem;
+      padding:10px 14px;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+    }
+
+    .page-title{
+      margin:18px 0 8px;
+      font-size:clamp(2.2rem,5vw,4rem);
+      line-height:.98;
+      font-weight:900;
+      letter-spacing:-.03em;
+    }
+
+    .tagline{
+      margin:0 0 24px;
+      max-width:860px;
+      color:var(--muted);
+      font-size:1.08rem;
+      line-height:1.6;
+    }
+
+    .tagline strong{color:#fff}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--cardBorder);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      padding:22px;
+      margin:18px 0;
+    }
+
+    .hero-warning{
+      padding:26px;
+      background:
+        linear-gradient(180deg, rgba(251,113,133,.12), rgba(255,255,255,.05));
+    }
+
+    .home-kicker{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.8rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#061a33;
+      background:linear-gradient(90deg,var(--cyan),var(--gold));
+      margin-bottom:14px;
+    }
+
+    h2{
+      font-size:1.55rem;
+      margin:0 0 12px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+
+    h3{
+      font-size:1.1rem;
+      margin:0 0 10px;
+      line-height:1.2;
+    }
+
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    p:last-child{margin-bottom:0}
+
+    .lead{
+      font-size:1.03rem;
+      color:#e9f2ff;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .mini-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:18px;
+      height:100%;
+    }
+
+    .mini-card h3{
+      color:#fff;
+      margin-bottom:8px;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+      color:#fff;
+      font-weight:700;
+      font-size:.92rem;
+    }
+
+    .danger-line{
+      margin-top:16px;
+      padding:12px 14px;
+      border-left:4px solid var(--red);
+      background:rgba(251,113,133,.10);
+      border-radius:14px;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .flow-step{
+      padding:16px 14px;
+      border-radius:18px;
+      text-align:center;
+      font-weight:800;
+      line-height:1.35;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      position:relative;
+    }
+
+    .flow-step:not(:last-child)::after{
+      content:"→";
+      position:absolute;
+      right:-10px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--gold);
+      font-size:1.25rem;
+      font-weight:900;
+    }
+
+    .risk-list,
+    .action-list{
+      display:grid;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .risk-item,
+    .action-item{
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+    }
+
+    .risk-item strong,
+    .action-item strong{
+      display:block;
+      color:#fff;
+      margin-bottom:4px;
+    }
+
+    .quote-box{
+      padding:18px;
+      border-radius:18px;
+      background:linear-gradient(180deg,rgba(96,165,250,.14),rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+      font-weight:700;
+      line-height:1.65;
+    }
+
+    .cta-band{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .cta-box{
+      padding:22px;
+      border-radius:20px;
+      background:linear-gradient(180deg,rgba(103,232,249,.12),rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.14);
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.14);
+      transition:transform .15s ease, opacity .15s ease;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      background:linear-gradient(90deg,var(--cyan),var(--blue));
+      color:#04111f;
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.07);
+      color:#fff;
+    }
+
+    .footer-note{
+      margin-top:24px;
+      text-align:center;
+      color:#b8cde1;
+      font-size:.95rem;
+    }
+
+    a.inline-link{
+      color:var(--cyan);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    @media (max-width:900px){
+      .grid-2,.grid-3,.cta-band,.flow{grid-template-columns:1fr}
+      .flow-step:not(:last-child)::after{display:none}
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -15,251 +322,204 @@
     <h1 class="page-title">TikTok</h1>
     <p class="tagline">
       <strong>TikTok is driven by algorithm exposure.</strong><br/>
-      Content risks, emotional influence, and private contact can escalate fast.
+      Content risks, emotional influence, trends, live interaction, and private contact can escalate quickly if a child has unrestricted access.
     </p>
 
     <div id="nav"></div>
 
-    <div class="card home-intro home-intro-hero">
-
-      <div class="home-kicker">
-        The feed teaches the child what to watch next
-      </div>
-
-      <div class="home-mantra">
-        WHAT A CHILD SCROLLS CAN START SHAPING WHAT FEELS NORMAL
-      </div>
-
-      <div class="home-subline">
-        TikTok is not only a social app. It is a fast-learning recommendation system.
-        Children do not need to search for risky content directly for the app to start feeding them more of it.
-      </div>
-
-      <div class="callout home-callout">
-        <strong>The risk is not only who contacts a child.</strong><br/>
-        The risk is also what reaches them repeatedly, what gets normalised, and how quickly the algorithm can pull them deeper into certain content patterns.
-      </div>
-
-    </div>
-
-    <div class="card hero-warning center-card">
-      <h2>Why TikTok matters</h2>
-      <div class="rule-box">
-        <p>TikTok can expose children to strangers, harmful trends, sexualised content, live interactions, and emotionally manipulative content very quickly.</p>
-        <p>Even passive scrolling teaches the algorithm what to show next, which means a child can be shaped by what they watch long before they understand why it keeps appearing.</p>
-      </div>
-      <div class="danger-line">A few clicks can change a child’s feed fast</div>
-    </div>
-
-    <div class="callout center-callout">
-      <strong>Child Safety First:</strong><br>
-      TikTok is not only about who contacts a child. It is also about what repeatedly reaches them, what gets normalised, and how fast the algorithm can pull them deeper into certain content patterns.
-    </div>
-
-    <div class="card center-card">
-      <h2>Why TikTok creates high risk</h2>
-
-      <ul class="list">
-        <li>The algorithm learns quickly from watch time, pauses, likes, and replays.</li>
-        <li>Content can shift from harmless entertainment into sexualised, extreme, manipulative, or fear-based material very fast.</li>
-        <li>Live streams, comments, and DMs can open pathways to stranger contact.</li>
-        <li>Children can be influenced emotionally even without actively searching for harmful content.</li>
-        <li>Repeated exposure can shape beliefs, attention, self-image, and behaviour over time.</li>
-      </ul>
-
-      <div class="callout center-callout">
-        The risk is not only one bad video. It is the ongoing feed pattern that keeps teaching the child what to watch next.
-      </div>
-    </div>
-
-    <div class="card center-card">
-      <h2>Important TikTok settings</h2>
-      <p class="note"><strong>1)</strong> Set the account to <strong>Private</strong></p>
-      <p class="note"><strong>2)</strong> Restrict direct messages</p>
-      <p class="note"><strong>3)</strong> Disable or limit duets, stitches, and downloads</p>
-      <p class="note"><strong>4)</strong> Use family pairing where possible</p>
-      <p class="note"><strong>5)</strong> Review who follows and comments</p>
-      <p class="note"><strong>6)</strong> Treat live features carefully or disable them where possible</p>
-
-      <div class="callout center-callout">
-        TikTok safety is not just account privacy. It is also about reducing how much the child can be contacted, copied, drawn into trends, or shaped by the feed.
-      </div>
-    </div>
-
-    <div class="card center-card">
-      <h2>What parents should know about current teen settings</h2>
-
-      <p class="note">
-        TikTok says accounts for users aged <strong>13 to 15</strong> are private by default, and accounts for users aged <strong>16 to 17</strong> are also private by default. TikTok also says direct messaging is not available for ages 13 to 15, while older teens can manage DM settings depending on age and privacy choices. Family Pairing gives parents and guardians added control over teen safety settings. 1
+    <section class="card hero-warning">
+      <div class="home-kicker">Fast Feed. Fast Influence.</div>
+      <h2>The feed teaches the child what to watch next</h2>
+      <p class="lead">
+        TikTok is not just a video app. It is a behaviour-shaping system built to hold attention, learn preferences, and keep serving more of what gets emotional reactions.
       </p>
-
-      <div class="callout center-callout">
-        Safer defaults help, but they do not remove the need for checks, conversations, and clear family rules.
-      </div>
-    </div>
-
-    <div class="card network center-card">
-      <h2>How TikTok risk can escalate</h2>
-
-      <p class="note">
-        What begins as casual scrolling can become something much deeper.
+      <p>
+        That matters because children do not just scroll entertainment. They can be pushed toward sexualised content, harmful trends, fake advice, older strangers, risky live streams, and repeated emotional messaging before a parent even realises what the feed has become.
       </p>
-
-      <div class="network-flow">
-        <div class="pill">Short-form scrolling</div>
-        <div class="arrow">↓</div>
-
-        <div class="pill">Algorithm learns interests fast</div>
-        <div class="arrow">↓</div>
-
-        <div class="pill">Feed becomes more targeted and intense</div>
-        <div class="arrow">↓</div>
-
-        <div class="pill danger">Live contact, messages, or risky trends appear</div>
-        <div class="arrow">↓</div>
-
-        <div class="pill danger">Manipulation, desensitisation, or off-platform movement</div>
-      </div>
-
-      <div class="callout center-callout" style="margin-top:16px;">
-        A child does not need to search for harmful content directly. The algorithm can bring it to them.
-      </div>
-    </div>
-
-    <div class="card center-card">
-      <h2>Major red flags on TikTok</h2>
-      <ul class="list">
-        <li>Older users messaging children</li>
-        <li>Pressure to move to Instagram, Snapchat, or Telegram</li>
-        <li>Live videos with unsafe comments or private invites</li>
-        <li>Sexualised trends or risky challenge content</li>
-        <li>Rapid change in the type of content appearing in the feed</li>
-        <li>Children becoming emotionally absorbed in one style of content or one creator</li>
-      </ul>
-
-      <div class="callout center-callout">
-        One of the clearest warning signs is when a child’s feed changes quickly and they become defensive or secretive about what they are watching.
-      </div>
-    </div>
-
-    <div class="card center-card">
-      <h2>Real investigations: TikTok, influence &amp; misinformation</h2>
-
-      <p class="note">
-        TikTok is not only a social app. It is also a powerful algorithm-driven content system that can shape attention, beliefs, behaviour, and emotional reactions over time.
-      </p>
-
-      <div class="callout center-callout">
-        <strong>Why this matters for parents:</strong><br>
-        Children do not need to search for harmful or manipulative content directly. Repeated exposure through algorithms, trends, emotionally charged clips, and misinformation can change what they see every day.
-      </div>
-
-      <div class="media-card">
-        <h3 class="media-title">The Shawn Ryan Show</h3>
-
-        <p class="note">
-          This discussion explores psyops, manipulation, misinformation, and how platforms like TikTok can be used to influence attention, thinking, and behaviour at scale.
-        </p>
-
-        <div class="embed">
-          <iframe
-            style="border-radius:12px"
-            src="https://open.spotify.com/embed/episode/141RUlz0kq3lfHuXr7ZKrL?utm_source=generator&t=2024"
-            width="100%"
-            height="352"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
-        </div>
-
-        <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
-          <a class="btn"
-             href="https://open.spotify.com/episode/141RUlz0kq3lfHuXr7ZKrL"
-             target="_blank"
-             rel="noopener">Open Full Episode</a>
-          <a class="btn secondary" href="v3-algorithm-awareness.html">Algorithm Risks</a>
-          <a class="btn secondary" href="v3-awareness.html">Safety Awareness</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card center-card">
-      <h2>What parents should do</h2>
-
-      <ul class="list">
-        <li>Use private settings and Family Pairing.</li>
-        <li>Review what kind of content is appearing in the feed.</li>
-        <li>Watch for fast shifts into more mature, sexualised, fear-based, or emotionally manipulative material.</li>
-        <li>Talk with children about how algorithms shape what they see.</li>
-        <li>Make the off-platform rule very clear if contact starts through TikTok.</li>
-      </ul>
-
-      <div class="callout center-callout">
-        TikTok should be treated as both an exposure platform and a contact-risk platform.
-      </div>
-    </div>
-
-    <div class="card center-card">
-      <h2>Questions parents should ask</h2>
-
-      <div class="rule-box">
-        <p>“What kind of videos keep showing up for you?”</p>
-        <p>“Have you noticed your feed getting more intense or weird?”</p>
-        <p>“Has anyone tried to message you or move you somewhere else?”</p>
-        <p>“Do you know why TikTok keeps showing you certain content?”</p>
-        <p>“Would you tell me if a live, comment, or DM started feeling off?”</p>
-      </div>
-
-      <div class="callout center-callout">
-        The better question is not just “What are you watching?” It is “What is the feed teaching you to keep watching?”
-      </div>
-    </div>
-
-    <div class="card center-card">
-      <h2>Next safety steps</h2>
-
-      <p class="note">
-        Do not stop at TikTok itself. Check the algorithm risks, warning signs, reporting options, and the wider child safety picture too.
-      </p>
-
-      <div class="btn-grid btn-grid-soft">
-        <a class="btn" href="v3-algorithm-awareness.html">Algorithm Risks</a>
-        <a class="btn secondary" href="v3-awareness.html">Safety Awareness</a>
-        <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
-        <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
-      </div>
-
-      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
-        <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
-        <a class="btn secondary" href="v3-socials.html">Back to Social Media &amp; Chat</a>
-        <a class="btn secondary" href="index.html">Back to Home Page</a>
-        <a class="btn secondary" href="v3-downloads.html">All PDF Downloads</a>
-      </div>
-    </div>
-
-    <div class="card hero-warning center-card">
-      <h2>Help protect another child</h2>
-
-      <div class="rule-box">
-        <p>Many parents underestimate how much algorithm-driven content can shape children before any obvious harm appears.</p>
-        <p>Sharing awareness early can help another family act before the feed becomes the problem.</p>
-      </div>
-
       <div class="danger-line">
-        What children scroll every day can shape what feels normal
+        The main risk is not one bad video. The main risk is repeated exposure, fast escalation, and influence delivered over time.
       </div>
+    </section>
 
-      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
-        <a class="btn" href="v3-share.html">Share POSH</a>
-        <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au" target="_blank" rel="noopener">Share on Facebook</a>
-        <a class="btn secondary" href="https://twitter.com/intent/tweet?url=https://poshaussie.com.au" target="_blank" rel="noopener">Share on X</a>
-        <a class="btn secondary" href="https://www.linkedin.com/sharing/share-offsite/?url=https://poshaussie.com.au" target="_blank" rel="noopener">Share on LinkedIn</a>
+    <section class="card">
+      <h2>Why TikTok can be risky for kids</h2>
+      <div class="grid-3">
+        <div class="mini-card">
+          <h3>Algorithm exposure</h3>
+          <p>The platform learns what keeps a child watching, then keeps feeding similar content. That can rapidly deepen risky interests, body image pressure, fear content, or sexualised material.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Trend pressure</h3>
+          <p>Children can feel pushed to copy dances, jokes, challenges, language, and behaviour just to stay socially relevant or avoid feeling left behind.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Parasocial influence</h3>
+          <p>Creators can begin to feel familiar and trusted. Kids may absorb their advice, worldview, product pushes, or emotional framing without questioning the source.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Live interaction</h3>
+          <p>Live streams can create direct access, emotional intensity, impulse spending, gifting, and contact with strangers in a fast-moving environment.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Private contact risk</h3>
+          <p>Comments, DMs, linked socials, and profile hopping can move a child from public viewing into private conversations, secrecy, and off-platform contact.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Emotional shaping</h3>
+          <p>Repeated content can affect mood, identity, self-worth, fear, and normalisation. Kids can begin to think “everyone is doing this” because the feed keeps showing it.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div id="footer"></div>
+    <section class="card">
+      <h2>How TikTok risk usually builds</h2>
+      <p>This is the pattern parents need to understand. It often does not begin as obvious danger. It begins as entertainment, curiosity, or belonging.</p>
+      <div class="flow">
+        <div class="flow-step">Scroll<br/>for fun</div>
+        <div class="flow-step">Algorithm<br/>learns fast</div>
+        <div class="flow-step">Feed becomes<br/>more intense</div>
+        <div class="flow-step">Contact / trends /<br/>influence deepen</div>
+        <div class="flow-step">Secrecy, pressure,<br/>or harm follows</div>
+      </div>
+    </section>
 
+    <section class="card">
+      <h2>Red flags parents should not ignore</h2>
+      <div class="risk-list">
+        <div class="risk-item">
+          <strong>Sudden obsession with the app</strong>
+          Increased screen time, constant checking, irritability when interrupted, or using every spare minute to scroll.
+        </div>
+        <div class="risk-item">
+          <strong>Major changes in language, humour, or dress</strong>
+          A child starts repeating phrases, copying creators, or shifting identity fast based on online trends.
+        </div>
+        <div class="risk-item">
+          <strong>Secrecy around the feed</strong>
+          They angle the screen away, delete watch history, clear notifications, or get defensive when asked what they watch.
+        </div>
+        <div class="risk-item">
+          <strong>Emotional spikes after using TikTok</strong>
+          Mood crashes, body image issues, anxiety, anger, comparison, fear, or appearing “different” after long sessions.
+        </div>
+        <div class="risk-item">
+          <strong>Talk about older followers or online friends</strong>
+          Especially if the child says someone “gets them,” is “really nice,” or wants to continue talking somewhere else.
+        </div>
+        <div class="risk-item">
+          <strong>Pressure to join trends or go live</strong>
+          The child feels they have to post, perform, reveal more, or take social risks to fit in.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What predators, manipulators, and exploiters may use</h2>
+      <div class="grid-2">
+        <div class="mini-card">
+          <h3>Attention hooks</h3>
+          <p>Compliments, support, validation, praise, “you’re mature,” “you’re different,” or “I actually understand you.”</p>
+        </div>
+        <div class="mini-card">
+          <h3>Profile scouting</h3>
+          <p>Learning interests, age cues, friend groups, insecurities, location hints, and emotional vulnerabilities from public content.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Off-platform moves</h3>
+          <p>Trying to move a child into Instagram, Snapchat, Discord, Telegram, or text messages where there is less visibility and more control.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Normalising risky behaviour</h3>
+          <p>Making explicit jokes, private chats, secrets, or age-inappropriate content feel common, harmless, or “what everyone does.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What parents should do</h2>
+      <div class="action-list">
+        <div class="action-item">
+          <strong>1. Keep the app in the open</strong>
+          No private, unsupervised TikTok use behind closed doors, especially for younger children.
+        </div>
+        <div class="action-item">
+          <strong>2. Review privacy settings together</strong>
+          Check account visibility, comments, messages, live settings, downloads, and who can interact.
+        </div>
+        <div class="action-item">
+          <strong>3. Watch the feed with them sometimes</strong>
+          Do not only ask what they watch. Sit with them and actually see how the feed behaves.
+        </div>
+        <div class="action-item">
+          <strong>4. Talk about influence, not just danger</strong>
+          Explain that the biggest risk is often repeated shaping, not only obvious strangers.
+        </div>
+        <div class="action-item">
+          <strong>5. Set clear rules around posting and live streams</strong>
+          Children should understand what is never shared, what is not filmed, and when a parent must approve content.
+        </div>
+        <div class="action-item">
+          <strong>6. Act early when the feed changes</strong>
+          If the content becomes sexualised, extreme, secretive, or emotionally harmful, intervene immediately rather than waiting.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Good parent questions to ask</h2>
+      <div class="quote-box">
+        “What sort of videos does TikTok keep showing you lately?”<br/><br/>
+        “Do random people ever message you or comment a lot?”<br/><br/>
+        “Has anyone ever tried to get you onto another app?”<br/><br/>
+        “Have you seen anything on there that made you uncomfortable but you kept scrolling anyway?”<br/><br/>
+        “Do you feel pressure to copy what you see so you fit in?”
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Important reminder</h2>
+      <p>
+        TikTok is not dangerous because every user is bad. It is risky because children can be exposed to too much, too fast, in a system designed to keep attention and shape behaviour.
+      </p>
+      <p>
+        Parents who understand the pattern can step in earlier, set stronger boundaries, and reduce harm before it escalates.
+      </p>
+      <div class="pill-row">
+        <div class="pill">Algorithm Exposure</div>
+        <div class="pill">Trend Pressure</div>
+        <div class="pill">Private Contact Risk</div>
+        <div class="pill">Emotional Influence</div>
+        <div class="pill">Early Parent Action</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="cta-band">
+        <div class="cta-box">
+          <h2>Take the next step</h2>
+          <p>
+            Use POSH to understand warning signs, grooming patterns, reporting options, and safer family boundaries across apps, games, and devices.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="v3-safety-score.html">Take the Safety Check</a>
+            <a class="btn btn-secondary" href="v3-redflags.html">See Red Flags</a>
+            <a class="btn btn-secondary" href="v3-playbook.html">Read the Grooming Playbook</a>
+          </div>
+        </div>
+        <div class="cta-box">
+          <h2>Recommended follow-up pages</h2>
+          <p><a class="inline-link" href="v3-algorithm-awareness.html">Algorithm Awareness</a></p>
+          <p><a class="inline-link" href="v3-socials.html">Social Media Risks</a></p>
+          <p><a class="inline-link" href="v3-reporting.html">Reporting & Next Steps</a></p>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      POSH • Parents Online Safety Hub
+    </p>
   </div>
-  <script src="app.js"></script>
+
+  <script src="nav.js"></script>
 </body>
 </html>
