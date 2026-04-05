@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>How to Reset Your Child’s Brain After Too Much Screen Time • POSH</title>
+
+  <meta name="description" content="Learn how to help reset your child after too much screen time. Practical steps to reduce overstimulation, rebuild calm, improve attention, and restore healthier routines." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://poshaussie.com.au/v3-how-to-reset-your-childs-brain-after-too-much-screen-time.html"/>
+
+  <meta property="og:title" content="How to Reset Your Child’s Brain After Too Much Screen Time • POSH" />
+  <meta property="og:description" content="Practical ways to help your child recover from too much screen time, overstimulation, scrolling, gaming, and fast reward loops." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-how-to-reset-your-childs-brain-after-too-much-screen-time.html" />
+  <meta property="og:site_name" content="POSH" />
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    :root{
+      --bgTop:#051327;
+      --bgMid:#092a52;
+      --bgBot:#061a33;
+      --card:rgba(255,255,255,.08);
+      --cardBorder:rgba(255,255,255,.14);
+      --text:#ecf4ff;
+      --muted:#bfd4ea;
+      --cyan:#67e8f9;
+      --blue:#60a5fa;
+      --gold:#facc15;
+      --green:#4ade80;
+      --red:#fb7185;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(74,222,128,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(103,232,249,.08), transparent 24%),
+        linear-gradient(180deg,var(--bgTop),var(--bgMid) 48%,var(--bgBot));
+      min-height:100vh;
+    }
+
+    .wrap{
+      width:min(var(--max),calc(100% - 28px));
+      margin:0 auto;
+      padding:28px 0 64px;
+    }
+
+    .page-title{
+      margin:18px 0 8px;
+      font-size:clamp(2.2rem,5vw,4rem);
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-.03em;
+    }
+
+    .tagline{
+      margin:0 0 24px;
+      max-width:920px;
+      color:var(--muted);
+      font-size:1.08rem;
+      line-height:1.65;
+    }
+
+    .tagline strong{color:#fff}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--cardBorder);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      padding:22px;
+      margin:18px 0;
+    }
+
+    .hero-warning{
+      padding:26px;
+      background:linear-gradient(180deg, rgba(74,222,128,.10), rgba(255,255,255,.05));
+    }
+
+    .home-kicker{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.8rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#061a33;
+      background:linear-gradient(90deg,var(--green),var(--cyan));
+      margin-bottom:14px;
+    }
+
+    h2{
+      font-size:1.55rem;
+      margin:0 0 12px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+
+    h3{
+      font-size:1.08rem;
+      margin:0 0 10px;
+      line-height:1.2;
+      color:#fff;
+    }
+
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.72;
+    }
+
+    p:last-child{margin-bottom:0}
+
+    .lead{
+      font-size:1.04rem;
+      color:#eaf3ff;
+    }
+
+    .danger-line{
+      margin-top:16px;
+      padding:12px 14px;
+      border-left:4px solid var(--red);
+      background:rgba(251,113,133,.10);
+      border-radius:14px;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .good-line{
+      margin-top:16px;
+      padding:12px 14px;
+      border-left:4px solid var(--green);
+      background:rgba(74,222,128,.10);
+      border-radius:14px;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .mini-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:18px;
+      height:100%;
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .flow-step{
+      padding:16px 14px;
+      border-radius:18px;
+      text-align:center;
+      font-weight:800;
+      line-height:1.35;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      position:relative;
+    }
+
+    .flow-step:not(:last-child)::after{
+      content:"→";
+      position:absolute;
+      right:-10px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--gold);
+      font-size:1.25rem;
+      font-weight:900;
+    }
+
+    .stack{
+      display:grid;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .stack-item{
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+    }
+
+    .stack-item strong{
+      display:block;
+      color:#fff;
+      margin-bottom:4px;
+    }
+
+    .quote-box{
+      padding:18px;
+      border-radius:18px;
+      background:linear-gradient(180deg,rgba(74,222,128,.12),rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+      font-weight:700;
+      line-height:1.65;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+      color:#fff;
+      font-weight:700;
+      font-size:.92rem;
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.14);
+      transition:transform .15s ease;
+      color:#fff;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+    .btn.secondary{
+      background:rgba(255,255,255,.07);
+      color:#fff;
+    }
+
+    .footer-note{
+      margin-top:24px;
+      text-align:center;
+      color:#b8cde1;
+      font-size:.95rem;
+    }
+
+    @media (max-width:900px){
+      .grid-2,.grid-3,.flow{grid-template-columns:1fr}
+      .flow-step:not(:last-child)::after{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div id="nav"></div>
+
+    <h1 class="page-title">How to Reset Your Child’s Brain After Too Much Screen Time</h1>
+    <p class="tagline">
+      <strong>You do not need to panic.</strong><br/>
+      If your child has had too much screen time, too much scrolling, too much gaming, or too much fast stimulation, the goal is not shame or punishment. The goal is helping their brain and body settle, reset, and rebuild healthier rhythms.
+    </p>
+
+    <section class="card hero-warning">
+      <div class="home-kicker">Reset, Don’t Just Restrict</div>
+      <h2>Too much screen time can overload attention, mood, and regulation</h2>
+      <p class="lead">
+        After heavy screen use, many kids look wired, flat, moody, impatient, restless, or harder to redirect. That does not always mean something is deeply wrong. It often means their system needs recovery.
+      </p>
+      <p>
+        Fast reward, constant novelty, short-form content, gaming pressure, and nonstop stimulation can leave the brain expecting more input than normal life provides. A reset helps bring the nervous system back down.
+      </p>
+      <div class="danger-line">
+        The first goal is not “perfect behaviour.” The first goal is lower stimulation and better regulation.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Signs your child may need a reset</h2>
+      <div class="grid-3">
+        <div class="mini-card">
+          <h3>More reactive than usual</h3>
+          <p>Shorter patience, quicker anger, stronger emotional responses, or more attitude after screens.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Can’t settle easily</h3>
+          <p>They seem restless, constantly checking, or unable to tolerate quiet without needing input.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Normal life feels “boring”</h3>
+          <p>Toys, books, outdoor time, chores, and conversation feel flat compared to the screen.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Hard transitions</h3>
+          <p>Moving from screens into meals, homework, showering, or bedtime becomes a fight.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Mood crash after stopping</h3>
+          <p>They go from engaged on screen to flat, irritable, or frustrated when it ends.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Sleep or focus are slipping</h3>
+          <p>Late nights, short attention, and daytime irritability often show the system is overloaded.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What a reset actually means</h2>
+      <div class="stack">
+        <div class="stack-item">
+          <strong>Lowering stimulation</strong>
+          Reducing the fast, noisy, emotionally intense inputs that keep the brain activated.
+        </div>
+        <div class="stack-item">
+          <strong>Restoring calm rhythm</strong>
+          Bringing back quieter activities, more predictable routines, and less constant reward chasing.
+        </div>
+        <div class="stack-item">
+          <strong>Rebuilding tolerance</strong>
+          Helping your child get used to slowness, boredom, effort, and normal life again.
+        </div>
+        <div class="stack-item">
+          <strong>Supporting regulation</strong>
+          Giving the body and brain space to settle so the child can function better offline.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>The reset pattern</h2>
+      <p>The point is not to go from chaos to perfection overnight. The point is to gradually bring the system back down.</p>
+      <div class="flow">
+        <div class="flow-step">Reduce intensity</div>
+        <div class="flow-step">Create calmer gaps</div>
+        <div class="flow-step">Rebuild routine</div>
+        <div class="flow-step">Reintroduce slower life</div>
+        <div class="flow-step">Watch regulation improve</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What helps reset a child after too much screen time</h2>
+      <div class="grid-2">
+        <div class="mini-card">
+          <h3>1. Cut the highest-intensity inputs first</h3>
+          <p>Short-form feeds, endless scrolling, high-stimulation gaming, and emotionally intense content usually hit the hardest.</p>
+        </div>
+        <div class="mini-card">
+          <h3>2. Protect the first hour after screens</h3>
+          <p>Do not move straight from overstimulation into arguments, homework battles, or rushed demands if you can help it.</p>
+        </div>
+        <div class="mini-card">
+          <h3>3. Bring back quiet</h3>
+          <p>Not every space needs background media. Quiet is part of recovery.</p>
+        </div>
+        <div class="mini-card">
+          <h3>4. Use body-based reset activities</h3>
+          <p>Walks, outside time, stretching, sport, movement, water, and hands-on tasks can help the system come back down.</p>
+        </div>
+        <div class="mini-card">
+          <h3>5. Reintroduce slower rewards</h3>
+          <p>Books, drawing, Lego, music, chores with rhythm, simple outdoor play, and longer conversations all help rebuild steadier attention.</p>
+        </div>
+        <div class="mini-card">
+          <h3>6. Protect sleep hard</h3>
+          <p>Late-night stimulation makes everything harder the next day. A good reset nearly always includes better bedtime boundaries.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What not to do during a reset</h2>
+      <div class="stack">
+        <div class="stack-item">
+          <strong>Do not shame the child</strong>
+          The goal is to support regulation, not make them feel broken or guilty.
+        </div>
+        <div class="stack-item">
+          <strong>Do not expect instant calm</strong>
+          If the system has been running fast for a while, it may take time to settle.
+        </div>
+        <div class="stack-item">
+          <strong>Do not replace one intense input with another</strong>
+          Swapping TikTok for nonstop YouTube or gaming marathons is not really a reset.
+        </div>
+        <div class="stack-item">
+          <strong>Do not make every conversation a fight</strong>
+          Calm consistency works better than constant emotional conflict around devices.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Questions parents should ask</h2>
+      <div class="quote-box">
+        “What type of screen use is hitting my child hardest?”<br/><br/>
+        “When are they most dysregulated?”<br/><br/>
+        “What happens after screens stop?”<br/><br/>
+        “What calmer activities still work for them?”<br/><br/>
+        “What parts of the day need more protection?”
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>A simple reset plan</h2>
+      <div class="stack">
+        <div class="stack-item">
+          <strong>Step 1: Remove the most intense screen loops</strong>
+          Start with the fastest and most overstimulating content, not necessarily every screen at once.
+        </div>
+        <div class="stack-item">
+          <strong>Step 2: Create device-free parts of the day</strong>
+          Meals, mornings, before bed, outdoor time, and transition times matter.
+        </div>
+        <div class="stack-item">
+          <strong>Step 3: Bring back body and real-world rhythm</strong>
+          Movement, sunlight, chores, routine, and offline play help the reset happen faster.
+        </div>
+        <div class="stack-item">
+          <strong>Step 4: Expect discomfort at first</strong>
+          A child used to constant stimulation may seem flat, bored, or frustrated before things improve.
+        </div>
+        <div class="stack-item">
+          <strong>Step 5: Stay steady long enough to see change</strong>
+          Reset does not come from one good day. It comes from repeated calmer patterns.
+        </div>
+      </div>
+      <div class="good-line">
+        A reset is less about punishment and more about changing the environment so the brain can recover.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Bottom line</h2>
+      <p>
+        If your child has had too much screen time, the answer is not panic. It is recognising that their system may be overloaded and helping them come back down with calmer inputs, stronger rhythm, and less constant stimulation.
+      </p>
+      <p>
+        Reset first. Then rebuild healthier habits from there.
+      </p>
+      <div class="pill-row">
+        <div class="pill">Reset</div>
+        <div class="pill">Recovery</div>
+        <div class="pill">Calm</div>
+        <div class="pill">Routine</div>
+        <div class="pill">Regulation</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Related POSH pages</h2>
+      <div class="btn-row">
+        <a class="btn secondary" href="v3-why-kids-seem-bored-by-normal-life-after-too-much-screen-time.html">Why Normal Life Starts Feeling Boring</a>
+        <a class="btn secondary" href="v3-why-boredom-is-important-for-kids.html">Why Boredom Is Important for Kids</a>
+        <a class="btn secondary" href="v3-why-constant-stimulation-makes-kids-more-reactive.html">Why Constant Stimulation Makes Kids More Reactive</a>
+        <a class="btn secondary" href="v3-how-dopamine-keeps-kids-hooked-online.html">How Dopamine Keeps Kids Hooked Online</a>
+        <a class="btn secondary" href="v3-brainrot.html">Brain Rot</a>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <p class="footer-note">
+      POSH • Parents Online Safety Hub
+    </p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
