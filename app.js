@@ -15,14 +15,124 @@
     </div>
 
     <div class="nav-accordion">
-      <!-- (NAV CONTENT UNCHANGED — KEEP YOUR ORIGINAL BLOCK HERE) -->
+
+      <details class="nav-group">
+        <summary>Start & Safety</summary>
+        <nav>
+          <a href="v3-start.html" data-type="Start" data-keywords="start safety first steps parent help online safety">Start Here</a>
+          <a href="v3-entry-system.html" data-type="System" data-keywords="entry system start guide pathway">Entry System</a>
+          <a href="v3-parent-questions.html" data-type="Parent Help" data-keywords="parent questions what to ask warning signs">Parent Questions</a>
+          <a href="v3-safety-score.html" data-type="Assessment" data-keywords="safety score risk quiz check assessment">Safety Score</a>
+          <a href="v3-redflags.html" data-type="Warning Signs" data-keywords="red flags warning signs grooming secrecy behaviour">Red Flags</a>
+          <a href="v3-10-signs-targeted-online.html" data-type="Warning Signs" data-keywords="targeted online signs child targeted">10 Signs Targeted Online</a>
+          <a href="v3-playbook.html" data-type="Awareness" data-keywords="grooming playbook escalation predator behaviour pattern">Grooming Playbook</a>
+          <a href="v3-first-24-hours.html" data-type="Action" data-keywords="first 24 hours what to do immediately">First 24 Hours</a>
+          <a href="v3-reporting.html" data-type="Reporting" data-keywords="reporting report abuse police help evidence">Reporting</a>
+          <a href="v3-reporting-australia.html" data-type="Reporting" data-keywords="reporting australia esafety police child protection">Reporting Australia</a>
+        </nav>
+      </details>
+
+      <details class="nav-group">
+        <summary>Parent Help</summary>
+        <nav>
+          <a href="v3-parent-scripts.html" data-type="Parent Scripts" data-keywords="scripts what to say conversations hard talks">Parent Scripts</a>
+          <a href="v3-parent-conversations.html" data-type="Conversations" data-keywords="parent conversations difficult talks trust">Parent Conversations</a>
+          <a href="v3-house-rules.html" data-type="Rules" data-keywords="house rules boundaries family device rules">House Rules</a>
+          <a href="v3-age-guide.html" data-type="Guide" data-keywords="age guide age appropriate apps games devices">Age Guide</a>
+          <a href="v3-how-to-talk-so-your-child-opens-up.html" data-type="Trust" data-keywords="opens up child trust disclosure conversation">How to Talk So Your Child Opens Up</a>
+          <a href="v3-what-to-do-if-your-child-tells-you-something-serious.html" data-type="Response" data-keywords="child tells you something serious disclosure response">If Your Child Tells You Something Serious</a>
+          <a href="v3-why-kids-hide-things.html" data-type="Behaviour" data-keywords="why kids hide things secrecy fear shame">Why Kids Hide Things</a>
+          <a href="v3-why-behaviour-changes.html" data-type="Behaviour" data-keywords="behaviour changes warning signs mood change">Why Behaviour Changes</a>
+          <a href="v3-how-to-check-a-device-without-causing-panic.html" data-type="Devices" data-keywords="check device without panic inspect calmly">Check a Device Without Causing Panic</a>
+          <a href="v3-how-to-rebuild-trust-after-an-online-incident.html" data-type="Trust" data-keywords="rebuild trust after online incident scare">Rebuild Trust After an Online Incident</a>
+        </nav>
+      </details>
+
+      <details class="nav-group">
+        <summary>Apps & Social Media</summary>
+        <nav>
+          <a href="v3-socials.html" data-type="Social Media" data-keywords="social media apps overview risks">All Socials</a>
+          <a href="v3-all-applications.html" data-type="Apps" data-keywords="all apps applications app risks">All Applications</a>
+          <a href="v3-social-discord.html" data-type="Social App" data-keywords="discord servers chat grooming risk">Discord</a>
+          <a href="v3-social-snapchat.html" data-type="Social App" data-keywords="snapchat disappearing messages sextortion risk">Snapchat</a>
+          <a href="v3-social-instagram.html" data-type="Social App" data-keywords="instagram dms reels strangers">Instagram</a>
+          <a href="v3-social-tiktok.html" data-type="Social App" data-keywords="tiktok short form feed algorithm brainrot scrolling">TikTok</a>
+          <a href="v3-social-youtube.html" data-type="Social App" data-keywords="youtube shorts content kids exposure">YouTube</a>
+          <a href="v3-social-telegram.html" data-type="Social App" data-keywords="telegram privacy group chats risk">Telegram</a>
+          <a href="v3-social-whatsapp.html" data-type="Social App" data-keywords="whatsapp messaging group chats safety">WhatsApp</a>
+          <a href="v3-social-yubo.html" data-type="Social App" data-keywords="yubo meet strangers teen social app">Yubo</a>
+        </nav>
+      </details>
+
+      <details class="nav-group">
+        <summary>Games & Platforms</summary>
+        <nav>
+          <a href="v3-gaming.html" data-type="Gaming" data-keywords="gaming games risks kids predators voice chat">Gaming</a>
+          <a href="v3-all-games.html" data-type="Games" data-keywords="all games game list risks">All Games</a>
+          <a href="v3-game-roblox.html" data-type="Game" data-keywords="roblox robux private chat predators">Roblox</a>
+          <a href="v3-game-fortnite.html" data-type="Game" data-keywords="fortnite chat party strangers risk">Fortnite</a>
+          <a href="v3-game-minecraft.html" data-type="Game" data-keywords="minecraft servers chat kids safety">Minecraft</a>
+          <a href="v3-game-vrchat.html" data-type="Game" data-keywords="vrchat voice avatars strangers risk">VRChat</a>
+          <a href="v3-game-apex.html" data-type="Game" data-keywords="apex legends chat team strangers">Apex Legends</a>
+          <a href="v3-platform-playstation.html" data-type="Platform" data-keywords="playstation parental controls console">PlayStation</a>
+          <a href="v3-platform-xbox.html" data-type="Platform" data-keywords="xbox parental controls console">Xbox</a>
+          <a href="v3-platform-nintendo.html" data-type="Platform" data-keywords="nintendo switch parental controls">Nintendo</a>
+        </nav>
+      </details>
+
+      <details class="nav-group">
+        <summary>Devices & Controls</summary>
+        <nav>
+          <a href="v3-devices.html" data-type="Devices" data-keywords="devices child safety device overview">Devices</a>
+          <a href="v3-device-controls.html" data-type="Controls" data-keywords="device controls parental controls settings">Device Controls</a>
+          <a href="v3-parental-controls-by-device.html" data-type="Controls" data-keywords="parental controls by device iphone android ipad windows">Parental Controls by Device</a>
+          <a href="v3-device-iphone.html" data-type="Device" data-keywords="iphone apple screen time controls">iPhone</a>
+          <a href="v3-device-ipad.html" data-type="Device" data-keywords="ipad apple screen time controls">iPad</a>
+          <a href="v3-device-android.html" data-type="Device" data-keywords="android family link controls">Android</a>
+          <a href="v3-device-windows.html" data-type="Device" data-keywords="windows microsoft family safety">Windows</a>
+          <a href="v3-how-to-set-parental-controls-iphone.html" data-type="How To" data-keywords="set parental controls iphone">Set Parental Controls iPhone</a>
+          <a href="v3-how-to-set-parental-controls-android.html" data-type="How To" data-keywords="set parental controls android">Set Parental Controls Android</a>
+          <a href="v3-best-parental-control-apps.html" data-type="Apps" data-keywords="best parental control apps monitoring trust">Best Parental Control Apps</a>
+        </nav>
+      </details>
+
+      <details class="nav-group">
+        <summary>Awareness & Deep Dive</summary>
+        <nav>
+          <a href="v3-awareness.html" data-type="Awareness" data-keywords="awareness risks education parents">Awareness</a>
+          <a href="v3-algorithm-awareness.html" data-type="Awareness" data-keywords="algorithm awareness feed recommendation manipulation">Algorithm Awareness</a>
+          <a href="v3-brainrot.html" data-type="Awareness" data-keywords="brainrot short form content attention kids">Brain Rot</a>
+          <a href="v3-why-kids-cant-stop-scrolling.html" data-type="Awareness" data-keywords="why kids cant stop scrolling dopamine reels shorts tiktok">Why Kids Can’t Stop Scrolling</a>
+          <a href="v3-how-manipulative-groups-recruit-children-online.html" data-type="Awareness" data-keywords="manipulative groups recruit children online cult recruitment belonging secrecy">Manipulative Group Recruitment</a>
+          <a href="v3-predators.html" data-type="Awareness" data-keywords="predators online child safety">Predators</a>
+          <a href="v3-sextortion.html" data-type="Awareness" data-keywords="sextortion blackmail nude image threats">Sextortion</a>
+          <a href="v3-grooming.html" data-type="Awareness" data-keywords="grooming what is grooming stages">Grooming</a>
+          <a href="v3-definitions.html" data-type="Definitions" data-keywords="definitions glossary terms online safety">Definitions</a>
+          <a href="v3-real-investigations.html" data-type="Awareness" data-keywords="real investigations case examples">Real Investigations</a>
+        </nav>
+      </details>
+
+      <details class="nav-group">
+        <summary>Downloads & Support</summary>
+        <nav>
+          <a href="v3-downloads.html" data-type="Downloads" data-keywords="downloads guides pdf checklists">Downloads</a>
+          <a href="v3-all-downloads.html" data-type="Downloads" data-keywords="all downloads pdf resources">All Downloads</a>
+          <a href="v3-cancel-subscriptions.html" data-type="Support" data-keywords="cancel subscriptions app store google play microsoft">Cancel Subscriptions</a>
+          <a href="v3-support.html" data-type="Support" data-keywords="support donate help posh">Support POSH</a>
+          <a href="v3-share.html" data-type="Share" data-keywords="share posh awareness parents">Share POSH</a>
+          <a href="v3-community.html" data-type="Community" data-keywords="community parents voice support">Community</a>
+          <a href="v3-collaboration.html" data-type="Collaboration" data-keywords="collaboration partner creator educator">Collaboration</a>
+          <a href="v3-founder.html" data-type="Founder" data-keywords="founder jinglez why posh exists">Founder</a>
+          <a href="v3-why-posh-exists.html" data-type="Mission" data-keywords="why posh exists mission purpose">Why POSH Exists</a>
+          <a href="v3-warning.html" data-type="Warning" data-keywords="warning disclaimer important">Warning & Disclaimer</a>
+        </nav>
+      </details>
+
     </div>
   `;
 
-  // 🔥 UPDATED FOOTER WITH SUPPORT SYSTEM
   const footerHTML = `
     <footer>
-
       <div class="footer-cta-block">
         <h3 class="footer-cta-title">Help Protect More Children</h3>
         <p class="footer-cta-text">
@@ -67,7 +177,6 @@
         Built to educate parents. Designed to protect our children.<br/>
         <span class="small">Contact: allthewaycarpentry@gmail.com</span>
       </div>
-
     </footer>
   `;
 
@@ -85,8 +194,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\\s-]/g, " ")
-      .replace(/\\s+/g, " ")
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .replace(/\s+/g, " ")
       .trim();
   }
 
@@ -107,7 +216,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\\s+/).filter(Boolean);
+    const tokens = q.split(/\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -163,16 +272,17 @@
       if (href === currentPage) {
         link.classList.add("nav-active");
         link.setAttribute("aria-current", "page");
+
+        const parentGroup = link.closest(".nav-group");
+        if (parentGroup) {
+          parentGroup.open = true;
+        }
       }
     });
   }
 
   function setupAccordion(navRoot) {
     const groups = navRoot.querySelectorAll(".nav-group");
-
-    groups.forEach(function (group) {
-      group.open = false;
-    });
 
     groups.forEach(function (group) {
       group.addEventListener("toggle", function () {
@@ -558,7 +668,6 @@
     }
 
     enhanceLinks();
-
     injectSupportStyles();
     buildStickySupportButton();
     buildExitIntentModal();
