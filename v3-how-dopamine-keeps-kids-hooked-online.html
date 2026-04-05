@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>How Dopamine Keeps Kids Hooked Online • POSH</title>
+
+  <meta name="description" content="Learn how dopamine loops keep kids hooked online through scrolling, likes, messages, gaming rewards, and constant stimulation. Understand the pattern and what parents can do." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://poshaussie.com.au/v3-how-dopamine-keeps-kids-hooked-online.html"/>
+
+  <meta property="og:title" content="How Dopamine Keeps Kids Hooked Online • POSH" />
+  <meta property="og:description" content="Understand how dopamine loops drive checking, scrolling, reward-seeking, and repeated online behaviour in children." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-how-dopamine-keeps-kids-hooked-online.html" />
+  <meta property="og:site_name" content="POSH" />
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    :root{
+      --bgTop:#051327;
+      --bgMid:#092a52;
+      --bgBot:#061a33;
+      --card:rgba(255,255,255,.08);
+      --cardBorder:rgba(255,255,255,.14);
+      --text:#ecf4ff;
+      --muted:#bfd4ea;
+      --cyan:#67e8f9;
+      --blue:#60a5fa;
+      --gold:#facc15;
+      --purple:#a78bfa;
+      --red:#fb7185;
+      --green:#4ade80;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(250,204,21,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(103,232,249,.10), transparent 24%),
+        linear-gradient(180deg,var(--bgTop),var(--bgMid) 48%,var(--bgBot));
+      min-height:100vh;
+    }
+
+    .wrap{
+      width:min(var(--max),calc(100% - 28px));
+      margin:0 auto;
+      padding:28px 0 64px;
+    }
+
+    .page-title{
+      margin:18px 0 8px;
+      font-size:clamp(2.2rem,5vw,4rem);
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-.03em;
+    }
+
+    .tagline{
+      margin:0 0 24px;
+      max-width:900px;
+      color:var(--muted);
+      font-size:1.08rem;
+      line-height:1.65;
+    }
+
+    .tagline strong{color:#fff}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--cardBorder);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      padding:22px;
+      margin:18px 0;
+    }
+
+    .hero-warning{
+      padding:26px;
+      background:linear-gradient(180deg, rgba(250,204,21,.10), rgba(255,255,255,.05));
+    }
+
+    .home-kicker{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.8rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#061a33;
+      background:linear-gradient(90deg,var(--gold),var(--cyan));
+      margin-bottom:14px;
+    }
+
+    h2{
+      font-size:1.55rem;
+      margin:0 0 12px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+
+    h3{
+      font-size:1.08rem;
+      margin:0 0 10px;
+      line-height:1.2;
+      color:#fff;
+    }
+
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.72;
+    }
+
+    p:last-child{margin-bottom:0}
+
+    .lead{
+      font-size:1.04rem;
+      color:#eaf3ff;
+    }
+
+    .danger-line{
+      margin-top:16px;
+      padding:12px 14px;
+      border-left:4px solid var(--red);
+      background:rgba(251,113,133,.10);
+      border-radius:14px;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .mini-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:18px;
+      height:100%;
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(6,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .flow-step{
+      padding:16px 14px;
+      border-radius:18px;
+      text-align:center;
+      font-weight:800;
+      line-height:1.35;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      position:relative;
+    }
+
+    .flow-step:not(:last-child)::after{
+      content:"→";
+      position:absolute;
+      right:-10px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--gold);
+      font-size:1.25rem;
+      font-weight:900;
+    }
+
+    .stack{
+      display:grid;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .stack-item{
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+    }
+
+    .stack-item strong{
+      display:block;
+      color:#fff;
+      margin-bottom:4px;
+    }
+
+    .quote-box{
+      padding:18px;
+      border-radius:18px;
+      background:linear-gradient(180deg,rgba(250,204,21,.12),rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+      font-weight:700;
+      line-height:1.65;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+      color:#fff;
+      font-weight:700;
+      font-size:.92rem;
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.14);
+      transition:transform .15s ease;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+    .btn.secondary{
+      background:rgba(255,255,255,.07);
+      color:#fff;
+    }
+
+    .comparison{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:12px;
+    }
+
+    .comparison-box{
+      border-radius:18px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+    }
+
+    .comparison-box ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .footer-note{
+      margin-top:24px;
+      text-align:center;
+      color:#b8cde1;
+      font-size:.95rem;
+    }
+
+    @media (max-width:900px){
+      .grid-2,.grid-3,.flow,.comparison{grid-template-columns:1fr}
+      .flow-step:not(:last-child)::after{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div id="nav"></div>
+
+    <h1 class="page-title">How Dopamine Keeps Kids Hooked Online</h1>
+    <p class="tagline">
+      <strong>Dopamine is not just about pleasure.</strong><br/>
+      It is heavily tied to anticipation, reward-seeking, checking again, and repeating behaviours that might deliver another hit. That is one reason online apps can become so hard for kids to leave.
+    </p>
+
+    <section class="card hero-warning">
+      <div class="home-kicker">Reward Loops Change Behaviour</div>
+      <h2>Kids are not just using apps. Apps are training reward patterns.</h2>
+      <p class="lead">
+        Likes, streaks, scrolling, game rewards, messages, notifications, surprise clips, and social approval all tap into the brain’s reward system.
+      </p>
+      <p>
+        The more often a child gets fast, repeated, unpredictable reward cues, the more likely they are to keep checking, keep scrolling, keep reacting, and keep returning.
+      </p>
+      <div class="danger-line">
+        The strongest hook is often not the reward itself. It is the anticipation of the next one.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What dopamine is doing in simple terms</h2>
+      <div class="grid-3">
+        <div class="mini-card">
+          <h3>It drives wanting</h3>
+          <p>Dopamine helps push the brain toward things that might feel rewarding, interesting, exciting, or relieving.</p>
+        </div>
+        <div class="mini-card">
+          <h3>It strengthens repetition</h3>
+          <p>When a behaviour feels rewarding, the brain is more likely to repeat it again later.</p>
+        </div>
+        <div class="mini-card">
+          <h3>It responds to uncertainty</h3>
+          <p>Unpredictable rewards can be especially powerful because the brain keeps checking for what might come next.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Why online systems trigger this so well</h2>
+      <div class="stack">
+        <div class="stack-item">
+          <strong>There is always another possible reward</strong>
+          Another clip, another message, another like, another win, another notification, another reply.
+        </div>
+        <div class="stack-item">
+          <strong>Rewards arrive fast</strong>
+          Kids do not have to wait long. Fast feedback means the loop keeps running with very little friction.
+        </div>
+        <div class="stack-item">
+          <strong>Rewards are unpredictable</strong>
+          Not every scroll or check is exciting, but sometimes it is. That unpredictability keeps the checking going.
+        </div>
+        <div class="stack-item">
+          <strong>Stopping points are removed</strong>
+          Endless feeds, autoplay, and continuous refresh make it easier to stay in the loop.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>How the dopamine loop usually works</h2>
+      <p>This is the pattern parents need to understand, because it shows why “just stop” often does not work well on its own.</p>
+      <div class="flow">
+        <div class="flow-step">Boredom<br/>or stress</div>
+        <div class="flow-step">Open app<br/>or game</div>
+        <div class="flow-step">Get a quick<br/>reward cue</div>
+        <div class="flow-step">Feel pulled to<br/>keep going</div>
+        <div class="flow-step">Lose track<br/>of time</div>
+        <div class="flow-step">Come back<br/>again later</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Where kids get these dopamine hits most</h2>
+      <div class="grid-2">
+        <div class="mini-card">
+          <h3>Short-form video feeds</h3>
+          <p>TikTok, Reels, and Shorts deliver fast novelty, emotional stimulation, and endless reward possibilities.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Likes and reactions</h3>
+          <p>Social validation can become a strong reward loop, especially for kids still building self-worth and identity.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Messages and notifications</h3>
+          <p>The possibility that someone replied, noticed them, or wants them now keeps kids checking repeatedly.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Gaming rewards</h3>
+          <p>Wins, unlocks, loot, skins, streaks, progression, and team response all reinforce return behaviour.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Social streak systems</h3>
+          <p>Some apps turn contact into pressure by making the child feel they must keep the chain going.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Drama and outrage</h3>
+          <p>Conflict, gossip, exposure posts, and emotional chaos can also become highly engaging reward loops.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Why this hits children harder</h2>
+      <div class="stack">
+        <div class="stack-item">
+          <strong>Their regulation is still developing</strong>
+          Kids and teens are still building impulse control, planning, patience, and emotional regulation.
+        </div>
+        <div class="stack-item">
+          <strong>Reward can override reflection</strong>
+          When stimulation is fast and repeated, the brain starts chasing the next hit before thinking through the bigger pattern.
+        </div>
+        <div class="stack-item">
+          <strong>Identity and social approval matter more</strong>
+          Validation, likes, group acceptance, and social status can hit especially hard in childhood and adolescence.
+        </div>
+        <div class="stack-item">
+          <strong>It becomes part of coping</strong>
+          Some kids stop using screens only for fun and start using them to avoid boredom, stress, loneliness, sadness, or discomfort.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Signs the reward loop is starting to take over</h2>
+      <div class="grid-3">
+        <div class="mini-card">
+          <h3>Constant checking</h3>
+          <p>The device comes out automatically, even during short pauses or without any real reason.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Irritability when interrupted</h3>
+          <p>The child becomes snappy, frustrated, or flat when the loop is broken.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Shorter patience offline</h3>
+          <p>Homework, reading, chores, or conversations feel harder to stay with.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Strong need for stimulation</h3>
+          <p>Quiet moments feel uncomfortable. Slower activities feel “boring” too quickly.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Mood dips after use</h3>
+          <p>The child looks wired, flat, irritable, or unsettled after long periods online.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Difficulty stopping at agreed limits</h3>
+          <p>Even when they know the rules, they keep stretching the session because one more reward feels close.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Healthy reward vs manipulated reward</h2>
+      <div class="comparison">
+        <div class="comparison-box">
+          <h3>Healthier reward patterns</h3>
+          <ul>
+            <li>Come with effort, time, and balance</li>
+            <li>Have natural stopping points</li>
+            <li>Support learning, growth, or connection</li>
+            <li>Do not demand constant checking</li>
+            <li>Build patience and steadier focus</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h3>Manipulated reward patterns</h3>
+          <ul>
+            <li>Hit fast and often</li>
+            <li>Rely on unpredictability</li>
+            <li>Reward return behaviour constantly</li>
+            <li>Reduce tolerance for boredom</li>
+            <li>Train the child to chase the next hit</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Questions parents should ask</h2>
+      <div class="quote-box">
+        “What keeps pulling my child back?”<br/><br/>
+        “Are they using this for fun, or to avoid discomfort?”<br/><br/>
+        “Does this leave them calmer, or more reactive?”<br/><br/>
+        “Is the app rewarding them with connection, chaos, status, or surprise?”<br/><br/>
+        “What is this training them to expect from normal life?”
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>What parents can do</h2>
+      <div class="stack">
+        <div class="stack-item">
+          <strong>Explain the loop</strong>
+          Kids respond better when they understand that platforms and games are often designed to keep them returning.
+        </div>
+        <div class="stack-item">
+          <strong>Reduce the fastest reward sources</strong>
+          Short-form feeds, constant notifications, overnight access, and apps with endless loops need stronger boundaries.
+        </div>
+        <div class="stack-item">
+          <strong>Rebuild tolerance for boredom</strong>
+          Boredom is not the enemy. It helps the brain recover from constant stimulation and build healthier attention.
+        </div>
+        <div class="stack-item">
+          <strong>Bring back slower rewards</strong>
+          Sport, hands-on projects, longer reading, real-world friendships, outdoor time, music, and family connection help rebalance reward patterns.
+        </div>
+        <div class="stack-item">
+          <strong>Watch the behaviour after the screen</strong>
+          Do not only measure screen time. Watch for reactivity, sleep disruption, mood changes, and dependence on stimulation.
+        </div>
+        <div class="stack-item">
+          <strong>Act earlier than later</strong>
+          The deeper the loop gets, the harder it becomes to unwind. Early intervention is easier than trying to fix a deeply trained pattern later.
+        </div>
+      </div>
+      <div class="danger-line">
+        The goal is not to remove all enjoyment. The goal is to stop reward loops from becoming behavioural control systems.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Bottom line</h2>
+      <p>
+        Dopamine helps explain why online habits can become sticky so quickly. Kids are not simply “choosing wrong” in a neutral system. Many of the systems they are using are built to trigger return behaviour again and again.
+      </p>
+      <p>
+        Once parents understand the loop, they can step in with more clarity and less blame.
+      </p>
+      <div class="pill-row">
+        <div class="pill">Dopamine</div>
+        <div class="pill">Reward Loop</div>
+        <div class="pill">Checking</div>
+        <div class="pill">Scrolling</div>
+        <div class="pill">Behaviour</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Related POSH pages</h2>
+      <div class="btn-row">
+        <a class="btn secondary" href="v3-brainrot.html">Brain Rot</a>
+        <a class="btn secondary" href="v3-why-kids-cant-stop-scrolling.html">Why Kids Can’t Stop Scrolling</a>
+        <a class="btn secondary" href="v3-how-attention-is-used-to-control-behaviour.html">How Attention Controls Behaviour</a>
+        <a class="btn secondary" href="v3-algorithm-awareness.html">Algorithm Awareness</a>
+        <a class="btn secondary" href="v3-social-tiktok.html">TikTok</a>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <p class="footer-note">
+      POSH • Parents Online Safety Hub
+    </p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
