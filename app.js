@@ -134,26 +134,6 @@
     </div>
   `;
 
-  const systemNextStepHTML = `
-    <div class="card center-card">
-      <h2>What should you do next?</h2>
-
-      <p class="note">
-        Based on what you're seeing right now, choose the next step.
-      </p>
-
-      <div class="btn-grid btn-grid-soft">
-        <a class="btn" href="v3-what-now.html">Find My Next Step</a>
-        <a class="btn secondary" href="v3-first-24-hours.html">Act Now</a>
-        <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
-      </div>
-
-      <div class="callout center-callout">
-        You don’t need the full answer — just the right next move.
-      </div>
-    </div>
-  `;
-
   const footerHTML = `
     <footer>
       <div class="footer-cta-block">
@@ -675,6 +655,168 @@
     }
   }
 
+  function getSystemNextStepHTML() {
+    const currentPage = (window.location.pathname.split("/").pop() || "index.html")
+      .split("?")[0]
+      .split("#")[0];
+
+    const entryPages = [
+      "index.html",
+      "v3-start.html",
+      "v3-entry-system.html",
+      "v3-safety-score.html",
+      "v3-what-now.html"
+    ];
+
+    const warningPages = [
+      "v3-redflags.html",
+      "v3-real-scenarios.html",
+      "v3-signs-my-child-is-being-groomed-online.html",
+      "v3-how-predators-contact-kids-online.html",
+      "v3-when-an-online-friend-becomes-a-risk.html",
+      "v3-signs-your-child-is-being-isolated-online.html",
+      "v3-10-signs-targeted-online.html",
+      "v3-grooming.html",
+      "v3-playbook.html"
+    ];
+
+    const conversationPages = [
+      "v3-parent-scripts.html",
+      "v3-how-to-talk-so-your-child-opens-up.html",
+      "v3-when-your-child-wont-talk.html",
+      "v3-what-to-do-if-your-child-tells-you-something-serious.html",
+      "v3-why-kids-hide-things.html",
+      "v3-why-behaviour-changes.html"
+    ];
+
+    const urgentPages = [
+      "v3-first-24-hours.html",
+      "v3-evidence-reporting.html",
+      "v3-sextortion.html",
+      "v3-when-it-goes-deeper.html"
+    ];
+
+    const reportingPages = [
+      "v3-reporting.html",
+      "v3-reporting-australia.html",
+      "v3-reporting-usa.html",
+      "v3-reporting-uk.html",
+      "v3-reporting-europe.html"
+    ];
+
+    if (entryPages.includes(currentPage)) {
+      return `
+        <div class="card center-card">
+          <h2>What should you do next?</h2>
+          <p class="note">
+            Choose the lane that best matches what you're seeing right now.
+          </p>
+          <div class="btn-grid btn-grid-soft">
+            <a class="btn" href="v3-redflags.html">Check Red Flags</a>
+            <a class="btn secondary" href="v3-real-scenarios.html">Match a Real Scenario</a>
+            <a class="btn secondary" href="v3-first-24-hours.html">Act Now</a>
+          </div>
+          <div class="callout center-callout">
+            You do not need the full answer yet — just the right lane.
+          </div>
+        </div>
+      `;
+    }
+
+    if (warningPages.includes(currentPage)) {
+      return `
+        <div class="card center-card">
+          <h2>What should you do next?</h2>
+          <p class="note">
+            If this pattern feels familiar, move into the right next step now.
+          </p>
+          <div class="btn-grid btn-grid-soft">
+            <a class="btn" href="v3-what-now.html">Find My Next Step</a>
+            <a class="btn secondary" href="v3-first-24-hours.html">Act Now</a>
+            <a class="btn secondary" href="v3-parent-scripts.html">What Should I Say?</a>
+          </div>
+          <div class="callout center-callout">
+            Recognition matters most when it leads to action.
+          </div>
+        </div>
+      `;
+    }
+
+    if (conversationPages.includes(currentPage)) {
+      return `
+        <div class="card center-card">
+          <h2>What should you do next?</h2>
+          <p class="note">
+            Once the conversation stays open, move into the next protective step.
+          </p>
+          <div class="btn-grid btn-grid-soft">
+            <a class="btn" href="v3-first-24-hours.html">First 24 Hours</a>
+            <a class="btn secondary" href="v3-what-now.html">Find My Next Step</a>
+            <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
+          </div>
+          <div class="callout center-callout">
+            Calm words first. Protective action next.
+          </div>
+        </div>
+      `;
+    }
+
+    if (urgentPages.includes(currentPage)) {
+      return `
+        <div class="card center-card">
+          <h2>What should you do next?</h2>
+          <p class="note">
+            If the situation is active, preserve what matters and move into the correct help pathway.
+          </p>
+          <div class="btn-grid btn-grid-soft">
+            <a class="btn" href="v3-reporting.html">Report &amp; Get Help</a>
+            <a class="btn secondary" href="v3-evidence-reporting.html">Save Evidence</a>
+            <a class="btn secondary" href="v3-parent-scripts.html">What Should I Say?</a>
+          </div>
+          <div class="callout center-callout">
+            Protect the child. Preserve the evidence. Move early.
+          </div>
+        </div>
+      `;
+    }
+
+    if (reportingPages.includes(currentPage)) {
+      return `
+        <div class="card center-card">
+          <h2>What should you do next?</h2>
+          <p class="note">
+            Once reporting is underway, keep supporting your child and follow the next safety steps.
+          </p>
+          <div class="btn-grid btn-grid-soft">
+            <a class="btn" href="v3-evidence-reporting.html">Evidence Help</a>
+            <a class="btn secondary" href="v3-first-24-hours.html">First 24 Hours</a>
+            <a class="btn secondary" href="v3-parent-scripts.html">What Should I Say?</a>
+          </div>
+          <div class="callout center-callout">
+            Reporting is one step. Ongoing support still matters.
+          </div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="card center-card">
+        <h2>What should you do next?</h2>
+        <p class="note">
+          Based on what you're seeing right now, choose the next step.
+        </p>
+        <div class="btn-grid btn-grid-soft">
+          <a class="btn" href="v3-what-now.html">Find My Next Step</a>
+          <a class="btn secondary" href="v3-first-24-hours.html">Act Now</a>
+          <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
+        </div>
+        <div class="callout center-callout">
+          You don’t need the full answer — just the right next move.
+        </div>
+      </div>
+    `;
+  }
+
   function buildSystemNextStepBlock() {
     const footer = document.getElementById("footer");
     if (!footer) return;
@@ -682,7 +824,7 @@
 
     const wrap = document.createElement("div");
     wrap.className = "posh-system-next-step";
-    wrap.innerHTML = systemNextStepHTML;
+    wrap.innerHTML = getSystemNextStepHTML();
 
     footer.parentNode.insertBefore(wrap, footer);
   }
