@@ -134,6 +134,26 @@
     </div>
   `;
 
+  const systemNextStepHTML = `
+    <div class="card center-card">
+      <h2>What should you do next?</h2>
+
+      <p class="note">
+        Based on what you're seeing right now, choose the next step.
+      </p>
+
+      <div class="btn-grid btn-grid-soft">
+        <a class="btn" href="v3-what-now.html">Find My Next Step</a>
+        <a class="btn secondary" href="v3-first-24-hours.html">Act Now</a>
+        <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
+      </div>
+
+      <div class="callout center-callout">
+        You don’t need the full answer — just the right next move.
+      </div>
+    </div>
+  `;
+
   const footerHTML = `
     <footer>
       <div class="footer-cta-block">
@@ -655,6 +675,18 @@
     }
   }
 
+  function buildSystemNextStepBlock() {
+    const footer = document.getElementById("footer");
+    if (!footer) return;
+    if (document.querySelector(".posh-system-next-step")) return;
+
+    const wrap = document.createElement("div");
+    wrap.className = "posh-system-next-step";
+    wrap.innerHTML = systemNextStepHTML;
+
+    footer.parentNode.insertBefore(wrap, footer);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     const nav = document.getElementById("nav");
     const footer = document.getElementById("footer");
@@ -665,6 +697,8 @@
       markActiveNav(nav);
       initNavSearch(nav);
     }
+
+    buildSystemNextStepBlock();
 
     if (footer) {
       footer.innerHTML = footerHTML;
