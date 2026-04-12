@@ -28,9 +28,32 @@
 
   <div id="nav"></div>
 
+  <div class="pill-row" style="margin:0 0 16px;">
+    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">TOOL CHOICE HUB</div>
+    <div class="pill">Built-In First</div>
+    <div class="pill">Monitoring Tools</div>
+    <div class="pill">Device Fit</div>
+    <div class="pill">Layered Safety</div>
+  </div>
+
   <p class="note">
-    Parents usually search for the “best parental control app” when they want a clear place to start. The real goal is not finding one perfect app. The goal is finding the right level of control for your devices, your child’s age, and the actual risks you are trying to reduce.
+    Parents usually search for the best parental control app when they want a clear place to start. The real goal is not finding one perfect app. The goal is finding the right level of control for your devices, your child’s age, and the actual risks you are trying to reduce.
   </p>
+
+  <div class="card center-card">
+    <h2>Which situation fits best right now?</h2>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="#state-start">I just need the best place to start</a>
+      <a class="btn secondary" href="#state-mixed">We use multiple device types</a>
+      <a class="btn secondary" href="#state-alerts">I want stronger monitoring and alerts</a>
+      <a class="btn secondary" href="#state-risk">Something already feels wrong</a>
+    </div>
+
+    <div class="callout center-callout" style="margin-top:14px;">
+      The best app is usually not the one with the most features. It is the one that fits your devices, your rules, and the level of visibility you actually need.
+    </div>
+  </div>
 
   <div class="card center-card">
     <h2>What parents usually search</h2>
@@ -44,7 +67,7 @@
     </ul>
 
     <div class="callout center-callout">
-      The best app is usually not the one with the most features. It is the one that fits your devices, your rules, and the level of visibility you actually need.
+      This page helps parents choose the right level of control instead of chasing one magic app.
     </div>
   </div>
 
@@ -57,7 +80,7 @@
 
   <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
     <a class="btn" href="v3-how-to-set-parental-controls-android.html">I use Android</a>
-    <a class="btn secondary" href="v3-how-to-set-parental-controls-iphone.html">I use iPhone/iPad</a>
+    <a class="btn secondary" href="v3-how-to-set-parental-controls-iphone.html">I use iPhone / iPad</a>
     <a class="btn secondary" href="v3-parental-controls-by-device.html">We use multiple devices</a>
     <a class="btn secondary" href="v3-how-to-monitor-without-breaking-trust.html">I need monitoring help</a>
   </div>
@@ -71,11 +94,11 @@
     </div>
 
     <div class="danger-line">
-      A monitoring app can support safety, but it cannot build trust by itself
+      A monitoring app can support safety, but it cannot build trust by itself.
     </div>
   </div>
 
-  <div class="card center-card">
+  <div class="card center-card" id="state-start">
     <h2>Best place to start for most families</h2>
 
     <p class="note">
@@ -108,12 +131,60 @@
     </div>
   </div>
 
+  <div class="card center-card" id="state-mixed">
+    <h2>Best for mixed-device households</h2>
+
+    <p class="note">
+      If your family uses Apple, Android, Windows, consoles, or multiple device types together, one built-in system may not cover everything well enough.
+    </p>
+
+    <div class="rule-box">
+      <p>Mixed-device households usually need stronger cross-device structure.</p>
+      <p>That is where third-party tools can become more useful than built-in controls alone.</p>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn" href="v3-parental-controls-by-device.html">Compare by Device</a>
+      <a class="btn secondary" href="v3-best-parental-control-apps.html#qustodio">Show Me Cross-Device Tools</a>
+      <a class="btn secondary" href="v3-device-controls.html">Device Safety</a>
+      <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
+    </div>
+
+    <div class="callout center-callout">
+      Cross-device families usually do better when device settings, monitoring tools, and house rules all work together.
+    </div>
+  </div>
+
+  <div class="card center-card" id="state-alerts">
+    <h2>Best when parents want stronger monitoring or alerts</h2>
+
+    <p class="note">
+      Some parents do not just want screen time controls. They want stronger visibility, better reports, alerts, and earlier warning signs.
+    </p>
+
+    <div class="rule-box">
+      <p>This is where stronger monitoring apps can help more than basic built-in controls.</p>
+      <p>They make more sense when the issue is not just time. It is messaging, patterns, alerts, and cross-device supervision.</p>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn" href="#bark">Show Me Alert-Based Tools</a>
+      <a class="btn secondary" href="#qustodio">Show Me Cross-Device Tools</a>
+      <a class="btn secondary" href="v3-how-to-monitor-without-breaking-trust.html">Monitoring Without Breaking Trust</a>
+      <a class="btn secondary" href="v3-parent-scripts.html">How to Explain Monitoring</a>
+    </div>
+
+    <div class="callout center-callout">
+      Stronger tools make more sense when built-in controls stop feeling like enough.
+    </div>
+  </div>
+
   <div class="card center-card">
     <h2>Popular stronger monitoring options</h2>
 
     <ul class="list">
-      <li><strong>Qustodio</strong> — often chosen for cross-device filtering, reports, limits, and broader supervision</li>
-      <li><strong>Bark</strong> — often chosen by parents who want alerts around messages, apps, social activity, and potential warning content</li>
+      <li id="qustodio"><strong>Qustodio</strong> — often chosen for cross-device filtering, reports, limits, and broader supervision</li>
+      <li id="bark"><strong>Bark</strong> — often chosen by parents who want alerts around messages, apps, social activity, and potential warning content</li>
       <li><strong>Norton Family</strong> — useful for time limits, web supervision, search visibility, reports, and general oversight</li>
     </ul>
 
@@ -281,6 +352,26 @@
     </div>
   </div>
 
+  <div class="card hero-warning center-card" id="state-risk">
+    <h2>If something already feels wrong</h2>
+
+    <div class="rule-box">
+      <p>Parental control apps help with prevention and visibility.</p>
+      <p>But if there is secrecy, grooming signs, pressure, fear, or clear behaviour change, you need action — not just more settings.</p>
+    </div>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-redflags.html">Red Flags</a>
+      <a class="btn secondary" href="v3-real-scenarios.html">Real Scenarios</a>
+      <a class="btn secondary" href="v3-first-24-hours.html">First 24 Hours</a>
+      <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
+    </div>
+
+    <div class="danger-line">
+      Better tools help prevention. They do not replace action when risk is already active.
+    </div>
+  </div>
+
   <div class="card hero-warning center-card">
     <h2>Important legal and privacy reminder</h2>
 
@@ -290,7 +381,7 @@
     </div>
 
     <div class="danger-line">
-      Clear rules and informed use matter more than hidden tracking
+      Clear rules and informed use matter more than hidden tracking.
     </div>
   </div>
 
@@ -316,6 +407,21 @@
     </div>
   </div>
 
+  <div class="card center-card">
+    <h2>Understand the full pattern</h2>
+
+    <div class="btn-row">
+      <a class="btn primary" href="v3-how-online-relationships-change-kids-behaviour.html">How Online Relationships Change Behaviour</a>
+      <a class="btn secondary" href="v3-when-online-contact-becomes-emotional-dependency.html">Emotional Dependency</a>
+      <a class="btn secondary" href="v3-how-manipulative-groups-recruit-children-online.html">Manipulative Groups</a>
+      <a class="btn secondary" href="v3-how-online-attention-shapes-your-childs-behaviour.html">Attention Shapes Behaviour</a>
+    </div>
+
+    <div class="callout center-callout" style="margin-top:14px;">
+      Better monitoring matters most when parents also understand how private contact, repetition, secrecy, and emotional influence actually work.
+    </div>
+  </div>
+
   <div class="card hero-warning center-card">
     <h2>Important reminder</h2>
 
@@ -325,7 +431,29 @@
     </div>
 
     <div class="danger-line">
-      Visibility matters most when it is paired with understanding
+      Visibility matters most when it is paired with understanding.
+    </div>
+  </div>
+
+  <div class="card center-card">
+    <h2>Choose your next path</h2>
+
+    <p class="note">
+      Go where the situation fits best right now.
+    </p>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-parental-controls-by-device.html">I Need Device-Specific Setup</a>
+      <a class="btn secondary" href="v3-device-controls.html">I Need Device Safety First</a>
+      <a class="btn secondary" href="v3-how-to-monitor-without-breaking-trust.html">I Need Monitoring Help</a>
+      <a class="btn secondary" href="v3-house-rules.html">I Need Better House Rules</a>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="v3-redflags.html">Show Me Red Flags</a>
+      <a class="btn secondary" href="v3-first-24-hours.html">I Need Immediate Action</a>
+      <a class="btn secondary" href="v3-parent-scripts.html">How Do I Explain This?</a>
+      <a class="btn secondary" href="v3-what-now.html">Take Me Back to Main Lanes</a>
     </div>
   </div>
 
@@ -338,7 +466,7 @@
     </div>
 
     <div class="danger-line">
-      Better tools work best when parents understand the pattern as well
+      Better tools work best when parents understand the pattern as well.
     </div>
 
     <div class="btn-grid btn-grid-soft">
@@ -357,7 +485,7 @@
     </div>
 
     <div class="danger-line">
-      The best tool is the one that supports real parenting, not replaces it
+      The best tool is the one that supports real parenting, not replaces it.
     </div>
   </div>
 
