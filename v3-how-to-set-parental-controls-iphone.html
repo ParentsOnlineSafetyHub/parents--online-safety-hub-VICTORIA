@@ -28,10 +28,33 @@
 
   <div id="nav"></div>
 
+  <div class="pill-row" style="margin:0 0 16px;">
+    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">IPHONE SETUP PAGE</div>
+    <div class="pill">Screen Time</div>
+    <div class="pill">Restrictions</div>
+    <div class="pill">Communication</div>
+    <div class="pill">Supervision</div>
+  </div>
+
   <div class="callout center-callout">
     <strong>Start here:</strong><br/>
     On iPhone, parental controls mainly run through <strong>Screen Time</strong>.<br/>
     That is where you control app limits, downtime, content restrictions, purchases, privacy, and communication settings.
+  </div>
+
+  <div class="card center-card">
+    <h2>Which situation fits best right now?</h2>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="#state-setup">I want to set iPhone up properly</a>
+      <a class="btn secondary" href="#state-lockdown">I need the main settings fast</a>
+      <a class="btn secondary" href="#state-risk">Something already feels wrong</a>
+      <a class="btn secondary" href="v3-parental-controls-by-device.html">Take Me Back to Device Choices</a>
+    </div>
+
+    <div class="callout center-callout" style="margin-top:14px;">
+      This page works best when parents lock the iPhone properly first, then connect it to rules, visibility, and calmer supervision.
+    </div>
   </div>
 
   <div class="card hero-warning center-card">
@@ -43,14 +66,28 @@
       <p>Restrict purchases and downloads</p>
       <p>Control communication settings</p>
       <p>Reduce privacy and account changes</p>
+      <p>Give parents stronger structure and visibility</p>
     </div>
 
     <div class="danger-line">
-      A default iPhone setup is not the safest setup for a child
+      A default iPhone setup is not the safest setup for a child.
     </div>
   </div>
 
   <div class="card center-card">
+    <h2>What parents need to understand</h2>
+
+    <div class="rule-box">
+      <p>iPhone is not automatically safe just because it is Apple.</p>
+      <p>The biggest gaps are usually in communication, permissions, app installs, and settings left too open.</p>
+    </div>
+
+    <div class="callout center-callout">
+      iPhone gets safer when Screen Time is locked properly and used as part of a wider family safety system.
+    </div>
+  </div>
+
+  <div class="card network center-card">
     <h2>Best setup path</h2>
 
     <div class="network-flow">
@@ -68,9 +105,13 @@
 
       <div class="pill danger">Check messages, apps, and patterns regularly</div>
     </div>
+
+    <div class="callout center-callout" style="margin-top:16px;">
+      iPhone controls work best when they are layered, not when parents rely on one setting and hope it covers everything.
+    </div>
   </div>
 
-  <div class="card center-card">
+  <div class="card center-card" id="state-setup">
     <h2>Step 1 — Turn on Screen Time</h2>
 
     <p class="note">
@@ -108,7 +149,7 @@
   </div>
 
   <div class="card center-card">
-    <h2>Step 3 — Turn on Content & Privacy Restrictions</h2>
+    <h2>Step 3 — Turn on Content &amp; Privacy Restrictions</h2>
 
     <p class="note">
       This is where most of the real locking happens.
@@ -136,7 +177,7 @@
     </ul>
 
     <div class="callout center-callout">
-      This reduces the chance of hidden apps appearing after the device is already “set up.”
+      This reduces the chance of hidden apps appearing after the device is already set up.
     </div>
   </div>
 
@@ -169,7 +210,7 @@
     </ul>
 
     <div class="callout center-callout">
-      Good limits support your rules. They do not replace them.
+      Time limits are useful, but they are not the main protection layer on their own.
     </div>
   </div>
 
@@ -207,6 +248,27 @@
     </div>
   </div>
 
+  <div class="card center-card" id="state-lockdown">
+    <h2>Fast lockdown checklist</h2>
+
+    <p class="note">
+      If you want the quickest route to a safer iPhone setup, do these first.
+    </p>
+
+    <div class="rule-box">
+      <p>Turn on Screen Time</p>
+      <p>Set a strong Screen Time passcode</p>
+      <p>Enable Content &amp; Privacy Restrictions</p>
+      <p>Restrict app installs, deletions, and purchases</p>
+      <p>Check communication settings and contacts</p>
+      <p>Review permissions for camera, photos, microphone, and location</p>
+    </div>
+
+    <div class="callout center-callout">
+      These are the settings most likely to reduce risk fast.
+    </div>
+  </div>
+
   <div class="card center-card">
     <h2>Best iPhone rules to combine with controls</h2>
 
@@ -219,6 +281,13 @@
 
     <div class="callout center-callout">
       Controls work best when the device settings and family rules match each other.
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn" href="v3-house-rules.html">House Rules</a>
+      <a class="btn secondary" href="v3-how-to-monitor-without-breaking-trust.html">Monitor Without Breaking Trust</a>
+      <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
+      <a class="btn secondary" href="v3-device-controls.html">Device Safety</a>
     </div>
   </div>
 
@@ -233,7 +302,49 @@
     </div>
 
     <div class="danger-line">
-      The biggest gaps are usually in communication, not just content
+      The biggest gaps are usually in communication, not just content.
+    </div>
+  </div>
+
+  <div class="card center-card">
+    <h2>What iPhone controls do NOT solve on their own</h2>
+
+    <ul class="list">
+      <li>Emotional manipulation once trust is already built</li>
+      <li>Secrecy if the child feels too scared to be honest</li>
+      <li>Grooming patterns moving between apps and contacts</li>
+      <li>Behaviour changes parents miss because the settings look strong</li>
+    </ul>
+
+    <div class="callout center-callout">
+      Stronger settings help prevention. They do not replace awareness and early action.
+    </div>
+  </div>
+
+  <div class="card hero-warning center-card" id="state-risk">
+    <h2>If something already feels wrong</h2>
+
+    <p class="note">
+      If secrecy, deleted content, emotional withdrawal, gifts, private contact, or one specific person is already involved, do not stay stuck in settings mode.
+    </p>
+
+    <div class="rule-box">
+      <p>Secure the phone</p>
+      <p>Reduce private access</p>
+      <p>Preserve evidence if needed</p>
+      <p>Keep the child talking</p>
+      <p>Move into action pages quickly</p>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn" href="v3-first-24-hours.html">First 24 Hours</a>
+      <a class="btn secondary" href="v3-evidence-reporting.html">Save Evidence</a>
+      <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+      <a class="btn secondary" href="v3-how-to-check-a-device-without-causing-panic.html">Check a Device Calmly</a>
+    </div>
+
+    <div class="danger-line">
+      Better iPhone controls help prevention. They do not replace action when risk is already active.
     </div>
   </div>
 
@@ -242,9 +353,16 @@
 
     <div class="btn-grid btn-grid-soft">
       <a class="btn" href="v3-parental-controls-by-device.html">Back to Devices</a>
+      <a class="btn secondary" href="v3-best-parental-control-apps.html">Best Control Apps</a>
       <a class="btn secondary" href="v3-how-to-monitor-without-breaking-trust.html">Monitor Without Breaking Trust</a>
-      <a class="btn secondary" href="v3-how-to-check-a-device-without-causing-panic.html">Check a Device Calmly</a>
       <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="v3-device-controls.html">Device Safety</a>
+      <a class="btn secondary" href="v3-parental-controls.html">Parental Controls Hub</a>
+      <a class="btn secondary" href="v3-redflags.html">Warning Signs</a>
+      <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
     </div>
   </div>
 
@@ -257,7 +375,7 @@
     </div>
 
     <div class="danger-line">
-      Better setup closes gaps before secrecy grows
+      Better setup closes gaps before secrecy grows.
     </div>
   </div>
 
