@@ -19,8 +19,11 @@
       <details class="nav-group">
         <summary>Start & Safety</summary>
         <nav>
+          <a href="index.html" data-type="Home" data-keywords="home posh parents online safety hub">Home</a>
           <a href="v3-start.html" data-type="Start" data-keywords="start safety first steps parent help online safety">Start Here</a>
           <a href="v3-entry-system.html" data-type="System" data-keywords="entry system start guide pathway">Entry System</a>
+          <a href="v3-what-now.html" data-type="Action Hub" data-keywords="what now worried child online next step action hub">What To Do Now</a>
+          <a href="v3-posh-response-system.html" data-type="System" data-keywords="posh response system notice check secure talk monitor escalate">POSH Response System</a>
           <a href="v3-parent-questions.html" data-type="Parent Help" data-keywords="parent questions what to ask warning signs">Parent Questions</a>
           <a href="v3-safety-score.html" data-type="Assessment" data-keywords="safety score risk quiz check assessment">Safety Score</a>
           <a href="v3-redflags.html" data-type="Warning Signs" data-keywords="red flags warning signs grooming secrecy behaviour">Red Flags</a>
@@ -39,8 +42,11 @@
           <a href="v3-parent-conversations.html" data-type="Conversations" data-keywords="parent conversations difficult talks trust">Parent Conversations</a>
           <a href="v3-house-rules.html" data-type="Rules" data-keywords="house rules boundaries family device rules">House Rules</a>
           <a href="v3-age-guide.html" data-type="Guide" data-keywords="age guide age appropriate apps games devices">Age Guide</a>
-          <a href="v3-how-to-talk-so-your-child-opens-up.html" data-type="Trust" data-keywords="opens up child trust disclosure conversation">How to Talk So Your Child Opens Up</a>
-          <a href="v3-what-to-do-if-your-child-tells-you-something-serious.html" data-type="Response" data-keywords="child tells you something serious disclosure response">If Your Child Tells You Something Serious</a>
+          <a href="v3-how-to-talk-so-your-child-opens-up.html" data-type="Trust" data-keywords="opens up child trust disclosure conversation">How To Talk So Your Child Opens Up</a>
+          <a href="v3-what-to-say-if-your-child-opens-up.html" data-type="Scripts" data-keywords="what to say if your child opens up disclosure response">If Your Child Opens Up</a>
+          <a href="v3-what-to-say-if-your-child-thinks-it-was-their-fault.html" data-type="Scripts" data-keywords="child thinks it was their fault shame blame scripts">If They Think It Was Their Fault</a>
+          <a href="v3-what-to-say-if-your-child-is-embarrassed-to-tell-you.html" data-type="Scripts" data-keywords="child embarrassed to tell you shame awkward scripts">If They Feel Embarrassed</a>
+          <a href="v3-when-your-child-wont-talk.html" data-type="Trust" data-keywords="child wont talk shutdown silence parent help">When Your Child Won’t Talk</a>
           <a href="v3-why-kids-hide-things.html" data-type="Behaviour" data-keywords="why kids hide things secrecy fear shame">Why Kids Hide Things</a>
           <a href="v3-why-behaviour-changes.html" data-type="Behaviour" data-keywords="behaviour changes warning signs mood change">Why Behaviour Changes</a>
           <a href="v3-how-to-check-a-device-without-causing-panic.html" data-type="Devices" data-keywords="check device without panic inspect calmly">Check a Device Without Causing Panic</a>
@@ -53,6 +59,8 @@
         <nav>
           <a href="v3-socials.html" data-type="Social Media" data-keywords="social media apps overview risks">All Socials</a>
           <a href="v3-all-applications.html" data-type="Apps" data-keywords="all apps applications app risks">All Applications</a>
+          <a href="v3-dangerous-apps.html" data-type="Apps" data-keywords="dangerous apps high risk apps kids private messaging stranger access">Dangerous Apps</a>
+          <a href="v3-safe-apps-and-games-for-kids.html" data-type="Apps" data-keywords="safe apps safe games kids safer options">Safe Apps & Games</a>
           <a href="v3-social-discord.html" data-type="Social App" data-keywords="discord servers chat grooming risk">Discord</a>
           <a href="v3-social-snapchat.html" data-type="Social App" data-keywords="snapchat disappearing messages sextortion risk">Snapchat</a>
           <a href="v3-social-instagram.html" data-type="Social App" data-keywords="instagram dms reels strangers">Instagram</a>
@@ -69,7 +77,9 @@
         <nav>
           <a href="v3-gaming.html" data-type="Gaming" data-keywords="gaming games risks kids predators voice chat">Gaming</a>
           <a href="v3-all-games.html" data-type="Games" data-keywords="all games game list risks">All Games</a>
+          <a href="v3-game-risks-by-age.html" data-type="Games" data-keywords="games by age guide risk by age">Games by Age Guide</a>
           <a href="v3-game-roblox.html" data-type="Game" data-keywords="roblox robux private chat predators">Roblox</a>
+          <a href="v3-why-roblox-requires-supervision.html" data-type="Game" data-keywords="why roblox requires supervision roblox safety">Why Roblox Requires Supervision</a>
           <a href="v3-game-fortnite.html" data-type="Game" data-keywords="fortnite chat party strangers risk">Fortnite</a>
           <a href="v3-game-minecraft.html" data-type="Game" data-keywords="minecraft servers chat kids safety">Minecraft</a>
           <a href="v3-game-vrchat.html" data-type="Game" data-keywords="vrchat voice avatars strangers risk">VRChat</a>
@@ -112,6 +122,10 @@
           <a href="v3-grooming.html" data-type="Awareness" data-keywords="grooming what is grooming stages">Grooming</a>
           <a href="v3-definitions.html" data-type="Definitions" data-keywords="definitions glossary terms online safety">Definitions</a>
           <a href="v3-real-investigations.html" data-type="Awareness" data-keywords="real investigations case examples">Real Investigations</a>
+          <a href="v3-medication-vs-environment.html" data-type="Awareness" data-keywords="medication vs environment routine structure adhd melatonin">Medication vs Environment</a>
+          <a href="v3-diagnosis-without-shame.html" data-type="Awareness" data-keywords="diagnosis without shame label understanding neurodivergent child">Diagnosis Without Shame</a>
+          <a href="v3-parent-absence.html" data-type="Awareness" data-keywords="parent absence child emotional impact support">Parent Absence</a>
+          <a href="v3-teen-suicide-warning-signs.html" data-type="Awareness" data-keywords="teen suicide warning signs mental health red flags">Teen Suicide Warning Signs</a>
         </nav>
       </details>
 
@@ -169,9 +183,7 @@
         </p>
 
         <div class="footer-actions">
-          <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au" target="_blank" rel="noopener">
-            📢 Share on Facebook
-          </a>
+          <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au" target="_blank" rel="noopener">📢 Share on Facebook</a>
           <a class="btn secondary" href="v3-share.html">Share POSH</a>
         </div>
       </div>
@@ -187,174 +199,340 @@
     "index.html": {
       cluster: "entry",
       title: "Home",
-      next: ["v3-start.html", "v3-safety-score.html", "v3-what-now.html"]
+      next: [
+        { href: "v3-start.html", label: "Start Here" },
+        { href: "v3-safety-score.html", label: "Safety Score" },
+        { href: "v3-what-now.html", label: "What To Do Now" }
+      ]
     },
     "v3-start.html": {
       cluster: "entry",
-      title: "Start Here",
-      next: ["v3-safety-score.html", "v3-redflags.html", "v3-what-now.html"]
+      title: "Start Here"
     },
     "v3-entry-system.html": {
       cluster: "entry",
-      title: "Entry System",
-      next: ["v3-start.html", "v3-safety-score.html", "v3-what-now.html"]
+      title: "Entry System"
     },
     "v3-safety-score.html": {
       cluster: "entry",
-      title: "Safety Score",
-      next: ["v3-redflags.html", "v3-parent-scripts.html", "v3-what-now.html"]
+      title: "Safety Score"
     },
     "v3-what-now.html": {
       cluster: "entry",
-      title: "What To Do Now",
-      next: ["v3-redflags.html", "v3-first-24-hours.html", "v3-parent-scripts.html"]
+      title: "What To Do Now"
+    },
+    "v3-posh-response-system.html": {
+      cluster: "entry",
+      title: "POSH Response System"
     },
 
     "v3-redflags.html": {
       cluster: "warning",
-      title: "Red Flags",
-      next: ["v3-signs-my-child-is-being-groomed-online.html", "v3-parent-scripts.html", "v3-first-24-hours.html"]
+      title: "Red Flags"
     },
     "v3-10-signs-targeted-online.html": {
       cluster: "warning",
-      title: "10 Signs Targeted Online",
-      next: ["v3-redflags.html", "v3-parent-scripts.html", "v3-first-24-hours.html"]
+      title: "10 Signs Targeted Online"
     },
     "v3-signs-my-child-is-being-groomed-online.html": {
       cluster: "warning",
-      title: "Grooming Signs",
-      next: ["v3-playbook.html", "v3-parent-scripts.html", "v3-first-24-hours.html"]
+      title: "Signs My Child Is Being Groomed Online"
+    },
+    "v3-how-predators-contact-kids-online.html": {
+      cluster: "warning",
+      title: "How Predators Contact Kids Online"
+    },
+    "v3-when-an-online-friend-becomes-a-risk.html": {
+      cluster: "warning",
+      title: "When an Online Friend Becomes a Risk"
+    },
+    "v3-signs-your-child-is-being-isolated-online.html": {
+      cluster: "warning",
+      title: "Signs Your Child Is Being Isolated Online"
     },
     "v3-playbook.html": {
       cluster: "warning",
-      title: "Grooming Playbook",
-      next: ["v3-redflags.html", "v3-first-24-hours.html", "v3-reporting.html"]
+      title: "Grooming Playbook"
     },
     "v3-grooming.html": {
       cluster: "warning",
-      title: "Grooming",
-      next: ["v3-playbook.html", "v3-redflags.html", "v3-parent-scripts.html"]
-    },
-    "v3-predators.html": {
-      cluster: "warning",
-      title: "Predators",
-      next: ["v3-how-predators-contact-kids-online.html", "v3-redflags.html", "v3-first-24-hours.html"]
-    },
-    "v3-sextortion.html": {
-      cluster: "urgent",
-      title: "Sextortion",
-      next: ["v3-first-24-hours.html", "v3-evidence-reporting.html", "v3-reporting.html"]
+      title: "Grooming"
     },
 
     "v3-parent-scripts.html": {
       cluster: "conversation",
-      title: "Parent Scripts",
-      next: ["v3-how-to-talk-so-your-child-opens-up.html", "v3-what-to-say-if-your-child-opens-up.html", "v3-first-24-hours.html"]
+      title: "Parent Scripts"
     },
     "v3-how-to-talk-so-your-child-opens-up.html": {
       cluster: "conversation",
-      title: "How To Talk So Your Child Opens Up",
-      next: ["v3-what-to-say-if-your-child-opens-up.html", "v3-when-your-child-wont-talk.html", "v3-first-24-hours.html"]
+      title: "How To Talk So Your Child Opens Up"
     },
     "v3-what-to-say-if-your-child-opens-up.html": {
       cluster: "conversation",
-      title: "What To Say If Your Child Opens Up",
-      next: ["v3-first-24-hours.html", "v3-evidence-reporting.html", "v3-reporting.html"]
+      title: "What To Say If Your Child Opens Up"
     },
     "v3-what-to-say-if-your-child-thinks-it-was-their-fault.html": {
       cluster: "conversation",
-      title: "If They Think It Was Their Fault",
-      next: ["v3-what-to-say-if-your-child-opens-up.html", "v3-first-24-hours.html", "v3-parent-scripts.html"]
+      title: "If They Think It Was Their Fault"
     },
     "v3-what-to-say-if-your-child-is-embarrassed-to-tell-you.html": {
       cluster: "conversation",
-      title: "If They Feel Embarrassed",
-      next: ["v3-what-to-say-if-your-child-opens-up.html", "v3-what-to-say-if-your-child-thinks-it-was-their-fault.html", "v3-parent-scripts.html"]
+      title: "If They Feel Embarrassed"
     },
     "v3-when-your-child-wont-talk.html": {
       cluster: "conversation",
-      title: "When Your Child Won’t Talk",
-      next: ["v3-how-to-talk-so-your-child-opens-up.html", "v3-redflags.html", "v3-how-to-check-a-device-without-causing-panic.html"]
+      title: "When Your Child Won’t Talk"
+    },
+    "v3-parent-conversations.html": {
+      cluster: "conversation",
+      title: "Parent Conversations"
     },
     "v3-why-kids-hide-things.html": {
       cluster: "conversation",
-      title: "Why Kids Hide Things",
-      next: ["v3-when-your-child-wont-talk.html", "v3-how-to-talk-so-your-child-opens-up.html", "v3-parent-scripts.html"]
+      title: "Why Kids Hide Things"
     },
     "v3-why-behaviour-changes.html": {
       cluster: "conversation",
-      title: "Why Behaviour Changes",
-      next: ["v3-redflags.html", "v3-when-your-child-wont-talk.html", "v3-how-to-talk-so-your-child-opens-up.html"]
+      title: "Why Behaviour Changes"
     },
 
     "v3-first-24-hours.html": {
       cluster: "urgent",
-      title: "First 24 Hours",
-      next: ["v3-evidence-reporting.html", "v3-reporting.html", "v3-parent-scripts.html"]
+      title: "First 24 Hours"
     },
     "v3-evidence-reporting.html": {
       cluster: "urgent",
-      title: "Evidence & Reporting",
-      next: ["v3-reporting.html", "v3-reporting-australia.html", "v3-first-24-hours.html"]
+      title: "Evidence & Reporting"
     },
+    "v3-sextortion.html": {
+      cluster: "urgent",
+      title: "Sextortion"
+    },
+    "v3-when-it-goes-deeper.html": {
+      cluster: "urgent",
+      title: "When It Goes Deeper"
+    },
+
     "v3-reporting.html": {
       cluster: "reporting",
-      title: "Reporting",
-      next: ["v3-reporting-australia.html", "v3-evidence-reporting.html", "v3-parent-scripts.html"]
+      title: "Reporting"
     },
     "v3-reporting-australia.html": {
       cluster: "reporting",
-      title: "Reporting Australia",
-      next: ["v3-reporting.html", "v3-evidence-reporting.html", "v3-first-24-hours.html"]
+      title: "Reporting Australia"
+    },
+    "v3-reporting-usa.html": {
+      cluster: "reporting",
+      title: "Reporting USA"
+    },
+    "v3-reporting-uk.html": {
+      cluster: "reporting",
+      title: "Reporting UK"
+    },
+    "v3-reporting-europe.html": {
+      cluster: "reporting",
+      title: "Reporting Europe"
     },
 
-    "v3-game-roblox.html": {
-      cluster: "platform",
-      title: "Roblox",
-      next: ["v3-social-discord.html", "v3-in-game-currency-grooming-risk.html", "v3-roblox-robux-scams-explained.html"]
-    },
     "v3-social-discord.html": {
       cluster: "platform",
       title: "Discord",
-      next: ["v3-redflags.html", "v3-first-24-hours.html", "v3-parent-scripts.html"]
+      next: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-parent-scripts.html", label: "What Should I Say?" },
+        { href: "v3-first-24-hours.html", label: "First 24 Hours" }
+      ]
     },
     "v3-social-snapchat.html": {
       cluster: "platform",
       title: "Snapchat",
-      next: ["v3-sextortion.html", "v3-first-24-hours.html", "v3-parent-scripts.html"]
+      next: [
+        { href: "v3-sextortion.html", label: "Sextortion Help" },
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-first-24-hours.html", label: "First 24 Hours" }
+      ]
     },
-    "v3-best-parental-control-apps.html": {
-      cluster: "controls",
-      title: "Best Parental Control Apps",
-      next: ["v3-parental-controls-by-device.html", "v3-device-controls.html", "v3-house-rules.html"]
+    "v3-social-instagram.html": {
+      cluster: "platform",
+      title: "Instagram",
+      next: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-parent-scripts.html", label: "What Should I Say?" },
+        { href: "v3-what-now.html", label: "What To Do Now" }
+      ]
+    },
+    "v3-social-tiktok.html": {
+      cluster: "platform",
+      title: "TikTok",
+      next: [
+        { href: "v3-algorithm-awareness.html", label: "Algorithm Awareness" },
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-what-now.html", label: "What To Do Now" }
+      ]
+    },
+    "v3-social-telegram.html": {
+      cluster: "platform",
+      title: "Telegram",
+      next: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-reporting.html", label: "Report & Get Help" },
+        { href: "v3-first-24-hours.html", label: "First 24 Hours" }
+      ]
+    },
+    "v3-social-whatsapp.html": {
+      cluster: "platform",
+      title: "WhatsApp",
+      next: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-how-to-check-a-device-without-causing-panic.html", label: "Check a Device Calmly" },
+        { href: "v3-parent-scripts.html", label: "Parent Scripts" }
+      ]
+    },
+    "v3-game-roblox.html": {
+      cluster: "platform",
+      title: "Roblox",
+      next: [
+        { href: "v3-in-game-currency-grooming-risk.html", label: "In-Game Currency Risk" },
+        { href: "v3-roblox-robux-scams-explained.html", label: "Robux Scams" },
+        { href: "v3-redflags.html", label: "Red Flags" }
+      ]
+    },
+    "v3-why-roblox-requires-supervision.html": {
+      cluster: "platform",
+      title: "Why Roblox Requires Supervision",
+      next: [
+        { href: "v3-game-roblox.html", label: "Roblox Safety" },
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device" }
+      ]
+    },
+    "v3-game-fortnite.html": {
+      cluster: "platform",
+      title: "Fortnite",
+      next: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-social-discord.html", label: "Discord Safety" },
+        { href: "v3-parent-scripts.html", label: "Parent Scripts" }
+      ]
+    },
+    "v3-game-minecraft.html": {
+      cluster: "platform",
+      title: "Minecraft",
+      next: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-game-risks-by-age.html", label: "Games by Age Guide" },
+        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device" }
+      ]
+    },
+    "v3-game-vrchat.html": {
+      cluster: "platform",
+      title: "VRChat",
+      next: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-first-24-hours.html", label: "First 24 Hours" },
+        { href: "v3-reporting.html", label: "Report & Get Help" }
+      ]
     },
     "v3-dangerous-apps.html": {
       cluster: "platform",
       title: "Dangerous Apps",
-      next: ["v3-all-applications.html", "v3-redflags.html", "v3-first-24-hours.html"]
+      next: [
+        { href: "v3-safe-apps-and-games-for-kids.html", label: "Safer App & Game Choices" },
+        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device" },
+        { href: "v3-what-now.html", label: "What To Do Now" }
+      ]
     },
     "v3-safe-apps-and-games-for-kids.html": {
       cluster: "platform",
-      title: "Safe Apps and Games",
-      next: ["v3-game-risks-by-age.html", "v3-best-parental-control-apps.html", "v3-house-rules.html"]
+      title: "Safe Apps & Games",
+      next: [
+        { href: "v3-dangerous-apps.html", label: "Higher-Risk Apps" },
+        { href: "v3-game-risks-by-age.html", label: "Games by Age Guide" },
+        { href: "v3-house-rules.html", label: "House Rules" }
+      ]
     },
-    "v3-why-posh-exists.html": {
-      cluster: "mission",
-      title: "Why POSH Exists",
-      next: ["v3-start.html", "v3-support.html", "v3-share.html"]
+    "v3-best-parental-control-apps.html": {
+      cluster: "platform",
+      title: "Best Parental Control Apps",
+      next: [
+        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device" },
+        { href: "v3-how-to-monitor-without-breaking-trust.html", label: "Monitor Without Breaking Trust" },
+        { href: "v3-house-rules.html", label: "House Rules" }
+      ]
     }
   };
 
   const CLUSTER_DEFAULTS = {
-    entry: ["v3-redflags.html", "v3-parent-scripts.html", "v3-first-24-hours.html"],
-    warning: ["v3-parent-scripts.html", "v3-first-24-hours.html", "v3-reporting.html"],
-    conversation: ["v3-first-24-hours.html", "v3-parent-scripts.html", "v3-what-now.html"],
-    urgent: ["v3-evidence-reporting.html", "v3-reporting.html", "v3-parent-scripts.html"],
-    reporting: ["v3-evidence-reporting.html", "v3-first-24-hours.html", "v3-parent-scripts.html"],
-    platform: ["v3-redflags.html", "v3-parent-scripts.html", "v3-first-24-hours.html"],
-    controls: ["v3-device-controls.html", "v3-house-rules.html", "v3-redflags.html"],
-    mission: ["v3-start.html", "v3-support.html", "v3-share.html"],
-    default: ["v3-what-now.html", "v3-redflags.html", "v3-first-24-hours.html"]
+    entry: {
+      heading: "What should you do next?",
+      text: "Choose the lane that best matches what you're seeing right now.",
+      buttons: [
+        { href: "v3-redflags.html", label: "Check Red Flags" },
+        { href: "v3-real-scenarios.html", label: "Match a Real Scenario", secondary: true },
+        { href: "v3-first-24-hours.html", label: "Act Now", secondary: true }
+      ],
+      callout: "You do not need the full answer yet — just the right lane."
+    },
+    warning: {
+      heading: "What should you do next?",
+      text: "If this pattern feels familiar, move into the right next step now.",
+      buttons: [
+        { href: "v3-what-now.html", label: "Find My Next Step" },
+        { href: "v3-first-24-hours.html", label: "Act Now", secondary: true },
+        { href: "v3-parent-scripts.html", label: "What Should I Say?", secondary: true }
+      ],
+      callout: "Recognition matters most when it leads to action."
+    },
+    conversation: {
+      heading: "What should you do next?",
+      text: "Once the conversation stays open, move into the next protective step.",
+      buttons: [
+        { href: "v3-first-24-hours.html", label: "First 24 Hours" },
+        { href: "v3-what-now.html", label: "Find My Next Step", secondary: true },
+        { href: "v3-reporting.html", label: "Report & Get Help", secondary: true }
+      ],
+      callout: "Calm words first. Protective action next."
+    },
+    urgent: {
+      heading: "What should you do next?",
+      text: "If the situation is active, preserve what matters and move into the correct help pathway.",
+      buttons: [
+        { href: "v3-reporting.html", label: "Report & Get Help" },
+        { href: "v3-evidence-reporting.html", label: "Save Evidence", secondary: true },
+        { href: "v3-parent-scripts.html", label: "What Should I Say?", secondary: true }
+      ],
+      callout: "Protect the child. Preserve the evidence. Move early."
+    },
+    reporting: {
+      heading: "What should you do next?",
+      text: "Once reporting is underway, keep supporting your child and follow the next safety steps.",
+      buttons: [
+        { href: "v3-evidence-reporting.html", label: "Evidence Help" },
+        { href: "v3-first-24-hours.html", label: "First 24 Hours", secondary: true },
+        { href: "v3-parent-scripts.html", label: "What Should I Say?", secondary: true }
+      ],
+      callout: "Reporting is one step. Ongoing support still matters."
+    },
+    platform: {
+      heading: "Best next pages from here",
+      text: "Use the strongest next pages for this topic so parents move forward faster.",
+      buttons: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-parent-scripts.html", label: "What Should I Say?", secondary: true },
+        { href: "v3-what-now.html", label: "What To Do Now", secondary: true }
+      ],
+      callout: "The best next page depends on whether you need recognition, conversation help, or urgent action."
+    },
+    default: {
+      heading: "What should you do next?",
+      text: "Based on what you're seeing right now, choose the next step.",
+      buttons: [
+        { href: "v3-what-now.html", label: "Find My Next Step" },
+        { href: "v3-first-24-hours.html", label: "Act Now", secondary: true },
+        { href: "v3-reporting.html", label: "Report & Get Help", secondary: true }
+      ],
+      callout: "You don’t need the full answer — just the right next move."
+    }
   };
 
   function escapeHTML(str) {
@@ -434,14 +612,11 @@
     });
   }
 
-  function getCurrentPage() {
-    return (window.location.pathname.split("/").pop() || "index.html")
+  function markActiveNav(navRoot) {
+    const currentPage = (window.location.pathname.split("/").pop() || "index.html")
       .split("?")[0]
       .split("#")[0];
-  }
 
-  function markActiveNav(navRoot) {
-    const currentPage = getCurrentPage();
     const navLinks = navRoot.querySelectorAll(".nav-group nav a");
 
     navLinks.forEach(function (link) {
@@ -702,50 +877,7 @@
       }
 
       .posh-system-next-step .card {
-        margin-top: 22px;
-      }
-
-      .posh-next-kicker {
-        font-size: .82rem;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-        opacity: .78;
-        margin-bottom: 8px;
-      }
-
-      .posh-next-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 12px;
-        margin-top: 16px;
-      }
-
-      .posh-next-card {
-        border-radius: 18px;
-        border: 1px solid rgba(255,255,255,.08);
-        background: rgba(255,255,255,.03);
-        padding: 16px;
-        text-align: left;
-      }
-
-      .posh-next-label {
-        font-size: .75rem;
-        text-transform: uppercase;
-        letter-spacing: .08em;
-        opacity: .7;
-        margin-bottom: 8px;
-      }
-
-      .posh-next-card h3 {
-        margin: 0 0 8px;
-        font-size: 1rem;
-        line-height: 1.3;
-      }
-
-      .posh-next-card p {
-        margin: 0 0 12px;
-        line-height: 1.55;
-        opacity: .92;
+        margin-top: 24px;
       }
 
       @media (max-width: 640px) {
@@ -879,99 +1011,35 @@
     }
   }
 
-  function uniquePages(list, currentPage) {
-    const seen = new Set();
-    return (list || []).filter(function (href) {
-      if (!href) return false;
-      if (href === currentPage) return false;
-      if (seen.has(href)) return false;
-      seen.add(href);
-      return true;
-    });
-  }
-
-  function getPageTitleFromNav(href) {
-    const link = document.querySelector('.nav-group nav a[href="' + href + '"]');
-    return link ? (link.textContent || "").trim() : href.replace(".html", "").replace(/^v3-/, "").replace(/-/g, " ");
-  }
-
-  function getReasonForLink(currentPage, href, index) {
-    const currentMeta = PAGE_META[currentPage] || {};
-    const cluster = currentMeta.cluster || "default";
-
-    if (cluster === "entry") {
-      return [
-        "Best next step if you are still sorting the situation.",
-        "Helpful if concern is starting to feel more real.",
-        "Use this if you need clearer action, not more guessing."
-      ][index] || "Helpful next step from here.";
-    }
-
-    if (cluster === "warning") {
-      return [
-        "Best next step if the pattern feels real now.",
-        "Helps you say the right thing without shutting the child down.",
-        "Use this if the situation may already need action."
-      ][index] || "Helpful next step from here.";
-    }
-
-    if (cluster === "conversation") {
-      return [
-        "Best next step once the conversation starts opening up.",
-        "Helps move from talking into safer action.",
-        "Useful if you need a wider action pathway from here."
-      ][index] || "Helpful next step from here.";
-    }
-
-    if (cluster === "urgent") {
-      return [
-        "Best next step if evidence and protection matter now.",
-        "Use this if you need the correct support or reporting path.",
-        "Helpful if you still need calmer parent response tools."
-      ][index] || "Helpful next step from here.";
-    }
-
-    if (cluster === "reporting") {
-      return [
-        "Best next step after reporting begins.",
-        "Helps preserve what matters properly.",
-        "Useful if you still need calmer parent communication support."
-      ][index] || "Helpful next step from here.";
-    }
-
-    if (cluster === "platform") {
-      return [
-        "Best next step if the app or game is only part of the bigger pattern.",
-        "Helpful if you need warning signs and wider behaviour clues.",
-        "Use this if the situation may need action now."
-      ][index] || "Helpful next step from here.";
-    }
-
-    if (cluster === "controls") {
-      return [
-        "Best next step if you want stronger safety structure.",
-        "Helps turn settings into clearer family boundaries.",
-        "Useful if you want the risk signs, not just the controls."
-      ][index] || "Helpful next step from here.";
-    }
-
-    return [
-      "Best next step from this page.",
-      "Helpful supporting page from here.",
-      "Useful backup next move if you need it."
-    ][index] || "Helpful next step from here.";
+  function getCurrentPage() {
+    return (window.location.pathname.split("/").pop() || "index.html")
+      .split("?")[0]
+      .split("#")[0];
   }
 
   function getNextStepPages() {
     const currentPage = getCurrentPage();
-    const currentMeta = PAGE_META[currentPage];
+    const page = PAGE_META[currentPage] || null;
 
-    if (currentMeta && Array.isArray(currentMeta.next) && currentMeta.next.length) {
-      return uniquePages(currentMeta.next, currentPage);
+    if (page && Array.isArray(page.next) && page.next.length) {
+      return {
+        heading: "Best next pages from here",
+        text: "These are the strongest next steps for this exact page.",
+        buttons: page.next,
+        callout: "The best next step is usually recognition first, then communication, then action."
+      };
     }
 
-    const cluster = currentMeta && currentMeta.cluster ? currentMeta.cluster : "default";
-    return uniquePages(CLUSTER_DEFAULTS[cluster] || CLUSTER_DEFAULTS.default, currentPage);
+    if (page && page.cluster && CLUSTER_DEFAULTS[page.cluster]) {
+      return CLUSTER_DEFAULTS[page.cluster];
+    }
+
+    return CLUSTER_DEFAULTS.default;
+  }
+
+  function buttonHTML(button) {
+    return '<a class="btn' + (button.secondary ? ' secondary' : '') + '" href="' +
+      escapeHTML(button.href) + '">' + escapeHTML(button.label) + "</a>";
   }
 
   function buildSystemNextStepBlock() {
@@ -979,36 +1047,18 @@
     if (!footer) return;
     if (document.querySelector(".posh-system-next-step")) return;
 
-    const currentPage = getCurrentPage();
-    const nextPages = getNextStepPages().slice(0, 3);
-
-    const labels = ["Best next page", "Also helpful", "Then go here"];
-    const cards = nextPages.map(function (href, index) {
-      return `
-        <div class="posh-next-card">
-          <div class="posh-next-label">${labels[index] || "Next step"}</div>
-          <h3>${escapeHTML(getPageTitleFromNav(href))}</h3>
-          <p>${escapeHTML(getReasonForLink(currentPage, href, index))}</p>
-          <a class="btn ${index === 0 ? "" : "secondary"}" href="${escapeHTML(href)}">Open Page</a>
-        </div>
-      `;
-    }).join("");
+    const config = getNextStepPages();
 
     const wrap = document.createElement("div");
     wrap.className = "posh-system-next-step";
     wrap.innerHTML = `
       <div class="card center-card">
-        <div class="posh-next-kicker">Best next step</div>
-        <h2>Where should parents go next from here?</h2>
-        <p class="note">
-          This section is designed to keep parents moving forward instead of getting stuck between too many pages.
-        </p>
-        <div class="posh-next-grid">
-          ${cards}
+        <h2>${escapeHTML(config.heading)}</h2>
+        <p class="note">${escapeHTML(config.text)}</p>
+        <div class="btn-grid btn-grid-soft">
+          ${config.buttons.map(buttonHTML).join("")}
         </div>
-        <div class="callout center-callout" style="margin-top:16px;">
-          The goal is not to show every page. The goal is to show the right few pages next.
-        </div>
+        <div class="callout center-callout">${escapeHTML(config.callout)}</div>
       </div>
     `;
 
@@ -1026,12 +1076,11 @@
       initNavSearch(nav);
     }
 
-    buildSystemNextStepBlock();
-
     if (footer) {
       footer.innerHTML = footerHTML;
     }
 
+    buildSystemNextStepBlock();
     enhanceLinks();
     injectSupportStyles();
     buildStickySupportButton();
