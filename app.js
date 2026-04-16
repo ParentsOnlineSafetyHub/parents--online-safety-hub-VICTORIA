@@ -183,6 +183,180 @@
     </footer>
   `;
 
+  const PAGE_META = {
+    "index.html": {
+      cluster: "entry",
+      title: "Home",
+      next: ["v3-start.html", "v3-safety-score.html", "v3-what-now.html"]
+    },
+    "v3-start.html": {
+      cluster: "entry",
+      title: "Start Here",
+      next: ["v3-safety-score.html", "v3-redflags.html", "v3-what-now.html"]
+    },
+    "v3-entry-system.html": {
+      cluster: "entry",
+      title: "Entry System",
+      next: ["v3-start.html", "v3-safety-score.html", "v3-what-now.html"]
+    },
+    "v3-safety-score.html": {
+      cluster: "entry",
+      title: "Safety Score",
+      next: ["v3-redflags.html", "v3-parent-scripts.html", "v3-what-now.html"]
+    },
+    "v3-what-now.html": {
+      cluster: "entry",
+      title: "What To Do Now",
+      next: ["v3-redflags.html", "v3-first-24-hours.html", "v3-parent-scripts.html"]
+    },
+
+    "v3-redflags.html": {
+      cluster: "warning",
+      title: "Red Flags",
+      next: ["v3-signs-my-child-is-being-groomed-online.html", "v3-parent-scripts.html", "v3-first-24-hours.html"]
+    },
+    "v3-10-signs-targeted-online.html": {
+      cluster: "warning",
+      title: "10 Signs Targeted Online",
+      next: ["v3-redflags.html", "v3-parent-scripts.html", "v3-first-24-hours.html"]
+    },
+    "v3-signs-my-child-is-being-groomed-online.html": {
+      cluster: "warning",
+      title: "Grooming Signs",
+      next: ["v3-playbook.html", "v3-parent-scripts.html", "v3-first-24-hours.html"]
+    },
+    "v3-playbook.html": {
+      cluster: "warning",
+      title: "Grooming Playbook",
+      next: ["v3-redflags.html", "v3-first-24-hours.html", "v3-reporting.html"]
+    },
+    "v3-grooming.html": {
+      cluster: "warning",
+      title: "Grooming",
+      next: ["v3-playbook.html", "v3-redflags.html", "v3-parent-scripts.html"]
+    },
+    "v3-predators.html": {
+      cluster: "warning",
+      title: "Predators",
+      next: ["v3-how-predators-contact-kids-online.html", "v3-redflags.html", "v3-first-24-hours.html"]
+    },
+    "v3-sextortion.html": {
+      cluster: "urgent",
+      title: "Sextortion",
+      next: ["v3-first-24-hours.html", "v3-evidence-reporting.html", "v3-reporting.html"]
+    },
+
+    "v3-parent-scripts.html": {
+      cluster: "conversation",
+      title: "Parent Scripts",
+      next: ["v3-how-to-talk-so-your-child-opens-up.html", "v3-what-to-say-if-your-child-opens-up.html", "v3-first-24-hours.html"]
+    },
+    "v3-how-to-talk-so-your-child-opens-up.html": {
+      cluster: "conversation",
+      title: "How To Talk So Your Child Opens Up",
+      next: ["v3-what-to-say-if-your-child-opens-up.html", "v3-when-your-child-wont-talk.html", "v3-first-24-hours.html"]
+    },
+    "v3-what-to-say-if-your-child-opens-up.html": {
+      cluster: "conversation",
+      title: "What To Say If Your Child Opens Up",
+      next: ["v3-first-24-hours.html", "v3-evidence-reporting.html", "v3-reporting.html"]
+    },
+    "v3-what-to-say-if-your-child-thinks-it-was-their-fault.html": {
+      cluster: "conversation",
+      title: "If They Think It Was Their Fault",
+      next: ["v3-what-to-say-if-your-child-opens-up.html", "v3-first-24-hours.html", "v3-parent-scripts.html"]
+    },
+    "v3-what-to-say-if-your-child-is-embarrassed-to-tell-you.html": {
+      cluster: "conversation",
+      title: "If They Feel Embarrassed",
+      next: ["v3-what-to-say-if-your-child-opens-up.html", "v3-what-to-say-if-your-child-thinks-it-was-their-fault.html", "v3-parent-scripts.html"]
+    },
+    "v3-when-your-child-wont-talk.html": {
+      cluster: "conversation",
+      title: "When Your Child Won’t Talk",
+      next: ["v3-how-to-talk-so-your-child-opens-up.html", "v3-redflags.html", "v3-how-to-check-a-device-without-causing-panic.html"]
+    },
+    "v3-why-kids-hide-things.html": {
+      cluster: "conversation",
+      title: "Why Kids Hide Things",
+      next: ["v3-when-your-child-wont-talk.html", "v3-how-to-talk-so-your-child-opens-up.html", "v3-parent-scripts.html"]
+    },
+    "v3-why-behaviour-changes.html": {
+      cluster: "conversation",
+      title: "Why Behaviour Changes",
+      next: ["v3-redflags.html", "v3-when-your-child-wont-talk.html", "v3-how-to-talk-so-your-child-opens-up.html"]
+    },
+
+    "v3-first-24-hours.html": {
+      cluster: "urgent",
+      title: "First 24 Hours",
+      next: ["v3-evidence-reporting.html", "v3-reporting.html", "v3-parent-scripts.html"]
+    },
+    "v3-evidence-reporting.html": {
+      cluster: "urgent",
+      title: "Evidence & Reporting",
+      next: ["v3-reporting.html", "v3-reporting-australia.html", "v3-first-24-hours.html"]
+    },
+    "v3-reporting.html": {
+      cluster: "reporting",
+      title: "Reporting",
+      next: ["v3-reporting-australia.html", "v3-evidence-reporting.html", "v3-parent-scripts.html"]
+    },
+    "v3-reporting-australia.html": {
+      cluster: "reporting",
+      title: "Reporting Australia",
+      next: ["v3-reporting.html", "v3-evidence-reporting.html", "v3-first-24-hours.html"]
+    },
+
+    "v3-game-roblox.html": {
+      cluster: "platform",
+      title: "Roblox",
+      next: ["v3-social-discord.html", "v3-in-game-currency-grooming-risk.html", "v3-roblox-robux-scams-explained.html"]
+    },
+    "v3-social-discord.html": {
+      cluster: "platform",
+      title: "Discord",
+      next: ["v3-redflags.html", "v3-first-24-hours.html", "v3-parent-scripts.html"]
+    },
+    "v3-social-snapchat.html": {
+      cluster: "platform",
+      title: "Snapchat",
+      next: ["v3-sextortion.html", "v3-first-24-hours.html", "v3-parent-scripts.html"]
+    },
+    "v3-best-parental-control-apps.html": {
+      cluster: "controls",
+      title: "Best Parental Control Apps",
+      next: ["v3-parental-controls-by-device.html", "v3-device-controls.html", "v3-house-rules.html"]
+    },
+    "v3-dangerous-apps.html": {
+      cluster: "platform",
+      title: "Dangerous Apps",
+      next: ["v3-all-applications.html", "v3-redflags.html", "v3-first-24-hours.html"]
+    },
+    "v3-safe-apps-and-games-for-kids.html": {
+      cluster: "platform",
+      title: "Safe Apps and Games",
+      next: ["v3-game-risks-by-age.html", "v3-best-parental-control-apps.html", "v3-house-rules.html"]
+    },
+    "v3-why-posh-exists.html": {
+      cluster: "mission",
+      title: "Why POSH Exists",
+      next: ["v3-start.html", "v3-support.html", "v3-share.html"]
+    }
+  };
+
+  const CLUSTER_DEFAULTS = {
+    entry: ["v3-redflags.html", "v3-parent-scripts.html", "v3-first-24-hours.html"],
+    warning: ["v3-parent-scripts.html", "v3-first-24-hours.html", "v3-reporting.html"],
+    conversation: ["v3-first-24-hours.html", "v3-parent-scripts.html", "v3-what-now.html"],
+    urgent: ["v3-evidence-reporting.html", "v3-reporting.html", "v3-parent-scripts.html"],
+    reporting: ["v3-evidence-reporting.html", "v3-first-24-hours.html", "v3-parent-scripts.html"],
+    platform: ["v3-redflags.html", "v3-parent-scripts.html", "v3-first-24-hours.html"],
+    controls: ["v3-device-controls.html", "v3-house-rules.html", "v3-redflags.html"],
+    mission: ["v3-start.html", "v3-support.html", "v3-share.html"],
+    default: ["v3-what-now.html", "v3-redflags.html", "v3-first-24-hours.html"]
+  };
+
   function escapeHTML(str) {
     return String(str || "")
       .replace(/&/g, "&amp;")
@@ -197,8 +371,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\\s-]/g, " ")
-      .replace(/\\s+/g, " ")
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .replace(/\s+/g, " ")
       .trim();
   }
 
@@ -219,7 +393,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\\s+/).filter(Boolean);
+    const tokens = q.split(/\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -260,11 +434,14 @@
     });
   }
 
-  function markActiveNav(navRoot) {
-    const currentPage = (window.location.pathname.split("/").pop() || "index.html")
+  function getCurrentPage() {
+    return (window.location.pathname.split("/").pop() || "index.html")
       .split("?")[0]
       .split("#")[0];
+  }
 
+  function markActiveNav(navRoot) {
+    const currentPage = getCurrentPage();
     const navLinks = navRoot.querySelectorAll(".nav-group nav a");
 
     navLinks.forEach(function (link) {
@@ -524,6 +701,53 @@
         text-decoration: none;
       }
 
+      .posh-system-next-step .card {
+        margin-top: 22px;
+      }
+
+      .posh-next-kicker {
+        font-size: .82rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        opacity: .78;
+        margin-bottom: 8px;
+      }
+
+      .posh-next-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .posh-next-card {
+        border-radius: 18px;
+        border: 1px solid rgba(255,255,255,.08);
+        background: rgba(255,255,255,.03);
+        padding: 16px;
+        text-align: left;
+      }
+
+      .posh-next-label {
+        font-size: .75rem;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        opacity: .7;
+        margin-bottom: 8px;
+      }
+
+      .posh-next-card h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+
+      .posh-next-card p {
+        margin: 0 0 12px;
+        line-height: 1.55;
+        opacity: .92;
+      }
+
       @media (max-width: 640px) {
         .posh-sticky-support {
           left: 12px;
@@ -655,166 +879,99 @@
     }
   }
 
-  function getSystemNextStepHTML() {
-    const currentPage = (window.location.pathname.split("/").pop() || "index.html")
-      .split("?")[0]
-      .split("#")[0];
+  function uniquePages(list, currentPage) {
+    const seen = new Set();
+    return (list || []).filter(function (href) {
+      if (!href) return false;
+      if (href === currentPage) return false;
+      if (seen.has(href)) return false;
+      seen.add(href);
+      return true;
+    });
+  }
 
-    const entryPages = [
-      "index.html",
-      "v3-start.html",
-      "v3-entry-system.html",
-      "v3-safety-score.html",
-      "v3-what-now.html"
-    ];
+  function getPageTitleFromNav(href) {
+    const link = document.querySelector('.nav-group nav a[href="' + href + '"]');
+    return link ? (link.textContent || "").trim() : href.replace(".html", "").replace(/^v3-/, "").replace(/-/g, " ");
+  }
 
-    const warningPages = [
-      "v3-redflags.html",
-      "v3-real-scenarios.html",
-      "v3-signs-my-child-is-being-groomed-online.html",
-      "v3-how-predators-contact-kids-online.html",
-      "v3-when-an-online-friend-becomes-a-risk.html",
-      "v3-signs-your-child-is-being-isolated-online.html",
-      "v3-10-signs-targeted-online.html",
-      "v3-grooming.html",
-      "v3-playbook.html"
-    ];
+  function getReasonForLink(currentPage, href, index) {
+    const currentMeta = PAGE_META[currentPage] || {};
+    const cluster = currentMeta.cluster || "default";
 
-    const conversationPages = [
-      "v3-parent-scripts.html",
-      "v3-how-to-talk-so-your-child-opens-up.html",
-      "v3-when-your-child-wont-talk.html",
-      "v3-what-to-do-if-your-child-tells-you-something-serious.html",
-      "v3-why-kids-hide-things.html",
-      "v3-why-behaviour-changes.html"
-    ];
-
-    const urgentPages = [
-      "v3-first-24-hours.html",
-      "v3-evidence-reporting.html",
-      "v3-sextortion.html",
-      "v3-when-it-goes-deeper.html"
-    ];
-
-    const reportingPages = [
-      "v3-reporting.html",
-      "v3-reporting-australia.html",
-      "v3-reporting-usa.html",
-      "v3-reporting-uk.html",
-      "v3-reporting-europe.html"
-    ];
-
-    if (entryPages.includes(currentPage)) {
-      return `
-        <div class="card center-card">
-          <h2>What should you do next?</h2>
-          <p class="note">
-            Choose the lane that best matches what you're seeing right now.
-          </p>
-          <div class="btn-grid btn-grid-soft">
-            <a class="btn" href="v3-redflags.html">Check Red Flags</a>
-            <a class="btn secondary" href="v3-real-scenarios.html">Match a Real Scenario</a>
-            <a class="btn secondary" href="v3-first-24-hours.html">Act Now</a>
-          </div>
-          <div class="callout center-callout">
-            You do not need the full answer yet — just the right lane.
-          </div>
-        </div>
-      `;
+    if (cluster === "entry") {
+      return [
+        "Best next step if you are still sorting the situation.",
+        "Helpful if concern is starting to feel more real.",
+        "Use this if you need clearer action, not more guessing."
+      ][index] || "Helpful next step from here.";
     }
 
-    if (warningPages.includes(currentPage)) {
-      return `
-        <div class="card center-card">
-          <h2>What should you do next?</h2>
-          <p class="note">
-            If this pattern feels familiar, move into the right next step now.
-          </p>
-          <div class="btn-grid btn-grid-soft">
-            <a class="btn" href="v3-what-now.html">Find My Next Step</a>
-            <a class="btn secondary" href="v3-first-24-hours.html">Act Now</a>
-            <a class="btn secondary" href="v3-parent-scripts.html">What Should I Say?</a>
-          </div>
-          <div class="callout center-callout">
-            Recognition matters most when it leads to action.
-          </div>
-        </div>
-      `;
+    if (cluster === "warning") {
+      return [
+        "Best next step if the pattern feels real now.",
+        "Helps you say the right thing without shutting the child down.",
+        "Use this if the situation may already need action."
+      ][index] || "Helpful next step from here.";
     }
 
-    if (conversationPages.includes(currentPage)) {
-      return `
-        <div class="card center-card">
-          <h2>What should you do next?</h2>
-          <p class="note">
-            Once the conversation stays open, move into the next protective step.
-          </p>
-          <div class="btn-grid btn-grid-soft">
-            <a class="btn" href="v3-first-24-hours.html">First 24 Hours</a>
-            <a class="btn secondary" href="v3-what-now.html">Find My Next Step</a>
-            <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
-          </div>
-          <div class="callout center-callout">
-            Calm words first. Protective action next.
-          </div>
-        </div>
-      `;
+    if (cluster === "conversation") {
+      return [
+        "Best next step once the conversation starts opening up.",
+        "Helps move from talking into safer action.",
+        "Useful if you need a wider action pathway from here."
+      ][index] || "Helpful next step from here.";
     }
 
-    if (urgentPages.includes(currentPage)) {
-      return `
-        <div class="card center-card">
-          <h2>What should you do next?</h2>
-          <p class="note">
-            If the situation is active, preserve what matters and move into the correct help pathway.
-          </p>
-          <div class="btn-grid btn-grid-soft">
-            <a class="btn" href="v3-reporting.html">Report &amp; Get Help</a>
-            <a class="btn secondary" href="v3-evidence-reporting.html">Save Evidence</a>
-            <a class="btn secondary" href="v3-parent-scripts.html">What Should I Say?</a>
-          </div>
-          <div class="callout center-callout">
-            Protect the child. Preserve the evidence. Move early.
-          </div>
-        </div>
-      `;
+    if (cluster === "urgent") {
+      return [
+        "Best next step if evidence and protection matter now.",
+        "Use this if you need the correct support or reporting path.",
+        "Helpful if you still need calmer parent response tools."
+      ][index] || "Helpful next step from here.";
     }
 
-    if (reportingPages.includes(currentPage)) {
-      return `
-        <div class="card center-card">
-          <h2>What should you do next?</h2>
-          <p class="note">
-            Once reporting is underway, keep supporting your child and follow the next safety steps.
-          </p>
-          <div class="btn-grid btn-grid-soft">
-            <a class="btn" href="v3-evidence-reporting.html">Evidence Help</a>
-            <a class="btn secondary" href="v3-first-24-hours.html">First 24 Hours</a>
-            <a class="btn secondary" href="v3-parent-scripts.html">What Should I Say?</a>
-          </div>
-          <div class="callout center-callout">
-            Reporting is one step. Ongoing support still matters.
-          </div>
-        </div>
-      `;
+    if (cluster === "reporting") {
+      return [
+        "Best next step after reporting begins.",
+        "Helps preserve what matters properly.",
+        "Useful if you still need calmer parent communication support."
+      ][index] || "Helpful next step from here.";
     }
 
-    return `
-      <div class="card center-card">
-        <h2>What should you do next?</h2>
-        <p class="note">
-          Based on what you're seeing right now, choose the next step.
-        </p>
-        <div class="btn-grid btn-grid-soft">
-          <a class="btn" href="v3-what-now.html">Find My Next Step</a>
-          <a class="btn secondary" href="v3-first-24-hours.html">Act Now</a>
-          <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
-        </div>
-        <div class="callout center-callout">
-          You don’t need the full answer — just the right next move.
-        </div>
-      </div>
-    `;
+    if (cluster === "platform") {
+      return [
+        "Best next step if the app or game is only part of the bigger pattern.",
+        "Helpful if you need warning signs and wider behaviour clues.",
+        "Use this if the situation may need action now."
+      ][index] || "Helpful next step from here.";
+    }
+
+    if (cluster === "controls") {
+      return [
+        "Best next step if you want stronger safety structure.",
+        "Helps turn settings into clearer family boundaries.",
+        "Useful if you want the risk signs, not just the controls."
+      ][index] || "Helpful next step from here.";
+    }
+
+    return [
+      "Best next step from this page.",
+      "Helpful supporting page from here.",
+      "Useful backup next move if you need it."
+    ][index] || "Helpful next step from here.";
+  }
+
+  function getNextStepPages() {
+    const currentPage = getCurrentPage();
+    const currentMeta = PAGE_META[currentPage];
+
+    if (currentMeta && Array.isArray(currentMeta.next) && currentMeta.next.length) {
+      return uniquePages(currentMeta.next, currentPage);
+    }
+
+    const cluster = currentMeta && currentMeta.cluster ? currentMeta.cluster : "default";
+    return uniquePages(CLUSTER_DEFAULTS[cluster] || CLUSTER_DEFAULTS.default, currentPage);
   }
 
   function buildSystemNextStepBlock() {
@@ -822,9 +979,38 @@
     if (!footer) return;
     if (document.querySelector(".posh-system-next-step")) return;
 
+    const currentPage = getCurrentPage();
+    const nextPages = getNextStepPages().slice(0, 3);
+
+    const labels = ["Best next page", "Also helpful", "Then go here"];
+    const cards = nextPages.map(function (href, index) {
+      return `
+        <div class="posh-next-card">
+          <div class="posh-next-label">${labels[index] || "Next step"}</div>
+          <h3>${escapeHTML(getPageTitleFromNav(href))}</h3>
+          <p>${escapeHTML(getReasonForLink(currentPage, href, index))}</p>
+          <a class="btn ${index === 0 ? "" : "secondary"}" href="${escapeHTML(href)}">Open Page</a>
+        </div>
+      `;
+    }).join("");
+
     const wrap = document.createElement("div");
     wrap.className = "posh-system-next-step";
-    wrap.innerHTML = getSystemNextStepHTML();
+    wrap.innerHTML = `
+      <div class="card center-card">
+        <div class="posh-next-kicker">Best next step</div>
+        <h2>Where should parents go next from here?</h2>
+        <p class="note">
+          This section is designed to keep parents moving forward instead of getting stuck between too many pages.
+        </p>
+        <div class="posh-next-grid">
+          ${cards}
+        </div>
+        <div class="callout center-callout" style="margin-top:16px;">
+          The goal is not to show every page. The goal is to show the right few pages next.
+        </div>
+      </div>
+    `;
 
     footer.parentNode.insertBefore(wrap, footer);
   }
