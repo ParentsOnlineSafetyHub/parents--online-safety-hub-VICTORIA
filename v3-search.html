@@ -9,6 +9,12 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-search.html" />
 
+  <meta property="og:title" content="Search POSH • POSH" />
+  <meta property="og:description" content="Search POSH pages, apps, games, devices, downloads, behaviour topics, urgent warning signs, and child safety guidance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-search.html" />
+  <meta property="og:site_name" content="POSH" />
+
   <link rel="stylesheet" href="style.css"/>
 </head>
 
@@ -25,9 +31,20 @@
 
   <div id="nav"></div>
 
-  <!-- SEARCH -->
+  <div class="pill-row" style="margin:0 0 16px;">
+    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">SITE SEARCH</div>
+    <div class="pill">Apps</div>
+    <div class="pill">Games</div>
+    <div class="pill">Warning Signs</div>
+    <div class="pill">Parent Help</div>
+  </div>
+
+  <p class="note">
+    Use search when you already know the topic, app, game, behaviour, or action you are trying to find.
+  </p>
+
   <div class="card center-card">
-    <h2>Search</h2>
+    <h2>Search POSH</h2>
 
     <div class="search-page-row">
       <input
@@ -36,24 +53,68 @@
         class="search-page-input"
         placeholder="e.g. roblox chat, grooming signs, deleted messages"
         autocomplete="off"
+        aria-label="Search POSH pages"
       />
-      <button class="btn" id="searchBtn">Search</button>
+      <button class="btn" id="searchBtn" type="button">Search</button>
     </div>
 
     <div class="callout center-callout" style="margin-top:16px;">
-      Try: <strong>roblox</strong>, <strong>discord</strong>, <strong>grooming</strong>, <strong>deleted messages</strong>, <strong>device safety</strong>
+      Try: <strong>roblox</strong>, <strong>discord</strong>, <strong>grooming</strong>, <strong>deleted messages</strong>, <strong>device safety</strong>, <strong>what to say</strong>
     </div>
   </div>
 
-  <!-- RESULTS -->
+  <div class="card center-card">
+    <h2>Quick search lanes</h2>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="javascript:void(0)" data-search-link="red flags">Red Flags</a>
+      <a class="btn secondary" href="javascript:void(0)" data-search-link="grooming signs">Grooming Signs</a>
+      <a class="btn secondary" href="javascript:void(0)" data-search-link="roblox">Roblox</a>
+      <a class="btn secondary" href="javascript:void(0)" data-search-link="discord">Discord</a>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="javascript:void(0)" data-search-link="snapchat">Snapchat</a>
+      <a class="btn secondary" href="javascript:void(0)" data-search-link="deleted messages">Deleted Messages</a>
+      <a class="btn secondary" href="javascript:void(0)" data-search-link="device safety">Device Safety</a>
+      <a class="btn secondary" href="javascript:void(0)" data-search-link="parent scripts">Parent Scripts</a>
+    </div>
+  </div>
+
   <div class="card center-card">
     <h2 id="resultsHeading">Results</h2>
     <p class="note" id="resultsCount">Type something above to search.</p>
 
     <div id="resultsList" class="search-results-list"></div>
 
+    <div id="emptyState" class="callout center-callout">
+      Search by topic, app, game, behaviour, warning sign, or action step.
+    </div>
+
     <div id="noResults" class="callout center-callout" style="display:none;">
-      No results found. Try broader keywords.
+      No results found. Try broader keywords or simpler search terms.
+    </div>
+  </div>
+
+  <div class="card center-card">
+    <h2>Still not sure what to search?</h2>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn" href="v3-what-now.html">What To Do Now</a>
+      <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
+      <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
+      <a class="btn secondary" href="v3-all-applications.html">All Applications</a>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="v3-all-games.html">All Games</a>
+      <a class="btn secondary" href="v3-parental-controls-by-device.html">Parental Controls by Device</a>
+      <a class="btn secondary" href="v3-downloads.html">Downloads</a>
+      <a class="btn secondary" href="sitemap.html">Full Site Map</a>
+    </div>
+
+    <div class="callout center-callout">
+      If you do not know the exact term yet, the best move is usually to start from the right hub instead of guessing.
     </div>
   </div>
 
@@ -61,144 +122,192 @@
 
 </div>
 
-<!-- IMPORTANT: LOAD INDEX -->
 <script src="search-index.js"></script>
 <script src="app.js"></script>
 
 <script>
-(function(){
+(function () {
+  "use strict";
 
-  /* =========================
-     SAFE HELPERS (XSS SAFE)
-  ========================= */
-
-  function escapeHTML(str){
+  function escapeHTML(str) {
     return String(str || "")
-      .replace(/&/g,"&amp;")
-      .replace(/</g,"&lt;")
-      .replace(/>/g,"&gt;")
-      .replace(/"/g,"&quot;");
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   }
 
-  function normalize(text){
+  function normalize(text) {
     return (text || "")
       .toLowerCase()
-      .replace(/[^a-z0-9\s]/g," ")
-      .replace(/\s+/g," ")
+      .replace(/&/g, " and ")
+      .replace(/['’]/g, "")
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .replace(/\s+/g, " ")
       .trim();
   }
 
-  function getQuery(){
+  function getQuery() {
     return new URLSearchParams(window.location.search).get("q") || "";
   }
 
-  function setQuery(q){
-    const url = new URL(window.location);
-    if(q) url.searchParams.set("q", q);
-    else url.searchParams.delete("q");
-    history.replaceState({}, "", url);
+  function setQuery(q) {
+    const url = new URL(window.location.href);
+    if (q) {
+      url.searchParams.set("q", q);
+    } else {
+      url.searchParams.delete("q");
+    }
+    history.replaceState({}, "", url.toString());
   }
 
-  /* =========================
-     SEARCH LOGIC
-  ========================= */
+  function getIndex() {
+    if (Array.isArray(window.POSH_SEARCH_INDEX) && window.POSH_SEARCH_INDEX.length) {
+      return window.POSH_SEARCH_INDEX;
+    }
+    return [];
+  }
 
-  function score(item, query){
+  function score(item, query) {
     const q = normalize(query);
-    const text = normalize(
-      item.title + " " +
-      item.description + " " +
-      item.keywords + " " +
-      item.category
-    );
+    if (!q) return 0;
+
+    const title = normalize(item.title || "");
+    const description = normalize(item.description || "");
+    const keywords = normalize(item.keywords || "");
+    const category = normalize(item.category || "");
+    const href = normalize(item.href || "");
 
     let s = 0;
 
-    if(text.includes(q)) s += 40;
+    if (title === q) s += 140;
+    if (title.indexOf(q) !== -1) s += 70;
+    if (keywords.indexOf(q) !== -1) s += 40;
+    if (description.indexOf(q) !== -1) s += 24;
+    if (category.indexOf(q) !== -1) s += 16;
+    if (href.indexOf(q) !== -1) s += 10;
 
-    q.split(" ").forEach(t=>{
-      if(text.includes(t)) s += 10;
+    const tokens = q.split(/\s+/).filter(Boolean);
+
+    tokens.forEach(function (token) {
+      if (title.indexOf(token) !== -1) s += 18;
+      if (keywords.indexOf(token) !== -1) s += 11;
+      if (description.indexOf(token) !== -1) s += 7;
+      if (category.indexOf(token) !== -1) s += 5;
+      if (href.indexOf(token) !== -1) s += 3;
     });
 
     return s;
   }
 
-  function search(query){
-    if(!query.trim()) return [];
+  function search(query) {
+    const index = getIndex();
+    const q = String(query || "").trim();
 
-    return window.POSH_SEARCH_INDEX
-      .map(i => ({...i, score: score(i, query)}))
-      .filter(i => i.score > 0)
-      .sort((a,b)=>b.score-a.score)
-      .slice(0,50);
+    if (!q || !index.length) return [];
+
+    return index
+      .map(function (item) {
+        return Object.assign({}, item, { _score: score(item, q) });
+      })
+      .filter(function (item) {
+        return item._score > 0;
+      })
+      .sort(function (a, b) {
+        if (b._score !== a._score) return b._score - a._score;
+        return String(a.title || "").localeCompare(String(b.title || ""));
+      })
+      .slice(0, 50);
   }
 
-  /* =========================
-     RENDER
-  ========================= */
-
-  function render(query){
-
+  function renderResults(query) {
     const list = document.getElementById("resultsList");
     const count = document.getElementById("resultsCount");
-    const no = document.getElementById("noResults");
     const heading = document.getElementById("resultsHeading");
+    const noResults = document.getElementById("noResults");
+    const emptyState = document.getElementById("emptyState");
 
-    const results = search(query);
+    const q = String(query || "").trim();
 
-    heading.textContent = query ? `Results for: ${query}` : "Results";
-    count.textContent = results.length + " result" + (results.length===1?"":"s");
-
-    if(!results.length){
+    if (!q) {
+      heading.textContent = "Results";
+      count.textContent = "Type something above to search.";
       list.innerHTML = "";
-      no.style.display = "block";
+      noResults.style.display = "none";
+      emptyState.style.display = "block";
       return;
     }
 
-    no.style.display = "none";
+    const results = search(q);
 
-    list.innerHTML = results.map(item => `
-      <a href="${escapeHTML(item.href)}" class="search-result-card search-result-link">
-        <div class="search-result-top">
-          <strong>${escapeHTML(item.title)}</strong>
-          <span class="search-result-type">${escapeHTML(item.category)}</span>
-        </div>
-        <div class="search-result-url">${escapeHTML(item.href)}</div>
-        <div style="margin-top:6px;">${escapeHTML(item.description)}</div>
-      </a>
-    `).join("");
+    heading.textContent = "Results for: " + q;
+    count.textContent = results.length + " result" + (results.length === 1 ? "" : "s");
+    emptyState.style.display = "none";
+
+    if (!results.length) {
+      list.innerHTML = "";
+      noResults.style.display = "block";
+      return;
+    }
+
+    noResults.style.display = "none";
+
+    list.innerHTML = results.map(function (item) {
+      return `
+        <a href="${escapeHTML(item.href)}" class="search-result-card search-result-link">
+          <div class="search-result-top">
+            <strong>${escapeHTML(item.title)}</strong>
+            <span class="search-result-type">${escapeHTML(item.category || "Page")}</span>
+          </div>
+          <div class="search-result-url">${escapeHTML(item.href)}</div>
+          <div style="margin-top:6px;">${escapeHTML(item.description || "")}</div>
+        </a>
+      `;
+    }).join("");
   }
 
-  /* =========================
-     INIT
-  ========================= */
-
-  document.addEventListener("DOMContentLoaded", function(){
-
+  function runSearchFromInput() {
     const input = document.getElementById("searchInput");
-    const btn = document.getElementById("searchBtn");
+    const q = input.value.trim();
+    setQuery(q);
+    renderResults(q);
+  }
 
-    const initial = getQuery();
-    input.value = initial;
-    render(initial);
+  function bindQuickLinks() {
+    const links = document.querySelectorAll("[data-search-link]");
+    const input = document.getElementById("searchInput");
 
-    btn.addEventListener("click", ()=>{
-      const q = input.value.trim();
-      setQuery(q);
-      render(q);
-    });
-
-    input.addEventListener("keydown", (e)=>{
-      if(e.key === "Enter"){
-        e.preventDefault();
-        const q = input.value.trim();
+    links.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const q = link.getAttribute("data-search-link") || "";
+        input.value = q;
         setQuery(q);
-        render(q);
+        renderResults(q);
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("searchInput");
+    const button = document.getElementById("searchBtn");
+
+    const initialQuery = getQuery();
+    input.value = initialQuery;
+    renderResults(initialQuery);
+
+    button.addEventListener("click", runSearchFromInput);
+
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        runSearchFromInput();
       }
     });
 
+    bindQuickLinks();
   });
-
 })();
 </script>
 
