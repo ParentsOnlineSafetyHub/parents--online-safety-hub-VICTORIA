@@ -654,8 +654,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\s-]/g, " ")
-      .replace(/\s+/g, " ")
+      .replace(/[^a-z0-9\\s-]/g, " ")
+      .replace(/\\s+/g, " ")
       .trim();
   }
 
@@ -676,7 +676,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\s+/).filter(Boolean);
+    const tokens = q.split(/\\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -830,174 +830,154 @@
     });
   }
 
-  function injectHeroStyles() {
-    if (document.getElementById("poshHeroStyles")) return;
-
-    const style = document.createElement("style");
-    style.id = "poshHeroStyles";
-    style.textContent = `
-      .posh-global-hero {
-        position: relative;
-        overflow: hidden;
-        margin: 0 0 18px;
-        border-radius: 24px;
-        min-height: 220px;
-        padding: 22px 18px 20px;
-        display: flex;
-        align-items: flex-end;
-        background:
-          linear-gradient(180deg, rgba(7,16,33,.18) 0%, rgba(7,16,33,.70) 68%, rgba(7,16,33,.88) 100%),
-          url('posh_graphic_10_posh.png') center/cover no-repeat;
-        border: 1px solid rgba(255,255,255,.08);
-        box-shadow: 0 18px 40px rgba(0,0,0,.22);
-      }
-
-      .posh-global-hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(circle at top right, rgba(25,194,255,.18), transparent 36%),
-          radial-gradient(circle at bottom left, rgba(60,124,255,.16), transparent 34%);
-        pointer-events: none;
-      }
-
-      .posh-global-hero-inner {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-      }
-
-      .posh-global-hero .brand {
-        display: inline-flex;
-        margin: 0 0 10px;
-        font-weight: 900;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #ffffff;
-        font-size: .95rem;
-        background: rgba(255,255,255,.10);
-        border: 1px solid rgba(255,255,255,.14);
-        border-radius: 999px;
-        padding: 8px 12px;
-        backdrop-filter: blur(4px);
-      }
-
-      .posh-global-hero .brand:hover {
-        background: rgba(255,255,255,.16);
-      }
-
-      .posh-global-hero .page-title {
-        margin: 0;
-        color: #ffffff;
-        line-height: 1.08;
-        font-size: clamp(1.8rem, 4vw, 3rem);
-        text-shadow: 0 3px 14px rgba(0,0,0,.30);
-      }
-
-      .posh-global-hero .page-title a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .posh-global-hero .page-title a:hover {
-        opacity: .96;
-      }
-
-      .posh-global-hero .tagline {
-        margin: 12px 0 0;
-        max-width: 760px;
-        color: rgba(255,255,255,.96);
-        text-shadow: 0 2px 10px rgba(0,0,0,.28);
-      }
-
-      .posh-global-hero .tagline strong {
-        color: #ffffff;
-      }
-
-      @media (max-width: 640px) {
-        .posh-global-hero {
-          min-height: 190px;
-          padding: 18px 14px 16px;
-          border-radius: 20px;
-        }
-
-        .posh-global-hero .brand {
-          font-size: .82rem;
-          letter-spacing: .12em;
-          padding: 7px 10px;
-        }
-
-        .posh-global-hero .tagline {
-          font-size: .98rem;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  function buildGlobalHero() {
-    const wrap = document.querySelector(".wrap");
-    if (!wrap) return;
-    if (document.querySelector(".posh-global-hero")) return;
-
-    const brand = wrap.querySelector(".brand");
-    const title = wrap.querySelector(".page-title");
-    const tagline = wrap.querySelector(".tagline");
-    const nav = document.getElementById("nav");
-
-    if (!brand || !title) return;
-
-    const hero = document.createElement("section");
-    hero.className = "posh-global-hero";
-
-    const inner = document.createElement("div");
-    inner.className = "posh-global-hero-inner";
-
-    const brandText = brand.textContent.trim() || "POSH";
-    const titleText = title.textContent.trim();
-
-    const brandLink = document.createElement("a");
-    brandLink.href = "index.html";
-    brandLink.className = "brand";
-    brandLink.setAttribute("aria-label", "Go to POSH home");
-    brandLink.textContent = brandText;
-
-    const titleHeading = document.createElement(title.tagName.toLowerCase());
-    titleHeading.className = "page-title";
-
-    const titleLink = document.createElement("a");
-    titleLink.href = "index.html";
-    titleLink.setAttribute("aria-label", "Go to POSH home");
-    titleLink.textContent = titleText;
-    titleHeading.appendChild(titleLink);
-
-    inner.appendChild(brandLink);
-    inner.appendChild(titleHeading);
-
-    if (tagline) {
-      inner.appendChild(tagline);
-    }
-
-    hero.appendChild(inner);
-
-    brand.remove();
-    title.remove();
-
-    if (nav) {
-      wrap.insertBefore(hero, nav);
-    } else {
-      wrap.insertBefore(hero, wrap.firstChild);
-    }
-  }
-
   function injectSupportStyles() {
     if (document.getElementById("poshSupportUiStyles")) return;
 
     const style = document.createElement("style");
     style.id = "poshSupportUiStyles";
     style.textContent = `
+      .posh-global-hero{
+        position:relative;
+        overflow:hidden;
+        border-radius:28px;
+        margin:0 0 18px;
+        min-height:260px;
+        display:flex;
+        align-items:flex-end;
+        padding:28px;
+        box-shadow:0 22px 55px rgba(0,0,0,.32);
+        border:1px solid rgba(255,255,255,.08);
+        background:
+          linear-gradient(180deg, rgba(7,16,33,.08) 0%, rgba(7,16,33,.58) 58%, rgba(7,16,33,.92) 100%),
+          url('https://poshaussie.com.au/posh-hero.png') center center / cover no-repeat;
+        isolation:isolate;
+      }
+
+      .posh-global-hero::before{
+        content:"";
+        position:absolute;
+        inset:-8%;
+        background:
+          radial-gradient(circle at 18% 20%, rgba(25,194,255,.22), transparent 38%),
+          radial-gradient(circle at 82% 18%, rgba(60,124,255,.18), transparent 34%),
+          radial-gradient(circle at 50% 100%, rgba(255,255,255,.08), transparent 40%);
+        z-index:-2;
+        animation:poshGlow 9s ease-in-out infinite alternate;
+      }
+
+      .posh-global-hero::after{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:url('https://poshaussie.com.au/posh-hero.png') center center / cover no-repeat;
+        transform:scale(1.04);
+        opacity:.18;
+        filter:blur(10px);
+        z-index:-3;
+      }
+
+      @keyframes poshGlow{
+        from{ transform:scale(1) translateY(0); opacity:.8; }
+        to{ transform:scale(1.08) translateY(-6px); opacity:1; }
+      }
+
+      .posh-hero-inner{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+      }
+
+      .posh-hero-top{
+        display:flex;
+        align-items:center;
+        gap:14px;
+        flex-wrap:wrap;
+      }
+
+      .posh-hero-logo{
+        width:68px;
+        height:68px;
+        border-radius:18px;
+        object-fit:cover;
+        background:#0d1730;
+        border:1px solid rgba(255,255,255,.14);
+        box-shadow:0 12px 28px rgba(0,0,0,.25);
+        transition:transform .25s ease;
+      }
+
+      .posh-global-hero:hover .posh-hero-logo{
+        transform:scale(1.04);
+      }
+
+      .posh-hero-brand{
+        display:flex;
+        flex-direction:column;
+        gap:2px;
+      }
+
+      .posh-hero-kicker{
+        font-size:.78rem;
+        font-weight:800;
+        letter-spacing:.16em;
+        text-transform:uppercase;
+        color:rgba(255,255,255,.78);
+      }
+
+      .posh-hero-home{
+        color:#fff;
+        text-decoration:none;
+        font-weight:900;
+        font-size:clamp(1.55rem,3vw,2.45rem);
+        line-height:1.02;
+        letter-spacing:-.02em;
+      }
+
+      .posh-hero-home:hover{
+        opacity:.94;
+      }
+
+      .posh-hero-sub{
+        max-width:720px;
+        color:rgba(255,255,255,.92);
+        line-height:1.55;
+        font-size:1rem;
+      }
+
+      .posh-hero-actions{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        margin-top:6px;
+      }
+
+      .posh-hero-btn{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        text-decoration:none;
+        padding:11px 16px;
+        border-radius:999px;
+        font-weight:800;
+        transition:transform .2s ease, opacity .2s ease;
+      }
+
+      .posh-hero-btn:hover{
+        transform:translateY(-2px);
+      }
+
+      .posh-hero-btn-main{
+        background:linear-gradient(135deg,#19c2ff,#3c7cff);
+        color:#fff;
+        box-shadow:0 14px 30px rgba(60,124,255,.28);
+      }
+
+      .posh-hero-btn-sub{
+        background:rgba(255,255,255,.08);
+        color:#fff;
+        border:1px solid rgba(255,255,255,.14);
+      }
+
       .posh-sticky-support {
         position: fixed;
         right: 16px;
@@ -1147,6 +1127,34 @@
         margin-top: 24px;
       }
 
+      @media (max-width:760px){
+        .posh-global-hero{
+          min-height:230px;
+          padding:20px;
+          border-radius:22px;
+          background-position:center center;
+        }
+
+        .posh-hero-logo{
+          width:58px;
+          height:58px;
+          border-radius:16px;
+        }
+
+        .posh-hero-sub{
+          font-size:.95rem;
+        }
+
+        .posh-hero-actions{
+          width:100%;
+        }
+
+        .posh-hero-btn{
+          flex:1 1 calc(50% - 10px);
+          min-width:140px;
+        }
+      }
+
       @media (max-width: 640px) {
         .posh-sticky-support {
           left: 12px;
@@ -1157,6 +1165,12 @@
 
         .posh-sticky-support a {
           width: 100%;
+        }
+      }
+
+      @media (max-width:520px){
+        .posh-hero-btn{
+          flex:1 1 100%;
         }
       }
     `;
@@ -1354,9 +1368,66 @@
     footer.parentNode.insertBefore(wrap, footer);
   }
 
+  function buildEliteHero() {
+    if (document.querySelector(".posh-global-hero")) return;
+
+    const wrap = document.querySelector(".wrap");
+    if (!wrap) return;
+
+    const hero = document.createElement("section");
+    hero.className = "posh-global-hero";
+
+    hero.innerHTML = `
+      <div class="posh-hero-inner">
+
+        <div class="posh-hero-top">
+          <a href="index.html" aria-label="POSH Home">
+            <img
+              class="posh-hero-logo"
+              src="https://poshaussie.com.au/posh-hero.png"
+              alt="POSH"
+            />
+          </a>
+
+          <div class="posh-hero-brand">
+            <div class="posh-hero-kicker">Parents Online Safety Hub</div>
+            <a href="index.html" class="posh-hero-home">POSH</a>
+          </div>
+        </div>
+
+        <div class="posh-hero-sub">
+          One standard. Same boundaries. Safer families.
+          Practical guidance for parents navigating apps, games,
+          devices, grooming risks, and modern online pressure.
+        </div>
+
+        <div class="posh-hero-actions">
+          <a href="v3-start.html" class="posh-hero-btn posh-hero-btn-main">Start Here</a>
+          <a href="v3-safety-score.html" class="posh-hero-btn posh-hero-btn-sub">Safety Score</a>
+          <a href="v3-what-now.html" class="posh-hero-btn posh-hero-btn-sub">What To Do Now</a>
+        </div>
+
+      </div>
+    `;
+
+    wrap.insertBefore(hero, wrap.firstChild);
+  }
+
+  function hideOldHeaders() {
+    const oldBrand = document.querySelector(".brand");
+    const oldTitle = document.querySelector(".page-title");
+
+    if (oldBrand) oldBrand.style.display = "none";
+    if (oldTitle) oldTitle.style.display = "none";
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     const nav = document.getElementById("nav");
     const footer = document.getElementById("footer");
+
+    injectSupportStyles();
+    buildEliteHero();
+    hideOldHeaders();
 
     if (nav) {
       nav.innerHTML = navHTML;
@@ -1369,11 +1440,8 @@
       footer.innerHTML = footerHTML;
     }
 
-    injectHeroStyles();
-    buildGlobalHero();
     buildSystemNextStepBlock();
     enhanceLinks();
-    injectSupportStyles();
     buildStickySupportButton();
     buildExitIntentModal();
     buildInlineSupportPrompt();
