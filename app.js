@@ -654,8 +654,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\\s-]/g, " ")
-      .replace(/\\s+/g, " ")
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .replace(/\s+/g, " ")
       .trim();
   }
 
@@ -676,7 +676,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\\s+/).filter(Boolean);
+    const tokens = q.split(/\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -828,6 +828,168 @@
         results.classList.remove("show");
       }
     });
+  }
+
+  function injectHeroStyles() {
+    if (document.getElementById("poshHeroStyles")) return;
+
+    const style = document.createElement("style");
+    style.id = "poshHeroStyles";
+    style.textContent = `
+      .posh-global-hero {
+        position: relative;
+        overflow: hidden;
+        margin: 0 0 18px;
+        border-radius: 24px;
+        min-height: 220px;
+        padding: 22px 18px 20px;
+        display: flex;
+        align-items: flex-end;
+        background:
+          linear-gradient(180deg, rgba(7,16,33,.18) 0%, rgba(7,16,33,.70) 68%, rgba(7,16,33,.88) 100%),
+          url('posh_graphic_10_posh.png') center/cover no-repeat;
+        border: 1px solid rgba(255,255,255,.08);
+        box-shadow: 0 18px 40px rgba(0,0,0,.22);
+      }
+
+      .posh-global-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at top right, rgba(25,194,255,.18), transparent 36%),
+          radial-gradient(circle at bottom left, rgba(60,124,255,.16), transparent 34%);
+        pointer-events: none;
+      }
+
+      .posh-global-hero-inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+
+      .posh-global-hero .brand {
+        display: inline-flex;
+        margin: 0 0 10px;
+        font-weight: 900;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: .95rem;
+        background: rgba(255,255,255,.10);
+        border: 1px solid rgba(255,255,255,.14);
+        border-radius: 999px;
+        padding: 8px 12px;
+        backdrop-filter: blur(4px);
+      }
+
+      .posh-global-hero .brand:hover {
+        background: rgba(255,255,255,.16);
+      }
+
+      .posh-global-hero .page-title {
+        margin: 0;
+        color: #ffffff;
+        line-height: 1.08;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        text-shadow: 0 3px 14px rgba(0,0,0,.30);
+      }
+
+      .posh-global-hero .page-title a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .posh-global-hero .page-title a:hover {
+        opacity: .96;
+      }
+
+      .posh-global-hero .tagline {
+        margin: 12px 0 0;
+        max-width: 760px;
+        color: rgba(255,255,255,.96);
+        text-shadow: 0 2px 10px rgba(0,0,0,.28);
+      }
+
+      .posh-global-hero .tagline strong {
+        color: #ffffff;
+      }
+
+      @media (max-width: 640px) {
+        .posh-global-hero {
+          min-height: 190px;
+          padding: 18px 14px 16px;
+          border-radius: 20px;
+        }
+
+        .posh-global-hero .brand {
+          font-size: .82rem;
+          letter-spacing: .12em;
+          padding: 7px 10px;
+        }
+
+        .posh-global-hero .tagline {
+          font-size: .98rem;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function buildGlobalHero() {
+    const wrap = document.querySelector(".wrap");
+    if (!wrap) return;
+    if (document.querySelector(".posh-global-hero")) return;
+
+    const brand = wrap.querySelector(".brand");
+    const title = wrap.querySelector(".page-title");
+    const tagline = wrap.querySelector(".tagline");
+    const nav = document.getElementById("nav");
+
+    if (!brand || !title) return;
+
+    const hero = document.createElement("section");
+    hero.className = "posh-global-hero";
+
+    const inner = document.createElement("div");
+    inner.className = "posh-global-hero-inner";
+
+    const brandText = brand.textContent.trim() || "POSH";
+    const titleText = title.textContent.trim();
+
+    const brandLink = document.createElement("a");
+    brandLink.href = "index.html";
+    brandLink.className = "brand";
+    brandLink.setAttribute("aria-label", "Go to POSH home");
+    brandLink.textContent = brandText;
+
+    const titleHeading = document.createElement(title.tagName.toLowerCase());
+    titleHeading.className = "page-title";
+
+    const titleLink = document.createElement("a");
+    titleLink.href = "index.html";
+    titleLink.setAttribute("aria-label", "Go to POSH home");
+    titleLink.textContent = titleText;
+    titleHeading.appendChild(titleLink);
+
+    inner.appendChild(brandLink);
+    inner.appendChild(titleHeading);
+
+    if (tagline) {
+      inner.appendChild(tagline);
+    }
+
+    hero.appendChild(inner);
+
+    brand.remove();
+    title.remove();
+
+    if (nav) {
+      wrap.insertBefore(hero, nav);
+    } else {
+      wrap.insertBefore(hero, wrap.firstChild);
+    }
   }
 
   function injectSupportStyles() {
@@ -1207,6 +1369,8 @@
       footer.innerHTML = footerHTML;
     }
 
+    injectHeroStyles();
+    buildGlobalHero();
     buildSystemNextStepBlock();
     enhanceLinks();
     injectSupportStyles();
