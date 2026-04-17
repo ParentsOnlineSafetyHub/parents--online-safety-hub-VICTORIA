@@ -201,265 +201,143 @@
       title: "Home",
       next: [
         { href: "v3-start.html", label: "Start Here" },
-        { href: "v3-safety-score.html", label: "Safety Score" },
-        { href: "v3-what-now.html", label: "What To Do Now" }
+        { href: "v3-safety-score.html", label: "Safety Score", secondary: true },
+        { href: "v3-what-now.html", label: "What To Do Now", secondary: true }
       ]
     },
-    "v3-start.html": {
-      cluster: "entry",
-      title: "Start Here"
-    },
-    "v3-entry-system.html": {
-      cluster: "entry",
-      title: "Entry System"
-    },
-    "v3-safety-score.html": {
-      cluster: "entry",
-      title: "Safety Score"
-    },
-    "v3-what-now.html": {
-      cluster: "entry",
-      title: "What To Do Now"
-    },
-    "v3-posh-response-system.html": {
-      cluster: "entry",
-      title: "POSH Response System"
-    },
 
-    "v3-redflags.html": {
-      cluster: "warning",
-      title: "Red Flags"
-    },
-    "v3-10-signs-targeted-online.html": {
-      cluster: "warning",
-      title: "10 Signs Targeted Online"
-    },
-    "v3-signs-my-child-is-being-groomed-online.html": {
-      cluster: "warning",
-      title: "Signs My Child Is Being Groomed Online"
-    },
-    "v3-how-predators-contact-kids-online.html": {
-      cluster: "warning",
-      title: "How Predators Contact Kids Online"
-    },
-    "v3-when-an-online-friend-becomes-a-risk.html": {
-      cluster: "warning",
-      title: "When an Online Friend Becomes a Risk"
-    },
-    "v3-signs-your-child-is-being-isolated-online.html": {
-      cluster: "warning",
-      title: "Signs Your Child Is Being Isolated Online"
-    },
-    "v3-playbook.html": {
-      cluster: "warning",
-      title: "Grooming Playbook"
-    },
-    "v3-grooming.html": {
-      cluster: "warning",
-      title: "Grooming"
-    },
+    "v3-start.html": { cluster: "entry", title: "Start Here" },
+    "v3-entry-system.html": { cluster: "entry", title: "Entry System" },
+    "v3-safety-score.html": { cluster: "entry", title: "Safety Score" },
+    "v3-what-now.html": { cluster: "entry", title: "What To Do Now" },
+    "v3-posh-response-system.html": { cluster: "entry", title: "POSH Response System" },
 
-    "v3-parent-scripts.html": {
-      cluster: "conversation",
-      title: "Parent Scripts"
-    },
-    "v3-how-to-talk-so-your-child-opens-up.html": {
-      cluster: "conversation",
-      title: "How To Talk So Your Child Opens Up"
-    },
-    "v3-what-to-say-if-your-child-opens-up.html": {
-      cluster: "conversation",
-      title: "What To Say If Your Child Opens Up"
-    },
-    "v3-what-to-say-if-your-child-thinks-it-was-their-fault.html": {
-      cluster: "conversation",
-      title: "If They Think It Was Their Fault"
-    },
-    "v3-what-to-say-if-your-child-is-embarrassed-to-tell-you.html": {
-      cluster: "conversation",
-      title: "If They Feel Embarrassed"
-    },
-    "v3-when-your-child-wont-talk.html": {
-      cluster: "conversation",
-      title: "When Your Child Won’t Talk"
-    },
-    "v3-parent-conversations.html": {
-      cluster: "conversation",
-      title: "Parent Conversations"
-    },
-    "v3-why-kids-hide-things.html": {
-      cluster: "conversation",
-      title: "Why Kids Hide Things"
-    },
-    "v3-why-behaviour-changes.html": {
-      cluster: "conversation",
-      title: "Why Behaviour Changes"
-    },
+    "v3-redflags.html": { cluster: "warning", title: "Red Flags" },
+    "v3-10-signs-targeted-online.html": { cluster: "warning", title: "10 Signs Targeted Online" },
+    "v3-signs-my-child-is-being-groomed-online.html": { cluster: "warning", title: "Signs My Child Is Being Groomed Online" },
+    "v3-how-predators-contact-kids-online.html": { cluster: "warning", title: "How Predators Contact Kids Online" },
+    "v3-when-an-online-friend-becomes-a-risk.html": { cluster: "warning", title: "When an Online Friend Becomes a Risk" },
+    "v3-signs-your-child-is-being-isolated-online.html": { cluster: "warning", title: "Signs Your Child Is Being Isolated Online" },
+    "v3-urgent-warning-signs.html": { cluster: "warning", title: "Urgent Warning Signs" },
+    "v3-grooming.html": { cluster: "warning", title: "Grooming" },
+    "v3-playbook.html": { cluster: "warning", title: "Grooming Playbook" },
+    "v3-predators.html": { cluster: "warning", title: "Predators" },
 
-    "v3-first-24-hours.html": {
-      cluster: "urgent",
-      title: "First 24 Hours"
-    },
-    "v3-evidence-reporting.html": {
-      cluster: "urgent",
-      title: "Evidence & Reporting"
-    },
-    "v3-sextortion.html": {
-      cluster: "urgent",
-      title: "Sextortion"
-    },
-    "v3-when-it-goes-deeper.html": {
-      cluster: "urgent",
-      title: "When It Goes Deeper"
-    },
+    "v3-parent-scripts.html": { cluster: "conversation", title: "Parent Scripts" },
+    "v3-parent-conversations.html": { cluster: "conversation", title: "Parent Conversations" },
+    "v3-how-to-talk-so-your-child-opens-up.html": { cluster: "conversation", title: "How To Talk So Your Child Opens Up" },
+    "v3-what-to-say-if-your-child-opens-up.html": { cluster: "conversation", title: "If Your Child Opens Up" },
+    "v3-what-to-say-if-your-child-thinks-it-was-their-fault.html": { cluster: "conversation", title: "If They Think It Was Their Fault" },
+    "v3-what-to-say-if-your-child-is-embarrassed-to-tell-you.html": { cluster: "conversation", title: "If They Feel Embarrassed" },
+    "v3-when-your-child-wont-talk.html": { cluster: "conversation", title: "When Your Child Won’t Talk" },
+    "v3-why-kids-hide-things.html": { cluster: "conversation", title: "Why Kids Hide Things" },
+    "v3-why-behaviour-changes.html": { cluster: "conversation", title: "Why Behaviour Changes" },
+    "v3-what-to-do-if-your-child-tells-you-something-serious.html": { cluster: "conversation", title: "If Your Child Tells You Something Serious" },
+    "v3-parent-emotions-and-response.html": { cluster: "conversation", title: "Parent Emotions and Response" },
+    "v3-what-to-say-in-high-risk-situations.html": { cluster: "conversation", title: "What To Say in High-Risk Situations" },
+    "v3-how-to-keep-your-child-talking.html": { cluster: "conversation", title: "How To Keep Your Child Talking" },
+    "v3-how-to-explain-grooming-and-predators-to-a-child.html": { cluster: "conversation", title: "How To Explain Grooming and Predators" },
 
-    "v3-reporting.html": {
-      cluster: "reporting",
-      title: "Reporting"
-    },
-    "v3-reporting-australia.html": {
-      cluster: "reporting",
-      title: "Reporting Australia"
-    },
-    "v3-reporting-usa.html": {
-      cluster: "reporting",
-      title: "Reporting USA"
-    },
-    "v3-reporting-uk.html": {
-      cluster: "reporting",
-      title: "Reporting UK"
-    },
-    "v3-reporting-europe.html": {
-      cluster: "reporting",
-      title: "Reporting Europe"
-    },
+    "v3-first-24-hours.html": { cluster: "urgent", title: "First 24 Hours" },
+    "v3-evidence-reporting.html": { cluster: "urgent", title: "Evidence & Reporting" },
+    "v3-sextortion.html": { cluster: "urgent", title: "Sextortion" },
+    "v3-when-it-goes-deeper.html": { cluster: "urgent", title: "When It Goes Deeper" },
+
+    "v3-reporting.html": { cluster: "reporting", title: "Reporting" },
+    "v3-reporting-australia.html": { cluster: "reporting", title: "Reporting Australia" },
+    "v3-reporting-usa.html": { cluster: "reporting", title: "Reporting USA" },
+    "v3-reporting-uk.html": { cluster: "reporting", title: "Reporting UK" },
+    "v3-reporting-europe.html": { cluster: "reporting", title: "Reporting Europe" },
 
     "v3-social-discord.html": {
-      cluster: "platform",
+      cluster: "social",
       title: "Discord",
       next: [
         { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-parent-scripts.html", label: "What Should I Say?" },
-        { href: "v3-first-24-hours.html", label: "First 24 Hours" }
+        { href: "v3-parent-scripts.html", label: "What Should I Say?", secondary: true },
+        { href: "v3-first-24-hours.html", label: "First 24 Hours", secondary: true }
       ]
     },
     "v3-social-snapchat.html": {
-      cluster: "platform",
+      cluster: "social",
       title: "Snapchat",
       next: [
         { href: "v3-sextortion.html", label: "Sextortion Help" },
-        { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-first-24-hours.html", label: "First 24 Hours" }
+        { href: "v3-redflags.html", label: "Red Flags", secondary: true },
+        { href: "v3-first-24-hours.html", label: "First 24 Hours", secondary: true }
       ]
     },
-    "v3-social-instagram.html": {
-      cluster: "platform",
-      title: "Instagram",
-      next: [
-        { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-parent-scripts.html", label: "What Should I Say?" },
-        { href: "v3-what-now.html", label: "What To Do Now" }
-      ]
-    },
-    "v3-social-tiktok.html": {
-      cluster: "platform",
-      title: "TikTok",
-      next: [
-        { href: "v3-algorithm-awareness.html", label: "Algorithm Awareness" },
-        { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-what-now.html", label: "What To Do Now" }
-      ]
-    },
-    "v3-social-telegram.html": {
-      cluster: "platform",
-      title: "Telegram",
-      next: [
-        { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-reporting.html", label: "Report & Get Help" },
-        { href: "v3-first-24-hours.html", label: "First 24 Hours" }
-      ]
-    },
-    "v3-social-whatsapp.html": {
-      cluster: "platform",
-      title: "WhatsApp",
-      next: [
-        { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-how-to-check-a-device-without-causing-panic.html", label: "Check a Device Calmly" },
-        { href: "v3-parent-scripts.html", label: "Parent Scripts" }
-      ]
-    },
+    "v3-social-instagram.html": { cluster: "social", title: "Instagram" },
+    "v3-social-tiktok.html": { cluster: "social", title: "TikTok" },
+    "v3-social-telegram.html": { cluster: "social", title: "Telegram" },
+    "v3-social-whatsapp.html": { cluster: "social", title: "WhatsApp" },
+    "v3-social-youtube.html": { cluster: "social", title: "YouTube" },
+    "v3-social-youtubekids.html": { cluster: "social", title: "YouTube Kids" },
+    "v3-social-yubo.html": { cluster: "social", title: "Yubo" },
+    "v3-social-character-ai.html": { cluster: "ai", title: "Character AI" },
+    "v3-social-replika.html": { cluster: "ai", title: "Replika" },
+
+    "v3-gaming.html": { cluster: "game", title: "Gaming" },
+    "v3-all-games.html": { cluster: "game", title: "All Games" },
     "v3-game-roblox.html": {
-      cluster: "platform",
+      cluster: "game",
       title: "Roblox",
       next: [
-        { href: "v3-in-game-currency-grooming-risk.html", label: "In-Game Currency Risk" },
-        { href: "v3-roblox-robux-scams-explained.html", label: "Robux Scams" },
-        { href: "v3-redflags.html", label: "Red Flags" }
+        { href: "v3-why-roblox-requires-supervision.html", label: "Why Roblox Requires Supervision" },
+        { href: "v3-in-game-currency-grooming-risk.html", label: "In-Game Currency Risk", secondary: true },
+        { href: "v3-redflags.html", label: "Red Flags", secondary: true }
       ]
     },
-    "v3-why-roblox-requires-supervision.html": {
-      cluster: "platform",
-      title: "Why Roblox Requires Supervision",
-      next: [
-        { href: "v3-game-roblox.html", label: "Roblox Safety" },
-        { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device" }
-      ]
-    },
-    "v3-game-fortnite.html": {
-      cluster: "platform",
-      title: "Fortnite",
-      next: [
-        { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-social-discord.html", label: "Discord Safety" },
-        { href: "v3-parent-scripts.html", label: "Parent Scripts" }
-      ]
-    },
-    "v3-game-minecraft.html": {
-      cluster: "platform",
-      title: "Minecraft",
-      next: [
-        { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-game-risks-by-age.html", label: "Games by Age Guide" },
-        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device" }
-      ]
-    },
-    "v3-game-vrchat.html": {
-      cluster: "platform",
-      title: "VRChat",
-      next: [
-        { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-first-24-hours.html", label: "First 24 Hours" },
-        { href: "v3-reporting.html", label: "Report & Get Help" }
-      ]
-    },
-    "v3-dangerous-apps.html": {
-      cluster: "platform",
-      title: "Dangerous Apps",
-      next: [
-        { href: "v3-safe-apps-and-games-for-kids.html", label: "Safer App & Game Choices" },
-        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device" },
-        { href: "v3-what-now.html", label: "What To Do Now" }
-      ]
-    },
-    "v3-safe-apps-and-games-for-kids.html": {
-      cluster: "platform",
-      title: "Safe Apps & Games",
-      next: [
-        { href: "v3-dangerous-apps.html", label: "Higher-Risk Apps" },
-        { href: "v3-game-risks-by-age.html", label: "Games by Age Guide" },
-        { href: "v3-house-rules.html", label: "House Rules" }
-      ]
-    },
-    "v3-best-parental-control-apps.html": {
-      cluster: "platform",
-      title: "Best Parental Control Apps",
-      next: [
-        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device" },
-        { href: "v3-how-to-monitor-without-breaking-trust.html", label: "Monitor Without Breaking Trust" },
-        { href: "v3-house-rules.html", label: "House Rules" }
-      ]
-    }
+    "v3-why-roblox-requires-supervision.html": { cluster: "game", title: "Why Roblox Requires Supervision" },
+    "v3-game-fortnite.html": { cluster: "game", title: "Fortnite" },
+    "v3-game-minecraft.html": { cluster: "game", title: "Minecraft" },
+    "v3-game-vrchat.html": { cluster: "game", title: "VRChat" },
+    "v3-game-apex.html": { cluster: "game", title: "Apex Legends" },
+    "v3-game-risks-by-age.html": { cluster: "game-guide", title: "Games by Age Guide" },
+    "v3-dangerous-apps.html": { cluster: "high-risk-tech", title: "Dangerous Apps" },
+    "v3-safe-apps-and-games-for-kids.html": { cluster: "safe-tech", title: "Safe Apps & Games" },
+    "v3-best-parental-control-apps.html": { cluster: "controls", title: "Best Parental Control Apps" },
+
+    "v3-devices.html": { cluster: "controls", title: "Devices" },
+    "v3-device-controls.html": { cluster: "controls", title: "Device Controls" },
+    "v3-parental-controls-by-device.html": { cluster: "controls", title: "Parental Controls by Device" },
+    "v3-device-iphone.html": { cluster: "controls", title: "iPhone" },
+    "v3-device-ipad.html": { cluster: "controls", title: "iPad" },
+    "v3-device-android.html": { cluster: "controls", title: "Android" },
+    "v3-device-windows.html": { cluster: "controls", title: "Windows" },
+    "v3-how-to-set-parental-controls-iphone.html": { cluster: "controls", title: "Set Parental Controls iPhone" },
+    "v3-how-to-set-parental-controls-android.html": { cluster: "controls", title: "Set Parental Controls Android" },
+    "v3-how-to-monitor-without-breaking-trust.html": { cluster: "controls", title: "Monitor Without Breaking Trust" },
+    "v3-how-to-check-a-device-without-causing-panic.html": { cluster: "controls", title: "Check a Device Without Causing Panic" },
+
+    "v3-awareness.html": { cluster: "awareness", title: "Awareness" },
+    "v3-algorithm-awareness.html": { cluster: "awareness", title: "Algorithm Awareness" },
+    "v3-how-screens-affect-your-childs-brain.html": { cluster: "screens", title: "How Screens Affect the Brain" },
+    "v3-brainrot.html": { cluster: "screens", title: "Brain Rot" },
+    "v3-why-kids-cant-stop-scrolling.html": { cluster: "screens", title: "Why Kids Can’t Stop Scrolling" },
+    "v3-how-manipulative-groups-recruit-children-online.html": { cluster: "awareness", title: "Manipulative Group Recruitment" },
+    "v3-how-attention-is-used-to-control-behaviour.html": { cluster: "screens", title: "How Attention Shapes Behaviour" },
+    "v3-targeted-harassment-and-false-reports.html": { cluster: "awareness", title: "Targeted Harassment & False Reports" },
+    "v3-real-investigations.html": { cluster: "awareness", title: "Real Investigations" },
+
+    "v3-ai-chat-risks-for-children.html": { cluster: "ai", title: "AI Chat Risks for Children" },
+    "v3-is-chatgpt-safe-for-kids.html": { cluster: "ai", title: "Is ChatGPT Safe for Kids?" },
+    "v3-ai-fake-relationships.html": { cluster: "ai", title: "AI Fake Relationships" },
+    "v3-ai-roleplay-bots.html": { cluster: "ai", title: "AI Roleplay Bots" },
+    "v3-can-ai-chats-make-kids-more-secretive.html": { cluster: "ai", title: "Can AI Chats Make Kids More Secretive?" },
+    "v3-how-to-talk-to-your-child-about-ai.html": { cluster: "ai", title: "How To Talk To Your Child About AI" },
+
+    "v3-medication-vs-environment.html": { cluster: "wellbeing", title: "Medication vs Environment" },
+    "v3-diagnosis-without-shame.html": { cluster: "wellbeing", title: "Diagnosis Without Shame" },
+    "v3-parent-absence.html": { cluster: "wellbeing", title: "Parent Absence" },
+    "v3-teen-suicide-warning-signs.html": { cluster: "wellbeing", title: "Teen Suicide Warning Signs" },
+
+    "v3-why-posh-exists.html": { cluster: "mission", title: "Why POSH Exists" },
+    "v3-support.html": { cluster: "mission", title: "Support POSH" },
+    "v3-share.html": { cluster: "mission", title: "Share POSH" },
+    "v3-community.html": { cluster: "mission", title: "Community" },
+    "v3-downloads.html": { cluster: "support", title: "Downloads" },
+    "v3-all-downloads.html": { cluster: "support", title: "All Downloads" }
   };
 
   const CLUSTER_DEFAULTS = {
@@ -513,15 +391,125 @@
       ],
       callout: "Reporting is one step. Ongoing support still matters."
     },
-    platform: {
+    social: {
       heading: "Best next pages from here",
-      text: "Use the strongest next pages for this topic so parents move forward faster.",
+      text: "Social app pages work best when they point parents to risk signs, scripts, and action.",
       buttons: [
         { href: "v3-redflags.html", label: "Red Flags" },
-        { href: "v3-parent-scripts.html", label: "What Should I Say?", secondary: true },
-        { href: "v3-what-now.html", label: "What To Do Now", secondary: true }
+        { href: "v3-parent-scripts.html", label: "Parent Scripts", secondary: true },
+        { href: "v3-first-24-hours.html", label: "First 24 Hours", secondary: true }
       ],
       callout: "The best next page depends on whether you need recognition, conversation help, or urgent action."
+    },
+    game: {
+      heading: "Best next pages from here",
+      text: "Game pages work best when they move parents from platform awareness into practical protection.",
+      buttons: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device", secondary: true },
+        { href: "v3-parent-scripts.html", label: "Parent Scripts", secondary: true }
+      ],
+      callout: "The game is often the doorway. Private contact is where the bigger risk grows."
+    },
+    "game-guide": {
+      heading: "Best next pages from here",
+      text: "Age-based game guidance works best when paired with device controls and clearer family boundaries.",
+      buttons: [
+        { href: "v3-safe-apps-and-games-for-kids.html", label: "Safe Apps & Games" },
+        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device", secondary: true },
+        { href: "v3-house-rules.html", label: "House Rules", secondary: true }
+      ],
+      callout: "Age matters — but communication risk matters even more."
+    },
+    controls: {
+      heading: "Best next pages from here",
+      text: "Settings matter most when they connect back to trust, house rules, and warning signs.",
+      buttons: [
+        { href: "v3-house-rules.html", label: "House Rules" },
+        { href: "v3-how-to-monitor-without-breaking-trust.html", label: "Monitor Without Breaking Trust", secondary: true },
+        { href: "v3-redflags.html", label: "Red Flags", secondary: true }
+      ],
+      callout: "The best parental control setup supports both safety and communication."
+    },
+    awareness: {
+      heading: "Best next pages from here",
+      text: "Awareness pages work best when they guide parents into practical action.",
+      buttons: [
+        { href: "v3-redflags.html", label: "Red Flags" },
+        { href: "v3-what-now.html", label: "What To Do Now", secondary: true },
+        { href: "v3-parent-questions.html", label: "Parent Questions", secondary: true }
+      ],
+      callout: "Understanding matters most when it leads to earlier protection."
+    },
+    screens: {
+      heading: "Best next pages from here",
+      text: "Screen-impact pages should guide parents into structure, boundaries, and practical reset steps.",
+      buttons: [
+        { href: "v3-house-rules.html", label: "House Rules" },
+        { href: "v3-device-controls.html", label: "Device Controls", secondary: true },
+        { href: "v3-parent-questions.html", label: "Parent Questions", secondary: true }
+      ],
+      callout: "Understanding screen impact helps parents tighten the whole family system."
+    },
+    ai: {
+      heading: "Best next pages from here",
+      text: "AI-related pages work best when they guide parents into conversation, awareness, and safer boundaries.",
+      buttons: [
+        { href: "v3-how-to-talk-to-your-child-about-ai.html", label: "Talk To Your Child About AI" },
+        { href: "v3-parent-scripts.html", label: "Parent Scripts", secondary: true },
+        { href: "v3-what-now.html", label: "What To Do Now", secondary: true }
+      ],
+      callout: "AI risk is not only about the tool — it is about secrecy, emotional intensity, and parent visibility."
+    },
+    wellbeing: {
+      heading: "Best next pages from here",
+      text: "Wellbeing pages should guide parents into deeper understanding, calmer support, and stronger family structure.",
+      buttons: [
+        { href: "v3-diagnosis-without-shame.html", label: "Diagnosis Without Shame" },
+        { href: "v3-parent-questions.html", label: "Parent Questions", secondary: true },
+        { href: "v3-why-posh-exists.html", label: "Why POSH Exists", secondary: true }
+      ],
+      callout: "The goal is not shame, panic, or labels — it is stronger understanding and safer support."
+    },
+    "high-risk-tech": {
+      heading: "Best next pages from here",
+      text: "High-risk app pages should guide parents into safer alternatives, controls, and action.",
+      buttons: [
+        { href: "v3-safe-apps-and-games-for-kids.html", label: "Safer App & Game Choices" },
+        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device", secondary: true },
+        { href: "v3-what-now.html", label: "What To Do Now", secondary: true }
+      ],
+      callout: "The app name matters — but the pattern matters more."
+    },
+    "safe-tech": {
+      heading: "Best next pages from here",
+      text: "Safer app and game pages work best when they connect to device controls and family rules.",
+      buttons: [
+        { href: "v3-game-risks-by-age.html", label: "Games by Age Guide" },
+        { href: "v3-parental-controls-by-device.html", label: "Parental Controls by Device", secondary: true },
+        { href: "v3-house-rules.html", label: "House Rules", secondary: true }
+      ],
+      callout: "Safer does not mean zero risk. It means fewer risky pathways and better visibility."
+    },
+    mission: {
+      heading: "Keep POSH moving forward",
+      text: "If this page aligns with why POSH exists, the strongest next step is helping the mission grow.",
+      buttons: [
+        { href: "v3-support.html", label: "Support POSH" },
+        { href: "v3-share.html", label: "Share POSH", secondary: true },
+        { href: "v3-community.html", label: "Join Community", secondary: true }
+      ],
+      callout: "One parent sharing POSH can help protect another child."
+    },
+    support: {
+      heading: "Best next pages from here",
+      text: "Downloads and support pages work best when they connect back to the main parent action system.",
+      buttons: [
+        { href: "v3-what-now.html", label: "What To Do Now" },
+        { href: "v3-start.html", label: "Start Here", secondary: true },
+        { href: "v3-parent-questions.html", label: "Parent Questions", secondary: true }
+      ],
+      callout: "Tools help most when parents know which next step fits their situation."
     },
     default: {
       heading: "What should you do next?",
@@ -534,6 +522,123 @@
       callout: "You don’t need the full answer — just the right next move."
     }
   };
+
+  const CLUSTER_RULES = [
+    {
+      cluster: "social",
+      pages: [
+        "v3-socials.html",
+        "v3-social-discord.html",
+        "v3-social-snapchat.html",
+        "v3-social-instagram.html",
+        "v3-social-tiktok.html",
+        "v3-social-telegram.html",
+        "v3-social-youtube.html",
+        "v3-social-youtubekids.html",
+        "v3-social-twitch.html",
+        "v3-social-facebook.html",
+        "v3-social-messenger.html",
+        "v3-social-messengerkids.html",
+        "v3-social-whatsapp.html",
+        "v3-social-reddit.html",
+        "v3-social-pinterest.html",
+        "v3-social-steam.html",
+        "v3-social-bluesky.html",
+        "v3-social-threads.html",
+        "v3-social-signal.html",
+        "v3-social-wechat.html",
+        "v3-social-yubo.html",
+        "v3-social-omegle-alternatives.html",
+        "v3-videochat.html",
+        "v3-video-facetime.html",
+        "v3-video-googlemeet.html",
+        "v3-video-skype.html",
+        "v3-video-teams.html",
+        "v3-video-webex.html",
+        "v3-video-zoom.html",
+        "v3-streaming-video.html",
+        "v3-streaming-netflix.html",
+        "v3-streaming-disneyplus.html",
+        "v3-streaming-primevideo.html",
+        "v3-streaming-tubi.html"
+      ]
+    },
+    {
+      cluster: "game",
+      pages: [
+        "v3-gaming.html",
+        "v3-all-games.html",
+        "v3-game-roblox.html",
+        "v3-why-roblox-requires-supervision.html",
+        "v3-game-fortnite.html",
+        "v3-game-minecraft.html",
+        "v3-game-vrchat.html",
+        "v3-game-apex.html",
+        "v3-game-cod.html",
+        "v3-game-gta.html",
+        "v3-game-overwatch.html",
+        "v3-game-pubg.html",
+        "v3-game-rainbowsix.html",
+        "v3-game-rocketleague.html",
+        "v3-game-valorant.html",
+        "v3-game-halo.html",
+        "v3-game-gorillatag.html",
+        "v3-game-recroom.html",
+        "v3-game-garrysmod.html",
+        "v3-game-splatoon.html",
+        "v3-game-terraria.html",
+        "v3-game-rust.html",
+        "v3-game-amongus.html",
+        "v3-game-animalcrossing.html",
+        "v3-game-counterstrike.html",
+        "v3-game-destiny2.html",
+        "v3-game-fallguys.html",
+        "v3-game-fivem.html",
+        "v3-game-brawlstars.html",
+        "v3-game-clashofclans.html",
+        "v3-is-roblox-safe-for-my-child.html",
+        "v3-in-game-currency-grooming-risk.html",
+        "v3-roblox-robux-scams-explained.html",
+        "v3-brainrot-roblox.html"
+      ]
+    },
+    {
+      cluster: "controls",
+      pages: [
+        "v3-devices.html",
+        "v3-device-controls.html",
+        "v3-parental-controls-by-device.html",
+        "v3-device-iphone.html",
+        "v3-device-ipad.html",
+        "v3-device-apple.html",
+        "v3-device-android.html",
+        "v3-device-windows.html",
+        "v3-how-to-set-parental-controls-and-passwords.html",
+        "v3-how-to-set-parental-controls-iphone.html",
+        "v3-how-to-set-parental-controls-android.html",
+        "v3-best-parental-control-apps.html",
+        "v3-how-to-monitor-without-breaking-trust.html",
+        "v3-how-to-monitor-your-childs-device-without-spying.html",
+        "v3-how-to-check-a-device-without-causing-panic.html",
+        "v3-platform-playstation.html",
+        "v3-platform-xbox.html",
+        "v3-platform-nintendo.html",
+        "v3-platform-pc.html",
+        "v3-platform-vr.html",
+        "v3-platforms.html"
+      ]
+    },
+    {
+      cluster: "support",
+      pages: [
+        "v3-downloads.html",
+        "v3-all-downloads.html",
+        "v3-cancel-subscriptions.html",
+        "v3-guide.html",
+        "v3-parent-questions.html"
+      ]
+    }
+  ];
 
   function escapeHTML(str) {
     return String(str || "")
@@ -549,8 +654,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\s-]/g, " ")
-      .replace(/\s+/g, " ")
+      .replace(/[^a-z0-9\\s-]/g, " ")
+      .replace(/\\s+/g, " ")
       .trim();
   }
 
@@ -571,7 +676,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\s+/).filter(Boolean);
+    const tokens = q.split(/\\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -1017,6 +1122,24 @@
       .split("#")[0];
   }
 
+  function resolveClusterFromRules(currentPage) {
+    for (let i = 0; i < CLUSTER_RULES.length; i++) {
+      if (CLUSTER_RULES[i].pages.indexOf(currentPage) !== -1) {
+        return CLUSTER_RULES[i].cluster;
+      }
+    }
+
+    if (currentPage.indexOf("v3-social-") === 0) return "social";
+    if (currentPage.indexOf("v3-game-") === 0) return "game";
+    if (currentPage.indexOf("v3-device-") === 0) return "controls";
+    if (currentPage.indexOf("v3-platform-") === 0) return "controls";
+    if (currentPage.indexOf("v3-ai-") === 0) return "ai";
+    if (currentPage.indexOf("v3-video-") === 0) return "social";
+    if (currentPage.indexOf("v3-streaming-") === 0) return "social";
+
+    return "default";
+  }
+
   function getNextStepPages() {
     const currentPage = getCurrentPage();
     const page = PAGE_META[currentPage] || null;
@@ -1030,11 +1153,15 @@
       };
     }
 
-    if (page && page.cluster && CLUSTER_DEFAULTS[page.cluster]) {
-      return CLUSTER_DEFAULTS[page.cluster];
+    let cluster = "default";
+
+    if (page && page.cluster) {
+      cluster = page.cluster;
+    } else {
+      cluster = resolveClusterFromRules(currentPage);
     }
 
-    return CLUSTER_DEFAULTS.default;
+    return CLUSTER_DEFAULTS[cluster] || CLUSTER_DEFAULTS.default;
   }
 
   function buttonHTML(button) {
@@ -1087,4 +1214,4 @@
     buildExitIntentModal();
     buildInlineSupportPrompt();
   });
-})(); 
+})();
