@@ -3,19 +3,65 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
   <title>Safety Check • POSH</title>
+
   <meta name="description" content="Take the POSH Safety Check to quickly scan online child safety risks, identify the biggest exposure point, and get clear next steps fast." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-safety-score.html" />
+
+  <meta property="og:title" content="Safety Check • POSH" />
+  <meta property="og:description" content="10 quick checks. Clear score. Clear next step. Scan online child safety risks and fix the biggest exposure point first." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-safety-score.html" />
+  <meta property="og:site_name" content="POSH" />
+  <meta property="og:image" content="https://poshaussie.com.au/posh-home.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Safety Check • POSH" />
+  <meta name="twitter:description" content="10 quick checks. Clear score. Clear next step." />
+  <meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png" />
+
   <link rel="stylesheet" href="style.css"/>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Safety Check",
+    "url":"https://poshaussie.com.au/v3-safety-score.html",
+    "description":"Take the POSH Safety Check to quickly scan online child safety risks, identify the biggest exposure point, and get clear next steps fast.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"POSH",
+      "url":"https://poshaussie.com.au/",
+      "logo":{
+        "@type":"ImageObject",
+        "url":"https://poshaussie.com.au/posh-home.png"
+      }
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="wrap">
 
     <div class="brand">POSH</div>
     <h1 class="page-title">Safety Check</h1>
-    <p class="tagline"><strong>10 quick checks.</strong> Clear score. Clear next step.</p>
+    <p class="tagline">
+      <strong>10 quick checks.</strong><br/>
+      Clear score. Clear next step.
+    </p>
 
     <div id="nav"></div>
+
+    <div class="pill-row" style="margin:0 0 16px;">
+      <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">60 SECOND CHECK</div>
+      <div class="pill">Exposure</div>
+      <div class="pill">Messaging</div>
+      <div class="pill">Secrecy</div>
+      <div class="pill">Trust</div>
+    </div>
 
     <div class="card hero-warning center-card">
       <h2>Need help urgently?</h2>
@@ -213,27 +259,9 @@
 
       <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
         <a class="btn" href="v3-share.html">Share POSH</a>
-
-        <a class="btn secondary"
-           href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au"
-           target="_blank"
-           rel="noopener">
-          Share on Facebook
-        </a>
-
-        <a class="btn secondary"
-           href="https://twitter.com/intent/tweet?url=https://poshaussie.com.au"
-           target="_blank"
-           rel="noopener">
-          Share on X
-        </a>
-
-        <a class="btn secondary"
-           href="https://www.linkedin.com/sharing/share-offsite/?url=https://poshaussie.com.au"
-           target="_blank"
-           rel="noopener">
-          Share on LinkedIn
-        </a>
+        <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au" target="_blank" rel="noopener">Share on Facebook</a>
+        <a class="btn secondary" href="https://twitter.com/intent/tweet?url=https://poshaussie.com.au" target="_blank" rel="noopener">Share on X</a>
+        <a class="btn secondary" href="https://www.linkedin.com/sharing/share-offsite/?url=https://poshaussie.com.au" target="_blank" rel="noopener">Share on LinkedIn</a>
       </div>
     </div>
 
@@ -259,11 +287,12 @@
     </div>
 
     <div id="footer"></div>
-
   </div>
 
 <script>
-(function(){
+(function () {
+  "use strict";
+
   const form = document.getElementById("scoreForm");
   const results = document.getElementById("results");
   const scoreNum = document.getElementById("scoreNum");
@@ -291,64 +320,6 @@
 
   const positiveQuestions = ["q1", "q9", "q10"];
   const negativeQuestions = ["q2", "q3", "q4", "q5", "q6", "q7", "q8"];
-
-  function points(key, value, weight){
-    const isPositive = positiveQuestions.includes(key);
-    const isNegative = negativeQuestions.includes(key);
-
-    if(isPositive){
-      if(value === "yes") return weight;
-      if(value === "some") return Math.round(weight * 0.5);
-      return 0;
-    }
-
-    if(isNegative){
-      if(value === "no") return weight;
-      if(value === "some") return Math.round(weight * 0.5);
-      return 0;
-    }
-
-    return 0;
-  }
-
-  function readAnswers(){
-    const data = {};
-    Object.keys(weights).forEach(k => {
-      const el = form.querySelector('input[name="' + k + '"]:checked');
-      data[k] = el ? el.value : null;
-    });
-    return data;
-  }
-
-  function calcScore(ans){
-    let total = 0;
-    Object.keys(weights).forEach(k => {
-      total += points(k, ans[k], weights[k]);
-    });
-    return total;
-  }
-
-  function worstRisks(ans){
-    return Object.keys(weights).map(k => {
-      const earned = points(k, ans[k], weights[k]);
-      return {
-        key: k,
-        missing: weights[k] - earned,
-        value: ans[k]
-      };
-    }).sort((a, b) => b.missing - a.missing);
-  }
-
-  function countHighTriggers(ans){
-    let count = 0;
-    if(ans.q3 !== "no") count++;
-    if(ans.q4 !== "no") count++;
-    if(ans.q5 !== "no") count++;
-    if(ans.q6 !== "no") count++;
-    if(ans.q9 !== "yes") count++;
-    if(ans.q10 !== "yes") count++;
-    return count;
-  }
 
   const riskText = {
     q1: {
@@ -413,22 +384,82 @@
     }
   };
 
-  function getGrade(score, triggerCount){
-    if(score >= 85 && triggerCount <= 1){
+  function points(key, value, weight) {
+    const isPositive = positiveQuestions.indexOf(key) !== -1;
+    const isNegative = negativeQuestions.indexOf(key) !== -1;
+
+    if (isPositive) {
+      if (value === "yes") return weight;
+      if (value === "some") return Math.round(weight * 0.5);
+      return 0;
+    }
+
+    if (isNegative) {
+      if (value === "no") return weight;
+      if (value === "some") return Math.round(weight * 0.5);
+      return 0;
+    }
+
+    return 0;
+  }
+
+  function readAnswers() {
+    const data = {};
+    Object.keys(weights).forEach(function (key) {
+      const el = form.querySelector('input[name="' + key + '"]:checked');
+      data[key] = el ? el.value : null;
+    });
+    return data;
+  }
+
+  function calcScore(ans) {
+    let total = 0;
+    Object.keys(weights).forEach(function (key) {
+      total += points(key, ans[key], weights[key]);
+    });
+    return total;
+  }
+
+  function worstRisks(ans) {
+    return Object.keys(weights).map(function (key) {
+      const earned = points(key, ans[key], weights[key]);
+      return {
+        key: key,
+        missing: weights[key] - earned,
+        value: ans[key]
+      };
+    }).sort(function (a, b) {
+      return b.missing - a.missing;
+    });
+  }
+
+  function countHighTriggers(ans) {
+    let count = 0;
+    if (ans.q3 !== "no") count++;
+    if (ans.q4 !== "no") count++;
+    if (ans.q5 !== "no") count++;
+    if (ans.q6 !== "no") count++;
+    if (ans.q9 !== "yes") count++;
+    if (ans.q10 !== "yes") count++;
+    return count;
+  }
+
+  function getGrade(score, triggerCount) {
+    if (score >= 85 && triggerCount <= 1) {
       return {
         label: "Strong",
         summary: "Your setup is strong. Keep checking in regularly and keep communication open."
       };
     }
 
-    if(score >= 65 && triggerCount <= 2){
+    if (score >= 65 && triggerCount <= 2) {
       return {
         label: "Good (needs tightening)",
         summary: "You are doing a lot right, but there are still weak points that could allow access, secrecy, or off-platform contact."
       };
     }
 
-    if(score >= 45 || triggerCount >= 3){
+    if (score >= 45 || triggerCount >= 3) {
       return {
         label: "At Risk",
         summary: "There are clear exposure points here. Focus on private messaging, unknown contacts, secrecy, and the off-platform rule first."
@@ -441,8 +472,8 @@
     };
   }
 
-  function nextMove(score, triggerCount, topKey){
-    if(score < 45 || triggerCount >= 4){
+  function nextMove(score, triggerCount, topKey) {
+    if (score < 45 || triggerCount >= 4) {
       return {
         text: "This setup needs urgent tightening. Start with your biggest exposure point now, then review red flags and reporting steps in case something is already active.",
         links: [
@@ -453,7 +484,7 @@
       };
     }
 
-    if(score < 65 || triggerCount >= 3){
+    if (score < 65 || triggerCount >= 3) {
       return {
         text: "Your child has meaningful exposure points. Tighten privacy, communication, and house-rule gaps before risk grows quietly.",
         links: [
@@ -474,7 +505,7 @@
     };
   }
 
-  form.addEventListener("submit", function(e){
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const ans = readAnswers();
@@ -483,12 +514,12 @@
     const top = ranked[0];
     const info = riskText[top.key];
     const triggerCount = countHighTriggers(ans);
-    const g = getGrade(score, triggerCount);
+    const grade = getGrade(score, triggerCount);
     const next = nextMove(score, triggerCount, top.key);
 
-    scoreNum.textContent = score;
-    scoreGrade.textContent = g.label;
-    scoreSummary.textContent = g.summary;
+    scoreNum.textContent = String(score);
+    scoreGrade.textContent = grade.label;
+    scoreSummary.textContent = grade.summary;
 
     topRiskBadge.style.display = "inline-flex";
     topRiskBadge.textContent = "Biggest risk detected: " + info.title;
@@ -500,7 +531,7 @@
       '<div class="btn-grid btn-grid-soft" style="margin-top:12px;">' +
       '<a class="btn" href="' + info.link + '">Fix This Now</a>' +
       '<a class="btn secondary" href="v3-reporting.html">If Something Already Happened</a>' +
-      '</div>';
+      "</div>";
 
     whyThisMattersBox.style.display = "block";
     whyThisMattersBox.innerHTML =
@@ -510,18 +541,28 @@
     nextMoveBox.innerHTML =
       "<strong>Best next move:</strong> " + next.text +
       '<div class="btn-grid btn-grid-soft" style="margin-top:12px;">' +
-      next.links.map(link => '<a class="btn secondary" href="' + link.href + '">' + link.label + '</a>').join("") +
-      '</div>';
+      next.links.map(function (link) {
+        return '<a class="btn secondary" href="' + link.href + '">' + link.label + "</a>";
+      }).join("") +
+      "</div>";
 
     results.style.display = "block";
     results.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
-  resetBtn.addEventListener("click", function(){
+  resetBtn.addEventListener("click", function () {
     form.reset();
     results.style.display = "none";
+    topRiskBadge.style.display = "none";
+    dangerBadge.style.display = "none";
     whyThisMattersBox.style.display = "none";
     nextMoveBox.style.display = "none";
+    topFixBox.innerHTML = "";
+    whyThisMattersBox.innerHTML = "";
+    nextMoveBox.innerHTML = "";
+    scoreNum.textContent = "0";
+    scoreGrade.textContent = "—";
+    scoreSummary.textContent = "";
   });
 })();
 </script>
