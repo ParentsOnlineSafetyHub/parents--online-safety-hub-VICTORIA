@@ -654,8 +654,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\\s-]/g, " ")
-      .replace(/\\s+/g, " ")
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .replace(/\s+/g, " ")
       .trim();
   }
 
@@ -676,7 +676,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\\s+/).filter(Boolean);
+    const tokens = q.split(/\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -839,81 +839,92 @@
       .posh-global-hero{
         position:relative;
         overflow:hidden;
-        border-radius:28px;
-        margin:0 0 18px;
-        min-height:260px;
+        border-radius:30px;
+        margin:0 0 20px;
+        min-height:360px;
         display:flex;
         align-items:flex-end;
-        padding:28px;
-        box-shadow:0 22px 55px rgba(0,0,0,.32);
+        padding:30px;
+        box-shadow:0 26px 65px rgba(0,0,0,.34);
         border:1px solid rgba(255,255,255,.08);
-        background:
-          linear-gradient(180deg, rgba(7,16,33,.08) 0%, rgba(7,16,33,.58) 58%, rgba(7,16,33,.92) 100%),
-          url('https://poshaussie.com.au/posh-hero.png') center center / cover no-repeat;
+        background:#0a1224;
         isolation:isolate;
       }
 
       .posh-global-hero::before{
         content:"";
         position:absolute;
-        inset:-8%;
+        inset:0;
         background:
-          radial-gradient(circle at 18% 20%, rgba(25,194,255,.22), transparent 38%),
-          radial-gradient(circle at 82% 18%, rgba(60,124,255,.18), transparent 34%),
-          radial-gradient(circle at 50% 100%, rgba(255,255,255,.08), transparent 40%);
-        z-index:-2;
-        animation:poshGlow 9s ease-in-out infinite alternate;
+          linear-gradient(180deg, rgba(7,16,33,.16) 0%, rgba(7,16,33,.46) 48%, rgba(7,16,33,.88) 100%),
+          linear-gradient(90deg, rgba(7,16,33,.72) 0%, rgba(7,16,33,.28) 44%, rgba(7,16,33,.18) 100%);
+        z-index:1;
+        pointer-events:none;
       }
 
       .posh-global-hero::after{
         content:"";
         position:absolute;
-        inset:0;
-        background:url('https://poshaussie.com.au/posh-hero.png') center center / cover no-repeat;
-        transform:scale(1.04);
-        opacity:.18;
-        filter:blur(10px);
-        z-index:-3;
+        inset:-5%;
+        background:url("https://poshaussie.com.au/posh-hero.png") center center / cover no-repeat;
+        transform:scale(1.06);
+        transform-origin:center center;
+        animation:poshHeroDrift 18s ease-in-out infinite alternate;
+        z-index:0;
+        will-change:transform;
       }
 
-      @keyframes poshGlow{
-        from{ transform:scale(1) translateY(0); opacity:.8; }
-        to{ transform:scale(1.08) translateY(-6px); opacity:1; }
+      @keyframes poshHeroDrift{
+        0%{
+          transform:scale(1.06) translate3d(-1.2%, -0.6%, 0);
+        }
+        100%{
+          transform:scale(1.12) translate3d(1.2%, 0.8%, 0);
+        }
       }
 
       .posh-hero-inner{
-        width:100%;
+        position:relative;
+        z-index:3;
+        width:min(780px, 100%);
         display:flex;
         flex-direction:column;
-        gap:12px;
+        gap:14px;
       }
 
       .posh-hero-top{
         display:flex;
         align-items:center;
-        gap:14px;
+        gap:16px;
         flex-wrap:wrap;
       }
 
-      .posh-hero-logo{
-        width:68px;
-        height:68px;
-        border-radius:18px;
-        object-fit:cover;
-        background:#0d1730;
-        border:1px solid rgba(255,255,255,.14);
-        box-shadow:0 12px 28px rgba(0,0,0,.25);
-        transition:transform .25s ease;
+      .posh-hero-badge{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        width:78px;
+        height:78px;
+        border-radius:20px;
+        background:rgba(255,255,255,.10);
+        border:1px solid rgba(255,255,255,.16);
+        box-shadow:0 14px 30px rgba(0,0,0,.25);
+        overflow:hidden;
+        flex:0 0 auto;
+        text-decoration:none;
       }
 
-      .posh-global-hero:hover .posh-hero-logo{
-        transform:scale(1.04);
+      .posh-hero-badge img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        display:block;
       }
 
       .posh-hero-brand{
         display:flex;
         flex-direction:column;
-        gap:2px;
+        gap:4px;
       }
 
       .posh-hero-kicker{
@@ -921,34 +932,36 @@
         font-weight:800;
         letter-spacing:.16em;
         text-transform:uppercase;
-        color:rgba(255,255,255,.78);
+        color:rgba(255,255,255,.82);
       }
 
       .posh-hero-home{
         color:#fff;
         text-decoration:none;
         font-weight:900;
-        font-size:clamp(1.55rem,3vw,2.45rem);
-        line-height:1.02;
-        letter-spacing:-.02em;
+        font-size:clamp(2rem, 4vw, 3.4rem);
+        line-height:.98;
+        letter-spacing:-.03em;
+        text-shadow:0 8px 22px rgba(0,0,0,.28);
       }
 
       .posh-hero-home:hover{
-        opacity:.94;
+        opacity:.96;
       }
 
       .posh-hero-sub{
-        max-width:720px;
-        color:rgba(255,255,255,.92);
-        line-height:1.55;
-        font-size:1rem;
+        max-width:760px;
+        color:rgba(255,255,255,.94);
+        line-height:1.62;
+        font-size:clamp(1rem, 1.35vw, 1.08rem);
+        text-shadow:0 5px 16px rgba(0,0,0,.24);
       }
 
       .posh-hero-actions{
         display:flex;
         flex-wrap:wrap;
-        gap:10px;
-        margin-top:6px;
+        gap:12px;
+        margin-top:8px;
       }
 
       .posh-hero-btn{
@@ -956,10 +969,10 @@
         align-items:center;
         justify-content:center;
         text-decoration:none;
-        padding:11px 16px;
+        padding:12px 18px;
         border-radius:999px;
         font-weight:800;
-        transition:transform .2s ease, opacity .2s ease;
+        transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
       }
 
       .posh-hero-btn:hover{
@@ -969,13 +982,15 @@
       .posh-hero-btn-main{
         background:linear-gradient(135deg,#19c2ff,#3c7cff);
         color:#fff;
-        box-shadow:0 14px 30px rgba(60,124,255,.28);
+        box-shadow:0 16px 34px rgba(60,124,255,.28);
       }
 
       .posh-hero-btn-sub{
-        background:rgba(255,255,255,.08);
+        background:rgba(255,255,255,.10);
         color:#fff;
-        border:1px solid rgba(255,255,255,.14);
+        border:1px solid rgba(255,255,255,.15);
+        backdrop-filter:blur(5px);
+        -webkit-backdrop-filter:blur(5px);
       }
 
       .posh-sticky-support {
@@ -1129,20 +1144,28 @@
 
       @media (max-width:760px){
         .posh-global-hero{
-          min-height:230px;
-          padding:20px;
-          border-radius:22px;
-          background-position:center center;
+          min-height:310px;
+          padding:22px;
+          border-radius:24px;
         }
 
-        .posh-hero-logo{
-          width:58px;
-          height:58px;
+        .posh-global-hero::after{
+          animation:poshHeroDriftMobile 18s ease-in-out infinite alternate;
+        }
+
+        @keyframes poshHeroDriftMobile{
+          0%{
+            transform:scale(1.08) translate3d(-1%, 0, 0);
+          }
+          100%{
+            transform:scale(1.13) translate3d(1%, 1%, 0);
+          }
+        }
+
+        .posh-hero-badge{
+          width:64px;
+          height:64px;
           border-radius:16px;
-        }
-
-        .posh-hero-sub{
-          font-size:.95rem;
         }
 
         .posh-hero-actions{
@@ -1150,7 +1173,7 @@
         }
 
         .posh-hero-btn{
-          flex:1 1 calc(50% - 10px);
+          flex:1 1 calc(50% - 12px);
           min-width:140px;
         }
       }
@@ -1169,6 +1192,11 @@
       }
 
       @media (max-width:520px){
+        .posh-global-hero{
+          min-height:285px;
+          padding:18px;
+        }
+
         .posh-hero-btn{
           flex:1 1 100%;
         }
@@ -1341,7 +1369,7 @@
   }
 
   function buttonHTML(button) {
-    return '<a class="btn' + (button.secondary ? ' secondary' : '') + '" href="' +
+    return '<a class="btn' + (button.secondary ? " secondary" : "") + '" href="' +
       escapeHTML(button.href) + '">' + escapeHTML(button.label) + "</a>";
   }
 
@@ -1381,9 +1409,8 @@
       <div class="posh-hero-inner">
 
         <div class="posh-hero-top">
-          <a href="index.html" aria-label="POSH Home">
+          <a href="index.html" class="posh-hero-badge" aria-label="POSH Home">
             <img
-              class="posh-hero-logo"
               src="https://poshaussie.com.au/posh-hero.png"
               alt="POSH"
             />
