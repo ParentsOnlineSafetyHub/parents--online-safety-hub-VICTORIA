@@ -14,8 +14,29 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://poshaussie.com.au/v3-search.html" />
   <meta property="og:site_name" content="POSH" />
+  <meta property="og:image" content="https://poshaussie.com.au/posh-home.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Search POSH • POSH" />
+  <meta name="twitter:description" content="Search POSH pages, apps, games, devices, downloads, behaviour topics, urgent warning signs, and child safety guidance." />
+  <meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png" />
 
   <link rel="stylesheet" href="style.css"/>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Search POSH",
+    "url":"https://poshaussie.com.au/v3-search.html",
+    "description":"Search POSH pages, apps, games, devices, downloads, behaviour topics, urgent warning signs, and child safety guidance.",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"POSH",
+      "url":"https://poshaussie.com.au/"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -32,15 +53,16 @@
   <div id="nav"></div>
 
   <div class="pill-row" style="margin:0 0 16px;">
-    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">SITE SEARCH</div>
+    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">PREMIUM SITE SEARCH</div>
     <div class="pill">Apps</div>
     <div class="pill">Games</div>
     <div class="pill">Warning Signs</div>
     <div class="pill">Parent Help</div>
+    <div class="pill">Urgent Action</div>
   </div>
 
   <p class="note">
-    Use search when you already know the topic, app, game, behaviour, or action you are trying to find.
+    Use search when you already know the topic, app, game, behaviour, or action you want. Results are ranked to surface the strongest safety pages first.
   </p>
 
   <div class="card center-card">
@@ -67,17 +89,42 @@
     <h2>Quick search lanes</h2>
 
     <div class="btn-grid btn-grid-soft">
-      <a class="btn" href="javascript:void(0)" data-search-link="red flags">Red Flags</a>
-      <a class="btn secondary" href="javascript:void(0)" data-search-link="grooming signs">Grooming Signs</a>
-      <a class="btn secondary" href="javascript:void(0)" data-search-link="roblox">Roblox</a>
-      <a class="btn secondary" href="javascript:void(0)" data-search-link="discord">Discord</a>
+      <a class="btn" href="#" data-search-link="red flags">Red Flags</a>
+      <a class="btn secondary" href="#" data-search-link="grooming signs">Grooming Signs</a>
+      <a class="btn secondary" href="#" data-search-link="roblox">Roblox</a>
+      <a class="btn secondary" href="#" data-search-link="discord">Discord</a>
     </div>
 
     <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
-      <a class="btn secondary" href="javascript:void(0)" data-search-link="snapchat">Snapchat</a>
-      <a class="btn secondary" href="javascript:void(0)" data-search-link="deleted messages">Deleted Messages</a>
-      <a class="btn secondary" href="javascript:void(0)" data-search-link="device safety">Device Safety</a>
-      <a class="btn secondary" href="javascript:void(0)" data-search-link="parent scripts">Parent Scripts</a>
+      <a class="btn secondary" href="#" data-search-link="snapchat">Snapchat</a>
+      <a class="btn secondary" href="#" data-search-link="deleted messages">Deleted Messages</a>
+      <a class="btn secondary" href="#" data-search-link="device safety">Device Safety</a>
+      <a class="btn secondary" href="#" data-search-link="parent scripts">Parent Scripts</a>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="#" data-search-link="first 24 hours">First 24 Hours</a>
+      <a class="btn secondary" href="#" data-search-link="sextortion">Sextortion</a>
+      <a class="btn secondary" href="#" data-search-link="known person risk">Known Person Risk</a>
+      <a class="btn secondary" href="#" data-search-link="chatgpt safe for kids">AI Safety</a>
+    </div>
+  </div>
+
+  <div class="card center-card">
+    <h2>Search shortcuts by category</h2>
+
+    <div class="btn-grid btn-grid-soft">
+      <a class="btn secondary" href="#" data-category-link="warning">Warning Signs</a>
+      <a class="btn secondary" href="#" data-category-link="urgent">Urgent Action</a>
+      <a class="btn secondary" href="#" data-category-link="reporting">Reporting</a>
+      <a class="btn secondary" href="#" data-category-link="parent help">Parent Help</a>
+    </div>
+
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <a class="btn secondary" href="#" data-category-link="apps">Apps</a>
+      <a class="btn secondary" href="#" data-category-link="game">Games</a>
+      <a class="btn secondary" href="#" data-category-link="controls">Controls</a>
+      <a class="btn secondary" href="#" data-category-link="ai">AI</a>
     </div>
   </div>
 
@@ -92,7 +139,7 @@
     </div>
 
     <div id="noResults" class="callout center-callout" style="display:none;">
-      No results found. Try broader keywords or simpler search terms.
+      No results found. Try broader keywords, fewer words, or a different lane such as <strong>Red Flags</strong>, <strong>What To Do Now</strong>, or <strong>All Applications</strong>.
     </div>
   </div>
 
@@ -114,7 +161,7 @@
     </div>
 
     <div class="callout center-callout">
-      If you do not know the exact term yet, the best move is usually to start from the right hub instead of guessing.
+      If you do not know the exact term yet, start from the right hub instead of guessing.
     </div>
   </div>
 
@@ -178,25 +225,44 @@
     const keywords = normalize(item.keywords || "");
     const category = normalize(item.category || "");
     const href = normalize(item.href || "");
+    const intent = normalize(item.intent || "");
+    const cta = normalize(item.cta || "");
+    const priority = Number(item.priority || 1);
 
     let s = 0;
 
-    if (title === q) s += 140;
-    if (title.indexOf(q) !== -1) s += 70;
-    if (keywords.indexOf(q) !== -1) s += 40;
-    if (description.indexOf(q) !== -1) s += 24;
+    if (title === q) s += 180;
+    if (title.indexOf(q) !== -1) s += 90;
+    if (keywords.indexOf(q) !== -1) s += 48;
+    if (description.indexOf(q) !== -1) s += 30;
     if (category.indexOf(q) !== -1) s += 16;
-    if (href.indexOf(q) !== -1) s += 10;
+    if (intent.indexOf(q) !== -1) s += 12;
+    if (cta.indexOf(q) !== -1) s += 8;
+    if (href.indexOf(q) !== -1) s += 6;
 
     const tokens = q.split(/\s+/).filter(Boolean);
 
     tokens.forEach(function (token) {
-      if (title.indexOf(token) !== -1) s += 18;
-      if (keywords.indexOf(token) !== -1) s += 11;
-      if (description.indexOf(token) !== -1) s += 7;
+      if (title.indexOf(token) !== -1) s += 20;
+      if (keywords.indexOf(token) !== -1) s += 12;
+      if (description.indexOf(token) !== -1) s += 8;
       if (category.indexOf(token) !== -1) s += 5;
-      if (href.indexOf(token) !== -1) s += 3;
+      if (intent.indexOf(token) !== -1) s += 4;
+      if (cta.indexOf(token) !== -1) s += 3;
+      if (href.indexOf(token) !== -1) s += 2;
     });
+
+    s += priority * 5;
+
+    if (
+      q.indexOf("urgent") !== -1 ||
+      q.indexOf("danger") !== -1 ||
+      q.indexOf("serious") !== -1 ||
+      q.indexOf("report") !== -1
+    ) {
+      if (intent === "urgent") s += 22;
+      if (intent === "warning") s += 10;
+    }
 
     return s;
   }
@@ -216,9 +282,18 @@
       })
       .sort(function (a, b) {
         if (b._score !== a._score) return b._score - a._score;
+        if ((b.priority || 0) !== (a.priority || 0)) return (b.priority || 0) - (a.priority || 0);
         return String(a.title || "").localeCompare(String(b.title || ""));
       })
       .slice(0, 50);
+  }
+
+  function categoryTone(intent) {
+    const value = normalize(intent);
+    if (value === "urgent") return "Urgent";
+    if (value === "warning") return "Warning";
+    if (value === "prevention") return "Prevention";
+    return "Guide";
   }
 
   function renderResults(query) {
@@ -254,14 +329,22 @@
     noResults.style.display = "none";
 
     list.innerHTML = results.map(function (item) {
+      const badgeText = item.category || "Page";
+      const toneText = categoryTone(item.intent);
+      const ctaText = item.cta || "Open page";
+
       return `
         <a href="${escapeHTML(item.href)}" class="search-result-card search-result-link">
           <div class="search-result-top">
             <strong>${escapeHTML(item.title)}</strong>
-            <span class="search-result-type">${escapeHTML(item.category || "Page")}</span>
+            <span class="search-result-type">${escapeHTML(badgeText)}</span>
           </div>
           <div class="search-result-url">${escapeHTML(item.href)}</div>
-          <div style="margin-top:6px;">${escapeHTML(item.description || "")}</div>
+          <div style="margin-top:8px;">${escapeHTML(item.description || "")}</div>
+          <div class="badges" style="justify-content:flex-start; margin-top:12px;">
+            <span class="badge">${escapeHTML(toneText)}</span>
+            <span class="badge gold">${escapeHTML(ctaText)}</span>
+          </div>
         </a>
       `;
     }).join("");
@@ -289,6 +372,21 @@
     });
   }
 
+  function bindCategoryLinks() {
+    const links = document.querySelectorAll("[data-category-link]");
+    const input = document.getElementById("searchInput");
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const q = link.getAttribute("data-category-link") || "";
+        input.value = q;
+        setQuery(q);
+        renderResults(q);
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("searchInput");
     const button = document.getElementById("searchBtn");
@@ -307,6 +405,7 @@
     });
 
     bindQuickLinks();
+    bindCategoryLinks();
   });
 })();
 </script>
