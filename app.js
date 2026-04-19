@@ -20,7 +20,7 @@
     <div class="nav-accordion">
 
       <details class="nav-group">
-        <summary>Start & Safety</summary>
+        <summary>Start &amp; Safety</summary>
         <nav>
           <a href="index.html" data-type="Home" data-keywords="home posh parents online safety hub">Home</a>
           <a href="v3-start.html" data-type="Start" data-keywords="start safety first steps parent help online safety">Start Here</a>
@@ -58,12 +58,12 @@
       </details>
 
       <details class="nav-group">
-        <summary>Apps & Social Media</summary>
+        <summary>Apps &amp; Social Media</summary>
         <nav>
           <a href="v3-socials.html" data-type="Social Media" data-keywords="social media apps overview risks">All Socials</a>
           <a href="v3-all-applications.html" data-type="Apps" data-keywords="all apps applications app risks">All Applications</a>
           <a href="v3-dangerous-apps.html" data-type="Apps" data-keywords="dangerous apps high risk apps kids private messaging stranger access">Dangerous Apps</a>
-          <a href="v3-safe-apps-and-games-for-kids.html" data-type="Apps" data-keywords="safe apps safe games kids safer options">Safe Apps & Games</a>
+          <a href="v3-safe-apps-and-games-for-kids.html" data-type="Apps" data-keywords="safe apps safe games kids safer options">Safe Apps &amp; Games</a>
           <a href="v3-social-discord.html" data-type="Social App" data-keywords="discord servers chat grooming risk">Discord</a>
           <a href="v3-social-snapchat.html" data-type="Social App" data-keywords="snapchat disappearing messages sextortion risk">Snapchat</a>
           <a href="v3-social-instagram.html" data-type="Social App" data-keywords="instagram dms reels strangers">Instagram</a>
@@ -76,7 +76,7 @@
       </details>
 
       <details class="nav-group">
-        <summary>Games & Platforms</summary>
+        <summary>Games &amp; Platforms</summary>
         <nav>
           <a href="v3-gaming.html" data-type="Gaming" data-keywords="gaming games risks kids predators voice chat">Gaming</a>
           <a href="v3-all-games.html" data-type="Games" data-keywords="all games game list risks">All Games</a>
@@ -94,7 +94,7 @@
       </details>
 
       <details class="nav-group">
-        <summary>Devices & Controls</summary>
+        <summary>Devices &amp; Controls</summary>
         <nav>
           <a href="v3-devices.html" data-type="Devices" data-keywords="devices child safety device overview">Devices</a>
           <a href="v3-device-controls.html" data-type="Controls" data-keywords="device controls parental controls settings">Device Controls</a>
@@ -110,7 +110,7 @@
       </details>
 
       <details class="nav-group">
-        <summary>Awareness & Deep Dive</summary>
+        <summary>Awareness &amp; Deep Dive</summary>
         <nav>
           <a href="v3-awareness.html" data-type="Awareness" data-keywords="awareness risks education parents">Awareness</a>
           <a href="v3-algorithm-awareness.html" data-type="Awareness" data-keywords="algorithm awareness feed recommendation manipulation">Algorithm Awareness</a>
@@ -119,7 +119,7 @@
           <a href="v3-why-kids-cant-stop-scrolling.html" data-type="Awareness" data-keywords="why kids cant stop scrolling dopamine reels shorts tiktok">Why Kids Can’t Stop Scrolling</a>
           <a href="v3-how-manipulative-groups-recruit-children-online.html" data-type="Awareness" data-keywords="manipulative groups recruit children online cult recruitment belonging secrecy">Manipulative Group Recruitment</a>
           <a href="v3-how-attention-is-used-to-control-behaviour.html" data-type="Awareness" data-keywords="how attention is used to control behaviour dopamine influence emotional triggers repeated exposure">How Attention Shapes Behaviour</a>
-          <a href="v3-targeted-harassment-and-false-reports.html" data-type="Awareness" data-keywords="targeted harassment false reports malicious reporting family targeting">Targeted Harassment & False Reports</a>
+          <a href="v3-targeted-harassment-and-false-reports.html" data-type="Awareness" data-keywords="targeted harassment false reports malicious reporting family targeting">Targeted Harassment &amp; False Reports</a>
           <a href="v3-predators.html" data-type="Awareness" data-keywords="predators online child safety">Predators</a>
           <a href="v3-sextortion.html" data-type="Awareness" data-keywords="sextortion blackmail nude image threats">Sextortion</a>
           <a href="v3-grooming.html" data-type="Awareness" data-keywords="grooming what is grooming stages">Grooming</a>
@@ -133,7 +133,7 @@
       </details>
 
       <details class="nav-group">
-        <summary>Downloads & Support</summary>
+        <summary>Downloads &amp; Support</summary>
         <nav>
           <a href="v3-downloads.html" data-type="Downloads" data-keywords="downloads guides pdf checklists">Downloads</a>
           <a href="v3-all-downloads.html" data-type="Downloads" data-keywords="all downloads pdf resources">All Downloads</a>
@@ -144,7 +144,7 @@
           <a href="v3-collaboration.html" data-type="Collaboration" data-keywords="collaboration partner creator educator">Collaboration</a>
           <a href="v3-founder.html" data-type="Founder" data-keywords="founder jinglez why posh exists">Founder</a>
           <a href="v3-why-posh-exists.html" data-type="Mission" data-keywords="why posh exists mission purpose">Why POSH Exists</a>
-          <a href="v3-warning.html" data-type="Warning" data-keywords="warning disclaimer important">Warning & Disclaimer</a>
+          <a href="v3-warning.html" data-type="Warning" data-keywords="warning disclaimer important">Warning &amp; Disclaimer</a>
         </nav>
       </details>
 
@@ -260,7 +260,7 @@
     "v3-gaming.html": { cluster: "game", title: "Gaming", subtitle: "Games are often the doorway. Private contact is where the bigger risk grows." },
     "v3-all-games.html": { cluster: "game", title: "All Games", subtitle: "Find the game and move quickly into the right safety page." },
     "v3-game-risks-by-age.html": { cluster: "game-guide", title: "Games by Age Guide", subtitle: "Age matters, but communication risk matters even more." },
-    "v3-game-roblox.html": { cluster: "game", title: "Roblox", subtitle: "Robux, chat, gifting, and off-platform movement can create real risk. See the full Roblox page here: 0" },
+    "v3-game-roblox.html": { cluster: "game", title: "Roblox", subtitle: "Robux, chat, gifting, and off-platform movement can create real risk." },
     "v3-why-roblox-requires-supervision.html": { cluster: "game", title: "Why Roblox Requires Supervision", subtitle: "Roblox needs stronger parent visibility than most families realise." },
     "v3-game-fortnite.html": { cluster: "game", title: "Fortnite", subtitle: "Voice chat, squads, and off-platform movement matter more than the game alone." },
     "v3-game-minecraft.html": { cluster: "game", title: "Minecraft", subtitle: "Servers, chat, and who has access to your child all matter." },
@@ -282,8 +282,8 @@
     "v3-awareness.html": { cluster: "awareness", title: "Awareness", subtitle: "Understand the digital environment more clearly so you can act earlier." },
     "v3-algorithm-awareness.html": { cluster: "awareness", title: "Algorithm Awareness", subtitle: "Learn how repeated exposure influences what children see and feel." },
     "v3-how-screens-affect-your-childs-brain.html": { cluster: "screens", title: "How Screens Affect the Brain", subtitle: "Understand stimulation, boredom, attention, and emotional reactivity." },
-    "v3-brainrot.html": { cluster: "screens", title: "Brain Rot", subtitle: "Short-form content trains the brain to expect constant stimulation. See the current Brain Rot PDF here: 1" },
-    "v3-dangerous-apps.html": { cluster: "high-risk-tech", title: "Dangerous Apps", subtitle: "Some apps make stranger access, hidden movement, and private contact much easier. See the current Dangerous Apps PDF here: 2" },
+    "v3-brainrot.html": { cluster: "screens", title: "Brain Rot", subtitle: "Short-form content trains the brain to expect constant stimulation." },
+    "v3-dangerous-apps.html": { cluster: "high-risk-tech", title: "Dangerous Apps", subtitle: "Some apps make stranger access, hidden movement, and private contact much easier." },
     "v3-safe-apps-and-games-for-kids.html": { cluster: "safe-tech", title: "Safe Apps & Games", subtitle: "Safer does not mean zero risk — but it does mean fewer risky pathways." },
     "v3-ai-chat-risks-for-children.html": { cluster: "ai", title: "AI Chat Risks for Children", subtitle: "Understand how AI chat can change privacy, dependence, and disclosure." },
     "v3-is-chatgpt-safe-for-kids.html": { cluster: "ai", title: "Is ChatGPT Safe for Kids?", subtitle: "Safe use depends on age, purpose, supervision, and healthy boundaries." },
@@ -921,8 +921,7 @@
       .nav-group summary{
         border-radius:16px;
         border:1.35px solid rgba(217,182,90,.50);
-        background:
-          linear-gradient(180deg, rgba(15,42,85,.96), rgba(12,35,70,.96));
+        background:linear-gradient(180deg, rgba(15,42,85,.96), rgba(12,35,70,.96));
         box-shadow:
           0 12px 26px rgba(0,0,0,.24),
           0 0 0 1px rgba(255,255,255,.03) inset;
@@ -942,8 +941,7 @@
 
       .nav-group[open] summary{
         border-color:rgba(217,182,90,.82);
-        background:
-          linear-gradient(180deg, rgba(19,49,94,.98), rgba(13,34,68,.98));
+        background:linear-gradient(180deg, rgba(19,49,94,.98), rgba(13,34,68,.98));
         box-shadow:
           0 18px 34px rgba(0,0,0,.34),
           0 0 20px rgba(217,182,90,.12);
@@ -1485,7 +1483,9 @@
 
     if (oldBrand) oldBrand.style.display = "none";
     if (oldTitle) oldTitle.style.display = "none";
-    if (oldTagline) oldTagline.style.display = "none";
+    if (oldTagline && getCurrentPage() !== "index.html") {
+      oldTagline.style.display = "none";
+    }
   }
 
   document.addEventListener("DOMContentLoaded", function () {
