@@ -1,6 +1,9 @@
 (function () {
   "use strict";
 
+  const HERO_IMAGE = "https://poshaussie.com.au/posh-hero.png";
+  const HOME_URL = "index.html";
+
   const navHTML = `
     <div class="nav-search-wrap">
       <input
@@ -654,8 +657,8 @@
       .toLowerCase()
       .replace(/&/g, " and ")
       .replace(/['’]/g, "")
-      .replace(/[^a-z0-9\s-]/g, " ")
-      .replace(/\s+/g, " ")
+      .replace(/[^a-z0-9\\s-]/g, " ")
+      .replace(/\\s+/g, " ")
       .trim();
   }
 
@@ -676,7 +679,7 @@
     if (category.indexOf(q) !== -1) s += 10;
     if (href.indexOf(q) !== -1) s += 8;
 
-    const tokens = q.split(/\s+/).filter(Boolean);
+    const tokens = q.split(/\\s+/).filter(Boolean);
     tokens.forEach(function (token) {
       if (title.indexOf(token) !== -1) s += 14;
       if (keywords.indexOf(token) !== -1) s += 9;
@@ -836,161 +839,77 @@
     const style = document.createElement("style");
     style.id = "poshSupportUiStyles";
     style.textContent = `
-      .posh-global-hero{
-        position:relative;
-        overflow:hidden;
-        border-radius:30px;
-        margin:0 0 20px;
-        min-height:360px;
-        display:flex;
-        align-items:flex-end;
-        padding:30px;
-        box-shadow:0 26px 65px rgba(0,0,0,.34);
-        border:1px solid rgba(255,255,255,.08);
-        background:#0a1224;
-        isolation:isolate;
+      .posh-global-hero-wrap{
+        margin:0 0 18px;
       }
 
-      .posh-global-hero::before{
+      .posh-global-hero-link{
+        display:block;
+        width:100%;
+        text-decoration:none;
+        border-radius:18px;
+        overflow:hidden;
+        border:1.5px solid rgba(217,182,90,.62);
+        box-shadow:
+          0 18px 44px rgba(0,0,0,.34),
+          0 0 0 1px rgba(255,255,255,.04) inset,
+          0 0 22px rgba(217,182,90,.10);
+        background:rgba(8,25,50,.42);
+        position:relative;
+        transform:translateZ(0);
+      }
+
+      .posh-global-hero-link::before{
         content:"";
         position:absolute;
         inset:0;
-        background:
-          linear-gradient(180deg, rgba(7,16,33,.16) 0%, rgba(7,16,33,.46) 48%, rgba(7,16,33,.88) 100%),
-          linear-gradient(90deg, rgba(7,16,33,.72) 0%, rgba(7,16,33,.28) 44%, rgba(7,16,33,.18) 100%);
-        z-index:1;
+        border-radius:18px;
         pointer-events:none;
+        background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+        z-index:2;
       }
 
-      .posh-global-hero::after{
-        content:"";
-        position:absolute;
-        inset:-5%;
-        background:url("https://poshaussie.com.au/posh-hero.png") center center / cover no-repeat;
-        transform:scale(1.06);
-        transform-origin:center center;
-        animation:poshHeroDrift 18s ease-in-out infinite alternate;
-        z-index:0;
+      .posh-global-hero-link:hover{
+        transform:translateY(-2px);
+        box-shadow:
+          0 24px 56px rgba(0,0,0,.40),
+          0 0 0 1px rgba(255,255,255,.05) inset,
+          0 0 28px rgba(217,182,90,.14);
+      }
+
+      .posh-global-hero-link:focus-visible{
+        outline:3px solid rgba(34,230,211,.74);
+        outline-offset:4px;
+      }
+
+      .posh-global-hero-media{
+        display:block;
+        width:100%;
+        height:auto;
+      }
+
+      .posh-global-hero-img{
+        display:block;
+        width:100%;
+        height:auto;
+        object-fit:cover;
+        object-position:center center;
+        transform:scale(1);
+        transition:transform 4.8s ease, filter .28s ease;
         will-change:transform;
       }
 
-      @keyframes poshHeroDrift{
-        0%{
-          transform:scale(1.06) translate3d(-1.2%, -0.6%, 0);
-        }
-        100%{
-          transform:scale(1.12) translate3d(1.2%, 0.8%, 0);
-        }
+      .posh-global-hero-link:hover .posh-global-hero-img{
+        filter:brightness(1.02) saturate(1.03);
       }
 
-      .posh-hero-inner{
-        position:relative;
-        z-index:3;
-        width:min(780px, 100%);
-        display:flex;
-        flex-direction:column;
-        gap:14px;
+      .posh-global-hero-img.is-loaded{
+        animation:poshHeroSlowZoom 7s ease-out both;
       }
 
-      .posh-hero-top{
-        display:flex;
-        align-items:center;
-        gap:16px;
-        flex-wrap:wrap;
-      }
-
-      .posh-hero-badge{
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        width:78px;
-        height:78px;
-        border-radius:20px;
-        background:rgba(255,255,255,.10);
-        border:1px solid rgba(255,255,255,.16);
-        box-shadow:0 14px 30px rgba(0,0,0,.25);
-        overflow:hidden;
-        flex:0 0 auto;
-        text-decoration:none;
-      }
-
-      .posh-hero-badge img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        display:block;
-      }
-
-      .posh-hero-brand{
-        display:flex;
-        flex-direction:column;
-        gap:4px;
-      }
-
-      .posh-hero-kicker{
-        font-size:.78rem;
-        font-weight:800;
-        letter-spacing:.16em;
-        text-transform:uppercase;
-        color:rgba(255,255,255,.82);
-      }
-
-      .posh-hero-home{
-        color:#fff;
-        text-decoration:none;
-        font-weight:900;
-        font-size:clamp(2rem, 4vw, 3.4rem);
-        line-height:.98;
-        letter-spacing:-.03em;
-        text-shadow:0 8px 22px rgba(0,0,0,.28);
-      }
-
-      .posh-hero-home:hover{
-        opacity:.96;
-      }
-
-      .posh-hero-sub{
-        max-width:760px;
-        color:rgba(255,255,255,.94);
-        line-height:1.62;
-        font-size:clamp(1rem, 1.35vw, 1.08rem);
-        text-shadow:0 5px 16px rgba(0,0,0,.24);
-      }
-
-      .posh-hero-actions{
-        display:flex;
-        flex-wrap:wrap;
-        gap:12px;
-        margin-top:8px;
-      }
-
-      .posh-hero-btn{
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        text-decoration:none;
-        padding:12px 18px;
-        border-radius:999px;
-        font-weight:800;
-        transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
-      }
-
-      .posh-hero-btn:hover{
-        transform:translateY(-2px);
-      }
-
-      .posh-hero-btn-main{
-        background:linear-gradient(135deg,#19c2ff,#3c7cff);
-        color:#fff;
-        box-shadow:0 16px 34px rgba(60,124,255,.28);
-      }
-
-      .posh-hero-btn-sub{
-        background:rgba(255,255,255,.10);
-        color:#fff;
-        border:1px solid rgba(255,255,255,.15);
-        backdrop-filter:blur(5px);
-        -webkit-backdrop-filter:blur(5px);
+      @keyframes poshHeroSlowZoom{
+        0%{ transform:scale(1.015); }
+        100%{ transform:scale(1.06); }
       }
 
       .posh-sticky-support {
@@ -1142,39 +1061,9 @@
         margin-top: 24px;
       }
 
-      @media (max-width:760px){
-        .posh-global-hero{
-          min-height:310px;
-          padding:22px;
-          border-radius:24px;
-        }
-
-        .posh-global-hero::after{
-          animation:poshHeroDriftMobile 18s ease-in-out infinite alternate;
-        }
-
-        @keyframes poshHeroDriftMobile{
-          0%{
-            transform:scale(1.08) translate3d(-1%, 0, 0);
-          }
-          100%{
-            transform:scale(1.13) translate3d(1%, 1%, 0);
-          }
-        }
-
-        .posh-hero-badge{
-          width:64px;
-          height:64px;
+      @media (max-width: 900px){
+        .posh-global-hero-link{
           border-radius:16px;
-        }
-
-        .posh-hero-actions{
-          width:100%;
-        }
-
-        .posh-hero-btn{
-          flex:1 1 calc(50% - 12px);
-          min-width:140px;
         }
       }
 
@@ -1189,16 +1078,19 @@
         .posh-sticky-support a {
           width: 100%;
         }
+
+        .posh-global-hero-link{
+          border-radius:14px;
+          border-width:1.25px;
+        }
       }
 
-      @media (max-width:520px){
-        .posh-global-hero{
-          min-height:285px;
-          padding:18px;
-        }
-
-        .posh-hero-btn{
-          flex:1 1 100%;
+      @media (prefers-reduced-motion: reduce){
+        .posh-global-hero-img,
+        .posh-global-hero-img.is-loaded{
+          animation:none !important;
+          transition:none !important;
+          transform:none !important;
         }
       }
     `;
@@ -1369,7 +1261,7 @@
   }
 
   function buttonHTML(button) {
-    return '<a class="btn' + (button.secondary ? " secondary" : "") + '" href="' +
+    return '<a class="btn' + (button.secondary ? ' secondary' : '') + '" href="' +
       escapeHTML(button.href) + '">' + escapeHTML(button.label) + "</a>";
   }
 
@@ -1396,48 +1288,40 @@
     footer.parentNode.insertBefore(wrap, footer);
   }
 
-  function buildEliteHero() {
-    if (document.querySelector(".posh-global-hero")) return;
+  function buildGlobalHero() {
+    if (document.querySelector(".posh-global-hero-wrap")) return;
 
     const wrap = document.querySelector(".wrap");
     if (!wrap) return;
 
-    const hero = document.createElement("section");
-    hero.className = "posh-global-hero";
-
-    hero.innerHTML = `
-      <div class="posh-hero-inner">
-
-        <div class="posh-hero-top">
-          <a href="index.html" class="posh-hero-badge" aria-label="POSH Home">
-            <img
-              src="https://poshaussie.com.au/posh-hero.png"
-              alt="POSH"
-            />
-          </a>
-
-          <div class="posh-hero-brand">
-            <div class="posh-hero-kicker">Parents Online Safety Hub</div>
-            <a href="index.html" class="posh-hero-home">POSH</a>
-          </div>
+    const heroWrap = document.createElement("div");
+    heroWrap.className = "posh-global-hero-wrap";
+    heroWrap.innerHTML = `
+      <a href="${HOME_URL}" class="posh-global-hero-link" aria-label="Go to POSH home page">
+        <div class="posh-global-hero-media">
+          <img
+            src="${HERO_IMAGE}"
+            alt="POSH hero banner"
+            class="posh-global-hero-img"
+            loading="eager"
+            decoding="async"
+          />
         </div>
-
-        <div class="posh-hero-sub">
-          One standard. Same boundaries. Safer families.
-          Practical guidance for parents navigating apps, games,
-          devices, grooming risks, and modern online pressure.
-        </div>
-
-        <div class="posh-hero-actions">
-          <a href="v3-start.html" class="posh-hero-btn posh-hero-btn-main">Start Here</a>
-          <a href="v3-safety-score.html" class="posh-hero-btn posh-hero-btn-sub">Safety Score</a>
-          <a href="v3-what-now.html" class="posh-hero-btn posh-hero-btn-sub">What To Do Now</a>
-        </div>
-
-      </div>
+      </a>
     `;
 
-    wrap.insertBefore(hero, wrap.firstChild);
+    wrap.insertBefore(heroWrap, wrap.firstChild);
+
+    const img = heroWrap.querySelector(".posh-global-hero-img");
+    if (img) {
+      if (img.complete) {
+        img.classList.add("is-loaded");
+      } else {
+        img.addEventListener("load", function () {
+          img.classList.add("is-loaded");
+        }, { once: true });
+      }
+    }
   }
 
   function hideOldHeaders() {
@@ -1453,7 +1337,7 @@
     const footer = document.getElementById("footer");
 
     injectSupportStyles();
-    buildEliteHero();
+    buildGlobalHero();
     hideOldHeaders();
 
     if (nav) {
