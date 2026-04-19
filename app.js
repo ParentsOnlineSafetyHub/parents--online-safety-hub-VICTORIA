@@ -857,6 +857,7 @@
         background:rgba(8,25,50,.42);
         position:relative;
         transform:translateZ(0);
+        transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
       }
 
       .posh-global-hero-link::before{
@@ -875,6 +876,7 @@
           0 24px 56px rgba(0,0,0,.40),
           0 0 0 1px rgba(255,255,255,.05) inset,
           0 0 28px rgba(217,182,90,.14);
+        border-color:rgba(217,182,90,.82);
       }
 
       .posh-global-hero-link:focus-visible{
@@ -885,7 +887,6 @@
       .posh-global-hero-media{
         display:block;
         width:100%;
-        height:auto;
       }
 
       .posh-global-hero-img{
