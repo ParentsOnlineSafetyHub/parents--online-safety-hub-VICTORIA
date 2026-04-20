@@ -42,6 +42,181 @@
     }
   }
   </script>
+
+  <style>
+    .btn-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:12px;
+    }
+
+    .btn-grid-soft{
+      align-items:stretch;
+    }
+
+    .pill-row,
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+    }
+
+    .callout{
+      padding:16px 18px;
+      border-radius:16px;
+      border:1px solid var(--cardLine);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+    }
+
+    .center-callout{
+      max-width:920px;
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+    }
+
+    .note{
+      color:var(--muted);
+    }
+
+    .small{
+      font-size:.95rem;
+      color:var(--soft);
+    }
+
+    .q{
+      text-align:left;
+      margin:0 0 16px;
+      padding:18px;
+      border:1px solid var(--cardLine);
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+    }
+
+    .q:last-of-type{
+      margin-bottom:0;
+    }
+
+    .q-title{
+      font-family:var(--font-heading);
+      font-size:1.04rem;
+      font-weight:800;
+      color:var(--text);
+      margin:0 0 12px;
+    }
+
+    .q-options{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:10px;
+    }
+
+    .q-options label{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-height:48px;
+      padding:12px 14px;
+      border:1px solid var(--cardLine);
+      border-radius:14px;
+      background:rgba(255,255,255,.035);
+      color:var(--text);
+      font-weight:600;
+      cursor:pointer;
+      transition:.22s ease;
+    }
+
+    .q-options label:hover{
+      background:rgba(57,176,255,.08);
+      border-color:rgba(57,176,255,.24);
+      transform:translateY(-1px);
+    }
+
+    .q-options input[type="radio"]{
+      width:18px;
+      height:18px;
+      margin:0;
+      flex:0 0 18px;
+      accent-color:#39b0ff;
+    }
+
+    .score-wrap{
+      display:grid;
+      grid-template-columns:minmax(220px,280px) 1fr;
+      gap:20px;
+      align-items:center;
+      margin-top:18px;
+    }
+
+    .score-ring{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      min-height:220px;
+      padding:24px;
+      border-radius:24px;
+      border:1px solid var(--goldLine);
+      background:linear-gradient(180deg,rgba(217,182,90,.16),rgba(217,182,90,.05));
+      box-shadow:var(--shadowSoft);
+    }
+
+    .score-num{
+      font-family:var(--font-heading);
+      font-size:clamp(2.5rem,7vw,4.2rem);
+      line-height:1;
+      font-weight:900;
+      color:var(--gold);
+    }
+
+    .score-label{
+      margin-top:6px;
+      font-size:.92rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--soft);
+    }
+
+    .score-text{
+      text-align:left;
+    }
+
+    .score-grade{
+      font-family:var(--font-heading);
+      font-size:clamp(1.3rem,3vw,1.9rem);
+      font-weight:800;
+      color:var(--text);
+      margin-bottom:10px;
+    }
+
+    .badge.gold{
+      background:rgba(217,182,90,.14);
+      border-color:rgba(217,182,90,.34);
+      color:#ffe9ab;
+    }
+
+    .badge.danger{
+      background:rgba(255,107,129,.12);
+      border-color:rgba(255,107,129,.3);
+      color:#ffd7de;
+    }
+
+    @media (max-width:700px){
+      .score-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .score-text{
+        text-align:center;
+      }
+
+      .badges{
+        justify-content:center;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -56,39 +231,39 @@
     <div id="nav"></div>
 
     <div class="pill-row" style="margin:0 0 16px;">
-      <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">60 SECOND CHECK</div>
+      <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">60 Second Check</div>
       <div class="pill">Exposure</div>
       <div class="pill">Messaging</div>
       <div class="pill">Secrecy</div>
       <div class="pill">Trust</div>
     </div>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>Need help urgently?</h2>
-      <div class="btn-grid btn-grid-soft">
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
         <a class="btn" href="v3-first-24-hours.html">Act Now</a>
         <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
         <a class="btn secondary" href="v3-redflags.html">See Red Flags</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>How safe is your child online right now?</h2>
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>This takes about 60 seconds.</p>
-        <p>Be honest. This is not about perfect parenting. It is about spotting the biggest risk first and reducing it fast.</p>
+        <p class="mb-0">Be honest. This is not about perfect parenting. It is about spotting the biggest risk first and reducing it fast.</p>
       </div>
-      <div class="danger-line">Fix the biggest risk first</div>
-    </div>
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">Fix the biggest risk first</div>
+    </section>
 
-    <div class="callout center-callout">
+    <div class="callout center-callout" style="margin-bottom:22px;">
       <strong>If something already feels wrong:</strong><br/>
       Use this as a quick scan — then move into the action pages. Do not wait for perfect certainty.
     </div>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Answer these 10 questions</h2>
-      <p class="note" style="margin-top:-4px;">
+      <p class="note" style="max-width:860px;margin:0 auto 18px;">
         Answer based on what is true <strong>most of the time</strong>.
       </p>
 
@@ -190,9 +365,9 @@
         </div>
 
       </form>
-    </div>
+    </section>
 
-    <div class="card center-card" id="results" style="display:none;">
+    <section class="card center-card" id="results" style="display:none;">
       <h2>Your POSH Safety Check Result</h2>
 
       <div class="score-wrap">
@@ -203,19 +378,19 @@
 
         <div class="score-text">
           <div class="score-grade" id="scoreGrade">—</div>
-          <p class="note" id="scoreSummary" style="text-align:left;"></p>
-          <div class="badges" style="justify-content:center;">
+          <p class="note" id="scoreSummary"></p>
+          <div class="badges" style="margin-top:12px;">
             <div class="badge gold" id="topRiskBadge" style="display:none;"></div>
             <div class="badge danger" id="dangerBadge" style="display:none;">High grooming exposure risk</div>
           </div>
         </div>
       </div>
 
-      <div class="callout center-callout" id="topFixBox" style="margin-top:14px;"></div>
-      <div class="callout center-callout" id="whyThisMattersBox" style="margin-top:14px; display:none;"></div>
-      <div class="callout center-callout" id="nextMoveBox" style="margin-top:14px; display:none;"></div>
+      <div class="callout center-callout" id="topFixBox" style="margin-top:18px;"></div>
+      <div class="warning-box" id="whyThisMattersBox" style="margin-top:16px;display:none;"></div>
+      <div class="highlight-box" id="nextMoveBox" style="margin-top:16px;display:none;"></div>
 
-      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+      <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
         <a class="btn" href="v3-device-controls.html">Device Safety</a>
         <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
         <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
@@ -225,12 +400,12 @@
       <p class="small" style="margin-top:12px;">
         You do not need to fix everything today. Fix the biggest risk first.
       </p>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>If a child seems confused, scared, or shut down</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 14px;">
         A safety score is useful, but some situations are more about behaviour, pressure, secrecy, fear, or emotional withdrawal than device settings alone.
       </p>
 
@@ -243,17 +418,17 @@
         <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
         <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>Help protect another child</h2>
 
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Many parents simply have not been shown how online grooming and manipulation actually starts.</p>
-        <p>Sharing awareness early can help another family prevent harm.</p>
+        <p class="mb-0">Sharing awareness early can help another family prevent harm.</p>
       </div>
 
-      <div class="danger-line">
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
         One parent sharing this can protect another child
       </div>
 
@@ -263,12 +438,12 @@
         <a class="btn secondary" href="https://twitter.com/intent/tweet?url=https://poshaussie.com.au" target="_blank" rel="noopener">Share on X</a>
         <a class="btn secondary" href="https://www.linkedin.com/sharing/share-offsite/?url=https://poshaussie.com.au" target="_blank" rel="noopener">Share on LinkedIn</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Keep exploring child safety</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 16px;">
         Your score is a starting point, not the full story. Keep exploring in the direction that feels most relevant to your child.
       </p>
 
@@ -284,7 +459,7 @@
         <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
         <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
       </div>
-    </div>
+    </section>
 
     <div id="footer"></div>
   </div>
