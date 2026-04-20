@@ -5,26 +5,119 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>All Applications Directory • POSH</title>
   <meta name="description" content="Browse all POSH application safety pages including Discord, TikTok, Snapchat, Instagram, YouTube, WhatsApp, Telegram, Twitch, Character AI, Replika, Netflix, Disney+, Prime Video, Tubi and more." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-all-applications.html" />
+
+  <meta property="og:title" content="All Applications Directory • POSH" />
+  <meta property="og:description" content="Find the app first. Then lock privacy, reduce direct contact, and understand the wider risk around it." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-all-applications.html" />
+  <meta property="og:site_name" content="POSH" />
+  <meta property="og:image" content="https://poshaussie.com.au/posh-home.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="All Applications Directory • POSH" />
+  <meta name="twitter:description" content="Browse POSH application safety pages and start with the app your child uses most." />
+  <meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png" />
+
   <link rel="stylesheet" href="style.css"/>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "headline":"All Applications Directory",
+    "description":"Browse POSH application safety pages including Discord, TikTok, Snapchat, Instagram, YouTube, WhatsApp, Telegram, Twitch, Character AI, Replika, Netflix, Disney+, Prime Video, Tubi and more.",
+    "url":"https://poshaussie.com.au/v3-all-applications.html",
+    "publisher":{
+      "@type":"Organization",
+      "name":"POSH",
+      "url":"https://poshaussie.com.au/",
+      "logo":{
+        "@type":"ImageObject",
+        "url":"https://poshaussie.com.au/posh-home.png"
+      }
+    },
+    "mainEntityOfPage":"https://poshaussie.com.au/v3-all-applications.html"
+  }
+  </script>
+
+  <style>
+    .btn-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:12px;
+    }
+
+    .btn-grid-soft{
+      align-items:stretch;
+    }
+
+    .callout{
+      padding:16px 18px;
+      border-radius:16px;
+      border:1px solid var(--cardLine);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+    }
+
+    .center-callout{
+      max-width:920px;
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+    }
+
+    .note{
+      color:var(--muted);
+    }
+
+    .home-mantra{
+      font-family:var(--font-heading);
+      font-size:clamp(1.5rem,3.5vw,2.35rem);
+      font-weight:900;
+      line-height:1.1;
+      letter-spacing:-.03em;
+      margin:0 0 14px;
+      color:var(--text);
+    }
+
+    .home-subline{
+      font-size:1.04rem;
+      line-height:1.75;
+      color:var(--muted);
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
 
     <div class="brand">POSH</div>
     <h1 class="page-title">All Applications Directory</h1>
-    <p class="tagline"><strong>Find the app first.</strong> Then lock privacy, reduce direct contact, and understand the wider risk around it.</p>
+    <p class="tagline">
+      <strong>Find the app first.</strong><br/>
+      Then lock privacy, reduce direct contact, and understand the wider risk around it.
+    </p>
 
     <div id="nav"></div>
 
-    <div class="callout center-callout">
-      <strong>How to use this page:</strong><br/>
-      Start with the app your child uses most.<br/>
-      Lock down privacy and messaging first.<br/>
-      Then check how that app connects to others like Discord, Snapchat, Telegram, livestreams, or gaming chat.
-    </div>
+    <section class="card home-intro home-intro-hero center-card">
+      <div class="home-kicker">Application pages help parents move faster</div>
 
-    <div class="card center-card">
+      <div class="home-mantra">
+        START WITH THE APP THEY USE MOST
+      </div>
+
+      <div class="home-subline" style="max-width:920px;margin:0 auto;">
+        Start with the app your child uses most. Lock down privacy and messaging first. Then check how that app connects to others like Discord, Snapchat, Telegram, livestreams, or gaming chat.
+      </div>
+
+      <div class="warning-box" style="max-width:920px;margin:18px auto 0;">
+        <p class="mb-0"><strong>The app is often only the visible layer.</strong><br/>The real risk usually grows through direct messaging, disappearing chat, private movement, creator influence, livestream contact, or repeated recommendation exposure.</p>
+      </div>
+    </section>
+
+    <section class="card center-card">
       <h2>Highest-priority applications</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn" href="v3-social-discord.html">Discord</a>
@@ -32,23 +125,25 @@
         <a class="btn" href="v3-social-instagram.html">Instagram</a>
         <a class="btn" href="v3-social-tiktok.html">TikTok</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>Why app pages matter</h2>
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Apps often create more direct exposure than parents expect through messaging, comments, livestreams, creator influence, disappearing chat, and algorithm-driven content.</p>
-        <p>Many grooming and manipulation pathways begin in one app and then move to another.</p>
+        <p class="mb-0">Many grooming and manipulation pathways begin in one app and then move to another.</p>
       </div>
-      <div class="danger-line">Private contact usually grows faster once it leaves the original platform</div>
-    </div>
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
+        Private contact usually grows faster once it leaves the original platform
+      </div>
+    </section>
 
-    <div class="callout center-callout">
-      <strong>Child Safety First:</strong><br>
+    <div class="callout center-callout" style="margin-bottom:22px;">
+      <strong>Child safety first:</strong><br>
       Not every app creates the same kind of risk. Some increase stranger contact. Others increase exposure, binge loops, emotional influence, or harmful recommendation patterns.
     </div>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Messaging &amp; private-contact apps</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn secondary" href="v3-social-messenger.html">Messenger</a>
@@ -75,9 +170,9 @@
         Most private messaging does not start inside these apps.<br/>
         It usually begins in games, videos, livestreams, or social feeds — then moves here.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Gaming platforms &amp; in-game chat</h2>
 
       <div class="btn-grid btn-grid-soft">
@@ -90,9 +185,9 @@
       <div class="callout center-callout" style="margin-top:16px;">
         Many grooming pathways begin inside games before moving into private messaging apps.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Social discovery and high-risk youth apps</h2>
 
       <div class="btn-grid btn-grid-soft">
@@ -105,9 +200,9 @@
       <div class="callout center-callout" style="margin-top:16px;">
         Apps built around strangers, fast social discovery, or hidden chat movement should always be treated more cautiously.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>AI chat and companion-style apps</h2>
 
       <div class="btn-grid btn-grid-soft">
@@ -127,9 +222,9 @@
       <div class="callout center-callout" style="margin-top:16px;">
         Some AI tools do not look dangerous at first, but they can still create secrecy, emotional dependence, or private behaviour that parents need to understand early.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Video, livestream, and creator-driven platforms</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn secondary" href="v3-social-youtube.html">YouTube</a>
@@ -141,9 +236,9 @@
       <div class="callout center-callout" style="margin-top:16px;">
         These platforms may not always create direct stranger contact first, but they can still influence a child heavily through repeated content exposure, recommendation drift, creator attachment, binge design, and emotional conditioning.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Streaming &amp; video services</h2>
 
       <div class="btn-grid btn-grid-soft">
@@ -163,9 +258,9 @@
       <div class="callout center-callout" style="margin-top:16px;">
         Streaming apps can shape a child through repeated exposure, autoplay, binge loops, emotional intensity, and the content the platform feeds next.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Video calling &amp; live communication apps</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn secondary" href="v3-video-facetime.html">FaceTime</a>
@@ -179,9 +274,9 @@
         <a class="btn secondary" href="v3-video-zoom.html">Zoom</a>
         <a class="btn secondary" href="v3-videochat.html">Live Video &amp; Streaming Hub</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Supporting directories &amp; safety pages</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn" href="v3-socials.html">Social Media &amp; Chat</a>
@@ -203,16 +298,18 @@
         <a class="btn secondary" href="v3-parental-controls-by-device.html">Parental Controls by Device</a>
         <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>Biggest app risk pattern</h2>
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Most high-risk situations do not stay inside one app.</p>
-        <p>They move from public or visible spaces into more private, more hidden, and harder-to-monitor ones.</p>
+        <p class="mb-0">They move from public or visible spaces into more private, more hidden, and harder-to-monitor ones.</p>
       </div>
-      <div class="danger-line">The risk is not the app itself — it is how fast contact moves into private spaces</div>
-    </div>
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
+        The risk is not the app itself — it is how fast contact moves into private spaces
+      </div>
+    </section>
 
     <div id="footer"></div>
 
