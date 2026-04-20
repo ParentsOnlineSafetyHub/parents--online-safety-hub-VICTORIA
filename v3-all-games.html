@@ -5,26 +5,131 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>All Games Directory • POSH</title>
   <meta name="description" content="Browse all POSH game safety pages for Roblox, Fortnite, Minecraft, VRChat, Call of Duty, GTA, Valorant, Brawl Stars, Clash of Clans and more." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-all-games.html" />
+
+  <meta property="og:title" content="All Games Directory • POSH" />
+  <meta property="og:description" content="Find the game first. Then check the settings, the warning signs, and the wider platform risk around it." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-all-games.html" />
+  <meta property="og:site_name" content="POSH" />
+  <meta property="og:image" content="https://poshaussie.com.au/posh-home.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="All Games Directory • POSH" />
+  <meta name="twitter:description" content="Browse POSH game safety pages and start with the game your child plays most." />
+  <meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png" />
+
   <link rel="stylesheet" href="style.css"/>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "headline":"All Games Directory",
+    "description":"Browse POSH game safety pages for Roblox, Fortnite, Minecraft, VRChat, Call of Duty, GTA, Valorant, Brawl Stars, Clash of Clans and more.",
+    "url":"https://poshaussie.com.au/v3-all-games.html",
+    "publisher":{
+      "@type":"Organization",
+      "name":"POSH",
+      "url":"https://poshaussie.com.au/",
+      "logo":{
+        "@type":"ImageObject",
+        "url":"https://poshaussie.com.au/posh-home.png"
+      }
+    },
+    "mainEntityOfPage":"https://poshaussie.com.au/v3-all-games.html"
+  }
+  </script>
+
+  <style>
+    .btn-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:12px;
+    }
+
+    .btn-grid-soft{
+      align-items:stretch;
+    }
+
+    .callout{
+      padding:16px 18px;
+      border-radius:16px;
+      border:1px solid var(--cardLine);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+    }
+
+    .center-callout{
+      max-width:920px;
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+    }
+
+    .note{
+      color:var(--muted);
+    }
+
+    .home-mantra{
+      font-family:var(--font-heading);
+      font-size:clamp(1.5rem,3.5vw,2.35rem);
+      font-weight:900;
+      line-height:1.1;
+      letter-spacing:-.03em;
+      margin:0 0 14px;
+      color:var(--text);
+    }
+
+    .home-subline{
+      font-size:1.04rem;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+    .list{
+      margin:0 auto;
+      padding-left:20px;
+      text-align:left;
+      max-width:920px;
+      color:var(--muted);
+    }
+
+    .list li{
+      margin-bottom:10px;
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
 
     <div class="brand">POSH</div>
     <h1 class="page-title">All Games Directory</h1>
-    <p class="tagline"><strong>Find the game first.</strong> Then check the settings, the warning signs, and the wider platform risk around it.</p>
+    <p class="tagline">
+      <strong>Find the game first.</strong><br/>
+      Then check the settings, the warning signs, and the wider platform risk around it.
+    </p>
 
     <div id="nav"></div>
 
-    <div class="callout center-callout">
-      <strong>How to use this page:</strong><br/>
-      Start with the game your child plays most.<br/>
-      Check chat, voice, and friend settings first.<br/>
-      Then look at where that game connects to other apps like Discord, Snapchat, or private messaging.
-    </div>
+    <section class="card home-intro home-intro-hero center-card">
+      <div class="home-kicker">Game pages help parents move faster</div>
 
-    <div class="card center-card">
+      <div class="home-mantra">
+        START WITH THE GAME THEY PLAY MOST
+      </div>
+
+      <div class="home-subline" style="max-width:920px;margin:0 auto;">
+        Start with the game your child uses most. Check chat, voice, and friend settings first. Then look at where that game connects to other apps like Discord, Snapchat, or private messaging.
+      </div>
+
+      <div class="warning-box" style="max-width:920px;margin:18px auto 0;">
+        <p class="mb-0"><strong>The game is often only the entry point.</strong><br/>The real risk usually grows through repeated contact, platform messaging, voice chat, private servers, and movement into outside apps.</p>
+      </div>
+    </section>
+
+    <section class="card center-card">
       <h2>Highest-priority games</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn" href="v3-game-roblox.html">Roblox</a>
@@ -32,18 +137,20 @@
         <a class="btn" href="v3-game-minecraft.html">Minecraft</a>
         <a class="btn" href="v3-game-vrchat.html">VRChat</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>Why game pages matter</h2>
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Games are no longer just games. They are often social spaces with chat, parties, servers, friend systems, creator communities, and outside-app movement.</p>
-        <p>The game your child plays most often is usually the best place to start.</p>
+        <p class="mb-0">The game your child plays most often is usually the best place to start.</p>
       </div>
-      <div class="danger-line">Start with the game your child uses, not the game you think matters most</div>
-    </div>
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
+        Start with the game your child uses, not the game you think matters most
+      </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Popular multiplayer &amp; shooter games</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn secondary" href="v3-game-cod.html">Call of Duty</a>
@@ -63,9 +170,9 @@
         <a class="btn secondary" href="v3-game-gta.html">GTA Online</a>
         <a class="btn secondary" href="v3-game-rust.html">Rust</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Sports, racing, and team-play games</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn secondary" href="v3-game-rocketleague.html">Rocket League</a>
@@ -73,9 +180,9 @@
         <a class="btn secondary" href="v3-game-splatoon.html">Splatoon</a>
         <a class="btn secondary" href="v3-game-brawlstars.html">Brawl Stars</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Sandbox, survival, social &amp; creative games</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn secondary" href="v3-game-garrysmod.html">Garry's Mod</a>
@@ -92,11 +199,11 @@
       <div class="callout center-callout" style="margin-top:16px;">
         Many of these games include chat, voice, or community features that allow repeated interaction with the same players.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Games parents should understand by age and risk level</h2>
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 16px;">
         The most important question is not just “What game is it?” It is also “How old is my child, what features are turned on, and how much social exposure comes with it?”
       </p>
 
@@ -106,11 +213,11 @@
         <a class="btn secondary" href="v3-gaming.html">Gaming Safety Hub</a>
         <a class="btn secondary" href="v3-platforms.html">Platforms</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>When a game starts feeling risky</h2>
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 16px;">
         If your child is already hiding chats, getting gifts, moving into private apps, or becoming emotionally attached to someone from a game, move out of general learning and into action quickly.
       </p>
 
@@ -120,9 +227,9 @@
         <a class="btn secondary" href="v3-first-24-hours.html">First 24 Hours</a>
         <a class="btn secondary" href="v3-evidence-reporting.html">Save &amp; Report Properly</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Helpful supporting pages</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn" href="v3-game-risks-by-age.html">Games by Age</a>
@@ -142,22 +249,22 @@
         <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
         <a class="btn secondary" href="v3-start.html">Start Here</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Some game risks should be harder by design</h2>
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 14px;">
         Parents should not have to fight every grooming pathway manually while games leave high-risk features open for children by default.
       </p>
 
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Gifting can be used to build trust and obligation</p>
         <p>Open chat and voice create easy stranger access</p>
         <p>Weak child defaults make private movement easier</p>
-        <p>Safer design could interrupt predictable risk patterns earlier</p>
+        <p class="mb-0">Safer design could interrupt predictable risk patterns earlier</p>
       </div>
 
-      <div class="btn-grid btn-grid-soft">
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
         <a class="btn" href="v3-policy-parent-approval-for-digital-gifting.html">Parent Approval for Digital Gifting</a>
         <a class="btn secondary" href="v3-policy-safer-defaults-for-child-accounts.html">Safer Defaults for Child Accounts</a>
         <a class="btn secondary" href="v3-gaming.html">Gaming Safety</a>
@@ -167,16 +274,18 @@
       <div class="callout center-callout" style="margin-top:16px;">
         If the risk pattern is predictable, safer defaults should not be optional.
       </div>
-    </div>
+    </section>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>Biggest risk pattern in games</h2>
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Most high-risk situations do not stay inside the game.</p>
-        <p>They move from game chat or voice into private apps like Discord, Snapchat, or messaging platforms.</p>
+        <p class="mb-0">They move from game chat or voice into private apps like Discord, Snapchat, or messaging platforms.</p>
       </div>
-      <div class="danger-line">The game is the entry point. Private apps are where risk escalates.</div>
-    </div>
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
+        The game is the entry point. Private apps are where risk escalates.
+      </div>
+    </section>
 
     <div id="footer"></div>
 
