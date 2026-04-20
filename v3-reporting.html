@@ -43,6 +43,94 @@
 }
 </script>
 
+<style>
+  .btn-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+  }
+
+  .btn-grid-soft{
+    align-items:stretch;
+  }
+
+  .pill-row,
+  .badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+  }
+
+  .callout{
+    padding:16px 18px;
+    border-radius:16px;
+    border:1px solid var(--cardLine);
+    background:rgba(255,255,255,.05);
+    color:var(--muted);
+  }
+
+  .center-callout{
+    max-width:920px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+
+  .note{
+    color:var(--muted);
+  }
+
+  .list{
+    margin:0 auto;
+    padding-left:20px;
+    text-align:left;
+    max-width:900px;
+    color:var(--muted);
+  }
+
+  .list li{
+    margin-bottom:10px;
+  }
+
+  .home-mantra{
+    font-family:var(--font-heading);
+    font-size:clamp(1.5rem,3.5vw,2.35rem);
+    font-weight:900;
+    line-height:1.1;
+    letter-spacing:-.03em;
+    margin:0 0 14px;
+    color:var(--text);
+  }
+
+  .home-subline{
+    font-size:1.04rem;
+    line-height:1.75;
+    color:var(--muted);
+  }
+
+  .network-flow{
+    display:grid;
+    gap:12px;
+    justify-items:center;
+    margin-top:16px;
+  }
+
+  .arrow{
+    color:var(--cyan);
+    font-family:var(--font-heading);
+    font-size:1.25rem;
+    font-weight:900;
+    line-height:1;
+  }
+
+  .pill.danger{
+    background:rgba(255,107,129,.12);
+    border-color:rgba(255,107,129,.3);
+    color:#ffd7de;
+  }
+</style>
+
 </head>
 
 <body>
@@ -59,9 +147,7 @@
 
   <div id="nav"></div>
 
-  <!-- 🔥 NEW HERO (MATCHES YOUR OTHER PAGES) -->
-  <div class="card home-intro home-intro-hero center-card">
-
+  <section class="card home-intro home-intro-hero center-card">
     <div class="home-kicker">
       If something feels serious, don’t wait for certainty
     </div>
@@ -70,14 +156,12 @@
       PROTECT. PRESERVE. REPORT.
     </div>
 
-    <div class="home-subline">
-      Most parents hesitate because they are unsure what step comes first.
-      This page removes that confusion and moves you into the correct path quickly.
+    <div class="home-subline" style="max-width:920px;margin:0 auto;">
+      Most parents hesitate because they are unsure what step comes first. This page removes that confusion and moves you into the correct path quickly.
     </div>
 
-    <div class="callout home-callout">
-      <strong>You do not need perfect proof.</strong><br/>
-      You need the next correct step.
+    <div class="warning-box" style="max-width:920px;margin:18px auto 0;">
+      <p class="mb-0"><strong>You do not need perfect proof.</strong><br/>You need the next correct step.</p>
     </div>
 
     <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
@@ -86,18 +170,17 @@
       <a class="btn secondary" href="v3-evidence-reporting.html">Save Evidence</a>
       <a class="btn secondary" href="#state-region">Choose Region</a>
     </div>
-
-  </div>
+  </section>
 
   <div class="pill-row" style="margin:16px 0;">
-    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">REPORTING HUB</div>
+    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">Reporting Hub</div>
     <div class="pill">Protect First</div>
     <div class="pill">Preserve Evidence</div>
     <div class="pill">Choose Region</div>
     <div class="pill">Get Help</div>
   </div>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>Which state sounds most like you right now?</h2>
 
     <div class="btn-grid btn-grid-soft">
@@ -110,17 +193,17 @@
     <div class="callout center-callout" style="margin-top:14px;">
       You don’t need to solve everything — just follow the correct order.
     </div>
-  </div>
+  </section>
 
-  <!-- URGENT -->
-  <div class="card hero-warning center-card" id="state-urgent">
+  <section class="card hero-warning center-card" id="state-urgent">
     <h2>Need help right now?</h2>
 
-    <div class="rule-box">
-      <p>Sexual messages, threats, blackmail, or meeting requests = immediate action</p>
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
+      <p>Sexual messages, threats, blackmail, or meeting requests need immediate action.</p>
+      <p class="mb-0">If the situation feels active, move out of research mode and into response mode now.</p>
     </div>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       Do not wait. Move straight into action.
     </div>
 
@@ -130,10 +213,9 @@
       <a class="btn secondary" href="v3-sextortion.html">Sextortion Help</a>
       <a class="btn secondary" href="v3-reporting-australia.html">Report (Australia)</a>
     </div>
-  </div>
+  </section>
 
-  <!-- ORDER -->
-  <div class="card network center-card">
+  <section class="card center-card">
     <h2>The correct order</h2>
 
     <div class="network-flow">
@@ -149,54 +231,51 @@
     </div>
 
     <div class="callout center-callout" style="margin-top:16px;">
-      Changing the order can make the situation harder.
+      Changing the order can make the situation harder, especially if evidence is lost or panic takes over.
     </div>
-  </div>
+  </section>
 
-  <!-- STEP 1 -->
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>Step 1 — Protect the child</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:900px;margin:0 auto 14px;">
       Stay calm. Keep them safe. Reduce contact. Do not blame them.
     </p>
 
-    <div class="callout center-callout">
-      Safety comes before everything else.
+    <div class="highlight-box" style="max-width:920px;margin:0 auto;">
+      <p class="mb-0">Safety comes before everything else.</p>
     </div>
 
-    <div class="btn-grid btn-grid-soft">
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
       <a class="btn" href="v3-first-24-hours.html">First 24 Hours</a>
       <a class="btn secondary" href="v3-parent-scripts.html">What To Say</a>
       <a class="btn secondary" href="v3-how-to-check-a-device-without-causing-panic.html">Check Device</a>
       <a class="btn secondary" href="v3-when-your-child-wont-talk.html">If They Won’t Talk</a>
     </div>
-  </div>
+  </section>
 
-  <!-- STEP 2 -->
-  <div class="card center-card" id="state-preserve">
+  <section class="card center-card" id="state-preserve">
     <h2>Step 2 — Preserve evidence</h2>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>Screenshots</p>
       <p>Usernames</p>
       <p>Links</p>
-      <p>Dates & times</p>
-      <p>Threats / messages</p>
+      <p>Dates &amp; times</p>
+      <p class="mb-0">Threats / messages</p>
     </div>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       Do not delete anything yet.
     </div>
 
-    <div class="btn-grid btn-grid-soft">
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
       <a class="btn" href="v3-evidence-reporting.html">How to Save Evidence</a>
       <a class="btn secondary" href="v3-first-24-hours.html">First 24 Hours</a>
     </div>
-  </div>
+  </section>
 
-  <!-- STEP 3 -->
-  <div class="card center-card" id="state-region">
+  <section class="card center-card" id="state-region">
     <h2>Step 3 — Choose your region</h2>
 
     <div class="btn-grid btn-grid-soft">
@@ -206,61 +285,58 @@
       <a class="btn secondary" href="v3-reporting-europe.html">Europe</a>
     </div>
 
-    <div class="callout center-callout">
-      Use your country page for the correct reporting process.
+    <div class="callout center-callout" style="margin-top:14px;">
+      Use your country page for the correct reporting process, support services, and escalation path.
     </div>
-  </div>
+  </section>
 
-  <!-- PLATFORM -->
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>Report on the platform too</h2>
 
     <ul class="list">
       <li>Report inside the app</li>
-      <li>Block after saving evidence</li>
-      <li>Keep report confirmation</li>
+      <li>Block only after saving evidence</li>
+      <li>Keep screenshots or confirmation of the platform report</li>
     </ul>
 
-    <div class="btn-grid btn-grid-soft">
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
       <a class="btn secondary" href="v3-social-discord.html">Discord</a>
       <a class="btn secondary" href="v3-social-snapchat.html">Snapchat</a>
       <a class="btn secondary" href="v3-social-instagram.html">Instagram</a>
       <a class="btn secondary" href="v3-social-tiktok.html">TikTok</a>
     </div>
-  </div>
+  </section>
 
-  <!-- AFTER -->
-  <div class="card center-card" id="state-after">
+  <section class="card center-card" id="state-after">
     <h2>After reporting</h2>
 
     <ul class="list">
       <li>Reassure your child</li>
-      <li>Monitor behaviour</li>
-      <li>Adjust device safety</li>
-      <li>Keep communication open</li>
+      <li>Monitor behaviour and emotional changes</li>
+      <li>Adjust device safety and privacy settings</li>
+      <li>Keep communication open instead of fear-based</li>
     </ul>
 
-    <div class="btn-grid btn-grid-soft">
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
       <a class="btn" href="v3-device-controls.html">Device Safety</a>
       <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
       <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
       <a class="btn secondary" href="v3-how-to-rebuild-trust-after-an-online-scare.html">Rebuild Trust</a>
     </div>
-  </div>
+  </section>
 
-  <!-- FINAL -->
-  <div class="card hero-warning center-card">
+  <section class="card hero-warning center-card">
     <h2>Key takeaway</h2>
 
-    <div class="rule-box">
-      <p>Most parents freeze because they don’t know the order.</p>
-      <p>This page gives you that order.</p>
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
+      <p>Most parents freeze because they do not know the order.</p>
+      <p class="mb-0">This page gives you that order.</p>
     </div>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       Protect → Preserve → Report
     </div>
-  </div>
+  </section>
 
   <div id="footer"></div>
 
