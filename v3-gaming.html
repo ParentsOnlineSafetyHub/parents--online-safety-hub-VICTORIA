@@ -5,39 +5,202 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Gaming Safety • POSH</title>
   <meta name="description" content="Gaming safety for parents. Learn how games become social environments, how contact escalates into private apps, and what settings, warning signs, and next steps matter most." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-gaming.html" />
+
+  <meta property="og:title" content="Gaming Safety • POSH" />
+  <meta property="og:description" content="Learn how games become social environments, how contact escalates into private apps, and what settings, warning signs, and next steps matter most." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-gaming.html" />
+  <meta property="og:site_name" content="POSH" />
+  <meta property="og:image" content="https://poshaussie.com.au/posh-home.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gaming Safety • POSH" />
+  <meta name="twitter:description" content="Gaming safety for parents. Lock the platform first, then the game, then watch where contact moves." />
+  <meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png" />
+
   <link rel="stylesheet" href="style.css"/>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Gaming Safety",
+    "description":"Gaming safety for parents. Learn how games become social environments, how contact escalates into private apps, and what settings, warning signs, and next steps matter most.",
+    "url":"https://poshaussie.com.au/v3-gaming.html",
+    "publisher":{
+      "@type":"Organization",
+      "name":"POSH",
+      "url":"https://poshaussie.com.au/",
+      "logo":{
+        "@type":"ImageObject",
+        "url":"https://poshaussie.com.au/posh-home.png"
+      }
+    },
+    "mainEntityOfPage":"https://poshaussie.com.au/v3-gaming.html"
+  }
+  </script>
+
+  <style>
+    .btn-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:12px;
+    }
+
+    .btn-grid-soft{
+      align-items:stretch;
+    }
+
+    .pill-row,
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+    }
+
+    .callout{
+      padding:16px 18px;
+      border-radius:16px;
+      border:1px solid var(--cardLine);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+    }
+
+    .center-callout{
+      max-width:920px;
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+    }
+
+    .note{
+      color:var(--muted);
+    }
+
+    .small{
+      font-size:.95rem;
+      color:var(--soft);
+    }
+
+    .list{
+      margin:0 auto;
+      padding-left:20px;
+      text-align:left;
+      max-width:920px;
+      color:var(--muted);
+    }
+
+    .list li{
+      margin-bottom:10px;
+    }
+
+    .home-mantra{
+      font-family:var(--font-heading);
+      font-size:clamp(1.5rem,3.5vw,2.35rem);
+      font-weight:900;
+      line-height:1.1;
+      letter-spacing:-.03em;
+      margin:0 0 14px;
+      color:var(--text);
+    }
+
+    .home-subline{
+      font-size:1.04rem;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+    .network-flow{
+      display:grid;
+      gap:12px;
+      justify-items:center;
+      margin-top:16px;
+    }
+
+    .arrow{
+      color:var(--cyan);
+      font-family:var(--font-heading);
+      font-size:1.25rem;
+      font-weight:900;
+      line-height:1;
+    }
+
+    .pill.danger{
+      background:rgba(255,107,129,.12);
+      border-color:rgba(255,107,129,.3);
+      color:#ffd7de;
+    }
+
+    .media-card{
+      max-width:960px;
+      margin:0 auto;
+      padding:18px;
+      border:1px solid var(--cardLine);
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+      text-align:left;
+    }
+
+    .media-title{
+      margin-bottom:10px;
+      text-align:center;
+    }
+
+    .embed{
+      margin-top:14px;
+      border-radius:16px;
+      overflow:hidden;
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
 
     <div class="brand">POSH</div>
     <h1 class="page-title">Gaming Safety</h1>
-    <p class="tagline"><strong>Start with the device or platform first.</strong> Then open the game your child plays and lock the settings that matter.</p>
+    <p class="tagline">
+      <strong>Start with the device or platform first.</strong><br/>
+      Then open the game your child plays and lock the settings that matter.
+    </p>
 
     <div id="nav"></div>
 
-    <div class="callout center-callout">
-      <strong>How to use this page:</strong><br>
-      Start with the platform your child uses, then the game they play most, then check where contact moves after the game itself.<br/>
-      The biggest gaming risks usually begin when normal play turns into repeated private contact.
-    </div>
+    <section class="card home-intro home-intro-hero center-card">
+      <div class="home-kicker">Gaming is a social environment, not just entertainment</div>
 
-    <div class="card hero-warning center-card">
-      <h2>Why gaming safety matters</h2>
-      <div class="rule-box">
-        <p>Games are social spaces, not just entertainment. Children can talk to strangers through text, voice, parties, servers, or friend systems.</p>
-        <p>Many grooming situations start through normal in-game contact before moving to private apps.</p>
+      <div class="home-mantra">
+        LOCK THE PLATFORM FIRST. THEN THE GAME. THEN WATCH THE CONTACT.
       </div>
-      <div class="danger-line">If someone asks a child to move from a game to another app, treat that as a red flag</div>
-    </div>
 
-    <div class="callout center-callout">
-      <strong>Child Safety First:</strong><br>
+      <div class="home-subline" style="max-width:920px;margin:0 auto;">
+        Start with the platform your child uses, then the game they play most, then check where contact moves after the game itself. The biggest gaming risks usually begin when normal play turns into repeated private contact.
+      </div>
+
+      <div class="warning-box" style="max-width:920px;margin:18px auto 0;">
+        <p class="mb-0"><strong>The biggest gaming risks rarely look serious at first.</strong><br/>They often begin with normal play, repeated contact, and then movement into more private spaces.</p>
+      </div>
+    </section>
+
+    <section class="card hero-warning center-card">
+      <h2>Why gaming safety matters</h2>
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
+        <p>Games are social spaces, not just entertainment. Children can talk to strangers through text, voice, parties, servers, or friend systems.</p>
+        <p class="mb-0">Many grooming situations start through normal in-game contact before moving to private apps.</p>
+      </div>
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
+        If someone asks a child to move from a game to another app, treat that as a red flag
+      </div>
+    </section>
+
+    <div class="callout center-callout" style="margin-bottom:22px;">
+      <strong>Child safety first:</strong><br>
       Gaming is only one part of the online safety picture. Exposure can also happen through social apps, livestreams, private chats, algorithms, and digital communities linked to games.
     </div>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Choose the platform your child uses</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn" href="v3-platform-pc.html">PC</a>
@@ -50,9 +213,9 @@
       <div class="callout center-callout" style="margin-top:14px;">
         Device first. Platform second. Game third. Outside-app movement fourth.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Common high-risk games</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn secondary" href="v3-game-roblox.html">Roblox</a>
@@ -66,9 +229,9 @@
         <a class="btn secondary" href="v3-all-games.html">All Games Directory</a>
         <a class="btn secondary" href="v3-game-risks-by-age.html">Games by Age</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>What parents should understand first</h2>
 
       <ul class="list">
@@ -78,15 +241,15 @@
         <li>One game can quickly connect to platform messages, Discord servers, livestreams, or private chats</li>
       </ul>
 
-      <div class="callout center-callout">
+      <div class="callout center-callout" style="margin-top:14px;">
         The real question is not just “What game are they playing?” It is “Who can reach them through that game, and where can that contact move next?”
       </div>
-    </div>
+    </section>
 
-    <div class="card network center-card">
+    <section class="card center-card">
       <h2>How game contact usually escalates</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:860px;margin:0 auto;">
         Most unsafe contact begins with something that looks normal.
       </p>
 
@@ -105,9 +268,9 @@
       <div class="callout center-callout" style="margin-top:16px;">
         Once contact moves away from the game itself, the risk usually increases.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>What makes a game higher risk</h2>
 
       <ul class="list">
@@ -119,54 +282,56 @@
         <li>Rewards, gifting, or status systems that can build trust quickly</li>
       </ul>
 
-      <div class="callout center-callout">
+      <div class="callout center-callout" style="margin-top:14px;">
         A child-friendly look does not remove social exposure.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>What parents should do first</h2>
 
-      <p class="note"><strong>1)</strong> Check the device and platform controls before focusing only on the game</p>
-      <p class="note"><strong>2)</strong> Ask who your child plays with most</p>
-      <p class="note"><strong>3)</strong> Check whether voice chat, friend requests, or party invites are active</p>
-      <p class="note"><strong>4)</strong> Set a clear rule: no moving game contact into private apps without parent knowledge</p>
-      <p class="note"><strong>5)</strong> Watch for repeated contact with the same player, squad, or server group</p>
+      <ul class="list">
+        <li><strong>1)</strong> Check the device and platform controls before focusing only on the game</li>
+        <li><strong>2)</strong> Ask who your child plays with most</li>
+        <li><strong>3)</strong> Check whether voice chat, friend requests, or party invites are active</li>
+        <li><strong>4)</strong> Set a clear rule: no moving game contact into private apps without parent knowledge</li>
+        <li><strong>5)</strong> Watch for repeated contact with the same player, squad, or server group</li>
+      </ul>
 
-      <div class="callout center-callout">
+      <div class="callout center-callout" style="margin-top:14px;">
         Ask about the people, not just the game.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Best house rule for gaming</h2>
 
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>No moving from games into Discord, Snapchat, Instagram, or private messaging apps without parent approval.</p>
         <p>No sharing age, school, suburb, phone number, socials, or personal photos with online players.</p>
-        <p>No private parties, private servers, or invite-only groups with strangers unless a parent knows exactly what they are.</p>
+        <p class="mb-0">No private parties, private servers, or invite-only groups with strangers unless a parent knows exactly what they are.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Why game design matters too</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 12px;">
         Parents should not have to fight every risk one setting at a time while games keep high-risk features open by default for children.
       </p>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 14px;">
         Some gaming risks are not just parenting issues. They are design issues.
       </p>
 
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Open gifting systems can be used to build trust fast</p>
         <p>Wide-open chat features increase stranger access</p>
         <p>Child accounts are often not protected strongly enough by default</p>
-        <p>Safer default settings could interrupt common grooming patterns much earlier</p>
+        <p class="mb-0">Safer default settings could interrupt common grooming patterns much earlier</p>
       </div>
 
-      <div class="btn-grid btn-grid-soft">
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
         <a class="btn" href="v3-policy-parent-approval-for-digital-gifting.html">Parent Approval for Digital Gifting</a>
         <a class="btn secondary" href="v3-policy-safer-defaults-for-child-accounts.html">Safer Defaults for Child Accounts</a>
         <a class="btn secondary" href="v3-playbook.html">Predator Playbook</a>
@@ -176,19 +341,19 @@
       <div class="callout center-callout" style="margin-top:14px;">
         If the pattern is predictable, design should not keep leaving the same door open.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Real investigations: what parents should know beyond Roblox</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 14px;">
         Parents often hear about Roblox first, but many other games and chat spaces create similar risks. This chapter helps widen that awareness.
       </p>
 
       <div class="media-card">
         <h3 class="media-title">The Shawn Ryan Show</h3>
 
-        <p class="note">
+        <p class="note" style="text-align:center;">
           This chapter discusses what other games and platforms parents should be aware of, including Discord and other spaces where children can be approached online.
         </p>
 
@@ -212,12 +377,12 @@
           <a class="btn secondary" href="v3-game-roblox.html">Roblox Safety</a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Next safety steps</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 16px;">
         Don’t stop at the game itself. Check the platform, the linked chat apps, the warning signs, and the wider child safety picture too.
       </p>
 
@@ -241,17 +406,17 @@
         <a class="btn secondary" href="index.html">Back to Home Page</a>
         <a class="btn secondary" href="v3-downloads.html">All PDF Downloads</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>Help protect another child</h2>
 
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Many parents still think games are just entertainment, not social environments where strangers can build contact.</p>
-        <p>Sharing awareness early can help another family reduce risk sooner.</p>
+        <p class="mb-0">Sharing awareness early can help another family reduce risk sooner.</p>
       </div>
 
-      <div class="danger-line">
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
         One parent sharing this can protect another child
       </div>
 
@@ -261,7 +426,7 @@
         <a class="btn secondary" href="https://twitter.com/intent/tweet?url=https://poshaussie.com.au/v3-gaming.html" target="_blank" rel="noopener">Share on X</a>
         <a class="btn secondary" href="https://www.linkedin.com/sharing/share-offsite/?url=https://poshaussie.com.au/v3-gaming.html" target="_blank" rel="noopener">Share on LinkedIn</a>
       </div>
-    </div>
+    </section>
 
     <div id="footer"></div>
 
