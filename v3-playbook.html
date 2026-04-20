@@ -12,7 +12,131 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://poshaussie.com.au/v3-playbook.html" />
 <meta property="og:site_name" content="POSH" />
+<meta property="og:image" content="https://poshaussie.com.au/posh-home.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Predator Playbook • POSH" />
+<meta name="twitter:description" content="Understand the grooming escalation path earlier so parents can interrupt the pattern before secrecy, dependency, or control builds." />
+<meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png" />
+
 <link rel="stylesheet" href="style.css"/>
+
+<style>
+  .btn-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+  }
+
+  .btn-grid-soft{
+    align-items:stretch;
+  }
+
+  .btn-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+  }
+
+  .pill-row,
+  .badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+  }
+
+  .callout{
+    padding:16px 18px;
+    border-radius:16px;
+    border:1px solid var(--cardLine);
+    background:rgba(255,255,255,.05);
+    color:var(--muted);
+  }
+
+  .center-callout{
+    max-width:920px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+
+  .note{
+    color:var(--muted);
+  }
+
+  .list{
+    margin:0 auto;
+    padding-left:20px;
+    text-align:left;
+    max-width:920px;
+    color:var(--muted);
+  }
+
+  .list li{
+    margin-bottom:10px;
+  }
+
+  .home-mantra{
+    font-family:var(--font-heading);
+    font-size:clamp(1.5rem,3.5vw,2.35rem);
+    font-weight:900;
+    line-height:1.1;
+    letter-spacing:-.03em;
+    margin:0 0 14px;
+    color:var(--text);
+  }
+
+  .home-subline{
+    font-size:1.04rem;
+    line-height:1.75;
+    color:var(--muted);
+  }
+
+  .playbook-flow{
+    display:grid;
+    gap:12px;
+    justify-items:center;
+    margin-top:18px;
+  }
+
+  .play-step{
+    width:min(100%,860px);
+    padding:18px;
+    border-radius:18px;
+    border:1px solid var(--cardLine);
+    background:rgba(255,255,255,.045);
+    text-align:center;
+  }
+
+  .play-step.danger{
+    border-color:rgba(255,107,129,.3);
+    background:rgba(255,107,129,.08);
+  }
+
+  .play-number{
+    width:42px;
+    height:42px;
+    margin:0 auto 12px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--font-heading);
+    font-weight:900;
+    font-size:1rem;
+    background:rgba(57,176,255,.12);
+    color:var(--blue);
+    border:1px solid rgba(57,176,255,.24);
+  }
+
+  .play-arrow{
+    color:var(--cyan);
+    font-family:var(--font-heading);
+    font-size:1.3rem;
+    font-weight:900;
+    line-height:1;
+  }
+</style>
 </head>
 
 <body>
@@ -30,45 +154,40 @@
   <div id="nav"></div>
 
   <div class="pill-row" style="margin:0 0 16px;">
-    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">HIGH RISK</div>
+    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">High Risk</div>
     <div class="pill">Grooming Pattern</div>
     <div class="pill">Secrecy</div>
     <div class="pill">Escalation</div>
     <div class="pill">Private Contact</div>
   </div>
 
-  <p class="note">
+  <p class="note" style="max-width:940px;margin:0 auto 20px;text-align:center;">
     Grooming usually does not start with something obvious. It often starts with attention, kindness, jokes, gaming, gifts, private messages, emotional support, or someone seeming safe and helpful. This page shows the common escalation path so parents can recognise it earlier and break the pattern before it deepens.
   </p>
 
-  <div class="card home-intro home-intro-hero">
-    <div class="home-kicker">
-      This is how it usually happens
-    </div>
+  <section class="card home-intro home-intro-hero center-card">
+    <div class="home-kicker">This is how it usually happens</div>
 
-    <div class="home-mantra">
-      GROOMING IS A PROCESS — NOT A MOMENT
-    </div>
+    <div class="home-mantra">GROOMING IS A PROCESS — NOT A MOMENT</div>
 
-    <div class="home-subline">
+    <div class="home-subline" style="max-width:920px;margin:0 auto;">
       It rarely starts obvious. It starts normal, friendly, helpful, supportive, funny, and easy to dismiss — then slowly moves into private spaces, emotional weight, secrecy, and control.
     </div>
 
-    <div class="callout home-callout">
-      <strong>The biggest shift to watch:</strong><br/>
-      Public contact → private contact → emotionally important contact → secret contact
+    <div class="warning-box" style="max-width:920px;margin:18px auto 0;">
+      <p class="mb-0"><strong>The biggest shift to watch:</strong><br/>Public contact → private contact → emotionally important contact → secret contact</p>
     </div>
-  </div>
+  </section>
 
-  <div class="card hero-warning center-card">
+  <section class="card hero-warning center-card">
     <h2>The core grooming pattern</h2>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>Grooming happens step by step, not all at once.</p>
-      <p>Each step reduces visibility and increases trust, emotional pull, and control.</p>
+      <p class="mb-0">Each step reduces visibility and increases trust, emotional pull, and control.</p>
     </div>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       Move off-platform = escalation. Secrecy around the move = stronger escalation.
     </div>
 
@@ -78,14 +197,14 @@
       <a class="btn secondary" href="v3-how-predators-contact-kids-online.html">How Predators Make Contact</a>
       <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
     </div>
-  </div>
+  </section>
 
-  <div class="callout center-callout">
+  <div class="callout center-callout" style="margin-bottom:22px;">
     <strong>Important:</strong><br/>
     Grooming usually does not stay inside one app. It moves across games, comments, chats, DMs, voice calls, private apps, and hidden spaces — and in some cases can progress toward real-world access.
   </div>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>Typical escalation pattern</h2>
 
     <div class="playbook-flow">
@@ -134,7 +253,7 @@
         <div class="play-number">5</div>
         <h3>Secrecy &amp; Dependency</h3>
         <p class="note" style="text-align:center;">
-          “Don’t tell anyone.” “They won’t understand.” “This is private.” Child starts protecting the relationship.
+          “Don’t tell anyone.” “They won’t understand.” “This is private.” The child starts protecting the relationship.
         </p>
       </div>
 
@@ -153,24 +272,24 @@
     <div class="callout center-callout" style="margin-top:16px;">
       The earlier you interrupt the move from public space into emotionally important private space, the easier it usually is to stop the pattern.
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>How the pattern feels to a child</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:920px;margin:0 auto 14px;">
       To adults, the pattern may look suspicious. To a child, it may feel like friendship, comfort, support, loyalty, validation, gifts, attention, belonging, or someone who finally understands them.
     </p>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>“They’re just being nice.”</p>
       <p>“They understand me better than other people.”</p>
       <p>“They told me not to tell because people would make it weird.”</p>
       <p>“They said this is private, not bad.”</p>
-      <p>“They said I can trust them more than other people.”</p>
+      <p class="mb-0">“They said I can trust them more than other people.”</p>
     </div>
 
-    <div class="callout center-callout">
+    <div class="callout center-callout" style="margin-top:14px;">
       Children often do not recognise grooming while it is happening. Confusion is common. Emotional attachment makes it harder.
     </div>
 
@@ -180,9 +299,9 @@
       <a class="btn secondary" href="v3-when-a-child-becomes-dependent-on-someone-online.html">Online Dependency</a>
       <a class="btn secondary" href="v3-when-online-contact-becomes-emotional-dependency.html">Emotional Dependency</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>What predators are trying to achieve at each stage</h2>
 
     <ul class="list">
@@ -194,12 +313,12 @@
       <li><strong>Control / exploitation:</strong> use the trust and privacy already built to pressure, manipulate, or harm.</li>
     </ul>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       Predators do not need to rush if the system is already giving them access.
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>What parents should notice early</h2>
 
     <ul class="list">
@@ -211,7 +330,7 @@
       <li><strong>Stage 6:</strong> pressure, fear, threats, sexual content, blackmail, or isolation</li>
     </ul>
 
-    <div class="callout center-callout">
+    <div class="callout center-callout" style="margin-top:14px;">
       You do not need every sign before taking safer action. Early interruption is safer than late certainty.
     </div>
 
@@ -221,16 +340,16 @@
       <a class="btn secondary" href="v3-secret-accounts.html">Hidden Accounts</a>
       <a class="btn secondary" href="v3-double-life-online.html">Double Life Online</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>Common movement points parents miss</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:920px;margin:0 auto;">
       Many risky situations do not stay where they started. The pattern usually shifts into lower-visibility spaces.
     </p>
 
-    <div class="badges">
+    <div class="badges" style="margin-top:16px;">
       <div class="badge">Game Chat</div>
       <div class="badge">Discord</div>
       <div class="badge">Snapchat</div>
@@ -250,12 +369,12 @@
       <a class="btn secondary" href="v3-social-telegram.html">Telegram</a>
       <a class="btn secondary" href="v3-social-whatsapp.html">WhatsApp</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>When a child cannot explain what’s happening</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:920px;margin:0 auto 14px;">
       Children often do not have the right words. They may only seem confused, distant, guilty, pressured, emotionally attached, defensive, or unable to explain why one person matters so much.
     </p>
 
@@ -269,21 +388,21 @@
       <a class="btn secondary" href="v3-when-your-child-wont-talk.html">When Your Child Won’t Talk</a>
       <a class="btn secondary" href="v3-what-now.html">What To Do Now</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>Trust interruption matters too</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:920px;margin:0 auto 14px;">
       By the time a situation looks obviously dangerous, trust may already be established. That is why early, calm interruption matters more than waiting for certainty.
     </p>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>Ask calm questions</p>
       <p>Check devices without panic</p>
       <p>Do not shame the child</p>
       <p>Reduce contact and preserve evidence if needed</p>
-      <p>Rebuild safe emotional support around the child</p>
+      <p class="mb-0">Rebuild safe emotional support around the child</p>
     </div>
 
     <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
@@ -292,9 +411,9 @@
       <a class="btn secondary" href="v3-what-to-say-if-your-child-opens-up.html">If Your Child Opens Up</a>
       <a class="btn secondary" href="v3-mindset.html">Parent Mindset</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>How parents break the pattern earlier</h2>
 
     <ul class="list">
@@ -313,23 +432,23 @@
       <a class="btn secondary" href="v3-parental-controls-by-device.html">Parental Controls</a>
       <a class="btn secondary" href="v3-safety-score.html">Safety Check</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>This pattern is predictable</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:920px;margin:0 auto 14px;">
       Parents should not have to fight this step-by-step alone. Many unsafe systems still make escalation too easy.
     </p>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>Open gifting systems build trust quickly</p>
       <p>Open DMs increase stranger access</p>
       <p>Weak defaults allow easy escalation</p>
-      <p>Safer defaults could interrupt this earlier</p>
+      <p class="mb-0">Safer defaults could interrupt this earlier</p>
     </div>
 
-    <div class="btn-grid btn-grid-soft">
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
       <a class="btn" href="v3-policy-parent-approval-for-digital-gifting.html">Digital Gifting Policy</a>
       <a class="btn secondary" href="v3-policy-safer-defaults-for-child-accounts.html">Safer Defaults</a>
       <a class="btn secondary" href="v3-gaming.html">Gaming Safety</a>
@@ -339,34 +458,34 @@
     <div class="callout center-callout" style="margin-top:14px;">
       If the pattern is predictable, safer design should not be optional.
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>Understand the full pattern</h2>
     <div class="btn-row">
-      <a class="btn primary" href="v3-how-online-relationships-change-kids-behaviour.html">How Online Relationships Change Behaviour</a>
+      <a class="btn" href="v3-how-online-relationships-change-kids-behaviour.html">How Online Relationships Change Behaviour</a>
       <a class="btn secondary" href="v3-when-online-contact-becomes-emotional-dependency.html">Emotional Dependency</a>
       <a class="btn secondary" href="v3-how-manipulative-groups-recruit-children-online.html">Manipulative Groups</a>
       <a class="btn secondary" href="v3-how-attention-is-used-to-control-behaviour.html">Attention = Control</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card hero-warning center-card">
+  <section class="card hero-warning center-card">
     <h2>If the pattern is already happening</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:860px;margin:0 auto 14px;">
       Move out of awareness mode and into action quickly.
     </p>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>Stay calm</p>
       <p>Protect the child</p>
       <p>Preserve evidence</p>
       <p>Reduce further private contact</p>
-      <p>Report properly if needed</p>
+      <p class="mb-0">Report properly if needed</p>
     </div>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       If it has moved into secrecy, pressure, threats, dependency, or sexual content, act early
     </div>
 
@@ -376,9 +495,9 @@
       <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
       <a class="btn secondary" href="v3-sextortion.html">Sextortion</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>Next steps</h2>
 
     <div class="btn-grid btn-grid-soft">
@@ -394,27 +513,27 @@
       <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
       <a class="btn secondary" href="v3-start.html">Start Here</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card hero-warning center-card">
+  <section class="card hero-warning center-card">
     <h2>Help protect another child</h2>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>Many parents do not see this pattern until it is already advanced.</p>
-      <p>Early awareness can interrupt the path before harm occurs.</p>
+      <p class="mb-0">Early awareness can interrupt the path before harm occurs.</p>
     </div>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       One share can interrupt the pattern early
     </div>
 
-    <div class="btn-grid btn-grid-soft">
+    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
       <a class="btn" href="v3-share.html">Share POSH</a>
       <a class="btn secondary" href="https://www.facebook.com/sharer/sharer.php?u=https://poshaussie.com.au/v3-playbook.html" target="_blank" rel="noopener">Facebook</a>
       <a class="btn secondary" href="https://twitter.com/intent/tweet?url=https://poshaussie.com.au/v3-playbook.html" target="_blank" rel="noopener">X</a>
       <a class="btn secondary" href="https://www.linkedin.com/sharing/share-offsite/?url=https://poshaussie.com.au/v3-playbook.html" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-  </div>
+  </section>
 
   <div id="footer"></div>
 
