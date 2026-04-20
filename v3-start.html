@@ -17,6 +17,195 @@
 <meta property="og:site_name" content="POSH" />
 
 <link rel="stylesheet" href="style.css"/>
+
+<style>
+  .start-hero-copy{
+    max-width:920px;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  .start-mantra{
+    font-family:var(--font-heading);
+    font-size:clamp(1.45rem,3.5vw,2.2rem);
+    font-weight:900;
+    line-height:1.15;
+    letter-spacing:-.03em;
+    margin:0 0 14px;
+    color:var(--text);
+  }
+
+  .btn-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+  }
+
+  .btn-grid-soft{
+    align-items:stretch;
+  }
+
+  .callout{
+    padding:16px 18px;
+    border-radius:16px;
+    border:1px solid var(--cardLine);
+    background:rgba(255,255,255,.05);
+    color:var(--muted);
+  }
+
+  .center-callout{
+    max-width:920px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+
+  .note{
+    color:var(--muted);
+  }
+
+  .small{
+    font-size:.95rem;
+    color:var(--soft);
+  }
+
+  .q{
+    text-align:left;
+    margin:0 0 16px;
+    padding:18px;
+    border:1px solid var(--cardLine);
+    border-radius:18px;
+    background:rgba(255,255,255,.04);
+  }
+
+  .q:last-of-type{
+    margin-bottom:0;
+  }
+
+  .q-title{
+    font-family:var(--font-heading);
+    font-size:1.04rem;
+    font-weight:800;
+    color:var(--text);
+    margin:0 0 12px;
+  }
+
+  .q-options{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:10px;
+  }
+
+  .q-options label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-height:48px;
+    padding:12px 14px;
+    border:1px solid var(--cardLine);
+    border-radius:14px;
+    background:rgba(255,255,255,.035);
+    color:var(--text);
+    font-weight:600;
+    cursor:pointer;
+    transition:.22s ease;
+  }
+
+  .q-options label:hover{
+    background:rgba(57,176,255,.08);
+    border-color:rgba(57,176,255,.24);
+    transform:translateY(-1px);
+  }
+
+  .q-options input[type="radio"]{
+    width:18px;
+    height:18px;
+    margin:0;
+    flex:0 0 18px;
+    accent-color:#39b0ff;
+  }
+
+  .score-wrap{
+    display:grid;
+    grid-template-columns:minmax(220px,280px) 1fr;
+    gap:20px;
+    align-items:center;
+    margin-top:18px;
+  }
+
+  .score-ring{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:220px;
+    padding:24px;
+    border-radius:24px;
+    border:1px solid var(--goldLine);
+    background:linear-gradient(180deg,rgba(217,182,90,.16),rgba(217,182,90,.05));
+    box-shadow:var(--shadowSoft);
+  }
+
+  .score-num{
+    font-family:var(--font-heading);
+    font-size:clamp(2.5rem,7vw,4.2rem);
+    line-height:1;
+    font-weight:900;
+    color:var(--gold);
+  }
+
+  .score-label{
+    margin-top:6px;
+    font-size:.92rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--soft);
+  }
+
+  .score-text{
+    text-align:left;
+  }
+
+  .score-grade{
+    font-family:var(--font-heading);
+    font-size:clamp(1.3rem,3vw,1.9rem);
+    font-weight:800;
+    color:var(--text);
+    margin-bottom:10px;
+  }
+
+  .badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .badge.gold{
+    background:rgba(217,182,90,.14);
+    border-color:rgba(217,182,90,.34);
+    color:#ffe9ab;
+  }
+
+  .badge.danger{
+    background:rgba(255,107,129,.12);
+    border-color:rgba(255,107,129,.3);
+    color:#ffd7de;
+  }
+
+  @media (max-width:700px){
+    .score-wrap{
+      grid-template-columns:1fr;
+    }
+
+    .score-text{
+      text-align:center;
+    }
+
+    .badges{
+      justify-content:center;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -33,47 +222,46 @@
 
   <div id="nav"></div>
 
-  <div class="card home-intro home-intro-hero">
+  <section class="card home-intro home-intro-hero center-card">
     <div class="home-kicker">Quick guidance for overwhelmed parents</div>
 
-    <div class="home-mantra">
-      START CALM. ACT EARLY. PROTECT BETTER.
+    <div class="start-hero-copy">
+      <div class="start-mantra">START CALM. ACT EARLY. PROTECT BETTER.</div>
+
+      <p class="section-lead center" style="max-width:860px;margin:0 auto;">
+        Work out where your child’s exposure may be, what matters most right now, and where to go next — without getting lost.
+      </p>
     </div>
 
-    <div class="home-subline">
-      Work out where your child’s exposure may be, what matters most right now, and where to go next — without getting lost.
+    <div class="highlight-box" style="max-width:920px;margin:18px auto 0;">
+      <p class="mb-0"><strong>Quick action matters:</strong><br/>Awareness + protective steps = safer kids.</p>
     </div>
+  </section>
 
-    <div class="callout home-callout">
-      <strong>Quick action matters:</strong><br/>
-      Awareness + protective steps = safer kids.
-    </div>
-  </div>
-
-  <div class="card hero-warning center-card">
+  <section class="card hero-warning center-card">
     <h2>Choose the fastest lane</h2>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>If you already know what you need, go straight there.</p>
-      <p>If not, use the POSH Start Score below and let the site guide you.</p>
+      <p class="mb-0">If not, use the POSH Start Score below and let the site guide you.</p>
     </div>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       The goal is not to learn everything today. The goal is to take the right next step.
     </div>
 
-    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+    <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
       <a class="btn" href="v3-safety-score.html">Quick Safety Check</a>
       <a class="btn secondary" href="v3-real-scenarios.html">Something Feels Off</a>
       <a class="btn secondary" href="v3-first-24-hours.html">Something Is Happening Now</a>
       <a class="btn secondary" href="v3-parent-scripts.html">I Need the Right Words</a>
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>Answer these 6 questions</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:880px;margin:0 auto 18px;">
       Answer based on what is true <strong>right now</strong>, not what you hope is true.
     </p>
 
@@ -147,9 +335,9 @@
       </div>
 
     </form>
-  </div>
+  </section>
 
-  <div class="card center-card" id="guideResults" style="display:none;">
+  <section class="card center-card" id="guideResults" style="display:none;">
     <h2>Your POSH Start Result</h2>
 
     <div class="score-wrap">
@@ -160,23 +348,24 @@
 
       <div class="score-text">
         <div class="score-grade" id="startScoreGrade">—</div>
-        <p class="note" id="startScoreSummary" style="text-align:left;"></p>
-        <div class="badges" style="justify-content:center;">
+        <p class="note" id="startScoreSummary"></p>
+
+        <div class="badges" style="margin-top:12px;">
           <div class="badge gold" id="startScoreBadge">POSH Start Score</div>
           <div class="badge danger" id="urgentBadge" style="display:none;">Act early now</div>
         </div>
       </div>
     </div>
 
-    <div class="callout center-callout" id="guideSummary" style="margin-top:14px;"></div>
+    <div class="callout center-callout" id="guideSummary" style="margin-top:18px;"></div>
 
     <div class="card hero-warning center-card" id="pathwayBox" style="margin-top:18px;">
       <h2>Your best pathway now</h2>
-      <p class="note" id="pathwayText"></p>
-      <div class="btn-grid btn-grid-soft" id="guideButtons" style="margin-top:14px;"></div>
+      <p class="note" id="pathwayText" style="max-width:860px;margin:0 auto;"></p>
+      <div class="btn-grid btn-grid-soft" id="guideButtons" style="margin-top:16px;"></div>
     </div>
 
-    <div class="callout center-callout" id="guideUrgent" style="margin-top:14px; display:none;"></div>
+    <div class="warning-box" id="guideUrgent" style="margin-top:16px;display:none;"></div>
 
     <div class="card center-card" style="margin-top:18px;">
       <h2>Keep moving in the right order</h2>
@@ -195,7 +384,7 @@
 
     <div class="card hero-warning center-card" style="margin-top:18px;">
       <h2>Help protect more children</h2>
-      <p class="note">
+      <p class="note" style="max-width:860px;margin:0 auto 16px;">
         If this helped you, share POSH with another parent. Awareness spreads safety.
       </p>
       <div class="btn-grid btn-grid-soft">
@@ -205,21 +394,21 @@
         <a class="btn secondary" href="v3-support.html">Support POSH</a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="card center-card">
+  <section class="card center-card">
     <h2>One reminder before you move</h2>
 
-    <div class="callout center-callout">
-      <strong>Children are more likely to tell the truth when they believe they will be protected, not punished first.</strong>
+    <div class="highlight-box" style="max-width:920px;margin:0 auto;">
+      <p class="mb-0"><strong>Children are more likely to tell the truth when they believe they will be protected, not punished first.</strong></p>
     </div>
 
-    <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+    <div class="btn-grid btn-grid-soft" style="margin-top:16px;">
       <a class="btn secondary" href="v3-parent-scripts.html">Parent Scripts</a>
       <a class="btn secondary" href="v3-it-is-not-about-not-trusting-your-child.html">Trust Your Child, Still Protect Them</a>
       <a class="btn secondary" href="v3-mindset.html">Parent Mindset</a>
     </div>
-  </div>
+  </section>
 
   <div id="footer"></div>
 
