@@ -43,6 +43,99 @@
   "mainEntityOfPage":"https://poshaussie.com.au/v3-platforms.html"
 }
 </script>
+
+<style>
+  .btn-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+  }
+
+  .btn-grid-soft{
+    align-items:stretch;
+  }
+
+  .pill-row,
+  .badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+  }
+
+  .callout{
+    padding:16px 18px;
+    border-radius:16px;
+    border:1px solid var(--cardLine);
+    background:rgba(255,255,255,.05);
+    color:var(--muted);
+  }
+
+  .center-callout{
+    max-width:920px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+
+  .note{
+    color:var(--muted);
+  }
+
+  .small{
+    font-size:.95rem;
+    color:var(--soft);
+  }
+
+  .list{
+    margin:0 auto;
+    padding-left:20px;
+    text-align:left;
+    max-width:920px;
+    color:var(--muted);
+  }
+
+  .list li{
+    margin-bottom:10px;
+  }
+
+  .home-mantra{
+    font-family:var(--font-heading);
+    font-size:clamp(1.5rem,3.5vw,2.35rem);
+    font-weight:900;
+    line-height:1.1;
+    letter-spacing:-.03em;
+    margin:0 0 14px;
+    color:var(--text);
+  }
+
+  .home-subline{
+    font-size:1.04rem;
+    line-height:1.75;
+    color:var(--muted);
+  }
+
+  .network-flow{
+    display:grid;
+    gap:12px;
+    justify-items:center;
+    margin-top:16px;
+  }
+
+  .arrow{
+    color:var(--cyan);
+    font-family:var(--font-heading);
+    font-size:1.25rem;
+    font-weight:900;
+    line-height:1;
+  }
+
+  .pill.danger{
+    background:rgba(255,107,129,.12);
+    border-color:rgba(255,107,129,.3);
+    color:#ffd7de;
+  }
+</style>
 </head>
 
 <body>
@@ -59,9 +152,7 @@
 
   <div id="nav"></div>
 
-  <!-- HERO -->
-  <div class="card home-intro home-intro-hero center-card">
-
+  <section class="card home-intro home-intro-hero center-card">
     <div class="home-kicker">
       Platform = the control layer
     </div>
@@ -71,17 +162,15 @@
     </div>
 
     <div class="home-subline" style="max-width:920px; margin:0 auto;">
-      Platforms manage messaging, party chat, friend requests, spending, purchases, multiplayer access, and account visibility.
-      If the platform is wide open, every game and app sitting on top of it becomes harder to control safely.
+      Platforms manage messaging, party chat, friend requests, spending, purchases, multiplayer access, and account visibility. If the platform is wide open, every game and app sitting on top of it becomes harder to control safely.
     </div>
 
-    <div class="callout home-callout">
-      <strong>Parents often start with the game.</strong><br/>
-      The stronger move is usually to secure the platform first, then tighten the apps and games living on it.
+    <div class="warning-box" style="max-width:920px;margin:18px auto 0;">
+      <p class="mb-0"><strong>Parents often start with the game.</strong><br/>The stronger move is usually to secure the platform first, then tighten the apps and games living on it.</p>
     </div>
 
     <div class="pill-row" style="margin:16px 0 0;">
-      <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">PLATFORM SAFETY HUB</div>
+      <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">Platform Safety Hub</div>
       <div class="pill">Messaging</div>
       <div class="pill">Invites</div>
       <div class="pill">Party Chat</div>
@@ -95,32 +184,26 @@
       <a class="btn secondary" href="v3-platform-nintendo.html">Nintendo Switch</a>
       <a class="btn secondary" href="v3-platform-pc.html">PC</a>
     </div>
+  </section>
 
-  </div>
-
-  <!-- WHY -->
-  <div class="card hero-warning center-card">
-
+  <section class="card hero-warning center-card">
     <h2>Why platforms matter more than most parents realise</h2>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>Platforms often decide who can message your child before the game even starts.</p>
       <p>They control invites, voice contact, purchases, account privacy, and the speed at which strangers can become familiar.</p>
-      <p>If the platform settings are too open, the risk is already active long before a parent notices the game itself.</p>
+      <p class="mb-0">If the platform settings are too open, the risk is already active long before a parent notices the game itself.</p>
     </div>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       If the platform is open, the risk pathway is already open
     </div>
+  </section>
 
-  </div>
-
-  <!-- UNDERSTAND -->
-  <div class="card center-card">
-
+  <section class="card center-card">
     <h2>What parents should understand first</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:920px;margin:0 auto 14px;">
       Most parents think the main risk lives inside the game. A lot of the real control actually lives one layer higher.
     </p>
 
@@ -132,19 +215,16 @@
       <li>Purchase settings and gifting options can also become part of pressure or influence</li>
     </ul>
 
-    <div class="callout center-callout">
+    <div class="callout center-callout" style="margin-top:14px;">
       <strong>The platform is the control layer.</strong><br/>
       The game is usually just the environment built on top of it.
     </div>
+  </section>
 
-  </div>
-
-  <!-- CHOOSE -->
-  <div class="card center-card">
-
+  <section class="card center-card">
     <h2>Choose your platform</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:880px;margin:0 auto 16px;">
       Go to the platform your child uses most and tighten that first.
     </p>
 
@@ -156,47 +236,42 @@
       <a class="btn secondary" href="v3-platform-vr.html">Virtual Reality</a>
     </div>
 
-    <div class="callout center-callout">
+    <div class="callout center-callout" style="margin-top:14px;">
       Each platform has different menus and settings — but the same safety principles still apply.
     </div>
+  </section>
 
-  </div>
-
-  <!-- LOCK -->
-  <div class="card center-card">
-
+  <section class="card center-card">
     <h2>What to lock on every platform</h2>
 
     <div class="grid-2" style="margin-top:16px; gap:16px;">
-
-      <div class="card soft center-card">
-        <strong style="font-size:1.08rem;">Communication</strong>
+      <div class="card soft center-card mb-0">
+        <h3>Communication</h3>
         <p class="small" style="text-align:center;">
           Messages, direct contact, party chat, voice chat, and unsolicited invites.
         </p>
       </div>
 
-      <div class="card soft center-card">
-        <strong style="font-size:1.08rem;">Visibility</strong>
+      <div class="card soft center-card mb-0">
+        <h3>Visibility</h3>
         <p class="small" style="text-align:center;">
           Who can find the account, send requests, join sessions, or follow activity.
         </p>
       </div>
 
-      <div class="card soft center-card">
-        <strong style="font-size:1.08rem;">Spending</strong>
+      <div class="card soft center-card mb-0">
+        <h3>Spending</h3>
         <p class="small" style="text-align:center;">
           Purchases, stored cards, gifting, approvals, and spending limits.
         </p>
       </div>
 
-      <div class="card soft center-card">
-        <strong style="font-size:1.08rem;">Access</strong>
+      <div class="card soft center-card mb-0">
+        <h3>Access</h3>
         <p class="small" style="text-align:center;">
           Multiplayer permissions, mature content, web access, account switching, and time use.
         </p>
       </div>
-
     </div>
 
     <ul class="list" style="margin-top:18px;">
@@ -207,49 +282,39 @@
       <li>Who can contact, join, follow, or view your child</li>
     </ul>
 
-    <div class="callout center-callout">
+    <div class="callout center-callout" style="margin-top:14px;">
       If strangers can freely message, invite, or speak to your child, the setup is too open.
     </div>
+  </section>
 
-  </div>
-
-  <!-- FLOW -->
-  <div class="card network center-card">
-
+  <section class="card center-card">
     <h2>The safest order</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:880px;margin:0 auto;">
       Parents usually get the best result when they tighten safety in this order:
     </p>
 
     <div class="network-flow">
       <div class="pill">Lock the platform</div>
       <div class="arrow">↓</div>
-
       <div class="pill">Check the game or app on that platform</div>
       <div class="arrow">↓</div>
-
       <div class="pill">Watch communication patterns</div>
       <div class="arrow">↓</div>
-
       <div class="pill">Notice movement into private space</div>
       <div class="arrow">↓</div>
-
       <div class="pill danger">Act early if something feels off</div>
     </div>
 
-    <div class="callout center-callout">
+    <div class="callout center-callout" style="margin-top:16px;">
       Platform first. Game second. Behaviour always.
     </div>
+  </section>
 
-  </div>
-
-  <!-- COMMON MISTAKE -->
-  <div class="card center-card">
-
+  <section class="card center-card">
     <h2>The common mistake parents make</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:880px;margin:0 auto 14px;">
       Parents often focus only on one game while the wider system stays open.
     </p>
 
@@ -263,15 +328,12 @@
       <div class="badge">Platform still open</div>
       <div class="badge danger">Risk still active</div>
     </div>
+  </section>
 
-  </div>
-
-  <!-- NEXT -->
-  <div class="card center-card">
-
+  <section class="card center-card">
     <h2>Next safety steps</h2>
 
-    <p class="note">
+    <p class="note" style="max-width:880px;margin:0 auto 16px;">
       Once the platform is secured, move into the next strongest layers.
     </p>
 
@@ -288,24 +350,20 @@
       <a class="btn secondary" href="v3-dangerous-apps.html">Dangerous Apps</a>
       <a class="btn secondary" href="v3-parental-controls-by-device.html">Parental Controls by Device</a>
     </div>
+  </section>
 
-  </div>
-
-  <!-- FINAL -->
-  <div class="card hero-warning center-card">
-
+  <section class="card hero-warning center-card">
     <h2>Quick reminder for parents</h2>
 
-    <div class="rule-box">
+    <div class="rule-box" style="max-width:920px;margin:0 auto;">
       <p>Games change. Apps change. Platform menus change.</p>
-      <p>But the safety principle stays the same: control communication first, then reduce access pathways, then watch behaviour.</p>
+      <p class="mb-0">But the safety principle stays the same: control communication first, then reduce access pathways, then watch behaviour.</p>
     </div>
 
-    <div class="danger-line">
+    <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
       Control access early — reduce risk later
     </div>
-
-  </div>
+  </section>
 
   <div id="footer"></div>
 
