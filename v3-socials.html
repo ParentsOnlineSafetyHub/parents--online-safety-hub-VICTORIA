@@ -3,10 +3,132 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Social Media & Chat • POSH</title>
+  <title>Social Media &amp; Chat • POSH</title>
   <meta name="description" content="Start with the social app your child uses most. Lock settings, reduce stranger access, check warning signs, and move through the right next safety steps." />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://poshaussie.com.au/v3-socials.html"/>
+
+  <meta property="og:title" content="Social Media &amp; Chat • POSH" />
+  <meta property="og:description" content="Start with the social app your child uses most. Lock settings, reduce stranger access, check warning signs, and move through the right next safety steps." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://poshaussie.com.au/v3-socials.html" />
+  <meta property="og:site_name" content="POSH" />
+  <meta property="og:image" content="https://poshaussie.com.au/posh-home.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Social Media &amp; Chat • POSH" />
+  <meta name="twitter:description" content="Lock settings, reduce stranger access, check warning signs, and move through the right next safety steps." />
+  <meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png" />
+
   <link rel="stylesheet" href="style.css"/>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Social Media & Chat",
+    "description":"Start with the social app your child uses most. Lock settings, reduce stranger access, check warning signs, and move through the right next safety steps.",
+    "url":"https://poshaussie.com.au/v3-socials.html",
+    "publisher":{
+      "@type":"Organization",
+      "name":"POSH",
+      "url":"https://poshaussie.com.au/",
+      "logo":{
+        "@type":"ImageObject",
+        "url":"https://poshaussie.com.au/posh-home.png"
+      }
+    },
+    "mainEntityOfPage":"https://poshaussie.com.au/v3-socials.html"
+  }
+  </script>
+
+  <style>
+    .btn-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:12px;
+    }
+
+    .btn-grid-soft{
+      align-items:stretch;
+    }
+
+    .pill-row,
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+    }
+
+    .callout{
+      padding:16px 18px;
+      border-radius:16px;
+      border:1px solid var(--cardLine);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+    }
+
+    .center-callout{
+      max-width:920px;
+      margin-left:auto;
+      margin-right:auto;
+      text-align:center;
+    }
+
+    .note{
+      color:var(--muted);
+    }
+
+    .list{
+      margin:0 auto;
+      padding-left:20px;
+      text-align:left;
+      max-width:920px;
+      color:var(--muted);
+    }
+
+    .list li{
+      margin-bottom:10px;
+    }
+
+    .home-mantra{
+      font-family:var(--font-heading);
+      font-size:clamp(1.5rem,3.5vw,2.35rem);
+      font-weight:900;
+      line-height:1.1;
+      letter-spacing:-.03em;
+      margin:0 0 14px;
+      color:var(--text);
+    }
+
+    .home-subline{
+      font-size:1.04rem;
+      line-height:1.75;
+      color:var(--muted);
+    }
+
+    .network-flow{
+      display:grid;
+      gap:12px;
+      justify-items:center;
+      margin-top:16px;
+    }
+
+    .arrow{
+      color:var(--cyan);
+      font-family:var(--font-heading);
+      font-size:1.25rem;
+      font-weight:900;
+      line-height:1;
+    }
+
+    .pill.danger{
+      background:rgba(255,107,129,.12);
+      border-color:rgba(255,107,129,.3);
+      color:#ffd7de;
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -20,7 +142,7 @@
 
     <div id="nav"></div>
 
-    <div class="card home-intro home-intro-hero">
+    <section class="card home-intro home-intro-hero center-card">
 
       <div class="home-kicker">
         Social apps are where private contact usually grows
@@ -30,33 +152,33 @@
         PUBLIC APP. PRIVATE CHAT. HIGHER RISK.
       </div>
 
-      <div class="home-subline">
-        Social apps can look normal on the surface, but the real risk usually begins when contact becomes more private, more repeated, and harder for parents to see.
-        That is why this section matters so much.
+      <div class="home-subline" style="max-width:920px;margin:0 auto;">
+        Social apps can look normal on the surface, but the real risk usually begins when contact becomes more private, more repeated, and harder for parents to see. That is why this section matters so much.
       </div>
 
-      <div class="callout home-callout">
-        <strong>The most important question is not just “What app is my child using?”</strong><br/>
-        It is <strong>“Who can reach them there, and what happens after the first contact begins?”</strong>
+      <div class="warning-box" style="max-width:920px;margin:18px auto 0;">
+        <p class="mb-0"><strong>The most important question is not just “What app is my child using?”</strong><br/>It is <strong>“Who can reach them there, and what happens after the first contact begins?”</strong></p>
       </div>
 
-    </div>
+    </section>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>Why social apps matter</h2>
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Social apps are where direct messages, disappearing chats, private contact, live content, and stranger access often happen.</p>
-        <p>Many predators move children from games into social apps because visibility drops and control increases.</p>
+        <p class="mb-0">Many predators move children from games into social apps because visibility drops and control increases.</p>
       </div>
-      <div class="danger-line">Private contact increases risk fast</div>
-    </div>
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
+        Private contact increases risk fast
+      </div>
+    </section>
 
-    <div class="callout center-callout">
-      <strong>Child Safety First:</strong><br>
+    <div class="callout center-callout" style="margin-bottom:22px;">
+      <strong>Child safety first:</strong><br>
       Social media and chat apps are only part of the online safety picture. Exposure can also happen through gaming, livestreams, private chats, algorithms, misinformation, and digital communities.
     </div>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Choose the app your child uses</h2>
       <div class="btn-grid btn-grid-soft">
         <a class="btn" href="v3-social-discord.html">Discord</a>
@@ -94,26 +216,29 @@
         <a class="btn secondary" href="v3-social-wechat.html">WeChat</a>
         <a class="btn secondary" href="v3-social-yubo.html">Yubo</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>What to lock on every social app</h2>
-      <p class="note"><strong>1)</strong> Private account settings</p>
-      <p class="note"><strong>2)</strong> Direct messages and message requests</p>
-      <p class="note"><strong>3)</strong> Friend / follower requests</p>
-      <p class="note"><strong>4)</strong> Location sharing</p>
-      <p class="note"><strong>5)</strong> Disappearing messages or secret chat features</p>
-      <p class="note"><strong>6)</strong> Live video, livestream chat, and creator contact features</p>
 
-      <div class="callout center-callout">
+      <ul class="list">
+        <li><strong>1)</strong> Private account settings</li>
+        <li><strong>2)</strong> Direct messages and message requests</li>
+        <li><strong>3)</strong> Friend / follower requests</li>
+        <li><strong>4)</strong> Location sharing</li>
+        <li><strong>5)</strong> Disappearing messages or secret chat features</li>
+        <li><strong>6)</strong> Live video, livestream chat, and creator contact features</li>
+      </ul>
+
+      <div class="callout center-callout" style="margin-top:14px;">
         A child does not need every feature turned on just because the app offers it.
       </div>
-    </div>
+    </section>
 
-    <div class="card network center-card">
+    <section class="card center-card">
       <h2>How social app risk often escalates</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:860px;margin:0 auto;">
         Many harmful situations follow a similar pattern.
       </p>
 
@@ -136,28 +261,28 @@
       <div class="callout center-callout" style="margin-top:16px;">
         One of the clearest warning signs is when someone tries to move a child from a public or visible space into a more private one.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Why safer defaults matter too</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 12px;">
         Parents should not have to manually find and fix every risky setting across every app their child uses.
       </p>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 14px;">
         Some social-media risks are not just parenting problems. They are platform design problems.
       </p>
 
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Direct messages are often open too easily</p>
         <p>Location sharing can be active when it should not be</p>
         <p>Friend requests from strangers are often too easy to send</p>
         <p>Disappearing and private chat features reduce visibility fast</p>
-        <p>Child accounts are often not protected strongly enough by default</p>
+        <p class="mb-0">Child accounts are often not protected strongly enough by default</p>
       </div>
 
-      <div class="btn-grid btn-grid-soft">
+      <div class="btn-grid btn-grid-soft" style="margin-top:14px;">
         <a class="btn" href="v3-policy-safer-defaults-for-child-accounts.html">Safer Defaults for Child Accounts</a>
         <a class="btn secondary" href="v3-policy-parent-approval-for-digital-gifting.html">Parent Approval for Digital Gifting</a>
         <a class="btn secondary" href="v3-house-rules.html">House Rules</a>
@@ -167,27 +292,27 @@
       <div class="callout center-callout" style="margin-top:14px;">
         If the risks are predictable, safer defaults should not be optional.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>What parents should understand first</h2>
 
       <ul class="list">
-        <li>Private messaging is often the biggest risk feature, not the public feed.</li>
-        <li>One social app can quickly connect to others through links, usernames, private invites, or disappearing chats.</li>
-        <li>Children often think they are “just talking” when they are actually being moved into a more controlled private space.</li>
-        <li>A child does not need to post publicly to still be at risk — private contact matters more.</li>
+        <li>Private messaging is often the biggest risk feature, not the public feed</li>
+        <li>One social app can quickly connect to others through links, usernames, private invites, or disappearing chats</li>
+        <li>Children often think they are “just talking” when they are actually being moved into a more controlled private space</li>
+        <li>A child does not need to post publicly to still be at risk — private contact matters more</li>
       </ul>
 
-      <div class="callout center-callout">
+      <div class="callout center-callout" style="margin-top:14px;">
         The real question is not just “What app are they using?” It is “Who can reach them there, and what happens after that contact begins?”
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Best next step if something already feels off</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 14px;">
         If secrecy, emotional attachment, hidden chats, or off-platform movement are already happening, stop thinking only about the app and move into the action pages fast.
       </p>
 
@@ -201,12 +326,12 @@
       <div class="callout center-callout" style="margin-top:14px;">
         The app matters. But the pattern matters more.
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Next safety steps</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 16px;">
         Don’t stop at the app itself. Check warning signs, private chats, algorithm risks, and the wider child safety picture too.
       </p>
 
@@ -230,12 +355,12 @@
         <a class="btn secondary" href="v3-parental-controls-by-device.html">Parental Controls by Device</a>
         <a class="btn secondary" href="v3-parent-questions.html">Parent Questions</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card center-card">
+    <section class="card center-card">
       <h2>Keep exploring child safety</h2>
 
-      <p class="note">
+      <p class="note" style="max-width:920px;margin:0 auto 16px;">
         Child safety online is bigger than one app, one game, or one platform. Keep exploring the site in the direction that feels most relevant to your child.
       </p>
 
@@ -251,17 +376,17 @@
         <a class="btn secondary" href="v3-redflags.html">Red Flags</a>
         <a class="btn secondary" href="v3-reporting.html">Report &amp; Get Help</a>
       </div>
-    </div>
+    </section>
 
-    <div class="card hero-warning center-card">
+    <section class="card hero-warning center-card">
       <h2>Help protect another child</h2>
 
-      <div class="rule-box">
+      <div class="rule-box" style="max-width:920px;margin:0 auto;">
         <p>Many parents simply haven’t been shown how online grooming, manipulation, and private contact actually starts.</p>
-        <p>Sharing awareness early can help another family prevent harm.</p>
+        <p class="mb-0">Sharing awareness early can help another family prevent harm.</p>
       </div>
 
-      <div class="danger-line">
+      <div class="danger-line" style="max-width:920px;margin:16px auto 0;">
         One parent sharing this can protect another child
       </div>
 
@@ -289,7 +414,7 @@
         Share on LinkedIn
         </a>
       </div>
-    </div>
+    </section>
 
     <div id="footer"></div>
 
