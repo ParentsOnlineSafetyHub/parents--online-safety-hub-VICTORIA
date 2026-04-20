@@ -1,18 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Smart Triage • POSH</title>
-  <meta name="description" content="Use POSH Smart Triage to quickly work out the right next step based on urgency, child safety concerns, emotional state, and the kind of help you need right now." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://poshaussie.com.au/v3-triage.html" />
-  <meta property="og:title" content="Smart Triage • POSH" />
-  <meta property="og:description" content="Not sure where to begin? Use Smart Triage to get the right next step fast." />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://poshaussie.com.au/v3-triage.html" />
-  <meta property="og:site_name" content="POSH" />
-  <link rel="stylesheet" href="style.css"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<title>Smart Triage • POSH</title>
+<meta name="description" content="Use POSH Smart Triage to quickly work out the right next step based on urgency, child safety concerns, emotional state, and the kind of help you need right now." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://poshaussie.com.au/v3-triage.html" />
+
+<meta property="og:title" content="Smart Triage • POSH" />
+<meta property="og:description" content="Not sure where to begin? Use Smart Triage to get the right next step fast." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://poshaussie.com.au/v3-triage.html" />
+<meta property="og:site_name" content="POSH" />
+<meta property="og:image" content="https://poshaussie.com.au/posh-home.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Smart Triage • POSH" />
+<meta name="twitter:description" content="Not sure where to begin? Use Smart Triage to get the right next step fast." />
+<meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png" />
+
+<link rel="stylesheet" href="style.css"/>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Smart Triage",
+  "description":"Use POSH Smart Triage to quickly work out the right next step based on urgency, child safety concerns, emotional state, and the kind of help you need right now.",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"https://poshaussie.com.au/v3-triage.html"
+  },
+  "publisher":{
+    "@type":"Organization",
+    "name":"POSH",
+    "url":"https://poshaussie.com.au/",
+    "logo":{
+      "@type":"ImageObject",
+      "url":"https://poshaussie.com.au/posh-home.png"
+    }
+  }
+}
+</script>
 </head>
 <body>
 
@@ -27,6 +58,14 @@
   </p>
 
   <div id="nav"></div>
+
+  <div class="pill-row" style="margin:0 0 16px;">
+    <div class="pill" style="background:rgba(251,113,133,.18);border-color:rgba(251,113,133,.35);">FAST DIRECTION TOOL</div>
+    <div class="pill">Urgency</div>
+    <div class="pill">Risk Signs</div>
+    <div class="pill">Right Lane</div>
+    <div class="pill">Next Step</div>
+  </div>
 
   <div class="callout center-callout">
     <strong>How to use this page:</strong><br/>
@@ -195,7 +234,7 @@
   }
 
   function button(href, label, cls) {
-    return '<a class="' + escapeHtml(cls) + '" href="' + escapeHtml(href) + '">' + escapeHtml(label) + '</a>';
+    return '<a class="' + escapeHtml(cls) + '" href="' + escapeHtml(href) + '">' + escapeHtml(label) + "</a>";
   }
 
   function hasFlag(flags, value) {
@@ -268,7 +307,11 @@
   }
 
   function getTopLane(scores, data) {
-    if (data.role === "youngperson" && data.state !== "curious" && (data.situation === "active" || hasFlag(data.flags, "sexual") || hasFlag(data.flags, "fear"))) {
+    if (
+      data.role === "youngperson" &&
+      data.state !== "curious" &&
+      (data.situation === "active" || hasFlag(data.flags, "sexual") || hasFlag(data.flags, "fear"))
+    ) {
       return "youth";
     }
 
@@ -437,6 +480,12 @@
       autoroute: getValue("autoroute")
     };
 
+    if (data.flags.indexOf("none") !== -1 && data.flags.length > 1) {
+      data.flags = data.flags.filter(function (item) {
+        return item !== "none";
+      });
+    }
+
     const result = getResult(data);
 
     triageSummary.textContent = result.summary;
@@ -453,7 +502,7 @@
 
     if (result.urgentText) {
       triageUrgentNote.style.display = "block";
-      triageUrgentNote.innerHTML = "<strong>Urgent note:</strong> " + result.urgentText;
+      triageUrgentNote.innerHTML = "<strong>Urgent note:</strong> " + escapeHtml(result.urgentText);
     } else {
       triageUrgentNote.style.display = "none";
       triageUrgentNote.textContent = "";
