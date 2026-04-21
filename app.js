@@ -6,12 +6,12 @@
      Premium full replacement
      - global nav
      - ranked live search
-     - current-page highlighting
      - accordion stays closed on load
+     - active-page highlighting
      - breadcrumbs
      - reading progress
      - back to top
-     - share / copy link
+     - share / copy
      - sticky action bar
      - support strip
      - smart CTA injection
@@ -639,16 +639,21 @@
   function setActiveNav(root) {
     const current = getCurrentPath();
 
+    qsa(".nav-group", root).forEach(group => {
+      group.open = false;
+      group.classList.remove("has-active-page");
+    });
+
     qsa("a[href]", root).forEach(anchor => {
       const href = normalisePath(anchor.getAttribute("href"));
       if (href === current) {
-        anchor.classList.add("active");
+        anchor.classList.add("active", "nav-active");
         anchor.setAttribute("aria-current", "page");
 
-        const group = anchor.closest("details");
+        const group = anchor.closest(".nav-group");
         if (group) {
           group.classList.add("has-active-page");
-          group.open = false; // keep collapsed on load
+          group.open = false;
         }
       }
     });
@@ -1245,6 +1250,10 @@
     document.body.classList.add("js-ready");
     document.body.dataset.page = page;
 
+    if (current === POSH.home || current === "" || current === "/") {
+      document.body.classList.add("home-page");
+    }
+
     if (/^v3-game-/.test(current) || /^V3gaming-/.test(current)) {
       document.body.classList.add("page-is-game");
     }
@@ -1503,4 +1512,4 @@
   }
 
   document.addEventListener("DOMContentLoaded", init);
-})(); 
+})();
