@@ -3,22 +3,24 @@
 
   /* =========================================================
      POSH MASTER APP.JS
-     Full replacement site controller
+     Premium full replacement
      - global nav
-     - live search
-     - active states
+     - ranked live search
+     - current-page highlighting
+     - accordion stays closed on load
      - breadcrumbs
-     - share / copy
      - reading progress
+     - back to top
+     - share / copy link
      - sticky action bar
      - support strip
-     - related links
      - smart CTA injection
-     - TOC
-     - outbound/download tracking
+     - related links
+     - TOC builder
      - FAQ/details enhancement
+     - outbound/download tracking
      - form enhancement
-     - hero CTA enhancement
+     - hero CTA upgrade
      - page context classes
      ========================================================= */
 
@@ -77,7 +79,10 @@
     shareText:
       "POSH Aussie helps parents understand online risks, spot warning signs earlier, and protect their children with clearer practical guidance.",
     searchPlaceholder: "Search apps, games, devices, PDFs or topics",
-    helpKeepFreeText: "Help Keep POSH Free"
+    helpKeepFreeText: "Help Keep POSH Free",
+    maxSearchResults: 10,
+    maxTocItems: 8,
+    maxRelatedItems: 6
   };
 
   const NAV_GROUPS = [
@@ -492,6 +497,10 @@
     return Array.from(root.querySelectorAll(selector));
   }
 
+  function safeText(value) {
+    return String(value || "").replace(/\s+/g, " ").trim();
+  }
+
   function normalisePath(path) {
     if (!path) return POSH.home;
     const clean = path.split("#")[0].split("?")[0];
@@ -512,10 +521,6 @@
       .replace(/'/g, "&#39;");
   }
 
-  function safeText(value) {
-    return String(value || "").replace(/\s+/g, " ").trim();
-  }
-
   function slugify(value) {
     return safeText(value)
       .toLowerCase()
@@ -529,10 +534,6 @@
       clearTimeout(timer);
       timer = setTimeout(() => fn.apply(this, args), delay);
     };
-  }
-
-  function isExternalHref(href) {
-    return /^https?:\/\//i.test(href) && !href.includes(location.hostname);
   }
 
   function maybeTrack(name, extra = {}) {
@@ -550,9 +551,13 @@
     }
   }
 
+  function isExternalHref(href) {
+    return /^https?:\/\//i.test(href) && !href.includes(location.hostname);
+  }
+
   function findLink(href) {
     const target = normalisePath(href);
-    return ALL_LINKS.find(item => normalisePath(item.href) === target) || null;
+    return ALL_LINKS.find(link => normalisePath(link.href) === target) || null;
   }
 
   function getPageTitle() {
@@ -633,13 +638,18 @@
 
   function setActiveNav(root) {
     const current = getCurrentPath();
+
     qsa("a[href]", root).forEach(anchor => {
       const href = normalisePath(anchor.getAttribute("href"));
       if (href === current) {
         anchor.classList.add("active");
         anchor.setAttribute("aria-current", "page");
+
         const group = anchor.closest("details");
-        if (group) group.open = true;
+        if (group) {
+          group.classList.add("has-active-page");
+          group.open = false; // keep collapsed on load
+        }
       }
     });
   }
@@ -648,6 +658,8 @@
     const groups = qsa(".nav-group", root);
 
     groups.forEach(group => {
+      group.open = false;
+
       group.addEventListener("toggle", () => {
         if (!group.open) return;
         groups.forEach(other => {
@@ -766,7 +778,7 @@
         .map(link => ({ link, score: scoreLinkForQuery(link, query) }))
         .filter(item => item.score > 0)
         .sort((a, b) => b.score - a.score || a.link.label.localeCompare(b.link.label))
-        .slice(0, 10)
+        .slice(0, POSH.maxSearchResults)
         .map(item => item.link);
 
       if (!matches.length) {
@@ -779,7 +791,7 @@
       }
 
       showResults(matches.map(link => buildSearchResult(link, query)).join(""));
-    }, 80);
+    }, 90);
 
     input.addEventListener("input", runSearch);
     input.addEventListener("focus", () => {
@@ -803,6 +815,7 @@
     results.addEventListener("click", event => {
       const target = event.target.closest(".nav-search-result");
       if (!target) return;
+
       maybeTrack("search_result_click", {
         label: target.getAttribute("href") || "",
         query: target.getAttribute("data-query") || ""
@@ -829,9 +842,7 @@
     setupNavTracking(host);
 
     const shareBtn = qs(".nav-share-trigger", host);
-    if (shareBtn) {
-      shareBtn.addEventListener("click", nativeShare);
-    }
+    if (shareBtn) shareBtn.addEventListener("click", nativeShare);
   }
 
   function injectBreadcrumbs() {
@@ -864,10 +875,10 @@
   }
 
   function ensureHeadingIds() {
-    qsa("h2, h3, h4").forEach(h => {
-      if (!h.id) {
-        const id = slugify(h.textContent);
-        if (id) h.id = id;
+    qsa("h2, h3, h4").forEach(heading => {
+      if (!heading.id) {
+        const id = slugify(heading.textContent);
+        if (id) heading.id = id;
       }
     });
   }
@@ -883,7 +894,7 @@
     toc.innerHTML = `
       <div class="posh-toc-title">On this page</div>
       <nav>
-        ${headings.slice(0, 8).map(h => `
+        ${headings.slice(0, POSH.maxTocItems).map(h => `
           <a href="#${escapeHtml(h.id)}">${escapeHtml(safeText(h.textContent))}</a>
         `).join("")}
       </nav>
@@ -918,6 +929,7 @@
 
   function ensureProgressBar() {
     if (qs("#poshReadingProgress")) return;
+
     const bar = document.createElement("div");
     bar.id = "poshReadingProgress";
     bar.className = "posh-reading-progress";
@@ -960,6 +972,7 @@
 
   function ensureMiniToast() {
     if (qs("#poshMiniToast")) return;
+
     const toast = document.createElement("div");
     toast.id = "poshMiniToast";
     toast.className = "posh-mini-toast";
@@ -969,6 +982,7 @@
   function showMiniToast(message) {
     const toast = qs("#poshMiniToast");
     if (!toast) return;
+
     toast.textContent = message;
     toast.classList.add("visible");
 
@@ -1025,8 +1039,8 @@
       el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
     });
 
-    const share = qs("#poshStickyShare", bar);
-    if (share) share.addEventListener("click", nativeShare);
+    const shareBtn = qs("#poshStickyShare", bar);
+    if (shareBtn) shareBtn.addEventListener("click", nativeShare);
   }
 
   function injectSupportStrip() {
@@ -1053,8 +1067,8 @@
       el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
     });
 
-    const share = qs("#poshSupportStripShare", strip);
-    if (share) share.addEventListener("click", nativeShare);
+    const shareBtn = qs("#poshSupportStripShare", strip);
+    if (shareBtn) shareBtn.addEventListener("click", nativeShare);
   }
 
   function buildRelatedCardsHtml() {
@@ -1062,7 +1076,7 @@
     const related = (PAGE_RELATIONS[current] || [])
       .map(findLink)
       .filter(Boolean)
-      .slice(0, 6);
+      .slice(0, POSH.maxRelatedItems);
 
     if (!related.length) return "";
 
@@ -1134,7 +1148,7 @@
     if (/^v3-game-/.test(page) || /^V3gaming-/.test(page) || page === POSH.gaming) {
       return {
         title: "Next safety steps",
-        text: "Don’t stop at the game itself. Check the linked chat apps, warning signs, and wider child safety picture too.",
+        text: "Don’t stop at the game itself. Check the linked chat apps, warning signs, and the wider safety picture too.",
         actions: [
           { href: POSH.redFlags, label: "Red Flags" },
           { href: POSH.parentScripts, label: "Parent Scripts" },
@@ -1225,17 +1239,19 @@
   }
 
   function ensureBodyFlags() {
-    const page = getCurrentPath().replace(/\.html$/i, "") || "home";
+    const current = getCurrentPath();
+    const page = current.replace(/\.html$/i, "") || "home";
+
     document.body.classList.add("js-ready");
     document.body.dataset.page = page;
 
-    if (/^v3-game-/.test(getCurrentPath()) || /^V3gaming-/.test(getCurrentPath())) {
+    if (/^v3-game-/.test(current) || /^V3gaming-/.test(current)) {
       document.body.classList.add("page-is-game");
     }
-    if (/^v3-social-/.test(getCurrentPath())) {
+    if (/^v3-social-/.test(current)) {
       document.body.classList.add("page-is-social");
     }
-    if (getCurrentPath() === POSH.devices) {
+    if (current === POSH.devices) {
       document.body.classList.add("page-is-device");
     }
   }
@@ -1243,12 +1259,14 @@
   function addPageMetaAttributes() {
     const page = getCurrentPath();
     const title = getPageTitle();
+
     document.documentElement.dataset.page = page.replace(/\.html$/i, "");
     document.documentElement.dataset.pageTitle = slugify(title || page);
   }
 
   function addPageLeadClass() {
     const title = getPageTitle().toLowerCase();
+
     if (title.includes("roblox")) document.body.classList.add("topic-roblox");
     if (title.includes("discord")) document.body.classList.add("topic-discord");
     if (title.includes("tiktok")) document.body.classList.add("topic-tiktok");
@@ -1390,7 +1408,6 @@
     const wrap = qs(".wrap");
     const title = getPageTitle();
     const intro = getPageIntro();
-
     if (!wrap || !title || !intro) return;
 
     const block = document.createElement("div");
