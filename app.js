@@ -3,8 +3,9 @@
 
   /* =========================================================
      POSH MASTER APP.JS
-     Premium full replacement
-     - global header with POSH logo + home button
+     Corrected full replacement
+     - top sticky header only
+     - does NOT alter existing global hero PNG system
      - global nav
      - ranked live search
      - accordion stays closed on load
@@ -305,7 +306,6 @@
         <a href="${POSH.home}" class="posh-logo-link" aria-label="Back to home" data-track="header_logo_home">
           <img src="${POSH.logoSrc}" alt="${escapeHtml(POSH.logoAlt)}" class="posh-logo" />
         </a>
-
         <div class="posh-header-actions">
           <a href="${POSH.home}" class="posh-home-btn" data-track="header_home_btn">Home</a>
         </div>
