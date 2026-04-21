@@ -246,6 +246,80 @@ hr{
   margin:24px 0;
 }
 
+/* ===== TOP GLOBAL HEADER ONLY ===== */
+.posh-header{
+  position:sticky;
+  top:0;
+  z-index:10000;
+  padding:10px 0 0;
+  background:linear-gradient(180deg, rgba(5,19,39,.94), rgba(5,19,39,.68), rgba(5,19,39,0));
+  backdrop-filter:blur(6px);
+}
+
+.posh-header-inner{
+  width:min(var(--wrap),calc(100% - 28px));
+  margin:0 auto;
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  border:1.15px solid rgba(183,122,74,.42);
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(10,28,55,.92), rgba(8,22,44,.92));
+  box-shadow:
+    0 14px 28px rgba(0,0,0,.24),
+    0 0 0 1px rgba(255,255,255,.02) inset;
+}
+
+.posh-logo-link{
+  display:inline-flex;
+  align-items:center;
+  text-decoration:none;
+  flex:0 0 auto;
+}
+
+.posh-logo{
+  display:block;
+  height:40px;
+  width:auto;
+  max-width:none;
+  object-fit:contain;
+}
+
+.posh-header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-left:auto;
+}
+
+.posh-home-btn{
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:9px 15px;
+  border-radius:999px;
+  border:1.15px solid rgba(183,122,74,.44);
+  background:rgba(255,255,255,.04);
+  color:#fff1d6 !important;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:none;
+}
+
+.posh-home-btn:hover{
+  transform:translateY(-1px);
+  background:rgba(183,122,74,.10);
+  border-color:rgba(183,122,74,.72);
+  color:#fff !important;
+}
+
+body.has-posh-header #nav{
+  margin-top:14px;
+}
+
 /* NAV AREA */
 #nav{
   margin:0 0 24px;
@@ -2200,6 +2274,26 @@ footer,
   .tagline{
     font-size:1rem;
     margin-bottom:18px;
+  }
+
+  .posh-header{
+    padding-top:8px;
+  }
+
+  .posh-header-inner{
+    width:min(100% - 18px, var(--wrap));
+    padding:9px 12px;
+    border-radius:16px;
+  }
+
+  .posh-logo{
+    height:34px;
+  }
+
+  .posh-home-btn{
+    min-height:36px;
+    padding:8px 12px;
+    font-size:.92rem;
   }
 
   body.home-page .page-title,
