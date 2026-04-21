@@ -3,17 +3,17 @@
 
   /* =========================================================
      POSH MASTER APP.JS
-     Corrected full replacement
-     - top sticky header only
-     - does NOT alter existing global hero PNG system
+     Conservative full replacement
+     - keeps existing hero PNG system untouched
+     - adds top sticky header with POSH logo + Home button
      - global nav
      - ranked live search
+     - current-page highlighting
      - accordion stays closed on load
-     - active-page highlighting
      - breadcrumbs
      - reading progress
      - back to top
-     - share / copy
+     - share / copy link
      - sticky action bar
      - support strip
      - smart CTA injection
@@ -93,63 +93,345 @@
     {
       title: "Start & Safety",
       links: [
-        { href: POSH.home, label: "Home", type: "Home", keywords: "home index posh parents online safety hub australia victoria jinglez child safety support" },
-        { href: POSH.start, label: "Start Here", type: "Start", keywords: "start first steps urgent where do i begin parent help safety" },
-        { href: POSH.entry, label: "Entry System", type: "System", keywords: "entry system guided path pathway choose direction" },
-        { href: POSH.whatNow, label: "What To Do Now", type: "Action", keywords: "what to do now immediate next steps act early concern" },
-        { href: POSH.response, label: "POSH Response System", type: "Action", keywords: "response system posh response what parents do next concern structure" },
-        { href: POSH.parentQuestions, label: "Parent Questions", type: "Questions", keywords: "parent questions what to ask child question prompts" },
-        { href: POSH.quiz, label: "Safety Score", type: "Quiz", keywords: "safety score test audit checklist quiz risk score check" },
-        { href: POSH.redFlags, label: "Red Flags", type: "Warning Signs", keywords: "red flags warning signs grooming behaviour sudden changes secrecy child concern" },
-        { href: POSH.tenSigns, label: "10 Signs", type: "Warning Signs", keywords: "10 signs targeted online grooming signs child" },
-        { href: POSH.playbook, label: "Predator Playbook", type: "Playbook", keywords: "playbook grooming escalation pattern trust private secrecy" },
-        { href: POSH.predators, label: "Predator Tactics", type: "Predators", keywords: "predator tactics manipulation control grooming trust isolate secrets" },
-        { href: POSH.reporting, label: "Report & Get Help", type: "Reporting", keywords: "report get help police esafety evidence accce sextortion urgent help" }
+        {
+          href: POSH.home,
+          label: "Home",
+          type: "Home",
+          keywords:
+            "home index posh parents online safety hub australia victoria jinglez child safety support"
+        },
+        {
+          href: POSH.start,
+          label: "Start Here",
+          type: "Start",
+          keywords:
+            "start first steps urgent where do i begin parent help safety"
+        },
+        {
+          href: POSH.entry,
+          label: "Entry System",
+          type: "System",
+          keywords:
+            "entry system guided path pathway choose direction"
+        },
+        {
+          href: POSH.whatNow,
+          label: "What To Do Now",
+          type: "Action",
+          keywords:
+            "what to do now immediate next steps act early concern"
+        },
+        {
+          href: POSH.response,
+          label: "POSH Response System",
+          type: "Action",
+          keywords:
+            "response system posh response what parents do next concern structure"
+        },
+        {
+          href: POSH.parentQuestions,
+          label: "Parent Questions",
+          type: "Questions",
+          keywords:
+            "parent questions what to ask child question prompts"
+        },
+        {
+          href: POSH.quiz,
+          label: "Safety Score",
+          type: "Quiz",
+          keywords:
+            "safety score test audit checklist quiz risk score check"
+        },
+        {
+          href: POSH.redFlags,
+          label: "Red Flags",
+          type: "Warning Signs",
+          keywords:
+            "red flags warning signs grooming behaviour sudden changes secrecy child concern"
+        },
+        {
+          href: POSH.tenSigns,
+          label: "10 Signs",
+          type: "Warning Signs",
+          keywords:
+            "10 signs targeted online grooming signs child"
+        },
+        {
+          href: POSH.playbook,
+          label: "Predator Playbook",
+          type: "Playbook",
+          keywords:
+            "playbook grooming escalation pattern trust private secrecy"
+        },
+        {
+          href: POSH.predators,
+          label: "Predator Tactics",
+          type: "Predators",
+          keywords:
+            "predator tactics manipulation control grooming trust isolate secrets"
+        },
+        {
+          href: POSH.reporting,
+          label: "Report & Get Help",
+          type: "Reporting",
+          keywords:
+            "report get help police esafety evidence accce sextortion urgent help"
+        }
       ]
     },
     {
       title: "Platforms, Games & Apps",
       links: [
-        { href: POSH.platforms, label: "All Platforms", type: "Directory", keywords: "all platforms apps games devices socials directory list" },
-        { href: POSH.gaming, label: "Gaming Safety", type: "Gaming", keywords: "gaming safety games online game chat party voice stranger access" },
-        { href: POSH.allGames, label: "All Games Directory", type: "Directory", keywords: "all games directory list gaming pages" },
-        { href: POSH.roblox, label: "Roblox", type: "Game", keywords: "roblox robux private chat friend requests gifting groups voice" },
-        { href: POSH.fortnite, label: "Fortnite", type: "Game", keywords: "fortnite party chat voice randoms squads epic games" },
-        { href: POSH.minecraft, label: "Minecraft", type: "Game", keywords: "minecraft servers realms multiplayer mods private server" },
-        { href: POSH.vrchat, label: "VRChat", type: "Game", keywords: "vrchat virtual reality avatars adults children headset voice" },
-        { href: POSH.xbox, label: "Xbox", type: "Gaming Device", keywords: "xbox console party chat messages microsoft device" },
-        { href: POSH.playstation, label: "PlayStation", type: "Gaming Device", keywords: "playstation psn party chat sony console" },
-        { href: POSH.nintendo, label: "Nintendo", type: "Gaming Device", keywords: "nintendo switch nintendo online child safety" },
-        { href: POSH.pcGaming, label: "PC Gaming", type: "Gaming Device", keywords: "pc gaming steam discord pc safety device" },
-        { href: POSH.vrGaming, label: "VR Gaming", type: "Gaming Device", keywords: "vr gaming headset voice chat immersion meta quest" },
-        { href: POSH.socials, label: "Social Media & Chat", type: "Socials", keywords: "socials social media apps chat platforms private messages" },
-        { href: POSH.discord, label: "Discord", type: "App", keywords: "discord dms server voice chat grooming off platform" },
-        { href: POSH.snapchat, label: "Snapchat", type: "App", keywords: "snapchat disappearing messages streaks quick add snap map" },
-        { href: POSH.tiktok, label: "TikTok", type: "App", keywords: "tiktok algorithm live messages fyp trends exposure" },
-        { href: POSH.youtube, label: "YouTube", type: "App", keywords: "youtube comments shorts live creators algorithm" },
-        { href: POSH.videoChat, label: "Video Chat", type: "App", keywords: "video chat live video webcam random strangers calls" },
-        { href: POSH.devices, label: "Device Safety", type: "Devices", keywords: "device safety phones tablets consoles browser passcodes permissions installs" },
-        { href: POSH.bestParentalControlApps, label: "Best Parental Control Apps", type: "Guide", keywords: "best parental control apps monitor filters screen time devices" },
-        { href: POSH.dangerousApps, label: "Top Dangerous Apps", type: "Guide", keywords: "dangerous apps risky apps for kids private contact secrecy" },
-        { href: POSH.cancelSubscriptions, label: "Cancel Subscriptions", type: "Guide", keywords: "cancel subscriptions apple google microsoft xbox playstation support" }
+        {
+          href: POSH.platforms,
+          label: "All Platforms",
+          type: "Directory",
+          keywords:
+            "all platforms apps games devices socials directory list"
+        },
+        {
+          href: POSH.gaming,
+          label: "Gaming Safety",
+          type: "Gaming",
+          keywords:
+            "gaming safety games online game chat party voice stranger access"
+        },
+        {
+          href: POSH.allGames,
+          label: "All Games Directory",
+          type: "Directory",
+          keywords:
+            "all games directory list gaming pages"
+        },
+        {
+          href: POSH.roblox,
+          label: "Roblox",
+          type: "Game",
+          keywords:
+            "roblox robux private chat friend requests gifting groups voice"
+        },
+        {
+          href: POSH.fortnite,
+          label: "Fortnite",
+          type: "Game",
+          keywords:
+            "fortnite party chat voice randoms squads epic games"
+        },
+        {
+          href: POSH.minecraft,
+          label: "Minecraft",
+          type: "Game",
+          keywords:
+            "minecraft servers realms multiplayer mods private server"
+        },
+        {
+          href: POSH.vrchat,
+          label: "VRChat",
+          type: "Game",
+          keywords:
+            "vrchat virtual reality avatars adults children headset voice"
+        },
+        {
+          href: POSH.xbox,
+          label: "Xbox",
+          type: "Gaming Device",
+          keywords:
+            "xbox console party chat messages microsoft device"
+        },
+        {
+          href: POSH.playstation,
+          label: "PlayStation",
+          type: "Gaming Device",
+          keywords:
+            "playstation psn party chat sony console"
+        },
+        {
+          href: POSH.nintendo,
+          label: "Nintendo",
+          type: "Gaming Device",
+          keywords:
+            "nintendo switch nintendo online child safety"
+        },
+        {
+          href: POSH.pcGaming,
+          label: "PC Gaming",
+          type: "Gaming Device",
+          keywords:
+            "pc gaming steam discord pc safety device"
+        },
+        {
+          href: POSH.vrGaming,
+          label: "VR Gaming",
+          type: "Gaming Device",
+          keywords:
+            "vr gaming headset voice chat immersion meta quest"
+        },
+        {
+          href: POSH.socials,
+          label: "Social Media & Chat",
+          type: "Socials",
+          keywords:
+            "socials social media apps chat platforms private messages"
+        },
+        {
+          href: POSH.discord,
+          label: "Discord",
+          type: "App",
+          keywords:
+            "discord dms server voice chat grooming off platform"
+        },
+        {
+          href: POSH.snapchat,
+          label: "Snapchat",
+          type: "App",
+          keywords:
+            "snapchat disappearing messages streaks quick add snap map"
+        },
+        {
+          href: POSH.tiktok,
+          label: "TikTok",
+          type: "App",
+          keywords:
+            "tiktok algorithm live messages fyp trends exposure"
+        },
+        {
+          href: POSH.youtube,
+          label: "YouTube",
+          type: "App",
+          keywords:
+            "youtube comments shorts live creators algorithm"
+        },
+        {
+          href: POSH.videoChat,
+          label: "Video Chat",
+          type: "App",
+          keywords:
+            "video chat live video webcam random strangers calls"
+        },
+        {
+          href: POSH.devices,
+          label: "Device Safety",
+          type: "Devices",
+          keywords:
+            "device safety phones tablets consoles browser passcodes permissions installs"
+        },
+        {
+          href: POSH.bestParentalControlApps,
+          label: "Best Parental Control Apps",
+          type: "Guide",
+          keywords:
+            "best parental control apps monitor filters screen time devices"
+        },
+        {
+          href: POSH.dangerousApps,
+          label: "Top Dangerous Apps",
+          type: "Guide",
+          keywords:
+            "dangerous apps risky apps for kids private contact secrecy"
+        },
+        {
+          href: POSH.cancelSubscriptions,
+          label: "Cancel Subscriptions",
+          type: "Guide",
+          keywords:
+            "cancel subscriptions apple google microsoft xbox playstation support"
+        }
       ]
     },
     {
       title: "Awareness & Resources",
       links: [
-        { href: POSH.awareness, label: "Awareness Hub", type: "Awareness", keywords: "awareness hub education support parents grooming algorithms safety" },
-        { href: POSH.algorithm, label: "Algorithm Risks", type: "Awareness", keywords: "algorithm awareness risks feed recommendations endless scroll influence" },
-        { href: POSH.investigations, label: "Real Investigations", type: "Investigations", keywords: "real investigations shawn ryan vigilance elite interviews evidence" },
-        { href: POSH.parentScripts, label: "Parent Scripts", type: "Scripts", keywords: "parent scripts talk to kids hard conversations online safety" },
-        { href: POSH.houseRules, label: "House Rules", type: "Rules", keywords: "house rules boundaries devices charging bedrooms passcodes no private apps" },
-        { href: POSH.ageGuide, label: "Age Guide", type: "Guide", keywords: "age guide age appropriate readiness apps games maturity" },
-        { href: POSH.downloads, label: "All PDF Downloads", type: "Downloads", keywords: "pdf downloads guides framework playbook scripts printables checklists" },
-        { href: POSH.downloadsLegacy, label: "Downloads", type: "Downloads", keywords: "downloads pdf printables framework scripts playbook resources" },
-        { href: POSH.petitionDigitalGifting, label: "Digital Gifting Policy", type: "Policy", keywords: "petition digital gifting robux skins gifts parent approval policy" },
-        { href: POSH.petitionDefaults, label: "Safer Defaults Policy", type: "Policy", keywords: "petition safer defaults child accounts settings design reform" },
-        { href: POSH.support, label: "Support POSH", type: "Support", keywords: "support posh donate help keep posh free mission support" },
-        { href: POSH.supportLegacy, label: "Support", type: "Support", keywords: "support help next steps services parent help australia" },
-        { href: POSH.disclaimer, label: "Warning & Disclaimer", type: "Info", keywords: "warning disclaimer legal medical education guidance information" }
+        {
+          href: POSH.awareness,
+          label: "Awareness Hub",
+          type: "Awareness",
+          keywords:
+            "awareness hub education support parents grooming algorithms safety"
+        },
+        {
+          href: POSH.algorithm,
+          label: "Algorithm Risks",
+          type: "Awareness",
+          keywords:
+            "algorithm awareness risks feed recommendations endless scroll influence"
+        },
+        {
+          href: POSH.investigations,
+          label: "Real Investigations",
+          type: "Investigations",
+          keywords:
+            "real investigations shawn ryan vigilance elite interviews evidence"
+        },
+        {
+          href: POSH.parentScripts,
+          label: "Parent Scripts",
+          type: "Scripts",
+          keywords:
+            "parent scripts talk to kids hard conversations online safety"
+        },
+        {
+          href: POSH.houseRules,
+          label: "House Rules",
+          type: "Rules",
+          keywords:
+            "house rules boundaries devices charging bedrooms passcodes no private apps"
+        },
+        {
+          href: POSH.ageGuide,
+          label: "Age Guide",
+          type: "Guide",
+          keywords:
+            "age guide age appropriate readiness apps games maturity"
+        },
+        {
+          href: POSH.downloads,
+          label: "All PDF Downloads",
+          type: "Downloads",
+          keywords:
+            "pdf downloads guides framework playbook scripts printables checklists"
+        },
+        {
+          href: POSH.downloadsLegacy,
+          label: "Downloads",
+          type: "Downloads",
+          keywords:
+            "downloads pdf printables framework scripts playbook resources"
+        },
+        {
+          href: POSH.petitionDigitalGifting,
+          label: "Digital Gifting Policy",
+          type: "Policy",
+          keywords:
+            "petition digital gifting robux skins gifts parent approval policy"
+        },
+        {
+          href: POSH.petitionDefaults,
+          label: "Safer Defaults Policy",
+          type: "Policy",
+          keywords:
+            "petition safer defaults child accounts settings design reform"
+        },
+        {
+          href: POSH.support,
+          label: "Support POSH",
+          type: "Support",
+          keywords:
+            "support posh donate help keep posh free mission support"
+        },
+        {
+          href: POSH.supportLegacy,
+          label: "Support",
+          type: "Support",
+          keywords:
+            "support help next steps services parent help australia"
+        },
+        {
+          href: POSH.disclaimer,
+          label: "Warning & Disclaimer",
+          type: "Info",
+          keywords:
+            "warning disclaimer legal medical education guidance information"
+        }
       ]
     }
   ];
@@ -268,7 +550,9 @@
           ...extra
         });
       }
-    } catch (err) {}
+    } catch (err) {
+      // silent
+    }
   }
 
   function isExternalHref(href) {
@@ -306,6 +590,7 @@
         <a href="${POSH.home}" class="posh-logo-link" aria-label="Back to home" data-track="header_logo_home">
           <img src="${POSH.logoSrc}" alt="${escapeHtml(POSH.logoAlt)}" class="posh-logo" />
         </a>
+
         <div class="posh-header-actions">
           <a href="${POSH.home}" class="posh-home-btn" data-track="header_home_btn">Home</a>
         </div>
@@ -747,7 +1032,9 @@
       await navigator.clipboard.writeText(location.href);
       maybeTrack("copy_link");
       showMiniToast("Link copied");
-    } catch (err) {}
+    } catch (err) {
+      // silent
+    }
   }
 
   async function nativeShare() {
@@ -764,7 +1051,9 @@
       } else {
         await copyCurrentLink();
       }
-    } catch (err) {}
+    } catch (err) {
+      // silent
+    }
   }
 
   function injectStickyActionBar() {
