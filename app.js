@@ -5,6 +5,7 @@
      POSH MASTER APP.JS
      Premium full replacement
      - keeps existing global hero PNG system untouched
+     - restores large clickable POSH hero PNG block
      - injects top sticky header with POSH logo + Home button
      - ranked live search
      - current-page highlighting
@@ -30,8 +31,18 @@
     siteName: "Parents Online Safety Hub",
     domain: "https://poshaussie.com.au/",
     home: "index.html",
+
+    /* top header logo */
     logoSrc: "POSH.png",
+    logoSrcFallback: "https://poshaussie.com.au/POSH.png",
     logoAlt: "POSH",
+
+    /* large global hero banner */
+    heroSrc: "posh-hero.png",
+    heroSrcFallback: "https://poshaussie.com.au/posh-hero.png",
+    heroAlt: "Parents Online Safety Hub",
+    heroAriaLabel: "Back to POSH home",
+
     start: "v3-start.html",
     entry: "v3-entry-system.html",
     whatNow: "v3-what-to-do-now.html",
@@ -79,6 +90,7 @@
     pcGaming: "V3gaming-pc.html",
     vrGaming: "V3gaming-vr.html",
     disclaimer: "warning-disclaimer.html",
+
     shareText:
       "POSH Aussie helps parents understand online risks, spot warning signs earlier, and protect their children with clearer practical guidance.",
     searchPlaceholder: "Search apps, games, devices, PDFs or topics",
@@ -297,6 +309,33 @@
     return el ? safeText(el.textContent).slice(0, 220) : "";
   }
 
+  function resolveAssetUrl(src, fallback) {
+    if (!src) return fallback || "";
+    if (/^https?:\/\//i.test(src)) return src;
+    return src;
+  }
+
+  function applyImageFallback(img, primarySrc, fallbackSrc, onFail) {
+    if (!img) return;
+
+    let triedFallback = false;
+    img.src = resolveAssetUrl(primarySrc, fallbackSrc);
+
+    img.addEventListener("load", () => {
+      img.classList.add("is-loaded");
+      img.closest(".is-image-pending")?.classList.remove("is-image-pending");
+    });
+
+    img.addEventListener("error", () => {
+      if (!triedFallback && fallbackSrc && img.src !== fallbackSrc) {
+        triedFallback = true;
+        img.src = fallbackSrc;
+        return;
+      }
+      if (typeof onFail === "function") onFail();
+    });
+  }
+
   function injectBrandHeader() {
     if (qs(".posh-header")) return;
 
@@ -305,7 +344,7 @@
     header.innerHTML = `
       <div class="posh-header-inner">
         <a href="${POSH.home}" class="posh-logo-link" aria-label="Back to home" data-track="header_logo_home">
-          <img src="${POSH.logoSrc}" alt="${escapeHtml(POSH.logoAlt)}" class="posh-logo" />
+          <img alt="${escapeHtml(POSH.logoAlt)}" class="posh-logo" />
         </a>
         <div class="posh-header-actions">
           <a href="${POSH.home}" class="posh-home-btn" data-track="header_home_btn">Home</a>
@@ -316,11 +355,66 @@
     document.body.prepend(header);
     document.body.classList.add("has-posh-header");
 
+    const logo = qs(".posh-logo", header);
+    applyImageFallback(
+      logo,
+      POSH.logoSrc,
+      POSH.logoSrcFallback,
+      () => {
+        const link = qs(".posh-logo-link", header);
+        if (link) {
+          link.textContent = POSH.brand;
+          link.classList.add("posh-logo-fallback-text");
+        }
+      }
+    );
+
     qsa("[data-track]", header).forEach(el => {
       el.addEventListener("click", () => {
         maybeTrack(el.getAttribute("data-track") || "header_click");
       });
     });
+  }
+
+  function injectGlobalHeroBanner() {
+    const wrap = qs(".wrap");
+    if (!wrap) return;
+    if (qs(".posh-global-hero-wrap", wrap)) return;
+
+    const heroWrap = document.createElement("div");
+    heroWrap.className = "posh-global-hero-wrap";
+
+    heroWrap.innerHTML = `
+      <a href="${POSH.home}" class="posh-global-hero-link" aria-label="${escapeHtml(POSH.heroAriaLabel)}" data-track="global_hero_home">
+        <span class="posh-global-hero-media is-image-pending">
+          <img alt="${escapeHtml(POSH.heroAlt)}" class="posh-global-hero-img" />
+        </span>
+      </a>
+    `;
+
+    const firstChild = wrap.firstElementChild;
+    if (firstChild) {
+      wrap.insertBefore(heroWrap, firstChild);
+    } else {
+      wrap.appendChild(heroWrap);
+    }
+
+    const heroImg = qs(".posh-global-hero-img", heroWrap);
+    applyImageFallback(
+      heroImg,
+      POSH.heroSrc,
+      POSH.heroSrcFallback,
+      () => {
+        heroWrap.remove();
+      }
+    );
+
+    const heroLink = qs(".posh-global-hero-link", heroWrap);
+    if (heroLink) {
+      heroLink.addEventListener("click", () => {
+        maybeTrack("global_hero_home");
+      });
+    }
   }
 
   function buildNavLink(link) {
@@ -1229,6 +1323,7 @@
     safeInit(addPageMetaAttributes);
     safeInit(addPageLeadClass);
     safeInit(injectBrandHeader);
+    safeInit(injectGlobalHeroBanner);
     safeInit(mountNav);
     safeInit(injectBreadcrumbs);
     safeInit(ensureHeadingIds);
