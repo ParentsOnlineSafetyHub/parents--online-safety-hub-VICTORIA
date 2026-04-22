@@ -287,6 +287,22 @@ hr{
   object-fit:contain;
 }
 
+.posh-logo-fallback-text{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:8px 12px;
+  border-radius:12px;
+  border:1px solid rgba(217,182,90,.28);
+  background:rgba(255,255,255,.04);
+  color:#fff4ce;
+  font-family:var(--font-heading);
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
 .posh-header-actions{
   display:flex;
   align-items:center;
@@ -1677,7 +1693,8 @@ footer,
     0 18px 44px rgba(0,0,0,.34),
     0 0 0 1px rgba(255,255,255,.04) inset,
     0 0 24px rgba(217,182,90,.10);
-  background:rgba(8,25,50,.42);
+  background:
+    linear-gradient(180deg, rgba(12,34,68,.82), rgba(8,25,50,.56));
   position:relative;
   transform:translateZ(0);
 }
@@ -1708,6 +1725,13 @@ footer,
 .posh-global-hero-media{
   display:block;
   width:100%;
+}
+
+.posh-global-hero-media.is-image-pending{
+  min-height:170px;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(217,182,90,.09), transparent 35%),
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
 }
 
 .posh-global-hero-img{
@@ -2423,6 +2447,10 @@ footer,
   .posh-global-hero-link{
     border-radius:15px;
     border-width:1.25px;
+  }
+
+  .posh-global-hero-media.is-image-pending{
+    min-height:110px;
   }
 
   .posh-page-header{
