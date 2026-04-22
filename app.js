@@ -4,12 +4,13 @@
   /* =========================================================
      POSH MASTER APP.JS
      Premium full replacement
-     - keeps existing global hero PNG system untouched
-     - restores large clickable POSH hero PNG block
-     - injects top sticky header with POSH logo + Home button
+     - restores and prioritises large clickable POSH hero image
+     - keeps sticky top header with logo + Home button
+     - protects existing hero if already in HTML
+     - tries multiple hero/logo asset filenames automatically
      - ranked live search
      - current-page highlighting
-     - accordion stays closed on load
+     - accordion closed on load
      - breadcrumbs
      - reading progress
      - back to top
@@ -24,9 +25,6 @@
      - form enhancement
      - hero CTA upgrade
      - page context classes
-     - duplicate-injection protection
-     - stronger image fallback handling
-     - safer DOM insertion logic
      ========================================================= */
 
   const POSH = {
@@ -35,14 +33,28 @@
     domain: "https://poshaussie.com.au/",
     home: "index.html",
 
-    /* top header logo */
-    logoSrc: "POSH.png",
-    logoSrcFallback: "https://poshaussie.com.au/POSH.png",
+    /* top sticky header logo candidates */
+    logoCandidates: [
+      "POSH.png",
+      "/POSH.png",
+      "https://poshaussie.com.au/POSH.png"
+    ],
     logoAlt: "POSH",
 
-    /* large global hero banner */
-    heroSrc: "posh-hero.png",
-    heroSrcFallback: "https://poshaussie.com.au/posh-hero.png",
+    /* main hero / home button / primary brand image candidates */
+    heroCandidates: [
+      "POSH-HERO.png",
+      "/POSH-HERO.png",
+      "POSH-HERO.PNG",
+      "/POSH-HERO.PNG",
+      "posh-hero.png",
+      "/posh-hero.png",
+      "POSH-hero.png",
+      "/POSH-hero.png",
+      "https://poshaussie.com.au/POSH-HERO.png",
+      "https://poshaussie.com.au/POSH-HERO.PNG",
+      "https://poshaussie.com.au/posh-hero.png"
+    ],
     heroAlt: "Parents Online Safety Hub",
     heroAriaLabel: "Back to POSH home",
 
@@ -283,7 +295,7 @@
         });
       }
     } catch (err) {
-      // silent
+        /* silent */
     }
   }
 
@@ -312,35 +324,34 @@
     return el ? safeText(el.textContent).slice(0, 220) : "";
   }
 
-  function resolveAssetUrl(src, fallback) {
-    if (!src) return fallback || "";
-    if (/^https?:\/\//i.test(src)) return src;
-    return src;
-  }
+  function loadImageFromCandidates(img, candidates, onSuccess, onFail) {
+    if (!img || !Array.isArray(candidates) || !candidates.length) {
+      if (typeof onFail === "function") onFail();
+      return;
+    }
 
-  function applyImageFallback(img, primarySrc, fallbackSrc, onFail) {
-    if (!img) return;
+    let index = 0;
 
-    let triedFallback = false;
-    img.src = resolveAssetUrl(primarySrc, fallbackSrc);
-
-    img.addEventListener("load", () => {
-      img.classList.add("is-loaded");
-      const pending = img.closest(".is-image-pending");
-      if (pending) pending.classList.remove("is-image-pending");
-    });
-
-    img.addEventListener("error", () => {
-      const currentSrc = img.getAttribute("src") || "";
-
-      if (!triedFallback && fallbackSrc && currentSrc !== fallbackSrc) {
-        triedFallback = true;
-        img.src = fallbackSrc;
+    function tryNext() {
+      if (index >= candidates.length) {
+        if (typeof onFail === "function") onFail();
         return;
       }
 
-      if (typeof onFail === "function") onFail();
+      const src = candidates[index++];
+      img.src = src;
+    }
+
+    img.addEventListener("load", function handleLoad() {
+      img.removeEventListener("load", handleLoad);
+      if (typeof onSuccess === "function") onSuccess(img);
+    }, { once: true });
+
+    img.addEventListener("error", function handleError() {
+      tryNext();
     });
+
+    tryNext();
   }
 
   function injectBrandHeader() {
@@ -363,14 +374,16 @@
     document.body.classList.add("has-posh-header");
 
     const logo = qs(".posh-logo", header);
-    applyImageFallback(
+    loadImageFromCandidates(
       logo,
-      POSH.logoSrc,
-      POSH.logoSrcFallback,
+      POSH.logoCandidates,
+      () => {
+        logo.classList.add("is-loaded");
+      },
       () => {
         const link = qs(".posh-logo-link", header);
         if (link) {
-          link.innerHTML = escapeHtml(POSH.brand);
+          link.innerHTML = `<span class="posh-logo-fallback-text-inner">${escapeHtml(POSH.brand)}</span>`;
           link.classList.add("posh-logo-fallback-text");
         }
       }
@@ -383,13 +396,24 @@
     });
   }
 
+  function existingHeroAlreadyPresent() {
+    return !!(
+      qs(".posh-global-hero-wrap") ||
+      qs(".posh-global-hero-link") ||
+      qs(".posh-global-hero-img") ||
+      qs("[data-posh-main-hero]")
+    );
+  }
+
   function injectGlobalHeroBanner() {
     const wrap = qs(".wrap");
     if (!wrap) return;
-    if (qs(".posh-global-hero-wrap", wrap)) return;
+    if (existingHeroAlreadyPresent()) return;
 
     const heroWrap = document.createElement("div");
     heroWrap.className = "posh-global-hero-wrap";
+    heroWrap.setAttribute("data-posh-main-hero", "true");
+
     heroWrap.innerHTML = `
       <a href="${POSH.home}" class="posh-global-hero-link" aria-label="${escapeHtml(POSH.heroAriaLabel)}" data-track="global_hero_home">
         <span class="posh-global-hero-media is-image-pending">
@@ -398,22 +422,33 @@
       </a>
     `;
 
-    const nav = qs("#nav", wrap);
-    if (nav) {
-      wrap.insertBefore(heroWrap, nav);
-    } else if (wrap.firstElementChild) {
-      wrap.insertBefore(heroWrap, wrap.firstElementChild);
+    const firstChild = wrap.firstElementChild;
+    if (firstChild) {
+      wrap.insertBefore(heroWrap, firstChild);
     } else {
       wrap.appendChild(heroWrap);
     }
 
     const heroImg = qs(".posh-global-hero-img", heroWrap);
-    applyImageFallback(
+    const heroMedia = qs(".posh-global-hero-media", heroWrap);
+
+    loadImageFromCandidates(
       heroImg,
-      POSH.heroSrc,
-      POSH.heroSrcFallback,
+      POSH.heroCandidates,
       () => {
-        heroWrap.remove();
+        heroImg.classList.add("is-loaded");
+        if (heroMedia) heroMedia.classList.remove("is-image-pending");
+      },
+      () => {
+        heroWrap.innerHTML = `
+          <a href="${POSH.home}" class="posh-global-hero-link posh-global-hero-fallback" aria-label="${escapeHtml(POSH.heroAriaLabel)}" data-track="global_hero_home">
+            <span class="posh-global-hero-fallback-inner">
+              <span class="posh-global-hero-fallback-kicker">Parents Online Safety Hub</span>
+              <span class="posh-global-hero-fallback-title">POSH</span>
+              <span class="posh-global-hero-fallback-sub">Back to Home</span>
+            </span>
+          </a>
+        `;
       }
     );
 
@@ -496,15 +531,15 @@
     qsa("a[href]", root).forEach(anchor => {
       const href = normalisePath(anchor.getAttribute("href"));
 
+      anchor.classList.remove("active", "nav-active");
+      anchor.removeAttribute("aria-current");
+
       if (href === current) {
         anchor.classList.add("active", "nav-active");
         anchor.setAttribute("aria-current", "page");
 
         const group = anchor.closest(".nav-group");
         if (group) group.classList.add("has-active-page");
-      } else {
-        anchor.classList.remove("active", "nav-active");
-        anchor.removeAttribute("aria-current");
       }
     });
   }
@@ -853,7 +888,7 @@
       maybeTrack("copy_link");
       showMiniToast("Link copied");
     } catch (err) {
-      // silent
+      /* silent */
     }
   }
 
@@ -872,7 +907,7 @@
         await copyCurrentLink();
       }
     } catch (err) {
-      // silent
+      /* silent */
     }
   }
 
@@ -984,6 +1019,7 @@
         <button type="button" id="poshCopyMainBtn" data-track="share_panel_copy">Copy Link</button>
         <a href="${POSH.downloads}" data-track="share_panel_downloads">All PDF Downloads</a>
       </div>
+    </section>
     `;
 
     wrap.appendChild(panel);
