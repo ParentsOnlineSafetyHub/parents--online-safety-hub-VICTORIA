@@ -3,11 +3,12 @@
 
   /* =========================================================
      POSH MASTER APP.JS
-     Premium full replacement
-     - restores and prioritises large clickable POSH hero image
-     - keeps sticky top header with logo + Home button
+     FULL REPLACEMENT RESET
+     - removes unnecessary top sticky POSH/HOME header
+     - restores large clickable POSH hero image as main brand/home button
+     - preserves accordion nav
      - protects existing hero if already in HTML
-     - tries multiple hero/logo asset filenames automatically
+     - tries multiple hero filenames automatically
      - ranked live search
      - current-page highlighting
      - accordion closed on load
@@ -32,14 +33,6 @@
     siteName: "Parents Online Safety Hub",
     domain: "https://poshaussie.com.au/",
     home: "index.html",
-
-    /* top sticky header logo candidates */
-    logoCandidates: [
-      "POSH.png",
-      "/POSH.png",
-      "https://poshaussie.com.au/POSH.png"
-    ],
-    logoAlt: "POSH",
 
     /* main hero / home button / primary brand image candidates */
     heroCandidates: [
@@ -295,7 +288,7 @@
         });
       }
     } catch (err) {
-        /* silent */
+      /* silent */
     }
   }
 
@@ -337,63 +330,23 @@
         if (typeof onFail === "function") onFail();
         return;
       }
-
-      const src = candidates[index++];
-      img.src = src;
+      img.src = candidates[index++];
     }
 
-    img.addEventListener("load", function handleLoad() {
+    function handleLoad() {
       img.removeEventListener("load", handleLoad);
+      img.removeEventListener("error", handleError);
       if (typeof onSuccess === "function") onSuccess(img);
-    }, { once: true });
+    }
 
-    img.addEventListener("error", function handleError() {
+    function handleError() {
       tryNext();
-    });
+    }
+
+    img.addEventListener("load", handleLoad);
+    img.addEventListener("error", handleError);
 
     tryNext();
-  }
-
-  function injectBrandHeader() {
-    if (qs(".posh-header")) return;
-
-    const header = document.createElement("header");
-    header.className = "posh-header";
-    header.innerHTML = `
-      <div class="posh-header-inner">
-        <a href="${POSH.home}" class="posh-logo-link" aria-label="Back to home" data-track="header_logo_home">
-          <img alt="${escapeHtml(POSH.logoAlt)}" class="posh-logo" />
-        </a>
-        <div class="posh-header-actions">
-          <a href="${POSH.home}" class="posh-home-btn" data-track="header_home_btn">Home</a>
-        </div>
-      </div>
-    `;
-
-    document.body.prepend(header);
-    document.body.classList.add("has-posh-header");
-
-    const logo = qs(".posh-logo", header);
-    loadImageFromCandidates(
-      logo,
-      POSH.logoCandidates,
-      () => {
-        logo.classList.add("is-loaded");
-      },
-      () => {
-        const link = qs(".posh-logo-link", header);
-        if (link) {
-          link.innerHTML = `<span class="posh-logo-fallback-text-inner">${escapeHtml(POSH.brand)}</span>`;
-          link.classList.add("posh-logo-fallback-text");
-        }
-      }
-    );
-
-    qsa("[data-track]", header).forEach(el => {
-      el.addEventListener("click", () => {
-        maybeTrack(el.getAttribute("data-track") || "header_click");
-      });
-    });
   }
 
   function existingHeroAlreadyPresent() {
@@ -452,12 +405,10 @@
       }
     );
 
-    const heroLink = qs(".posh-global-hero-link", heroWrap);
-    if (heroLink) {
-      heroLink.addEventListener("click", () => {
-        maybeTrack("global_hero_home");
-      });
-    }
+    heroWrap.addEventListener("click", (event) => {
+      const link = event.target.closest(".posh-global-hero-link");
+      if (link) maybeTrack("global_hero_home");
+    });
   }
 
   function buildNavLink(link) {
@@ -1019,7 +970,6 @@
         <button type="button" id="poshCopyMainBtn" data-track="share_panel_copy">Copy Link</button>
         <a href="${POSH.downloads}" data-track="share_panel_downloads">All PDF Downloads</a>
       </div>
-    </section>
     `;
 
     wrap.appendChild(panel);
@@ -1370,7 +1320,6 @@
     safeInit(ensureBodyFlags);
     safeInit(addPageMetaAttributes);
     safeInit(addPageLeadClass);
-    safeInit(injectBrandHeader);
     safeInit(injectGlobalHeroBanner);
     safeInit(mountNav);
     safeInit(injectBreadcrumbs);
