@@ -3,8 +3,8 @@
 
   /* =========================================================
      POSH MASTER APP.JS
-     Stable premium full replacement
-     - preserves existing page structure
+     Premium full replacement
+     - keeps existing global hero PNG system untouched
      - restores large clickable POSH hero PNG block
      - injects top sticky header with POSH logo + Home button
      - ranked live search
@@ -24,6 +24,9 @@
      - form enhancement
      - hero CTA upgrade
      - page context classes
+     - duplicate-injection protection
+     - stronger image fallback handling
+     - safer DOM insertion logic
      ========================================================= */
 
   const POSH = {
@@ -280,8 +283,8 @@
         });
       }
     } catch (err) {
-        /* silent */
-      }
+      // silent
+    }
   }
 
   function isExternalHref(href) {
@@ -319,31 +322,25 @@
     if (!img) return;
 
     let triedFallback = false;
-
-    img.addEventListener(
-      "load",
-      () => {
-        img.classList.add("is-loaded");
-        const pending = img.closest(".is-image-pending");
-        if (pending) pending.classList.remove("is-image-pending");
-      },
-      { once: false }
-    );
-
-    img.addEventListener(
-      "error",
-      () => {
-        if (!triedFallback && fallbackSrc && img.src !== fallbackSrc) {
-          triedFallback = true;
-          img.src = fallbackSrc;
-          return;
-        }
-        if (typeof onFail === "function") onFail();
-      },
-      { once: false }
-    );
-
     img.src = resolveAssetUrl(primarySrc, fallbackSrc);
+
+    img.addEventListener("load", () => {
+      img.classList.add("is-loaded");
+      const pending = img.closest(".is-image-pending");
+      if (pending) pending.classList.remove("is-image-pending");
+    });
+
+    img.addEventListener("error", () => {
+      const currentSrc = img.getAttribute("src") || "";
+
+      if (!triedFallback && fallbackSrc && currentSrc !== fallbackSrc) {
+        triedFallback = true;
+        img.src = fallbackSrc;
+        return;
+      }
+
+      if (typeof onFail === "function") onFail();
+    });
   }
 
   function injectBrandHeader() {
@@ -372,9 +369,10 @@
       POSH.logoSrcFallback,
       () => {
         const link = qs(".posh-logo-link", header);
-        if (!link) return;
-        link.innerHTML = `<span>${escapeHtml(POSH.brand)}</span>`;
-        link.classList.add("posh-logo-fallback-text");
+        if (link) {
+          link.innerHTML = escapeHtml(POSH.brand);
+          link.classList.add("posh-logo-fallback-text");
+        }
       }
     );
 
@@ -385,24 +383,10 @@
     });
   }
 
-  function hasExistingHeroBanner() {
-    if (qs(".posh-global-hero-wrap")) return true;
-    if (qs(".posh-global-hero-link")) return true;
-
-    const existing = qsa("a[href], img").some(el => {
-      const href = el.getAttribute && el.getAttribute("href");
-      const src = el.getAttribute && el.getAttribute("src");
-      const joined = `${href || ""} ${src || ""}`.toLowerCase();
-      return joined.includes("posh-hero");
-    });
-
-    return existing;
-  }
-
   function injectGlobalHeroBanner() {
     const wrap = qs(".wrap");
     if (!wrap) return;
-    if (hasExistingHeroBanner()) return;
+    if (qs(".posh-global-hero-wrap", wrap)) return;
 
     const heroWrap = document.createElement("div");
     heroWrap.className = "posh-global-hero-wrap";
@@ -414,18 +398,13 @@
       </a>
     `;
 
-    const title = qs(".page-title", wrap);
-    const brand = qs(".brand", wrap);
     const nav = qs("#nav", wrap);
-
-    if (brand && brand.parentNode === wrap) {
-      wrap.insertBefore(heroWrap, brand.nextSibling);
-    } else if (title && title.parentNode === wrap) {
-      wrap.insertBefore(heroWrap, title);
-    } else if (nav && nav.parentNode === wrap) {
+    if (nav) {
       wrap.insertBefore(heroWrap, nav);
+    } else if (wrap.firstElementChild) {
+      wrap.insertBefore(heroWrap, wrap.firstElementChild);
     } else {
-      wrap.insertBefore(heroWrap, wrap.firstChild);
+      wrap.appendChild(heroWrap);
     }
 
     const heroImg = qs(".posh-global-hero-img", heroWrap);
@@ -516,14 +495,16 @@
 
     qsa("a[href]", root).forEach(anchor => {
       const href = normalisePath(anchor.getAttribute("href"));
+
       if (href === current) {
         anchor.classList.add("active", "nav-active");
         anchor.setAttribute("aria-current", "page");
 
         const group = anchor.closest(".nav-group");
-        if (group) {
-          group.classList.add("has-active-page");
-        }
+        if (group) group.classList.add("has-active-page");
+      } else {
+        anchor.classList.remove("active", "nav-active");
+        anchor.removeAttribute("aria-current");
       }
     });
   }
@@ -872,7 +853,7 @@
       maybeTrack("copy_link");
       showMiniToast("Link copied");
     } catch (err) {
-      /* silent */
+      // silent
     }
   }
 
@@ -891,7 +872,7 @@
         await copyCurrentLink();
       }
     } catch (err) {
-      /* silent */
+      // silent
     }
   }
 
@@ -1126,9 +1107,11 @@
     if (/^v3-game-/.test(current) || /^V3gaming-/.test(current)) {
       document.body.classList.add("page-is-game");
     }
+
     if (/^v3-social-/.test(current)) {
       document.body.classList.add("page-is-social");
     }
+
     if (current === POSH.devices) {
       document.body.classList.add("page-is-device");
     }
