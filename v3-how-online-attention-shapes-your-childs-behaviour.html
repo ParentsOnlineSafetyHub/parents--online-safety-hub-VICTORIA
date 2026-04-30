@@ -1,632 +1,350 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>How Online Attention Shapes Your Child’s Behaviour • POSH</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 
-  <meta name="description" content="Learn how online attention shapes your child’s behaviour through algorithms, emotional triggers, repeated exposure, validation loops, and reward-driven design." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://poshaussie.com.au/v3-how-online-attention-shapes-your-childs-behaviour.html"/>
+<title>How Online Attention Shapes Your Child’s Behaviour • POSH</title>
 
-  <meta property="og:title" content="How Online Attention Shapes Your Child’s Behaviour • POSH" />
-  <meta property="og:description" content="Understand how attention, algorithms, emotion, repetition, and validation loops shape behaviour online." />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://poshaussie.com.au/v3-how-online-attention-shapes-your-childs-behaviour.html" />
-  <meta property="og:site_name" content="POSH" />
+<meta name="description" content="Learn how online attention shapes children’s behaviour through algorithms, emotional triggers, validation loops, repeated exposure, and reward-driven design." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://poshaussie.com.au/v3-how-online-attention-shapes-your-childs-behaviour.html" />
 
-  <link rel="stylesheet" href="style.css"/>
+<meta property="og:title" content="How Online Attention Shapes Your Child’s Behaviour • POSH" />
+<meta property="og:description" content="Understand how attention, algorithms, validation, repetition, and emotional reward shape children’s behaviour online." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://poshaussie.com.au/v3-how-online-attention-shapes-your-childs-behaviour.html" />
+<meta property="og:site_name" content="POSH" />
 
-  <style>
-    :root{
-      --bgTop:#051327;
-      --bgMid:#092a52;
-      --bgBot:#061a33;
-      --card:rgba(255,255,255,.08);
-      --cardBorder:rgba(255,255,255,.14);
-      --text:#ecf4ff;
-      --muted:#bfd4ea;
-      --cyan:#67e8f9;
-      --blue:#60a5fa;
-      --purple:#a78bfa;
-      --gold:#facc15;
-      --green:#4ade80;
-      --red:#fb7185;
-      --orange:#fb923c;
-      --shadow:0 18px 50px rgba(0,0,0,.28);
-      --radius:22px;
-      --max:1120px;
-    }
-
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(103,232,249,.10), transparent 24%),
-        radial-gradient(circle at top right, rgba(167,139,250,.10), transparent 24%),
-        linear-gradient(180deg,var(--bgTop),var(--bgMid) 48%,var(--bgBot));
-      min-height:100vh;
-    }
-
-    .wrap{
-      width:min(var(--max),calc(100% - 28px));
-      margin:0 auto;
-      padding:28px 0 72px;
-    }
-
-    .page-title{
-      margin:18px 0 10px;
-      font-size:clamp(2.2rem,5vw,4.1rem);
-      line-height:1;
-      font-weight:900;
-      letter-spacing:-.03em;
-      max-width:980px;
-    }
-
-    .tagline{
-      margin:0 0 24px;
-      max-width:940px;
-      color:var(--muted);
-      font-size:1.08rem;
-      line-height:1.68;
-    }
-
-    .tagline strong{color:#fff}
-
-    .toc{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:12px;
-      margin:0 0 20px;
-    }
-
-    .toc a{
-      display:block;
-      text-decoration:none;
-      color:#fff;
-      font-weight:800;
-      padding:14px 16px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-    }
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--cardBorder);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(10px);
-      padding:22px;
-      margin:18px 0;
-    }
-
-    .hero-warning{
-      padding:28px;
-      background:linear-gradient(180deg, rgba(103,232,249,.10), rgba(255,255,255,.05));
-    }
-
-    .home-kicker{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      font-weight:800;
-      font-size:.8rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:#061a33;
-      background:linear-gradient(90deg,var(--cyan),var(--gold));
-      margin-bottom:14px;
-    }
-
-    h2{
-      font-size:1.6rem;
-      margin:0 0 12px;
-      line-height:1.15;
-      letter-spacing:-.02em;
-      scroll-margin-top:90px;
-    }
-
-    h3{
-      font-size:1.08rem;
-      margin:0 0 10px;
-      line-height:1.22;
-      color:#fff;
-    }
-
-    p{
-      margin:0 0 14px;
-      color:var(--muted);
-      line-height:1.74;
-    }
-
-    p:last-child{margin-bottom:0}
-
-    .lead{
-      font-size:1.05rem;
-      color:#eaf3ff;
-    }
-
-    .danger-line{
-      margin-top:16px;
-      padding:12px 14px;
-      border-left:4px solid var(--red);
-      background:rgba(251,113,133,.10);
-      border-radius:14px;
-      color:#fff;
-      font-weight:700;
-    }
-
-    .good-line{
-      margin-top:16px;
-      padding:12px 14px;
-      border-left:4px solid var(--green);
-      background:rgba(74,222,128,.10);
-      border-radius:14px;
-      color:#fff;
-      font-weight:700;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px;
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
-    }
-
-    .mini-card{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:18px;
-      padding:18px;
-      height:100%;
-    }
-
-    .flow{
-      display:grid;
-      grid-template-columns:repeat(5,minmax(0,1fr));
-      gap:12px;
-      margin-top:16px;
-    }
-
-    .flow-step{
-      padding:16px 14px;
-      border-radius:18px;
-      text-align:center;
-      font-weight:800;
-      line-height:1.35;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      position:relative;
-    }
-
-    .flow-step:not(:last-child)::after{
-      content:"→";
-      position:absolute;
-      right:-10px;
-      top:50%;
-      transform:translateY(-50%);
-      color:var(--gold);
-      font-size:1.2rem;
-      font-weight:900;
-    }
-
-    .stack{
-      display:grid;
-      gap:12px;
-      margin-top:10px;
-    }
-
-    .stack-item{
-      padding:14px 16px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.05);
-    }
-
-    .stack-item strong{
-      display:block;
-      color:#fff;
-      margin-bottom:4px;
-    }
-
-    .comparison{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      margin-top:12px;
-    }
-
-    .comparison-box{
-      border-radius:18px;
-      padding:18px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.05);
-    }
-
-    .comparison-box ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.72;
-    }
-
-    .quote-box{
-      padding:18px;
-      border-radius:18px;
-      background:linear-gradient(180deg,rgba(96,165,250,.14),rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.14);
-      color:#fff;
-      font-weight:700;
-      line-height:1.68;
-    }
-
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-
-    .pill{
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.12);
-      color:#fff;
-      font-weight:700;
-      font-size:.92rem;
-    }
-
-    .btn-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:16px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 16px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:800;
-      border:1px solid rgba(255,255,255,.14);
-      transition:transform .15s ease;
-      color:#fff;
-    }
-
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{
-      background:linear-gradient(90deg,var(--cyan),var(--blue));
-      color:#04111f;
-    }
-    .btn.secondary{
-      background:rgba(255,255,255,.07);
-      color:#fff;
-    }
-
-    .footer-note{
-      margin-top:24px;
-      text-align:center;
-      color:#b8cde1;
-      font-size:.95rem;
-    }
-
-    @media (max-width:960px){
-      .toc,.grid-2,.grid-3,.flow,.comparison{grid-template-columns:1fr}
-      .flow-step:not(:last-child)::after{display:none}
-    }
-  </style>
+<link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <div id="nav"></div>
+<div class="brand">POSH</div>
 
-    <h1 class="page-title">How Online Attention Shapes Your Child’s Behaviour</h1>
-    <p class="tagline">
-      <strong>Attention is not neutral.</strong><br/>
-      What captures your child’s attention repeatedly starts shaping what they feel, what they expect, what they react to, and what they do next. Online systems are built around attention — and attention drives behaviour.
-    </p>
+<h1 class="page-title">How Online Attention Shapes Your Child’s Behaviour</h1>
 
-    <div class="toc">
-      <a href="#attention-matters">Why attention matters</a>
-      <a href="#how-platforms-hook">How platforms hook attention</a>
-      <a href="#emotion-repetition">Emotion & repetition</a>
-      <a href="#behaviour-shifts">How behaviour shifts</a>
-      <a href="#signs">What parents notice</a>
-      <a href="#what-to-do">What parents can do</a>
-    </div>
+<p class="tagline">
+<strong>Attention is not neutral.</strong><br/>
+What repeatedly captures your child’s attention can start shaping what they feel, expect, react to, and do next.
+</p>
 
-    <section class="card hero-warning" id="attention-matters">
-      <div class="home-kicker">Attention Drives Behaviour</div>
-      <h2>What gets attention gets influence</h2>
-      <p class="lead">
-        Children do not only get shaped by rules, discipline, or what adults tell them directly. They also get shaped by what repeatedly holds their attention.
-      </p>
-      <p>
-        If a platform, app, group, creator, feed, or online pattern keeps pulling them back, it gains more chances to shape their mood, preferences, reactions, fears, beliefs, habits, and expectations. That is why understanding attention matters so much.
-      </p>
-      <div class="danger-line">
-        First attention gets captured. Then emotion gets involved. Then behaviour starts adapting.
-      </div>
-    </section>
+<div id="nav"></div>
 
-    <section class="card" id="how-platforms-hook">
-      <h2>How online systems hook attention</h2>
-      <div class="grid-3">
-        <div class="mini-card">
-          <h3>Novelty</h3>
-          <p>Something new always appears. The brain stays alert because it does not know what is next.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Reward</h3>
-          <p>Likes, wins, replies, clips, reactions, comments, and social approval keep the loop alive.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Emotion</h3>
-          <p>Fear, excitement, outrage, humour, validation, and shock hold attention far harder than neutral content.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Personalisation</h3>
-          <p>The more the system learns what pulls a child in, the better it becomes at feeding more of it.</p>
-        </div>
-        <div class="mini-card">
-          <h3>No stopping points</h3>
-          <p>Autoplay, endless scrolling, and continuous recommendations reduce natural exit points.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Social pull</h3>
-          <p>Belonging, status, attention from peers, and fear of missing out make the loop even stronger.</p>
-        </div>
-      </div>
-      <div class="good-line">
-        Online platforms do not need to “force” behaviour directly. They shape the environment attention lives inside.
-      </div>
-    </section>
+<div class="callout center-callout">
+<strong>Use this page if your child’s mood, focus, reactions, language, habits, or behaviour seem affected by feeds, likes, comments, messages, creators, games, or online groups.</strong>
+</div>
 
-    <section class="card">
-      <h2>What usually happens first</h2>
-      <div class="flow">
-        <div class="flow-step">Attention gets<br/>captured</div>
-        <div class="flow-step">Emotion gets<br/>triggered</div>
-        <div class="flow-step">Exposure gets<br/>repeated</div>
-        <div class="flow-step">Reactions get<br/>trained</div>
-        <div class="flow-step">Behaviour starts<br/>shifting</div>
-      </div>
-    </section>
+<div class="card home-intro home-intro-hero center-card">
 
-    <section class="card" id="emotion-repetition">
-      <h2>Why emotion and repetition matter so much</h2>
-      <p>
-        A child usually is not shaped by one clip, one feed, or one post. The bigger shift happens when emotionally engaging content is repeated often enough that it starts to feel normal.
-      </p>
-      <div class="stack">
-        <div class="stack-item">
-          <strong>Emotion makes things stick</strong>
-          Fear, drama, validation, outrage, humour, shame, excitement, and social approval all increase how memorable something feels.
-        </div>
-        <div class="stack-item">
-          <strong>Repetition makes things familiar</strong>
-          Once something is seen over and over, it can begin feeling expected, ordinary, or true even if it started out feeling strange.
-        </div>
-        <div class="stack-item">
-          <strong>Reaction gets rewarded</strong>
-          If reacting brings attention, relief, approval, or stimulation, the child becomes more likely to react the same way again.
-        </div>
-        <div class="stack-item">
-          <strong>Behaviour adapts to the environment</strong>
-          Children often shift their behaviour to match whatever consistently gets rewarded, reinforced, or repeated around them.
-        </div>
-      </div>
-    </section>
+<div class="home-kicker">Attention and behaviour page</div>
 
-    <section class="card">
-      <h2>Where this shows up most clearly</h2>
-      <div class="grid-2">
-        <div class="mini-card">
-          <h3>Short-form feeds</h3>
-          <p>Fast emotional hits, endless novelty, and constant switching can shape attention and reaction patterns quickly.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Algorithm-driven recommendations</h3>
-          <p>The more a child clicks, watches, or reacts, the more tailored the next attention loop becomes.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Online peer culture</h3>
-          <p>Children can start copying behaviours that get status, attention, or group acceptance.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Outrage or exposure content</h3>
-          <p>Drama-heavy content can train faster emotional reactions and constant checking.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Manipulative groups</h3>
-          <p>Some groups use attention, belonging, validation, secrecy, and repetition to slowly shape loyalty and behaviour.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Grooming and emotional dependency patterns</h3>
-          <p>Attention is often the first step. Once emotional focus gets captured, influence gets easier.</p>
-        </div>
-      </div>
-    </section>
+<div class="home-mantra">WHAT GETS ATTENTION GETS INFLUENCE</div>
 
-    <section class="card" id="behaviour-shifts">
-      <h2>How behaviour starts shifting</h2>
-      <p>
-        Attention changes behaviour gradually. Often parents notice the effect before they understand the mechanism.
-      </p>
-      <div class="grid-3">
-        <div class="mini-card">
-          <h3>More reactivity</h3>
-          <p>Children can become quicker to react, quicker to get frustrated, and harder to settle.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Shorter attention</h3>
-          <p>Longer tasks can feel harder because the brain is getting used to faster input and quicker reward.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Constant checking</h3>
-          <p>The child may feel pulled back to the device repeatedly even during short pauses.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Stronger need for stimulation</h3>
-          <p>Quiet, waiting, and ordinary pace can start feeling harder to tolerate.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Copying online patterns</h3>
-          <p>Language, reactions, priorities, humour, risk-taking, or emotional style can start mirroring what gets attention online.</p>
-        </div>
-        <div class="mini-card">
-          <h3>Behaviour that follows reward</h3>
-          <p>If outrage, shock, drama, or attention-seeking gets rewarded, those patterns can grow stronger.</p>
-        </div>
-      </div>
-      <div class="danger-line">
-        A child’s behaviour can start adapting to what the online environment rewards — even when no one explicitly tells them to change.
-      </div>
-    </section>
+<div class="home-subline">
+Online systems are built to capture attention. Once attention is captured repeatedly, emotion, habits, reactions, and behaviour can start shifting.
+</div>
 
-    <section class="card">
-      <h2>Healthy attention vs shaped attention</h2>
-      <div class="comparison">
-        <div class="comparison-box">
-          <h3>Healthier attention</h3>
-          <ul>
-            <li>Leaves room to think and reflect</li>
-            <li>Has natural stopping points</li>
-            <li>Supports steadier focus</li>
-            <li>Does not rely on constant emotional activation</li>
-            <li>Builds attention slowly and sustainably</li>
-          </ul>
-        </div>
-        <div class="comparison-box">
-          <h3>Shaped attention</h3>
-          <ul>
-            <li>Gets pulled quickly and repeatedly</li>
-            <li>Relies on novelty and emotion</li>
-            <li>Rewards checking and reacting</li>
-            <li>Makes calm, slower tasks feel flatter</li>
-            <li>Can shape behaviour without the child noticing</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<div class="callout home-callout">
+<strong>The key question is not only “What are they watching?”</strong><br/>
+The better question is: “What is this doing to their attention, emotions, and behaviour over time?”
+</div>
 
-    <section class="card" id="signs">
-      <h2>What parents often notice first</h2>
-      <div class="stack">
-        <div class="stack-item">
-          <strong>They are more “on edge”</strong>
-          Mood changes faster, reactions feel bigger, and little things can trigger stronger responses.
-        </div>
-        <div class="stack-item">
-          <strong>They keep getting pulled back in</strong>
-          The device stays mentally present even when they are supposed to be doing something else.
-        </div>
-        <div class="stack-item">
-          <strong>They seem shaped by whatever is online right now</strong>
-          Their language, tone, emotional style, or interests may shift quickly with online culture.
-        </div>
-        <div class="stack-item">
-          <strong>They struggle more with quiet and slower life</strong>
-          Homework, waiting, boredom, conversation, or ordinary tasks feel harder to tolerate.
-        </div>
-        <div class="stack-item">
-          <strong>They react before they think</strong>
-          Reflection shrinks and immediate response grows.
-        </div>
-      </div>
-    </section>
+<div class="btn-grid btn-grid-soft" style="margin-top:16px;">
+<a class="btn" href="v3-how-algorithms-increase-risk-for-kids.html">Algorithm Risk</a>
+<a class="btn secondary" href="v3-why-someone-online-can-feel-so-important-to-your-child.html">Emotional Attachment</a>
+<a class="btn secondary" href="v3-brainrot-effect-on-kids.html">Brainrot Effect</a>
+<a class="btn secondary" href="v3-executive-functioning.html">Executive Functioning</a>
+</div>
 
-    <section class="card">
-      <h2>Questions parents should ask</h2>
-      <div class="quote-box">
-        “What is capturing my child’s attention most often?”<br/><br/>
-        “What emotions are getting triggered over and over?”<br/><br/>
-        “What behaviours seem stronger after time online?”<br/><br/>
-        “Is this content building focus, or training reaction?”<br/><br/>
-        “What is the online environment rewarding right now?”
-      </div>
-    </section>
+</div>
 
-    <section class="card" id="what-to-do">
-      <h2>What parents can do</h2>
-      <div class="stack">
-        <div class="stack-item">
-          <strong>Teach the system, not just the rule</strong>
-          Kids need to understand that online platforms are built to capture and shape attention on purpose.
-        </div>
-        <div class="stack-item">
-          <strong>Reduce the highest-intensity loops</strong>
-          Short-form feeds, constant notifications, endless recommendations, and outrage-heavy content often hit hardest.
-        </div>
-        <div class="stack-item">
-          <strong>Watch patterns, not isolated moments</strong>
-          Look for repeated attention pulls, repeated emotional triggers, and repeated behaviour changes.
-        </div>
-        <div class="stack-item">
-          <strong>Protect recovery space</strong>
-          Boredom, quiet, outdoors, conversation, reading, and slower real-world activities help reset shaped attention.
-        </div>
-        <div class="stack-item">
-          <strong>Step in earlier</strong>
-          Once behaviour starts following attention loops strongly, the pattern is harder to unwind.
-        </div>
-        <div class="stack-item">
-          <strong>Prioritise real life rhythm</strong>
-          Family routines, sleep, device-free windows, calmer transitions, and slower activities all matter.
-        </div>
-      </div>
-      <div class="good-line">
-        The goal is not to remove the internet from life. It is to stop online attention systems from doing the parenting.
-      </div>
-    </section>
+<div class="card hero-warning center-card">
 
-    <section class="card">
-      <h2>Bottom line</h2>
-      <p>
-        Online attention shapes behaviour because whatever captures a child’s attention repeatedly gets more chances to influence what they feel, what they expect, and how they respond. When emotion, repetition, reward, and algorithms are added to that, the shaping effect gets stronger.
-      </p>
-      <p>
-        Once parents understand that, they stop only asking “What are they watching?” and start asking “What is this doing to their attention, reactions, and behaviour over time?”
-      </p>
-      <div class="pill-row">
-        <div class="pill">Attention</div>
-        <div class="pill">Emotion</div>
-        <div class="pill">Repetition</div>
-        <div class="pill">Algorithms</div>
-        <div class="pill">Behaviour</div>
-      </div>
-    </section>
+<h2>Why attention matters</h2>
 
-    <section class="card">
-      <h2>Related POSH pages</h2>
-      <div class="btn-row">
-        <a class="btn primary" href="v3-how-screens-affect-your-childs-brain.html">How Screens Affect the Brain</a>
-        <a class="btn secondary" href="v3-algorithm-awareness.html">Algorithm Awareness</a>
-        <a class="btn secondary" href="v3-how-attention-is-used-to-control-behaviour.html">How Attention Is Used to Control Behaviour</a>
-        <a class="btn secondary" href="v3-how-manipulative-groups-recruit-children-online.html">Manipulative Group Recruitment</a>
-        <a class="btn secondary" href="v3-social-tiktok.html">TikTok</a>
-      </div>
-    </section>
+<div class="rule-box">
+<p>Children are shaped by what repeatedly holds their attention.</p>
+<p>Attention creates emotional focus.</p>
+<p>Emotional focus changes what feels important.</p>
+<p>What feels important can begin shaping behaviour.</p>
+</div>
 
-    <div id="footer"></div>
+<div class="danger-line">
+First attention gets captured. Then emotion gets involved. Then behaviour starts adapting.
+</div>
 
-    <p class="footer-note">POSH • Parents Online Safety Hub</p>
-  </div>
+</div>
 
-  <script src="app.js"></script>
+<div class="card center-card">
+
+<h2>How online systems hook attention</h2>
+
+<ul class="list">
+<li><strong>Novelty:</strong> something new always appears.</li>
+<li><strong>Reward:</strong> likes, replies, wins, reactions, comments, and social approval keep the loop alive.</li>
+<li><strong>Emotion:</strong> fear, excitement, outrage, humour, validation, and shock hold attention strongly.</li>
+<li><strong>Personalisation:</strong> the system learns what pulls the child in and feeds more of it.</li>
+<li><strong>No stopping points:</strong> autoplay, endless scrolling, and recommendations reduce natural exits.</li>
+<li><strong>Social pull:</strong> belonging, status, attention, and fear of missing out make the loop stronger.</li>
+</ul>
+
+<div class="callout center-callout">
+Online platforms do not need to force behaviour directly. They shape the environment attention lives inside.
+</div>
+
+</div>
+
+<div class="card network center-card">
+
+<h2>What usually happens first</h2>
+
+<div class="network-flow">
+<div class="pill">Attention gets captured</div>
+<div class="arrow">↓</div>
+
+<div class="pill">Emotion gets triggered</div>
+<div class="arrow">↓</div>
+
+<div class="pill">Exposure gets repeated</div>
+<div class="arrow">↓</div>
+
+<div class="pill">Reactions get trained</div>
+<div class="arrow">↓</div>
+
+<div class="pill danger">Behaviour starts shifting</div>
+</div>
+
+<div class="callout center-callout" style="margin-top:16px;">
+Repeated attention becomes repeated influence.
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>Why emotion and repetition matter</h2>
+
+<p class="note">
+A child is usually not shaped by one clip, one post, or one message. The bigger shift happens when emotionally engaging content repeats often enough that it starts to feel normal.
+</p>
+
+<ul class="list">
+<li><strong>Emotion makes things stick:</strong> fear, drama, validation, outrage, humour, shame, excitement, and approval feel memorable.</li>
+<li><strong>Repetition makes things familiar:</strong> repeated exposure can make strange or risky things feel ordinary.</li>
+<li><strong>Reaction gets rewarded:</strong> if reacting brings attention, relief, approval, or stimulation, the reaction becomes more likely.</li>
+<li><strong>Behaviour adapts:</strong> children often shift toward what gets rewarded, reinforced, or repeated.</li>
+</ul>
+
+<div class="callout center-callout">
+Normalised does not mean safe. It only means familiar.
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>Where this shows up most clearly</h2>
+
+<ul class="list">
+<li><strong>Short-form feeds:</strong> fast emotional hits, endless novelty, and constant switching.</li>
+<li><strong>Algorithm recommendations:</strong> more clicks and views create more tailored loops.</li>
+<li><strong>Online peer culture:</strong> behaviour that gets attention can become behaviour kids copy.</li>
+<li><strong>Drama or outrage content:</strong> emotionally charged content trains faster reactions.</li>
+<li><strong>Manipulative groups:</strong> belonging, validation, secrecy, and repetition can shape loyalty.</li>
+<li><strong>Grooming patterns:</strong> attention is often the first step before emotional influence.</li>
+</ul>
+
+<div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+<a class="btn" href="v3-how-manipulative-groups-recruit-children-online.html">Manipulative Groups</a>
+<a class="btn secondary" href="v3-how-grooming-actually-works-step-by-step.html">How Grooming Works</a>
+<a class="btn secondary" href="v3-my-child-is-being-manipulated-online.html">Manipulation</a>
+<a class="btn secondary" href="v3-platform-risks-overview.html">Platform Risks</a>
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>How behaviour starts shifting</h2>
+
+<ul class="list">
+<li><strong>More reactivity:</strong> children may react faster and settle slower.</li>
+<li><strong>Shorter attention:</strong> slower tasks can feel harder after fast input loops.</li>
+<li><strong>Constant checking:</strong> the device stays mentally present even when they are offline.</li>
+<li><strong>Need for stimulation:</strong> quiet, waiting, and boredom become harder to tolerate.</li>
+<li><strong>Copying online patterns:</strong> language, humour, risk-taking, reactions, or priorities may shift.</li>
+<li><strong>Reward-following behaviour:</strong> drama, shock, outrage, or attention-seeking can grow stronger if rewarded.</li>
+</ul>
+
+<div class="danger-line">
+A child’s behaviour can start adapting to what the online environment rewards.
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>Healthy attention vs shaped attention</h2>
+
+<div class="rule-box">
+<p><strong>Healthier attention:</strong> leaves room to think, reflect, stop, focus, and recover.</p>
+<p><strong>Shaped attention:</strong> gets pulled quickly by novelty, emotion, reward, checking, and reacting.</p>
+</div>
+
+<div class="callout center-callout">
+Healthy attention gives the child space. Shaped attention keeps pulling the child back.
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>What parents often notice first</h2>
+
+<ul class="list">
+<li>Your child seems more “on edge”.</li>
+<li>They keep getting pulled back to the phone or device.</li>
+<li>Their language, tone, humour, or mood starts copying online culture.</li>
+<li>They struggle more with quiet, boredom, waiting, homework, or conversation.</li>
+<li>They react before they think.</li>
+<li>They seem emotionally affected by likes, comments, replies, or views.</li>
+</ul>
+
+<div class="callout center-callout">
+Parents often notice the behaviour change before they understand the attention loop.
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>Questions parents should ask</h2>
+
+<div class="rule-box">
+<p>What is capturing my child’s attention most often?</p>
+<p>What emotions are getting triggered over and over?</p>
+<p>What behaviours seem stronger after time online?</p>
+<p>Is this content building focus, or training reaction?</p>
+<p>What is the online environment rewarding right now?</p>
+</div>
+
+<div class="callout center-callout">
+The goal is to understand the pattern, not just the screen time number.
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>What parents can do</h2>
+
+<ul class="list">
+<li><strong>Teach the system:</strong> explain that platforms are designed to capture and shape attention.</li>
+<li><strong>Reduce high-intensity loops:</strong> short-form feeds, constant notifications, endless recommendations, and outrage-heavy content hit hard.</li>
+<li><strong>Watch patterns:</strong> repeated attention pulls, emotional triggers, and behaviour shifts matter.</li>
+<li><strong>Protect recovery space:</strong> boredom, quiet, outdoors, reading, conversation, and slower activities help reset attention.</li>
+<li><strong>Step in earlier:</strong> once behaviour follows attention loops strongly, the pattern is harder to unwind.</li>
+<li><strong>Prioritise real-life rhythm:</strong> sleep, family routines, device-free windows, and calmer transitions all matter.</li>
+</ul>
+
+<div class="callout center-callout">
+The goal is not to remove the internet from life. It is to stop online attention systems from doing the parenting.
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>What to say to your child</h2>
+
+<div class="callout">
+“The app learns what keeps your attention.”
+</div>
+
+<div class="callout">
+“What you watch, pause on, or react to can shape what you see next.”
+</div>
+
+<div class="callout">
+“Not everything online is random. Some of it is designed to keep you there.”
+</div>
+
+<div class="callout">
+“If something keeps pulling you back, we need to look at why.”
+</div>
+
+<div class="callout">
+“Your attention is valuable. Don’t let every app control it.”
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>Build stronger attention skills</h2>
+
+<ul class="list">
+<li>Pause before reacting.</li>
+<li>Notice when content changes mood.</li>
+<li>Take breaks before the brain feels overloaded.</li>
+<li>Practise slower tasks without constant switching.</li>
+<li>Reduce notifications and attention traps.</li>
+<li>Use screen limits as recovery, not punishment.</li>
+</ul>
+
+<div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+<a class="btn" href="v3-executive-functioning.html">Executive Functioning</a>
+<a class="btn secondary" href="v3-frustration-intolerance-online-safety.html">Frustration Intolerance</a>
+<a class="btn secondary" href="v3-pause-before-reacting.html">Pause Before Reacting</a>
+<a class="btn secondary" href="v3-emotional-regulation-online-safety.html">Emotional Regulation</a>
+</div>
+
+</div>
+
+<div class="card center-card">
+
+<h2>Where this connects</h2>
+
+<div class="btn-grid btn-grid-soft">
+<a class="btn" href="v3-how-algorithms-increase-risk-for-kids.html">Algorithm Risk</a>
+<a class="btn secondary" href="v3-algorithm-awareness.html">Algorithm Awareness</a>
+<a class="btn secondary" href="v3-brainrot-effect-on-kids.html">Brainrot Effect</a>
+<a class="btn secondary" href="v3-how-to-reduce-brainrot.html">Reduce Brainrot</a>
+</div>
+
+<div class="btn-grid btn-grid-soft" style="margin-top:14px;">
+<a class="btn secondary" href="v3-why-someone-online-can-feel-so-important-to-your-child.html">Emotional Attachment</a>
+<a class="btn secondary" href="v3-my-child-wont-stop-talking-to-someone-online.html">Won’t Stop Talking</a>
+<a class="btn secondary" href="v3-my-child-is-being-pressured-online.html">Pressure</a>
+<a class="btn secondary" href="v3-posh-parent-system.html">POSH Parent System</a>
+</div>
+
+</div>
+
+<div class="card hero-warning center-card">
+
+<h2>Final POSH reminder</h2>
+
+<div class="rule-box">
+<p>Attention shapes emotion.</p>
+<p>Emotion shapes reaction.</p>
+<p>Repetition shapes behaviour.</p>
+<p>Algorithms strengthen the loop.</p>
+</div>
+
+<div class="danger-line">
+Protecting attention is part of protecting behaviour.
+</div>
+
+</div>
+
+<div id="footer"></div>
+
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
