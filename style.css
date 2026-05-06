@@ -2732,4 +2732,67 @@ a[href*="playbook"]{
     grid-template-columns:repeat(2,1fr);
   }
 }
+/* POSH HOME READABILITY PATCH */
 
+.calm-home-actions{
+  max-width:760px;
+  margin:22px auto 0 !important;
+}
+
+.btn.primary-soft{
+  background:rgba(139,214,255,.14) !important;
+  border:1px solid rgba(139,214,255,.34) !important;
+  color:#ffffff !important;
+  box-shadow:none !important;
+}
+
+.btn.quiet,
+.btn.secondary{
+  background:rgba(255,255,255,.045) !important;
+  border:1px solid rgba(255,255,255,.11) !important;
+  color:rgba(244,247,255,.90) !important;
+  box-shadow:none !important;
+}
+
+.btn.quiet:hover,
+.btn.secondary:hover,
+.btn.primary-soft:hover{
+  background:rgba(139,214,255,.11) !important;
+  border-color:rgba(139,214,255,.26) !important;
+  transform:translateY(-1px);
+}
+
+.calm-warning{
+  background:rgba(230,201,120,.075) !important;
+  border-color:rgba(230,201,120,.22) !important;
+}
+
+.home-intro .page-title{
+  font-size:clamp(2.1rem,5.7vw,4.1rem) !important;
+  line-height:1.04 !important;
+  color:#fff !important;
+  text-shadow:0 12px 30px rgba(0,0,0,.34) !important;
+  -webkit-text-stroke:0 !important;
+}
+
+.home-intro h2,
+.card h2{
+  font-size:clamp(1.28rem,2.3vw,1.72rem) !important;
+}
+
+.section-lead,
+.card p{
+  color:rgba(244,247,255,.82) !important;
+  line-height:1.78 !important;
+}
+
+.hero-warning{
+  border-color:rgba(230,201,120,.16) !important;
+  background:linear-gradient(180deg,rgba(15,42,85,.92),rgba(10,29,59,.92)) !important;
+}
+
+.danger-line{
+  background:rgba(230,201,120,.075) !important;
+  border-color:rgba(230,201,120,.22) !important;
+  color:#fff0c8 !important;
+}
