@@ -1,40 +1,12 @@
 (function () {
   "use strict";
 
-  /* =========================================================
-     POSH MASTER APP.JS
-     FULL REPLACEMENT RESET
-     - removes unnecessary top sticky POSH/HOME header
-     - restores large clickable POSH hero image as main brand/home button
-     - preserves accordion nav
-     - protects existing hero if already in HTML
-     - tries multiple hero filenames automatically
-     - ranked live search
-     - current-page highlighting
-     - accordion closed on load
-     - breadcrumbs
-     - reading progress
-     - back to top
-     - share / copy link
-     - sticky action bar
-     - support strip
-     - smart CTA injection
-     - related links
-     - TOC builder
-     - FAQ/details enhancement
-     - outbound/download tracking
-     - form enhancement
-     - hero CTA upgrade
-     - page context classes
-     ========================================================= */
-
   const POSH = {
     brand: "POSH",
     siteName: "Parents Online Safety Hub",
     domain: "https://poshaussie.com.au/",
     home: "index.html",
 
-    /* main hero / home button / primary brand image candidates */
     heroCandidates: [
       "POSH-HERO.png",
       "/POSH-HERO.png",
@@ -42,12 +14,10 @@
       "/POSH-HERO.PNG",
       "posh-hero.png",
       "/posh-hero.png",
-      "POSH-hero.png",
-      "/POSH-hero.png",
       "https://poshaussie.com.au/POSH-HERO.png",
-      "https://poshaussie.com.au/POSH-HERO.PNG",
       "https://poshaussie.com.au/posh-hero.png"
     ],
+
     heroAlt: "Parents Online Safety Hub",
     heroAriaLabel: "Back to POSH home",
 
@@ -58,49 +28,66 @@
     parentQuestions: "v3-parent-questions.html",
     quiz: "v3-safety-score.html",
     redFlags: "v3-redflags.html",
-    tenSigns: "v3-10-signs.html",
+
+    tenSigns: "v3-10-signs-targeted-online.html",
+    tenSignsLegacy: "v3-10-signs.html",
+
     playbook: "v3-playbook.html",
     predators: "v3-predators.html",
     reporting: "v3-reporting.html",
+
     platforms: "v3-platforms.html",
     gaming: "v3-gaming.html",
     allGames: "v3-all-games.html",
     socials: "v3-socials.html",
     devices: "v3-devices.html",
+
     downloads: "v3-all-downloads.html",
     downloadsLegacy: "v3-downloads.html",
+
     awareness: "v3-awareness.html",
     algorithm: "v3-algorithm-awareness.html",
     investigations: "v3-real-investigations.html",
     parentScripts: "v3-parent-scripts.html",
     houseRules: "v3-house-rules.html",
     ageGuide: "v3-age-guide.html",
-    support: "v3-support-posh.html",
+
+    support: "v3-support.html",
     supportLegacy: "v3-support.html",
-    monthlySupport: "v3-support-monthly.html",
+    monthlySupport: "v3-support.html",
+    supportOld: "v3-support-monthly.html",
+
+    warning: "v3-warning.html",
+    disclaimer: "v3-warning.html",
+    disclaimerLegacy: "warning-disclaimer.html",
+
     petitionDigitalGifting: "v3-petition-parent-approval-digital-gifting.html",
     petitionDefaults: "v3-petition-safer-defaults-child-accounts.html",
+
     dangerousApps: "v3-dangerous-apps.html",
     bestParentalControlApps: "v3-best-parental-control-apps.html",
     cancelSubscriptions: "v3-cancel-subscriptions.html",
     videoChat: "v3-videochat.html",
+
     roblox: "v3-game-roblox.html",
     fortnite: "v3-game-fortnite.html",
     minecraft: "v3-game-minecraft.html",
     vrchat: "v3-game-vrchat.html",
+
     discord: "v3-social-discord.html",
     snapchat: "v3-social-snapchat.html",
     tiktok: "v3-social-tiktok.html",
     youtube: "v3-social-youtube.html",
+
     xbox: "V3gaming-xbox.html",
     playstation: "V3gaming-playstation.html",
     nintendo: "V3gaming-nintendo.html",
     pcGaming: "V3gaming-pc.html",
     vrGaming: "V3gaming-vr.html",
-    disclaimer: "warning-disclaimer.html",
 
     shareText:
       "POSH Aussie helps parents understand online risks, spot warning signs earlier, and protect their children with clearer practical guidance.",
+
     searchPlaceholder: "Search apps, games, devices, PDFs or topics",
     helpKeepFreeText: "Help Keep POSH Free",
     maxSearchResults: 10,
@@ -108,67 +95,73 @@
     maxRelatedItems: 6
   };
 
+  const REDIRECT_MAP = {
+    "v3-support-monthly.html": POSH.support,
+    "warning-disclaimer.html": POSH.warning,
+    "v3-10-signs.html": POSH.tenSigns,
+    "v3-support-posh.html": POSH.support
+  };
+
   const NAV_GROUPS = [
     {
       title: "Start & Safety",
       links: [
-        { href: POSH.home, label: "Home", type: "Home", keywords: "home index posh parents online safety hub australia victoria jinglez child safety support" },
+        { href: POSH.home, label: "Home", type: "Home", keywords: "home index posh parents online safety hub australia child safety" },
         { href: POSH.start, label: "Start Here", type: "Start", keywords: "start first steps urgent where do i begin parent help safety" },
-        { href: POSH.entry, label: "Entry System", type: "System", keywords: "entry system guided path pathway choose direction" },
-        { href: POSH.whatNow, label: "What To Do Now", type: "Action", keywords: "what to do now immediate next steps act early concern" },
-        { href: POSH.response, label: "POSH Response System", type: "Action", keywords: "response system posh response what parents do next concern structure" },
-        { href: POSH.parentQuestions, label: "Parent Questions", type: "Questions", keywords: "parent questions what to ask child question prompts" },
-        { href: POSH.quiz, label: "Safety Score", type: "Quiz", keywords: "safety score test audit checklist quiz risk score check" },
-        { href: POSH.redFlags, label: "Red Flags", type: "Warning Signs", keywords: "red flags warning signs grooming behaviour sudden changes secrecy child concern" },
-        { href: POSH.tenSigns, label: "10 Signs", type: "Warning Signs", keywords: "10 signs targeted online grooming signs child" },
+        { href: POSH.entry, label: "Entry System", type: "System", keywords: "entry system guided pathway choose direction" },
+        { href: POSH.whatNow, label: "What To Do Now", type: "Action", keywords: "what to do now immediate next steps concern act early" },
+        { href: POSH.response, label: "POSH Response System", type: "Action", keywords: "response system what parents do next concern structure" },
+        { href: POSH.parentQuestions, label: "Parent Questions", type: "Questions", keywords: "questions to ask child parent prompts conversation" },
+        { href: POSH.quiz, label: "Safety Score", type: "Quiz", keywords: "safety score audit checklist quiz risk score check" },
+        { href: POSH.redFlags, label: "Red Flags", type: "Warning Signs", keywords: "red flags warning signs grooming behaviour secrecy concern" },
+        { href: POSH.tenSigns, label: "10 Signs Targeted Online", type: "Warning Signs", keywords: "10 signs targeted online grooming child warning signs" },
         { href: POSH.playbook, label: "Predator Playbook", type: "Playbook", keywords: "playbook grooming escalation pattern trust private secrecy" },
-        { href: POSH.predators, label: "Predator Tactics", type: "Predators", keywords: "predator tactics manipulation control grooming trust isolate secrets" },
+        { href: POSH.predators, label: "Predator Tactics", type: "Predators", keywords: "predator tactics manipulation control grooming isolate secrets" },
         { href: POSH.reporting, label: "Report & Get Help", type: "Reporting", keywords: "report get help police esafety evidence accce sextortion urgent help" }
       ]
     },
     {
       title: "Platforms, Games & Apps",
       links: [
-        { href: POSH.platforms, label: "All Platforms", type: "Directory", keywords: "all platforms apps games devices socials directory list" },
-        { href: POSH.gaming, label: "Gaming Safety", type: "Gaming", keywords: "gaming safety games online game chat party voice stranger access" },
-        { href: POSH.allGames, label: "All Games Directory", type: "Directory", keywords: "all games directory list gaming pages" },
-        { href: POSH.roblox, label: "Roblox", type: "Game", keywords: "roblox robux private chat friend requests gifting groups voice" },
-        { href: POSH.fortnite, label: "Fortnite", type: "Game", keywords: "fortnite party chat voice randoms squads epic games" },
-        { href: POSH.minecraft, label: "Minecraft", type: "Game", keywords: "minecraft servers realms multiplayer mods private server" },
-        { href: POSH.vrchat, label: "VRChat", type: "Game", keywords: "vrchat virtual reality avatars adults children headset voice" },
-        { href: POSH.xbox, label: "Xbox", type: "Gaming Device", keywords: "xbox console party chat messages microsoft device" },
+        { href: POSH.platforms, label: "All Platforms", type: "Directory", keywords: "all platforms apps games devices socials directory" },
+        { href: POSH.gaming, label: "Gaming Safety", type: "Gaming", keywords: "gaming safety online game chat party voice strangers" },
+        { href: POSH.allGames, label: "All Games Directory", type: "Directory", keywords: "all games directory gaming pages" },
+        { href: POSH.roblox, label: "Roblox", type: "Game", keywords: "roblox robux private chat gifting groups voice" },
+        { href: POSH.fortnite, label: "Fortnite", type: "Game", keywords: "fortnite party chat squads epic games" },
+        { href: POSH.minecraft, label: "Minecraft", type: "Game", keywords: "minecraft servers realms multiplayer mods" },
+        { href: POSH.vrchat, label: "VRChat", type: "Game", keywords: "vrchat virtual reality avatars adults voice" },
+        { href: POSH.xbox, label: "Xbox", type: "Gaming Device", keywords: "xbox console party chat messages microsoft" },
         { href: POSH.playstation, label: "PlayStation", type: "Gaming Device", keywords: "playstation psn party chat sony console" },
-        { href: POSH.nintendo, label: "Nintendo", type: "Gaming Device", keywords: "nintendo switch nintendo online child safety" },
-        { href: POSH.pcGaming, label: "PC Gaming", type: "Gaming Device", keywords: "pc gaming steam discord pc safety device" },
-        { href: POSH.vrGaming, label: "VR Gaming", type: "Gaming Device", keywords: "vr gaming headset voice chat immersion meta quest" },
-        { href: POSH.socials, label: "Social Media & Chat", type: "Socials", keywords: "socials social media apps chat platforms private messages" },
-        { href: POSH.discord, label: "Discord", type: "App", keywords: "discord dms server voice chat grooming off platform" },
-        { href: POSH.snapchat, label: "Snapchat", type: "App", keywords: "snapchat disappearing messages streaks quick add snap map" },
-        { href: POSH.tiktok, label: "TikTok", type: "App", keywords: "tiktok algorithm live messages fyp trends exposure" },
+        { href: POSH.nintendo, label: "Nintendo", type: "Gaming Device", keywords: "nintendo switch online child safety" },
+        { href: POSH.pcGaming, label: "PC Gaming", type: "Gaming Device", keywords: "pc gaming steam discord computer safety" },
+        { href: POSH.vrGaming, label: "VR Gaming", type: "Gaming Device", keywords: "vr gaming headset meta quest voice chat" },
+        { href: POSH.socials, label: "Social Media & Chat", type: "Socials", keywords: "social media apps chat private messages" },
+        { href: POSH.discord, label: "Discord", type: "App", keywords: "discord dms server voice chat grooming" },
+        { href: POSH.snapchat, label: "Snapchat", type: "App", keywords: "snapchat disappearing messages streaks snap map" },
+        { href: POSH.tiktok, label: "TikTok", type: "App", keywords: "tiktok algorithm live messages fyp trends" },
         { href: POSH.youtube, label: "YouTube", type: "App", keywords: "youtube comments shorts live creators algorithm" },
-        { href: POSH.videoChat, label: "Video Chat", type: "App", keywords: "video chat live video webcam random strangers calls" },
-        { href: POSH.devices, label: "Device Safety", type: "Devices", keywords: "device safety phones tablets consoles browser passcodes permissions installs" },
-        { href: POSH.bestParentalControlApps, label: "Best Parental Control Apps", type: "Guide", keywords: "best parental control apps monitor filters screen time devices" },
-        { href: POSH.dangerousApps, label: "Top Dangerous Apps", type: "Guide", keywords: "dangerous apps risky apps for kids private contact secrecy" },
-        { href: POSH.cancelSubscriptions, label: "Cancel Subscriptions", type: "Guide", keywords: "cancel subscriptions apple google microsoft xbox playstation support" }
+        { href: POSH.videoChat, label: "Video Chat", type: "App", keywords: "video chat live video webcam random strangers" },
+        { href: POSH.devices, label: "Device Safety", type: "Devices", keywords: "device safety phones tablets consoles passcodes permissions" },
+        { href: POSH.bestParentalControlApps, label: "Best Parental Control Apps", type: "Guide", keywords: "parental control apps monitor filters screen time" },
+        { href: POSH.dangerousApps, label: "Top Dangerous Apps", type: "Guide", keywords: "dangerous apps risky apps private contact secrecy" },
+        { href: POSH.cancelSubscriptions, label: "Cancel Subscriptions", type: "Guide", keywords: "cancel subscriptions apple google microsoft xbox playstation" }
       ]
     },
     {
       title: "Awareness & Resources",
       links: [
-        { href: POSH.awareness, label: "Awareness Hub", type: "Awareness", keywords: "awareness hub education support parents grooming algorithms safety" },
-        { href: POSH.algorithm, label: "Algorithm Risks", type: "Awareness", keywords: "algorithm awareness risks feed recommendations endless scroll influence" },
-        { href: POSH.investigations, label: "Real Investigations", type: "Investigations", keywords: "real investigations shawn ryan vigilance elite interviews evidence" },
-        { href: POSH.parentScripts, label: "Parent Scripts", type: "Scripts", keywords: "parent scripts talk to kids hard conversations online safety" },
-        { href: POSH.houseRules, label: "House Rules", type: "Rules", keywords: "house rules boundaries devices charging bedrooms passcodes no private apps" },
-        { href: POSH.ageGuide, label: "Age Guide", type: "Guide", keywords: "age guide age appropriate readiness apps games maturity" },
-        { href: POSH.downloads, label: "All PDF Downloads", type: "Downloads", keywords: "pdf downloads guides framework playbook scripts printables checklists" },
-        { href: POSH.downloadsLegacy, label: "Downloads", type: "Downloads", keywords: "downloads pdf printables framework scripts playbook resources" },
-        { href: POSH.petitionDigitalGifting, label: "Digital Gifting Policy", type: "Policy", keywords: "petition digital gifting robux skins gifts parent approval policy" },
-        { href: POSH.petitionDefaults, label: "Safer Defaults Policy", type: "Policy", keywords: "petition safer defaults child accounts settings design reform" },
-        { href: POSH.support, label: "Support POSH", type: "Support", keywords: "support posh donate help keep posh free mission support" },
-        { href: POSH.supportLegacy, label: "Support", type: "Support", keywords: "support help next steps services parent help australia" },
-        { href: POSH.disclaimer, label: "Warning & Disclaimer", type: "Info", keywords: "warning disclaimer legal medical education guidance information" }
+        { href: POSH.awareness, label: "Awareness Hub", type: "Awareness", keywords: "awareness education parents grooming algorithms safety" },
+        { href: POSH.algorithm, label: "Algorithm Risks", type: "Awareness", keywords: "algorithm risks feed recommendations endless scroll influence" },
+        { href: POSH.investigations, label: "Real Investigations", type: "Investigations", keywords: "real investigations interviews evidence predator exposure" },
+        { href: POSH.parentScripts, label: "Parent Scripts", type: "Scripts", keywords: "parent scripts talk to kids conversations online safety" },
+        { href: POSH.houseRules, label: "House Rules", type: "Rules", keywords: "house rules boundaries devices bedrooms passcodes" },
+        { href: POSH.ageGuide, label: "Age Guide", type: "Guide", keywords: "age guide age appropriate readiness apps games" },
+        { href: POSH.downloads, label: "All PDF Downloads", type: "Downloads", keywords: "pdf downloads guides framework playbook scripts printables" },
+        { href: POSH.downloadsLegacy, label: "Downloads", type: "Downloads", keywords: "downloads pdf resources checklists" },
+        { href: POSH.petitionDigitalGifting, label: "Digital Gifting Policy", type: "Policy", keywords: "petition digital gifting robux skins gifts parent approval" },
+        { href: POSH.petitionDefaults, label: "Safer Defaults Policy", type: "Policy", keywords: "petition safer defaults child accounts settings reform" },
+        { href: POSH.support, label: "Support POSH", type: "Support", keywords: "support posh donate help keep free mission" },
+        { href: POSH.warning, label: "Warning & Disclaimer", type: "Info", keywords: "warning disclaimer legal medical education guidance information" }
       ]
     }
   ];
@@ -177,7 +170,7 @@
     help: ["start here", "report & get help", "what to do now"],
     urgent: ["report & get help", "what to do now", "red flags"],
     robux: ["roblox", "digital gifting policy"],
-    grooming: ["predator playbook", "red flags", "predator tactics"],
+    grooming: ["predator playbook", "red flags", "predator tactics", "10 signs targeted online"],
     device: ["device safety", "best parental control apps"],
     phone: ["device safety"],
     tablet: ["device safety"],
@@ -190,10 +183,12 @@
     downloads: ["all pdf downloads", "downloads"],
     pdf: ["all pdf downloads", "downloads"],
     petition: ["digital gifting policy", "safer defaults policy"],
-    "dangerous apps": ["top dangerous apps"],
     report: ["report & get help"],
     questions: ["parent questions"],
-    rules: ["house rules"]
+    rules: ["house rules"],
+    disclaimer: ["warning & disclaimer"],
+    warning: ["warning & disclaimer"],
+    support: ["support posh"]
   };
 
   const PAGE_RELATIONS = {
@@ -204,8 +199,9 @@
     "v3-response-system.html": [POSH.whatNow, POSH.reporting, POSH.parentQuestions, POSH.redFlags],
     "v3-parent-questions.html": [POSH.redFlags, POSH.parentScripts, POSH.devices],
     "v3-safety-score.html": [POSH.start, POSH.redFlags, POSH.devices, POSH.houseRules],
-    "v3-redflags.html": [POSH.playbook, POSH.predators, POSH.reporting, POSH.parentScripts],
-    "v3-playbook.html": [POSH.redFlags, POSH.predators, POSH.reporting, POSH.algorithm],
+    "v3-redflags.html": [POSH.tenSigns, POSH.playbook, POSH.predators, POSH.reporting, POSH.parentScripts],
+    "v3-10-signs-targeted-online.html": [POSH.redFlags, POSH.playbook, POSH.predators, POSH.reporting, POSH.parentScripts],
+    "v3-playbook.html": [POSH.redFlags, POSH.tenSigns, POSH.predators, POSH.reporting, POSH.algorithm],
     "v3-predators.html": [POSH.playbook, POSH.redFlags, POSH.reporting, POSH.algorithm],
     "v3-reporting.html": [POSH.redFlags, POSH.whatNow, POSH.response, POSH.start],
     "v3-gaming.html": [POSH.allGames, POSH.roblox, POSH.discord, POSH.redFlags, POSH.playbook],
@@ -225,7 +221,9 @@
     "v3-all-downloads.html": [POSH.start, POSH.redFlags, POSH.devices, POSH.parentScripts],
     "v3-downloads.html": [POSH.start, POSH.redFlags, POSH.devices, POSH.parentScripts],
     "v3-petition-parent-approval-digital-gifting.html": [POSH.petitionDefaults, POSH.gaming, POSH.roblox],
-    "v3-petition-safer-defaults-child-accounts.html": [POSH.petitionDigitalGifting, POSH.devices, POSH.gaming]
+    "v3-petition-safer-defaults-child-accounts.html": [POSH.petitionDigitalGifting, POSH.devices, POSH.gaming],
+    "v3-support.html": [POSH.start, POSH.downloads, POSH.quiz, POSH.redFlags],
+    "v3-warning.html": [POSH.start, POSH.reporting, POSH.redFlags, POSH.downloads]
   };
 
   const ALL_LINKS = NAV_GROUPS.flatMap(group => group.links);
@@ -244,13 +242,17 @@
 
   function normalisePath(path) {
     if (!path) return POSH.home;
-    const clean = path.split("#")[0].split("?")[0];
+    const clean = String(path).split("#")[0].split("?")[0];
     const file = clean.substring(clean.lastIndexOf("/") + 1);
     return file || POSH.home;
   }
 
   function getCurrentPath() {
     return normalisePath(window.location.pathname);
+  }
+
+  function currentLivePath() {
+    return REDIRECT_MAP[getCurrentPath()] || getCurrentPath();
   }
 
   function escapeHtml(value) {
@@ -287,17 +289,23 @@
           ...extra
         });
       }
-    } catch (err) {
-      /* silent */
-    }
+    } catch (err) {}
   }
 
-  function isExternalHref(href) {
-    return /^https?:\/\//i.test(href) && !href.includes(location.hostname);
+  function fixKnownBrokenInternalLinks(root = document) {
+    qsa("a[href]", root).forEach(link => {
+      const raw = link.getAttribute("href");
+      const file = normalisePath(raw);
+      if (!REDIRECT_MAP[file]) return;
+
+      const hash = raw.includes("#") ? "#" + raw.split("#").slice(1).join("#") : "";
+      link.setAttribute("href", REDIRECT_MAP[file] + hash);
+      link.dataset.fixedOldHref = raw;
+    });
   }
 
   function findLink(href) {
-    const target = normalisePath(href);
+    const target = REDIRECT_MAP[normalisePath(href)] || normalisePath(href);
     return ALL_LINKS.find(link => normalisePath(link.href) === target) || null;
   }
 
@@ -308,12 +316,7 @@
   }
 
   function getPageIntro() {
-    const el =
-      qs(".tagline") ||
-      qs(".intro") ||
-      qs(".lead") ||
-      qs(".page-intro") ||
-      qs(".card p");
+    const el = qs(".tagline") || qs(".intro") || qs(".lead") || qs(".page-intro") || qs(".card p");
     return el ? safeText(el.textContent).slice(0, 220) : "";
   }
 
@@ -333,19 +336,11 @@
       img.src = candidates[index++];
     }
 
-    function handleLoad() {
-      img.removeEventListener("load", handleLoad);
-      img.removeEventListener("error", handleError);
+    img.addEventListener("load", () => {
       if (typeof onSuccess === "function") onSuccess(img);
-    }
+    }, { once: true });
 
-    function handleError() {
-      tryNext();
-    }
-
-    img.addEventListener("load", handleLoad);
-    img.addEventListener("error", handleError);
-
+    img.addEventListener("error", tryNext);
     tryNext();
   }
 
@@ -360,8 +355,7 @@
 
   function injectGlobalHeroBanner() {
     const wrap = qs(".wrap");
-    if (!wrap) return;
-    if (existingHeroAlreadyPresent()) return;
+    if (!wrap || existingHeroAlreadyPresent()) return;
 
     const heroWrap = document.createElement("div");
     heroWrap.className = "posh-global-hero-wrap";
@@ -375,12 +369,7 @@
       </a>
     `;
 
-    const firstChild = wrap.firstElementChild;
-    if (firstChild) {
-      wrap.insertBefore(heroWrap, firstChild);
-    } else {
-      wrap.appendChild(heroWrap);
-    }
+    wrap.prepend(heroWrap);
 
     const heroImg = qs(".posh-global-hero-img", heroWrap);
     const heroMedia = qs(".posh-global-hero-media", heroWrap);
@@ -404,11 +393,6 @@
         `;
       }
     );
-
-    heroWrap.addEventListener("click", (event) => {
-      const link = event.target.closest(".posh-global-hero-link");
-      if (link) maybeTrack("global_hero_home");
-    });
   }
 
   function buildNavLink(link) {
@@ -426,29 +410,15 @@
     const groupsHtml = NAV_GROUPS.map(group => `
       <details class="nav-group">
         <summary>${escapeHtml(group.title)}</summary>
-        <nav>
-          ${group.links.map(buildNavLink).join("")}
-        </nav>
+        <nav>${group.links.map(buildNavLink).join("")}</nav>
       </details>
     `).join("");
 
     return `
       <div class="nav-shell">
         <div class="nav-search-wrap">
-          <input
-            type="text"
-            id="poshSearch"
-            class="nav-search-input"
-            placeholder="${escapeHtml(POSH.searchPlaceholder)}"
-            autocomplete="off"
-            aria-label="Search POSH"
-          />
-          <button
-            type="button"
-            id="poshSearchClear"
-            class="nav-search-clear"
-            aria-label="Clear search"
-          >×</button>
+          <input id="poshSearch" class="nav-search-input" type="text" placeholder="${escapeHtml(POSH.searchPlaceholder)}" autocomplete="off" aria-label="Search POSH" />
+          <button type="button" id="poshSearchClear" class="nav-search-clear" aria-label="Clear search">×</button>
           <div id="poshSearchResults" class="nav-search-results" hidden></div>
         </div>
 
@@ -460,19 +430,16 @@
 
         <div class="nav-support-row">
           <a href="${POSH.support}" class="nav-support-link" data-track="nav_support">Support POSH</a>
-          <a href="${POSH.monthlySupport}" class="nav-support-link" data-track="nav_help_keep_free">${escapeHtml(POSH.helpKeepFreeText)}</a>
           <button type="button" class="nav-support-link nav-share-trigger" data-track="nav_share">Share POSH</button>
         </div>
 
-        <div class="nav-accordion">
-          ${groupsHtml}
-        </div>
+        <div class="nav-accordion">${groupsHtml}</div>
       </div>
     `;
   }
 
   function setActiveNav(root) {
-    const current = getCurrentPath();
+    const current = currentLivePath();
 
     qsa(".nav-group", root).forEach(group => {
       group.open = false;
@@ -500,7 +467,6 @@
 
     groups.forEach(group => {
       group.open = false;
-
       group.addEventListener("toggle", () => {
         if (!group.open) return;
         groups.forEach(other => {
@@ -511,18 +477,14 @@
 
     document.addEventListener("click", event => {
       if (!root.contains(event.target)) {
-        groups.forEach(group => {
-          group.open = false;
-        });
+        groups.forEach(group => group.open = false);
       }
     });
   }
 
   function setupNavTracking(root) {
     qsa("[data-track]", root).forEach(el => {
-      el.addEventListener("click", () => {
-        maybeTrack(el.getAttribute("data-track") || "nav_click");
-      });
+      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track") || "nav_click"));
     });
   }
 
@@ -531,9 +493,7 @@
     const results = new Set([q]);
 
     Object.entries(SEARCH_ALIASES).forEach(([key, aliases]) => {
-      if (q.includes(key)) {
-        aliases.forEach(alias => results.add(alias));
-      }
+      if (q.includes(key)) aliases.forEach(alias => results.add(alias));
     });
 
     return Array.from(results);
@@ -569,12 +529,10 @@
         if (href.includes(token)) score += 10;
       });
 
-      if (tokens.length > 1 && tokens.every(token => haystack.includes(token))) {
-        score += 80;
-      }
+      if (tokens.length > 1 && tokens.every(token => haystack.includes(token))) score += 80;
     });
 
-    if (normalisePath(link.href) === getCurrentPath()) score -= 50;
+    if (normalisePath(link.href) === currentLivePath()) score -= 50;
     return score;
   }
 
@@ -623,11 +581,7 @@
         .map(item => item.link);
 
       if (!matches.length) {
-        showResults(`
-          <div class="nav-search-empty">
-            No matches for "<strong>${escapeHtml(query)}</strong>"
-          </div>
-        `);
+        showResults(`<div class="nav-search-empty">No matches for "<strong>${escapeHtml(query)}</strong>"</div>`);
         return;
       }
 
@@ -635,9 +589,7 @@
     }, 90);
 
     input.addEventListener("input", runSearch);
-    input.addEventListener("focus", () => {
-      if (safeText(input.value)) runSearch();
-    });
+    input.addEventListener("focus", () => { if (safeText(input.value)) runSearch(); });
 
     input.addEventListener("keydown", event => {
       if (event.key === "Escape") {
@@ -656,7 +608,6 @@
     results.addEventListener("click", event => {
       const target = event.target.closest(".nav-search-result");
       if (!target) return;
-
       maybeTrack("search_result_click", {
         label: target.getAttribute("href") || "",
         query: target.getAttribute("data-query") || ""
@@ -664,9 +615,7 @@
     });
 
     document.addEventListener("click", event => {
-      if (!root.contains(event.target)) {
-        hideResults();
-      }
+      if (!root.contains(event.target)) hideResults();
     });
   }
 
@@ -681,21 +630,19 @@
     setupNavAccordion(host);
     setupSearch(host);
     setupNavTracking(host);
+    fixKnownBrokenInternalLinks(host);
 
     const shareBtn = qs(".nav-share-trigger", host);
     if (shareBtn) shareBtn.addEventListener("click", nativeShare);
   }
 
   function injectBreadcrumbs() {
-    if (getCurrentPath() === POSH.home) return;
-    if (qs(".posh-breadcrumbs")) return;
+    if (currentLivePath() === POSH.home || qs(".posh-breadcrumbs")) return;
 
-    const currentLink = findLink(getCurrentPath());
+    const currentLink = findLink(currentLivePath());
     if (!currentLink) return;
 
-    const group = NAV_GROUPS.find(g =>
-      g.links.some(link => normalisePath(link.href) === getCurrentPath())
-    );
+    const group = NAV_GROUPS.find(g => g.links.some(link => normalisePath(link.href) === currentLivePath()));
 
     const bread = document.createElement("nav");
     bread.className = "posh-breadcrumbs";
@@ -706,13 +653,9 @@
       <span class="crumb-sep">/</span><span aria-current="page">${escapeHtml(currentLink.label)}</span>
     `;
 
-    const wrap = qs(".wrap") || document.body;
     const pageTitle = qs(".page-title") || qs("h1");
-    if (pageTitle && pageTitle.parentNode) {
-      pageTitle.parentNode.insertBefore(bread, pageTitle);
-    } else {
-      wrap.prepend(bread);
-    }
+    if (pageTitle && pageTitle.parentNode) pageTitle.parentNode.insertBefore(bread, pageTitle);
+    else (qs(".wrap") || document.body).prepend(bread);
   }
 
   function ensureHeadingIds() {
@@ -742,9 +685,7 @@
     `;
 
     const firstCard = qs(".wrap .card");
-    if (firstCard && firstCard.parentNode) {
-      firstCard.parentNode.insertBefore(toc, firstCard.nextSibling);
-    }
+    if (firstCard && firstCard.parentNode) firstCard.parentNode.insertBefore(toc, firstCard.nextSibling);
   }
 
   function smoothAnchors() {
@@ -759,18 +700,14 @@
         event.preventDefault();
         target.scrollIntoView({ behavior: "smooth", block: "start" });
 
-        if (history.pushState) {
-          history.pushState(null, "", href);
-        } else {
-          location.hash = href;
-        }
+        if (history.pushState) history.pushState(null, "", href);
+        else location.hash = href;
       });
     });
   }
 
   function ensureProgressBar() {
     if (qs("#poshReadingProgress")) return;
-
     const bar = document.createElement("div");
     bar.id = "poshReadingProgress";
     bar.className = "posh-reading-progress";
@@ -813,7 +750,6 @@
 
   function ensureMiniToast() {
     if (qs("#poshMiniToast")) return;
-
     const toast = document.createElement("div");
     toast.id = "poshMiniToast";
     toast.className = "posh-mini-toast";
@@ -828,9 +764,7 @@
     toast.classList.add("visible");
 
     clearTimeout(showMiniToast._timer);
-    showMiniToast._timer = setTimeout(() => {
-      toast.classList.remove("visible");
-    }, 1600);
+    showMiniToast._timer = setTimeout(() => toast.classList.remove("visible"), 1600);
   }
 
   async function copyCurrentLink() {
@@ -838,9 +772,7 @@
       await navigator.clipboard.writeText(location.href);
       maybeTrack("copy_link");
       showMiniToast("Link copied");
-    } catch (err) {
-      /* silent */
-    }
+    } catch (err) {}
   }
 
   async function nativeShare() {
@@ -857,9 +789,7 @@
       } else {
         await copyCurrentLink();
       }
-    } catch (err) {
-      /* silent */
-    }
+    } catch (err) {}
   }
 
   function injectStickyActionBar() {
@@ -870,8 +800,8 @@
     bar.innerHTML = `
       <a href="${POSH.quiz}" class="posh-action-btn" data-track="sticky_quiz">Safety Score</a>
       <a href="${POSH.reporting}" class="posh-action-btn" data-track="sticky_report">Report & Get Help</a>
-      <button type="button" class="posh-action-btn" id="poshStickyShare" data-track="sticky_share">Share POSH</button>
-      <a href="${POSH.support}" class="posh-action-btn support" data-track="sticky_support">Support POSH</a>
+      <button type="button" class="posh-action-btn" id="poshStickyShare" data-track="sticky_share">Share</button>
+      <a href="${POSH.support}" class="posh-action-btn support" data-track="sticky_support">Support</a>
     `;
 
     document.body.appendChild(bar);
@@ -886,6 +816,7 @@
 
   function injectSupportStrip() {
     if (qs(".posh-support-strip")) return;
+
     const wrap = qs(".wrap");
     if (!wrap) return;
 
@@ -896,7 +827,6 @@
         <strong>If this page helped you think clearer, help keep POSH growing.</strong>
         <div class="posh-support-strip-actions">
           <a href="${POSH.support}" data-track="support_strip_support">Support POSH</a>
-          <a href="${POSH.monthlySupport}" data-track="support_strip_monthly">${escapeHtml(POSH.helpKeepFreeText)}</a>
           <button type="button" id="poshSupportStripShare" data-track="support_strip_share">Share POSH</button>
         </div>
       </div>
@@ -904,17 +834,16 @@
 
     wrap.appendChild(strip);
 
+    const shareBtn = qs("#poshSupportStripShare", strip);
+    if (shareBtn) shareBtn.addEventListener("click", nativeShare);
+
     qsa("[data-track]", strip).forEach(el => {
       el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
     });
-
-    const shareBtn = qs("#poshSupportStripShare", strip);
-    if (shareBtn) shareBtn.addEventListener("click", nativeShare);
   }
 
   function buildRelatedCardsHtml() {
-    const current = getCurrentPath();
-    const related = (PAGE_RELATIONS[current] || [])
+    const related = (PAGE_RELATIONS[currentLivePath()] || [])
       .map(findLink)
       .filter(Boolean)
       .slice(0, POSH.maxRelatedItems);
@@ -992,22 +921,9 @@
         text: "Don’t stop at the game itself. Check the linked chat apps, warning signs, and the wider safety picture too.",
         actions: [
           { href: POSH.redFlags, label: "Red Flags" },
+          { href: POSH.tenSigns, label: "10 Signs Targeted Online" },
           { href: POSH.parentScripts, label: "Parent Scripts" },
-          { href: POSH.reporting, label: "Report & Get Help" },
-          { href: POSH.discord, label: "Discord Safety" }
-        ]
-      };
-    }
-
-    if (page === POSH.devices) {
-      return {
-        title: "Best next safety pathways",
-        text: "Device safety works best when it leads into platform safety, app safety, and clearer family rules.",
-        actions: [
-          { href: POSH.platforms, label: "Platforms" },
-          { href: POSH.gaming, label: "Gaming" },
-          { href: POSH.socials, label: "Social Media & Chat" },
-          { href: POSH.houseRules, label: "House Rules" }
+          { href: POSH.reporting, label: "Report & Get Help" }
         ]
       };
     }
@@ -1025,15 +941,15 @@
       };
     }
 
-    if (page === POSH.start || page === POSH.quiz) {
+    if (page === POSH.devices) {
       return {
-        title: "What to do after this",
-        text: "Start with the biggest risk first. Then move into warning signs, device settings, and practical conversations with your child.",
+        title: "Best next safety pathways",
+        text: "Device safety works best when it leads into platform safety, app safety, and clearer family rules.",
         actions: [
-          { href: POSH.redFlags, label: "Red Flags" },
-          { href: POSH.devices, label: "Device Safety" },
-          { href: POSH.parentScripts, label: "Parent Scripts" },
-          { href: POSH.reporting, label: "Report & Get Help" }
+          { href: POSH.platforms, label: "Platforms" },
+          { href: POSH.gaming, label: "Gaming" },
+          { href: POSH.socials, label: "Social Media & Chat" },
+          { href: POSH.houseRules, label: "House Rules" }
         ]
       };
     }
@@ -1056,8 +972,7 @@
     const wrap = qs(".wrap");
     if (!wrap) return;
 
-    const page = getCurrentPath();
-    const cta = inferCTAByPage(page);
+    const cta = inferCTAByPage(currentLivePath());
     if (!cta) return;
 
     const section = document.createElement("section");
@@ -1080,47 +995,24 @@
   }
 
   function ensureBodyFlags() {
-    const current = getCurrentPath();
+    const current = currentLivePath();
     const page = current.replace(/\.html$/i, "") || "home";
 
     document.body.classList.add("js-ready");
     document.body.dataset.page = page;
 
-    if (current === POSH.home) {
-      document.body.classList.add("home-page");
-    }
-
-    if (/^v3-game-/.test(current) || /^V3gaming-/.test(current)) {
-      document.body.classList.add("page-is-game");
-    }
-
-    if (/^v3-social-/.test(current)) {
-      document.body.classList.add("page-is-social");
-    }
-
-    if (current === POSH.devices) {
-      document.body.classList.add("page-is-device");
-    }
+    if (current === POSH.home) document.body.classList.add("home-page");
+    if (/^v3-game-/.test(current) || /^V3gaming-/.test(current)) document.body.classList.add("page-is-game");
+    if (/^v3-social-/.test(current)) document.body.classList.add("page-is-social");
+    if (current === POSH.devices) document.body.classList.add("page-is-device");
   }
 
   function addPageMetaAttributes() {
-    const page = getCurrentPath();
+    const page = currentLivePath();
     const title = getPageTitle();
 
     document.documentElement.dataset.page = page.replace(/\.html$/i, "");
     document.documentElement.dataset.pageTitle = slugify(title || page);
-  }
-
-  function addPageLeadClass() {
-    const title = getPageTitle().toLowerCase();
-
-    if (title.includes("roblox")) document.body.classList.add("topic-roblox");
-    if (title.includes("discord")) document.body.classList.add("topic-discord");
-    if (title.includes("tiktok")) document.body.classList.add("topic-tiktok");
-    if (title.includes("youtube")) document.body.classList.add("topic-youtube");
-    if (title.includes("snapchat")) document.body.classList.add("topic-snapchat");
-    if (title.includes("device")) document.body.classList.add("topic-devices");
-    if (title.includes("gaming")) document.body.classList.add("topic-gaming");
   }
 
   function enhanceFaqs() {
@@ -1130,11 +1022,7 @@
 
       detail.classList.add("posh-details");
       detail.addEventListener("toggle", () => {
-        if (detail.open) {
-          maybeTrack("details_open", {
-            label: safeText(summary.textContent).slice(0, 100)
-          });
-        }
+        if (detail.open) maybeTrack("details_open", { label: safeText(summary.textContent).slice(0, 100) });
       });
     });
   }
@@ -1152,26 +1040,20 @@
     qsa("a[href]").forEach(link => {
       const href = link.getAttribute("href") || "";
 
-      if (isExternalHref(href)) {
-        link.addEventListener("click", () => {
-          maybeTrack("outbound_click", { label: href });
-        });
+      if (/^https?:\/\//i.test(href) && !href.includes(location.hostname)) {
+        link.addEventListener("click", () => maybeTrack("outbound_click", { label: href }));
       }
 
       if (/\.pdf(\?|$)/i.test(href) || link.hasAttribute("download")) {
         link.classList.add("is-download-link");
-        link.addEventListener("click", () => {
-          maybeTrack("download_click", { label: href });
-        });
+        link.addEventListener("click", () => maybeTrack("download_click", { label: href }));
       }
     });
   }
 
   function enhanceCards() {
     qsa(".card").forEach(card => {
-      if (!card.hasAttribute("tabindex")) {
-        card.setAttribute("tabindex", "0");
-      }
+      if (!card.hasAttribute("tabindex")) card.setAttribute("tabindex", "0");
     });
   }
 
@@ -1181,7 +1063,7 @@
 
       form.addEventListener("submit", () => {
         maybeTrack("form_submit_attempt", {
-          label: form.getAttribute("id") || form.getAttribute("name") || getCurrentPath()
+          label: form.getAttribute("id") || form.getAttribute("name") || currentLivePath()
         });
       });
 
@@ -1200,12 +1082,7 @@
   }
 
   function injectHeroButtonsIfMissing() {
-    const hero =
-      qs(".home-intro-hero") ||
-      qs(".home-intro") ||
-      qs(".card.hero") ||
-      qs(".hero-card");
-
+    const hero = qs(".home-intro-hero") || qs(".home-intro") || qs(".card.hero") || qs(".hero-card");
     if (!hero || qs(".posh-hero-actions", hero)) return;
 
     const box = document.createElement("div");
@@ -1225,6 +1102,7 @@
 
   function injectSupportFooterPrompt() {
     if (qs(".posh-footer-prompt")) return;
+
     const wrap = qs(".wrap");
     if (!wrap) return;
 
@@ -1234,7 +1112,6 @@
       <p><strong>POSH is free for families.</strong> Support helps build more tools, more guidance, more downloads, and more early protection for the next parent who lands here overwhelmed.</p>
       <div class="posh-footer-prompt-actions">
         <a href="${POSH.support}" data-track="footer_support">Support POSH</a>
-        <a href="${POSH.monthlySupport}" data-track="footer_monthly">${escapeHtml(POSH.helpKeepFreeText)}</a>
         <button type="button" id="poshFooterShare" data-track="footer_share">Share POSH</button>
       </div>
     `;
@@ -1279,9 +1156,7 @@
 
   function addCurrentLocationToHomeButtons() {
     qsa(`a[href="${POSH.home}"]`).forEach(link => {
-      if (!link.dataset.fromPage) {
-        link.dataset.fromPage = getCurrentPath();
-      }
+      if (!link.dataset.fromPage) link.dataset.fromPage = currentLivePath();
     });
   }
 
@@ -1305,7 +1180,7 @@
   }
 
   function trackPageView() {
-    maybeTrack("page_view_enhanced", { label: getCurrentPath() });
+    maybeTrack("page_view_enhanced", { label: currentLivePath() });
   }
 
   function safeInit(fn) {
@@ -1317,9 +1192,9 @@
   }
 
   function init() {
+    safeInit(fixKnownBrokenInternalLinks);
     safeInit(ensureBodyFlags);
     safeInit(addPageMetaAttributes);
-    safeInit(addPageLeadClass);
     safeInit(injectGlobalHeroBanner);
     safeInit(mountNav);
     safeInit(injectBreadcrumbs);
