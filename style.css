@@ -2499,122 +2499,176 @@ footer,
 }
 
 /* =========================================================
-   POSH READABILITY / TITLE / BUTTON UPGRADE PATCH
-   Add to very bottom of style.css
+   POSH FINAL HOME / READABILITY / DEPTH FIX
+   Clean final override block — no filler
    ========================================================= */
 
 :root{
   --readableText:rgba(244,247,255,.86);
   --readableMuted:rgba(244,247,255,.70);
   --quietBlue:#8bd6ff;
-  --quietCyan:#76efe5;
   --quietGold:#e6c978;
-  --quietButtonBg:rgba(255,255,255,.055);
+  --quietButtonBg:rgba(255,255,255,.052);
   --quietButtonBorder:rgba(255,255,255,.12);
 }
 
-/* PAGE STRUCTURE */
+/* PAGE WIDTH / FLOW */
 .wrap{
-  max-width:1040px;
+  max-width:1060px;
   padding-top:24px;
 }
 
-.card,
-.posh-related-links,
-.posh-share-panel,
-.posh-smart-cta,
-.posh-support-strip,
-.posh-footer-prompt{
-  padding:clamp(20px,3vw,30px);
+.card{
   margin-bottom:26px;
+  padding:clamp(20px,3vw,30px);
 }
 
-/* FIX MAIN BLUE/TITLE HIERARCHY */
+/* HERO KICKER — fixes small “Parents Online Safety Hub” line */
+.home-kicker,
+.kicker,
+.posh-page-kicker,
+body.home-page .home-kicker,
+body.home-page .kicker,
+body.home-page .posh-page-kicker{
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  padding:10px 18px !important;
+  margin:0 auto 18px !important;
+  border-radius:999px;
+  border:1px solid rgba(217,182,90,.34) !important;
+  background:rgba(217,182,90,.10) !important;
+  color:#fff2c6 !important;
+  font-size:clamp(.95rem,1.8vw,1.12rem) !important;
+  line-height:1.1 !important;
+  font-weight:900 !important;
+  letter-spacing:.12em !important;
+  text-transform:uppercase;
+  text-align:center;
+}
+
+/* MAIN TITLE */
 .page-title,
+h1.page-title,
 .posh-page-title,
-h1.page-title{
-  display:block;
+.home-intro .page-title{
+  display:block !important;
   width:fit-content;
   max-width:100%;
-  margin:0 0 14px;
-  font-size:clamp(2.25rem,6vw,4.35rem);
-  line-height:1.02;
-  letter-spacing:-.045em;
+  margin:0 auto 16px !important;
+  font-size:clamp(2.25rem,6vw,4.35rem) !important;
+  line-height:1.03 !important;
+  letter-spacing:-.045em !important;
   color:#ffffff !important;
-  opacity:1 !important;
-  text-shadow:
-    0 2px 0 rgba(0,0,0,.22),
-    0 14px 34px rgba(0,0,0,.35);
-  -webkit-text-stroke:0;
-  border-bottom:1px solid rgba(230,201,120,.35);
+  text-align:center !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:0 14px 34px rgba(0,0,0,.36) !important;
+  border-bottom:1px solid rgba(230,201,120,.32) !important;
 }
 
 .page-title::after{
-  height:5px;
-  margin-top:8px;
-  opacity:.65;
-  filter:blur(4px);
+  height:5px !important;
+  margin-top:8px !important;
+  opacity:.58 !important;
+  filter:blur(4px) !important;
   background:linear-gradient(
     90deg,
-    rgba(230,201,120,.65),
-    rgba(139,214,255,.38),
+    rgba(230,201,120,.58),
+    rgba(139,214,255,.34),
     transparent
-  );
+  ) !important;
 }
 
-/* STOP SUBHEADINGS FROM BEING TOO BIG */
+/* SECTION HEADINGS */
 h2,
+.card h2,
+.home-intro h2,
 .posh-smart-cta h2,
 .posh-related-links h2,
-.posh-share-panel h2,
-.card h2{
-  font-size:clamp(1.25rem,2.35vw,1.75rem);
-  line-height:1.22;
-  letter-spacing:-.018em;
-  margin-bottom:10px;
+.posh-share-panel h2{
+  font-size:clamp(1.3rem,2.35vw,1.78rem) !important;
+  line-height:1.22 !important;
+  margin-bottom:10px !important;
 }
 
 h3,
 .card h3{
-  font-size:clamp(1.05rem,1.7vw,1.24rem);
-  line-height:1.3;
+  font-size:clamp(1.06rem,1.75vw,1.28rem) !important;
+  line-height:1.3 !important;
 }
 
-/* BODY READABILITY */
+/* BODY TEXT */
 p,
 li,
 td,
 .card p,
+.section-lead,
+.tagline,
+.posh-page-subtitle,
+.home-subline,
+.home-intro p,
+.home-intro-hero p,
+.hero-card p,
+.hero-warning p{
+  font-size:clamp(.99rem,1.2vw,1.07rem) !important;
+  line-height:1.76 !important;
+  color:var(--readableText) !important;
+}
+
+.section-lead,
 .tagline,
 .posh-page-subtitle{
-  font-size:clamp(1rem,1.2vw,1.06rem);
-  line-height:1.76;
-  color:var(--readableText);
+  max-width:900px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
 }
 
-.tagline,
-.posh-page-subtitle{
-  max-width:840px;
-  margin-bottom:26px;
+.small{
+  color:rgba(244,247,255,.66) !important;
 }
 
-.tagline strong,
-.card strong{
-  color:#fff;
-}
-
-/* MAKE INTRO CARDS MORE ENGAGING */
+/* HERO / CARD DEPTH */
 .home-intro,
 .home-intro-hero,
 .hero-card,
 .hero-warning{
   background:
-    radial-gradient(circle at top left, rgba(139,214,255,.08), transparent 34%),
-    linear-gradient(180deg,rgba(15,42,85,.96),rgba(10,29,59,.94));
-  border-color:rgba(230,201,120,.18);
+    radial-gradient(circle at top left, rgba(139,214,255,.085), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(217,182,90,.055), transparent 34%),
+    linear-gradient(180deg,rgba(15,42,85,.96),rgba(10,29,59,.94)) !important;
+  border-color:rgba(230,201,120,.18) !important;
 }
 
-/* QUIETER, MORE CLICKABLE BUTTONS */
+/* INFO BOX DEPTH */
+.info-box,
+.rule-box,
+.tip-box,
+.warning-box,
+.highlight-box,
+.next-item,
+.posh-related-card{
+  background:rgba(255,255,255,.04) !important;
+  border-color:rgba(255,255,255,.105) !important;
+}
+
+.info-box:hover,
+.card.soft:hover,
+.next-item:hover{
+  border-color:rgba(139,214,255,.24) !important;
+  background:rgba(139,214,255,.07) !important;
+}
+
+/* WARNING AREAS — important, not panic red */
+.warning-box,
+.danger-line,
+.alert-line,
+.calm-warning{
+  background:rgba(230,201,120,.075) !important;
+  border-color:rgba(230,201,120,.24) !important;
+  color:#fff0c8 !important;
+}
+
+/* BUTTONS — softer, less repetitive */
 .btn,
 .button,
 .cta-btn,
@@ -2625,6 +2679,7 @@ button.btn,
 button.button,
 button.cta-btn,
 .nav-primary-cta,
+.nav-support-link,
 .posh-action-btn,
 .posh-hero-actions a,
 .posh-share-panel-actions a,
@@ -2634,18 +2689,124 @@ button.cta-btn,
 .posh-support-strip-actions button,
 .posh-footer-prompt-actions a,
 .posh-footer-prompt-actions button{
-  min-height:44px;
-  padding:11px 16px;
-  border-radius:999px;
+  min-height:44px !important;
+  padding:11px 16px !important;
+  border-radius:999px !important;
   background:var(--quietButtonBg) !important;
   border:1px solid var(--quietButtonBorder) !important;
   color:#eef6ff !important;
   box-shadow:none !important;
-  font-weight:750;
+  font-weight:750 !important;
   letter-spacing:.005em;
 }
 
 .btn:hover,
+.button:hover,
+.cta-btn:hover,
+.nav-primary-cta:hover,
+.nav-support-link:hover,
+.posh-action-btn:hover,
+.posh-hero-actions a:hover,
+.posh-smart-cta-actions a:hover,
+.posh-related-card:hover,
+.next-item:hover{
+  transform:translateY(-1px) !important;
+  background:rgba(139,214,255,.12) !important;
+  border-color:rgba(139,214,255,.28) !important;
+  color:#fff !important;
+}
+
+/* PRIMARY ACTIONS */
+.btn.primary-soft,
+.nav-primary-cta:first-child,
+.posh-hero-actions a:first-child,
+.posh-smart-cta-actions a:first-child{
+  background:rgba(139,214,255,.14) !important;
+  border-color:rgba(139,214,255,.34) !important;
+  color:#ffffff !important;
+}
+
+/* HIGH-CONCERN LINKS — subtle gold signal */
+a[href*="danger"],
+a[href*="blackmailed"],
+a[href*="sextortion"],
+a[href*="evidence"],
+a[href*="report"],
+a[href*="redflags"],
+a[href*="10-signs"],
+a[href*="playbook"]{
+  border-color:rgba(230,201,120,.24) !important;
+}
+
+/* PILLS / BADGES */
+.badge,
+.risk-badge,
+.pill{
+  background:rgba(255,255,255,.045) !important;
+  border-color:rgba(255,255,255,.12) !important;
+}
+
+.badge.gold{
+  background:rgba(217,182,90,.12) !important;
+  border-color:rgba(217,182,90,.28) !important;
+  color:#ffe9ab !important;
+}
+
+/* STICKY ACTION BAR */
+.posh-action-bar{
+  background:rgba(6,19,38,.78) !important;
+  border-color:rgba(255,255,255,.08) !important;
+  box-shadow:0 12px 34px rgba(0,0,0,.28) !important;
+}
+
+/* MOBILE */
+@media (max-width:700px){
+  .page-title,
+  h1.page-title,
+  .posh-page-title,
+  .home-intro .page-title{
+    font-size:clamp(2rem,10vw,3.2rem) !important;
+    line-height:1.04 !important;
+  }
+
+  .home-kicker,
+  .kicker,
+  .posh-page-kicker{
+    font-size:.9rem !important;
+    letter-spacing:.09em !important;
+    padding:9px 14px !important;
+  }
+
+  h2,
+  .card h2{
+    font-size:1.3rem !important;
+  }
+
+  .card,
+  .home-intro,
+  .home-intro-hero,
+  .hero-card,
+  .hero-warning{
+    padding:18px !important;
+  }
+
+  .posh-action-bar{
+    grid-template-columns:repeat(2,1fr) !important;
+  }
+}
+
+@media (max-width:420px){
+  .page-title,
+  h1.page-title,
+  .posh-page-title,
+  .home-intro .page-title{
+    font-size:clamp(1.9rem,11vw,2.85rem) !important;
+  }
+
+  .posh-action-bar{
+    grid-template-columns:1fr !important;
+  }
+}
 .button:hover,
 .cta-btn:hover,
 .nav-primary-cta:hover,
