@@ -14,8 +14,11 @@
       "/POSH-HERO.PNG",
       "posh-hero.png",
       "/posh-hero.png",
+      "posh-home.png",
+      "/posh-home.png",
       "https://poshaussie.com.au/POSH-HERO.png",
-      "https://poshaussie.com.au/posh-hero.png"
+      "https://poshaussie.com.au/posh-hero.png",
+      "https://poshaussie.com.au/posh-home.png"
     ],
 
     heroAlt: "Parents Online Safety Hub",
@@ -23,73 +26,158 @@
 
     start: "v3-start.html",
     entry: "v3-entry-system.html",
+    safetyLanes: "v3-posh-safety-lanes.html",
+    parentSystem: "v3-posh-parent-system.html",
     whatNow: "v3-what-to-do-now.html",
+    whatNowLegacy: "v3-what-now.html",
     response: "v3-response-system.html",
+    responseLegacy: "v3-posh-response-system.html",
     parentQuestions: "v3-parent-questions.html",
     quiz: "v3-safety-score.html",
-    redFlags: "v3-redflags.html",
 
+    urgentHelp: "v3-what-to-do-if-your-child-is-in-danger-online.html",
+    first24: "v3-first-24-hours-online-incident.html",
+    first24Legacy: "v3-first-24-hours.html",
+    blackmail: "v3-my-child-is-being-blackmailed-online.html",
+    photos: "v3-kid-sending-photos-online-what-to-do.html",
+    sextortion: "v3-what-is-sextortion.html",
+    evidence: "v3-evidence-reporting.html",
+    reporting: "v3-reporting.html",
+    reportingAustralia: "v3-reporting-australia.html",
+
+    redFlags: "v3-redflags.html",
     tenSigns: "v3-10-signs-targeted-online.html",
     tenSignsLegacy: "v3-10-signs.html",
+    groomingSigns: "v3-child-being-groomed-signs.html",
+    groomingSignsLegacy: "v3-signs-my-child-is-being-groomed-online.html",
+    groomingSignsAlt: "v3-signs-your-child-is-being-groomed.html",
+    predatorWarning: "v3-online-predator-warning-signs.html",
+    childHidingPhone: "v3-child-hiding-phone-from-parents.html",
+    manipulated: "v3-my-child-is-being-manipulated-online.html",
+    whyKidsDontTell: "v3-why-kids-dont-tell-parents-online-safety.html",
+    stranger: "v3-my-child-is-talking-to-a-stranger-online.html",
+    offPlatform: "v3-off-platform-movement-warning-signs.html",
 
     playbook: "v3-playbook.html",
     predators: "v3-predators.html",
-    reporting: "v3-reporting.html",
+    grooming: "v3-grooming.html",
+    stepGrooming: "v3-how-grooming-actually-works-step-by-step.html",
+    contactKids: "v3-how-predators-contact-kids-online.html",
+    isolation: "v3-signs-your-child-is-being-isolated-online.html",
+    onlineFriendRisk: "v3-when-an-online-friend-becomes-a-risk.html",
 
     platforms: "v3-platforms.html",
-    gaming: "v3-gaming.html",
-    allGames: "v3-all-games.html",
+    platformRisks: "v3-platform-risks-overview.html",
+    allApplications: "v3-all-applications.html",
+    dangerousApps: "v3-dangerous-apps.html",
+    dangerousAppsKids: "v3-dangerous-apps-for-kids.html",
+    safeAppsGames: "v3-safe-apps-and-games-for-kids.html",
     socials: "v3-socials.html",
     devices: "v3-devices.html",
-
-    downloads: "v3-all-downloads.html",
-    downloadsLegacy: "v3-downloads.html",
-
-    awareness: "v3-awareness.html",
-    algorithm: "v3-algorithm-awareness.html",
-    investigations: "v3-real-investigations.html",
-    parentScripts: "v3-parent-scripts.html",
-    houseRules: "v3-house-rules.html",
-    ageGuide: "v3-age-guide.html",
-
-    support: "v3-support.html",
-    supportLegacy: "v3-support.html",
-    monthlySupport: "v3-support.html",
-    supportOld: "v3-support-monthly.html",
-
-    warning: "v3-warning.html",
-    disclaimer: "v3-warning.html",
-    disclaimerLegacy: "warning-disclaimer.html",
-
-    petitionDigitalGifting: "v3-petition-parent-approval-digital-gifting.html",
-    petitionDefaults: "v3-petition-safer-defaults-child-accounts.html",
-
-    dangerousApps: "v3-dangerous-apps.html",
+    deviceControls: "v3-device-controls.html",
+    parentalControls: "v3-parental-controls.html",
+    parentalControlsByDevice: "v3-parental-controls-by-device.html",
     bestParentalControlApps: "v3-best-parental-control-apps.html",
-    cancelSubscriptions: "v3-cancel-subscriptions.html",
-    videoChat: "v3-videochat.html",
+    monitorTrust: "v3-how-to-monitor-without-breaking-trust.html",
+    checkDeviceCalmly: "v3-how-to-check-a-device-without-causing-panic.html",
+    trustProtection: "v3-it-is-not-about-not-trusting-your-child.html",
+    houseRules: "v3-house-rules.html",
+    parentScripts: "v3-parent-scripts.html",
+    talkOnlineSafety: "v3-how-to-talk-to-your-child-about-online-safety.html",
 
+    gaming: "v3-gaming.html",
+    allGames: "v3-all-games.html",
+    gameRisksByAge: "v3-game-risks-by-age.html",
     roblox: "v3-game-roblox.html",
+    robloxSupervision: "v3-why-roblox-requires-supervision.html",
+    robuxScam: "v3-free-robux-scam-safety.html",
+    robuxScamExplained: "v3-roblox-robux-scams-explained.html",
+    inGameCurrency: "v3-in-game-currency-grooming-risk.html",
+    brainrotRoblox: "v3-brainrot-roblox.html",
     fortnite: "v3-game-fortnite.html",
     minecraft: "v3-game-minecraft.html",
     vrchat: "v3-game-vrchat.html",
+    apex: "v3-game-apex.html",
 
-    discord: "v3-social-discord.html",
-    snapchat: "v3-social-snapchat.html",
-    tiktok: "v3-social-tiktok.html",
-    youtube: "v3-social-youtube.html",
-
-    xbox: "V3gaming-xbox.html",
-    playstation: "V3gaming-playstation.html",
-    nintendo: "V3gaming-nintendo.html",
+    xbox: "v3-platform-xbox.html",
+    xboxLegacy: "V3gaming-xbox.html",
+    playstation: "v3-platform-playstation.html",
+    playstationLegacy: "V3gaming-playstation.html",
+    nintendo: "v3-platform-nintendo.html",
+    nintendoLegacy: "V3gaming-nintendo.html",
     pcGaming: "V3gaming-pc.html",
     vrGaming: "V3gaming-vr.html",
 
+    discord: "v3-social-discord.html",
+    snapchat: "v3-social-snapchat.html",
+    instagram: "v3-social-instagram.html",
+    tiktok: "v3-social-tiktok.html",
+    youtube: "v3-social-youtube.html",
+    telegram: "v3-social-telegram.html",
+    whatsapp: "v3-social-whatsapp.html",
+    yubo: "v3-social-yubo.html",
+    videoChat: "v3-videochat.html",
+
+    robloxScenarios: "v3-roblox-safety-scenarios.html",
+    snapchatScenarios: "v3-snapchat-pressure-scenarios.html",
+    sextortionScenarios: "v3-sextortion-scenarios.html",
+    tiktokLiveScenarios: "v3-tiktok-live-scenarios.html",
+    instagramDmScenarios: "v3-instagram-dm-scenarios.html",
+    groupChatScenarios: "v3-group-chat-pressure-scenarios.html",
+    youtubeCommentScenarios: "v3-youtube-comments-scenarios.html",
+    gamingVoiceScenarios: "v3-gaming-voice-chat-scenarios.html",
+
+    executiveFunctioning: "v3-executive-functioning.html",
+    executiveOnlineSafety: "v3-executive-functioning-online-safety.html",
+    executiveSystem: "v3-executive-functioning-system.html",
+    executiveApplicationLayer: "v3-executive-functioning-application-layer.html",
+    onlineScenarios: "v3-online-scenarios-training.html",
+    neurodivergentExecutive: "v3-neurodivergent-executive-functioning.html",
+    executiveAgeSystem: "v3-executive-functioning-age-system.html",
+    emotionalRegulation: "v3-emotional-regulation-online-safety.html",
+    pauseBeforeReacting: "v3-pause-before-reacting.html",
+    flexibleThinking: "v3-flexible-thinking-online.html",
+    criticalThinking: "v3-critical-thinking-online-safety.html",
+    decisionMaking: "v3-online-decision-making.html",
+    impulseControl: "v3-impulse-control-online.html",
+    adhdExecutive: "v3-adhd-executive-functioning-online-safety.html",
+    asdExecutive: "v3-asd-executive-functioning-online-safety.html",
+    oddExecutive: "v3-odd-executive-functioning-online-safety.html",
+    pdaExecutive: "v3-pda-executive-functioning-online-safety.html",
+    ocdExecutive: "v3-ocd-executive-functioning-online-safety.html",
+    fasdExecutive: "v3-fasd-executive-functioning-online-safety.html",
+    frustrationIntolerance: "v3-frustration-intolerance-online-safety.html",
+
+    awareness: "v3-awareness.html",
+    algorithm: "v3-algorithm-awareness.html",
+    screenBrain: "v3-how-screens-affect-your-childs-brain.html",
+    brainrot: "v3-brainrot.html",
+    scrolling: "v3-why-kids-cant-stop-scrolling.html",
+    attentionControl: "v3-how-attention-is-used-to-control-behaviour.html",
+    manipulativeGroups: "v3-how-manipulative-groups-recruit-children-online.html",
+    targetedHarassment: "v3-targeted-harassment-and-false-reports.html",
+    definitions: "v3-definitions.html",
+    investigations: "v3-real-investigations.html",
+
+    downloads: "v3-all-downloads.html",
+    downloadsLegacy: "v3-downloads.html",
+    support: "v3-support.html",
+    share: "v3-share.html",
+    community: "v3-community.html",
+    collaboration: "v3-collaboration.html",
+    founder: "v3-founder.html",
+    whyPoshExists: "v3-why-posh-exists.html",
+    warning: "v3-warning.html",
+    disclaimerLegacy: "warning-disclaimer.html",
+
+    cancelSubscriptions: "v3-cancel-subscriptions.html",
+    petitionDigitalGifting: "v3-petition-parent-approval-digital-gifting.html",
+    petitionDefaults: "v3-petition-safer-defaults-child-accounts.html",
+
     shareText:
-      "POSH Aussie helps parents understand online risks, spot warning signs earlier, and protect their children with clearer practical guidance.",
+      "POSH helps parents build safer digital families with practical safety checks, device guidance, family rules, platform awareness, warning signs, and calm action pathways.",
 
     searchPlaceholder: "Search apps, games, devices, PDFs or topics",
-    helpKeepFreeText: "Help Keep POSH Free",
     maxSearchResults: 10,
     maxTocItems: 8,
     maxRelatedItems: 6
@@ -97,9 +185,18 @@
 
   const REDIRECT_MAP = {
     "v3-support-monthly.html": POSH.support,
+    "v3-support-posh.html": POSH.support,
     "warning-disclaimer.html": POSH.warning,
     "v3-10-signs.html": POSH.tenSigns,
-    "v3-support-posh.html": POSH.support
+    "v3-what-now.html": POSH.whatNow,
+    "v3-posh-response-system.html": POSH.response,
+    "v3-first-24-hours.html": POSH.first24,
+    "v3-downloads.html": POSH.downloads,
+    "v3-signs-my-child-is-being-groomed-online.html": POSH.groomingSigns,
+    "v3-signs-your-child-is-being-groomed.html": POSH.groomingSigns,
+    "V3gaming-xbox.html": POSH.xbox,
+    "V3gaming-playstation.html": POSH.playstation,
+    "V3gaming-nintendo.html": POSH.nintendo
   };
 
   const NAV_GROUPS = [
@@ -107,126 +204,226 @@
       title: "Start & Safety",
       links: [
         { href: POSH.home, label: "Home", type: "Home", keywords: "home index posh parents online safety hub australia child safety" },
-        { href: POSH.start, label: "Start Here", type: "Start", keywords: "start first steps urgent where do i begin parent help safety" },
+        { href: POSH.start, label: "Start Here", type: "Start", keywords: "start first steps where do i begin parent help safety" },
+        { href: POSH.safetyLanes, label: "Choose Safety Path", type: "Start", keywords: "choose lane pathway situation urgent warning signs devices platforms" },
+        { href: POSH.parentSystem, label: "POSH Parent System", type: "System", keywords: "parent system family plan rules visibility monitoring conversations" },
         { href: POSH.entry, label: "Entry System", type: "System", keywords: "entry system guided pathway choose direction" },
         { href: POSH.whatNow, label: "What To Do Now", type: "Action", keywords: "what to do now immediate next steps concern act early" },
         { href: POSH.response, label: "POSH Response System", type: "Action", keywords: "response system what parents do next concern structure" },
         { href: POSH.parentQuestions, label: "Parent Questions", type: "Questions", keywords: "questions to ask child parent prompts conversation" },
-        { href: POSH.quiz, label: "Safety Score", type: "Quiz", keywords: "safety score audit checklist quiz risk score check" },
-        { href: POSH.redFlags, label: "Red Flags", type: "Warning Signs", keywords: "red flags warning signs grooming behaviour secrecy concern" },
-        { href: POSH.tenSigns, label: "10 Signs Targeted Online", type: "Warning Signs", keywords: "10 signs targeted online grooming child warning signs" },
-        { href: POSH.playbook, label: "Predator Playbook", type: "Playbook", keywords: "playbook grooming escalation pattern trust private secrecy" },
-        { href: POSH.predators, label: "Predator Tactics", type: "Predators", keywords: "predator tactics manipulation control grooming isolate secrets" },
-        { href: POSH.reporting, label: "Report & Get Help", type: "Reporting", keywords: "report get help police esafety evidence accce sextortion urgent help" }
+        { href: POSH.quiz, label: "Safety Score", type: "Quiz", keywords: "safety score audit checklist quiz risk score check" }
       ]
     },
     {
-      title: "Platforms, Games & Apps",
+      title: "Urgent Help & Reporting",
       links: [
+        { href: POSH.urgentHelp, label: "My Child May Be In Danger", type: "Urgent Help", keywords: "danger emergency urgent child online help immediate" },
+        { href: POSH.first24, label: "First 24 Hours", type: "Urgent Help", keywords: "first 24 hours incident happened what to do now evidence" },
+        { href: POSH.blackmail, label: "Blackmail Or Threats", type: "Urgent Help", keywords: "blackmail threats sextortion pressure pay delete evidence" },
+        { href: POSH.photos, label: "Child Sent Photos", type: "Urgent Help", keywords: "child sent photos images nudes what to do evidence" },
+        { href: POSH.sextortion, label: "What Is Sextortion?", type: "Definition", keywords: "sextortion blackmail threats images sexual extortion" },
+        { href: POSH.evidence, label: "Save Evidence", type: "Reporting", keywords: "evidence reporting screenshots messages usernames links do not delete" },
+        { href: POSH.reporting, label: "Report & Get Help", type: "Reporting", keywords: "report get help police esafety accce sextortion urgent help" },
+        { href: POSH.reportingAustralia, label: "Reporting Australia", type: "Reporting", keywords: "australia report esafety police accce child safety" }
+      ]
+    },
+    {
+      title: "Warning Signs & Grooming",
+      links: [
+        { href: POSH.redFlags, label: "Red Flags", type: "Warning Signs", keywords: "red flags warning signs grooming behaviour secrecy concern" },
+        { href: POSH.tenSigns, label: "10 Signs Targeted Online", type: "Warning Signs", keywords: "10 signs targeted online grooming child warning signs" },
+        { href: POSH.groomingSigns, label: "Grooming Signs", type: "Warning Signs", keywords: "signs child being groomed online secrecy privacy pressure" },
+        { href: POSH.predatorWarning, label: "Predator Warning Signs", type: "Warning Signs", keywords: "online predator warning signs grooming manipulation tactics" },
+        { href: POSH.childHidingPhone, label: "Child Hiding Phone", type: "Warning Signs", keywords: "hiding phone deleted messages secrecy panic phone" },
+        { href: POSH.manipulated, label: "Manipulation", type: "Warning Signs", keywords: "child manipulated online emotional pressure control secrecy" },
+        { href: POSH.whyKidsDontTell, label: "Why Kids Don’t Tell", type: "Parent Insight", keywords: "why kids do not tell shame fear punishment embarrassment" },
+        { href: POSH.stranger, label: "Talking To A Stranger", type: "Warning Signs", keywords: "online stranger chat friend contact unknown adult" },
+        { href: POSH.offPlatform, label: "Off-Platform Movement", type: "Warning Signs", keywords: "move to another app discord snapchat private chat off platform" },
+        { href: POSH.playbook, label: "Predator Playbook", type: "Playbook", keywords: "playbook grooming escalation pattern trust private secrecy" },
+        { href: POSH.stepGrooming, label: "How Grooming Builds", type: "Playbook", keywords: "grooming step by step access attention trust secrecy pressure" },
+        { href: POSH.predators, label: "Predator Tactics", type: "Predators", keywords: "predator tactics manipulation control grooming isolate secrets" }
+      ]
+    },
+    {
+      title: "Platforms, Apps & Games",
+      links: [
+        { href: POSH.platformRisks, label: "Platform Risk Overview", type: "Hub", keywords: "platform risk overview apps games contact secrecy pressure" },
         { href: POSH.platforms, label: "All Platforms", type: "Directory", keywords: "all platforms apps games devices socials directory" },
-        { href: POSH.gaming, label: "Gaming Safety", type: "Gaming", keywords: "gaming safety online game chat party voice strangers" },
-        { href: POSH.allGames, label: "All Games Directory", type: "Directory", keywords: "all games directory gaming pages" },
-        { href: POSH.roblox, label: "Roblox", type: "Game", keywords: "roblox robux private chat gifting groups voice" },
-        { href: POSH.fortnite, label: "Fortnite", type: "Game", keywords: "fortnite party chat squads epic games" },
-        { href: POSH.minecraft, label: "Minecraft", type: "Game", keywords: "minecraft servers realms multiplayer mods" },
-        { href: POSH.vrchat, label: "VRChat", type: "Game", keywords: "vrchat virtual reality avatars adults voice" },
-        { href: POSH.xbox, label: "Xbox", type: "Gaming Device", keywords: "xbox console party chat messages microsoft" },
-        { href: POSH.playstation, label: "PlayStation", type: "Gaming Device", keywords: "playstation psn party chat sony console" },
-        { href: POSH.nintendo, label: "Nintendo", type: "Gaming Device", keywords: "nintendo switch online child safety" },
-        { href: POSH.pcGaming, label: "PC Gaming", type: "Gaming Device", keywords: "pc gaming steam discord computer safety" },
-        { href: POSH.vrGaming, label: "VR Gaming", type: "Gaming Device", keywords: "vr gaming headset meta quest voice chat" },
+        { href: POSH.allApplications, label: "All Applications", type: "Directory", keywords: "all applications apps directory social chat" },
         { href: POSH.socials, label: "Social Media & Chat", type: "Socials", keywords: "social media apps chat private messages" },
         { href: POSH.discord, label: "Discord", type: "App", keywords: "discord dms server voice chat grooming" },
         { href: POSH.snapchat, label: "Snapchat", type: "App", keywords: "snapchat disappearing messages streaks snap map" },
+        { href: POSH.instagram, label: "Instagram", type: "App", keywords: "instagram dm reels followers private messages" },
         { href: POSH.tiktok, label: "TikTok", type: "App", keywords: "tiktok algorithm live messages fyp trends" },
         { href: POSH.youtube, label: "YouTube", type: "App", keywords: "youtube comments shorts live creators algorithm" },
-        { href: POSH.videoChat, label: "Video Chat", type: "App", keywords: "video chat live video webcam random strangers" },
-        { href: POSH.devices, label: "Device Safety", type: "Devices", keywords: "device safety phones tablets consoles passcodes permissions" },
-        { href: POSH.bestParentalControlApps, label: "Best Parental Control Apps", type: "Guide", keywords: "parental control apps monitor filters screen time" },
+        { href: POSH.telegram, label: "Telegram", type: "App", keywords: "telegram private groups encrypted chat channels" },
+        { href: POSH.whatsapp, label: "WhatsApp", type: "App", keywords: "whatsapp private messages groups encrypted chat" },
+        { href: POSH.yubo, label: "Yubo", type: "App", keywords: "yubo live social strangers teen app" },
         { href: POSH.dangerousApps, label: "Top Dangerous Apps", type: "Guide", keywords: "dangerous apps risky apps private contact secrecy" },
-        { href: POSH.cancelSubscriptions, label: "Cancel Subscriptions", type: "Guide", keywords: "cancel subscriptions apple google microsoft xbox playstation" }
+        { href: POSH.safeAppsGames, label: "Safer Apps & Games", type: "Guide", keywords: "safe apps games age appropriate family choices" }
       ]
     },
     {
-      title: "Awareness & Resources",
+      title: "Gaming & Devices",
+      links: [
+        { href: POSH.gaming, label: "Gaming Safety", type: "Gaming", keywords: "gaming safety online game chat party voice strangers" },
+        { href: POSH.allGames, label: "All Games Directory", type: "Directory", keywords: "all games directory gaming pages" },
+        { href: POSH.gameRisksByAge, label: "Game Risks By Age", type: "Guide", keywords: "game risks age age appropriate" },
+        { href: POSH.roblox, label: "Roblox", type: "Game", keywords: "roblox robux private chat gifting groups voice" },
+        { href: POSH.robuxScam, label: "Free Robux Scam Safety", type: "Game", keywords: "free robux scam safety grooming gifting" },
+        { href: POSH.inGameCurrency, label: "In-Game Currency Risk", type: "Game", keywords: "in game currency grooming risk gifting robux skins" },
+        { href: POSH.fortnite, label: "Fortnite", type: "Game", keywords: "fortnite party chat squads epic games" },
+        { href: POSH.minecraft, label: "Minecraft", type: "Game", keywords: "minecraft servers realms multiplayer mods" },
+        { href: POSH.vrchat, label: "VRChat", type: "Game", keywords: "vrchat virtual reality avatars adults voice" },
+        { href: POSH.apex, label: "Apex Legends", type: "Game", keywords: "apex legends gaming voice chat squads" },
+        { href: POSH.devices, label: "Device Safety", type: "Devices", keywords: "device safety phones tablets consoles passcodes permissions" },
+        { href: POSH.deviceControls, label: "Device Controls", type: "Devices", keywords: "device controls screen time restrictions settings" },
+        { href: POSH.parentalControls, label: "Parental Controls", type: "Devices", keywords: "parental controls device limits account restrictions" },
+        { href: POSH.bestParentalControlApps, label: "Best Control Apps", type: "Guide", keywords: "parental control apps monitor filters screen time" },
+        { href: POSH.monitorTrust, label: "Monitor Without Breaking Trust", type: "Guide", keywords: "monitor without breaking trust visibility devices child talks" },
+        { href: POSH.checkDeviceCalmly, label: "Check A Device Calmly", type: "Guide", keywords: "check device without panic screenshots messages apps" },
+        { href: POSH.xbox, label: "Xbox", type: "Gaming Device", keywords: "xbox console party chat messages microsoft" },
+        { href: POSH.playstation, label: "PlayStation", type: "Gaming Device", keywords: "playstation psn party chat sony console" },
+        { href: POSH.nintendo, label: "Nintendo", type: "Gaming Device", keywords: "nintendo switch online child safety" }
+      ]
+    },
+    {
+      title: "Parent Tools & Training",
+      links: [
+        { href: POSH.houseRules, label: "House Rules", type: "Rules", keywords: "house rules boundaries devices bedrooms passcodes" },
+        { href: POSH.parentScripts, label: "Parent Scripts", type: "Scripts", keywords: "parent scripts talk to kids conversations online safety" },
+        { href: POSH.talkOnlineSafety, label: "How To Talk", type: "Scripts", keywords: "how to talk to your child online safety calm conversation" },
+        { href: POSH.trustProtection, label: "Trust Vs Protection", type: "Parent Insight", keywords: "not about not trusting child trust protection safety" },
+        { href: POSH.onlineScenarios, label: "Scenario Training", type: "Training", keywords: "online scenarios training practise pressure response" },
+        { href: POSH.robloxScenarios, label: "Roblox Scenarios", type: "Training", keywords: "roblox safety scenarios robux chat pressure" },
+        { href: POSH.snapchatScenarios, label: "Snapchat Pressure Scenarios", type: "Training", keywords: "snapchat pressure scenarios disappearing messages" },
+        { href: POSH.sextortionScenarios, label: "Sextortion Scenarios", type: "Training", keywords: "sextortion scenarios blackmail photos pressure" },
+        { href: POSH.groupChatScenarios, label: "Group Chat Pressure", type: "Training", keywords: "group chat pressure bullying secrecy screenshots" },
+        { href: POSH.executiveFunctioning, label: "Executive Functioning", type: "Thinking Skills", keywords: "executive functioning online safety child thinking skills" },
+        { href: POSH.pauseBeforeReacting, label: "Pause Before Reacting", type: "Thinking Skills", keywords: "pause before reacting impulse control" },
+        { href: POSH.impulseControl, label: "Impulse Control", type: "Thinking Skills", keywords: "impulse control online decisions child safety" },
+        { href: POSH.emotionalRegulation, label: "Emotional Regulation", type: "Thinking Skills", keywords: "emotional regulation online safety pressure" },
+        { href: POSH.decisionMaking, label: "Decision Making", type: "Thinking Skills", keywords: "online decision making safety choices" },
+        { href: POSH.criticalThinking, label: "Critical Thinking", type: "Thinking Skills", keywords: "critical thinking online safety claims pressure" }
+      ]
+    },
+    {
+      title: "Awareness, Downloads & POSH",
       links: [
         { href: POSH.awareness, label: "Awareness Hub", type: "Awareness", keywords: "awareness education parents grooming algorithms safety" },
         { href: POSH.algorithm, label: "Algorithm Risks", type: "Awareness", keywords: "algorithm risks feed recommendations endless scroll influence" },
+        { href: POSH.screenBrain, label: "Screens & The Brain", type: "Awareness", keywords: "screens child brain attention sleep behaviour" },
+        { href: POSH.brainrot, label: "Brainrot", type: "Awareness", keywords: "brainrot content endless scrolling low quality" },
+        { href: POSH.definitions, label: "Definitions", type: "Awareness", keywords: "definitions terms grooming sextortion online safety" },
         { href: POSH.investigations, label: "Real Investigations", type: "Investigations", keywords: "real investigations interviews evidence predator exposure" },
-        { href: POSH.parentScripts, label: "Parent Scripts", type: "Scripts", keywords: "parent scripts talk to kids conversations online safety" },
-        { href: POSH.houseRules, label: "House Rules", type: "Rules", keywords: "house rules boundaries devices bedrooms passcodes" },
-        { href: POSH.ageGuide, label: "Age Guide", type: "Guide", keywords: "age guide age appropriate readiness apps games" },
         { href: POSH.downloads, label: "All PDF Downloads", type: "Downloads", keywords: "pdf downloads guides framework playbook scripts printables" },
-        { href: POSH.downloadsLegacy, label: "Downloads", type: "Downloads", keywords: "downloads pdf resources checklists" },
-        { href: POSH.petitionDigitalGifting, label: "Digital Gifting Policy", type: "Policy", keywords: "petition digital gifting robux skins gifts parent approval" },
-        { href: POSH.petitionDefaults, label: "Safer Defaults Policy", type: "Policy", keywords: "petition safer defaults child accounts settings reform" },
+        { href: POSH.share, label: "Share POSH", type: "Support", keywords: "share posh awareness help families" },
         { href: POSH.support, label: "Support POSH", type: "Support", keywords: "support posh donate help keep free mission" },
+        { href: POSH.community, label: "Community", type: "Support", keywords: "community parents movement posh" },
+        { href: POSH.collaboration, label: "Collaboration", type: "Support", keywords: "collaboration creators educators parents partners" },
+        { href: POSH.founder, label: "Founder", type: "POSH", keywords: "founder jinglez posh story mission" },
+        { href: POSH.whyPoshExists, label: "Why POSH Exists", type: "POSH", keywords: "why posh exists mission awareness action protection" },
         { href: POSH.warning, label: "Warning & Disclaimer", type: "Info", keywords: "warning disclaimer legal medical education guidance information" }
       ]
     }
   ];
 
   const SEARCH_ALIASES = {
-    help: ["start here", "report & get help", "what to do now"],
-    urgent: ["report & get help", "what to do now", "red flags"],
-    robux: ["roblox", "digital gifting policy"],
-    grooming: ["predator playbook", "red flags", "predator tactics", "10 signs targeted online"],
-    device: ["device safety", "best parental control apps"],
-    phone: ["device safety"],
-    tablet: ["device safety"],
-    discord: ["discord", "social media & chat"],
-    snap: ["snapchat"],
+    help: ["start here", "report & get help", "urgent help", "what to do now"],
+    urgent: ["my child may be in danger", "first 24 hours", "report & get help", "blackmail or threats"],
+    danger: ["my child may be in danger", "urgent help", "report & get help"],
+    emergency: ["my child may be in danger", "first 24 hours", "report & get help"],
+    blackmail: ["blackmail or threats", "what is sextortion", "save evidence"],
+    threats: ["blackmail or threats", "report & get help", "save evidence"],
+    photos: ["child sent photos", "blackmail or threats", "save evidence"],
+    sextortion: ["what is sextortion", "blackmail or threats", "sextortion scenarios"],
+    grooming: ["grooming signs", "predator playbook", "red flags", "predator warning signs", "10 signs targeted online"],
+    predator: ["predator playbook", "predator warning signs", "predator tactics"],
+    secret: ["red flags", "child hiding phone", "why kids don’t tell"],
+    secrecy: ["red flags", "child hiding phone", "why kids don’t tell"],
+    hiding: ["child hiding phone", "red flags", "why kids don’t tell"],
+    robux: ["free robux scam safety", "roblox", "in-game currency risk"],
+    gifting: ["in-game currency risk", "free robux scam safety", "digital gifting policy"],
+    device: ["device safety", "device controls", "best control apps", "check a device calmly"],
+    phone: ["device safety", "child hiding phone", "check a device calmly"],
+    tablet: ["device safety", "device controls"],
+    console: ["gaming safety", "xbox", "playstation", "nintendo"],
+    discord: ["discord", "off-platform movement", "gaming safety"],
+    snap: ["snapchat", "snapchat pressure scenarios"],
+    tiktok: ["tiktok", "tiktok live"],
     tt: ["tiktok"],
-    algorithm: ["algorithm risks"],
+    instagram: ["instagram", "instagram dms"],
+    youtube: ["youtube", "youtube comments"],
+    algorithm: ["algorithm risks", "screens & the brain", "why kids can’t stop scrolling"],
     quiz: ["safety score"],
     score: ["safety score"],
+    check: ["safety score", "check a device calmly"],
     downloads: ["all pdf downloads", "downloads"],
-    pdf: ["all pdf downloads", "downloads"],
+    pdf: ["all pdf downloads"],
     petition: ["digital gifting policy", "safer defaults policy"],
-    report: ["report & get help"],
-    questions: ["parent questions"],
-    rules: ["house rules"],
+    report: ["report & get help", "save evidence", "reporting australia"],
+    questions: ["parent questions", "parent scripts"],
+    scripts: ["parent scripts", "how to talk"],
+    rules: ["house rules", "posh parent system"],
     disclaimer: ["warning & disclaimer"],
-    warning: ["warning & disclaimer"],
-    support: ["support posh"]
+    warning: ["warning & disclaimer", "red flags"],
+    support: ["support posh"],
+    executive: ["executive functioning", "pause before reacting", "impulse control"],
+    adhd: ["executive functioning", "adhd executive functioning"],
+    autism: ["executive functioning", "asd executive functioning"],
+    scenario: ["scenario training", "roblox scenarios", "sextortion scenarios"]
   };
 
   const PAGE_RELATIONS = {
-    "index.html": [POSH.start, POSH.quiz, POSH.redFlags, POSH.gaming, POSH.devices, POSH.downloads],
-    "v3-start.html": [POSH.quiz, POSH.redFlags, POSH.devices, POSH.parentQuestions, POSH.reporting],
+    "index.html": [POSH.quiz, POSH.parentSystem, POSH.safetyLanes, POSH.devices, POSH.platformRisks, POSH.urgentHelp],
+    "v3-start.html": [POSH.safetyLanes, POSH.quiz, POSH.parentSystem, POSH.redFlags, POSH.devices, POSH.reporting],
+    "v3-posh-safety-lanes.html": [POSH.urgentHelp, POSH.redFlags, POSH.platformRisks, POSH.parentSystem, POSH.onlineScenarios],
+    "v3-posh-parent-system.html": [POSH.houseRules, POSH.monitorTrust, POSH.parentScripts, POSH.onlineScenarios, POSH.quiz],
     "v3-entry-system.html": [POSH.start, POSH.quiz, POSH.whatNow, POSH.response],
-    "v3-what-to-do-now.html": [POSH.reporting, POSH.redFlags, POSH.devices, POSH.parentQuestions],
+    "v3-what-to-do-now.html": [POSH.urgentHelp, POSH.reporting, POSH.redFlags, POSH.evidence],
     "v3-response-system.html": [POSH.whatNow, POSH.reporting, POSH.parentQuestions, POSH.redFlags],
-    "v3-parent-questions.html": [POSH.redFlags, POSH.parentScripts, POSH.devices],
-    "v3-safety-score.html": [POSH.start, POSH.redFlags, POSH.devices, POSH.houseRules],
-    "v3-redflags.html": [POSH.tenSigns, POSH.playbook, POSH.predators, POSH.reporting, POSH.parentScripts],
-    "v3-10-signs-targeted-online.html": [POSH.redFlags, POSH.playbook, POSH.predators, POSH.reporting, POSH.parentScripts],
+    "v3-parent-questions.html": [POSH.redFlags, POSH.parentScripts, POSH.talkOnlineSafety],
+    "v3-safety-score.html": [POSH.parentSystem, POSH.redFlags, POSH.devices, POSH.houseRules],
+    "v3-what-to-do-if-your-child-is-in-danger-online.html": [POSH.first24, POSH.blackmail, POSH.evidence, POSH.reporting],
+    "v3-first-24-hours-online-incident.html": [POSH.evidence, POSH.blackmail, POSH.reporting, POSH.parentScripts],
+    "v3-my-child-is-being-blackmailed-online.html": [POSH.sextortion, POSH.evidence, POSH.reporting, POSH.first24],
+    "v3-kid-sending-photos-online-what-to-do.html": [POSH.blackmail, POSH.sextortion, POSH.evidence, POSH.reporting],
+    "v3-evidence-reporting.html": [POSH.reporting, POSH.first24, POSH.blackmail, POSH.urgentHelp],
+    "v3-reporting.html": [POSH.evidence, POSH.first24, POSH.urgentHelp, POSH.redFlags],
+    "v3-redflags.html": [POSH.tenSigns, POSH.groomingSigns, POSH.playbook, POSH.whyKidsDontTell, POSH.reporting],
+    "v3-10-signs-targeted-online.html": [POSH.redFlags, POSH.playbook, POSH.predatorWarning, POSH.reporting],
+    "v3-child-being-groomed-signs.html": [POSH.redFlags, POSH.playbook, POSH.predatorWarning, POSH.parentScripts],
+    "v3-online-predator-warning-signs.html": [POSH.redFlags, POSH.playbook, POSH.groomingSigns, POSH.reporting],
     "v3-playbook.html": [POSH.redFlags, POSH.tenSigns, POSH.predators, POSH.reporting, POSH.algorithm],
     "v3-predators.html": [POSH.playbook, POSH.redFlags, POSH.reporting, POSH.algorithm],
-    "v3-reporting.html": [POSH.redFlags, POSH.whatNow, POSH.response, POSH.start],
+    "v3-platform-risks-overview.html": [POSH.roblox, POSH.discord, POSH.snapchat, POSH.gaming, POSH.devices],
     "v3-gaming.html": [POSH.allGames, POSH.roblox, POSH.discord, POSH.redFlags, POSH.playbook],
-    "v3-game-roblox.html": [POSH.gaming, POSH.discord, POSH.redFlags, POSH.petitionDigitalGifting],
+    "v3-game-roblox.html": [POSH.robuxScam, POSH.inGameCurrency, POSH.discord, POSH.redFlags, POSH.petitionDigitalGifting],
+    "v3-free-robux-scam-safety.html": [POSH.roblox, POSH.inGameCurrency, POSH.groomingSigns, POSH.parentScripts],
     "v3-game-fortnite.html": [POSH.gaming, POSH.discord, POSH.redFlags],
     "v3-game-minecraft.html": [POSH.gaming, POSH.discord, POSH.redFlags],
     "v3-game-vrchat.html": [POSH.gaming, POSH.discord, POSH.redFlags],
-    "v3-social-discord.html": [POSH.socials, POSH.gaming, POSH.snapchat, POSH.redFlags],
-    "v3-social-snapchat.html": [POSH.socials, POSH.discord, POSH.redFlags, POSH.reporting],
-    "v3-social-tiktok.html": [POSH.socials, POSH.algorithm, POSH.redFlags],
-    "v3-social-youtube.html": [POSH.socials, POSH.algorithm, POSH.redFlags],
-    "v3-devices.html": [POSH.redFlags, POSH.houseRules, POSH.gaming, POSH.socials],
-    "v3-best-parental-control-apps.html": [POSH.devices, POSH.houseRules, POSH.redFlags],
-    "v3-dangerous-apps.html": [POSH.socials, POSH.gaming, POSH.redFlags, POSH.reporting],
+    "v3-social-discord.html": [POSH.socials, POSH.offPlatform, POSH.gaming, POSH.redFlags],
+    "v3-social-snapchat.html": [POSH.socials, POSH.snapchatScenarios, POSH.redFlags, POSH.reporting],
+    "v3-social-instagram.html": [POSH.socials, POSH.instagramDmScenarios, POSH.redFlags],
+    "v3-social-tiktok.html": [POSH.socials, POSH.algorithm, POSH.tiktokLiveScenarios, POSH.redFlags],
+    "v3-social-youtube.html": [POSH.socials, POSH.algorithm, POSH.youtubeCommentScenarios, POSH.redFlags],
+    "v3-devices.html": [POSH.deviceControls, POSH.bestParentalControlApps, POSH.houseRules, POSH.checkDeviceCalmly],
+    "v3-device-controls.html": [POSH.devices, POSH.bestParentalControlApps, POSH.houseRules],
+    "v3-best-parental-control-apps.html": [POSH.devices, POSH.houseRules, POSH.monitorTrust, POSH.redFlags],
+    "v3-house-rules.html": [POSH.parentSystem, POSH.devices, POSH.monitorTrust, POSH.parentScripts],
+    "v3-parent-scripts.html": [POSH.talkOnlineSafety, POSH.whyKidsDontTell, POSH.parentQuestions, POSH.redFlags],
+    "v3-online-scenarios-training.html": [POSH.robloxScenarios, POSH.snapchatScenarios, POSH.sextortionScenarios, POSH.executiveFunctioning],
+    "v3-executive-functioning.html": [POSH.onlineScenarios, POSH.pauseBeforeReacting, POSH.impulseControl, POSH.emotionalRegulation],
     "v3-awareness.html": [POSH.algorithm, POSH.investigations, POSH.redFlags],
     "v3-algorithm-awareness.html": [POSH.awareness, POSH.socials, POSH.redFlags],
     "v3-all-downloads.html": [POSH.start, POSH.redFlags, POSH.devices, POSH.parentScripts],
-    "v3-downloads.html": [POSH.start, POSH.redFlags, POSH.devices, POSH.parentScripts],
-    "v3-petition-parent-approval-digital-gifting.html": [POSH.petitionDefaults, POSH.gaming, POSH.roblox],
-    "v3-petition-safer-defaults-child-accounts.html": [POSH.petitionDigitalGifting, POSH.devices, POSH.gaming],
-    "v3-support.html": [POSH.start, POSH.downloads, POSH.quiz, POSH.redFlags],
-    "v3-warning.html": [POSH.start, POSH.reporting, POSH.redFlags, POSH.downloads]
+    "v3-support.html": [POSH.start, POSH.downloads, POSH.quiz, POSH.share],
+    "v3-warning.html": [POSH.start, POSH.reporting, POSH.redFlags, POSH.downloads],
+    "v3-why-posh-exists.html": [POSH.start, POSH.parentSystem, POSH.share, POSH.support]
   };
 
-  const ALL_LINKS = NAV_GROUPS.flatMap(group => group.links);
+  const ALL_LINKS = dedupeLinks(NAV_GROUPS.flatMap(group => group.links));
 
   function qs(selector, root = document) {
     return root.querySelector(selector);
@@ -267,6 +464,7 @@
   function slugify(value) {
     return safeText(value)
       .toLowerCase()
+      .replace(/&/g, " and ")
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "");
   }
@@ -277,6 +475,30 @@
       clearTimeout(timer);
       timer = setTimeout(() => fn.apply(this, args), delay);
     };
+  }
+
+  function throttle(fn, limit) {
+    let waiting = false;
+    return function (...args) {
+      if (waiting) return;
+      waiting = true;
+      window.requestAnimationFrame(() => {
+        fn.apply(this, args);
+        setTimeout(() => {
+          waiting = false;
+        }, limit);
+      });
+    };
+  }
+
+  function dedupeLinks(links) {
+    const seen = new Set();
+    return links.filter(link => {
+      const key = normalisePath(link.href);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
   }
 
   function maybeTrack(name, extra = {}) {
@@ -295,6 +517,8 @@
   function fixKnownBrokenInternalLinks(root = document) {
     qsa("a[href]", root).forEach(link => {
       const raw = link.getAttribute("href");
+      if (!raw || /^https?:\/\//i.test(raw) || raw.startsWith("mailto:") || raw.startsWith("tel:")) return;
+
       const file = normalisePath(raw);
       if (!REDIRECT_MAP[file]) return;
 
@@ -316,8 +540,15 @@
   }
 
   function getPageIntro() {
-    const el = qs(".tagline") || qs(".intro") || qs(".lead") || qs(".page-intro") || qs(".card p");
-    return el ? safeText(el.textContent).slice(0, 220) : "";
+    const el =
+      qs(".section-lead") ||
+      qs(".tagline") ||
+      qs(".intro") ||
+      qs(".lead") ||
+      qs(".page-intro") ||
+      qs(".card p");
+
+    return el ? safeText(el.textContent).slice(0, 240) : "";
   }
 
   function loadImageFromCandidates(img, candidates, onSuccess, onFail) {
@@ -327,18 +558,23 @@
     }
 
     let index = 0;
+    let loaded = false;
 
     function tryNext() {
+      if (loaded) return;
+
       if (index >= candidates.length) {
         if (typeof onFail === "function") onFail();
         return;
       }
+
       img.src = candidates[index++];
     }
 
     img.addEventListener("load", () => {
+      loaded = true;
       if (typeof onSuccess === "function") onSuccess(img);
-    }, { once: true });
+    });
 
     img.addEventListener("error", tryNext);
     tryNext();
@@ -353,9 +589,16 @@
     );
   }
 
+  function shouldInjectGlobalHero() {
+    if (existingHeroAlreadyPresent()) return false;
+    if (!qs(".wrap")) return false;
+    return true;
+  }
+
   function injectGlobalHeroBanner() {
+    if (!shouldInjectGlobalHero()) return;
+
     const wrap = qs(".wrap");
-    if (!wrap || existingHeroAlreadyPresent()) return;
 
     const heroWrap = document.createElement("div");
     heroWrap.className = "posh-global-hero-wrap";
@@ -417,15 +660,22 @@
     return `
       <div class="nav-shell">
         <div class="nav-search-wrap">
-          <input id="poshSearch" class="nav-search-input" type="text" placeholder="${escapeHtml(POSH.searchPlaceholder)}" autocomplete="off" aria-label="Search POSH" />
+          <input
+            id="poshSearch"
+            class="nav-search-input"
+            type="text"
+            placeholder="${escapeHtml(POSH.searchPlaceholder)}"
+            autocomplete="off"
+            aria-label="Search POSH"
+          />
           <button type="button" id="poshSearchClear" class="nav-search-clear" aria-label="Clear search">×</button>
           <div id="poshSearchResults" class="nav-search-results" hidden></div>
         </div>
 
         <div class="nav-primary-cta-row">
-          <a href="${POSH.start}" class="nav-primary-cta" data-track="nav_start">Start Here</a>
+          <a href="${POSH.safetyLanes}" class="nav-primary-cta" data-track="nav_safety_lanes">Choose Safety Path</a>
           <a href="${POSH.quiz}" class="nav-primary-cta secondary" data-track="nav_quiz">Safety Score</a>
-          <a href="${POSH.reporting}" class="nav-primary-cta tertiary" data-track="nav_report">Report & Get Help</a>
+          <a href="${POSH.urgentHelp}" class="nav-primary-cta tertiary" data-track="nav_urgent">Urgent Help</a>
         </div>
 
         <div class="nav-support-row">
@@ -447,7 +697,7 @@
     });
 
     qsa("a[href]", root).forEach(anchor => {
-      const href = normalisePath(anchor.getAttribute("href"));
+      const href = REDIRECT_MAP[normalisePath(anchor.getAttribute("href"))] || normalisePath(anchor.getAttribute("href"));
 
       anchor.classList.remove("active", "nav-active");
       anchor.removeAttribute("aria-current");
@@ -467,6 +717,7 @@
 
     groups.forEach(group => {
       group.open = false;
+
       group.addEventListener("toggle", () => {
         if (!group.open) return;
         groups.forEach(other => {
@@ -479,6 +730,11 @@
       if (!root.contains(event.target)) {
         groups.forEach(group => group.open = false);
       }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key !== "Escape") return;
+      groups.forEach(group => group.open = false);
     });
   }
 
@@ -493,7 +749,7 @@
     const results = new Set([q]);
 
     Object.entries(SEARCH_ALIASES).forEach(([key, aliases]) => {
-      if (q.includes(key)) aliases.forEach(alias => results.add(alias));
+      if (q.includes(key)) aliases.forEach(alias => results.add(alias.toLowerCase()));
     });
 
     return Array.from(results);
@@ -512,27 +768,26 @@
       const tokens = q.split(/\s+/).filter(Boolean);
       const haystack = `${label} ${type} ${keywords} ${href}`;
 
-      if (label === q) score += 350;
-      if (href === q || href.includes(q)) score += 140;
-      if (label.startsWith(q)) score += 220;
-      if (label.includes(q)) score += 120;
-      if (type.includes(q)) score += 60;
-      if (keywords.includes(q)) score += 45;
-      if (href.includes(q)) score += 35;
+      if (label === q) score += 360;
+      if (label.startsWith(q)) score += 230;
+      if (label.includes(q)) score += 130;
+      if (type.includes(q)) score += 70;
+      if (keywords.includes(q)) score += 50;
+      if (href.includes(q)) score += 40;
 
       tokens.forEach(token => {
         if (label === token) score += 120;
-        if (label.startsWith(token)) score += 70;
-        if (label.includes(token)) score += 35;
-        if (type.includes(token)) score += 20;
-        if (keywords.includes(token)) score += 14;
+        if (label.startsWith(token)) score += 75;
+        if (label.includes(token)) score += 36;
+        if (type.includes(token)) score += 22;
+        if (keywords.includes(token)) score += 15;
         if (href.includes(token)) score += 10;
       });
 
-      if (tokens.length > 1 && tokens.every(token => haystack.includes(token))) score += 80;
+      if (tokens.length > 1 && tokens.every(token => haystack.includes(token))) score += 90;
     });
 
-    if (normalisePath(link.href) === currentLivePath()) score -= 50;
+    if (normalisePath(link.href) === currentLivePath()) score -= 45;
     return score;
   }
 
@@ -552,15 +807,31 @@
     const results = qs("#poshSearchResults", root);
     if (!input || !clearBtn || !results) return;
 
+    let activeIndex = -1;
+
+    function currentItems() {
+      return qsa(".nav-search-result", results);
+    }
+
+    function updateActiveItem(items) {
+      items.forEach((item, index) => {
+        item.classList.toggle("is-active", index === activeIndex);
+        if (index === activeIndex) item.setAttribute("aria-selected", "true");
+        else item.removeAttribute("aria-selected");
+      });
+    }
+
     function hideResults() {
       results.hidden = true;
       results.innerHTML = "";
+      activeIndex = -1;
       root.classList.remove("search-open");
     }
 
     function showResults(html) {
       results.innerHTML = html;
       results.hidden = false;
+      activeIndex = -1;
       root.classList.add("search-open");
     }
 
@@ -589,12 +860,36 @@
     }, 90);
 
     input.addEventListener("input", runSearch);
-    input.addEventListener("focus", () => { if (safeText(input.value)) runSearch(); });
+    input.addEventListener("focus", () => {
+      if (safeText(input.value)) runSearch();
+    });
 
     input.addEventListener("keydown", event => {
+      const items = currentItems();
+
       if (event.key === "Escape") {
         hideResults();
         input.blur();
+        return;
+      }
+
+      if (!items.length) return;
+
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        activeIndex = activeIndex < items.length - 1 ? activeIndex + 1 : 0;
+        updateActiveItem(items);
+      }
+
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        activeIndex = activeIndex > 0 ? activeIndex - 1 : items.length - 1;
+        updateActiveItem(items);
+      }
+
+      if (event.key === "Enter" && activeIndex >= 0 && items[activeIndex]) {
+        event.preventDefault();
+        items[activeIndex].click();
       }
     });
 
@@ -608,6 +903,7 @@
     results.addEventListener("click", event => {
       const target = event.target.closest(".nav-search-result");
       if (!target) return;
+
       maybeTrack("search_result_click", {
         label: target.getAttribute("href") || "",
         query: target.getAttribute("data-query") || ""
@@ -653,8 +949,8 @@
       <span class="crumb-sep">/</span><span aria-current="page">${escapeHtml(currentLink.label)}</span>
     `;
 
-    const pageTitle = qs(".page-title") || qs("h1");
-    if (pageTitle && pageTitle.parentNode) pageTitle.parentNode.insertBefore(bread, pageTitle);
+    const nav = qs("#nav");
+    if (nav && nav.parentNode) nav.parentNode.insertBefore(bread, nav.nextSibling);
     else (qs(".wrap") || document.body).prepend(bread);
   }
 
@@ -667,11 +963,17 @@
     });
   }
 
+  function shouldBuildTOC() {
+    if (currentLivePath() === POSH.home) return false;
+    if (document.body.hasAttribute("data-no-toc")) return false;
+    return qsa(".wrap h2").filter(h => safeText(h.textContent)).length >= 4;
+  }
+
   function buildTOC() {
-    if (qs(".posh-toc")) return;
+    if (qs(".posh-toc") || !shouldBuildTOC()) return;
 
     const headings = qsa(".wrap h2").filter(h => safeText(h.textContent));
-    if (headings.length < 3) return;
+    if (!headings.length) return;
 
     const toc = document.createElement("aside");
     toc.className = "posh-toc";
@@ -684,8 +986,12 @@
       </nav>
     `;
 
-    const firstCard = qs(".wrap .card");
-    if (firstCard && firstCard.parentNode) firstCard.parentNode.insertBefore(toc, firstCard.nextSibling);
+    const nav = qs("#nav");
+    if (nav && nav.parentNode) nav.parentNode.insertBefore(toc, nav.nextSibling);
+    else {
+      const firstCard = qs(".wrap .card");
+      if (firstCard && firstCard.parentNode) firstCard.parentNode.insertBefore(toc, firstCard.nextSibling);
+    }
   }
 
   function smoothAnchors() {
@@ -708,6 +1014,7 @@
 
   function ensureProgressBar() {
     if (qs("#poshReadingProgress")) return;
+
     const bar = document.createElement("div");
     bar.id = "poshReadingProgress";
     bar.className = "posh-reading-progress";
@@ -750,6 +1057,7 @@
 
   function ensureMiniToast() {
     if (qs("#poshMiniToast")) return;
+
     const toast = document.createElement("div");
     toast.id = "poshMiniToast";
     toast.className = "posh-mini-toast";
@@ -772,7 +1080,9 @@
       await navigator.clipboard.writeText(location.href);
       maybeTrack("copy_link");
       showMiniToast("Link copied");
-    } catch (err) {}
+    } catch (err) {
+      showMiniToast("Copy not available");
+    }
   }
 
   async function nativeShare() {
@@ -799,7 +1109,7 @@
     bar.className = "posh-action-bar";
     bar.innerHTML = `
       <a href="${POSH.quiz}" class="posh-action-btn" data-track="sticky_quiz">Safety Score</a>
-      <a href="${POSH.reporting}" class="posh-action-btn" data-track="sticky_report">Report & Get Help</a>
+      <a href="${POSH.urgentHelp}" class="posh-action-btn" data-track="sticky_urgent">Urgent Help</a>
       <button type="button" class="posh-action-btn" id="poshStickyShare" data-track="sticky_share">Share</button>
       <a href="${POSH.support}" class="posh-action-btn support" data-track="sticky_support">Support</a>
     `;
@@ -812,34 +1122,6 @@
 
     const shareBtn = qs("#poshStickyShare", bar);
     if (shareBtn) shareBtn.addEventListener("click", nativeShare);
-  }
-
-  function injectSupportStrip() {
-    if (qs(".posh-support-strip")) return;
-
-    const wrap = qs(".wrap");
-    if (!wrap) return;
-
-    const strip = document.createElement("section");
-    strip.className = "posh-support-strip";
-    strip.innerHTML = `
-      <div class="posh-support-strip-inner">
-        <strong>If this page helped you think clearer, help keep POSH growing.</strong>
-        <div class="posh-support-strip-actions">
-          <a href="${POSH.support}" data-track="support_strip_support">Support POSH</a>
-          <button type="button" id="poshSupportStripShare" data-track="support_strip_share">Share POSH</button>
-        </div>
-      </div>
-    `;
-
-    wrap.appendChild(strip);
-
-    const shareBtn = qs("#poshSupportStripShare", strip);
-    if (shareBtn) shareBtn.addEventListener("click", nativeShare);
-
-    qsa("[data-track]", strip).forEach(el => {
-      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
-    });
   }
 
   function buildRelatedCardsHtml() {
@@ -879,12 +1161,13 @@
     wrap.appendChild(holder.firstElementChild);
 
     qsa('[data-track="related_click"]', wrap).forEach(el => {
-      el.addEventListener("click", () => maybeTrack("related_click"));
+      el.addEventListener("click", () => maybeTrack("related_click", { label: el.getAttribute("href") || "" }));
     });
   }
 
   function injectSharePanel() {
     if (qs(".posh-share-panel")) return;
+    if (currentLivePath() === POSH.home) return;
 
     const wrap = qs(".wrap");
     if (!wrap) return;
@@ -892,8 +1175,8 @@
     const panel = document.createElement("section");
     panel.className = "posh-share-panel";
     panel.innerHTML = `
-      <h2>Help protect another child</h2>
-      <p>Many parents still think games, apps, and chats are harmless until a pattern becomes obvious. Sharing awareness earlier can help another family act sooner.</p>
+      <h2>Help another parent find this earlier</h2>
+      <p>Many parents only start searching after something feels wrong. Sharing POSH can help another family build safer habits before risk escalates.</p>
       <div class="posh-share-panel-actions">
         <button type="button" id="poshShareMainBtn" data-track="share_panel_share">Share POSH</button>
         <button type="button" id="poshCopyMainBtn" data-track="share_panel_copy">Copy Link</button>
@@ -915,41 +1198,71 @@
   }
 
   function inferCTAByPage(page) {
-    if (/^v3-game-/.test(page) || /^V3gaming-/.test(page) || page === POSH.gaming) {
-      return {
-        title: "Next safety steps",
-        text: "Don’t stop at the game itself. Check the linked chat apps, warning signs, and the wider safety picture too.",
-        actions: [
-          { href: POSH.redFlags, label: "Red Flags" },
-          { href: POSH.tenSigns, label: "10 Signs Targeted Online" },
-          { href: POSH.parentScripts, label: "Parent Scripts" },
-          { href: POSH.reporting, label: "Report & Get Help" }
-        ]
-      };
+    if (page === POSH.home) {
+      return null;
     }
 
-    if (/^v3-social-/.test(page) || page === POSH.socials) {
+    if (page === POSH.urgentHelp || page === POSH.first24 || page === POSH.blackmail || page === POSH.photos || page === POSH.evidence) {
       return {
-        title: "What parents should check next",
-        text: "Social app safety works best when it connects back to house rules, warning signs, and reporting steps.",
+        title: "Stay calm and move in order",
+        text: "In serious situations, the safest next step is calm structure: support your child, preserve evidence, reduce contact, and report through the right pathway.",
         actions: [
-          { href: POSH.redFlags, label: "Red Flags" },
-          { href: POSH.houseRules, label: "House Rules" },
+          { href: POSH.evidence, label: "Save Evidence" },
           { href: POSH.reporting, label: "Report & Get Help" },
-          { href: POSH.algorithm, label: "Algorithm Risks" }
+          { href: POSH.parentScripts, label: "Parent Scripts" },
+          { href: POSH.first24, label: "First 24 Hours" }
         ]
       };
     }
 
-    if (page === POSH.devices) {
+    if (/^v3-game-/.test(page) || page === POSH.gaming || page === POSH.robuxScam || page === POSH.inGameCurrency) {
       return {
-        title: "Best next safety pathways",
-        text: "Device safety works best when it leads into platform safety, app safety, and clearer family rules.",
+        title: "Don’t stop at the game itself",
+        text: "Game risk often moves through voice chat, gifting, private messages, Discord, Snapchat, or another platform. Check the wider pathway.",
         actions: [
-          { href: POSH.platforms, label: "Platforms" },
-          { href: POSH.gaming, label: "Gaming" },
-          { href: POSH.socials, label: "Social Media & Chat" },
-          { href: POSH.houseRules, label: "House Rules" }
+          { href: POSH.platformRisks, label: "Platform Overview" },
+          { href: POSH.discord, label: "Discord" },
+          { href: POSH.redFlags, label: "Red Flags" },
+          { href: POSH.parentScripts, label: "Parent Scripts" }
+        ]
+      };
+    }
+
+    if (/^v3-social-/.test(page) || page === POSH.socials || page === POSH.platformRisks) {
+      return {
+        title: "Connect app awareness to family rules",
+        text: "Understanding the app is only part of the job. Safer settings, visible devices, clear rules, and calm conversations matter too.",
+        actions: [
+          { href: POSH.houseRules, label: "House Rules" },
+          { href: POSH.devices, label: "Device Safety" },
+          { href: POSH.redFlags, label: "Red Flags" },
+          { href: POSH.monitorTrust, label: "Monitor With Trust" }
+        ]
+      };
+    }
+
+    if (page === POSH.devices || page === POSH.deviceControls || page === POSH.bestParentalControlApps) {
+      return {
+        title: "Controls work best with conversations",
+        text: "Settings reduce exposure, but children still need rules, trust, visibility, and words they can use when pressure appears.",
+        actions: [
+          { href: POSH.houseRules, label: "House Rules" },
+          { href: POSH.parentScripts, label: "Parent Scripts" },
+          { href: POSH.platformRisks, label: "Platform Risks" },
+          { href: POSH.quiz, label: "Safety Score" }
+        ]
+      };
+    }
+
+    if (page === POSH.redFlags || page === POSH.tenSigns || page === POSH.groomingSigns || page === POSH.playbook || page === POSH.predatorWarning) {
+      return {
+        title: "Turn warning signs into calm action",
+        text: "Warning signs are not about panic. Use them to slow the situation down, ask better questions, check visibility, and act earlier.",
+        actions: [
+          { href: POSH.parentScripts, label: "Parent Scripts" },
+          { href: POSH.checkDeviceCalmly, label: "Check Device Calmly" },
+          { href: POSH.urgentHelp, label: "Urgent Help" },
+          { href: POSH.evidence, label: "Save Evidence" }
         ]
       };
     }
@@ -958,9 +1271,9 @@
       title: "Next safety steps",
       text: "Move from awareness into action with the pages that reduce risk fastest.",
       actions: [
-        { href: POSH.start, label: "Start Here" },
+        { href: POSH.safetyLanes, label: "Choose Safety Path" },
         { href: POSH.quiz, label: "Safety Score" },
-        { href: POSH.redFlags, label: "Red Flags" },
+        { href: POSH.parentSystem, label: "Parent System" },
         { href: POSH.downloads, label: "All PDF Downloads" }
       ]
     };
@@ -990,7 +1303,82 @@
     wrap.appendChild(section);
 
     qsa('[data-track="smart_cta_click"]', section).forEach(el => {
-      el.addEventListener("click", () => maybeTrack("smart_cta_click"));
+      el.addEventListener("click", () => maybeTrack("smart_cta_click", { label: el.getAttribute("href") || "" }));
+    });
+  }
+
+  function injectSupportStrip() {
+    if (qs(".posh-support-strip")) return;
+
+    const wrap = qs(".wrap");
+    if (!wrap) return;
+
+    const strip = document.createElement("section");
+    strip.className = "posh-support-strip";
+    strip.innerHTML = `
+      <div class="posh-support-strip-inner">
+        <strong>If POSH helped you think clearer, help keep it available for the next parent.</strong>
+        <div class="posh-support-strip-actions">
+          <a href="${POSH.support}" data-track="support_strip_support">Support POSH</a>
+          <button type="button" id="poshSupportStripShare" data-track="support_strip_share">Share POSH</button>
+        </div>
+      </div>
+    `;
+
+    wrap.appendChild(strip);
+
+    const shareBtn = qs("#poshSupportStripShare", strip);
+    if (shareBtn) shareBtn.addEventListener("click", nativeShare);
+
+    qsa("[data-track]", strip).forEach(el => {
+      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
+    });
+  }
+
+  function injectHeroButtonsIfMissing() {
+    const hero = qs(".home-intro-hero") || qs(".home-intro") || qs(".card.hero") || qs(".hero-card");
+    if (!hero) return;
+    if (qs(".posh-hero-actions", hero)) return;
+    if (qs(".btn-grid a, .btn-row a, a.btn", hero)) return;
+
+    const box = document.createElement("div");
+    box.className = "posh-hero-actions";
+    box.innerHTML = `
+      <a href="${POSH.safetyLanes}" data-track="hero_safety_lanes">Choose Safety Path</a>
+      <a href="${POSH.quiz}" class="secondary" data-track="hero_quiz">Safety Score</a>
+      <a href="${POSH.urgentHelp}" class="ghost" data-track="hero_urgent">Urgent Help</a>
+    `;
+
+    hero.appendChild(box);
+
+    qsa("[data-track]", box).forEach(el => {
+      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
+    });
+  }
+
+  function injectSupportFooterPrompt() {
+    if (qs(".posh-footer-prompt")) return;
+
+    const wrap = qs(".wrap");
+    if (!wrap) return;
+
+    const footer = document.createElement("section");
+    footer.className = "posh-footer-prompt";
+    footer.innerHTML = `
+      <p><strong>POSH is built for families.</strong> Support helps build more tools, clearer guides, printable downloads, and safer pathways for parents who land here overwhelmed.</p>
+      <div class="posh-footer-prompt-actions">
+        <a href="${POSH.support}" data-track="footer_support">Support POSH</a>
+        <button type="button" id="poshFooterShare" data-track="footer_share">Share POSH</button>
+      </div>
+    `;
+
+    wrap.appendChild(footer);
+
+    const shareBtn = qs("#poshFooterShare", footer);
+    if (shareBtn) shareBtn.addEventListener("click", nativeShare);
+
+    qsa("[data-track]", footer).forEach(el => {
+      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
     });
   }
 
@@ -1002,9 +1390,12 @@
     document.body.dataset.page = page;
 
     if (current === POSH.home) document.body.classList.add("home-page");
-    if (/^v3-game-/.test(current) || /^V3gaming-/.test(current)) document.body.classList.add("page-is-game");
+    if (/^v3-game-/.test(current)) document.body.classList.add("page-is-game");
     if (/^v3-social-/.test(current)) document.body.classList.add("page-is-social");
-    if (current === POSH.devices) document.body.classList.add("page-is-device");
+    if (current === POSH.devices || current === POSH.deviceControls) document.body.classList.add("page-is-device");
+    if ([POSH.urgentHelp, POSH.first24, POSH.blackmail, POSH.photos, POSH.evidence].includes(current)) {
+      document.body.classList.add("page-is-urgent");
+    }
   }
 
   function addPageMetaAttributes() {
@@ -1022,7 +1413,9 @@
 
       detail.classList.add("posh-details");
       detail.addEventListener("toggle", () => {
-        if (detail.open) maybeTrack("details_open", { label: safeText(summary.textContent).slice(0, 100) });
+        if (detail.open) {
+          maybeTrack("details_open", { label: safeText(summary.textContent).slice(0, 100) });
+        }
       });
     });
   }
@@ -1038,6 +1431,9 @@
 
   function trackLinks() {
     qsa("a[href]").forEach(link => {
+      if (link.dataset.poshTracked === "true") return;
+      link.dataset.poshTracked = "true";
+
       const href = link.getAttribute("href") || "";
 
       if (/^https?:\/\//i.test(href) && !href.includes(location.hostname)) {
@@ -1048,11 +1444,16 @@
         link.classList.add("is-download-link");
         link.addEventListener("click", () => maybeTrack("download_click", { label: href }));
       }
+
+      if (!/^https?:\/\//i.test(href) && !href.startsWith("#") && !href.startsWith("mailto:") && !href.startsWith("tel:")) {
+        link.addEventListener("click", () => maybeTrack("internal_click", { label: href }));
+      }
     });
   }
 
   function enhanceCards() {
     qsa(".card").forEach(card => {
+      if (!card.hasAttribute("tabindex") && card.querySelector("a, button, input, textarea, select")) return;
       if (!card.hasAttribute("tabindex")) card.setAttribute("tabindex", "0");
     });
   }
@@ -1078,51 +1479,6 @@
           if (wrap) wrap.classList.remove("has-focus");
         });
       });
-    });
-  }
-
-  function injectHeroButtonsIfMissing() {
-    const hero = qs(".home-intro-hero") || qs(".home-intro") || qs(".card.hero") || qs(".hero-card");
-    if (!hero || qs(".posh-hero-actions", hero)) return;
-
-    const box = document.createElement("div");
-    box.className = "posh-hero-actions";
-    box.innerHTML = `
-      <a href="${POSH.start}" data-track="hero_start">Start Here</a>
-      <a href="${POSH.quiz}" class="secondary" data-track="hero_quiz">Safety Score</a>
-      <a href="${POSH.reporting}" class="ghost" data-track="hero_report">Report & Get Help</a>
-    `;
-
-    hero.appendChild(box);
-
-    qsa("[data-track]", box).forEach(el => {
-      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
-    });
-  }
-
-  function injectSupportFooterPrompt() {
-    if (qs(".posh-footer-prompt")) return;
-
-    const wrap = qs(".wrap");
-    if (!wrap) return;
-
-    const footer = document.createElement("section");
-    footer.className = "posh-footer-prompt";
-    footer.innerHTML = `
-      <p><strong>POSH is free for families.</strong> Support helps build more tools, more guidance, more downloads, and more early protection for the next parent who lands here overwhelmed.</p>
-      <div class="posh-footer-prompt-actions">
-        <a href="${POSH.support}" data-track="footer_support">Support POSH</a>
-        <button type="button" id="poshFooterShare" data-track="footer_share">Share POSH</button>
-      </div>
-    `;
-
-    wrap.appendChild(footer);
-
-    const shareBtn = qs("#poshFooterShare", footer);
-    if (shareBtn) shareBtn.addEventListener("click", nativeShare);
-
-    qsa("[data-track]", footer).forEach(el => {
-      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
     });
   }
 
@@ -1167,10 +1523,10 @@
   }
 
   function setupScrollHandlers() {
-    const onScroll = debounce(() => {
+    const onScroll = throttle(() => {
       updateProgressBar();
       updateBackToTop();
-    }, 10);
+    }, 20);
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
