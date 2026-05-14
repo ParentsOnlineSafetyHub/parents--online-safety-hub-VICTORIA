@@ -2598,3 +2598,178 @@ footer,
     transform:none !important;
   }
 }
+
+/* =========================================================
+   POSH SAFE ADULT / GRANDPARENTS TRAINING UPGRADES
+   Append-only upgrade. No core layout removed or rewritten.
+   ========================================================= */
+
+/* Safe Adult page identity */
+body.page-is-safe-adult .posh-page-header{
+  border-color:rgba(217,182,90,.30);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(217,182,90,.085), transparent 34%),
+    radial-gradient(circle at 86% 12%, rgba(139,214,255,.07), transparent 32%),
+    linear-gradient(180deg, rgba(15,42,85,.96), rgba(10,29,59,.94));
+}
+
+body.page-is-safe-adult .posh-page-kicker{
+  border-color:rgba(217,182,90,.42);
+  background:rgba(217,182,90,.12);
+  color:#fff2c6;
+}
+
+body.page-is-safe-adult .posh-page-title{
+  text-shadow:
+    0 14px 34px rgba(0,0,0,.36),
+    0 0 20px rgba(217,182,90,.08);
+}
+
+/* Gentle readability lift for older-generation learning pages */
+body.page-is-safe-adult p,
+body.page-is-safe-adult li{
+  color:rgba(244,247,255,.88);
+}
+
+body.page-is-safe-adult .section-lead,
+body.page-is-safe-adult .posh-page-subtitle{
+  color:rgba(244,247,255,.88);
+  line-height:1.82;
+}
+
+/* Role-based training cards */
+body.page-is-safe-adult .info-box,
+body.page-is-safe-adult .card.soft{
+  border-color:rgba(255,255,255,.115);
+}
+
+body.page-is-safe-adult .info-box h3,
+body.page-is-safe-adult .card.soft h3{
+  color:#ffffff;
+}
+
+body.page-is-safe-adult .info-box:hover,
+body.page-is-safe-adult .card.soft:hover{
+  background:rgba(139,214,255,.075);
+  border-color:rgba(139,214,255,.26);
+}
+
+/* Safe Adult key message blocks */
+body.page-is-safe-adult .rule-box{
+  border-color:rgba(217,182,90,.22);
+  background:
+    linear-gradient(180deg, rgba(217,182,90,.075), rgba(255,255,255,.025));
+}
+
+body.page-is-safe-adult .tip-box{
+  border-color:rgba(34,230,211,.24);
+  background:
+    linear-gradient(180deg, rgba(34,230,211,.075), rgba(255,255,255,.025));
+}
+
+body.page-is-safe-adult .warning-box{
+  border-color:rgba(230,201,120,.28);
+  background:
+    linear-gradient(180deg, rgba(230,201,120,.095), rgba(255,255,255,.025));
+}
+
+/* Grandparents / plain-language learning feel */
+body.page-is-safe-adult .list{
+  max-width:960px;
+}
+
+body.page-is-safe-adult .list li{
+  margin-bottom:12px;
+}
+
+/* Safer role navigation buttons */
+body.page-is-safe-adult .btn.primary-soft{
+  background:rgba(139,214,255,.16);
+  border-color:rgba(139,214,255,.38);
+}
+
+body.page-is-safe-adult .btn.quiet{
+  background:rgba(255,255,255,.052);
+  border-color:rgba(255,255,255,.13);
+}
+
+body.page-is-safe-adult .btn:hover{
+  transform:translateY(-1px);
+}
+
+/* Safe Adult warning badges */
+body.page-is-safe-adult .badge.gold{
+  background:rgba(217,182,90,.14);
+  border-color:rgba(217,182,90,.32);
+  color:#ffedb6;
+}
+
+/* Response pathway clarity */
+body.page-is-safe-adult .network-flow{
+  margin-top:18px;
+}
+
+body.page-is-safe-adult .network-flow .pill{
+  min-width:min(100%, 280px);
+  padding:10px 16px;
+  border-color:rgba(255,255,255,.14);
+  background:rgba(255,255,255,.055);
+}
+
+body.page-is-safe-adult .network-flow .pill.danger{
+  border-color:rgba(255,107,129,.34);
+  background:rgba(255,107,129,.13);
+}
+
+/* Make “Best next pages” feel more structured for training journeys */
+body.page-is-safe-adult .next-grid{
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+}
+
+body.page-is-safe-adult .next-item{
+  min-height:82px;
+  background:rgba(255,255,255,.045);
+  border-color:rgba(255,255,255,.115);
+}
+
+body.page-is-safe-adult .next-item:hover{
+  background:rgba(139,214,255,.095);
+  border-color:rgba(139,214,255,.28);
+}
+
+/* Whole-family homepage section support */
+body.home-page a[href*="grandparents-online-safety"],
+body.home-page a[href*="online-safety-training-for-everyone"],
+body.home-page a[href*="safe-adult"]{
+  border-color:rgba(217,182,90,.26);
+}
+
+/* Safer spacing when sticky action bar is active */
+body.js-ready .wrap{
+  padding-bottom:96px;
+}
+
+@media (max-width:700px){
+  body.js-ready .wrap{
+    padding-bottom:190px;
+  }
+
+  body.page-is-safe-adult .posh-page-subtitle,
+  body.page-is-safe-adult .section-lead{
+    line-height:1.76;
+  }
+
+  body.page-is-safe-adult .network-flow .pill{
+    width:100%;
+  }
+
+  body.page-is-safe-adult .next-item{
+    min-height:72px;
+  }
+}
+
+@media (max-width:420px){
+  body.js-ready .wrap{
+    padding-bottom:260px;
+  }
+}
