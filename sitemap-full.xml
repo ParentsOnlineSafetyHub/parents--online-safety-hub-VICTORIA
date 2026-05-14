@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- HOMEPAGE -->
-  <url><loc>https://poshaussie.com.au/</loc><lastmod>2026-04-16</lastmod></url>
+  <url><loc>https://poshaussie.com.au/</loc><lastmod>2026-05-14</lastmod></url>
 
   <!-- CORE HUBS -->
   <url><loc>https://poshaussie.com.au/v3-start.html</loc><lastmod>2026-04-16</lastmod></url>
@@ -58,10 +58,14 @@
   <url><loc>https://poshaussie.com.au/v3-double-life-online.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-when-a-child-becomes-dependent-on-someone-online.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-posh-response-system.html</loc><lastmod>2026-04-16</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-response-system.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-posh-safety-lanes.html</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-exposure-vs-danger.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-what-now.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-what-to-do-now.html</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-real-scenarios.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-first-24-hours.html</loc><lastmod>2026-04-16</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-first-24-hours-online-incident.html</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-evidence-reporting.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-definitions.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-grooming.html</loc><lastmod>2026-04-16</lastmod></url>
@@ -73,6 +77,16 @@
   <url><loc>https://poshaussie.com.au/v3-my-child-deleted-messages-should-i-be-worried.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-my-child-is-hiding-messages-what-should-i-do.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-signs-my-child-is-being-groomed-online.html</loc><lastmod>2026-04-16</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-child-being-groomed-signs.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-online-predator-warning-signs.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-child-hiding-phone-from-parents.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-my-child-is-being-manipulated-online.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-my-child-is-talking-to-a-stranger-online.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-off-platform-movement-warning-signs.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-kid-sending-photos-online-what-to-do.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-my-child-is-being-blackmailed-online.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-what-is-sextortion.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-what-to-do-if-your-child-is-in-danger-online.html</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-how-predators-contact-kids-online.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-how-to-tell-if-it-is-grooming-or-just-bad-judgement.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-signs-your-child-is-being-isolated-online.html</loc><lastmod>2026-04-16</lastmod></url>
@@ -245,11 +259,20 @@
   <url><loc>https://poshaussie.com.au/v3-parent-absence.html</loc><lastmod>2026-04-16</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-teen-suicide-warning-signs.html</loc><lastmod>2026-04-16</lastmod></url>
 
-<!-- EXECUTIVE FUNCTIONING SYSTEM -->
+  <!-- EXECUTIVE FUNCTIONING SYSTEM -->
+  <url><loc>https://poshaussie.com.au/v3-executive-functioning.html</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-executive-functioning-online-safety.html</loc><lastmod>2026-05-01</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-executive-functioning-system.html</loc><lastmod>2026-05-01</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-executive-functioning-application-layer.html</loc><lastmod>2026-05-01</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-online-scenarios-training.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-neurodivergent-executive-functioning.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-adhd-executive-functioning-online-safety.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-asd-executive-functioning-online-safety.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-odd-executive-functioning-online-safety.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-pda-executive-functioning-online-safety.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-ocd-executive-functioning-online-safety.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-fasd-executive-functioning-online-safety.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-frustration-intolerance-online-safety.html</loc><lastmod>2026-05-14</lastmod></url>
 
   <!-- AGE SYSTEM -->
   <url><loc>https://poshaussie.com.au/v3-executive-functioning-age-system.html</loc><lastmod>2026-05-01</lastmod></url>
@@ -271,9 +294,34 @@
   <url><loc>https://poshaussie.com.au/v3-free-robux-scam-safety.html</loc><lastmod>2026-05-01</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-move-to-another-app-risk.html</loc><lastmod>2026-05-01</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-send-a-photo-pressure.html</loc><lastmod>2026-05-01</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-roblox-safety-scenarios.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-snapchat-pressure-scenarios.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-sextortion-scenarios.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-tiktok-live-scenarios.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-instagram-dm-scenarios.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-group-chat-pressure-scenarios.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-youtube-comments-scenarios.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-gaming-voice-chat-scenarios.html</loc><lastmod>2026-05-14</lastmod></url>
 
   <!-- CLARITY / SEARCH ALIGNMENT PAGES -->
   <url><loc>https://poshaussie.com.au/v3-signs-your-child-is-being-groomed.html</loc><lastmod>2026-05-01</lastmod></url>
   <url><loc>https://poshaussie.com.au/v3-dangerous-apps-for-kids.html</loc><lastmod>2026-05-01</lastmod></url>
+
+  <!-- SAFE ADULT / GRANDPARENTS / WHOLE-FAMILY TRAINING SYSTEM -->
+  <url><loc>https://poshaussie.com.au/v3-online-safety-training-for-everyone.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-grandparents-online-safety.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-safe-adult-warning-signs.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-safe-adult-response-system.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-what-every-safe-adult-should-say.html</loc><lastmod>2026-05-14</lastmod></url>
+
+  <!-- ROLE-SPECIFIC SAFE ADULT TRAINING -->
+  <url><loc>https://poshaussie.com.au/v3-parents-online-safety-training.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-carers-online-safety-training.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-teachers-online-safety-training.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-coaches-online-safety-training.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-aunties-uncles-family-friends-online-safety.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-older-siblings-online-safety-guide.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-youth-workers-online-safety-training.html</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://poshaussie.com.au/v3-babysitters-online-safety-guide.html</loc><lastmod>2026-05-14</lastmod></url>
 
 </urlset>
