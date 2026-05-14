@@ -41,6 +41,7 @@
     blackmail: "v3-my-child-is-being-blackmailed-online.html",
     photos: "v3-kid-sending-photos-online-what-to-do.html",
     sextortion: "v3-what-is-sextortion.html",
+    sextortionLegacy: "v3-sextortion.html",
     evidence: "v3-evidence-reporting.html",
     reporting: "v3-reporting.html",
     reportingAustralia: "v3-reporting-australia.html",
@@ -84,6 +85,20 @@
     houseRules: "v3-house-rules.html",
     parentScripts: "v3-parent-scripts.html",
     talkOnlineSafety: "v3-how-to-talk-to-your-child-about-online-safety.html",
+
+    trainingEveryone: "v3-online-safety-training-for-everyone.html",
+    grandparents: "v3-grandparents-online-safety.html",
+    parentsTraining: "v3-parents-online-safety-training.html",
+    carersTraining: "v3-carers-online-safety-training.html",
+    teachersTraining: "v3-teachers-online-safety-training.html",
+    coachesTraining: "v3-coaches-online-safety-training.html",
+    familyNetworkGuide: "v3-aunties-uncles-family-friends-online-safety.html",
+    olderSiblings: "v3-older-siblings-online-safety-guide.html",
+    youthWorkers: "v3-youth-workers-online-safety-training.html",
+    babysitters: "v3-babysitters-online-safety-guide.html",
+    safeAdultWarningSigns: "v3-safe-adult-warning-signs.html",
+    safeAdultResponse: "v3-safe-adult-response-system.html",
+    whatSafeAdultsSay: "v3-what-every-safe-adult-should-say.html",
 
     gaming: "v3-gaming.html",
     allGames: "v3-all-games.html",
@@ -175,7 +190,7 @@
     petitionDefaults: "v3-petition-safer-defaults-child-accounts.html",
 
     shareText:
-      "POSH helps parents build safer digital families with practical safety checks, device guidance, family rules, platform awareness, warning signs, and calm action pathways.",
+      "POSH helps parents and safe adults build safer digital families with practical safety checks, device guidance, family rules, platform awareness, warning signs, and calm action pathways.",
 
     searchPlaceholder: "Search apps, games, devices, PDFs or topics",
     maxSearchResults: 10,
@@ -192,6 +207,7 @@
     "v3-posh-response-system.html": POSH.response,
     "v3-first-24-hours.html": POSH.first24,
     "v3-downloads.html": POSH.downloads,
+    "v3-sextortion.html": POSH.sextortion,
     "v3-signs-my-child-is-being-groomed-online.html": POSH.groomingSigns,
     "v3-signs-your-child-is-being-groomed.html": POSH.groomingSigns,
     "V3gaming-xbox.html": POSH.xbox,
@@ -212,6 +228,24 @@
         { href: POSH.response, label: "POSH Response System", type: "Action", keywords: "response system what parents do next concern structure" },
         { href: POSH.parentQuestions, label: "Parent Questions", type: "Questions", keywords: "questions to ask child parent prompts conversation" },
         { href: POSH.quiz, label: "Safety Score", type: "Quiz", keywords: "safety score audit checklist quiz risk score check" }
+      ]
+    },
+    {
+      title: "Safe Adults & Family Network",
+      links: [
+        { href: POSH.trainingEveryone, label: "Training For Every Adult", type: "Training Hub", keywords: "online safety training everyone safe adult parents grandparents carers teachers coaches family network" },
+        { href: POSH.grandparents, label: "Grandparents Guide", type: "Grandparents", keywords: "grandparents older generation oldies grandchildren technology apps games online safety" },
+        { href: POSH.parentsTraining, label: "Parents & Step-Parents", type: "Training", keywords: "parents step parents training family safety plan home rules devices" },
+        { href: POSH.carersTraining, label: "Carers & Guardians", type: "Training", keywords: "carers guardians foster kinship trauma trust safety online" },
+        { href: POSH.teachersTraining, label: "Teachers & School Staff", type: "Training", keywords: "teachers school staff classroom disclosure behaviour changes safeguarding" },
+        { href: POSH.coachesTraining, label: "Coaches & Activity Leaders", type: "Training", keywords: "coaches sport clubs activity leaders youth groups safe adult" },
+        { href: POSH.familyNetworkGuide, label: "Aunties, Uncles & Family Friends", type: "Guide", keywords: "aunties uncles family friends trusted adults family network child safety" },
+        { href: POSH.olderSiblings, label: "Older Siblings Guide", type: "Guide", keywords: "older siblings brothers sisters teens unsafe secrets tell safe adult" },
+        { href: POSH.youthWorkers, label: "Youth Workers & Mentors", type: "Training", keywords: "youth workers mentors young people disclosure online pressure support" },
+        { href: POSH.babysitters, label: "Babysitters & Sleepover Adults", type: "Guide", keywords: "babysitters sleepovers supervision devices bedtime online safety" },
+        { href: POSH.safeAdultWarningSigns, label: "Safe Adult Warning Signs", type: "Warning Signs", keywords: "safe adult warning signs secrecy deleted messages mood changes hidden accounts" },
+        { href: POSH.safeAdultResponse, label: "Safe Adult Response System", type: "Response", keywords: "safe adult response system stay calm listen evidence involve right adult" },
+        { href: POSH.whatSafeAdultsSay, label: "What Safe Adults Should Say", type: "Scripts", keywords: "what safe adults should say calm words child opens up online safety" }
       ]
     },
     {
@@ -339,8 +373,8 @@
     sextortion: ["what is sextortion", "blackmail or threats", "sextortion scenarios"],
     grooming: ["grooming signs", "predator playbook", "red flags", "predator warning signs", "10 signs targeted online"],
     predator: ["predator playbook", "predator warning signs", "predator tactics"],
-    secret: ["red flags", "child hiding phone", "why kids don’t tell"],
-    secrecy: ["red flags", "child hiding phone", "why kids don’t tell"],
+    secret: ["red flags", "child hiding phone", "why kids don’t tell", "safe adult warning signs"],
+    secrecy: ["red flags", "child hiding phone", "why kids don’t tell", "safe adult warning signs"],
     hiding: ["child hiding phone", "red flags", "why kids don’t tell"],
     robux: ["free robux scam safety", "roblox", "in-game currency risk"],
     gifting: ["in-game currency risk", "free robux scam safety", "digital gifting policy"],
@@ -363,19 +397,45 @@
     petition: ["digital gifting policy", "safer defaults policy"],
     report: ["report & get help", "save evidence", "reporting australia"],
     questions: ["parent questions", "parent scripts"],
-    scripts: ["parent scripts", "how to talk"],
+    scripts: ["parent scripts", "how to talk", "what safe adults should say"],
     rules: ["house rules", "posh parent system"],
     disclaimer: ["warning & disclaimer"],
-    warning: ["warning & disclaimer", "red flags"],
+    warning: ["warning & disclaimer", "red flags", "safe adult warning signs"],
     support: ["support posh"],
     executive: ["executive functioning", "pause before reacting", "impulse control"],
     adhd: ["executive functioning", "adhd executive functioning"],
     autism: ["executive functioning", "asd executive functioning"],
-    scenario: ["scenario training", "roblox scenarios", "sextortion scenarios"]
+    scenario: ["scenario training", "roblox scenarios", "sextortion scenarios"],
+
+    grandparent: ["grandparents guide", "training for every adult", "safe adult warning signs"],
+    grandparents: ["grandparents guide", "training for every adult", "what safe adults should say"],
+    oldies: ["grandparents guide", "training for every adult"],
+    elder: ["grandparents guide", "training for every adult"],
+    elderly: ["grandparents guide", "training for every adult"],
+    safeadult: ["training for every adult", "safe adult warning signs", "safe adult response system"],
+    "safe adult": ["training for every adult", "safe adult warning signs", "safe adult response system"],
+    carer: ["carers & guardians", "safe adult response system"],
+    carers: ["carers & guardians", "safe adult response system"],
+    guardian: ["carers & guardians", "safe adult response system"],
+    teacher: ["teachers & school staff", "safe adult warning signs"],
+    teachers: ["teachers & school staff", "safe adult warning signs"],
+    school: ["teachers & school staff", "safe adult warning signs"],
+    coach: ["coaches & activity leaders", "safe adult response system"],
+    coaches: ["coaches & activity leaders", "safe adult response system"],
+    sibling: ["older siblings guide", "what safe adults should say"],
+    siblings: ["older siblings guide", "what safe adults should say"],
+    babysitter: ["babysitters & sleepover adults", "safe adult response system"],
+    babysitters: ["babysitters & sleepover adults", "safe adult response system"],
+    sleepover: ["babysitters & sleepover adults", "safe adult warning signs"],
+    mentor: ["youth workers & mentors", "safe adult response system"],
+    mentors: ["youth workers & mentors", "safe adult response system"],
+    "family friend": ["aunties, uncles & family friends", "safe adult warning signs"],
+    auntie: ["aunties, uncles & family friends"],
+    uncle: ["aunties, uncles & family friends"]
   };
 
   const PAGE_RELATIONS = {
-    "index.html": [POSH.quiz, POSH.parentSystem, POSH.safetyLanes, POSH.devices, POSH.platformRisks, POSH.urgentHelp],
+    "index.html": [POSH.quiz, POSH.parentSystem, POSH.trainingEveryone, POSH.grandparents, POSH.safeAdultWarningSigns, POSH.urgentHelp],
     "v3-start.html": [POSH.safetyLanes, POSH.quiz, POSH.parentSystem, POSH.redFlags, POSH.devices, POSH.reporting],
     "v3-posh-safety-lanes.html": [POSH.urgentHelp, POSH.redFlags, POSH.platformRisks, POSH.parentSystem, POSH.onlineScenarios],
     "v3-posh-parent-system.html": [POSH.houseRules, POSH.monitorTrust, POSH.parentScripts, POSH.onlineScenarios, POSH.quiz],
@@ -384,13 +444,28 @@
     "v3-response-system.html": [POSH.whatNow, POSH.reporting, POSH.parentQuestions, POSH.redFlags],
     "v3-parent-questions.html": [POSH.redFlags, POSH.parentScripts, POSH.talkOnlineSafety],
     "v3-safety-score.html": [POSH.parentSystem, POSH.redFlags, POSH.devices, POSH.houseRules],
+
+    "v3-online-safety-training-for-everyone.html": [POSH.grandparents, POSH.parentsTraining, POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.whatSafeAdultsSay, POSH.reporting],
+    "v3-grandparents-online-safety.html": [POSH.trainingEveryone, POSH.safeAdultWarningSigns, POSH.whatSafeAdultsSay, POSH.parentScripts, POSH.devices],
+    "v3-parents-online-safety-training.html": [POSH.parentSystem, POSH.houseRules, POSH.safeAdultWarningSigns, POSH.devices, POSH.parentScripts],
+    "v3-carers-online-safety-training.html": [POSH.safeAdultResponse, POSH.safeAdultWarningSigns, POSH.parentScripts, POSH.reporting],
+    "v3-teachers-online-safety-training.html": [POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.whatSafeAdultsSay, POSH.reporting],
+    "v3-coaches-online-safety-training.html": [POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.whatSafeAdultsSay, POSH.reporting],
+    "v3-aunties-uncles-family-friends-online-safety.html": [POSH.trainingEveryone, POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.whatSafeAdultsSay],
+    "v3-older-siblings-online-safety-guide.html": [POSH.whatSafeAdultsSay, POSH.safeAdultWarningSigns, POSH.urgentHelp, POSH.reporting],
+    "v3-youth-workers-online-safety-training.html": [POSH.safeAdultResponse, POSH.safeAdultWarningSigns, POSH.whatSafeAdultsSay, POSH.reporting],
+    "v3-babysitters-online-safety-guide.html": [POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.urgentHelp, POSH.reporting],
+    "v3-safe-adult-warning-signs.html": [POSH.safeAdultResponse, POSH.whatSafeAdultsSay, POSH.trainingEveryone, POSH.redFlags, POSH.urgentHelp],
+    "v3-safe-adult-response-system.html": [POSH.safeAdultWarningSigns, POSH.whatSafeAdultsSay, POSH.evidence, POSH.reporting, POSH.urgentHelp],
+    "v3-what-every-safe-adult-should-say.html": [POSH.safeAdultResponse, POSH.safeAdultWarningSigns, POSH.parentScripts, POSH.trainingEveryone],
+
     "v3-what-to-do-if-your-child-is-in-danger-online.html": [POSH.first24, POSH.blackmail, POSH.evidence, POSH.reporting],
     "v3-first-24-hours-online-incident.html": [POSH.evidence, POSH.blackmail, POSH.reporting, POSH.parentScripts],
     "v3-my-child-is-being-blackmailed-online.html": [POSH.sextortion, POSH.evidence, POSH.reporting, POSH.first24],
     "v3-kid-sending-photos-online-what-to-do.html": [POSH.blackmail, POSH.sextortion, POSH.evidence, POSH.reporting],
     "v3-evidence-reporting.html": [POSH.reporting, POSH.first24, POSH.blackmail, POSH.urgentHelp],
     "v3-reporting.html": [POSH.evidence, POSH.first24, POSH.urgentHelp, POSH.redFlags],
-    "v3-redflags.html": [POSH.tenSigns, POSH.groomingSigns, POSH.playbook, POSH.whyKidsDontTell, POSH.reporting],
+    "v3-redflags.html": [POSH.tenSigns, POSH.groomingSigns, POSH.safeAdultWarningSigns, POSH.playbook, POSH.whyKidsDontTell, POSH.reporting],
     "v3-10-signs-targeted-online.html": [POSH.redFlags, POSH.playbook, POSH.predatorWarning, POSH.reporting],
     "v3-child-being-groomed-signs.html": [POSH.redFlags, POSH.playbook, POSH.predatorWarning, POSH.parentScripts],
     "v3-online-predator-warning-signs.html": [POSH.redFlags, POSH.playbook, POSH.groomingSigns, POSH.reporting],
@@ -412,7 +487,7 @@
     "v3-device-controls.html": [POSH.devices, POSH.bestParentalControlApps, POSH.houseRules],
     "v3-best-parental-control-apps.html": [POSH.devices, POSH.houseRules, POSH.monitorTrust, POSH.redFlags],
     "v3-house-rules.html": [POSH.parentSystem, POSH.devices, POSH.monitorTrust, POSH.parentScripts],
-    "v3-parent-scripts.html": [POSH.talkOnlineSafety, POSH.whyKidsDontTell, POSH.parentQuestions, POSH.redFlags],
+    "v3-parent-scripts.html": [POSH.talkOnlineSafety, POSH.whyKidsDontTell, POSH.parentQuestions, POSH.whatSafeAdultsSay, POSH.redFlags],
     "v3-online-scenarios-training.html": [POSH.robloxScenarios, POSH.snapchatScenarios, POSH.sextortionScenarios, POSH.executiveFunctioning],
     "v3-executive-functioning.html": [POSH.onlineScenarios, POSH.pauseBeforeReacting, POSH.impulseControl, POSH.emotionalRegulation],
     "v3-awareness.html": [POSH.algorithm, POSH.investigations, POSH.redFlags],
@@ -1175,8 +1250,8 @@
     const panel = document.createElement("section");
     panel.className = "posh-share-panel";
     panel.innerHTML = `
-      <h2>Help another parent find this earlier</h2>
-      <p>Many parents only start searching after something feels wrong. Sharing POSH can help another family build safer habits before risk escalates.</p>
+      <h2>Help another parent or safe adult find this earlier</h2>
+      <p>Many families only start searching after something feels wrong. Sharing POSH can help another parent, grandparent, carer, teacher, coach, or trusted adult recognise the pattern sooner.</p>
       <div class="posh-share-panel-actions">
         <button type="button" id="poshShareMainBtn" data-track="share_panel_share">Share POSH</button>
         <button type="button" id="poshCopyMainBtn" data-track="share_panel_copy">Copy Link</button>
@@ -1200,6 +1275,35 @@
   function inferCTAByPage(page) {
     if (page === POSH.home) {
       return null;
+    }
+
+    const safeAdultPages = [
+      POSH.trainingEveryone,
+      POSH.grandparents,
+      POSH.parentsTraining,
+      POSH.carersTraining,
+      POSH.teachersTraining,
+      POSH.coachesTraining,
+      POSH.familyNetworkGuide,
+      POSH.olderSiblings,
+      POSH.youthWorkers,
+      POSH.babysitters,
+      POSH.safeAdultWarningSigns,
+      POSH.safeAdultResponse,
+      POSH.whatSafeAdultsSay
+    ];
+
+    if (safeAdultPages.includes(page)) {
+      return {
+        title: "Build the same safety language around the child",
+        text: "Children are safer when every trusted adult knows the warning signs, stays calm, avoids shame, and knows when to involve the right adult or reporting pathway.",
+        actions: [
+          { href: POSH.safeAdultWarningSigns, label: "Warning Signs" },
+          { href: POSH.safeAdultResponse, label: "Safe Adult Response" },
+          { href: POSH.whatSafeAdultsSay, label: "What To Say" },
+          { href: POSH.trainingEveryone, label: "Training Hub" }
+        ]
+      };
     }
 
     if (page === POSH.urgentHelp || page === POSH.first24 || page === POSH.blackmail || page === POSH.photos || page === POSH.evidence) {
@@ -1309,6 +1413,7 @@
 
   function injectSupportStrip() {
     if (qs(".posh-support-strip")) return;
+    if (currentLivePath() === POSH.home) return;
 
     const wrap = qs(".wrap");
     if (!wrap) return;
@@ -1317,7 +1422,7 @@
     strip.className = "posh-support-strip";
     strip.innerHTML = `
       <div class="posh-support-strip-inner">
-        <strong>If POSH helped you think clearer, help keep it available for the next parent.</strong>
+        <strong>If POSH helped you think clearer, help keep it available for the next family.</strong>
         <div class="posh-support-strip-actions">
           <a href="${POSH.support}" data-track="support_strip_support">Support POSH</a>
           <button type="button" id="poshSupportStripShare" data-track="support_strip_share">Share POSH</button>
@@ -1358,6 +1463,7 @@
 
   function injectSupportFooterPrompt() {
     if (qs(".posh-footer-prompt")) return;
+    if (currentLivePath() === POSH.home) return;
 
     const wrap = qs(".wrap");
     if (!wrap) return;
@@ -1365,7 +1471,7 @@
     const footer = document.createElement("section");
     footer.className = "posh-footer-prompt";
     footer.innerHTML = `
-      <p><strong>POSH is built for families.</strong> Support helps build more tools, clearer guides, printable downloads, and safer pathways for parents who land here overwhelmed.</p>
+      <p><strong>POSH is built for families.</strong> Support helps build more tools, clearer guides, printable downloads, and safer pathways for parents and safe adults who land here overwhelmed.</p>
       <div class="posh-footer-prompt-actions">
         <a href="${POSH.support}" data-track="footer_support">Support POSH</a>
         <button type="button" id="poshFooterShare" data-track="footer_share">Share POSH</button>
@@ -1393,8 +1499,27 @@
     if (/^v3-game-/.test(current)) document.body.classList.add("page-is-game");
     if (/^v3-social-/.test(current)) document.body.classList.add("page-is-social");
     if (current === POSH.devices || current === POSH.deviceControls) document.body.classList.add("page-is-device");
+
     if ([POSH.urgentHelp, POSH.first24, POSH.blackmail, POSH.photos, POSH.evidence].includes(current)) {
       document.body.classList.add("page-is-urgent");
+    }
+
+    if ([
+      POSH.trainingEveryone,
+      POSH.grandparents,
+      POSH.parentsTraining,
+      POSH.carersTraining,
+      POSH.teachersTraining,
+      POSH.coachesTraining,
+      POSH.familyNetworkGuide,
+      POSH.olderSiblings,
+      POSH.youthWorkers,
+      POSH.babysitters,
+      POSH.safeAdultWarningSigns,
+      POSH.safeAdultResponse,
+      POSH.whatSafeAdultsSay
+    ].includes(current)) {
+      document.body.classList.add("page-is-safe-adult");
     }
   }
 
