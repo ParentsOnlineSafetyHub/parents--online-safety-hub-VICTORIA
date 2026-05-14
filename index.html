@@ -24,6 +24,360 @@
 
 <link rel="stylesheet" href="style.css"/>
 
+<style>
+/* =========================================================
+   POSH HOME PREMIUM CLEANUP
+   Purpose:
+   - Keeps homepage professional and polished
+   - Removes duplicated app.js support/share/sticky blocks on homepage
+   - Keeps the rest of the site untouched
+   ========================================================= */
+
+body.home-page .posh-action-bar,
+body.home-page .posh-smart-cta,
+body.home-page .posh-related-links,
+body.home-page .posh-share-panel,
+body.home-page .posh-support-strip,
+body.home-page .posh-footer-prompt{
+  display:none !important;
+}
+
+body.home-page{
+  padding-bottom:0 !important;
+}
+
+.home-premium-hero{
+  overflow:hidden;
+  padding:clamp(26px,4vw,46px) !important;
+  border-color:rgba(217,182,90,.22) !important;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(139,214,255,.12), transparent 34%),
+    radial-gradient(circle at 90% 18%, rgba(217,182,90,.09), transparent 30%),
+    linear-gradient(180deg,rgba(15,42,85,.98),rgba(8,24,49,.96)) !important;
+}
+
+.home-premium-hero::after{
+  content:"";
+  position:absolute;
+  left:8%;
+  right:8%;
+  bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(217,182,90,.42),rgba(139,214,255,.32),transparent);
+  pointer-events:none;
+}
+
+.home-hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 18px;
+  margin:0 auto 18px;
+  border-radius:999px;
+  border:1px solid rgba(217,182,90,.34);
+  background:rgba(217,182,90,.10);
+  color:#fff2c6;
+  font-size:clamp(.9rem,1.4vw,1.02rem);
+  line-height:1.1;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.home-premium-hero .page-title{
+  max-width:980px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.home-hero-lead{
+  max-width:920px;
+  margin:0 auto 18px;
+  color:rgba(244,247,255,.86);
+  font-size:clamp(1.04rem,1.55vw,1.22rem);
+  line-height:1.76;
+}
+
+.home-hero-proof{
+  max-width:940px;
+  margin:20px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+
+.home-proof-item{
+  padding:15px 14px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  text-align:center;
+}
+
+.home-proof-item strong{
+  display:block;
+  margin-bottom:4px;
+  font-family:var(--font-heading);
+  color:#fff;
+  font-size:1.02rem;
+}
+
+.home-proof-item span{
+  display:block;
+  color:rgba(244,247,255,.68);
+  font-size:.94rem;
+  line-height:1.5;
+}
+
+.home-hero-actions{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(205px,1fr));
+  gap:12px;
+  max-width:780px;
+  margin:22px auto 0 !important;
+}
+
+.home-hero-actions a{
+  width:100%;
+}
+
+.home-urgent-note{
+  max-width:860px;
+  margin:18px auto 0;
+  padding:14px 16px;
+  border-radius:18px;
+  border:1px solid rgba(217,182,90,.22);
+  background:rgba(217,182,90,.075);
+  color:#fff0c8;
+  line-height:1.65;
+}
+
+.home-section-kicker{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 12px;
+  padding:7px 12px;
+  border-radius:999px;
+  border:1px solid rgba(139,214,255,.20);
+  background:rgba(139,214,255,.07);
+  color:#bfeaff;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.home-split{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:18px;
+  align-items:stretch;
+}
+
+.home-split .card,
+.home-path-card,
+.home-feature-card{
+  height:100%;
+}
+
+.home-path-card{
+  text-align:left;
+  padding:20px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(circle at top left, rgba(139,214,255,.065), transparent 42%),
+    rgba(255,255,255,.04);
+}
+
+.home-path-card h3,
+.home-feature-card h3{
+  margin-bottom:8px;
+}
+
+.home-path-card p,
+.home-feature-card p{
+  margin-bottom:14px;
+}
+
+.home-card-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  margin-bottom:12px;
+  border-radius:50%;
+  border:1px solid rgba(217,182,90,.26);
+  background:rgba(217,182,90,.10);
+  color:#ffe9ab;
+  font-weight:900;
+  font-family:var(--font-heading);
+}
+
+.home-feature-card{
+  padding:19px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+}
+
+.home-feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.home-system-line{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:10px;
+  margin:20px auto 0;
+  max-width:960px;
+}
+
+.home-system-step{
+  min-height:96px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:6px;
+  padding:15px 12px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  text-align:center;
+}
+
+.home-system-step strong{
+  font-family:var(--font-heading);
+  font-size:.96rem;
+}
+
+.home-system-step span{
+  color:rgba(244,247,255,.66);
+  font-size:.9rem;
+  line-height:1.42;
+}
+
+.home-system-step.final{
+  border-color:rgba(217,182,90,.26);
+  background:rgba(217,182,90,.08);
+}
+
+.home-risk-strip{
+  max-width:940px;
+  margin:18px auto 0;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+
+.home-risk-strip span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:10px;
+  border-radius:16px;
+  border:1px solid rgba(217,182,90,.20);
+  background:rgba(217,182,90,.075);
+  color:#fff0c8;
+  font-weight:800;
+  text-align:center;
+}
+
+.home-platform-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:18px;
+}
+
+.home-platform-card{
+  min-height:112px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:16px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  text-align:center;
+}
+
+.home-platform-card strong{
+  display:block;
+  font-family:var(--font-heading);
+  margin-bottom:5px;
+}
+
+.home-platform-card span{
+  color:rgba(244,247,255,.66);
+  font-size:.9rem;
+  line-height:1.42;
+}
+
+.home-platform-card:hover{
+  transform:translateY(-1px);
+  border-color:rgba(139,214,255,.28);
+  background:rgba(139,214,255,.08);
+  color:#fff;
+}
+
+.home-premium-cta{
+  border-color:rgba(217,182,90,.24) !important;
+  background:
+    radial-gradient(circle at top, rgba(217,182,90,.08), transparent 42%),
+    linear-gradient(180deg,rgba(15,42,85,.96),rgba(9,27,55,.94)) !important;
+}
+
+.home-final-actions{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:12px;
+  max-width:900px;
+  margin:20px auto 0;
+}
+
+@media (max-width:900px){
+  .home-split,
+  .home-feature-grid,
+  .home-hero-proof{
+    grid-template-columns:1fr;
+  }
+
+  .home-system-line{
+    grid-template-columns:1fr;
+  }
+
+  .home-platform-grid,
+  .home-risk-strip{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:520px){
+  .home-platform-grid,
+  .home-risk-strip{
+    grid-template-columns:1fr;
+  }
+
+  .home-premium-hero{
+    padding:22px 18px !important;
+  }
+
+  .home-hero-eyebrow{
+    font-size:.82rem;
+    letter-spacing:.09em;
+    padding:9px 13px;
+  }
+}
+</style>
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -66,7 +420,7 @@
       "name":"Where should parents start?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Parents can start with the POSH Safety Check, the Family Safety Plan, device safety guidance, platform risk pages, or urgent help if there are threats, blackmail, sexual requests, or real-world danger."
+        "text":"Parents can start with the POSH Safety Check, the Parent System, device safety guidance, platform risk pages, or urgent help if there are threats, blackmail, sexual requests, or real-world danger."
       }
     },
     {
@@ -85,12 +439,12 @@
 <body class="home-page">
 <div class="wrap">
 
-<header class="card home-intro home-intro-hero center-card">
-  <div class="home-kicker">Parents Online Safety Hub</div>
+<header class="card home-intro home-intro-hero center-card home-premium-hero">
+  <div class="home-hero-eyebrow">Parents Online Safety Hub</div>
 
   <h1 class="page-title mb-12">You’re Not Overreacting. Parenting Online Is Different Now.</h1>
 
-  <p class="section-lead center" style="max-width:940px;margin:0 auto 18px;">
+  <p class="home-hero-lead">
     Kids are growing up inside games, group chats, algorithms, private messages, disappearing content, livestreams, and digital pressure that many parents were never taught how to manage.
   </p>
 
@@ -101,54 +455,72 @@
     </p>
   </div>
 
-  <div class="btn-grid btn-grid-soft calm-home-actions" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:20px;">
-    <a class="btn primary-soft" href="v3-safety-score.html">Start Safety Check</a>
-    <a class="btn quiet" href="v3-posh-parent-system.html">Build Family Safety Plan</a>
-    <a class="btn quiet" href="v3-posh-safety-lanes.html">Choose My Situation</a>
+  <div class="posh-hero-actions home-hero-actions">
+    <a class="btn primary-soft" href="v3-safety-score.html" data-track="home_start_safety_check">Start Safety Check</a>
+    <a class="btn quiet secondary" href="v3-posh-parent-system.html" data-track="home_parent_system">Build Family Safety Plan</a>
+    <a class="btn quiet ghost" href="v3-start.html" data-track="home_choose_path">Choose My Starting Point</a>
   </div>
 
-  <p class="small" style="max-width:820px;margin:16px auto 0;">
-    If threats, blackmail, sexual requests, or real-world danger are involved, use <strong>Urgent Help</strong>. Otherwise, start by building the safety system around your child.
+  <div class="home-hero-proof" aria-label="POSH focus areas">
+    <div class="home-proof-item">
+      <strong>Practical</strong>
+      <span>Steps parents can use without needing to become tech experts.</span>
+    </div>
+    <div class="home-proof-item">
+      <strong>Parent-first</strong>
+      <span>Built around calm conversations, trust, and safer family routines.</span>
+    </div>
+    <div class="home-proof-item">
+      <strong>Action-focused</strong>
+      <span>Clear pathways for devices, platforms, warning signs, and urgent help.</span>
+    </div>
+  </div>
+
+  <p class="home-urgent-note mb-0">
+    If threats, blackmail, sexual requests, or real-world danger are involved, go straight to <strong>Urgent Help</strong>. Otherwise, start by building the safety system around your child.
   </p>
 </header>
 
 <div id="nav"></div>
 
 <section class="card center-card">
-  <h2>Start with the real problem parents face</h2>
+  <div class="home-section-kicker">The parent problem</div>
+  <h2>Online safety is not one setting. It is a family system.</h2>
 
-  <p class="section-lead center" style="max-width:920px;margin:0 auto 18px;">
-    Online safety is not just blocking an app. It is knowing what your child uses, where private contact can happen, how pressure builds, and how to keep the conversation open before fear takes over.
+  <p class="section-lead center" style="max-width:930px;margin:0 auto 20px;">
+    Parents are being asked to manage games, apps, group chats, algorithms, devices, secrecy, subscriptions, social pressure, and online strangers — often with no clear starting point. POSH turns that confusion into a simple pathway.
   </p>
 
-  <div class="grid-3">
-    <article class="info-box">
+  <div class="home-feature-grid">
+    <article class="home-feature-card">
       <h3>Access</h3>
       <p>Games, apps, group chats, livestreams, comments, DMs, voice chat, and friend requests can all create access points.</p>
     </article>
 
-    <article class="info-box">
+    <article class="home-feature-card">
       <h3>Pressure</h3>
-      <p>Children can be pushed by gifts, attention, embarrassment, fear, secrecy, popularity, or not wanting to lose someone online.</p>
+      <p>Children can be pushed by attention, gifts, embarrassment, secrecy, fear, popularity, or not wanting to lose someone online.</p>
     </article>
 
-    <article class="info-box">
+    <article class="home-feature-card">
       <h3>Response</h3>
-      <p>The goal is not panic. The goal is calm questions, safer settings, visible devices, practical boundaries, and early action.</p>
+      <p>The goal is calm questions, safer settings, visible devices, practical boundaries, and early action before panic takes over.</p>
     </article>
   </div>
 </section>
 
 <section class="card center-card">
+  <div class="home-section-kicker">Start here</div>
   <h2>Choose what your family needs first</h2>
 
-  <p class="section-lead center" style="max-width:880px;margin:0 auto 18px;">
-    POSH works best when parents start with the most useful pathway — not the scariest one.
+  <p class="section-lead center" style="max-width:900px;margin:0 auto 20px;">
+    POSH works best when parents start with the most useful pathway — not the scariest one. Pick the area that matches your family today.
   </p>
 
   <div class="grid-2">
 
-    <article class="card soft mb-0">
+    <article class="home-path-card">
+      <span class="home-card-number">1</span>
       <h3>Set up safer family rules</h3>
       <p>Create clear boundaries around phones, gaming, apps, bedrooms, passwords, downloads, online friends, and late-night use.</p>
       <div class="btn-row">
@@ -157,7 +529,8 @@
       </div>
     </article>
 
-    <article class="card soft mb-0">
+    <article class="home-path-card">
+      <span class="home-card-number">2</span>
       <h3>Check devices and accounts</h3>
       <p>Review phones, tablets, consoles, privacy settings, app installs, subscriptions, hidden accounts, and parental controls.</p>
       <div class="btn-row">
@@ -166,7 +539,8 @@
       </div>
     </article>
 
-    <article class="card soft mb-0">
+    <article class="home-path-card">
+      <span class="home-card-number">3</span>
       <h3>Talk without causing panic</h3>
       <p>Use calm scripts that keep children talking instead of shutting down, hiding more, or feeling blamed.</p>
       <div class="btn-row">
@@ -175,44 +549,61 @@
       </div>
     </article>
 
-    <article class="card soft mb-0">
+    <article class="home-path-card">
+      <span class="home-card-number">4</span>
       <h3>Practise online scenarios</h3>
       <p>Help children practise what to do when someone pressures them, asks for secrecy, offers gifts, or moves chats elsewhere.</p>
       <div class="btn-row">
         <a class="btn quiet" href="v3-online-scenarios-training.html">Scenario Training</a>
-        <a class="btn quiet" href="v3-executive-functioning.html">Thinking Skills</a>
+        <a class="btn quiet" href="v3-executive-functioning-online-safety.html">Thinking Skills</a>
       </div>
     </article>
 
   </div>
 </section>
 
-<section class="card center-card">
-  <h2>The POSH family safety system</h2>
+<section class="card center-card home-premium-cta">
+  <div class="home-section-kicker">The POSH method</div>
+  <h2>The family safety system</h2>
 
-  <p class="section-lead center" style="max-width:920px;margin:0 auto 18px;">
+  <p class="section-lead center" style="max-width:930px;margin:0 auto 18px;">
     A safer digital home is built through repeated habits. POSH gives parents a simple structure to come back to again and again.
   </p>
 
-  <div class="network-flow">
-    <div class="pill">Calm mindset</div>
-    <div class="arrow">↓</div>
-    <div class="pill">Clear rules</div>
-    <div class="arrow">↓</div>
-    <div class="pill">Visible devices</div>
-    <div class="arrow">↓</div>
-    <div class="pill">Practice scenarios</div>
-    <div class="arrow">↓</div>
-    <div class="pill danger">Early action</div>
+  <div class="home-system-line">
+    <div class="home-system-step">
+      <strong>Calm mindset</strong>
+      <span>Lead without panic.</span>
+    </div>
+
+    <div class="home-system-step">
+      <strong>Clear rules</strong>
+      <span>Make boundaries visible.</span>
+    </div>
+
+    <div class="home-system-step">
+      <strong>Visible devices</strong>
+      <span>Reduce hidden risk.</span>
+    </div>
+
+    <div class="home-system-step">
+      <strong>Practice scenarios</strong>
+      <span>Prepare before pressure.</span>
+    </div>
+
+    <div class="home-system-step final">
+      <strong>Early action</strong>
+      <span>Move sooner, not later.</span>
+    </div>
   </div>
 
-  <div class="rule-box" style="max-width:900px;margin:18px auto 0;">
+  <div class="rule-box" style="max-width:900px;margin:20px auto 0;">
     <p class="mb-0">
       The aim is not to spy on children. The aim is to build a home where devices are visible, rules are understood, and children know they can tell you before something gets worse.
     </p>
   </div>
 
-  <div class="btn-grid btn-grid-soft" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:18px;">
+  <div class="home-final-actions">
     <a class="btn primary-soft" href="v3-posh-parent-system.html">Open Parent System</a>
     <a class="btn quiet" href="v3-house-rules.html">House Rules</a>
     <a class="btn quiet" href="v3-how-to-monitor-without-breaking-trust.html">Monitor Without Breaking Trust</a>
@@ -221,9 +612,10 @@
 </section>
 
 <section class="card center-card">
+  <div class="home-section-kicker">Keep the door open</div>
   <h2>Why children hide things online</h2>
 
-  <p class="section-lead center" style="max-width:920px;margin:0 auto 18px;">
+  <p class="section-lead center" style="max-width:930px;margin:0 auto 20px;">
     Children often hide online problems because they fear losing devices, getting blamed, being embarrassed, or making the situation worse. POSH helps parents respond in a way that keeps the door open.
   </p>
 
@@ -244,7 +636,7 @@
     </article>
   </div>
 
-  <div class="btn-grid btn-grid-soft" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:18px;">
+  <div class="home-final-actions">
     <a class="btn primary-soft" href="v3-why-kids-dont-tell-parents-online-safety.html">Why Kids Don’t Tell</a>
     <a class="btn quiet" href="v3-parent-scripts.html">What To Say</a>
     <a class="btn quiet" href="v3-it-is-not-about-not-trusting-your-child.html">Trust vs Protection</a>
@@ -252,49 +644,66 @@
 </section>
 
 <section class="card center-card">
-  <h2>Apps, games, and platforms</h2>
+  <div class="home-section-kicker">Apps, games, platforms</div>
+  <h2>The pattern matters more than the app name</h2>
 
-  <p class="section-lead center" style="max-width:920px;margin:0 auto 16px;">
+  <p class="section-lead center" style="max-width:930px;margin:0 auto 18px;">
     Parents do not need to fear every app. The goal is to understand where contact, secrecy, pressure, gifting, private messages, and off-platform movement can happen.
   </p>
 
   <div class="rule-box" style="max-width:900px;margin:0 auto 18px;">
     <p class="mb-0">
-      The pattern matters more than the app name: private contact, secrecy, emotional pressure, hidden accounts, late-night use, or moving chats somewhere harder for parents to see.
+      Look for the pattern: private contact, secrecy, emotional pressure, hidden accounts, late-night use, or moving chats somewhere harder for parents to see.
     </p>
   </div>
 
-  <div class="btn-grid btn-grid-soft" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;">
-    <a class="btn primary-soft" href="v3-platform-risks-overview.html">Platform Overview</a>
-    <a class="btn quiet" href="v3-game-roblox.html">Roblox</a>
-    <a class="btn quiet" href="v3-social-discord.html">Discord</a>
-    <a class="btn quiet" href="v3-social-snapchat.html">Snapchat</a>
+  <div class="home-platform-grid">
+    <a class="home-platform-card" href="v3-game-roblox.html">
+      <strong>Roblox</strong>
+      <span>Games, chat, groups, gifting, and supervision.</span>
+    </a>
+
+    <a class="home-platform-card" href="v3-social-discord.html">
+      <strong>Discord</strong>
+      <span>Servers, DMs, voice chat, and off-platform movement.</span>
+    </a>
+
+    <a class="home-platform-card" href="v3-social-snapchat.html">
+      <strong>Snapchat</strong>
+      <span>Disappearing messages, streaks, and hidden pressure.</span>
+    </a>
+
+    <a class="home-platform-card" href="v3-social-tiktok.html">
+      <strong>TikTok</strong>
+      <span>Algorithms, lives, comments, and repeated exposure.</span>
+    </a>
   </div>
 
-  <div class="btn-grid btn-grid-soft" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:12px;">
-    <a class="btn quiet" href="v3-social-tiktok.html">TikTok</a>
-    <a class="btn quiet" href="v3-social-youtube.html">YouTube</a>
+  <div class="home-final-actions">
+    <a class="btn primary-soft" href="v3-platform-risks-overview.html">Platform Overview</a>
     <a class="btn quiet" href="v3-gaming.html">Gaming Safety</a>
+    <a class="btn quiet" href="v3-socials.html">Social Media & Chat</a>
     <a class="btn quiet" href="v3-devices.html">Device Safety</a>
   </div>
 </section>
 
 <section class="card center-card">
+  <div class="home-section-kicker">Warning signs</div>
   <h2>Warning signs, kept in context</h2>
 
-  <p class="section-lead center" style="max-width:880px;margin:0 auto 16px;">
+  <p class="section-lead center" style="max-width:900px;margin:0 auto 16px;">
     Warning signs are not about accusing your child. They are signals to slow things down, stay calm, and look closer.
   </p>
 
-  <div class="badges" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
-    <span class="badge gold">Secrecy</span>
-    <span class="badge gold">Deleted Messages</span>
-    <span class="badge gold">Mood Changes</span>
-    <span class="badge gold">Hidden Accounts</span>
-    <span class="badge gold">Private Apps</span>
-    <span class="badge gold">Late-Night Contact</span>
-    <span class="badge gold">Panic</span>
-    <span class="badge gold">One Person Matters Too Much</span>
+  <div class="home-risk-strip">
+    <span>Secrecy</span>
+    <span>Deleted messages</span>
+    <span>Hidden accounts</span>
+    <span>Late-night contact</span>
+    <span>Mood changes</span>
+    <span>Private apps</span>
+    <span>Panic</span>
+    <span>One person matters too much</span>
   </div>
 
   <div class="rule-box" style="max-width:900px;margin:18px auto 0;">
@@ -303,18 +712,19 @@
     </p>
   </div>
 
-  <div class="btn-grid btn-grid-soft" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:18px;">
+  <div class="home-final-actions">
     <a class="btn primary-soft" href="v3-redflags.html">Red Flags</a>
     <a class="btn quiet" href="v3-10-signs-targeted-online.html">10 Signs Targeted Online</a>
-    <a class="btn quiet" href="v3-child-being-groomed-signs.html">Grooming Signs</a>
+    <a class="btn quiet" href="v3-signs-my-child-is-being-groomed-online.html">Grooming Signs</a>
     <a class="btn quiet" href="v3-why-kids-dont-tell-parents-online-safety.html">Why Kids Don’t Tell</a>
   </div>
 </section>
 
 <section class="card center-card">
+  <div class="home-section-kicker">Devices and trust</div>
   <h2>Controls help, but they are not the whole solution</h2>
 
-  <p class="section-lead center" style="max-width:900px;margin:0 auto 16px;">
+  <p class="section-lead center" style="max-width:920px;margin:0 auto 20px;">
     Parental controls are useful, but they cannot replace trust, visibility, routines, and calm conversations. POSH helps parents build all of it together.
   </p>
 
@@ -335,7 +745,7 @@
     </article>
   </div>
 
-  <div class="btn-grid btn-grid-soft" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:18px;">
+  <div class="home-final-actions">
     <a class="btn primary-soft" href="v3-best-parental-control-apps.html">Control Apps</a>
     <a class="btn quiet" href="v3-devices.html">Device Safety</a>
     <a class="btn quiet" href="v3-how-to-check-a-device-without-causing-panic.html">Check a Device Calmly</a>
@@ -343,10 +753,11 @@
   </div>
 </section>
 
-<section class="card hero-warning center-card">
+<section class="card hero-warning center-card home-premium-cta">
+  <div class="home-section-kicker">Urgent situations</div>
   <h2>When to move faster</h2>
 
-  <p class="section-lead center" style="max-width:880px;margin:0 auto 16px;">
+  <p class="section-lead center" style="max-width:900px;margin:0 auto 16px;">
     Most families should start with practical safety steps. Some situations need calm action now.
   </p>
 
@@ -355,7 +766,7 @@
     <p class="mb-0"><strong>Do not shame. Do not panic. Do not delete evidence first. Slow the contact down and get help.</strong></p>
   </div>
 
-  <div class="btn-grid btn-grid-soft" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:18px;">
+  <div class="home-final-actions">
     <a class="btn primary-soft" href="v3-what-to-do-if-your-child-is-in-danger-online.html">Urgent Help</a>
     <a class="btn quiet" href="v3-first-24-hours-online-incident.html">First 24 Hours</a>
     <a class="btn quiet" href="v3-my-child-is-being-blackmailed-online.html">Blackmail or Threats</a>
@@ -364,9 +775,10 @@
 </section>
 
 <section class="card center-card">
-  <h2>Why POSH exists</h2>
+  <div class="home-section-kicker">Why POSH exists</div>
+  <h2>Built for parents who want clarity, not panic</h2>
 
-  <p class="section-lead center" style="max-width:920px;margin:0 auto;">
+  <p class="section-lead center" style="max-width:930px;margin:0 auto;">
     POSH exists because parenting advice did not keep up with the speed of digital life.
     <br/><br/>
     Children are not just watching screens anymore. They are socialising, gaming, learning, hiding, reacting, trusting, comparing, and being contacted through systems many parents never had growing up.
@@ -374,15 +786,15 @@
     <strong>POSH is here to help parents act earlier, understand more, and protect with confidence instead of panic.</strong>
   </p>
 
-  <div class="btn-grid btn-grid-soft" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:18px;">
+  <div class="home-final-actions">
     <a class="btn primary-soft" href="v3-why-posh-exists.html">Why POSH Exists</a>
     <a class="btn quiet" href="v3-share.html">Share POSH</a>
-    <a class="btn quiet" href="v3-support.html">Support POSH</a>
     <a class="btn quiet" href="v3-all-downloads.html">Download Guides</a>
   </div>
 </section>
 
 <section class="card next-steps center-card">
+  <div class="home-section-kicker">Next steps</div>
   <h2>Best next pages</h2>
 
   <p class="section-lead center" style="max-width:860px;margin:0 auto 16px;">
