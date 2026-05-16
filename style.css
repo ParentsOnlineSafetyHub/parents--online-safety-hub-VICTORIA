@@ -2581,6 +2581,68 @@ footer,
   }
 }
 
+/* =========================================================
+   POSH MOBILE STICKY BAR SIZE REDUCTION
+   Keeps the action bar useful without taking over the page
+   ========================================================= */
+
+@media (max-width: 700px){
+
+  .posh-action-bar{
+    bottom:8px;
+    width:min(calc(100% - 18px), 460px);
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+    padding:7px;
+    border-radius:15px;
+    background:rgba(6,19,38,.72);
+  }
+
+  .posh-action-btn{
+    min-height:36px;
+    padding:7px 6px;
+    font-size:.78rem;
+    line-height:1.15;
+    border-radius:999px;
+    font-weight:800;
+  }
+
+  .posh-back-to-top{
+    bottom:72px;
+    width:42px;
+    height:42px;
+    font-size:1rem;
+  }
+
+  body{
+    padding-bottom:66px;
+  }
+}
+
+@media (max-width: 420px){
+
+  .posh-action-bar{
+    grid-template-columns:repeat(4,1fr);
+    gap:5px;
+    padding:6px;
+  }
+
+  .posh-action-btn{
+    min-height:34px;
+    padding:6px 4px;
+    font-size:.72rem;
+    letter-spacing:-.01em;
+  }
+
+  .posh-back-to-top{
+    bottom:68px;
+  }
+
+  body{
+    padding-bottom:62px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce){
   html{
     scroll-behavior:auto;
