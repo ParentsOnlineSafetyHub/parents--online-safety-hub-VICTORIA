@@ -498,6 +498,106 @@
     "v3-why-posh-exists.html": [POSH.start, POSH.parentSystem, POSH.share, POSH.support]
   };
 
+/* =========================================================
+     POSH ADDITIONS — REPORTING / SAFE ADULT / IMAGE SAFETY CLUSTER
+     Delicate update: adds new pages without rewriting core systems.
+  ========================================================= */
+
+  Object.assign(POSH, {
+    reportingUSA: "v3-reporting-usa.html",
+    reportingUK: "v3-reporting-uk.html",
+    reportingEurope: "v3-reporting-europe.html",
+
+    officialReportingAustralia: "v3-official-reporting-pathways-australia.html",
+    reportWithoutWorse: "v3-how-to-report-without-making-it-worse.html",
+    evidenceMistakes: "v3-what-not-to-do-with-evidence.html",
+
+    sadisticOnlineExploitation: "v3-sadistic-online-exploitation.html",
+    aiNudifyDeepfakeRisks: "v3-ai-nudify-deepfake-risks.html",
+    takeItDownImageRemoval: "v3-take-it-down-and-image-removal.html",
+    firstDayPhotoSafety: "v3-first-day-photo-safety.html",
+
+    safeAdultNetworkCard: "v3-safe-adult-network-card.html",
+    safeAdultResponseSystem: "v3-safe-adult-response-system.html",
+    safeAdultWarningSigns: "v3-safe-adult-warning-signs.html",
+    whatEverySafeAdultShouldSay: "v3-what-every-safe-adult-should-say.html",
+    onlineSafetyTrainingEveryone: "v3-online-safety-training-for-everyone.html",
+
+    grandparentsOnlineSafety: "v3-grandparents-online-safety.html",
+    parentsOnlineSafetyTraining: "v3-parents-online-safety-training.html",
+    carersOnlineSafetyTraining: "v3-carers-online-safety-training.html",
+    teachersOnlineSafetyTraining: "v3-teachers-online-safety-training.html",
+    coachesOnlineSafetyTraining: "v3-coaches-online-safety-training.html",
+    olderSiblingsOnlineSafetyGuide: "v3-older-siblings-online-safety-guide.html",
+    babysittersOnlineSafetyGuide: "v3-babysitters-online-safety-guide.html"
+  });
+
+  /*
+    Both first-24-hours pages now exist.
+    Keep the old redirect disabled so app.js does not rewrite every link away from v3-first-24-hours.html.
+  */
+  delete REDIRECT_MAP["v3-first-24-hours.html"];
+
+  NAV_GROUPS[1].links.push(
+    { href: POSH.officialReportingAustralia, label: "Official Australia Pathways", type: "Reporting", keywords: "official reporting pathways australia accce esafety police 000 child safety" },
+    { href: POSH.reportWithoutWorse, label: "Report Without Making It Worse", type: "Reporting", keywords: "how to report safely without making worse evidence escalation child safety" },
+    { href: POSH.evidenceMistakes, label: "Evidence Mistakes", type: "Evidence", keywords: "what not to do with evidence do not forward delete post screenshots child safety" },
+    { href: POSH.takeItDownImageRemoval, label: "Image Removal", type: "Image Safety", keywords: "take it down image removal ncmec esafety intimate image abuse child safety" },
+    { href: POSH.firstDayPhotoSafety, label: "First-Day Photo Safety", type: "Image Safety", keywords: "first day photo safety school photos uniforms location privacy child images" },
+    { href: POSH.aiNudifyDeepfakeRisks, label: "AI Deepfake Risks", type: "AI Safety", keywords: "ai nudify deepfake image abuse fake nude children online safety" },
+    { href: POSH.sadisticOnlineExploitation, label: "Sadistic Online Exploitation", type: "Exploitation", keywords: "sadistic online exploitation coercion humiliation blackmail threats grooming" }
+  );
+
+  NAV_GROUPS.splice(2, 0, {
+    title: "Safe Adults & Whole-Family Training",
+    links: [
+      { href: POSH.onlineSafetyTrainingEveryone, label: "Training For Every Adult", type: "Training Hub", keywords: "safe adult training everyone parents grandparents teachers coaches carers family" },
+      { href: POSH.safeAdultNetworkCard, label: "Safe Adult Network Card", type: "Safe Adult", keywords: "safe adult network card village protect children trusted adults" },
+      { href: POSH.safeAdultResponseSystem, label: "Safe Adult Response System", type: "Safe Adult", keywords: "safe adult response system what to do when child tells online safety" },
+      { href: POSH.safeAdultWarningSigns, label: "Safe Adult Warning Signs", type: "Warning Signs", keywords: "safe adult warning signs child online safety secrecy grooming blackmail" },
+      { href: POSH.whatEverySafeAdultShouldSay, label: "What Every Safe Adult Should Say", type: "Scripts", keywords: "what every safe adult should say child opens up scripts calm response" },
+      { href: POSH.grandparentsOnlineSafety, label: "Grandparents Guide", type: "Family Guide", keywords: "grandparents online safety older family members apps games warning signs" },
+      { href: POSH.parentsOnlineSafetyTraining, label: "Parent Training", type: "Training", keywords: "parents online safety training family rules devices reporting" },
+      { href: POSH.carersOnlineSafetyTraining, label: "Carer Training", type: "Training", keywords: "carers online safety training children duty of care" },
+      { href: POSH.teachersOnlineSafetyTraining, label: "Teacher Training", type: "Training", keywords: "teachers school staff safeguarding disclosure online safety" },
+      { href: POSH.coachesOnlineSafetyTraining, label: "Coach Training", type: "Training", keywords: "coaches sport activity leaders child safety online disclosure" },
+      { href: POSH.olderSiblingsOnlineSafetyGuide, label: "Older Sibling Guide", type: "Family Guide", keywords: "older sibling online safety guide do not carry unsafe secrets" },
+      { href: POSH.babysittersOnlineSafetyGuide, label: "Babysitter Guide", type: "Family Guide", keywords: "babysitter sleepover adult child online safety warning signs" }
+    ]
+  });
+
+  Object.assign(SEARCH_ALIASES, {
+    "safe adult": ["safe adult network card", "safe adult response system", "what every safe adult should say", "safe adult warning signs"],
+    safeadult: ["safe adult network card", "safe adult response system"],
+    village: ["safe adult network card", "training for every adult", "grandparents guide"],
+    grandparent: ["grandparents guide", "safe adult network card", "what every safe adult should say"],
+    grandparents: ["grandparents guide", "safe adult network card", "training for every adult"],
+    teacher: ["teacher training", "safe adult warning signs", "safe adult response system"],
+    coach: ["coach training", "safe adult warning signs"],
+    babysitter: ["babysitter guide", "safe adult network card"],
+    sibling: ["older sibling guide", "safe adult network card"],
+    "older sibling": ["older sibling guide", "safe adult network card"],
+
+    accce: ["official australia pathways", "australia reporting", "report & get help"],
+    esafety: ["official australia pathways", "australia reporting", "image removal"],
+    "official reporting": ["official australia pathways", "report & get help"],
+    "report safely": ["report without making it worse", "evidence mistakes", "official australia pathways"],
+    "making it worse": ["report without making it worse", "evidence mistakes"],
+
+    evidence: ["evidence guide", "evidence mistakes", "report without making it worse"],
+    screenshots: ["evidence guide", "evidence mistakes", "report without making it worse"],
+    "do not forward": ["evidence mistakes", "image removal", "first-day photo safety"],
+    "do not delete": ["evidence mistakes", "evidence guide"],
+    "what not": ["evidence mistakes"],
+
+    deepfake: ["ai deepfake risks", "image removal", "first-day photo safety"],
+    nudify: ["ai deepfake risks", "image removal"],
+    "ai nude": ["ai deepfake risks", "image removal"],
+    "fake image": ["ai deepfake risks", "image removal"],
+    "take it down": ["image removal", "first-day photo safety"],
+    takedown: ["image removal", "official australia pathways"],
+    "image removal": ["image removal", "ai deepfake risks
+
   const ALL_LINKS = dedupeLinks(NAV_GROUPS.flatMap(group => group.links));
 
   function qs(selector, root = document) {
