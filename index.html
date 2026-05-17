@@ -8,11 +8,15 @@
 
 <meta name="description" content="POSH helps parents and safe adults build safer digital families with practical safety checks, device guidance, family rules, conversation scripts, platform awareness, warning signs, and calm action pathways."/>
 <meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#071a34"/>
+<meta name="application-name" content="POSH"/>
+<meta name="apple-mobile-web-app-title" content="POSH"/>
 <link rel="canonical" href="https://poshaussie.com.au/"/>
 
 <meta property="og:title" content="Parents Online Safety Hub | POSH"/>
 <meta property="og:description" content="You’re not overreacting. Parenting online is different now. POSH helps parents and safe adults build safer digital families with practical tools, calm conversations, device guidance, warning signs, and early action pathways."/>
 <meta property="og:image" content="https://poshaussie.com.au/posh-home.png"/>
+<meta property="og:image:alt" content="Parents Online Safety Hub"/>
 <meta property="og:url" content="https://poshaussie.com.au/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="POSH"/>
@@ -21,7 +25,9 @@
 <meta name="twitter:title" content="Parents Online Safety Hub | POSH"/>
 <meta name="twitter:description" content="Helping parents and safe adults build safer digital families."/>
 <meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png"/>
+<meta name="twitter:image:alt" content="Parents Online Safety Hub"/>
 
+<link rel="preload" as="image" href="POSH-HERO.png"/>
 <link rel="stylesheet" href="style.css"/>
 
 <script type="application/ld+json">
@@ -29,6 +35,7 @@
   "@context":"https://schema.org",
   "@type":"Organization",
   "name":"POSH",
+  "alternateName":"Parents Online Safety Hub",
   "url":"https://poshaussie.com.au/",
   "logo":"https://poshaussie.com.au/posh-home.png"
 }
@@ -39,11 +46,27 @@
   "@context":"https://schema.org",
   "@type":"WebSite",
   "name":"POSH",
+  "alternateName":"Parents Online Safety Hub",
   "url":"https://poshaussie.com.au/",
   "potentialAction":{
     "@type":"SearchAction",
     "target":"https://poshaussie.com.au/v3-search.html?q={search_term_string}",
     "query-input":"required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Parents Online Safety Hub | POSH",
+  "url":"https://poshaussie.com.au/",
+  "description":"POSH helps parents and safe adults build safer digital families with practical safety checks, device guidance, family rules, conversation scripts, platform awareness, warning signs, and calm action pathways.",
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"POSH",
+    "url":"https://poshaussie.com.au/"
   }
 }
 </script>
@@ -92,6 +115,7 @@
 
 <body class="home-page">
 <div class="wrap">
+
 <div class="posh-global-hero-wrap" data-posh-main-hero="true">
   <a href="index.html" class="posh-global-hero-link" aria-label="Back to POSH home">
     <span class="posh-global-hero-media">
@@ -99,13 +123,14 @@
         src="POSH-HERO.png"
         alt="Parents Online Safety Hub"
         class="posh-global-hero-img is-loaded"
+        fetchpriority="high"
         onerror="this.onerror=null;this.src='posh-hero.png';"
       />
     </span>
   </a>
 </div>
 
-<header class="card home-intro home-intro-hero center-card">
+<header class="card home-intro home-intro-hero center-card" id="top">
   <div class="home-kicker">Parents Online Safety Hub</div>
 
   <h1 class="page-title mb-12">You’re Not Overreacting. Parenting Online Is Different Now.</h1>
@@ -134,7 +159,9 @@
 
 <div id="nav"></div>
 
-<section class="card center-card">
+<main id="main-content">
+
+<section class="card center-card" id="safe-adults">
   <h2>Online safety is not just a parent job</h2>
 
   <p class="section-lead center" style="max-width:940px;margin:0 auto 18px;">
@@ -169,10 +196,11 @@
     <a class="btn quiet" href="v3-grandparents-online-safety.html">Grandparents Guide</a>
     <a class="btn quiet" href="v3-safe-adult-warning-signs.html">Safe Adult Warning Signs</a>
     <a class="btn quiet" href="v3-what-every-safe-adult-should-say.html">What Safe Adults Should Say</a>
+    <a class="btn quiet" href="v3-safe-adult-network-card.html">Safe Adult Network Card</a>
   </div>
 </section>
 
-<section class="card center-card">
+<section class="card center-card" id="parent-problem">
   <h2>Start with the real problem parents face</h2>
 
   <p class="section-lead center" style="max-width:920px;margin:0 auto 18px;">
@@ -197,7 +225,7 @@
   </div>
 </section>
 
-<section class="card center-card">
+<section class="card center-card" id="choose-path">
   <h2>Choose what your family needs first</h2>
 
   <p class="section-lead center" style="max-width:880px;margin:0 auto 18px;">
@@ -245,7 +273,7 @@
   </div>
 </section>
 
-<section class="card center-card">
+<section class="card center-card" id="family-safety-system">
   <h2>The POSH family safety system</h2>
 
   <p class="section-lead center" style="max-width:920px;margin:0 auto 18px;">
@@ -278,7 +306,7 @@
   </div>
 </section>
 
-<section class="card center-card">
+<section class="card center-card" id="why-kids-hide">
   <h2>Why children hide things online</h2>
 
   <p class="section-lead center" style="max-width:920px;margin:0 auto 18px;">
@@ -309,7 +337,7 @@
   </div>
 </section>
 
-<section class="card center-card">
+<section class="card center-card" id="platforms">
   <h2>Apps, games, and platforms</h2>
 
   <p class="section-lead center" style="max-width:920px;margin:0 auto 16px;">
@@ -323,7 +351,7 @@
   </div>
 
   <div class="btn-grid btn-grid-soft" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;">
-    <a class="btn primary-soft" href="v3-platforms.html">Platform Overview</a>
+    <a class="btn primary-soft" href="v3-platform-risks-overview.html">Platform Overview</a>
     <a class="btn quiet" href="v3-game-roblox.html">Roblox</a>
     <a class="btn quiet" href="v3-social-discord.html">Discord</a>
     <a class="btn quiet" href="v3-social-snapchat.html">Snapchat</a>
@@ -337,7 +365,7 @@
   </div>
 </section>
 
-<section class="card center-card">
+<section class="card center-card" id="warning-signs">
   <h2>Warning signs, kept in context</h2>
 
   <p class="section-lead center" style="max-width:880px;margin:0 auto 16px;">
@@ -369,7 +397,7 @@
   </div>
 </section>
 
-<section class="card center-card">
+<section class="card center-card" id="controls">
   <h2>Controls help, but they are not the whole solution</h2>
 
   <p class="section-lead center" style="max-width:900px;margin:0 auto 16px;">
@@ -401,7 +429,7 @@
   </div>
 </section>
 
-<section class="card hero-warning center-card">
+<section class="card hero-warning center-card" id="urgent-help">
   <h2>When to move faster</h2>
 
   <p class="section-lead center" style="max-width:880px;margin:0 auto 16px;">
@@ -421,7 +449,7 @@
   </div>
 </section>
 
-<section class="card center-card">
+<section class="card center-card" id="why-posh-exists">
   <h2>Why POSH exists</h2>
 
   <p class="section-lead center" style="max-width:920px;margin:0 auto;">
@@ -439,7 +467,7 @@
   </div>
 </section>
 
-<section class="card next-steps center-card">
+<section class="card next-steps center-card" id="best-next-pages">
   <h2>Best next pages</h2>
 
   <p class="section-lead center" style="max-width:860px;margin:0 auto 16px;">
@@ -454,7 +482,7 @@
     <a href="v3-safe-adult-response-system.html" class="next-item">Safe Adult Response</a>
     <a href="v3-house-rules.html" class="next-item">House Rules</a>
     <a href="v3-devices.html" class="next-item">Device Safety</a>
-    <a href="v3-platforms.html" class="next-item">Platform Risks</a>
+    <a href="v3-platform-risks-overview.html" class="next-item">Platform Risks</a>
     <a href="v3-reporting.html" class="next-item">Report &amp; Get Help</a>
   </div>
 
@@ -467,6 +495,8 @@
   </div>
 </section>
 
+</main>
+
 <div id="footer"></div>
 
 </div>
@@ -476,8 +506,8 @@
 <script>
   /*
     Homepage cleanup:
-    app.js still keeps the sticky action bar live.
-    This only removes duplicated homepage support/share/related panels that app.js auto-injects.
+    app.js keeps the sticky action bar live.
+    This removes duplicated homepage auto-panels only.
   */
   document.addEventListener("DOMContentLoaded", function () {
     window.setTimeout(function () {
@@ -495,17 +525,39 @@
     }, 150);
   });
 
-  var tallyWait = setInterval(function () {
-    if (window.goatcounter && window.goatcounter.visit_count) {
-      clearInterval(tallyWait);
+  /*
+    GoatCounter visitor tally:
+    Clears the loading text before appending the counter.
+  */
+  (function () {
+    var tries = 0;
+    var maxTries = 80;
+    var tallyWait = setInterval(function () {
+      tries += 1;
 
-      window.goatcounter.visit_count({
-        append: "#visitor-count",
-        type: "html",
-        path: "index.html"
-      });
-    }
-  }, 100);
+      if (window.goatcounter && typeof window.goatcounter.visit_count === "function") {
+        clearInterval(tallyWait);
+
+        var counter = document.querySelector("#visitor-count");
+        if (counter) counter.textContent = "";
+
+        window.goatcounter.visit_count({
+          append: "#visitor-count",
+          type: "html",
+          path: "index.html"
+        });
+
+        return;
+      }
+
+      if (tries >= maxTries) {
+        clearInterval(tallyWait);
+
+        var fallback = document.querySelector("#visitor-count");
+        if (fallback) fallback.textContent = "Available soon";
+      }
+    }, 100);
+  })();
 </script>
 
 </body>
