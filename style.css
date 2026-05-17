@@ -2835,3 +2835,114 @@ body.js-ready .wrap{
     padding-bottom:260px;
   }
 }
+
+/* =========================================================
+   POSH RESTORE PATCH — HERO / NAV / PROGRESS / MOBILE BAR
+   Append at very bottom of style.css
+========================================================= */
+
+.posh-reading-progress{
+  display:block !important;
+}
+
+.nav-shell .nav-accordion{
+  display:grid !important;
+}
+
+.nav-shell .nav-group{
+  display:block !important;
+}
+
+.nav-shell .nav-group summary{
+  display:block !important;
+}
+
+.posh-action-bar{
+  display:grid;
+}
+
+.posh-action-btn{
+  text-decoration:none;
+}
+
+/* Prevent old safe-adult padding rules from making mobile feel huge */
+body.js-ready .wrap{
+  padding-bottom:96px;
+}
+
+@media (max-width:700px){
+
+  body{
+    padding-bottom:0 !important;
+  }
+
+  body.js-ready .wrap{
+    padding-bottom:88px !important;
+  }
+
+  .posh-action-bar{
+    bottom:8px !important;
+    width:min(calc(100% - 18px), 460px) !important;
+    grid-template-columns:repeat(4,1fr) !important;
+    gap:6px !important;
+    padding:7px !important;
+    border-radius:15px !important;
+    background:rgba(6,19,38,.76) !important;
+  }
+
+  .posh-action-btn{
+    min-height:34px !important;
+    padding:7px 5px !important;
+    font-size:.74rem !important;
+    line-height:1.12 !important;
+    border-radius:999px !important;
+    font-weight:800 !important;
+  }
+
+  .posh-back-to-top{
+    bottom:72px !important;
+    width:42px !important;
+    height:42px !important;
+    font-size:1rem !important;
+  }
+
+  .posh-sticky-support{
+    left:auto !important;
+    right:10px !important;
+    bottom:72px !important;
+    max-width:170px !important;
+    gap:6px !important;
+  }
+
+  .posh-sticky-support a{
+    width:auto !important;
+    padding:8px 10px !important;
+    font-size:.78rem !important;
+    line-height:1.15 !important;
+    border-radius:12px !important;
+  }
+}
+
+@media (max-width:420px){
+
+  body.js-ready .wrap{
+    padding-bottom:84px !important;
+  }
+
+  .posh-action-bar{
+    grid-template-columns:repeat(4,1fr) !important;
+    gap:5px !important;
+    padding:6px !important;
+  }
+
+  .posh-action-btn{
+    min-height:32px !important;
+    padding:6px 4px !important;
+    font-size:.68rem !important;
+    letter-spacing:-.01em !important;
+  }
+
+  .posh-back-to-top{
+    bottom:68px !important;
+  }
+}
