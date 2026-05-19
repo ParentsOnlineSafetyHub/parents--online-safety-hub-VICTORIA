@@ -854,6 +854,64 @@
     });
   }
 
+/* =========================================================
+   POSH ADDITION — FREE CHILD-SAFETY CHECKS / ADULT ACCOUNTABILITY
+   Adds official POSH position page into Safe Adult navigation.
+========================================================= */
+
+Object.assign(POSH, {
+  freeChildSafetyChecksAccountability: "v3-free-child-safety-checks-safe-adult-accountability.html"
+});
+
+addLinksToGroupByTitle("Safe Adults", [
+  {
+    href: POSH.freeChildSafetyChecksAccountability,
+    label: "Free Checks & Adult Accountability",
+    type: "POSH Position",
+    keywords: "free child safety checks working with children check safe adult accountability agreement safeguarding boundaries child protection false allegations transparency"
+  }
+]);
+
+Object.assign(SEARCH_ALIASES, {
+  "free checks": ["free checks & adult accountability", "training for every adult", "safe adult warning signs"],
+  "working with children": ["free checks & adult accountability", "safe adult network card", "training for every adult"],
+  "working with childrens": ["free checks & adult accountability", "safe adult network card", "training for every adult"],
+  "wwcc": ["free checks & adult accountability", "training for every adult"],
+  accountability: ["free checks & adult accountability", "safe adult network card", "safe adult response system"],
+  "false allegations": ["free checks & adult accountability", "safe adult network card"],
+  "safe adult agreement": ["free checks & adult accountability", "safe adult network card"],
+  "child safety checks": ["free checks & adult accountability", "safe adult warning signs", "training for every adult"]
+});
+
+Object.assign(PAGE_RELATIONS, {
+  "v3-free-child-safety-checks-safe-adult-accountability.html": [
+    POSH.trainingEveryone,
+    POSH.safeAdultNetworkCard,
+    POSH.safeAdultWarningSigns,
+    POSH.safeAdultResponse,
+    POSH.whatSafeAdultsSay,
+    POSH.reporting
+  ],
+
+  "v3-online-safety-training-for-everyone.html": [
+    POSH.freeChildSafetyChecksAccountability,
+    POSH.grandparents,
+    POSH.parentsTraining,
+    POSH.safeAdultWarningSigns,
+    POSH.safeAdultResponse,
+    POSH.whatSafeAdultsSay
+  ],
+
+  "v3-safe-adult-network-card.html": [
+    POSH.freeChildSafetyChecksAccountability,
+    POSH.trainingEveryone,
+    POSH.safeAdultWarningSigns,
+    POSH.safeAdultResponse,
+    POSH.whatSafeAdultsSay,
+    POSH.grandparents
+  ]
+});
+
   /*
     Important:
     ALL_LINKS must be created after every NAV_GROUPS addition above.
@@ -1671,20 +1729,21 @@
     }
 
     const safeAdultPages = [
-      POSH.trainingEveryone,
-      POSH.grandparents,
-      POSH.parentsTraining,
-      POSH.carersTraining,
-      POSH.teachersTraining,
-      POSH.coachesTraining,
-      POSH.familyNetworkGuide,
-      POSH.olderSiblings,
-      POSH.youthWorkers,
-      POSH.babysitters,
-      POSH.safeAdultWarningSigns,
-      POSH.safeAdultResponse,
-      POSH.whatSafeAdultsSay,
-      POSH.safeAdultNetworkCard
+  POSH.trainingEveryone,
+  POSH.grandparents,
+  POSH.parentsTraining,
+  POSH.carersTraining,
+  POSH.teachersTraining,
+  POSH.coachesTraining,
+  POSH.familyNetworkGuide,
+  POSH.olderSiblings,
+  POSH.youthWorkers,
+  POSH.babysitters,
+  POSH.safeAdultWarningSigns,
+  POSH.safeAdultResponse,
+  POSH.whatSafeAdultsSay,
+  POSH.safeAdultNetworkCard,
+  POSH.freeChildSafetyChecksAccountability
     ];
 
     if (safeAdultPages.includes(page)) {
@@ -1973,24 +2032,25 @@
       document.body.classList.add("page-is-urgent");
     }
 
-    if ([
-      POSH.trainingEveryone,
-      POSH.grandparents,
-      POSH.parentsTraining,
-      POSH.carersTraining,
-      POSH.teachersTraining,
-      POSH.coachesTraining,
-      POSH.familyNetworkGuide,
-      POSH.olderSiblings,
-      POSH.youthWorkers,
-      POSH.babysitters,
-      POSH.safeAdultWarningSigns,
-      POSH.safeAdultResponse,
-      POSH.whatSafeAdultsSay,
-      POSH.safeAdultNetworkCard
-    ].includes(current)) {
-      document.body.classList.add("page-is-safe-adult");
-    }
+   if ([
+  POSH.trainingEveryone,
+  POSH.grandparents,
+  POSH.parentsTraining,
+  POSH.carersTraining,
+  POSH.teachersTraining,
+  POSH.coachesTraining,
+  POSH.familyNetworkGuide,
+  POSH.olderSiblings,
+  POSH.youthWorkers,
+  POSH.babysitters,
+  POSH.safeAdultWarningSigns,
+  POSH.safeAdultResponse,
+  POSH.whatSafeAdultsSay,
+  POSH.safeAdultNetworkCard,
+  POSH.freeChildSafetyChecksAccountability
+].includes(current)) {
+  document.body.classList.add("page-is-safe-adult");
+}
 
     if ([
       POSH.reporting,
