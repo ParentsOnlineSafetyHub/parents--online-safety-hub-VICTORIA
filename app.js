@@ -912,6 +912,64 @@ Object.assign(PAGE_RELATIONS, {
   ]
 });
 
+/* =========================================================
+   POSH ADDITION — SAFE ADULT ACCOUNTABILITY STANDARD
+   Adds the official standard page into Safe Adult navigation.
+========================================================= */
+
+Object.assign(POSH, {
+  safeAdultAccountabilityStandard: "v3-posh-safe-adult-accountability-standard.html"
+});
+
+addLinksToGroupByTitle("Safe Adults", [
+  {
+    href: POSH.safeAdultAccountabilityStandard,
+    label: "Safe Adult Accountability Standard",
+    type: "POSH Standard",
+    keywords: "posh safe adult accountability standard agreement qr code id verification child safety checks false misleading information malicious reports safeguarding"
+  }
+]);
+
+Object.assign(SEARCH_ALIASES, {
+  "safe adult standard": ["safe adult accountability standard", "free checks & adult accountability", "safe adult network card"],
+  "accountability standard": ["safe adult accountability standard", "safe adult network card"],
+  "posh standard": ["safe adult accountability standard", "training for every adult"],
+  "qr code": ["safe adult accountability standard", "free checks & adult accountability"],
+  "posh id": ["safe adult accountability standard", "free checks & adult accountability"],
+  "misleading information": ["safe adult accountability standard", "free checks & adult accountability"],
+  "false information": ["safe adult accountability standard", "free checks & adult accountability"],
+  "malicious reports": ["safe adult accountability standard", "free checks & adult accountability"],
+  "misuse": ["safe adult accountability standard", "free checks & adult accountability"]
+});
+
+Object.assign(PAGE_RELATIONS, {
+  "v3-posh-safe-adult-accountability-standard.html": [
+    POSH.freeChildSafetyChecksAccountability,
+    POSH.safeAdultNetworkCard,
+    POSH.safeAdultWarningSigns,
+    POSH.safeAdultResponse,
+    POSH.whatSafeAdultsSay,
+    POSH.reporting
+  ],
+
+  "v3-free-child-safety-checks-safe-adult-accountability.html": [
+    POSH.safeAdultAccountabilityStandard,
+    POSH.trainingEveryone,
+    POSH.safeAdultNetworkCard,
+    POSH.safeAdultWarningSigns,
+    POSH.safeAdultResponse,
+    POSH.whatSafeAdultsSay
+  ],
+
+  "v3-safe-adult-network-card.html": [
+    POSH.safeAdultAccountabilityStandard,
+    POSH.freeChildSafetyChecksAccountability,
+    POSH.trainingEveryone,
+    POSH.safeAdultWarningSigns,
+    POSH.safeAdultResponse,
+    POSH.whatSafeAdultsSay
+  ]
+});
   /*
     Important:
     ALL_LINKS must be created after every NAV_GROUPS addition above.
