@@ -3382,3 +3382,404 @@ body.home-page .home-mantra{
     transform:none !important;
   }
 }
+/* =========================================================
+POSH HOMEPAGE V4 — BOOK ECOSYSTEM PREMIUM UPGRADE
+Paste at very bottom of style.css
+========================================================= */
+
+body.posh-home-v4{
+background:
+radial-gradient(circle at 12% 4%, rgba(57,176,255,.16), transparent 28%),
+radial-gradient(circle at 88% 10%, rgba(217,182,90,.12), transparent 26%),
+radial-gradient(circle at 50% 55%, rgba(34,230,211,.06), transparent 32%),
+linear-gradient(180deg,#041123 0%,#08284f 46%,#06172e 100%);
+}
+
+body.posh-home-v4 .wrap{
+width:min(1180px,calc(100% - 28px));
+}
+
+body.posh-home-v4 p{
+color:rgba(244,247,255,.88);
+}
+
+.posh-premium-hero{
+display:grid;
+grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr);
+gap:22px;
+align-items:stretch;
+margin:0 0 24px;
+padding:clamp(24px,4vw,42px);
+border-radius:28px;
+border:1px solid rgba(217,182,90,.28);
+background:
+radial-gradient(circle at 10% 0%, rgba(57,176,255,.14), transparent 36%),
+radial-gradient(circle at 90% 10%, rgba(217,182,90,.13), transparent 35%),
+linear-gradient(180deg,rgba(15,42,85,.96),rgba(8,24,48,.96));
+box-shadow:0 26px 70px rgba(0,0,0,.42);
+overflow:hidden;
+}
+
+.posh-kicker,
+.posh-section-label{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:fit-content;
+max-width:100%;
+margin:0 0 14px;
+padding:9px 15px;
+border-radius:999px;
+border:1px solid rgba(217,182,90,.42);
+background:rgba(217,182,90,.12);
+color:#fff0c4;
+font-weight:900;
+font-size:.78rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+}
+
+.posh-premium-hero h1{
+max-width:780px;
+margin:0 0 16px;
+font-size:clamp(2.35rem,6vw,5.15rem);
+line-height:.98;
+letter-spacing:-.055em;
+text-wrap:balance;
+}
+
+.posh-hero-lead{
+max-width:760px;
+font-size:clamp(1.05rem,1.6vw,1.24rem);
+line-height:1.75;
+}
+
+.posh-hero-message{
+max-width:820px;
+margin:18px 0 0;
+padding:18px;
+border-radius:20px;
+border:1px solid rgba(139,214,255,.22);
+background:rgba(139,214,255,.075);
+}
+
+.posh-hero-message strong,
+.posh-hero-message span{
+display:block;
+}
+
+.posh-hero-message strong{
+margin-bottom:6px;
+}
+
+.posh-hero-side-card{
+padding:22px;
+border-radius:24px;
+border:1px solid rgba(217,182,90,.26);
+background:
+radial-gradient(circle at top, rgba(217,182,90,.13), transparent 42%),
+rgba(255,255,255,.045);
+box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.posh-check-list{
+margin:16px 0 0;
+padding:0;
+list-style:none;
+}
+
+.posh-check-list li{
+margin:0 0 10px;
+padding:11px 12px;
+border-radius:14px;
+background:rgba(255,255,255,.055);
+border:1px solid rgba(255,255,255,.10);
+color:#fff;
+font-weight:800;
+}
+
+.posh-hero-actions,
+.posh-button-row{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:18px;
+}
+
+.posh-hero-small{
+margin-top:16px;
+max-width:820px;
+}
+
+.posh-quick-paths{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:14px;
+margin:0 0 24px;
+}
+
+.posh-quick-paths a{
+min-height:118px;
+padding:18px;
+border-radius:22px;
+border:1px solid rgba(255,255,255,.10);
+background:
+radial-gradient(circle at top left, rgba(139,214,255,.09), transparent 42%),
+rgba(255,255,255,.045);
+box-shadow:0 14px 34px rgba(0,0,0,.22);
+}
+
+.posh-quick-paths strong,
+.posh-quick-paths span{
+display:block;
+}
+
+.posh-quick-paths strong{
+color:#fff;
+font-family:var(--font-heading);
+font-size:1.02rem;
+margin-bottom:6px;
+}
+
+.posh-quick-paths span{
+color:rgba(244,247,255,.72);
+font-size:.94rem;
+line-height:1.55;
+}
+
+.posh-quick-paths a:hover{
+transform:translateY(-2px);
+border-color:rgba(139,214,255,.34);
+background:rgba(139,214,255,.09);
+}
+
+.posh-book-feature{
+display:grid;
+grid-template-columns:minmax(230px,330px) minmax(0,1fr);
+gap:24px;
+align-items:center;
+text-align:left;
+}
+
+.posh-book-cover-card{
+min-height:420px;
+padding:24px;
+border-radius:26px;
+border:1px solid rgba(217,182,90,.42);
+background:
+radial-gradient(circle at center 24%, rgba(57,176,255,.28), transparent 34%),
+radial-gradient(circle at center 70%, rgba(217,182,90,.16), transparent 34%),
+linear-gradient(180deg,#071a34,#030b17);
+box-shadow:0 24px 55px rgba(0,0,0,.42);
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+overflow:hidden;
+position:relative;
+}
+
+.posh-book-cover-card::after{
+content:"";
+position:absolute;
+inset:14px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+pointer-events:none;
+}
+
+.book-badge{
+width:fit-content;
+padding:8px 12px;
+border-radius:999px;
+background:rgba(217,182,90,.15);
+border:1px solid rgba(217,182,90,.42);
+color:#fff1c8;
+font-size:.72rem;
+font-weight:900;
+letter-spacing:.12em;
+text-transform:uppercase;
+}
+
+.posh-book-cover-card h2{
+font-size:clamp(2rem,4vw,3rem);
+line-height:.96;
+letter-spacing:-.045em;
+text-transform:uppercase;
+}
+
+.posh-book-cover-card p{
+color:rgba(244,247,255,.8);
+font-weight:700;
+}
+
+.posh-book-copy h2,
+.posh-value-ladder h2,
+.posh-series-section h2,
+#which-book h2{
+font-size:clamp(1.6rem,3vw,2.35rem);
+line-height:1.14;
+text-wrap:balance;
+}
+
+.posh-ladder-card{
+text-align:left;
+}
+
+.posh-series-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:16px;
+margin-top:22px;
+}
+
+.posh-series-card{
+padding:18px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.105);
+background:
+radial-gradient(circle at top right, rgba(57,176,255,.075), transparent 40%),
+rgba(255,255,255,.04);
+text-align:left;
+transition:.22s ease;
+}
+
+.posh-series-card:hover{
+transform:translateY(-2px);
+border-color:rgba(139,214,255,.30);
+background:rgba(139,214,255,.075);
+}
+
+.posh-series-card span{
+display:inline-flex;
+margin-bottom:10px;
+padding:6px 10px;
+border-radius:999px;
+background:rgba(217,182,90,.12);
+border:1px solid rgba(217,182,90,.26);
+color:#ffe8a8;
+font-size:.72rem;
+font-weight:900;
+letter-spacing:.10em;
+text-transform:uppercase;
+}
+
+.posh-series-card h3{
+margin-bottom:8px;
+}
+
+.posh-series-card p{
+margin-bottom:12px;
+font-size:.96rem;
+}
+
+.posh-series-card a{
+display:inline-flex;
+font-weight:900;
+color:#9fe0ff;
+}
+
+.posh-choice-grid .card.soft{
+text-align:left;
+}
+
+.posh-choice-grid .btn{
+width:auto;
+margin:4px 6px 0 0;
+}
+
+body.posh-home-v4 .card.center-card{
+border-color:rgba(255,255,255,.10);
+background:
+radial-gradient(circle at top left, rgba(139,214,255,.06), transparent 35%),
+linear-gradient(180deg,rgba(15,42,85,.88),rgba(9,27,54,.90));
+}
+
+body.posh-home-v4 .section-lead{
+margin-left:auto;
+margin-right:auto;
+max-width:920px;
+color:rgba(244,247,255,.82);
+}
+
+body.posh-home-v4 .btn-grid{
+margin-top:18px;
+}
+
+body.posh-home-v4 .rule-box{
+max-width:920px;
+margin:18px auto 0;
+}
+
+body.posh-home-v4 .network-flow .pill{
+min-width:min(100%,260px);
+}
+
+body.posh-home-v4 .badges{
+margin:18px auto;
+}
+
+.urgent-rule{
+border-color:rgba(255,107,129,.30);
+background:rgba(255,107,129,.08);
+}
+
+@media (max-width:900px){
+.posh-premium-hero,
+.posh-book-feature{
+grid-template-columns:1fr;
+}
+
+.posh-quick-paths{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.posh-series-grid{
+grid-template-columns:1fr;
+}
+
+.posh-book-cover-card{
+min-height:320px;
+}
+}
+
+@media (max-width:700px){
+body.posh-home-v4 .wrap{
+width:min(100% - 18px,1180px);
+}
+
+.posh-premium-hero{
+padding:20px;
+border-radius:22px;
+}
+
+.posh-premium-hero h1{
+font-size:clamp(2.15rem,11vw,3.55rem);
+}
+
+.posh-hero-actions,
+.posh-button-row{
+flex-direction:column;
+}
+
+.posh-quick-paths{
+grid-template-columns:1fr;
+}
+
+.posh-quick-paths a{
+min-height:auto;
+}
+
+.posh-book-cover-card{
+min-height:280px;
+}
+
+.posh-choice-grid .btn{
+width:100%;
+margin:6px 0 0;
+}
+
+body.posh-home-v4 .grid-2,
+body.posh-home-v4 .grid-3{
+grid-template-columns:1fr;
+}
+}
