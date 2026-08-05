@@ -13,76 +13,72 @@
 <meta name="apple-mobile-web-app-title" content="POSH"/>
 <link rel="canonical" href="https://poshaussie.com.au/"/>
 
+<!-- OpenGraph / Facebook -->
 <meta property="og:title" content="Parents Online Safety Hub | POSH"/>
 <meta property="og:description" content="Smarter children are safer children. POSH helps parents and safe adults build safer digital families with safety checks, calm scripts, device guidance, warning signs, topic pathways and early action steps."/>
-<meta property="og:image" content="https://poshaussie.com.au/posh-home.png"/>
+<meta property="og:image" content="https://poshaussie.com.au/posh-hero.png"/>
 <meta property="og:image:alt" content="Parents Online Safety Hub"/>
 <meta property="og:url" content="https://poshaussie.com.au/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="POSH"/>
 
+<!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Parents Online Safety Hub | POSH"/>
 <meta name="twitter:description" content="Helping parents and safe adults build safer digital families."/>
-<meta name="twitter:image" content="https://poshaussie.com.au/posh-home.png"/>
+<meta name="twitter:image" content="https://poshaussie.com.au/posh-hero.png"/>
 <meta name="twitter:image:alt" content="Parents Online Safety Hub"/>
 
-<link rel="preload" as="image" href="POSH-HERO.png"/>
+<!-- Preload Hero Image & Styles -->
+<link rel="preload" as="image" href="posh-hero.png"/>
 <link rel="stylesheet" href="style.css"/>
 
+<!-- Consolidated JSON-LD Structured Data Graph -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"POSH",
-  "alternateName":"Parents Online Safety Hub",
-  "url":"https://poshaussie.com.au/",
-  "logo":"https://poshaussie.com.au/posh-home.png"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebSite",
-  "name":"POSH",
-  "alternateName":"Parents Online Safety Hub",
-  "url":"https://poshaussie.com.au/"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebPage",
-  "name":"Parents Online Safety Hub | POSH",
-  "url":"https://poshaussie.com.au/",
-  "description":"POSH helps parents and safe adults build safer digital families with practical safety checks, topic pathways, device guidance, family rules, conversation scripts, warning signs and calm action pathways.",
-  "isPartOf":{
-    "@type":"WebSite",
-    "name":"POSH",
-    "url":"https://poshaussie.com.au/"
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"ItemList",
-  "name":"POSH Digital Resilience Topic Pathways",
-  "description":"A 10-pathway POSH safety map covering digital resilience, apps and games, new risks, emotional regulation, frustration tolerance, thinking before clicking, manipulation, executive functioning, confidence and boundaries.",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Digital Resilience Foundations","url":"https://poshaussie.com.au/v3-posh-parent-system.html"},
-    {"@type":"ListItem","position":2,"name":"The Digital Playground","url":"https://poshaussie.com.au/v3-platform-risks-overview.html"},
-    {"@type":"ListItem","position":3,"name":"New Risks Families Face","url":"https://poshaussie.com.au/v3-redflags.html"},
-    {"@type":"ListItem","position":4,"name":"Emotional Regulation Online","url":"https://poshaussie.com.au/v3-emotional-regulation-online-safety.html"},
-    {"@type":"ListItem","position":5,"name":"Frustration Tolerance","url":"https://poshaussie.com.au/v3-frustration-intolerance-online-safety.html"},
-    {"@type":"ListItem","position":6,"name":"Thinking Before Clicking","url":"https://poshaussie.com.au/v3-critical-thinking-online-safety.html"},
-    {"@type":"ListItem","position":7,"name":"Manipulation and Misinformation","url":"https://poshaussie.com.au/v3-my-child-is-being-manipulated-online.html"},
-    {"@type":"ListItem","position":8,"name":"Executive Functioning","url":"https://poshaussie.com.au/v3-executive-functioning-online-safety.html"},
-    {"@type":"ListItem","position":9,"name":"Confidence Is a Safety Skill","url":"https://poshaussie.com.au/v3-confidence-is-a-safety-skill.html"},
-    {"@type":"ListItem","position":10,"name":"Healthy Boundaries","url":"https://poshaussie.com.au/v3-house-rules.html"}
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://poshaussie.com.au/#org",
+      "name": "POSH",
+      "alternateName": "Parents Online Safety Hub",
+      "url": "https://poshaussie.com.au/",
+      "logo": "https://poshaussie.com.au/posh-hero.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://poshaussie.com.au/#website",
+      "name": "POSH",
+      "alternateName": "Parents Online Safety Hub",
+      "url": "https://poshaussie.com.au/",
+      "publisher": { "@id": "https://poshaussie.com.au/#org" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://poshaussie.com.au/#webpage",
+      "name": "Parents Online Safety Hub | POSH",
+      "url": "https://poshaussie.com.au/",
+      "description": "POSH helps parents and safe adults build safer digital families with practical safety checks, topic pathways, device guidance, family rules, conversation scripts, warning signs and calm action pathways.",
+      "isPartOf": { "@id": "https://poshaussie.com.au/#website" }
+    },
+    {
+      "@type": "ItemList",
+      "name": "POSH Digital Resilience Topic Pathways",
+      "description": "A 10-pathway POSH safety map covering digital resilience, apps and games, new risks, emotional regulation, frustration tolerance, thinking before clicking, manipulation, executive functioning, confidence and boundaries.",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Digital Resilience Foundations","url":"https://poshaussie.com.au/v3-posh-parent-system.html"},
+        {"@type":"ListItem","position":2,"name":"The Digital Playground","url":"https://poshaussie.com.au/v3-platform-risks-overview.html"},
+        {"@type":"ListItem","position":3,"name":"New Risks Families Face","url":"https://poshaussie.com.au/v3-redflags.html"},
+        {"@type":"ListItem","position":4,"name":"Emotional Regulation Online","url":"https://poshaussie.com.au/v3-emotional-regulation-online-safety.html"},
+        {"@type":"ListItem","position":5,"name":"Frustration Tolerance","url":"https://poshaussie.com.au/v3-frustration-intolerance-online-safety.html"},
+        {"@type":"ListItem","position":6,"name":"Thinking Before Clicking","url":"https://poshaussie.com.au/v3-critical-thinking-online-safety.html"},
+        {"@type":"ListItem","position":7,"name":"Manipulation and Misinformation","url":"https://poshaussie.com.au/v3-my-child-is-being-manipulated-online.html"},
+        {"@type":"ListItem","position":8,"name":"Executive Functioning","url":"https://poshaussie.com.au/v3-executive-functioning-online-safety.html"},
+        {"@type":"ListItem","position":9,"name":"Confidence Is a Safety Skill","url":"https://poshaussie.com.au/v3-confidence-is-a-safety-skill.html"},
+        {"@type":"ListItem","position":10,"name":"Healthy Boundaries","url":"https://poshaussie.com.au/v3-house-rules.html"}
+      ]
+    }
   ]
 }
 </script>
@@ -91,13 +87,24 @@
 <body class="home-page posh-home-v4">
 <div class="wrap">
 
+  <!-- Sticky Urgent Help Triage Strip -->
+  <aside class="posh-urgent-banner" aria-label="Urgent safety notice">
+    <div class="posh-urgent-banner-inner">
+      <span><strong>Immediate Safety Concern?</strong> Threats, blackmail, sexual requests, or real-world danger require calm action now.</span>
+      <a class="btn-urgent-pill" href="v3-what-to-do-if-your-child-is-in-danger-online.html">Open Urgent Help &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Global Brand Hero Banner -->
   <div class="posh-global-hero-wrap" data-posh-main-hero="true">
     <a href="index.html" class="posh-global-hero-link" aria-label="Back to POSH home">
       <span class="posh-global-hero-media">
         <img
-          src="POSH-HERO.png"
+          src="posh-hero.png"
           alt="Parents Online Safety Hub"
           class="posh-global-hero-img is-loaded"
+          width="1200"
+          height="630"
           fetchpriority="high"
           onerror="this.onerror=null;this.src='posh-hero.png';"
         />
@@ -105,6 +112,7 @@
     </a>
   </div>
 
+  <!-- Premium Header & Core Message -->
   <header class="posh-premium-hero" id="top">
     <div class="posh-hero-content">
       <p class="posh-kicker">Parents Online Safety Hub</p>
@@ -115,11 +123,11 @@
         POSH helps parents, carers, teachers, grandparents, coaches and safe adults understand the online world children live in — without panic, shame or complicated technology language.
       </p>
 
-      <div class="posh-hero-message">
-        <strong>You are not overreacting. Parenting online is different now.</strong>
-        <span>
+      <div class="posh-hero-message" role="region" aria-label="Key assurance">
+        <p><strong>You are not overreacting. Parenting online is different now.</strong></p>
+        <p>
           Kids are growing up inside games, group chats, private messages, algorithms, livestreams, digital rewards and social pressure. POSH helps adults slow the moment down, understand the pattern and take the next right step.
-        </span>
+        </p>
       </div>
 
       <div class="posh-hero-actions">
@@ -130,12 +138,12 @@
       </div>
 
       <p class="small posh-hero-small">
-        If threats, blackmail, sexual requests, image pressure or real-world danger are involved, use <strong>Urgent Help</strong>. Otherwise, start by building the safety system around your child.
+        If threats, blackmail, sexual requests, image pressure or real-world danger are involved, use <a href="v3-what-to-do-if-your-child-is-in-danger-online.html"><strong>Urgent Help</strong></a>. Otherwise, start by building the safety system around your child.
       </p>
     </div>
 
-    <aside class="posh-hero-side-card">
-      <h2>The POSH promise</h2>
+    <aside class="posh-hero-side-card" aria-labelledby="posh-promise-heading">
+      <h2 id="posh-promise-heading">The POSH Promise</h2>
       <p>
         Safety education should be simple enough to understand, calm enough to use and strong enough to teach forward.
       </p>
@@ -152,6 +160,7 @@
 
   <main id="main-content">
 
+    <!-- Primary Quick Access Pathways -->
     <section class="posh-quick-paths" aria-label="Quick safety pathways">
       <a href="v3-safety-score.html">
         <strong>Safety Check</strong>
@@ -174,8 +183,9 @@
       </a>
     </section>
 
+    <!-- Free Gateway Guide Spotlight -->
     <section class="card center-card posh-book-gateway" id="smarter-children">
-      <div class="posh-section-label">Free gateway guide</div>
+      <div class="posh-section-label">Free Gateway Guide</div>
 
       <div class="posh-book-feature">
         <div class="posh-book-cover-card starter-guide-cover">
@@ -204,8 +214,9 @@
       </div>
     </section>
 
+    <!-- The Learning Ladder / Transparency Section -->
     <section class="card center-card posh-value-ladder" id="value-ladder">
-      <div class="posh-section-label">The POSH learning ladder</div>
+      <div class="posh-section-label">The POSH Learning Ladder</div>
 
       <h2>Topic pathways now, book links later</h2>
 
@@ -215,22 +226,23 @@
 
       <div class="grid-3">
         <article class="info-box posh-ladder-card">
-          <h3>Website topic pages</h3>
+          <h3>Website Topic Pages</h3>
           <p>Live now. Parents can learn the topic, use practical guidance and move through the site without broken book links.</p>
         </article>
 
         <article class="info-box posh-ladder-card">
-          <h3>Downloadable tools</h3>
+          <h3>Downloadable Tools</h3>
           <p>PDFs, scripts, frameworks and cards support families who need printable safety resources.</p>
         </article>
 
         <article class="info-box posh-ladder-card">
-          <h3>Published books later</h3>
+          <h3>Published Books Later</h3>
           <p>Once the books are live, the topic pages can add purchase links without changing the homepage pathway.</p>
         </article>
       </div>
     </section>
 
+    <!-- 10 Digital Resilience Topic Pathways -->
     <section class="card center-card posh-series-section" id="topic-pathways">
       <div class="posh-section-label">POSH Digital Resilience Topic Pathways</div>
 
@@ -315,13 +327,15 @@
       </div>
 
       <div class="callout center-callout" style="margin-top:18px;">
-        <strong>Publishing note:</strong><br/>
-        Book purchase links will be added to these topic pathways once the books are live. Until then, every pathway sends visitors to useful POSH guidance.
+        <p class="mb-0">
+          <strong>Publishing Note:</strong> Book purchase links will be added to these topic pathways once the books are live. Until then, every pathway sends visitors to useful POSH guidance.
+        </p>
       </div>
     </section>
 
+    <!-- Guided Doorways by Need -->
     <section class="card center-card" id="which-path">
-      <div class="posh-section-label">Choose the right starting point</div>
+      <div class="posh-section-label">Choose The Right Starting Point</div>
 
       <h2>Which POSH topic should I start with?</h2>
 
@@ -334,63 +348,82 @@
         <article class="card soft mb-0">
           <h3>I am new to online safety</h3>
           <p>Start with the free guide, then the parent system.</p>
-          <a class="btn quiet" href="v3-smarter-children-safer-children-free-guide.html">Free Guide</a>
-          <a class="btn quiet" href="v3-posh-parent-system.html">Parent System</a>
+          <div class="btn-row">
+            <a class="btn quiet" href="v3-smarter-children-safer-children-free-guide.html">Free Guide</a>
+            <a class="btn quiet" href="v3-posh-parent-system.html">Parent System</a>
+          </div>
         </article>
 
         <article class="card soft mb-0">
           <h3>My child games, chats or uses apps heavily</h3>
           <p>Start with platform risks and gaming safety.</p>
-          <a class="btn quiet" href="v3-platform-risks-overview.html">Platform Risks</a>
-          <a class="btn quiet" href="v3-gaming.html">Gaming Safety</a>
+          <div class="btn-row">
+            <a class="btn quiet" href="v3-platform-risks-overview.html">Platform Risks</a>
+            <a class="btn quiet" href="v3-gaming.html">Gaming Safety</a>
+          </div>
         </article>
 
         <article class="card soft mb-0">
           <h3>Something feels wrong but I cannot explain it</h3>
           <p>Start with red flags and grooming warning signs.</p>
-          <a class="btn quiet" href="v3-redflags.html">Red Flags</a>
-          <a class="btn quiet" href="v3-child-being-groomed-signs.html">Grooming Signs</a>
+          <div class="btn-row">
+            <a class="btn quiet" href="v3-redflags.html">Red Flags</a>
+            <a class="btn quiet" href="v3-child-being-groomed-signs.html">Grooming Signs</a>
+          </div>
         </article>
 
         <article class="card soft mb-0">
           <h3>My child reacts strongly around screens</h3>
           <p>Start with emotional regulation and frustration tolerance.</p>
-          <a class="btn quiet" href="v3-emotional-regulation-online-safety.html">Emotional Regulation</a>
-          <a class="btn quiet" href="v3-frustration-intolerance-online-safety.html">Frustration Tolerance</a>
+          <div class="btn-row">
+            <a class="btn quiet" href="v3-emotional-regulation-online-safety.html">Emotional Regulation</a>
+            <a class="btn quiet" href="v3-frustration-intolerance-online-safety.html">Frustration Tolerance</a>
+          </div>
         </article>
 
         <article class="card soft mb-0">
           <h3>My child clicks, replies or shares too fast</h3>
           <p>Start with critical thinking and decision-making pages.</p>
-          <a class="btn quiet" href="v3-critical-thinking-online-safety.html">Critical Thinking</a>
-          <a class="btn quiet" href="v3-online-decision-making.html">Decision Making</a>
+          <div class="btn-row">
+            <a class="btn quiet" href="v3-critical-thinking-online-safety.html">Critical Thinking</a>
+            <a class="btn quiet" href="v3-online-decision-making.html">Decision Making</a>
+          </div>
         </article>
 
         <article class="card soft mb-0">
           <h3>My child struggles with planning, focus or confidence</h3>
           <p>Start with executive functioning and confidence.</p>
-          <a class="btn quiet" href="v3-executive-functioning-online-safety.html">Executive Functioning</a>
-          <a class="btn quiet" href="v3-confidence-is-a-safety-skill.html">Confidence</a>
+          <div class="btn-row">
+            <a class="btn quiet" href="v3-executive-functioning-online-safety.html">Executive Functioning</a>
+            <a class="btn quiet" href="v3-confidence-is-a-safety-skill.html">Confidence</a>
+          </div>
         </article>
 
         <article class="card soft mb-0">
           <h3>We need better privacy, respect and boundaries</h3>
           <p>Start with house rules, trust and protection.</p>
-          <a class="btn quiet" href="v3-house-rules.html">House Rules</a>
-          <a class="btn quiet" href="v3-it-is-not-about-not-trusting-your-child.html">Trust vs Protection</a>
+          <div class="btn-row">
+            <a class="btn quiet" href="v3-house-rules.html">House Rules</a>
+            <a class="btn quiet" href="v3-it-is-not-about-not-trusting-your-child.html">Trust vs Protection</a>
+          </div>
         </article>
 
         <article class="card soft mb-0">
           <h3>I am a teacher, coach, grandparent or safe adult</h3>
           <p>Start with Safe Adult Training and the free guide.</p>
-          <a class="btn quiet" href="v3-online-safety-training-for-everyone.html">Safe Adult Training</a>
-          <a class="btn quiet" href="v3-grandparents-online-safety.html">Grandparents</a>
+          <div class="btn-row">
+            <a class="btn quiet" href="v3-online-safety-training-for-everyone.html">Safe Adult Training</a>
+            <a class="btn quiet" href="v3-grandparents-online-safety.html">Grandparents</a>
+          </div>
         </article>
 
       </div>
     </section>
 
+    <!-- Safe Adults & Community Ecosystem -->
     <section class="card center-card" id="safe-adults">
+      <div class="posh-section-label">Whole-Community Defense</div>
+
       <h2>Online safety is not just a parent job</h2>
 
       <p class="section-lead center">
@@ -404,12 +437,12 @@
         </article>
 
         <article class="info-box">
-          <h3>Teachers, carers and coaches</h3>
+          <h3>Teachers, Carers &amp; Coaches</h3>
           <p>Role-based guidance for adults who may notice behaviour changes, disclosures, secrecy, emotional pressure, device panic or online conflict before parents see the full picture.</p>
         </article>
 
         <article class="info-box">
-          <h3>Family networks</h3>
+          <h3>Family Networks</h3>
           <p>Aunties, uncles, older siblings, babysitters, family friends, mentors and safe adults can all help children feel safe enough to speak before a situation gets worse.</p>
         </article>
       </div>
@@ -423,7 +456,10 @@
       </div>
     </section>
 
+    <!-- Core Parent Challenge Breakdown -->
     <section class="card center-card" id="parent-problem">
+      <div class="posh-section-label">Understanding Digital Access</div>
+
       <h2>Start with the real problem parents face</h2>
 
       <p class="section-lead center">
@@ -432,23 +468,26 @@
 
       <div class="grid-3">
         <article class="info-box">
-          <h3>Access</h3>
+          <h3>Access Points</h3>
           <p>Games, apps, group chats, livestreams, comments, DMs, voice chat and friend requests can all create access points.</p>
         </article>
 
         <article class="info-box">
-          <h3>Pressure</h3>
+          <h3>Emotional Pressure</h3>
           <p>Children can be pushed by gifts, attention, embarrassment, fear, secrecy, popularity or not wanting to lose someone online.</p>
         </article>
 
         <article class="info-box">
-          <h3>Response</h3>
+          <h3>Calm Response</h3>
           <p>The goal is not panic. The goal is calm questions, safer settings, visible devices, practical boundaries and early action.</p>
         </article>
       </div>
     </section>
 
+    <!-- Choose Your Intervention Type -->
     <section class="card center-card" id="choose-path">
+      <div class="posh-section-label">Practical Interventions</div>
+
       <h2>Choose what your family needs first</h2>
 
       <p class="section-lead center">
@@ -496,23 +535,26 @@
       </div>
     </section>
 
+    <!-- The Family Safety Flow System -->
     <section class="card center-card" id="family-safety-system">
-      <h2>The POSH family safety system</h2>
+      <div class="posh-section-label">Repeated Habits</div>
+
+      <h2>The POSH Family Safety System</h2>
 
       <p class="section-lead center">
         A safer digital home is built through repeated habits. POSH gives parents a simple structure to come back to again and again.
       </p>
 
-      <div class="network-flow">
-        <div class="pill">Calm mindset</div>
-        <div class="arrow">↓</div>
-        <div class="pill">Clear rules</div>
-        <div class="arrow">↓</div>
-        <div class="pill">Visible devices</div>
-        <div class="arrow">↓</div>
-        <div class="pill">Practice scenarios</div>
-        <div class="arrow">↓</div>
-        <div class="pill danger">Early action</div>
+      <div class="network-flow" role="img" aria-label="5 step safety workflow: Calm mindset, Clear rules, Visible devices, Practice scenarios, and Early action">
+        <div class="pill">Calm Mindset</div>
+        <div class="arrow">&darr;</div>
+        <div class="pill">Clear Rules</div>
+        <div class="arrow">&darr;</div>
+        <div class="pill">Visible Devices</div>
+        <div class="arrow">&darr;</div>
+        <div class="pill">Practice Scenarios</div>
+        <div class="arrow">&darr;</div>
+        <div class="pill danger">Early Action</div>
       </div>
 
       <div class="rule-box">
@@ -529,7 +571,10 @@
       </div>
     </section>
 
+    <!-- Psychological Barriers: Why Kids Hide Things -->
     <section class="card center-card" id="why-kids-hide">
+      <div class="posh-section-label">Keeping Communication Open</div>
+
       <h2>Why children hide things online</h2>
 
       <p class="section-lead center">
@@ -538,17 +583,17 @@
 
       <div class="grid-3">
         <article class="info-box">
-          <h3>Fear of punishment</h3>
+          <h3>Fear of Punishment</h3>
           <p>If a child thinks honesty means losing everything, they may hide more instead of asking for help.</p>
         </article>
 
         <article class="info-box">
-          <h3>Shame and confusion</h3>
+          <h3>Shame &amp; Confusion</h3>
           <p>Children may not understand what happened, why it escalated or how to explain it safely.</p>
         </article>
 
         <article class="info-box">
-          <h3>Online pressure</h3>
+          <h3>Online Pressure</h3>
           <p>Someone online may pressure them to keep secrets, delete messages, move apps or stay quiet.</p>
         </article>
       </div>
@@ -560,7 +605,10 @@
       </div>
     </section>
 
+    <!-- Platforms & Apps Guidance -->
     <section class="card center-card" id="platforms">
+      <div class="posh-section-label">Patterns Over App Names</div>
+
       <h2>Apps, games and platforms</h2>
 
       <p class="section-lead center">
@@ -585,7 +633,10 @@
       </div>
     </section>
 
+    <!-- Contextual Warning Signs -->
     <section class="card center-card" id="warning-signs">
+      <div class="posh-section-label">Early Detection</div>
+
       <h2>Warning signs, kept in context</h2>
 
       <p class="section-lead center">
@@ -617,7 +668,10 @@
       </div>
     </section>
 
+    <!-- Controls vs Relationship Balance -->
     <section class="card center-card" id="controls">
+      <div class="posh-section-label">Technical &amp; Relational Tools</div>
+
       <h2>Controls help, but they are not the whole solution</h2>
 
       <p class="section-lead center">
@@ -649,7 +703,10 @@
       </div>
     </section>
 
+    <!-- Escalation & Emergency Crisis Pathways -->
     <section class="card hero-warning center-card" id="urgent-help">
+      <div class="posh-section-label">High-Risk Escalation</div>
+
       <h2>When to move faster</h2>
 
       <p class="section-lead center">
@@ -669,7 +726,10 @@
       </div>
     </section>
 
+    <!-- Why POSH Exists -->
     <section class="card center-card" id="why-posh-exists">
+      <div class="posh-section-label">Our Mission</div>
+
       <h2>Why POSH exists</h2>
 
       <p class="section-lead center">
@@ -687,7 +747,10 @@
       </div>
     </section>
 
+    <!-- Footer Navigation Directory & Analytics Tally -->
     <section class="card next-steps center-card" id="best-next-pages">
+      <div class="posh-section-label">Next Right Steps</div>
+
       <h2>Best next pages</h2>
 
       <p class="section-lead center">
