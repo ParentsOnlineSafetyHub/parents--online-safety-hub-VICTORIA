@@ -1,68 +1,72 @@
 /**
  * =========================================================
  * POSH style.css — Topic Pathway / Complete Safety Ecosystem
- * Version: 2026-06-30-v6-Complete-Executive
+ * Version: 2026-08-05-v7-Psychological-Light-System
  * Purpose:
+ * - Brighten and elevate visual comfort with positive, calm color psychology.
+ * - Map distinct topic themes (Calm, Warm, Focus, Alert) to specific page areas.
  * - Maintain an immaculate, accessible, high-performance visual design system.
- * - Deliver smooth responsive styling across mobile, tablet, and desktop viewports.
- * - Keep navigation, buttons, sticky action bars, and cards crystal clear.
  * =========================================================
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bgTop: #051327;
-  --bgMid: #092a52;
-  --bgBot: #061a33;
+  /* Elevated, lighter atmospheric navy base (removes heavy gloom) */
+  --bgTop: #092143;
+  --bgMid: #0d3463;
+  --bgBot: #081e3d;
 
-  --pageTop: #071a34;
-  --pageMid: #0b2f5c;
-  --pageBot: #081f3d;
+  --pageTop: #0a244a;
+  --pageMid: #0f396e;
+  --pageBot: #0a2246;
 
-  --cardA: #0f2a55;
-  --cardB: #0c2346;
-  --cardC: #102f5f;
-  --cardSoft: rgba(255, 255, 255, 0.04);
-  --cardSoft2: rgba(255, 255, 255, 0.055);
-  --cardLine: rgba(255, 255, 255, 0.09);
-  --cardLineStrong: rgba(255, 255, 255, 0.15);
+  /* Card surfaces with higher reflectance and warmer undertones */
+  --cardA: #133364;
+  --cardB: #102d59;
+  --cardC: #163a70;
+  --cardSoft: rgba(255, 255, 255, 0.055);
+  --cardSoft2: rgba(255, 255, 255, 0.075);
+  --cardLine: rgba(255, 255, 255, 0.12);
+  --cardLineStrong: rgba(255, 255, 255, 0.20);
 
-  --text: #f4f7ff;
-  --muted: rgba(244, 247, 255, 0.80);
-  --soft: rgba(244, 247, 255, 0.62);
+  /* High-legibility text & soft contrast text */
+  --text: #f7f9ff;
+  --muted: rgba(247, 249, 255, 0.84);
+  --soft: rgba(247, 249, 255, 0.68);
+  --readableText: rgba(247, 249, 255, 0.90);
+  --readableMuted: rgba(247, 249, 255, 0.76);
 
-  --blue: #39b0ff;
-  --blueSoft: rgba(57, 176, 255, 0.14);
-  --cyan: #22e6d3;
-  --cyanSoft: rgba(34, 230, 211, 0.10);
-  --gold: #d9b65a;
-  --goldSoft: rgba(217, 182, 90, 0.14);
-  --goldLine: rgba(217, 182, 90, 0.38);
-  --goldLineStrong: rgba(217, 182, 90, 0.62);
+  /* Core Accent Palette */
+  --blue: #4bb8ff;
+  --blueSoft: rgba(75, 184, 255, 0.16);
+  --cyan: #2ce8d5;
+  --cyanSoft: rgba(44, 232, 213, 0.14);
+  --gold: #dfc06a;
+  --goldSoft: rgba(223, 192, 106, 0.16);
+  --goldLine: rgba(223, 192, 106, 0.44);
+  --goldLineStrong: rgba(223, 192, 106, 0.68);
 
-  --bronze: #b77a4a;
-  --bronzeSoft: rgba(183, 122, 74, 0.15);
-  --bronzeLine: rgba(183, 122, 74, 0.40);
-  --bronzeLineStrong: rgba(183, 122, 74, 0.62);
-  --bronzeGlow: rgba(183, 122, 74, 0.14);
+  --bronze: #c48653;
+  --bronzeSoft: rgba(196, 134, 83, 0.16);
+  --bronzeLine: rgba(196, 134, 83, 0.44);
+  --bronzeLineStrong: rgba(196, 134, 83, 0.68);
 
   --danger: #ff6b81;
-  --dangerSoft: rgba(255, 107, 129, 0.10);
+  --dangerSoft: rgba(255, 107, 129, 0.12);
   --success: #39d98a;
-  --warn: #ffb84d;
-  --copper: #c78652;
+  --successSoft: rgba(57, 217, 138, 0.14);
+  --warn: #ffbe5b;
+  --copper: #d19058;
 
-  --readableText: rgba(244, 247, 255, 0.88);
-  --readableMuted: rgba(244, 247, 255, 0.72);
-  --quietBlue: #8bd6ff;
-  --quietGold: #e6c978;
-  --quietButtonBg: rgba(255, 255, 255, 0.052);
-  --quietButtonBorder: rgba(255, 255, 255, 0.12);
+  --quietBlue: #9ce0ff;
+  --quietGold: #ecd388;
+  --quietButtonBg: rgba(255, 255, 255, 0.065);
+  --quietButtonBorder: rgba(255, 255, 255, 0.15);
 
-  --shadow: 0 18px 48px rgba(0, 0, 0, 0.30);
-  --shadowSoft: 0 10px 30px rgba(0, 0, 0, 0.20);
-  --shadowHeavy: 0 24px 60px rgba(0, 0, 0, 0.36);
+  --shadow: 0 18px 48px rgba(4, 15, 34, 0.32);
+  --shadowSoft: 0 10px 30px rgba(4, 15, 34, 0.22);
+  --shadowHeavy: 0 24px 60px rgba(4, 15, 34, 0.40);
 
   --radius: 20px;
   --radiusMd: 18px;
@@ -72,6 +76,58 @@
 
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
+
+  /* Default Dynamic Topic Theme Variables (Fallback = Calm Ocean Blue) */
+  --theme-accent: var(--blue);
+  --theme-glow: rgba(75, 184, 255, 0.15);
+  --theme-border: rgba(75, 184, 255, 0.35);
+  --theme-badge-bg: rgba(75, 184, 255, 0.14);
+  --theme-badge-text: #bfeaff;
+}
+
+/* =========================================================
+   PSYCHOLOGICAL TOPIC THEME MODIFIERS
+   Apply [data-posh-theme="..."] or class="theme-..." to cards/sections
+========================================================= */
+
+/* Calm Theme (Teal/Emerald) — Emotional Regulation, Routines, Executive Functioning */
+[data-posh-theme="calm"],
+.theme-calm {
+  --theme-accent: var(--cyan);
+  --theme-glow: rgba(44, 232, 213, 0.15);
+  --theme-border: rgba(44, 232, 213, 0.38);
+  --theme-badge-bg: rgba(44, 232, 213, 0.14);
+  --theme-badge-text: #a8fcf2;
+}
+
+/* Warm Theme (Gold/Bronze) — Community, Grandparents, Safe Adults, Core Books */
+[data-posh-theme="warm"],
+.theme-warm {
+  --theme-accent: var(--gold);
+  --theme-glow: rgba(223, 192, 106, 0.16);
+  --theme-border: rgba(223, 192, 106, 0.42);
+  --theme-badge-bg: rgba(223, 192, 106, 0.15);
+  --theme-badge-text: #fff0c2;
+}
+
+/* Focus Theme (Indigo/Royal Blue) — Critical Thinking, Decision Making, House Rules */
+[data-posh-theme="focus"],
+.theme-focus {
+  --theme-accent: #78a9ff;
+  --theme-glow: rgba(120, 169, 255, 0.16);
+  --theme-border: rgba(120, 169, 255, 0.40);
+  --theme-badge-bg: rgba(120, 169, 255, 0.15);
+  --theme-badge-text: #d6e6ff;
+}
+
+/* Alert Theme (Coral/Rose Gold) — Red Flags, Grooming Signs, Early Intervention (Non-panicky) */
+[data-posh-theme="alert"],
+.theme-alert {
+  --theme-accent: #ff8e9e;
+  --theme-glow: rgba(255, 142, 158, 0.15);
+  --theme-border: rgba(255, 142, 158, 0.38);
+  --theme-badge-bg: rgba(255, 142, 158, 0.14);
+  --theme-badge-text: #ffdbe0;
 }
 
 * {
@@ -90,8 +146,8 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background:
-    radial-gradient(circle at top left, rgba(57, 176, 255, 0.10), transparent 24%),
-    radial-gradient(circle at top right, rgba(34, 230, 211, 0.07), transparent 18%),
+    radial-gradient(circle at 10% 8%, rgba(75, 184, 255, 0.14), transparent 30%),
+    radial-gradient(circle at 90% 12%, rgba(44, 232, 213, 0.10), transparent 28%),
     linear-gradient(180deg, var(--pageTop) 0%, var(--pageMid) 46%, var(--pageBot) 100%);
   background-attachment: fixed;
 }
@@ -99,10 +155,10 @@ body {
 body.home-page,
 body.posh-home-v4 {
   background:
-    radial-gradient(circle at 12% 4%, rgba(57, 176, 255, 0.16), transparent 28%),
-    radial-gradient(circle at 88% 10%, rgba(217, 182, 90, 0.12), transparent 26%),
-    radial-gradient(circle at 50% 55%, rgba(34, 230, 211, 0.06), transparent 32%),
-    linear-gradient(180deg, #041123 0%, #08284f 46%, #06172e 100%);
+    radial-gradient(circle at 12% 4%, rgba(75, 184, 255, 0.18), transparent 32%),
+    radial-gradient(circle at 88% 10%, rgba(223, 192, 106, 0.14), transparent 28%),
+    radial-gradient(circle at 50% 55%, rgba(44, 232, 213, 0.08), transparent 35%),
+    linear-gradient(180deg, #071a36 0%, #0d3463 46%, #092042 100%);
   background-attachment: fixed;
 }
 
@@ -128,7 +184,7 @@ a {
 }
 
 a:hover {
-  color: #8bd6ff;
+  color: #9ce0ff;
 }
 
 button,
@@ -145,16 +201,16 @@ textarea {
 }
 
 /* =========================================================
-   URGENT HELP TRIAGE STRIP (NEW TOP BANNER)
+   URGENT HELP TRIAGE STRIP
 ========================================================= */
 
 .posh-urgent-banner {
   margin: 0 0 18px;
   padding: 12px 18px;
   border-radius: var(--radiusMd);
-  border: 1px solid rgba(255, 107, 129, 0.38);
-  background: linear-gradient(90deg, rgba(255, 107, 129, 0.15), rgba(15, 42, 85, 0.85));
-  box-shadow: 0 8px 24px rgba(255, 107, 129, 0.12);
+  border: 1px solid rgba(255, 107, 129, 0.42);
+  background: linear-gradient(90deg, rgba(255, 107, 129, 0.16), rgba(19, 51, 100, 0.88));
+  box-shadow: 0 8px 24px rgba(255, 107, 129, 0.14);
 }
 
 .posh-urgent-banner-inner {
@@ -164,7 +220,7 @@ textarea {
   justify-content: space-between;
   gap: 12px;
   font-size: 0.93rem;
-  color: #ffd6de;
+  color: #ffdce2;
 }
 
 .posh-urgent-banner-inner strong {
@@ -206,14 +262,14 @@ textarea {
   padding: 10px 16px;
   border: 1px solid var(--goldLine);
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(217, 182, 90, 0.15), rgba(217, 182, 90, 0.07));
+  background: linear-gradient(180deg, rgba(223, 192, 106, 0.16), rgba(223, 192, 106, 0.08));
   color: #fff4ce;
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 0.95rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 20px rgba(4, 15, 34, 0.20);
   margin-bottom: 18px;
 }
 
@@ -234,10 +290,9 @@ body.home-page .home-mantra {
   letter-spacing: -0.045em;
   color: #ffffff;
   text-align: center;
-  text-shadow: 0 14px 34px rgba(0, 0, 0, 0.36);
-  -webkit-text-stroke: 0;
+  text-shadow: 0 14px 34px rgba(4, 15, 34, 0.38);
   padding: 0 0 10px;
-  border-bottom: 1px solid rgba(230, 201, 120, 0.32);
+  border-bottom: 1px solid rgba(230, 201, 120, 0.35);
   text-wrap: balance;
 }
 
@@ -248,9 +303,9 @@ body.home-page .home-mantra {
   height: 5px;
   margin-top: 8px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(230, 201, 120, 0.58), rgba(139, 214, 255, 0.34), transparent);
+  background: linear-gradient(90deg, rgba(230, 201, 120, 0.62), rgba(139, 214, 255, 0.38), transparent);
   filter: blur(4px);
-  opacity: 0.58;
+  opacity: 0.62;
 }
 
 .tagline,
@@ -349,8 +404,8 @@ hr {
 .nav-shell {
   border: 1px solid var(--cardLine);
   border-radius: 20px;
-  background: rgba(8, 23, 45, 0.62);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 28, 55, 0.68);
+  backdrop-filter: blur(12px);
   box-shadow: var(--shadowSoft);
 }
 
@@ -375,15 +430,15 @@ hr {
   border-radius: 999px;
   border: 1px solid var(--quietButtonBorder);
   background: var(--quietButtonBg);
-  color: #eef6ff;
+  color: #f0f7ff;
   font-size: 0.95rem;
   font-weight: 650;
 }
 
 .nav a:hover,
 .nav-shell a:hover {
-  background: rgba(139, 214, 255, 0.12);
-  border-color: rgba(139, 214, 255, 0.28);
+  background: rgba(139, 214, 255, 0.15);
+  border-color: rgba(139, 214, 255, 0.32);
   transform: translateY(-1px);
   color: #fff;
 }
@@ -398,20 +453,20 @@ hr {
   min-height: 50px;
   padding: 14px 52px 14px 16px;
   border-radius: 16px;
-  border: 1px solid rgba(217, 182, 90, 0.24);
-  background: rgba(8, 23, 45, 0.72);
+  border: 1px solid rgba(223, 192, 106, 0.28);
+  background: rgba(10, 28, 55, 0.78);
   color: var(--text);
   box-shadow: var(--shadowSoft);
 }
 
 .nav-search-input::placeholder {
-  color: rgba(244, 247, 255, 0.46);
+  color: rgba(247, 249, 255, 0.50);
 }
 
 .nav-search-input:focus {
   outline: none;
-  border-color: rgba(139, 214, 255, 0.44);
-  box-shadow: 0 0 0 3px rgba(57, 176, 255, 0.12), var(--shadowSoft);
+  border-color: rgba(139, 214, 255, 0.48);
+  box-shadow: 0 0 0 3px rgba(75, 184, 255, 0.15), var(--shadowSoft);
 }
 
 .nav-search-clear {
@@ -423,14 +478,14 @@ hr {
   height: 34px;
   border: none;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--text);
   cursor: pointer;
   visibility: hidden;
 }
 
 .nav-search-clear:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .nav-search-results {
@@ -442,7 +497,7 @@ hr {
   padding: 8px;
   border-radius: 18px;
   border: 1px solid var(--cardLineStrong);
-  background: linear-gradient(180deg, rgba(12, 35, 70, 0.98), rgba(10, 27, 54, 0.98));
+  background: linear-gradient(180deg, rgba(16, 42, 82, 0.98), rgba(12, 33, 66, 0.98));
   box-shadow: var(--shadowHeavy);
 }
 
@@ -460,8 +515,8 @@ hr {
 }
 
 .nav-search-result:hover {
-  background: rgba(139, 214, 255, 0.10);
-  border-color: rgba(139, 214, 255, 0.22);
+  background: rgba(139, 214, 255, 0.12);
+  border-color: rgba(139, 214, 255, 0.26);
   color: #fff;
 }
 
@@ -477,7 +532,7 @@ hr {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #9ed7ff;
+  color: #9ce0ff;
 }
 
 .nav-search-result-desc {
@@ -510,21 +565,21 @@ hr {
   font-weight: 750;
   background: var(--quietButtonBg);
   border: 1px solid var(--quietButtonBorder);
-  color: #eef6ff !important;
+  color: #f0f7ff !important;
   box-shadow: none;
 }
 
 .nav-primary-cta:first-child {
-  background: rgba(139, 214, 255, 0.14);
-  border-color: rgba(139, 214, 255, 0.34);
+  background: rgba(139, 214, 255, 0.16);
+  border-color: rgba(139, 214, 255, 0.38);
 }
 
 .nav-primary-cta:hover,
 .nav-support-link:hover,
 .nav-quick-link:hover {
   transform: translateY(-1px);
-  background: rgba(139, 214, 255, 0.12);
-  border-color: rgba(139, 214, 255, 0.28);
+  background: rgba(139, 214, 255, 0.15);
+  border-color: rgba(139, 214, 255, 0.32);
   color: #fff !important;
 }
 
@@ -546,14 +601,14 @@ hr {
   min-height: 58px;
   padding: 16px 54px 16px 18px;
   border-radius: 16px;
-  border: 1.2px solid rgba(183, 122, 74, 0.40);
-  background: linear-gradient(180deg, rgba(12, 34, 68, 0.96), rgba(9, 26, 52, 0.96));
+  border: 1.2px solid rgba(196, 134, 83, 0.44);
+  background: linear-gradient(180deg, rgba(16, 42, 82, 0.96), rgba(12, 32, 64, 0.96));
   color: #f7f9ff;
   font-weight: 800;
   font-size: 1rem;
   line-height: 1.2;
   position: relative;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.025) inset;
+  box-shadow: 0 10px 24px rgba(4, 15, 34, 0.24), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
@@ -569,7 +624,7 @@ hr {
   transform: translateY(-50%);
   width: 22px;
   text-align: center;
-  color: #e8c57d;
+  color: #ecd388;
   font-size: 1.15rem;
   font-weight: 900;
   line-height: 1;
@@ -577,13 +632,13 @@ hr {
 
 .nav-group summary:hover {
   transform: translateY(-1px);
-  border-color: rgba(183, 122, 74, 0.64);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28), 0 0 18px rgba(183, 122, 74, 0.07);
+  border-color: rgba(196, 134, 83, 0.68);
+  box-shadow: 0 14px 28px rgba(4, 15, 34, 0.30), 0 0 18px rgba(196, 134, 83, 0.08);
 }
 
 .nav-group[open] summary {
-  border-color: rgba(183, 122, 74, 0.72);
-  background: linear-gradient(180deg, rgba(15, 40, 78, 0.98), rgba(10, 28, 55, 0.98));
+  border-color: rgba(196, 134, 83, 0.76);
+  background: linear-gradient(180deg, rgba(19, 48, 92, 0.98), rgba(14, 34, 66, 0.98));
 }
 
 .nav-group[open] summary::after {
@@ -596,8 +651,8 @@ hr {
   gap: 8px;
   padding: 12px;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(7, 20, 40, 0.50);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(10, 25, 48, 0.55);
 }
 
 .nav-group nav a {
@@ -608,15 +663,15 @@ hr {
   padding: 12px 14px;
   border-radius: 14px;
   border: 1px solid transparent;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.048);
   color: var(--text);
   font-weight: 650;
 }
 
 .nav-group nav a:hover {
   transform: translateY(-1px);
-  background: rgba(139, 214, 255, 0.10);
-  border-color: rgba(139, 214, 255, 0.22);
+  background: rgba(139, 214, 255, 0.12);
+  border-color: rgba(139, 214, 255, 0.26);
   color: #fff;
 }
 
@@ -634,12 +689,12 @@ hr {
   text-decoration: none;
   border-radius: 18px !important;
   overflow: hidden;
-  border: 1.5px solid rgba(217, 182, 90, 0.62);
+  border: 1.5px solid rgba(223, 192, 106, 0.66);
   box-shadow:
-    0 18px 44px rgba(0, 0, 0, 0.32),
-    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
-    0 0 24px rgba(217, 182, 90, 0.09);
-  background: linear-gradient(180deg, rgba(12, 34, 68, 0.82), rgba(8, 25, 50, 0.56));
+    0 18px 44px rgba(4, 15, 34, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 24px rgba(223, 192, 106, 0.11);
+  background: linear-gradient(180deg, rgba(16, 42, 82, 0.86), rgba(10, 30, 60, 0.60));
   position: relative;
   transform: translateZ(0);
 }
@@ -650,16 +705,16 @@ hr {
   inset: 0;
   border-radius: 20px;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
   z-index: 2;
 }
 
 .posh-global-hero-link:hover {
   transform: translateY(-1px);
   box-shadow:
-    0 24px 56px rgba(0, 0, 0, 0.38),
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-    0 0 30px rgba(217, 182, 90, 0.12);
+    0 24px 56px rgba(4, 15, 34, 0.40),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+    0 0 30px rgba(223, 192, 106, 0.14);
 }
 
 .posh-global-hero-media {
@@ -681,7 +736,7 @@ hr {
 }
 
 .posh-global-hero-link:hover .posh-global-hero-img {
-  filter: brightness(1.02) saturate(1.03);
+  filter: brightness(1.03) saturate(1.04);
 }
 
 .posh-global-hero-img.is-loaded {
@@ -705,12 +760,12 @@ hr {
   margin: 0 0 24px;
   padding: clamp(24px, 4vw, 42px);
   border-radius: 28px;
-  border: 1px solid rgba(217, 182, 90, 0.28);
+  border: 1px solid rgba(223, 192, 106, 0.32);
   background:
-    radial-gradient(circle at 10% 0%, rgba(57, 176, 255, 0.14), transparent 36%),
-    radial-gradient(circle at 90% 10%, rgba(217, 182, 90, 0.13), transparent 35%),
-    linear-gradient(180deg, rgba(15, 42, 85, 0.96), rgba(8, 24, 48, 0.96));
-  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+    radial-gradient(circle at 10% 0%, rgba(75, 184, 255, 0.18), transparent 36%),
+    radial-gradient(circle at 90% 10%, rgba(223, 192, 106, 0.15), transparent 35%),
+    linear-gradient(180deg, rgba(19, 51, 100, 0.96), rgba(11, 31, 61, 0.96));
+  box-shadow: 0 26px 70px rgba(4, 15, 34, 0.44);
   overflow: hidden;
 }
 
@@ -727,8 +782,8 @@ hr {
   margin: 0 0 14px;
   padding: 9px 15px;
   border-radius: 999px;
-  border: 1px solid rgba(217, 182, 90, 0.42);
-  background: rgba(217, 182, 90, 0.12);
+  border: 1px solid rgba(223, 192, 106, 0.46);
+  background: rgba(223, 192, 106, 0.14);
   color: #fff0c4;
   font-weight: 900;
   font-size: 0.78rem;
@@ -756,8 +811,8 @@ hr {
   margin: 18px 0 0;
   padding: 18px;
   border-radius: 20px;
-  border: 1px solid rgba(139, 214, 255, 0.22);
-  background: rgba(139, 214, 255, 0.075);
+  border: 1px solid rgba(139, 214, 255, 0.26);
+  background: rgba(139, 214, 255, 0.085);
 }
 
 .posh-hero-message strong {
@@ -768,11 +823,11 @@ hr {
 .posh-hero-side-card {
   padding: 22px;
   border-radius: 24px;
-  border: 1px solid rgba(217, 182, 90, 0.26);
+  border: 1px solid rgba(223, 192, 106, 0.30);
   background:
-    radial-gradient(circle at top, rgba(217, 182, 90, 0.13), transparent 42%),
-    rgba(255, 255, 255, 0.045);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    radial-gradient(circle at top, rgba(223, 192, 106, 0.15), transparent 42%),
+    rgba(255, 255, 255, 0.052);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .posh-check-list {
@@ -785,8 +840,8 @@ hr {
   margin: 0 0 10px;
   padding: 11px 12px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.062);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #fff;
   font-weight: 800;
 }
@@ -808,10 +863,10 @@ hr {
   margin: 0 0 26px;
   padding: clamp(20px, 3vw, 30px);
   border-radius: var(--radius);
-  border: 1px solid var(--cardLine);
+  border: 1px solid var(--theme-border, var(--cardLine));
   background:
-    radial-gradient(circle at top left, rgba(139, 214, 255, 0.055), transparent 34%),
-    linear-gradient(180deg, rgba(15, 42, 85, 0.96), rgba(12, 35, 70, 0.94));
+    radial-gradient(circle at top left, var(--theme-glow, rgba(139, 214, 255, 0.07)), transparent 34%),
+    linear-gradient(180deg, rgba(19, 51, 100, 0.96), rgba(14, 40, 80, 0.94));
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -821,7 +876,7 @@ hr {
   position: absolute;
   inset: 0 0 auto 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.20), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.24), transparent);
   pointer-events: none;
 }
 
@@ -831,19 +886,38 @@ hr {
 
 .card.soft {
   background:
-    radial-gradient(circle at top left, rgba(139, 214, 255, 0.04), transparent 34%),
-    linear-gradient(180deg, rgba(13, 36, 72, 0.86), rgba(10, 29, 59, 0.86));
+    radial-gradient(circle at top left, var(--theme-glow, rgba(139, 214, 255, 0.05)), transparent 34%),
+    linear-gradient(180deg, rgba(16, 43, 86, 0.88), rgba(12, 34, 70, 0.88));
 }
 
 .card.center-card {
   text-align: center;
 }
 
+/* AMAZON / KINDLE BOOKS BANNER (Warm Publishing Theme) */
+.posh-amazon-feature-card {
+  border-color: rgba(223, 192, 106, 0.44) !important;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(223, 192, 106, 0.18), transparent 38%),
+    linear-gradient(180deg, rgba(24, 60, 115, 0.96), rgba(14, 38, 75, 0.96)) !important;
+}
+
+.posh-label-amazon {
+  background: rgba(223, 192, 106, 0.22) !important;
+  border-color: rgba(223, 192, 106, 0.48) !important;
+  color: #fff4ce !important;
+}
+
+.posh-banner-actions {
+  justify-content: center;
+  margin-top: 18px;
+}
+
 .section-lead {
   margin-left: auto;
   margin-right: auto;
   max-width: 920px;
-  color: rgba(244, 247, 255, 0.82);
+  color: rgba(247, 249, 255, 0.86);
 }
 
 .grid-2 {
@@ -879,11 +953,11 @@ hr {
   min-height: 118px;
   padding: 18px;
   border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   background:
-    radial-gradient(circle at top left, rgba(139, 214, 255, 0.09), transparent 42%),
-    rgba(255, 255, 255, 0.045);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+    radial-gradient(circle at top left, rgba(139, 214, 255, 0.11), transparent 42%),
+    rgba(255, 255, 255, 0.052);
+  box-shadow: 0 14px 34px rgba(4, 15, 34, 0.24);
 }
 
 .posh-quick-paths strong {
@@ -896,15 +970,15 @@ hr {
 
 .posh-quick-paths span {
   display: block;
-  color: rgba(244, 247, 255, 0.72);
+  color: rgba(247, 249, 255, 0.76);
   font-size: 0.94rem;
   line-height: 1.55;
 }
 
 .posh-quick-paths a:hover {
-  transform: translateY(-2px);
-  border-color: rgba(139, 214, 255, 0.34);
-  background: rgba(139, 214, 255, 0.09);
+  transform: translateY(-3px);
+  border-color: rgba(139, 214, 255, 0.38);
+  background: rgba(139, 214, 255, 0.11);
 }
 
 .posh-book-feature {
@@ -919,12 +993,12 @@ hr {
   min-height: 420px;
   padding: 24px;
   border-radius: 26px;
-  border: 1px solid rgba(217, 182, 90, 0.42);
+  border: 1px solid rgba(223, 192, 106, 0.46);
   background:
-    radial-gradient(circle at center 24%, rgba(57, 176, 255, 0.28), transparent 34%),
-    radial-gradient(circle at center 70%, rgba(217, 182, 90, 0.16), transparent 34%),
-    linear-gradient(180deg, #071a34, #030b17);
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.42);
+    radial-gradient(circle at center 24%, rgba(75, 184, 255, 0.30), transparent 34%),
+    radial-gradient(circle at center 70%, rgba(223, 192, 106, 0.18), transparent 34%),
+    linear-gradient(180deg, #0a244a, #06152b);
+  box-shadow: 0 24px 55px rgba(4, 15, 34, 0.44);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -936,8 +1010,8 @@ hr {
   width: fit-content;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(217, 182, 90, 0.15);
-  border: 1px solid rgba(217, 182, 90, 0.42);
+  background: rgba(223, 192, 106, 0.18);
+  border: 1px solid rgba(223, 192, 106, 0.46);
   color: #fff1c8;
   font-size: 0.72rem;
   font-weight: 900;
@@ -955,18 +1029,18 @@ hr {
 .posh-series-card {
   padding: 18px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.105);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   background:
-    radial-gradient(circle at top right, rgba(57, 176, 255, 0.075), transparent 40%),
-    rgba(255, 255, 255, 0.04);
+    radial-gradient(circle at top right, rgba(75, 184, 255, 0.085), transparent 40%),
+    rgba(255, 255, 255, 0.048);
   text-align: left;
   transition: 0.22s ease;
 }
 
 .posh-series-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(139, 214, 255, 0.30);
-  background: rgba(139, 214, 255, 0.075);
+  transform: translateY(-3px);
+  border-color: rgba(139, 214, 255, 0.34);
+  background: rgba(139, 214, 255, 0.085);
 }
 
 .posh-series-card span {
@@ -974,8 +1048,8 @@ hr {
   margin-bottom: 10px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(217, 182, 90, 0.12);
-  border: 1px solid rgba(217, 182, 90, 0.26);
+  background: rgba(223, 192, 106, 0.14);
+  border: 1px solid rgba(223, 192, 106, 0.30);
   color: #ffe8a8;
   font-size: 0.72rem;
   font-weight: 900;
@@ -986,7 +1060,11 @@ hr {
 .posh-series-card a {
   display: inline-flex;
   font-weight: 900;
-  color: #9fe0ff;
+  color: #a8e3ff;
+}
+
+.posh-series-note {
+  margin-top: 18px;
 }
 
 /* =========================================================
@@ -1000,27 +1078,27 @@ hr {
 .highlight-box,
 .stat-box {
   padding: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.105);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.048);
 }
 
 .info-box:hover,
 .card.soft:hover,
 .next-item:hover {
-  border-color: rgba(139, 214, 255, 0.24);
-  background: rgba(139, 214, 255, 0.07);
+  border-color: rgba(139, 214, 255, 0.28);
+  background: rgba(139, 214, 255, 0.08);
 }
 
 .rule-box {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.025));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
   max-width: 920px;
   margin: 18px auto 0;
 }
 
 .urgent-rule {
-  border-color: rgba(255, 107, 129, 0.30);
-  background: rgba(255, 107, 129, 0.08);
+  border-color: rgba(255, 107, 129, 0.34);
+  background: rgba(255, 107, 129, 0.10);
 }
 
 .badge,
@@ -1036,20 +1114,20 @@ hr {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.055);
   color: var(--text);
 }
 
 .badge.gold {
-  background: rgba(217, 182, 90, 0.12);
-  border-color: rgba(217, 182, 90, 0.28);
+  background: rgba(223, 192, 106, 0.14);
+  border-color: rgba(223, 192, 106, 0.32);
   color: #ffe9ab;
 }
 
 .pill.danger {
-  background: rgba(255, 107, 129, 0.12);
-  border-color: rgba(255, 107, 129, 0.30);
+  background: rgba(255, 107, 129, 0.14);
+  border-color: rgba(255, 107, 129, 0.34);
   color: #ffd7de;
 }
 
@@ -1094,7 +1172,7 @@ button.cta-btn {
   border-radius: 999px;
   border: 1px solid var(--quietButtonBorder);
   background: var(--quietButtonBg);
-  color: #eef6ff;
+  color: #f0f7ff;
   font-weight: 750;
   font-size: 0.96rem;
   letter-spacing: 0.005em;
@@ -1112,8 +1190,8 @@ button.btn:hover,
 button.button:hover,
 button.cta-btn:hover {
   transform: translateY(-1px);
-  background: rgba(139, 214, 255, 0.12);
-  border-color: rgba(139, 214, 255, 0.28);
+  background: rgba(139, 214, 255, 0.15);
+  border-color: rgba(139, 214, 255, 0.32);
   color: #fff;
 }
 
@@ -1123,17 +1201,17 @@ button.cta-btn:hover {
 .btn.primary-soft,
 .button.primary-soft,
 .cta-btn.primary-soft {
-  background: rgba(139, 214, 255, 0.14);
-  border: 1px solid rgba(139, 214, 255, 0.34);
+  background: rgba(139, 214, 255, 0.16);
+  border: 1px solid rgba(139, 214, 255, 0.38);
   color: #ffffff;
 }
 
 .btn.quiet,
 .button.quiet,
 .cta-btn.quiet {
-  background: rgba(255, 255, 255, 0.045);
-  color: rgba(244, 247, 255, 0.90);
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(247, 249, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 .btn-grid {
@@ -1154,22 +1232,22 @@ button.cta-btn:hover {
 ========================================================= */
 
 body.page-is-safe-adult .posh-page-header {
-  border-color: rgba(217, 182, 90, 0.30);
+  border-color: rgba(223, 192, 106, 0.34);
   background:
-    radial-gradient(circle at 18% 0%, rgba(217, 182, 90, 0.085), transparent 34%),
-    radial-gradient(circle at 86% 12%, rgba(139, 214, 255, 0.07), transparent 32%),
-    linear-gradient(180deg, rgba(15, 42, 85, 0.96), rgba(10, 29, 59, 0.94));
+    radial-gradient(circle at 18% 0%, rgba(223, 192, 106, 0.10), transparent 34%),
+    radial-gradient(circle at 86% 12%, rgba(139, 214, 255, 0.08), transparent 32%),
+    linear-gradient(180deg, rgba(19, 51, 100, 0.96), rgba(12, 34, 70, 0.94));
 }
 
 body.page-is-safe-adult .posh-page-kicker {
-  border-color: rgba(217, 182, 90, 0.42);
-  background: rgba(217, 182, 90, 0.12);
+  border-color: rgba(223, 192, 106, 0.46);
+  background: rgba(223, 192, 106, 0.14);
   color: #fff2c6;
 }
 
 body.page-is-safe-adult p,
 body.page-is-safe-adult li {
-  color: rgba(244, 247, 255, 0.88);
+  color: rgba(247, 249, 255, 0.90);
 }
 
 /* =========================================================
@@ -1184,7 +1262,7 @@ body.page-is-safe-adult li {
   height: 4px;
   z-index: 10001;
   background: linear-gradient(90deg, var(--blue), var(--cyan));
-  box-shadow: 0 0 16px rgba(57, 176, 255, 0.35);
+  box-shadow: 0 0 16px rgba(75, 184, 255, 0.40);
 }
 
 body.js-ready .wrap {
@@ -1203,10 +1281,10 @@ body.js-ready .wrap {
   gap: 8px !important;
   padding: 8px !important;
   border-radius: 16px !important;
-  background: rgba(6, 19, 38, 0.74) !important;
-  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  background: rgba(8, 24, 48, 0.78) !important;
+  border: 1px solid rgba(255, 255, 255, 0.11) !important;
   backdrop-filter: blur(12px) !important;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.30) !important;
+  box-shadow: 0 12px 32px rgba(4, 15, 34, 0.32) !important;
 }
 
 .posh-action-btn {
@@ -1227,9 +1305,9 @@ body.js-ready .wrap {
 }
 
 .posh-action-btn.support {
-  background: rgba(217, 182, 90, 0.12) !important;
+  background: rgba(223, 192, 106, 0.14) !important;
   color: #fff3c6 !important;
-  border-color: rgba(217, 182, 90, 0.26) !important;
+  border-color: rgba(223, 192, 106, 0.30) !important;
 }
 
 .posh-back-to-top {
@@ -1240,7 +1318,7 @@ body.js-ready .wrap {
   height: 48px;
   border: none;
   border-radius: 50%;
-  background: linear-gradient(180deg, rgba(15, 42, 85, 0.98), rgba(10, 28, 55, 0.98));
+  background: linear-gradient(180deg, rgba(19, 51, 100, 0.98), rgba(12, 33, 66, 0.98));
   color: #fff;
   font-size: 1.15rem;
   font-weight: 900;
@@ -1274,8 +1352,8 @@ body.js-ready .wrap {
   padding: 14px;
   text-align: center;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.105);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.048);
   color: var(--text);
   font-weight: 700;
 }
@@ -1350,9 +1428,9 @@ body.js-ready .wrap {
     overscroll-behavior: contain;
     padding: 10px !important;
     border-radius: 16px !important;
-    background: linear-gradient(180deg, rgba(10, 29, 59, 0.98), rgba(7, 20, 40, 0.98)) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    box-shadow: 0 20px 46px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.035) inset !important;
+    background: linear-gradient(180deg, rgba(12, 34, 70, 0.98), rgba(9, 24, 48, 0.98)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 20px 46px rgba(4, 15, 34, 0.44), 0 0 0 1px rgba(255, 255, 255, 0.04) inset !important;
   }
 
   .nav-shell .nav-group:not([open]) nav {
@@ -1433,7 +1511,7 @@ body.js-ready .wrap {
     gap: 5px !important;
     padding: 6px !important;
     border-radius: 14px !important;
-    background: rgba(6, 19, 38, 0.76) !important;
+    background: rgba(8, 24, 48, 0.80) !important;
   }
 
   .posh-action-btn {
