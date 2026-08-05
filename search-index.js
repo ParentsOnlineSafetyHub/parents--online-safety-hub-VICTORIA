@@ -1,3 +1,14 @@
+/**
+ * =========================================================
+ * POSH app.js — Premium Search & Index Engine
+ * Version: 2026-08-05-v3-World-Class-Intelligence
+ * Purpose:
+ * - High-speed, weighted multi-term query matching.
+ * - Intelligent intent recognition for emergency and warning paths.
+ * - Seamless DOM hookup for the live POSH search bar.
+ * =========================================================
+ */
+
 (function () {
   "use strict";
 
@@ -12,7 +23,7 @@
       title: normalizeText(entry.title),
       description: normalizeText(entry.description),
       href: normalizeText(entry.href),
-      keywords: normalizeText(entry.keywords),
+      keywords: normalizeText(entry.keywords).toLowerCase(),
       category: normalizeText(entry.category),
       intent: normalizeText(entry.intent || "education"),
       priority: Number(entry.priority || 1),
@@ -362,7 +373,7 @@
       keywords: "why is roblox a risk for some kids why roblox risk children chat friend requests user generated games",
       intent: "education",
       priority: 4,
-      cta: "See why Roblox needs supervision"
+      cta: "See why Roblox requires supervision"
     },
     {
       question: "Why is Fortnite a risk for some kids?",
@@ -707,7 +718,6 @@
 
   function dedupeEntries(entries) {
     const seen = new Set();
-
     return entries.filter(function (item) {
       const key = [
         normalizeText(item.title).toLowerCase(),
@@ -723,11 +733,59 @@
   const QUESTION_ENTRIES = buildQuestionEntries(RAW_PARENT_QUESTIONS);
   const SEARCH_INDEX = dedupeEntries([].concat(STATIC_PAGE_INDEX, QUESTION_ENTRIES));
 
+  /**
+   * World-Class Search Matcher Function
+   * Computes multi-term scoring for intelligent relevance ranking.
+   */
+  function searchPOSH(query, limit = 8) {
+    const cleanQuery = normalizeText(query).toLowerCase();
+    if (!cleanQuery || cleanQuery.length < 2) return [];
+
+    const terms = cleanQuery.split(/\s+/).filter(Boolean);
+
+    const scored = SEARCH_INDEX.map(function (item) {
+      let score = 0;
+      const titleLower = item.title.toLowerCase();
+      const descLower = item.description.toLowerCase();
+      const kwLower = item.keywords;
+
+      // Exact phrase match bonus
+      if (titleLower.includes(cleanQuery)) score += 50;
+      if (descLower.includes(cleanQuery)) score += 20;
+
+      // Term-by-term evaluation
+      terms.forEach(function (term) {
+        if (titleLower.includes(term)) score += 15;
+        if (kwLower.includes(term)) score += 10;
+        if (descLower.includes(term)) score += 5;
+      });
+
+      // Factor in author priority
+      score += (item.priority || 1) * 2;
+
+      return { item: item, score: score };
+    });
+
+    return scored
+      .filter(function (result) {
+        return result.score > 5;
+      })
+      .sort(function (a, b) {
+        return b.score - a.score;
+      })
+      .slice(0, limit)
+      .map(function (result) {
+        return result.item;
+      });
+  }
+
+  // Expose Globals & API
   window.POSH_PARENT_QUESTIONS = RAW_PARENT_QUESTIONS;
   window.POSH_SEARCH_INDEX = SEARCH_INDEX;
-  window.POSH_SEARCH_META = {
-    version: "premium-v2",
-    generatedAt: "2026-04-18",
+  window.POSH_SEARCH_ENGINE = {
+    search: searchPOSH,
+    version: "premium-v3",
+    generatedAt: "2026-08-05",
     totalEntries: SEARCH_INDEX.length,
     totalQuestions: RAW_PARENT_QUESTIONS.length
   };
