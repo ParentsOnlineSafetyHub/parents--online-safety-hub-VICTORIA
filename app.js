@@ -1,13 +1,12 @@
 /**
  * ============================================================================
- * POSH app.js — Parents Online Safety Hub | Complete Safety Ecosystem
- * Version: 2026-08-05-v10-WorldClass-Psychological-Design-System-Redesigned
+ * POSH app.js — Parents Online Safety Hub | World-Class Executive Ecosystem
+ * Version: 2026-08-05-v11-Master-Production-Optimized
  * Purpose:
- * - Keep POSH fast, accessible, intuitive, and seamlessly navigable across devices.
- * - Dynamically map psychological color schemes (Calm, Warm, Focus, Alert) to pages.
- * - Transform plain text links, footers, and steps into intuitive, interactive button grids.
- * - Route users directly to live Amazon AU Buy Now pages for published books.
- * - Maintain graceful fallback redirects for legacy URLs so existing links never 404.
+ * - Ultra-fast, accessible, and intuitive navigation across all devices.
+ * - Dynamic psychological color-theme assignment (Calm, Warm, Focus, Alert).
+ * - Automated Amazon AU book catalogue mapping and direct buy-button integration.
+ * - Intelligent UI transformations, instant search engine, and graceful fallbacks.
  * ============================================================================
  */
 
@@ -347,7 +346,6 @@
     "v3-10-signs.html": POSH.tenSigns,
     "v3-sextortion.html": POSH.sextortion,
     "v3-downloads.html": POSH.downloads,
-    "v3-what-now.html": POSH.whatNow,
     "v3-posh-response-system.html": POSH.response,
     "v3-first-24-hours.html": POSH.first24
   };
@@ -674,7 +672,7 @@
 
   function applyPsychologicalTheme() {
     const current = currentLivePath();
-    let theme = "focus"; // Default blue/focus theme
+    let theme = "focus";
 
     if (WARM_THEME_PAGES.includes(current)) {
       theme = "warm";
@@ -1007,6 +1005,16 @@
         }, 160);
       });
     });
+
+    if (mq.addEventListener) {
+      mq.addEventListener("change", () => {
+        if (!mq.matches) {
+          groups.forEach(group => {
+            group.open = false;
+          });
+        }
+      });
+    }
   }
 
   function setupNavTracking(root) {
@@ -1277,14 +1285,12 @@
      ========================================================================== */
 
   function transformPlainLinksIntoButtons(root = document) {
-    // Target paragraphs, lists, or divs in footers/nav regions containing inline plain text link lists (e.g. separated by | or bullets)
     qsa("footer p, footer div, .posh-footer-hub p, .visitor-box, .recommended-next-pages", root).forEach(container => {
       if (container.dataset.poshTransformed === "true") return;
       
       const anchors = qsa("a", container);
-      if (anchors.length < 2) return; // Only transform if multiple links are grouped together as text lists
+      if (anchors.length < 2) return;
 
-      // Check if they are arranged in a plain inline format
       container.dataset.poshTransformed = "true";
       container.classList.add("posh-buttonized-container");
 
@@ -1297,7 +1303,6 @@
         grid.appendChild(clone);
       });
 
-      // Replace or append below text
       const headerText = container.querySelector("strong, h3, h4");
       container.innerHTML = "";
       if (headerText) container.appendChild(headerText);
