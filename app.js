@@ -1,16 +1,22 @@
+/**
+ * =========================================================
+ * POSH app.js — Topic Pathway / Complete Safety Ecosystem
+ * Version: 2026-06-30-v6-Complete-Executive
+ * Purpose:
+ * - Keep POSH simple, fast, accessible, and easy to navigate.
+ * - Do not send visitors to unpublished book pages.
+ * - Route visitors to live useful POSH topic pages until books are published.
+ * - Keep legacy pages alive through redirects and related-page suggestions.
+ * - Automatically inject smart CTAs, related links, and support strips.
+ * =========================================================
+ */
+
 (function () {
   "use strict";
 
-  /*
-    POSH app.js — Topic Pathway / No Dead Book Links Upgrade
-    Version: 2026-06-30-v5
-    Purpose:
-    - Keep POSH simple, fast and easy to navigate.
-    - Do not send visitors to unpublished book pages.
-    - Use book/topic names as pathway themes for now.
-    - Route visitors to live useful POSH topic pages until the books are published.
-    - Keep legacy pages alive through redirects and related-page suggestions.
-  */
+  /* =========================================================
+     1. SITE CONFIGURATION & CORE ROUTES
+     ========================================================= */
 
   const POSH = {
     brand: "POSH",
@@ -226,10 +232,8 @@
     maxRelatedItems: 6
   };
 
-  /*
-    Future book/topic names are routed to live topic pages for now.
-    Once the books are published, add purchase links inside the matching topic pages.
-  */
+  POSH.confidence = "v3-confidence-is-a-safety-skill.html";
+
   const TOPIC_PATHWAYS = {
     book1: POSH.parentSystem,
     book2: POSH.platformRisks,
@@ -239,11 +243,9 @@
     book6: POSH.criticalThinking,
     book7: POSH.manipulated,
     book8: POSH.executiveOnlineSafety,
-    book9: POSH.confidence || "v3-confidence-is-a-safety-skill.html",
+    book9: POSH.confidence,
     book10: POSH.houseRules
   };
-
-  POSH.confidence = "v3-confidence-is-a-safety-skill.html";
 
   const UNPUBLISHED_BOOK_REDIRECTS = {
     "v3-smarter-children-safer-children.html": POSH.smarterChildrenFree,
@@ -491,7 +493,6 @@
     disclaimer: ["warning & disclaimer"],
     warning: ["warning & disclaimer", "red flags", "safe adult warning signs"],
     support: ["support posh"],
-
     book: ["digital resilience topic pathways", "which topic should i start with", "free starter guide"],
     books: ["digital resilience topic pathways", "which topic should i start with", "free starter guide"],
     series: ["digital resilience topic pathways", "which topic should i start with", "parent system"],
@@ -514,7 +515,6 @@
     boundaries: ["house rules", "trust vs protection"],
     "which book": ["which topic should i start with", "digital resilience topic pathways"],
     "which topic": ["which topic should i start with", "digital resilience topic pathways"],
-
     grandparent: ["grandparents guide", "training for every adult", "safe adult warning signs"],
     grandparents: ["grandparents guide", "training for every adult", "what safe adults should say"],
     oldies: ["grandparents guide", "training for every adult"],
@@ -540,7 +540,6 @@
     "family friend": ["aunties, uncles & family friends", "safe adult warning signs"],
     auntie: ["aunties, uncles & family friends"],
     uncle: ["aunties, uncles & family friends"],
-
     accce: ["official australia pathways", "reporting australia", "report & get help"],
     esafety: ["official australia pathways", "reporting australia", "image removal"],
     "official reporting": ["official australia pathways", "report & get help"],
@@ -551,7 +550,6 @@
     nudify: ["ai deepfake risks", "image removal"],
     "take it down": ["image removal", "first-day photo safety"],
     sadistic: ["sadistic online exploitation", "blackmail or threats", "what is sextortion", "report & get help"],
-
     "free checks": ["free checks & adult accountability", "training for every adult", "safe adult warning signs"],
     "working with children": ["free checks & adult accountability", "safe adult network card", "training for every adult"],
     wwcc: ["free checks & adult accountability", "training for every adult"],
@@ -572,7 +570,6 @@
     "v3-response-system.html": [POSH.whatNow, POSH.reporting, POSH.parentQuestions, POSH.redFlags],
     "v3-parent-questions.html": [POSH.redFlags, POSH.parentScripts, POSH.talkOnlineSafety],
     "v3-safety-score.html": [POSH.parentSystem, POSH.redFlags, POSH.devices, POSH.houseRules, POSH.topicFinder],
-
     "v3-online-safety-training-for-everyone.html": [POSH.smarterChildrenFree, POSH.freeChildSafetyChecksAccountability, POSH.grandparents, POSH.parentsTraining, POSH.safeAdultWarningSigns, POSH.safeAdultResponse],
     "v3-grandparents-online-safety.html": [POSH.trainingEveryone, POSH.safeAdultWarningSigns, POSH.whatSafeAdultsSay, POSH.parentScripts, POSH.devices],
     "v3-parents-online-safety-training.html": [POSH.parentSystem, POSH.houseRules, POSH.safeAdultWarningSigns, POSH.devices, POSH.parentScripts],
@@ -589,7 +586,6 @@
     "v3-safe-adult-network-card.html": [POSH.safeAdultAccountabilityStandard, POSH.freeChildSafetyChecksAccountability, POSH.trainingEveryone, POSH.safeAdultWarningSigns, POSH.safeAdultResponse],
     "v3-free-child-safety-checks-safe-adult-accountability.html": [POSH.safeAdultAccountabilityStandard, POSH.trainingEveryone, POSH.safeAdultNetworkCard, POSH.safeAdultWarningSigns, POSH.safeAdultResponse],
     "v3-posh-safe-adult-accountability-standard.html": [POSH.freeChildSafetyChecksAccountability, POSH.safeAdultNetworkCard, POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.reporting],
-
     "v3-what-to-do-if-your-child-is-in-danger-online.html": [POSH.first24, POSH.first24Legacy, POSH.blackmail, POSH.evidence, POSH.reporting],
     "v3-first-24-hours-online-incident.html": [POSH.first24Legacy, POSH.evidence, POSH.blackmail, POSH.reporting, POSH.parentScripts],
     "v3-first-24-hours.html": [POSH.first24, POSH.evidence, POSH.reporting, POSH.parentScripts, POSH.redFlags],
@@ -607,7 +603,6 @@
     "v3-ai-nudify-deepfake-risks.html": [POSH.takeItDownImageRemoval, POSH.evidenceMistakes, POSH.reportWithoutWorse, POSH.reporting, POSH.parentScripts],
     "v3-first-day-photo-safety.html": [POSH.takeItDownImageRemoval, POSH.aiNudifyDeepfakeRisks, POSH.safeAdultNetworkCard, POSH.trainingEveryone, POSH.houseRules],
     "v3-sadistic-online-exploitation.html": [POSH.blackmail, POSH.sextortionLegacy, POSH.evidence, POSH.reporting, POSH.parentScripts],
-
     "v3-redflags.html": [POSH.tenSigns, POSH.groomingSigns, POSH.safeAdultWarningSigns, POSH.playbook, POSH.whyKidsDontTell, POSH.reporting],
     "v3-10-signs-targeted-online.html": [POSH.redFlags, POSH.playbook, POSH.predatorWarning, POSH.reporting],
     "v3-child-being-groomed-signs.html": [POSH.grooming, POSH.redFlags, POSH.playbook, POSH.predatorWarning, POSH.parentScripts],
@@ -616,7 +611,6 @@
     "v3-playbook.html": [POSH.redFlags, POSH.tenSigns, POSH.predators, POSH.reporting, POSH.algorithm],
     "v3-predators.html": [POSH.playbook, POSH.redFlags, POSH.reporting, POSH.algorithm],
     "v3-my-child-is-being-manipulated-online.html": [POSH.redFlags, POSH.groomingSigns, POSH.parentScripts, POSH.urgentHelp, POSH.criticalThinking],
-
     "v3-platform-risks-overview.html": [POSH.roblox, POSH.discord, POSH.snapchat, POSH.gaming, POSH.devices, POSH.parentSystem],
     "v3-gaming.html": [POSH.allGames, POSH.roblox, POSH.discord, POSH.redFlags, POSH.playbook],
     "v3-game-roblox.html": [POSH.robuxScam, POSH.inGameCurrency, POSH.discord, POSH.redFlags, POSH.petitionDigitalGifting],
@@ -626,7 +620,6 @@
     "v3-social-instagram.html": [POSH.socials, POSH.instagramDmScenarios, POSH.redFlags],
     "v3-social-tiktok.html": [POSH.socials, POSH.algorithm, POSH.tiktokLiveScenarios, POSH.redFlags],
     "v3-social-youtube.html": [POSH.socials, POSH.algorithm, POSH.youtubeCommentScenarios, POSH.redFlags],
-
     "v3-devices.html": [POSH.deviceControls, POSH.bestParentalControlApps, POSH.houseRules, POSH.checkDeviceCalmly],
     "v3-device-controls.html": [POSH.devices, POSH.bestParentalControlApps, POSH.houseRules],
     "v3-best-parental-control-apps.html": [POSH.devices, POSH.houseRules, POSH.monitorTrust, POSH.redFlags],
@@ -635,12 +628,10 @@
     "v3-online-scenarios-training.html": [POSH.robloxScenarios, POSH.snapchatScenarios, POSH.sextortionScenarios, POSH.executiveOnlineSafety],
     "v3-executive-functioning.html": [POSH.onlineScenarios, POSH.pauseBeforeReacting, POSH.impulseControl, POSH.emotionalRegulation],
     "v3-executive-functioning-online-safety.html": [POSH.executiveFunctioning, POSH.onlineScenarios, POSH.neurodivergentExecutive, POSH.confidence],
-
     "v3-emotional-regulation-online-safety.html": [POSH.parentScripts, POSH.pauseBeforeReacting, POSH.frustrationIntolerance, POSH.whyKidsDontTell],
     "v3-frustration-intolerance-online-safety.html": [POSH.emotionalRegulation, POSH.pauseBeforeReacting, POSH.parentScripts, POSH.houseRules],
     "v3-critical-thinking-online-safety.html": [POSH.decisionMaking, POSH.impulseControl, POSH.manipulated, POSH.algorithm],
     "v3-confidence-is-a-safety-skill.html": [POSH.whatSafeAdultsSay, POSH.houseRules, POSH.manipulated, POSH.parentScripts],
-
     "v3-awareness.html": [POSH.algorithm, POSH.investigations, POSH.redFlags],
     "v3-algorithm-awareness.html": [POSH.awareness, POSH.socials, POSH.redFlags],
     "v3-all-downloads.html": [POSH.downloadsLegacy, POSH.smarterChildrenFree, POSH.start, POSH.redFlags, POSH.devices, POSH.parentScripts],
@@ -660,66 +651,34 @@
   ];
 
   const SAFE_ADULT_PAGES = [
-    POSH.trainingEveryone,
-    POSH.grandparents,
-    POSH.parentsTraining,
-    POSH.carersTraining,
-    POSH.teachersTraining,
-    POSH.coachesTraining,
-    POSH.familyNetworkGuide,
-    POSH.olderSiblings,
-    POSH.youthWorkers,
-    POSH.babysitters,
-    POSH.safeAdultWarningSigns,
-    POSH.safeAdultResponse,
-    POSH.whatSafeAdultsSay,
-    POSH.safeAdultNetworkCard,
-    POSH.freeChildSafetyChecksAccountability,
+    POSH.trainingEveryone, POSH.grandparents, POSH.parentsTraining, POSH.carersTraining,
+    POSH.teachersTraining, POSH.coachesTraining, POSH.familyNetworkGuide, POSH.olderSiblings,
+    POSH.youthWorkers, POSH.babysitters, POSH.safeAdultWarningSigns, POSH.safeAdultResponse,
+    POSH.whatSafeAdultsSay, POSH.safeAdultNetworkCard, POSH.freeChildSafetyChecksAccountability,
     POSH.safeAdultAccountabilityStandard
   ];
 
   const REPORTING_PAGES = [
-    POSH.reporting,
-    POSH.reportingAustralia,
-    POSH.reportingUSA,
-    POSH.reportingUK,
-    POSH.reportingEurope,
-    POSH.officialReportingAustralia,
-    POSH.reportWithoutWorse,
-    POSH.evidenceMistakes
+    POSH.reporting, POSH.reportingAustralia, POSH.reportingUSA, POSH.reportingUK,
+    POSH.reportingEurope, POSH.officialReportingAustralia, POSH.reportWithoutWorse, POSH.evidenceMistakes
   ];
 
-  const IMAGE_SAFETY_PAGES = [
-    POSH.takeItDownImageRemoval,
-    POSH.aiNudifyDeepfakeRisks,
-    POSH.firstDayPhotoSafety
-  ];
+  const IMAGE_SAFETY_PAGES = [POSH.takeItDownImageRemoval, POSH.aiNudifyDeepfakeRisks, POSH.firstDayPhotoSafety];
 
   const URGENT_PAGES = [
-    POSH.urgentHelp,
-    POSH.first24,
-    POSH.first24Legacy,
-    POSH.blackmail,
-    POSH.photos,
-    POSH.evidence,
-    POSH.sadisticOnlineExploitation
+    POSH.urgentHelp, POSH.first24, POSH.first24Legacy, POSH.blackmail, POSH.photos,
+    POSH.evidence, POSH.sadisticOnlineExploitation
   ];
 
   const TOPIC_PAGES = [
-    POSH.smarterChildrenFree,
-    POSH.topicHub,
-    POSH.topicFinder,
-    POSH.parentSystem,
-    POSH.platformRisks,
-    POSH.redFlags,
-    POSH.emotionalRegulation,
-    POSH.frustrationIntolerance,
-    POSH.criticalThinking,
-    POSH.manipulated,
-    POSH.executiveOnlineSafety,
-    POSH.confidence,
-    POSH.houseRules
+    POSH.smarterChildrenFree, POSH.topicHub, POSH.topicFinder, POSH.parentSystem,
+    POSH.platformRisks, POSH.redFlags, POSH.emotionalRegulation, POSH.frustrationIntolerance,
+    POSH.criticalThinking, POSH.manipulated, POSH.executiveOnlineSafety, POSH.confidence, POSH.houseRules
   ];
+
+  /* =========================================================
+     2. CORE DOM & STRING UTILITIES
+     ========================================================= */
 
   function qs(selector, root = document) {
     return root.querySelector(selector);
@@ -735,10 +694,8 @@
 
   function normalisePath(path) {
     if (!path) return POSH.home;
-
     const clean = String(path).split("#")[0].split("?")[0];
     const file = clean.substring(clean.lastIndexOf("/") + 1);
-
     return file || POSH.home;
   }
 
@@ -769,7 +726,6 @@
 
   function debounce(fn, delay) {
     let timer;
-
     return function (...args) {
       clearTimeout(timer);
       timer = setTimeout(() => fn.apply(this, args), delay);
@@ -778,30 +734,21 @@
 
   function throttle(fn, limit) {
     let waiting = false;
-
     return function (...args) {
       if (waiting) return;
-
       waiting = true;
-
       window.requestAnimationFrame(() => {
         fn.apply(this, args);
-
-        setTimeout(() => {
-          waiting = false;
-        }, limit);
+        setTimeout(() => { waiting = false; }, limit);
       });
     };
   }
 
   function dedupeLinks(links) {
     const seen = new Set();
-
     return links.filter(link => {
       const key = normalisePath(link.href);
-
       if (seen.has(key)) return false;
-
       seen.add(key);
       return true;
     });
@@ -825,15 +772,7 @@
   function fixKnownBrokenInternalLinks(root = document) {
     qsa("a[href]", root).forEach(link => {
       const raw = link.getAttribute("href");
-
-      if (
-        !raw ||
-        /^https?:\/\//i.test(raw) ||
-        raw.startsWith("mailto:") ||
-        raw.startsWith("tel:")
-      ) {
-        return;
-      }
+      if (!raw || /^https?:\/\//i.test(raw) || raw.startsWith("mailto:") || raw.startsWith("tel:")) return;
 
       const file = normalisePath(raw);
       if (!REDIRECT_MAP[file]) return;
@@ -852,11 +791,7 @@
 
   function getPageTitle() {
     const titleEl = qs("h1.page-title") || qs(".posh-page-title") || qs("h1");
-
-    if (titleEl && safeText(titleEl.textContent)) {
-      return safeText(titleEl.textContent);
-    }
-
+    if (titleEl && safeText(titleEl.textContent)) return safeText(titleEl.textContent);
     return safeText(document.title.replace(/\s*[•|-]\s*POSH.*$/i, ""));
   }
 
@@ -869,9 +804,12 @@
       qs(".lead") ||
       qs(".page-intro") ||
       qs(".card p");
-
     return el ? safeText(el.textContent).slice(0, 240) : "";
   }
+
+  /* =========================================================
+     3. HERO BANNER INJECTION & FALLBACK HANDLING
+     ========================================================= */
 
   function loadImageFromCandidates(img, candidates, onSuccess, onFail) {
     if (!img || !Array.isArray(candidates) || !candidates.length) {
@@ -884,12 +822,10 @@
 
     function tryNext() {
       if (loaded) return;
-
       if (index >= candidates.length) {
         if (typeof onFail === "function") onFail();
         return;
       }
-
       img.src = candidates[index++];
     }
 
@@ -897,7 +833,6 @@
       loaded = true;
       if (typeof onSuccess === "function") onSuccess(img);
     });
-
     img.addEventListener("error", tryNext);
     tryNext();
   }
@@ -913,14 +848,12 @@
 
   function injectGlobalHeroBanner() {
     if (existingHeroAlreadyPresent()) return;
-
     const wrap = qs(".wrap");
     if (!wrap) return;
 
     const heroWrap = document.createElement("div");
     heroWrap.className = "posh-global-hero-wrap";
     heroWrap.setAttribute("data-posh-main-hero", "true");
-
     heroWrap.innerHTML = `
       <a href="${POSH.home}" class="posh-global-hero-link" aria-label="${escapeHtml(POSH.heroAriaLabel)}" data-track="global_hero_home">
         <span class="posh-global-hero-media is-image-pending">
@@ -928,7 +861,6 @@
         </span>
       </a>
     `;
-
     wrap.prepend(heroWrap);
 
     const heroImg = qs(".posh-global-hero-img", heroWrap);
@@ -954,6 +886,10 @@
       }
     );
   }
+
+  /* =========================================================
+     4. NAVIGATION ACCORDION & SEARCH ENGINE
+     ========================================================= */
 
   function buildNavLink(link) {
     return `
@@ -1009,24 +945,19 @@
 
   function setActiveNav(root) {
     const current = currentLivePath();
-
     qsa(".nav-group", root).forEach(group => {
       group.open = false;
       group.classList.remove("has-active-page");
     });
 
     qsa("a[href]", root).forEach(anchor => {
-      const href =
-        REDIRECT_MAP[normalisePath(anchor.getAttribute("href"))] ||
-        normalisePath(anchor.getAttribute("href"));
-
+      const href = REDIRECT_MAP[normalisePath(anchor.getAttribute("href"))] || normalisePath(anchor.getAttribute("href"));
       anchor.classList.remove("active", "nav-active");
       anchor.removeAttribute("aria-current");
 
       if (href === current) {
         anchor.classList.add("active", "nav-active");
         anchor.setAttribute("aria-current", "page");
-
         const group = anchor.closest(".nav-group");
         if (group) group.classList.add("has-active-page");
       }
@@ -1035,48 +966,36 @@
 
   function setupNavAccordion(root) {
     const groups = qsa(".nav-group", root);
-
     groups.forEach(group => {
       group.open = false;
-
       group.addEventListener("toggle", () => {
         if (!group.open) return;
-
-        groups.forEach(other => {
-          if (other !== group) other.open = false;
-        });
+        groups.forEach(other => { if (other !== group) other.open = false; });
       });
     });
 
     document.addEventListener("click", event => {
       if (!root.contains(event.target)) {
-        groups.forEach(group => {
-          group.open = false;
-        });
+        groups.forEach(group => { group.open = false; });
       }
     });
 
     document.addEventListener("keydown", event => {
-      if (event.key !== "Escape") return;
-
-      groups.forEach(group => {
-        group.open = false;
-      });
+      if (event.key === "Escape") {
+        groups.forEach(group => { group.open = false; });
+      }
     });
   }
 
   function setupDesktopHoverAccordion(root) {
     const mq = window.matchMedia("(hover:hover) and (pointer:fine) and (min-width:701px)");
     const groups = qsa(".nav-group", root);
-
     if (!groups.length) return;
 
     let closeTimer = null;
 
     function closeOtherGroups(activeGroup) {
-      groups.forEach(group => {
-        if (group !== activeGroup) group.open = false;
-      });
+      groups.forEach(group => { if (group !== activeGroup) group.open = false; });
     }
 
     groups.forEach(group => {
@@ -1085,7 +1004,6 @@
 
       group.addEventListener("mouseenter", () => {
         if (!mq.matches) return;
-
         clearTimeout(closeTimer);
         group.open = true;
         closeOtherGroups(group);
@@ -1093,7 +1011,6 @@
 
       group.addEventListener("mouseleave", () => {
         if (!mq.matches) return;
-
         closeTimer = setTimeout(() => {
           if (!group.matches(":focus-within")) group.open = false;
         }, 160);
@@ -1101,7 +1018,6 @@
 
       group.addEventListener("focusin", () => {
         if (!mq.matches) return;
-
         clearTimeout(closeTimer);
         group.open = true;
         closeOtherGroups(group);
@@ -1109,7 +1025,6 @@
 
       group.addEventListener("focusout", () => {
         if (!mq.matches) return;
-
         closeTimer = setTimeout(() => {
           if (!group.matches(":focus-within")) group.open = false;
         }, 160);
@@ -1119,9 +1034,7 @@
     if (mq.addEventListener) {
       mq.addEventListener("change", () => {
         if (!mq.matches) {
-          groups.forEach(group => {
-            group.open = false;
-          });
+          groups.forEach(group => { group.open = false; });
         }
       });
     }
@@ -1183,7 +1096,6 @@
     });
 
     if (normalisePath(link.href) === currentLivePath()) score -= 45;
-
     return score;
   }
 
@@ -1201,7 +1113,6 @@
     const input = qs("#poshSearch", root);
     const clearBtn = qs("#poshSearchClear", root);
     const results = qs("#poshSearchResults", root);
-
     if (!input || !clearBtn || !results) return;
 
     let activeIndex = -1;
@@ -1213,7 +1124,6 @@
     function updateActiveItem(items) {
       items.forEach((item, index) => {
         item.classList.toggle("is-active", index === activeIndex);
-
         if (index === activeIndex) item.setAttribute("aria-selected", "true");
         else item.removeAttribute("aria-selected");
       });
@@ -1302,7 +1212,6 @@
     results.addEventListener("click", event => {
       const target = event.target.closest(".nav-search-result");
       if (!target) return;
-
       maybeTrack("search_result_click", {
         label: target.getAttribute("href") || "",
         query: target.getAttribute("data-query") || ""
@@ -1332,9 +1241,12 @@
     if (shareBtn) shareBtn.addEventListener("click", nativeShare);
   }
 
+  /* =========================================================
+     5. PAGE STRUCTURE, BREADCRUMBS & TABLE OF CONTENTS
+     ========================================================= */
+
   function injectBreadcrumbs() {
     if (currentLivePath() === POSH.home || qs(".posh-breadcrumbs")) return;
-
     const currentLink = findLink(currentLivePath());
     if (!currentLink) return;
 
@@ -1345,7 +1257,6 @@
     const bread = document.createElement("nav");
     bread.className = "posh-breadcrumbs";
     bread.setAttribute("aria-label", "Breadcrumb");
-
     bread.innerHTML = `
       <a href="${POSH.home}">Home</a>
       ${group ? `<span class="crumb-sep">/</span><span>${escapeHtml(group.title)}</span>` : ""}
@@ -1369,19 +1280,16 @@
   function shouldBuildTOC() {
     if (currentLivePath() === POSH.home) return false;
     if (document.body.hasAttribute("data-no-toc")) return false;
-
     return qsa(".wrap h2").filter(h => safeText(h.textContent)).length >= 4;
   }
 
   function buildTOC() {
     if (qs(".posh-toc") || !shouldBuildTOC()) return;
-
     const headings = qsa(".wrap h2").filter(h => safeText(h.textContent));
     if (!headings.length) return;
 
     const toc = document.createElement("aside");
     toc.className = "posh-toc";
-
     toc.innerHTML = `
       <div class="posh-toc-title">On this page</div>
       <nav>
@@ -1392,7 +1300,6 @@
     `;
 
     const nav = qs("#nav");
-
     if (nav && nav.parentNode) {
       nav.parentNode.insertBefore(toc, nav.nextSibling);
     } else {
@@ -1421,9 +1328,12 @@
     });
   }
 
+  /* =========================================================
+     6. READING PROGRESS & FLOATING CONTROLS
+     ========================================================= */
+
   function ensureProgressBar() {
     if (qs("#poshReadingProgress")) return;
-
     const bar = document.createElement("div");
     bar.id = "poshReadingProgress";
     bar.className = "posh-reading-progress";
@@ -1433,18 +1343,15 @@
   function updateProgressBar() {
     const bar = qs("#poshReadingProgress");
     if (!bar) return;
-
     const doc = document.documentElement;
     const top = window.scrollY || doc.scrollTop || 0;
     const max = doc.scrollHeight - window.innerHeight;
     const pct = max > 0 ? Math.min(100, Math.max(0, (top / max) * 100)) : 0;
-
     bar.style.width = pct + "%";
   }
 
   function ensureBackToTop() {
     if (qs("#poshBackToTop")) return;
-
     const btn = document.createElement("button");
     btn.id = "poshBackToTop";
     btn.type = "button";
@@ -1462,13 +1369,11 @@
   function updateBackToTop() {
     const btn = qs("#poshBackToTop");
     if (!btn) return;
-
     btn.classList.toggle("visible", window.scrollY > 520);
   }
 
   function ensureMiniToast() {
     if (qs("#poshMiniToast")) return;
-
     const toast = document.createElement("div");
     toast.id = "poshMiniToast";
     toast.className = "posh-mini-toast";
@@ -1480,10 +1385,8 @@
   function showMiniToast(message) {
     const toast = qs("#poshMiniToast");
     if (!toast) return;
-
     toast.textContent = message;
     toast.classList.add("visible");
-
     clearTimeout(showMiniToast._timer);
     showMiniToast._timer = setTimeout(() => toast.classList.remove("visible"), 1600);
   }
@@ -1517,10 +1420,8 @@
 
   function injectStickyActionBar() {
     if (qs(".posh-action-bar")) return;
-
     const bar = document.createElement("div");
     bar.className = "posh-action-bar";
-
     bar.innerHTML = `
       <a href="${POSH.quiz}" class="posh-action-btn" data-track="sticky_quiz">Safety Score</a>
       <a href="${POSH.smarterChildrenFree}" class="posh-action-btn" data-track="sticky_free_guide">Free Guide</a>
@@ -1537,6 +1438,10 @@
     const shareBtn = qs("#poshStickyShare", bar);
     if (shareBtn) shareBtn.addEventListener("click", nativeShare);
   }
+
+  /* =========================================================
+     7. RELATED CARDS & AUTOMATED CONTENT INJECTIONS
+     ========================================================= */
 
   function buildRelatedCardsHtml() {
     const related = (PAGE_RELATIONS[currentLivePath()] || [])
@@ -1562,9 +1467,7 @@
   }
 
   function injectRelatedLinks() {
-    if (qs(".posh-related-links")) return;
-    if (currentLivePath() === POSH.home) return;
-
+    if (qs(".posh-related-links") || currentLivePath() === POSH.home) return;
     const html = buildRelatedCardsHtml();
     if (!html) return;
 
@@ -1583,15 +1486,12 @@
   }
 
   function injectSharePanel() {
-    if (qs(".posh-share-panel")) return;
-    if (currentLivePath() === POSH.home) return;
-
+    if (qs(".posh-share-panel") || currentLivePath() === POSH.home) return;
     const wrap = qs(".wrap");
     if (!wrap) return;
 
     const panel = document.createElement("section");
     panel.className = "posh-share-panel";
-
     panel.innerHTML = `
       <h2>Help another parent or safe adult find this earlier</h2>
       <p>Many families only start searching after something feels wrong. Sharing POSH can help another parent, grandparent, carer, teacher, coach or trusted adult recognise the pattern sooner.</p>
@@ -1758,7 +1658,6 @@
 
   function injectSmartCTA() {
     if (qs(".posh-smart-cta")) return;
-
     const wrap = qs(".wrap");
     if (!wrap) return;
 
@@ -1767,7 +1666,6 @@
 
     const section = document.createElement("section");
     section.className = "posh-smart-cta";
-
     section.innerHTML = `
       <h2>${escapeHtml(cta.title)}</h2>
       <p>${escapeHtml(cta.text)}</p>
@@ -1788,9 +1686,7 @@
   }
 
   function injectNextStepStrip() {
-    if (currentLivePath() === POSH.home) return;
-    if (qs(".posh-next-step-strip")) return;
-
+    if (currentLivePath() === POSH.home || qs(".posh-next-step-strip")) return;
     const wrap = qs(".wrap");
     if (!wrap) return;
 
@@ -1812,15 +1708,12 @@
   }
 
   function injectSupportStrip() {
-    if (qs(".posh-support-strip")) return;
-    if (currentLivePath() === POSH.home) return;
-
+    if (qs(".posh-support-strip") || currentLivePath() === POSH.home) return;
     const wrap = qs(".wrap");
     if (!wrap) return;
 
     const strip = document.createElement("section");
     strip.className = "posh-support-strip";
-
     strip.innerHTML = `
       <div class="posh-support-strip-inner">
         <strong>If POSH helped you think clearer, help keep it available for the next family.</strong>
@@ -1845,12 +1738,10 @@
   function injectHeroButtonsIfMissing() {
     const hero = qs(".posh-premium-hero") || qs(".home-intro-hero") || qs(".home-intro") || qs(".card.hero") || qs(".hero-card");
     if (!hero) return;
-    if (qs(".posh-hero-actions", hero)) return;
-    if (qs(".btn-grid a, .btn-row a, a.btn", hero)) return;
+    if (qs(".posh-hero-actions", hero) || qs(".btn-grid a, .btn-row a, a.btn", hero)) return;
 
     const box = document.createElement("div");
     box.className = "posh-hero-actions";
-
     box.innerHTML = `
       <a href="${POSH.safetyLanes}" data-track="hero_safety_lanes">Choose Safety Path</a>
       <a href="${POSH.smarterChildrenFree}" class="secondary" data-track="hero_free_guide">Free Guide</a>
@@ -1866,15 +1757,12 @@
   }
 
   function injectSupportFooterPrompt() {
-    if (qs(".posh-footer-prompt")) return;
-    if (currentLivePath() === POSH.home) return;
-
+    if (qs(".posh-footer-prompt") || currentLivePath() === POSH.home) return;
     const wrap = qs(".wrap");
     if (!wrap) return;
 
     const footer = document.createElement("section");
     footer.className = "posh-footer-prompt";
-
     footer.innerHTML = `
       <p><strong>POSH is built for families.</strong> Support helps build more tools, clearer guides, printable downloads and safer pathways for parents and safe adults who land here overwhelmed.</p>
       <div class="posh-footer-prompt-actions">
@@ -1893,6 +1781,10 @@
       el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
     });
   }
+
+  /* =========================================================
+     8. METADATA, INTERACTIVITY & ANALYTICS ENHANCERS
+     ========================================================= */
 
   function ensureBodyFlags() {
     const current = currentLivePath();
@@ -1915,7 +1807,6 @@
   function addPageMetaAttributes() {
     const page = currentLivePath();
     const title = getPageTitle();
-
     document.documentElement.dataset.page = page.replace(/\.html$/i, "");
     document.documentElement.dataset.pageTitle = slugify(title || page);
   }
@@ -1926,7 +1817,6 @@
       if (!summary) return;
 
       detail.classList.add("posh-details");
-
       detail.addEventListener("toggle", () => {
         if (detail.open) {
           maybeTrack("details_open", {
@@ -1940,10 +1830,8 @@
   function hardenExternalLinks() {
     qsa("a[target='_blank']").forEach(link => {
       const rel = (link.getAttribute("rel") || "").split(/\s+/).filter(Boolean);
-
       if (!rel.includes("noopener")) rel.push("noopener");
       if (!rel.includes("noreferrer")) rel.push("noreferrer");
-
       link.setAttribute("rel", rel.join(" "));
     });
   }
@@ -1951,7 +1839,6 @@
   function trackLinks() {
     qsa("a[href]").forEach(link => {
       if (link.dataset.poshTracked === "true") return;
-
       link.dataset.poshTracked = "true";
 
       const href = link.getAttribute("href") || "";
@@ -1986,7 +1873,6 @@
   function enhanceForms() {
     qsa("form").forEach(form => {
       form.setAttribute("novalidate", "novalidate");
-
       form.addEventListener("submit", () => {
         maybeTrack("form_submit_attempt", {
           label: form.getAttribute("id") || form.getAttribute("name") || currentLivePath()
@@ -2009,11 +1895,9 @@
 
   function injectPageSummaryMeta() {
     if (qs(".posh-page-summary-meta")) return;
-
     const wrap = qs(".wrap");
     const title = getPageTitle();
     const intro = getPageIntro();
-
     if (!wrap || !title || !intro) return;
 
     const block = document.createElement("div");
@@ -2050,7 +1934,6 @@
 
   function removeHomepageAutoPanels() {
     if (currentLivePath() !== POSH.home) return;
-
     window.setTimeout(() => {
       qsa(HOME_AUTOPANELS.join(",")).forEach(el => el.remove());
     }, 150);
@@ -2121,6 +2004,10 @@
   function trackPageView() {
     maybeTrack("page_view_enhanced", { label: currentLivePath() });
   }
+
+  /* =========================================================
+     9. SAFE INITIALIZATION & EXECUTION
+     ========================================================= */
 
   function safeInit(fn) {
     try {
