@@ -1,11 +1,11 @@
 /**
  * ============================================================================
  * POSH style.css — Parents Online Safety Hub | Complete Safety Ecosystem
- * Version: 2026-08-05-v8-WorldClass-Psychological-Design-System
+ * Version: 2026-08-05-v9-WorldClass-Psychological-Design-System-Redesigned
  * Purpose:
- * - Deliver an empathetic, calm, and frictionless visual experience for parents.
- * - Map psychological colour schemes (Calm, Warm, Focus, Alert) across topic hubs.
- * - Ensure absolute readability, WCAG accessibility compliance, and precision UX.
+ * - Deliver a pristine, modern, high-contrast, and empathetic visual experience.
+ * - Replace plain layouts, clunky text blocks, and written footers with intuitive,
+ *   fully interactive button navigation grids and cards.
  * ============================================================================
  */
 
@@ -89,7 +89,6 @@
    PSYCHOLOGICAL TOPIC THEME MODIFIERS
    ============================================================================ */
 
-/* Calm Theme (Teal/Emerald) — Emotional Regulation, Routines, Executive Functioning */
 [data-posh-theme="calm"],
 .theme-calm {
   --theme-accent: var(--cyan);
@@ -99,7 +98,6 @@
   --theme-badge-text: #b3fef7;
 }
 
-/* Warm Theme (Gold/Bronze) — Community, Grandparents, Safe Adults, Core Books */
 [data-posh-theme="warm"],
 .theme-warm {
   --theme-accent: var(--gold);
@@ -109,7 +107,6 @@
   --theme-badge-text: #fff3ce;
 }
 
-/* Focus Theme (Royal Blue) — Critical Thinking, Decision Making, House Rules */
 [data-posh-theme="focus"],
 .theme-focus {
   --theme-accent: #82b4ff;
@@ -119,7 +116,6 @@
   --theme-badge-text: #e1ecff;
 }
 
-/* Alert Theme (Rose Gold/Coral) — Red Flags, Grooming Signs, Early Intervention */
 [data-posh-theme="alert"],
 .theme-alert {
   --theme-accent: #ff96a4;
@@ -151,45 +147,19 @@ body {
   background-attachment: fixed;
 }
 
-body.home-page,
-body.posh-home-v4 {
-  background:
-    radial-gradient(circle at 14% 5%, rgba(84, 185, 255, 0.16), transparent 34%),
-    radial-gradient(circle at 86% 12%, rgba(226, 195, 104, 0.12), transparent 30%),
-    radial-gradient(circle at 50% 55%, rgba(48, 235, 217, 0.07), transparent 38%),
-    linear-gradient(180deg, #051730 0%, #0c3468 46%, #06152d 100%);
-  background-attachment: fixed;
-}
-
 img {
   max-width: 100%;
   display: block;
 }
 
-iframe {
-  max-width: 100%;
-}
-
 a {
   color: var(--blue);
   text-decoration: none;
-  transition:
-    color 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover {
   color: #a3e3ff;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
 }
 
 .wrap {
@@ -199,7 +169,7 @@ textarea {
 }
 
 /* ============================================================================
-   URGENT HELP TRIAGE STRIP
+   TOP NAVIGATION & HEADER BUTTON HUBS
    ============================================================================ */
 
 .posh-urgent-banner {
@@ -221,12 +191,6 @@ textarea {
   color: #ffe1e6;
 }
 
-.posh-urgent-banner-inner strong {
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
 .btn-urgent-pill {
   display: inline-flex;
   align-items: center;
@@ -246,1329 +210,233 @@ textarea {
 .btn-urgent-pill:hover {
   background: #ff5270;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255, 107, 133, 0.45);
+}
+
+/* Top Quick Button Hub Matrix replacing plain header text */
+.posh-header-action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 16px 0 24px;
+}
+
+.posh-header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.posh-header-btn:hover {
+  background: rgba(130, 180, 255, 0.18);
+  border-color: rgba(130, 180, 255, 0.40);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.posh-header-btn.highlight {
+  background: rgba(226, 195, 104, 0.15);
+  border-color: rgba(226, 195, 104, 0.38);
+  color: #fff7df;
 }
 
 /* ============================================================================
-   TYPOGRAPHY & HEADINGS
+   TYPOGRAPHY & CARDS
    ============================================================================ */
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  border: 1px solid var(--goldLine);
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(226, 195, 104, 0.15), rgba(226, 195, 104, 0.07));
-  color: #fff7df;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  box-shadow: 0 6px 20px rgba(3, 12, 28, 0.18);
-  margin-bottom: 20px;
-}
-
-.page-title,
-h1.page-title,
-.posh-page-title,
-.home-intro .page-title,
-body.home-page .page-title,
-body.home-page .home-mantra {
+.page-title {
   margin: 0 auto 16px;
   display: block;
   width: fit-content;
-  max-width: 100%;
   font-family: var(--font-heading);
-  font-size: clamp(2.35rem, 6vw, 4.45rem);
-  line-height: 1.05;
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  line-height: 1.1;
   font-weight: 900;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
   color: #ffffff;
   text-align: center;
   text-shadow: 0 14px 36px rgba(3, 12, 28, 0.40);
-  padding: 0 0 12px;
   border-bottom: 1px solid rgba(226, 195, 104, 0.32);
-  text-wrap: balance;
+  padding-bottom: 12px;
 }
 
-.page-title::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 5px;
-  margin-top: 10px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(226, 195, 104, 0.60), rgba(130, 180, 255, 0.36), transparent);
-  filter: blur(4px);
-  opacity: 0.6;
-}
-
-.tagline,
-body.home-page .tagline,
-body.home-page .home-subline {
+.tagline {
   margin: 0 auto 28px;
-  max-width: 940px;
-  font-size: clamp(1.02rem, 1.25vw, 1.12rem);
+  max-width: 900px;
+  font-size: 1.1rem;
   color: var(--readableText);
   line-height: 1.8;
   text-align: center;
 }
 
-.tagline strong,
-body.home-page .tagline strong,
-body.home-page .home-subline strong {
-  color: #ffffff;
-  font-weight: 700;
-}
-
-h1, h2, h3, h4 {
-  margin: 0 0 12px;
-  font-family: var(--font-heading);
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-
-h1 {
-  font-size: clamp(2.1rem, 5vw, 3.3rem);
-  line-height: 1.1;
-  font-weight: 900;
-}
-
-h2 {
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
-  line-height: 1.25;
-  font-weight: 800;
-  text-wrap: balance;
-}
-
-h3 {
-  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-  line-height: 1.32;
-  font-weight: 800;
-}
-
-h4 {
-  font-size: 1.02rem;
-  line-height: 1.38;
-  font-weight: 800;
-}
-
-p {
-  margin: 0 0 16px;
-  font-size: clamp(1.01rem, 1.2vw, 1.08rem);
-  line-height: 1.78;
-  color: var(--readableText);
-}
-
-strong {
-  color: var(--text);
-  font-weight: 700;
-}
-
-small {
-  color: var(--soft);
-}
-
-ul, ol {
-  margin: 0 0 18px 22px;
-  padding: 0;
-  color: var(--muted);
-}
-
-li {
-  margin: 0 0 8px;
-  line-height: 1.75;
-}
-
-hr {
-  border: none;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--cardLineStrong), transparent);
-  margin: 28px 0;
-}
-
-/* ============================================================================
-   NAV & SEARCH AREA
-   ============================================================================ */
-
-#nav {
-  margin: 0 0 28px;
-}
-
-.nav,
-.nav-shell {
-  border: 1px solid var(--cardLine);
-  border-radius: var(--radius);
-  background: rgba(8, 24, 48, 0.72);
-  backdrop-filter: blur(14px);
-  box-shadow: var(--shadowSoft);
-}
-
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 16px;
-}
-
-.nav-shell {
-  display: block;
-  padding: 16px;
-}
-
-.nav a,
-.nav-shell a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 15px;
-  border-radius: 999px;
-  border: 1px solid var(--quietButtonBorder);
-  background: var(--quietButtonBg);
-  color: #f1f7ff;
-  font-size: 0.95rem;
-  font-weight: 650;
-}
-
-.nav a:hover,
-.nav-shell a:hover {
-  background: rgba(130, 180, 255, 0.16);
-  border-color: rgba(130, 180, 255, 0.35);
-  transform: translateY(-1px);
-  color: #fff;
-}
-
-.nav-search-wrap {
-  position: relative;
-  margin: 0 0 16px;
-}
-
-.nav-search-input {
-  width: 100%;
-  min-height: 52px;
-  padding: 14px 54px 14px 18px;
-  border-radius: var(--radiusSm);
-  border: 1px solid rgba(226, 195, 104, 0.30);
-  background: rgba(8, 24, 48, 0.82);
-  color: var(--text);
-  box-shadow: var(--shadowSoft);
-}
-
-.nav-search-input::placeholder {
-  color: rgba(248, 250, 252, 0.48);
-}
-
-.nav-search-input:focus {
-  outline: none;
-  border-color: rgba(130, 180, 255, 0.50);
-  box-shadow: 0 0 0 3px rgba(84, 185, 255, 0.16), var(--shadowSoft);
-}
-
-.nav-search-clear {
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  cursor: pointer;
-  visibility: hidden;
-}
-
-.nav-search-clear:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.nav-search-results {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
-  z-index: 30;
-  padding: 10px;
-  border-radius: var(--radiusMd);
-  border: 1px solid var(--cardLineStrong);
-  background: linear-gradient(180deg, rgba(14, 38, 76, 0.98), rgba(10, 30, 60, 0.98));
-  box-shadow: var(--shadowHeavy);
-}
-
-.nav-search-results[hidden] {
-  display: none !important;
-}
-
-.nav-search-result {
-  display: block;
-  width: 100%;
-  padding: 12px 16px;
-  border-radius: 12px;
-  color: var(--text);
-  border: 1px solid transparent;
-}
-
-.nav-search-result:hover {
-  background: rgba(130, 180, 255, 0.14);
-  border-color: rgba(130, 180, 255, 0.28);
-  color: #fff;
-}
-
-.nav-search-result-title {
-  display: block;
-  font-weight: 800;
-  color: #fff;
-}
-
-.nav-search-result-meta {
-  display: block;
-  margin-top: 2px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #a3e3ff;
-}
-
-.nav-search-result-desc {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--soft);
-}
-
-.nav-primary-cta-row,
-.nav-support-row,
-.nav-quick-actions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
-  margin: 0 0 14px;
-}
-
-.nav-primary-cta,
-.nav-support-link,
-.nav-quick-link {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 12px 16px;
-  border-radius: 999px;
-  text-align: center;
-  font-weight: 750;
-  background: var(--quietButtonBg);
-  border: 1px solid var(--quietButtonBorder);
-  color: #f1f7ff !important;
-  box-shadow: none;
-}
-
-.nav-primary-cta:first-child {
-  background: rgba(130, 180, 255, 0.16);
-  border-color: rgba(130, 180, 255, 0.40);
-}
-
-.nav-primary-cta:hover,
-.nav-support-link:hover,
-.nav-quick-link:hover {
-  transform: translateY(-1px);
-  background: rgba(130, 180, 255, 0.16);
-  border-color: rgba(130, 180, 255, 0.35);
-  color: #fff !important;
-}
-
-.nav-accordion {
-  display: grid;
-  gap: 10px;
-}
-
-.nav-group {
-  margin: 0;
-  border: none;
-  background: transparent;
-  overflow: visible;
-}
-
-.nav-group summary {
-  list-style: none;
-  cursor: pointer;
-  min-height: 60px;
-  padding: 16px 56px 16px 18px;
-  border-radius: var(--radiusSm);
-  border: 1.2px solid rgba(203, 141, 87, 0.42);
-  background: linear-gradient(180deg, rgba(14, 38, 76, 0.96), rgba(10, 28, 58, 0.96));
-  color: #f8fafc;
-  font-weight: 800;
-  font-size: 1rem;
-  line-height: 1.25;
-  position: relative;
-  box-shadow: 0 10px 24px rgba(3, 12, 28, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-}
-
-.nav-group summary::-webkit-details-marker {
-  display: none;
-}
-
-.nav-group summary::after {
-  content: "+";
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 22px;
-  text-align: center;
-  color: #f2dc94;
-  font-size: 1.2rem;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.nav-group summary:hover {
-  transform: translateY(-1px);
-  border-color: rgba(203, 141, 87, 0.66);
-  box-shadow: 0 14px 28px rgba(3, 12, 28, 0.28), 0 0 18px rgba(203, 141, 87, 0.08);
-}
-
-.nav-group[open] summary {
-  border-color: rgba(203, 141, 87, 0.74);
-  background: linear-gradient(180deg, rgba(17, 44, 86, 0.98), rgba(12, 32, 62, 0.98));
-}
-
-.nav-group[open] summary::after {
-  content: "–";
-}
-
-.nav-group nav {
-  margin-top: 10px;
-  display: grid;
-  gap: 8px;
-  padding: 14px;
-  border-radius: var(--radiusMd);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: rgba(7, 22, 44, 0.60);
-}
-
-.nav-group nav a {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: 46px;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 1px solid transparent;
-  background: rgba(255, 255, 255, 0.045);
-  color: var(--text);
-  font-weight: 650;
-}
-
-.nav-group nav a:hover {
-  transform: translateY(-1px);
-  background: rgba(130, 180, 255, 0.14);
-  border-color: rgba(130, 180, 255, 0.28);
-  color: #fff;
-}
-
-/* ============================================================================
-   GLOBAL HERO & HERO ACCENTS
-   ============================================================================ */
-
-.posh-global-hero-wrap {
-  margin: 0 0 18px !important;
-}
-
-.posh-global-hero-link {
-  display: block;
-  width: 100%;
-  text-decoration: none;
-  border-radius: var(--radius) !important;
-  overflow: hidden;
-  border: 1.5px solid rgba(226, 195, 104, 0.64);
-  box-shadow:
-    0 18px 46px rgba(3, 12, 28, 0.32),
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-    0 0 24px rgba(226, 195, 104, 0.10);
-  background: linear-gradient(180deg, rgba(14, 38, 76, 0.86), rgba(8, 26, 54, 0.60));
-  position: relative;
-  transform: translateZ(0);
-}
-
-.posh-global-hero-link::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-  z-index: 2;
-}
-
-.posh-global-hero-link:hover {
-  transform: translateY(-1px);
-  box-shadow:
-    0 24px 56px rgba(3, 12, 28, 0.38),
-    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
-    0 0 30px rgba(226, 195, 104, 0.14);
-}
-
-.posh-global-hero-media {
-  display: block;
-  width: 100%;
-  max-height: 270px;
-  overflow: hidden;
-}
-
-.posh-global-hero-img {
-  width: 100%;
-  height: clamp(160px, 22vw, 270px) !important;
-  min-height: 0 !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-  transform: scale(1);
-  transition: transform 4.8s ease, filter 0.28s ease;
-  will-change: transform;
-}
-
-.posh-global-hero-link:hover .posh-global-hero-img {
-  filter: brightness(1.03) saturate(1.04);
-}
-
-.posh-global-hero-img.is-loaded {
-  animation: poshHeroSlowZoom 7s ease-out both;
-}
-
-@keyframes poshHeroSlowZoom {
-  0% { transform: scale(1.005); }
-  100% { transform: scale(1.025); }
-}
-
-/* ============================================================================
-   PREMIUM HOMEPAGE HEADER & LAYOUT CARDS
-   ============================================================================ */
-
-.posh-premium-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
-  gap: 24px;
-  align-items: stretch;
-  margin: 0 0 28px;
-  padding: clamp(26px, 4vw, 44px);
-  border-radius: 28px;
-  border: 1px solid rgba(226, 195, 104, 0.30);
-  background:
-    radial-gradient(circle at 10% 0%, rgba(84, 185, 255, 0.16), transparent 36%),
-    radial-gradient(circle at 90% 10%, rgba(226, 195, 104, 0.14), transparent 35%),
-    linear-gradient(180deg, rgba(17, 46, 92, 0.96), rgba(10, 30, 60, 0.96));
-  box-shadow: 0 28px 75px rgba(3, 12, 28, 0.42);
-  overflow: hidden;
-}
-
-.posh-kicker,
-.posh-section-label,
-.home-kicker,
-.kicker,
-.posh-page-kicker {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 0 14px;
-  padding: 9px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(226, 195, 104, 0.44);
-  background: rgba(226, 195, 104, 0.13);
-  color: #fff7df;
-  font-weight: 900;
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.posh-premium-hero h1 {
-  max-width: 780px;
-  margin: 0 0 16px;
-  font-size: clamp(2.4rem, 6vw, 5.25rem);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
-  text-wrap: balance;
-}
-
-.posh-hero-lead {
-  max-width: 760px;
-  font-size: clamp(1.08rem, 1.6vw, 1.25rem);
-  line-height: 1.78;
-}
-
-.posh-hero-message {
-  max-width: 820px;
-  margin: 20px 0 0;
-  padding: 20px;
-  border-radius: var(--radiusMd);
-  border: 1px solid rgba(130, 180, 255, 0.25);
-  background: rgba(130, 180, 255, 0.08);
-}
-
-.posh-hero-message strong {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.posh-hero-side-card {
-  padding: 24px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(226, 195, 104, 0.28);
-  background:
-    radial-gradient(circle at top, rgba(226, 195, 104, 0.14), transparent 42%),
-    rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-.posh-check-list {
-  margin: 16px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.posh-check-list li {
-  margin: 0 0 10px;
-  padding: 12px 14px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  color: #fff;
-  font-weight: 800;
-}
-
-.posh-hero-actions,
-.posh-button-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-/* ============================================================================
-   GENERAL CARD & SECTION COMPONENTS
-   ============================================================================ */
-
 .card {
   position: relative;
-  margin: 0 0 28px;
-  padding: clamp(22px, 3.2vw, 32px);
+  margin: 0 0 24px;
+  padding: clamp(24px, 3.5vw, 36px);
   border-radius: var(--radius);
   border: 1px solid var(--theme-border, var(--cardLine));
-  background:
-    radial-gradient(circle at top left, var(--theme-glow, rgba(130, 180, 255, 0.06)), transparent 36%),
-    linear-gradient(180deg, rgba(17, 46, 92, 0.96), rgba(12, 36, 74, 0.94));
+  background: linear-gradient(180deg, rgba(17, 46, 92, 0.96), rgba(12, 36, 74, 0.94));
   box-shadow: var(--shadow);
-  overflow: hidden;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
-  pointer-events: none;
-}
-
-.card > *:last-child {
-  margin-bottom: 0;
-}
-
-.card.soft {
-  background:
-    radial-gradient(circle at top left, var(--theme-glow, rgba(130, 180, 255, 0.045)), transparent 36%),
-    linear-gradient(180deg, rgba(15, 40, 80, 0.88), rgba(11, 31, 64, 0.88));
-}
-
-.card.center-card {
-  text-align: center;
-}
-
-/* AMAZON / KINDLE BOOKS FEATURE CARD */
-.posh-amazon-feature-card {
-  border-color: rgba(226, 195, 104, 0.42) !important;
-  background:
-    radial-gradient(circle at 80% 10%, rgba(226, 195, 104, 0.16), transparent 38%),
-    linear-gradient(180deg, rgba(22, 56, 108, 0.96), rgba(13, 35, 70, 0.96)) !important;
-}
-
-.posh-label-amazon {
-  background: rgba(226, 195, 104, 0.20) !important;
-  border-color: rgba(226, 195, 104, 0.45) !important;
-  color: #fff7df !important;
-}
-
-.posh-banner-actions {
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.section-lead {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 940px;
-  color: rgba(248, 250, 252, 0.85);
-}
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+.card h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
 }
 
 /* ============================================================================
-   HOMEPAGE SPECIFIC GRID PATHWAYS
+   INTERACTIVE BUTTON GRIDS (Replacing Plain Text Lists & Steps)
    ============================================================================ */
 
-.posh-quick-paths {
+.posh-action-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
-  margin: 0 0 28px;
+  margin: 20px 0;
 }
 
-.posh-quick-paths a {
-  min-height: 122px;
-  padding: 20px;
-  border-radius: var(--radiusMd);
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  background:
-    radial-gradient(circle at top left, rgba(130, 180, 255, 0.10), transparent 42%),
-    rgba(255, 255, 255, 0.048);
-  box-shadow: 0 14px 34px rgba(3, 12, 28, 0.22);
-}
-
-.posh-quick-paths strong {
-  display: block;
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: 1.04rem;
-  margin-bottom: 6px;
-}
-
-.posh-quick-paths span {
-  display: block;
-  color: rgba(248, 250, 252, 0.74);
-  font-size: 0.94rem;
-  line-height: 1.55;
-}
-
-.posh-quick-paths a:hover {
-  transform: translateY(-3px);
-  border-color: rgba(130, 180, 255, 0.36);
-  background: rgba(130, 180, 255, 0.10);
-}
-
-.posh-book-feature {
-  display: grid;
-  grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
-  gap: 26px;
-  align-items: center;
-  text-align: left;
-}
-
-.posh-book-cover-card {
-  min-height: 430px;
-  padding: 26px;
-  border-radius: 26px;
-  border: 1px solid rgba(226, 195, 104, 0.44);
-  background:
-    radial-gradient(circle at center 24%, rgba(84, 185, 255, 0.28), transparent 34%),
-    radial-gradient(circle at center 70%, rgba(226, 195, 104, 0.16), transparent 34%),
-    linear-gradient(180deg, #09244c, #05152c);
-  box-shadow: 0 24px 55px rgba(3, 12, 28, 0.42);
+.posh-action-card-btn {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
-  overflow: hidden;
-  position: relative;
-}
-
-.book-badge {
-  width: fit-content;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(226, 195, 104, 0.16);
-  border: 1px solid rgba(226, 195, 104, 0.44);
-  color: #fff8e1;
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.posh-series-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 24px;
-}
-
-.posh-series-card {
   padding: 20px;
-  border-radius: var(--radiusMd);
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  background:
-    radial-gradient(circle at top right, rgba(84, 185, 255, 0.08), transparent 40%),
-    rgba(255, 255, 255, 0.045);
-  text-align: left;
-  transition: 0.2s ease;
-}
-
-.posh-series-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(130, 180, 255, 0.32);
-  background: rgba(130, 180, 255, 0.08);
-}
-
-.posh-series-card span {
-  display: inline-flex;
-  margin-bottom: 10px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(226, 195, 104, 0.13);
-  border: 1px solid rgba(226, 195, 104, 0.28);
-  color: #faecc4;
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-}
-
-.posh-series-card a {
-  display: inline-flex;
-  font-weight: 900;
-  color: #a3e3ff;
-}
-
-.posh-series-note {
-  margin-top: 20px;
-}
-
-/* ============================================================================
-   INFO BOXES, BADGES & RULES
-   ============================================================================ */
-
-.info-box,
-.rule-box,
-.tip-box,
-.warning-box,
-.highlight-box,
-.stat-box {
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: var(--radiusSm);
-  background: rgba(255, 255, 255, 0.045);
-}
-
-.info-box:hover,
-.card.soft:hover,
-.next-item:hover {
-  border-color: rgba(130, 180, 255, 0.26);
-  background: rgba(130, 180, 255, 0.075);
-}
-
-.rule-box {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.048), rgba(255, 255, 255, 0.028));
-  max-width: 940px;
-  margin: 20px auto 0;
-}
-
-.urgent-rule {
-  border-color: rgba(255, 107, 133, 0.32);
-  background: rgba(255, 107, 133, 0.09);
-}
-
-.badge,
-.risk-badge,
-.pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text);
-}
-
-.badge.gold {
-  background: rgba(226, 195, 104, 0.13);
-  border-color: rgba(226, 195, 104, 0.30);
-  color: #faecc4;
-}
-
-.pill.danger {
-  background: rgba(255, 107, 133, 0.13);
-  border-color: rgba(255, 107, 133, 0.32);
-  color: #ffe1e6;
-}
-
-.network-flow {
-  display: grid;
-  gap: 14px;
-  justify-items: center;
-  margin-top: 18px;
-}
-
-.network-flow .pill {
-  min-width: min(100%, 280px);
-}
-
-.arrow {
-  color: var(--cyan);
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 900;
-  line-height: 1;
-}
-
-/* ============================================================================
-   BUTTONS & ACTIONS
-   ============================================================================ */
-
-.btn,
-.button,
-.cta-btn,
-a.btn,
-a.button,
-a.cta-btn,
-button.btn,
-button.button,
-button.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 46px;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid var(--quietButtonBorder);
-  background: var(--quietButtonBg);
-  color: #f1f7ff;
-  font-weight: 750;
-  font-size: 0.96rem;
-  letter-spacing: 0.005em;
-  box-shadow: none;
-  cursor: pointer;
-}
-
-.btn:hover,
-.button:hover,
-.cta-btn:hover,
-a.btn:hover,
-a.button:hover,
-a.cta-btn:hover,
-button.btn:hover,
-button.button:hover,
-button.cta-btn:hover {
-  transform: translateY(-1px);
-  background: rgba(130, 180, 255, 0.15);
-  border-color: rgba(130, 180, 255, 0.32);
-  color: #fff;
-}
-
-.btn.primary,
-.button.primary,
-.cta-btn.primary,
-.btn.primary-soft,
-.button.primary-soft,
-.cta-btn.primary-soft {
-  background: rgba(130, 180, 255, 0.16);
-  border: 1px solid rgba(130, 180, 255, 0.38);
-  color: #ffffff;
-}
-
-.btn.quiet,
-.button.quiet,
-.cta-btn.quiet {
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(248, 250, 252, 0.90);
   border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.btn-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.btn-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-}
-
-/* ============================================================================
-   SAFE ADULT PAGE IDENTITY & REFINEMENT
-   ============================================================================ */
-
-body.page-is-safe-adult .posh-page-header {
-  border-color: rgba(226, 195, 104, 0.32);
-  background:
-    radial-gradient(circle at 18% 0%, rgba(226, 195, 104, 0.10), transparent 34%),
-    radial-gradient(circle at 86% 12%, rgba(130, 180, 255, 0.08), transparent 32%),
-    linear-gradient(180deg, rgba(17, 46, 92, 0.96), rgba(11, 32, 66, 0.94));
-}
-
-body.page-is-safe-adult .posh-page-kicker {
-  border-color: rgba(226, 195, 104, 0.44);
-  background: rgba(226, 195, 104, 0.13);
-  color: #fff8e1;
-}
-
-body.page-is-safe-adult p,
-body.page-is-safe-adult li {
-  color: rgba(248, 250, 252, 0.91);
-}
-
-/* ============================================================================
-   STICKY ACTION BAR & FOOTER HELPERS
-   ============================================================================ */
-
-.posh-reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 4px;
-  z-index: 10001;
-  background: linear-gradient(90deg, var(--blue), var(--cyan));
-  box-shadow: 0 0 16px rgba(84, 185, 255, 0.40);
-}
-
-body.js-ready .wrap {
-  padding-bottom: 96px !important;
-}
-
-.posh-action-bar {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9997;
-  width: min(840px, calc(100% - 32px)) !important;
-  bottom: 16px !important;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px !important;
-  padding: 8px !important;
-  border-radius: var(--radiusSm) !important;
-  background: rgba(7, 22, 44, 0.80) !important;
-  border: 1px solid rgba(255, 255, 255, 0.11) !important;
-  backdrop-filter: blur(14px) !important;
-  box-shadow: 0 14px 36px rgba(3, 12, 28, 0.34) !important;
-}
-
-.posh-action-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px !important;
-  padding: 8px 12px !important;
-  font-size: 0.86rem !important;
-  line-height: 1.15 !important;
-  border-radius: 999px !important;
-  font-weight: 800 !important;
-  white-space: nowrap;
-  background: var(--quietButtonBg);
-  border: 1px solid var(--quietButtonBorder);
+  background: rgba(255, 255, 255, 0.04);
   color: #fff;
-  text-decoration: none;
+  text-align: left;
+  min-height: 130px;
+  transition: all 0.2s ease;
 }
 
-.posh-action-btn.support {
-  background: rgba(226, 195, 104, 0.13) !important;
-  color: #fff7df !important;
-  border-color: rgba(226, 195, 104, 0.28) !important;
-}
-
-.posh-back-to-top {
-  position: fixed;
-  right: 20px;
-  bottom: 78px !important;
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  background: linear-gradient(180deg, rgba(17, 46, 92, 0.98), rgba(11, 31, 62, 0.98));
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 900;
+.posh-action-card-btn:hover {
+  background: rgba(130, 180, 255, 0.12);
+  border-color: rgba(130, 180, 255, 0.35);
+  transform: translateY(-3px);
   box-shadow: var(--shadowSoft);
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: 0.2s ease;
-  z-index: 9998;
 }
 
-.posh-back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.next-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 14px;
-  margin-top: 18px;
-}
-
-.next-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 78px;
-  padding: 16px;
-  text-align: center;
-  border-radius: var(--radiusSm);
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  background: rgba(255, 255, 255, 0.045);
-  color: var(--text);
-  font-weight: 700;
-}
-
-.visitor-box {
-  margin-top: 24px;
-  padding-top: 18px;
-  border-top: 1px solid var(--cardLine);
-  text-align: center;
-}
-
-.visitor-label {
-  font-size: 0.78rem;
+.posh-action-card-btn .step-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(226, 195, 104, 0.15);
+  border: 1px solid rgba(226, 195, 104, 0.30);
+  color: #fff7df;
+  font-size: 0.75rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--soft);
+  margin-bottom: 10px;
+}
+
+.posh-action-card-btn .btn-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
   margin-bottom: 6px;
 }
 
-#visitor-count {
+.posh-action-card-btn .btn-desc {
+  font-size: 0.88rem;
+  color: var(--soft);
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   REDESIGNED FOOTER BUTTON HUB (Replacing Plain Text Footers)
+   ============================================================================ */
+
+.posh-footer-hub {
+  margin-top: 48px;
+  padding: 36px 24px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(226, 195, 104, 0.30);
+  background: linear-gradient(180deg, rgba(8, 24, 48, 0.95), rgba(4, 14, 30, 0.98));
+  box-shadow: var(--shadowHeavy);
+  text-align: center;
+}
+
+.posh-footer-hub h3 {
   font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--blue);
-  line-height: 1.1;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.posh-footer-hub p {
+  color: var(--soft);
+  font-size: 0.95rem;
+  max-width: 700px;
+  margin: 0 auto 24px;
+}
+
+.posh-footer-button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.posh-footer-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f1f7ff;
+  font-weight: 750;
+  font-size: 0.92rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.posh-footer-nav-btn:hover {
+  background: rgba(130, 180, 255, 0.18);
+  border-color: rgba(130, 180, 255, 0.40);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.posh-footer-nav-btn.gold {
+  background: rgba(226, 195, 104, 0.14);
+  border-color: rgba(226, 195, 104, 0.35);
+  color: #fff7df;
+}
+
+.posh-footer-nav-btn.gold:hover {
+  background: rgba(226, 195, 104, 0.24);
+  border-color: rgba(226, 195, 104, 0.55);
 }
 
 /* ============================================================================
-   DESKTOP ACCORDION NAVIGATION BEHAVIOR
+   RESPONSIVE ADJUSTMENTS
    ============================================================================ */
-
-@media (hover: hover) and (pointer: fine) and (min-width: 701px) {
-  #nav {
-    position: relative;
-    z-index: 50;
-  }
-
-  .nav-shell {
-    padding: 16px !important;
-    overflow: visible !important;
-  }
-
-  .nav-shell .nav-accordion {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-    gap: 10px !important;
-    align-items: start;
-    position: relative;
-  }
-
-  .nav-shell .nav-group {
-    position: relative;
-    overflow: visible !important;
-  }
-
-  .nav-shell .nav-group summary {
-    min-height: 52px !important;
-    padding: 13px 48px 13px 16px !important;
-    border-radius: 15px !important;
-    font-size: 0.92rem !important;
-  }
-
-  .nav-shell .nav-group nav {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    right: 0;
-    z-index: 80;
-    margin-top: 0 !important;
-    max-height: min(56vh, 540px);
-    overflow: auto;
-    overscroll-behavior: contain;
-    padding: 12px !important;
-    border-radius: var(--radiusMd) !important;
-    background: linear-gradient(180deg, rgba(11, 32, 66, 0.98), rgba(7, 22, 44, 0.98)) !important;
-    border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    box-shadow: 0 22px 48px rgba(3, 12, 28, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.04) inset !important;
-  }
-
-  .nav-shell .nav-group:not([open]) nav {
-    display: none !important;
-  }
-}
-
-/* ============================================================================
-   UNIFIED RESPONSIVE MOBILE ADJUSTMENTS
-   ============================================================================ */
-
-@media (max-width: 900px) {
-  .posh-premium-hero,
-  .posh-book-feature {
-    grid-template-columns: 1fr;
-  }
-
-  .posh-quick-paths {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .posh-series-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (max-width: 700px) {
-  .wrap {
-    width: min(100% - 20px, var(--wrap));
-    padding: 16px 0 48px;
-  }
-
-  body.js-ready .wrap {
-    padding-bottom: 88px !important;
-  }
-
-  .posh-urgent-banner {
-    padding: 12px 16px;
-    margin-bottom: 14px;
-  }
-
-  .posh-urgent-banner-inner {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-
-  .btn-urgent-pill {
-    width: 100%;
-  }
-
-  .posh-premium-hero {
-    padding: 22px;
-    border-radius: var(--radius);
-  }
-
-  .posh-premium-hero h1 {
-    font-size: clamp(2.2rem, 11vw, 3.65rem);
-  }
-
-  .posh-hero-actions,
-  .posh-button-row {
-    flex-direction: column;
-  }
-
-  .posh-quick-paths {
+  .posh-action-grid,
+  .posh-footer-button-grid,
+  .posh-header-action-grid {
     grid-template-columns: 1fr;
-  }
-
-  .posh-quick-paths a {
-    min-height: auto;
-  }
-
-  .posh-action-bar {
-    bottom: 8px !important;
-    width: min(calc(100% - 20px), 480px) !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 6px !important;
-    padding: 6px !important;
-    border-radius: 14px !important;
-    background: rgba(7, 22, 44, 0.82) !important;
-  }
-
-  .posh-action-btn {
-    min-height: 34px !important;
-    padding: 6px 4px !important;
-    font-size: 0.7rem !important;
-    line-height: 1.1 !important;
-  }
-
-  .posh-back-to-top {
-    right: 14px !important;
-    bottom: 66px !important;
-    width: 42px !important;
-    height: 42px !important;
-  }
-
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 420px) {
-  body.js-ready .wrap {
-    padding-bottom: 82px !important;
-  }
-
-  .posh-action-bar {
-    width: calc(100% - 14px) !important;
-    gap: 4px !important;
-    padding: 5px !important;
-  }
-
-  .posh-action-btn {
-    min-height: 30px !important;
-    padding: 5px 3px !important;
-    font-size: 0.64rem !important;
-  }
-
-  .posh-back-to-top {
-    bottom: 60px !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  .posh-global-hero-img,
-  .posh-global-hero-img.is-loaded {
-    transform: none !important;
   }
 }
