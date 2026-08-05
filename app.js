@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * POSH app.js — Parents Online Safety Hub | Complete Safety Ecosystem
- * Version: 2026-08-05-v8-WorldClass-Executive-Amazon
+ * Version: 2026-08-05-v9-WorldClass-Executive-Amazon-Enterprise
  * Purpose:
  * - Keep POSH fast, accessible, intuitive, and easy to navigate across devices.
  * - Route users directly to live Amazon AU Buy Now pages for published books.
@@ -684,17 +684,11 @@
      5. AMAZON DIRECT-BUY LINK & BOOK BUTTON UPGRADES
      ========================================================================== */
 
-  /**
-   * Scans all anchor links and order buttons on the page.
-   * - Ensures any buttons or links referencing POSH Books open Amazon AU directly.
-   * - Upgrades target="_blank" and security attributes automatically.
-   */
   function enhanceAmazonBuyLinks(root = document) {
     qsa("a[href], button[data-book-target]", root).forEach(el => {
       const href = el.getAttribute("href") || el.getAttribute("data-book-target") || "";
       const text = safeText(el.textContent).toLowerCase();
 
-      // Check if this is an explicit Amazon URL
       if (href.includes("amazon.com.au")) {
         el.setAttribute("target", "_blank");
         el.setAttribute("rel", "noopener noreferrer");
@@ -702,7 +696,6 @@
         return;
       }
 
-      // Check if the element references buying/ordering one of the POSH books
       const isBookBuyTrigger =
         text.includes("buy book") ||
         text.includes("buy now") ||
@@ -720,7 +713,6 @@
         } else if (TOPIC_PATHWAY_AMAZON_MAP[currentLivePath()]) {
           amazonUrl = TOPIC_PATHWAY_AMAZON_MAP[currentLivePath()];
         } else {
-          // Default to the flagship Book 1 Raising Digitally Resilient Kids
           amazonUrl = POSH_AMAZON_CATALOGUE.book1_parentSystem.url;
         }
 
@@ -739,9 +731,6 @@
     });
   }
 
-  /**
-   * Resolves internal links to legacy filenames to their upgraded live counterparts.
-   */
   function fixKnownBrokenInternalLinks(root = document) {
     qsa("a[href]", root).forEach(link => {
       const raw = link.getAttribute("href");
@@ -1010,16 +999,6 @@
         }, 160);
       });
     });
-
-    if (mq.addEventListener) {
-      mq.addEventListener("change", () => {
-        if (!mq.matches) {
-          groups.forEach(group => {
-            group.open = false;
-          });
-        }
-      });
-    }
   }
 
   function setupNavTracking(root) {
@@ -1705,9 +1684,6 @@
     });
   }
 
-  /**
-   * Evaluates the active page to surface tailored CTAs, including direct Amazon AU Buy Now links.
-   */
   function inferCTAByPage(page) {
     if (page === POSH.home) return null;
 
