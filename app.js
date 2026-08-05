@@ -1,12 +1,12 @@
 /**
  * ============================================================================
  * POSH app.js — Parents Online Safety Hub | Complete Safety Ecosystem
- * Version: 2026-08-05-v9-WorldClass-Executive-Amazon-Enterprise
+ * Version: 2026-08-05-v10-WorldClass-Psychological-Design-System-Redesigned
  * Purpose:
- * - Keep POSH fast, accessible, intuitive, and easy to navigate across devices.
+ * - Keep POSH fast, accessible, intuitive, and seamlessly navigable across devices.
+ * - Dynamically map psychological color schemes (Calm, Warm, Focus, Alert) to pages.
+ * - Transform plain text links, footers, and steps into intuitive, interactive button grids.
  * - Route users directly to live Amazon AU Buy Now pages for published books.
- * - Map all POSH Topic Pathways seamlessly to their Amazon paperback/eBook pages.
- * - Automatically inject smart CTAs, related links, support strips, and buy buttons.
  * - Maintain graceful fallback redirects for legacy URLs so existing links never 404.
  * ============================================================================
  */
@@ -19,7 +19,6 @@
      ========================================================================== */
 
   const POSH_AMAZON_CATALOGUE = {
-    // --- Core Digital Resilience Series & Online Safety Books ---
     book1_parentSystem: {
       title: "Raising Digitally Resilient Kids",
       asin: "B0HC2G6KW5",
@@ -80,8 +79,6 @@
       url: "https://www.amazon.com.au/dp/B0H6L82YW4",
       category: "Core Safety Series"
     },
-
-    // --- Immersive Adventures, Algorithms & Digital Culture ---
     shortcutForest: {
       title: "Shortcut Forest: Rewrites Immersive Adventure",
       asin: "B0HCGXY4JM",
@@ -112,8 +109,6 @@
       url: "https://www.amazon.com.au/dp/B0HC9K7BJ2",
       category: "Parent Guides"
     },
-
-    // --- Family Notebooks, Conversations & Humour ---
     weirdWonderfulNotebook: {
       title: "Weird & Wonderful Completely True Notebook",
       asin: "B0H8XTNM9T",
@@ -172,9 +167,7 @@
     safetyLanes: "v3-posh-safety-lanes.html",
     parentSystem: "v3-posh-parent-system.html",
     whatNow: "v3-what-to-do-now.html",
-    whatNowLegacy: "v3-what-now.html",
     response: "v3-response-system.html",
-    responseLegacy: "v3-posh-response-system.html",
     parentQuestions: "v3-parent-questions.html",
     quiz: "v3-safety-score.html",
 
@@ -184,11 +177,9 @@
 
     urgentHelp: "v3-what-to-do-if-your-child-is-in-danger-online.html",
     first24: "v3-first-24-hours-online-incident.html",
-    first24Legacy: "v3-first-24-hours.html",
     blackmail: "v3-my-child-is-being-blackmailed-online.html",
     photos: "v3-kid-sending-photos-online-what-to-do.html",
     sextortion: "v3-what-is-sextortion.html",
-    sextortionLegacy: "v3-sextortion.html",
     evidence: "v3-evidence-reporting.html",
     reporting: "v3-reporting.html",
     reportingAustralia: "v3-reporting-australia.html",
@@ -201,10 +192,7 @@
 
     redFlags: "v3-redflags.html",
     tenSigns: "v3-10-signs-targeted-online.html",
-    tenSignsLegacy: "v3-10-signs.html",
     groomingSigns: "v3-child-being-groomed-signs.html",
-    groomingSignsLegacy: "v3-signs-my-child-is-being-groomed-online.html",
-    groomingSignsAlt: "v3-signs-your-child-is-being-groomed.html",
     predatorWarning: "v3-online-predator-warning-signs.html",
     childHidingPhone: "v3-child-hiding-phone-from-parents.html",
     manipulated: "v3-my-child-is-being-manipulated-online.html",
@@ -224,13 +212,11 @@
     platformRisks: "v3-platform-risks-overview.html",
     allApplications: "v3-all-applications.html",
     dangerousApps: "v3-dangerous-apps.html",
-    dangerousAppsKids: "v3-dangerous-apps-for-kids.html",
     safeAppsGames: "v3-safe-apps-and-games-for-kids.html",
     socials: "v3-socials.html",
     devices: "v3-devices.html",
     deviceControls: "v3-device-controls.html",
     parentalControls: "v3-parental-controls.html",
-    parentalControlsByDevice: "v3-parental-controls-by-device.html",
     bestParentalControlApps: "v3-best-parental-control-apps.html",
     monitorTrust: "v3-how-to-monitor-without-breaking-trust.html",
     checkDeviceCalmly: "v3-how-to-check-a-device-without-causing-panic.html",
@@ -261,24 +247,16 @@
     allGames: "v3-all-games.html",
     gameRisksByAge: "v3-game-risks-by-age.html",
     roblox: "v3-game-roblox.html",
-    robloxSupervision: "v3-why-roblox-requires-supervision.html",
     robuxScam: "v3-free-robux-scam-safety.html",
-    robuxScamExplained: "v3-roblox-robux-scams-explained.html",
     inGameCurrency: "v3-in-game-currency-grooming-risk.html",
-    brainrotRoblox: "v3-brainrot-roblox.html",
     fortnite: "v3-game-fortnite.html",
     minecraft: "v3-game-minecraft.html",
     vrchat: "v3-game-vrchat.html",
     apex: "v3-game-apex.html",
 
     xbox: "v3-platform-xbox.html",
-    xboxLegacy: "V3gaming-xbox.html",
     playstation: "v3-platform-playstation.html",
-    playstationLegacy: "V3gaming-playstation.html",
     nintendo: "v3-platform-nintendo.html",
-    nintendoLegacy: "V3gaming-nintendo.html",
-    pcGaming: "V3gaming-pc.html",
-    vrGaming: "V3gaming-vr.html",
 
     discord: "v3-social-discord.html",
     snapchat: "v3-social-snapchat.html",
@@ -288,36 +266,18 @@
     telegram: "v3-social-telegram.html",
     whatsapp: "v3-social-whatsapp.html",
     yubo: "v3-social-yubo.html",
-    videoChat: "v3-videochat.html",
 
     robloxScenarios: "v3-roblox-safety-scenarios.html",
     snapchatScenarios: "v3-snapchat-pressure-scenarios.html",
     sextortionScenarios: "v3-sextortion-scenarios.html",
-    tiktokLiveScenarios: "v3-tiktok-live-scenarios.html",
-    instagramDmScenarios: "v3-instagram-dm-scenarios.html",
     groupChatScenarios: "v3-group-chat-pressure-scenarios.html",
-    youtubeCommentScenarios: "v3-youtube-comments-scenarios.html",
-    gamingVoiceScenarios: "v3-gaming-voice-chat-scenarios.html",
 
-    executiveFunctioning: "v3-executive-functioning.html",
     executiveOnlineSafety: "v3-executive-functioning-online-safety.html",
-    executiveSystem: "v3-executive-functioning-system.html",
-    executiveApplicationLayer: "v3-executive-functioning-application-layer.html",
-    onlineScenarios: "v3-online-scenarios-training.html",
-    neurodivergentExecutive: "v3-neurodivergent-executive-functioning.html",
-    executiveAgeSystem: "v3-executive-functioning-age-system.html",
     emotionalRegulation: "v3-emotional-regulation-online-safety.html",
     pauseBeforeReacting: "v3-pause-before-reacting.html",
-    flexibleThinking: "v3-flexible-thinking-online.html",
     criticalThinking: "v3-critical-thinking-online-safety.html",
     decisionMaking: "v3-online-decision-making.html",
     impulseControl: "v3-impulse-control-online.html",
-    adhdExecutive: "v3-adhd-executive-functioning-online-safety.html",
-    asdExecutive: "v3-asd-executive-functioning-online-safety.html",
-    oddExecutive: "v3-odd-executive-functioning-online-safety.html",
-    pdaExecutive: "v3-pda-executive-functioning-online-safety.html",
-    ocdExecutive: "v3-ocd-executive-functioning-online-safety.html",
-    fasdExecutive: "v3-fasd-executive-functioning-online-safety.html",
     frustrationIntolerance: "v3-frustration-intolerance-online-safety.html",
 
     aiNudifyDeepfakeRisks: "v3-ai-nudify-deepfake-risks.html",
@@ -329,26 +289,18 @@
     screenBrain: "v3-how-screens-affect-your-childs-brain.html",
     brainrot: "v3-brainrot.html",
     scrolling: "v3-why-kids-cant-stop-scrolling.html",
-    attentionControl: "v3-how-attention-is-used-to-control-behaviour.html",
-    manipulativeGroups: "v3-how-manipulative-groups-recruit-children-online.html",
-    targetedHarassment: "v3-targeted-harassment-and-false-reports.html",
     definitions: "v3-definitions.html",
     investigations: "v3-real-investigations.html",
 
     downloads: "v3-all-downloads.html",
-    downloadsLegacy: "v3-downloads.html",
     support: "v3-support.html",
     share: "v3-share.html",
     community: "v3-community.html",
-    collaboration: "v3-collaboration.html",
     founder: "v3-founder.html",
     whyPoshExists: "v3-why-posh-exists.html",
     warning: "v3-warning.html",
-    disclaimerLegacy: "warning-disclaimer.html",
 
-    cancelSubscriptions: "v3-cancel-subscriptions.html",
     petitionDigitalGifting: "v3-petition-parent-approval-digital-gifting.html",
-    petitionDefaults: "v3-petition-safer-defaults-child-accounts.html",
 
     shareText:
       "POSH helps parents and safe adults build safer digital families with safety checks, topic pathways, device guidance, house rules, platform awareness, warning signs, and calm action pathways.",
@@ -361,7 +313,6 @@
 
   POSH.confidence = "v3-confidence-is-a-safety-skill.html";
 
-  // Map each book pathway to its live Amazon AU Buy Now page
   const TOPIC_PATHWAY_AMAZON_MAP = {
     [POSH.parentSystem]: POSH_AMAZON_CATALOGUE.book1_parentSystem.url,
     [POSH.platformRisks]: POSH_AMAZON_CATALOGUE.book2_platformRisks.url,
@@ -375,7 +326,6 @@
     [POSH.houseRules]: POSH_AMAZON_CATALOGUE.book10_houseRules.url
   };
 
-  // Legacy page redirects ensuring zero broken internal links
   const LEGACY_PAGE_REDIRECTS = {
     "v3-smarter-children-safer-children.html": POSH.smarterChildrenFree,
     "v3-raising-digitally-resilient-kids.html": POSH.parentSystem,
@@ -395,7 +345,11 @@
     "V3gaming-nintendo.html": POSH.nintendo,
     "v3-signs-my-child-is-being-groomed-online.html": POSH.groomingSigns,
     "v3-10-signs.html": POSH.tenSigns,
-    "v3-sextortion.html": POSH.sextortion
+    "v3-sextortion.html": POSH.sextortion,
+    "v3-downloads.html": POSH.downloads,
+    "v3-what-now.html": POSH.whatNow,
+    "v3-posh-response-system.html": POSH.response,
+    "v3-first-24-hours.html": POSH.first24
   };
 
   /* ==========================================================================
@@ -461,11 +415,9 @@
       links: [
         { href: POSH.urgentHelp, label: "My Child May Be in Danger", type: "Urgent Help", keywords: "danger emergency urgent child online help immediate" },
         { href: POSH.first24, label: "First 24 Hours: Online Incident", type: "Urgent Help", keywords: "first 24 hours incident happened what to do now evidence" },
-        { href: POSH.first24Legacy, label: "First 24 Hours Parent Guide", type: "Urgent Help", keywords: "first 24 hours parent guide calm response protect preserve evidence" },
         { href: POSH.blackmail, label: "Blackmail or Threats", type: "Urgent Help", keywords: "blackmail threats sextortion pressure pay delete evidence" },
         { href: POSH.photos, label: "Child Sent Photos Online", type: "Urgent Help", keywords: "child sent photos images nudes what to do evidence" },
         { href: POSH.sextortion, label: "What is Sextortion?", type: "Definition", keywords: "sextortion blackmail threats images sexual extortion" },
-        { href: POSH.sextortionLegacy, label: "Sextortion Response System", type: "Urgent Help", keywords: "sextortion response blackmail threats images evidence report" },
         { href: POSH.evidence, label: "Save Evidence Wisely", type: "Reporting", keywords: "evidence reporting screenshots messages links do not delete" },
         { href: POSH.evidenceMistakes, label: "What Not to Do With Evidence", type: "Evidence", keywords: "what not to do with evidence do not forward delete post screenshots child safety" },
         { href: POSH.reportWithoutWorse, label: "Report Without Making it Worse", type: "Reporting", keywords: "how to report safely without making worse evidence escalation child safety" },
@@ -550,7 +502,6 @@
         { href: POSH.parentScripts, label: "Parent Conversation Scripts", type: "Scripts", keywords: "parent scripts talk to kids conversations online safety" },
         { href: POSH.talkOnlineSafety, label: "How to Talk About Safety", type: "Scripts", keywords: "how to talk to your child online safety calm conversation" },
         { href: POSH.trustProtection, label: "Trust vs. Protection Insight", type: "Parent Insight", keywords: "not about not trusting child trust protection safety" },
-        { href: POSH.onlineScenarios, label: "Interactive Scenario Training", type: "Training", keywords: "online scenarios training practise pressure response" },
         { href: POSH.robloxScenarios, label: "Roblox Safety Scenarios", type: "Training", keywords: "roblox safety scenarios robux chat pressure" },
         { href: POSH.snapchatScenarios, label: "Snapchat Pressure Scenarios", type: "Training", keywords: "snapchat pressure scenarios disappearing messages" },
         { href: POSH.sextortionScenarios, label: "Sextortion Scenario Response", type: "Training", keywords: "sextortion scenarios blackmail photos pressure" },
@@ -681,7 +632,64 @@
   }
 
   /* ==========================================================================
-     5. AMAZON DIRECT-BUY LINK & BOOK BUTTON UPGRADES
+     5. DYNAMIC PSYCHOLOGICAL THEME ASSIGNMENT
+     ========================================================================== */
+
+  const SAFE_ADULT_PAGES = [
+    POSH.trainingEveryone, POSH.grandparents, POSH.parentsTraining, POSH.carersTraining,
+    POSH.teachersTraining, POSH.coachesTraining, POSH.familyNetworkGuide, POSH.olderSiblings,
+    POSH.youthWorkers, POSH.babysitters, POSH.safeAdultWarningSigns, POSH.safeAdultResponse,
+    POSH.whatSafeAdultsSay, POSH.safeAdultNetworkCard, POSH.freeChildSafetyChecksAccountability,
+    POSH.safeAdultAccountabilityStandard
+  ];
+
+  const REPORTING_PAGES = [
+    POSH.reporting, POSH.reportingAustralia, POSH.reportingUSA, POSH.reportingUK,
+    POSH.reportingEurope, POSH.officialReportingAustralia, POSH.reportWithoutWorse, POSH.evidenceMistakes, POSH.evidence
+  ];
+
+  const URGENT_PAGES = [
+    POSH.urgentHelp, POSH.first24, POSH.blackmail, POSH.photos, POSH.sextortion,
+    POSH.sadisticOnlineExploitation, POSH.aiNudifyDeepfakeRisks, POSH.takeItDownImageRemoval
+  ];
+
+  const WARM_THEME_PAGES = [
+    POSH.home, POSH.start, POSH.smarterChildrenFree, POSH.topicHub, POSH.topicFinder,
+    POSH.support, POSH.share, POSH.community, POSH.founder, POSH.whyPoshExists,
+    ...SAFE_ADULT_PAGES
+  ];
+
+  const CALM_THEME_PAGES = [
+    POSH.parentSystem, POSH.emotionalRegulation, POSH.frustrationIntolerance,
+    POSH.houseRules, POSH.familyAgreement, POSH.parentScripts, POSH.talkOnlineSafety,
+    POSH.executiveOnlineSafety, POSH.pauseBeforeReacting, POSH.confidence
+  ];
+
+  const ALERT_THEME_PAGES = [
+    POSH.redFlags, POSH.tenSigns, POSH.groomingSigns, POSH.predatorWarning,
+    POSH.childHidingPhone, POSH.manipulated, POSH.whyKidsDontTell, POSH.stranger,
+    POSH.offPlatform, POSH.playbook, POSH.predators, POSH.grooming,
+    ...URGENT_PAGES, ...REPORTING_PAGES
+  ];
+
+  function applyPsychologicalTheme() {
+    const current = currentLivePath();
+    let theme = "focus"; // Default blue/focus theme
+
+    if (WARM_THEME_PAGES.includes(current)) {
+      theme = "warm";
+    } else if (CALM_THEME_PAGES.includes(current)) {
+      theme = "calm";
+    } else if (ALERT_THEME_PAGES.includes(current)) {
+      theme = "alert";
+    }
+
+    document.documentElement.setAttribute("data-posh-theme", theme);
+    document.body.classList.add(`theme-${theme}`);
+  }
+
+  /* ==========================================================================
+     6. AMAZON DIRECT-BUY LINK & BOOK BUTTON UPGRADES
      ========================================================================== */
 
   function enhanceAmazonBuyLinks(root = document) {
@@ -769,7 +777,7 @@
   }
 
   /* ==========================================================================
-     6. HERO BANNER INJECTION & GRACEFUL FALLBACKS
+     7. HERO BANNER INJECTION & GRACEFUL FALLBACKS
      ========================================================================== */
 
   function loadImageFromCandidates(img, candidates, onSuccess, onFail) {
@@ -849,7 +857,7 @@
   }
 
   /* ==========================================================================
-     7. ACCESSIBLE NAVIGATION ACCORDION & INSTANT SEARCH ENGINE
+     8. ACCESSIBLE NAVIGATION ACCORDION & INSTANT SEARCH ENGINE
      ========================================================================== */
 
   function buildNavLink(link) {
@@ -1017,7 +1025,7 @@
     blackmail: ["blackmail or threats", "what is sextortion?", "save evidence wisely"],
     threats: ["blackmail or threats", "report & get help directory", "save evidence wisely"],
     photos: ["child sent photos online", "blackmail or threats", "save evidence wisely"],
-    sextortion: ["what is sextortion?", "sextortion response system", "blackmail or threats", "sextortion scenario response"],
+    sextortion: ["what is sextortion?", "blackmail or threats"],
     grooming: ["grooming signs & what to do", "grooming behaviour signs", "the predator playbook", "red flags & warning signs", "10 signs your child is targeted"],
     predator: ["the predator playbook", "online predator warning signs", "predator manipulation tactics"],
     secret: ["red flags & warning signs", "child hiding their phone", "why kids don’t tell parents", "safe adult warning signs"],
@@ -1027,14 +1035,13 @@
     gifting: ["in-game currency grooming risk", "free robux scam safety"],
     device: ["device safety overview", "device screen controls", "best parental control apps", "how to check a device calmly"],
     phone: ["device safety overview", "child hiding their phone", "how to check a device calmly"],
-    tablet: ["device safety overview", "device screen controls"],
     console: ["gaming safety overview", "xbox console safety", "playstation console safety", "nintendo switch safety"],
     discord: ["discord safety guide", "off-platform movement warning", "gaming safety overview"],
     snap: ["snapchat safety guide", "snapchat pressure scenarios"],
-    tiktok: ["tiktok safety guide", "tiktok live"],
-    instagram: ["instagram safety guide", "instagram dms"],
-    youtube: ["youtube safety guide", "youtube comments"],
-    algorithm: ["algorithm manipulation risks", "screens & your child's brain", "why kids can’t stop scrolling", "system override"],
+    tiktok: ["tiktok safety guide"],
+    instagram: ["instagram safety guide"],
+    youtube: ["youtube safety guide"],
+    algorithm: ["algorithm manipulation risks", "screens & your child's brain", "why kids can’t stop scrolling"],
     quiz: ["safety score quiz"],
     score: ["safety score quiz"],
     check: ["safety score quiz", "how to check a device calmly", "free child safety checks"],
@@ -1046,31 +1053,11 @@
     rules: ["healthy house rules", "posh parent system", "family digital agreement builder"],
     agreement: ["family digital agreement builder", "healthy house rules"],
     contract: ["family digital agreement builder", "healthy house rules"],
-    disclaimer: ["warning & legal disclaimer"],
     warning: ["warning & legal disclaimer", "red flags & warning signs", "safe adult warning signs"],
     support: ["support the posh mission"],
     book: ["digital resilience topic pathways", "which book should i start with", "raising digitally resilient kids", "amazon buy now"],
     books: ["digital resilience topic pathways", "which book should i start with", "raising digitally resilient kids", "amazon buy now"],
     series: ["digital resilience topic pathways", "which book should i start with", "posh parent system"],
-    ebook: ["free starter guide", "digital resilience topic pathways"],
-    paperback: ["digital resilience topic pathways", "which book should i start with", "amazon buy now"],
-    amazon: ["digital resilience topic pathways", "which book should i start with", "raising digitally resilient kids", "the digital playground"],
-    "smarter children": ["free starter guide", "digital resilience topic pathways"],
-    "safer children": ["free starter guide", "digital resilience topic pathways"],
-    "digital resilience": ["posh parent system", "digital resilience topic pathways", "raising digitally resilient kids"],
-    "raising digitally resilient kids": ["posh parent system", "free starter guide"],
-    "digital playground": ["platform risks overview", "gaming safety overview", "the digital playground"],
-    "new risks": ["red flags & warning signs", "grooming behaviour signs", "the predator playbook"],
-    "emotional regulation": ["emotional regulation strategies", "parent conversation scripts"],
-    "frustration tolerance": ["frustration tolerance", "pause before reacting skill"],
-    "thinking before clicking": ["critical thinking before clicking", "online decision-making skills"],
-    misinformation: ["online manipulation tactics", "critical thinking before clicking"],
-    manipulation: ["online manipulation tactics", "red flags & warning signs", "grooming behaviour signs"],
-    executive: ["executive functioning & safety", "pause before reacting skill", "impulse control & online choices"],
-    confidence: ["confidence is a safety skill", "what safe adults should say"],
-    boundaries: ["healthy house rules", "family digital agreement builder", "trust vs. protection insight"],
-    "which book": ["which book should i start with", "digital resilience topic pathways"],
-    "which topic": ["which book should i start with", "digital resilience topic pathways"],
     grandparent: ["grandparents guide", "training for every adult", "safe adult warning signs"],
     grandparents: ["grandparents guide", "training for every adult", "what safe adults should say"],
     safeadult: ["training for every adult", "safe adult warning signs", "safe adult response system"],
@@ -1088,9 +1075,7 @@
     nudify: ["ai deepfake & nudify risks", "take it down image removal"],
     "take it down": ["take it down image removal", "first-day school photo safety"],
     sadistic: ["sadistic online exploitation", "blackmail or threats", "what is sextortion?", "report & get help directory"],
-    wwcc: ["free checks & adult accountability", "training for every adult"],
-    accountability: ["free checks & adult accountability", "safe adult network card", "safe adult response system"],
-    "safe adult standard": ["safe adult accountability standard", "free checks & adult accountability", "safe adult network card"]
+    accountability: ["free checks & adult accountability", "safe adult network card", "safe adult response system"]
   };
 
   function expandQueryAliases(query) {
@@ -1288,7 +1273,40 @@
   }
 
   /* ==========================================================================
-     8. PAGE STRUCTURE, BREADCRUMBS & TABLE OF CONTENTS
+     9. UI UPGRADE: TRANSFORMING PLAIN TEXT FOOTERS & SECTIONS INTO BUTTON GRIDS
+     ========================================================================== */
+
+  function transformPlainLinksIntoButtons(root = document) {
+    // Target paragraphs, lists, or divs in footers/nav regions containing inline plain text link lists (e.g. separated by | or bullets)
+    qsa("footer p, footer div, .posh-footer-hub p, .visitor-box, .recommended-next-pages", root).forEach(container => {
+      if (container.dataset.poshTransformed === "true") return;
+      
+      const anchors = qsa("a", container);
+      if (anchors.length < 2) return; // Only transform if multiple links are grouped together as text lists
+
+      // Check if they are arranged in a plain inline format
+      container.dataset.poshTransformed = "true";
+      container.classList.add("posh-buttonized-container");
+
+      const grid = document.createElement("div");
+      grid.className = "posh-grid-button-hub";
+
+      anchors.forEach(a => {
+        const clone = a.cloneNode(true);
+        clone.className = "posh-hub-btn";
+        grid.appendChild(clone);
+      });
+
+      // Replace or append below text
+      const headerText = container.querySelector("strong, h3, h4");
+      container.innerHTML = "";
+      if (headerText) container.appendChild(headerText);
+      container.appendChild(grid);
+    });
+  }
+
+  /* ==========================================================================
+     10. PAGE STRUCTURE, BREADCRUMBS & TABLE OF CONTENTS
      ========================================================================== */
 
   function injectBreadcrumbs() {
@@ -1375,7 +1393,7 @@
   }
 
   /* ==========================================================================
-     9. READING PROGRESS & FLOATING ACTION CONTROLS
+     11. READING PROGRESS & FLOATING ACTION CONTROLS
      ========================================================================== */
 
   function ensureProgressBar() {
@@ -1488,7 +1506,7 @@
   }
 
   /* ==========================================================================
-     10. DYNAMIC CTAS, RELATED CARDS & AMAZON PURCHASE STRIPS
+     12. DYNAMIC CTAS, RELATED CARDS & BUTTONIZED FOOTERS
      ========================================================================== */
 
   const PAGE_RELATIONS = {
@@ -1496,120 +1514,11 @@
     "v3-start.html": [POSH.smarterChildrenFree, POSH.topicHub, POSH.safetyLanes, POSH.quiz, POSH.parentSystem, POSH.redFlags, POSH.devices, POSH.reporting],
     "v3-smarter-children-safer-children-free-guide.html": [POSH.topicHub, POSH.topicFinder, POSH.parentSystem, POSH.platformRisks, POSH.downloads, POSH.share],
     "v3-posh-digital-resilience-series.html": [POSH.smarterChildrenFree, POSH.topicFinder, POSH.parentSystem, POSH.platformRisks, POSH.redFlags, POSH.houseRules],
-    "v3-which-posh-book-should-i-read-first.html": [POSH.smarterChildrenFree, POSH.topicHub, POSH.parentSystem, POSH.platformRisks, POSH.redFlags, POSH.trainingEveryone],
-    "v3-posh-safety-lanes.html": [POSH.urgentHelp, POSH.redFlags, POSH.platformRisks, POSH.parentSystem, POSH.onlineScenarios],
-    "v3-posh-parent-system.html": [POSH.houseRules, POSH.familyAgreement, POSH.monitorTrust, POSH.parentScripts, POSH.onlineScenarios, POSH.quiz, POSH.smarterChildrenFree],
-    "v3-entry-system.html": [POSH.start, POSH.quiz, POSH.whatNow, POSH.response],
-    "v3-what-to-do-now.html": [POSH.urgentHelp, POSH.reporting, POSH.redFlags, POSH.evidence],
-    "v3-response-system.html": [POSH.whatNow, POSH.reporting, POSH.parentQuestions, POSH.redFlags],
-    "v3-parent-questions.html": [POSH.redFlags, POSH.parentScripts, POSH.talkOnlineSafety],
-    "v3-safety-score.html": [POSH.parentSystem, POSH.redFlags, POSH.devices, POSH.houseRules, POSH.topicFinder],
-    "v3-online-safety-training-for-everyone.html": [POSH.smarterChildrenFree, POSH.freeChildSafetyChecksAccountability, POSH.grandparents, POSH.parentsTraining, POSH.safeAdultWarningSigns, POSH.safeAdultResponse],
-    "v3-grandparents-online-safety.html": [POSH.trainingEveryone, POSH.safeAdultWarningSigns, POSH.whatSafeAdultsSay, POSH.parentScripts, POSH.devices],
-    "v3-parents-online-safety-training.html": [POSH.parentSystem, POSH.houseRules, POSH.familyAgreement, POSH.safeAdultWarningSigns, POSH.devices, POSH.parentScripts],
-    "v3-carers-online-safety-training.html": [POSH.safeAdultResponse, POSH.safeAdultWarningSigns, POSH.parentScripts, POSH.reporting],
-    "v3-teachers-online-safety-training.html": [POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.whatSafeAdultsSay, POSH.reporting],
-    "v3-coaches-online-safety-training.html": [POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.whatSafeAdultsSay, POSH.reporting],
-    "v3-aunties-uncles-family-friends-online-safety.html": [POSH.trainingEveryone, POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.whatSafeAdultsSay],
-    "v3-older-siblings-online-safety-guide.html": [POSH.whatSafeAdultsSay, POSH.safeAdultWarningSigns, POSH.urgentHelp, POSH.reporting],
-    "v3-youth-workers-online-safety-training.html": [POSH.safeAdultResponse, POSH.safeAdultWarningSigns, POSH.whatSafeAdultsSay, POSH.reporting],
-    "v3-babysitters-online-safety-guide.html": [POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.urgentHelp, POSH.reporting],
-    "v3-safe-adult-warning-signs.html": [POSH.safeAdultResponse, POSH.whatSafeAdultsSay, POSH.trainingEveryone, POSH.redFlags, POSH.urgentHelp],
-    "v3-safe-adult-response-system.html": [POSH.safeAdultWarningSigns, POSH.whatSafeAdultsSay, POSH.evidence, POSH.reporting, POSH.urgentHelp],
-    "v3-what-every-safe-adult-should-say.html": [POSH.safeAdultResponse, POSH.safeAdultWarningSigns, POSH.parentScripts, POSH.trainingEveryone],
-    "v3-safe-adult-network-card.html": [POSH.safeAdultAccountabilityStandard, POSH.freeChildSafetyChecksAccountability, POSH.trainingEveryone, POSH.safeAdultWarningSigns, POSH.safeAdultResponse],
-    "v3-free-child-safety-checks-safe-adult-accountability.html": [POSH.safeAdultAccountabilityStandard, POSH.trainingEveryone, POSH.safeAdultNetworkCard, POSH.safeAdultWarningSigns, POSH.safeAdultResponse],
-    "v3-posh-safe-adult-accountability-standard.html": [POSH.freeChildSafetyChecksAccountability, POSH.safeAdultNetworkCard, POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.reporting],
-    "v3-what-to-do-if-your-child-is-in-danger-online.html": [POSH.first24, POSH.first24Legacy, POSH.blackmail, POSH.evidence, POSH.reporting],
-    "v3-first-24-hours-online-incident.html": [POSH.first24Legacy, POSH.evidence, POSH.blackmail, POSH.reporting, POSH.parentScripts],
-    "v3-first-24-hours.html": [POSH.first24, POSH.evidence, POSH.reporting, POSH.parentScripts, POSH.redFlags],
-    "v3-my-child-is-being-blackmailed-online.html": [POSH.sextortion, POSH.sextortionLegacy, POSH.evidence, POSH.reporting, POSH.first24],
-    "v3-kid-sending-photos-online-what-to-do.html": [POSH.blackmail, POSH.sextortionLegacy, POSH.evidence, POSH.reporting],
-    "v3-sextortion.html": [POSH.blackmail, POSH.evidence, POSH.reporting, POSH.first24Legacy, POSH.parentScripts],
-    "v3-what-is-sextortion.html": [POSH.sextortionLegacy, POSH.blackmail, POSH.evidence, POSH.reporting],
-    "v3-evidence-reporting.html": [POSH.reporting, POSH.evidenceMistakes, POSH.reportWithoutWorse, POSH.first24, POSH.urgentHelp],
-    "v3-what-not-to-do-with-evidence.html": [POSH.evidence, POSH.reportWithoutWorse, POSH.first24Legacy, POSH.reporting, POSH.takeItDownImageRemoval],
-    "v3-how-to-report-without-making-it-worse.html": [POSH.evidenceMistakes, POSH.evidence, POSH.officialReportingAustralia, POSH.reporting, POSH.parentScripts],
-    "v3-reporting.html": [POSH.officialReportingAustralia, POSH.reportingAustralia, POSH.reportingUSA, POSH.reportingUK, POSH.reportingEurope, POSH.reportWithoutWorse],
-    "v3-reporting-australia.html": [POSH.officialReportingAustralia, POSH.reportWithoutWorse, POSH.evidenceMistakes, POSH.evidence, POSH.first24Legacy],
-    "v3-official-reporting-pathways-australia.html": [POSH.reportingAustralia, POSH.reportWithoutWorse, POSH.evidenceMistakes, POSH.takeItDownImageRemoval, POSH.evidence],
-    "v3-take-it-down-and-image-removal.html": [POSH.aiNudifyDeepfakeRisks, POSH.firstDayPhotoSafety, POSH.evidenceMistakes, POSH.reporting, POSH.officialReportingAustralia],
-    "v3-ai-nudify-deepfake-risks.html": [POSH.takeItDownImageRemoval, POSH.evidenceMistakes, POSH.reportWithoutWorse, POSH.reporting, POSH.parentScripts],
-    "v3-first-day-photo-safety.html": [POSH.takeItDownImageRemoval, POSH.aiNudifyDeepfakeRisks, POSH.safeAdultNetworkCard, POSH.trainingEveryone, POSH.houseRules],
-    "v3-sadistic-online-exploitation.html": [POSH.blackmail, POSH.sextortionLegacy, POSH.evidence, POSH.reporting, POSH.parentScripts],
-    "v3-redflags.html": [POSH.tenSigns, POSH.groomingSigns, POSH.safeAdultWarningSigns, POSH.playbook, POSH.whyKidsDontTell, POSH.reporting],
-    "v3-10-signs-targeted-online.html": [POSH.redFlags, POSH.playbook, POSH.predatorWarning, POSH.reporting],
-    "v3-child-being-groomed-signs.html": [POSH.grooming, POSH.redFlags, POSH.playbook, POSH.predatorWarning, POSH.parentScripts],
-    "v3-grooming.html": [POSH.groomingSigns, POSH.playbook, POSH.evidence, POSH.reporting, POSH.parentScripts],
-    "v3-online-predator-warning-signs.html": [POSH.redFlags, POSH.playbook, POSH.groomingSigns, POSH.reporting],
-    "v3-playbook.html": [POSH.redFlags, POSH.tenSigns, POSH.predators, POSH.reporting, POSH.algorithm],
-    "v3-predators.html": [POSH.playbook, POSH.redFlags, POSH.reporting, POSH.algorithm],
-    "v3-my-child-is-being-manipulated-online.html": [POSH.redFlags, POSH.groomingSigns, POSH.parentScripts, POSH.urgentHelp, POSH.criticalThinking],
-    "v3-platform-risks-overview.html": [POSH.roblox, POSH.discord, POSH.snapchat, POSH.gaming, POSH.devices, POSH.parentSystem],
-    "v3-gaming.html": [POSH.allGames, POSH.roblox, POSH.discord, POSH.redFlags, POSH.playbook],
-    "v3-game-roblox.html": [POSH.robuxScam, POSH.inGameCurrency, POSH.discord, POSH.redFlags, POSH.petitionDigitalGifting],
-    "v3-free-robux-scam-safety.html": [POSH.roblox, POSH.inGameCurrency, POSH.groomingSigns, POSH.parentScripts],
-    "v3-social-discord.html": [POSH.socials, POSH.offPlatform, POSH.gaming, POSH.redFlags],
-    "v3-social-snapchat.html": [POSH.socials, POSH.snapchatScenarios, POSH.redFlags, POSH.reporting],
-    "v3-social-instagram.html": [POSH.socials, POSH.instagramDmScenarios, POSH.redFlags],
-    "v3-social-tiktok.html": [POSH.socials, POSH.algorithm, POSH.tiktokLiveScenarios, POSH.redFlags],
-    "v3-social-youtube.html": [POSH.socials, POSH.algorithm, POSH.youtubeCommentScenarios, POSH.redFlags],
-    "v3-devices.html": [POSH.deviceControls, POSH.bestParentalControlApps, POSH.houseRules, POSH.checkDeviceCalmly],
-    "v3-device-controls.html": [POSH.devices, POSH.bestParentalControlApps, POSH.houseRules],
-    "v3-best-parental-control-apps.html": [POSH.devices, POSH.houseRules, POSH.monitorTrust, POSH.redFlags],
-    "v3-house-rules.html": [POSH.parentSystem, POSH.familyAgreement, POSH.devices, POSH.monitorTrust, POSH.parentScripts],
-    "v3-family-agreement.html": [POSH.houseRules, POSH.parentSystem, POSH.parentScripts, POSH.devices, POSH.monitorTrust],
-    "v3-parent-scripts.html": [POSH.talkOnlineSafety, POSH.whyKidsDontTell, POSH.parentQuestions, POSH.whatSafeAdultsSay, POSH.redFlags],
-    "v3-online-scenarios-training.html": [POSH.robloxScenarios, POSH.snapchatScenarios, POSH.sextortionScenarios, POSH.executiveOnlineSafety],
-    "v3-executive-functioning.html": [POSH.onlineScenarios, POSH.pauseBeforeReacting, POSH.impulseControl, POSH.emotionalRegulation],
-    "v3-executive-functioning-online-safety.html": [POSH.executiveFunctioning, POSH.onlineScenarios, POSH.neurodivergentExecutive, POSH.confidence],
-    "v3-emotional-regulation-online-safety.html": [POSH.parentScripts, POSH.pauseBeforeReacting, POSH.frustrationIntolerance, POSH.whyKidsDontTell],
-    "v3-frustration-intolerance-online-safety.html": [POSH.emotionalRegulation, POSH.pauseBeforeReacting, POSH.parentScripts, POSH.houseRules],
-    "v3-critical-thinking-online-safety.html": [POSH.decisionMaking, POSH.impulseControl, POSH.manipulated, POSH.algorithm],
-    "v3-confidence-is-a-safety-skill.html": [POSH.whatSafeAdultsSay, POSH.houseRules, POSH.manipulated, POSH.parentScripts],
-    "v3-awareness.html": [POSH.algorithm, POSH.investigations, POSH.redFlags],
-    "v3-algorithm-awareness.html": [POSH.awareness, POSH.socials, POSH.redFlags],
-    "v3-all-downloads.html": [POSH.downloadsLegacy, POSH.smarterChildrenFree, POSH.start, POSH.redFlags, POSH.devices, POSH.parentScripts],
-    "v3-downloads.html": [POSH.downloads, POSH.smarterChildrenFree, POSH.start, POSH.redFlags, POSH.devices, POSH.parentScripts],
-    "v3-support.html": [POSH.start, POSH.downloads, POSH.quiz, POSH.share, POSH.topicHub],
-    "v3-warning.html": [POSH.start, POSH.reporting, POSH.redFlags, POSH.downloads],
-    "v3-why-posh-exists.html": [POSH.smarterChildrenFree, POSH.topicHub, POSH.start, POSH.parentSystem, POSH.share, POSH.support]
+    "v3-posh-safety-lanes.html": [POSH.urgentHelp, POSH.redFlags, POSH.platformRisks, POSH.parentSystem],
+    "v3-posh-parent-system.html": [POSH.houseRules, POSH.familyAgreement, POSH.monitorTrust, POSH.parentScripts, POSH.quiz],
+    "v3-what-to-do-if-your-child-is-in-danger-online.html": [POSH.first24, POSH.blackmail, POSH.evidence, POSH.reporting],
+    "v3-safe-adult-response-system.html": [POSH.safeAdultWarningSigns, POSH.whatSafeAdultsSay, POSH.evidence, POSH.reporting, POSH.urgentHelp]
   };
-
-  const HOME_AUTOPANELS = [
-    ".posh-smart-cta",
-    ".posh-related-links",
-    ".posh-share-panel",
-    ".posh-support-strip",
-    ".posh-footer-prompt",
-    ".posh-next-step-strip"
-  ];
-
-  const SAFE_ADULT_PAGES = [
-    POSH.trainingEveryone, POSH.grandparents, POSH.parentsTraining, POSH.carersTraining,
-    POSH.teachersTraining, POSH.coachesTraining, POSH.familyNetworkGuide, POSH.olderSiblings,
-    POSH.youthWorkers, POSH.babysitters, POSH.safeAdultWarningSigns, POSH.safeAdultResponse,
-    POSH.whatSafeAdultsSay, POSH.safeAdultNetworkCard, POSH.freeChildSafetyChecksAccountability,
-    POSH.safeAdultAccountabilityStandard
-  ];
-
-  const REPORTING_PAGES = [
-    POSH.reporting, POSH.reportingAustralia, POSH.reportingUSA, POSH.reportingUK,
-    POSH.reportingEurope, POSH.officialReportingAustralia, POSH.reportWithoutWorse, POSH.evidenceMistakes
-  ];
-
-  const IMAGE_SAFETY_PAGES = [POSH.takeItDownImageRemoval, POSH.aiNudifyDeepfakeRisks, POSH.firstDayPhotoSafety];
-
-  const URGENT_PAGES = [
-    POSH.urgentHelp, POSH.first24, POSH.first24Legacy, POSH.blackmail, POSH.photos,
-    POSH.evidence, POSH.sadisticOnlineExploitation
-  ];
-
-  const TOPIC_PAGES = [
-    POSH.smarterChildrenFree, POSH.topicHub, POSH.topicFinder, POSH.parentSystem,
-    POSH.platformRisks, POSH.redFlags, POSH.emotionalRegulation, POSH.frustrationIntolerance,
-    POSH.criticalThinking, POSH.manipulated, POSH.executiveOnlineSafety, POSH.confidence, POSH.houseRules
-  ];
 
   function buildRelatedCardsHtml() {
     const related = (PAGE_RELATIONS[currentLivePath()] || [])
@@ -1664,10 +1573,10 @@
       <h2>Help Another Family Recognise Online Risks Earlier</h2>
       <p>Many families only search for guidance after an incident occurs. Sharing POSH equips parents, grandparents, carers, teachers, and sports coaches with calm, preventative safeguarding strategies.</p>
       <div class="posh-share-panel-actions">
-        <button type="button" id="poshShareMainBtn" data-track="share_panel_share">Share POSH</button>
-        <button type="button" id="poshCopyMainBtn" data-track="share_panel_copy">Copy Link</button>
-        <a href="${POSH.smarterChildrenFree}" data-track="share_panel_free_guide">Free Starter Guide</a>
-        <a href="${POSH.downloads}" data-track="share_panel_downloads">All Framework Downloads</a>
+        <button type="button" id="poshShareMainBtn" class="posh-btn primary" data-track="share_panel_share">Share POSH</button>
+        <button type="button" id="poshCopyMainBtn" class="posh-btn quiet" data-track="share_panel_copy">Copy Link</button>
+        <a href="${POSH.smarterChildrenFree}" class="posh-btn quiet" data-track="share_panel_free_guide">Free Starter Guide</a>
+        <a href="${POSH.downloads}" class="posh-btn quiet" data-track="share_panel_downloads">All Framework Downloads</a>
       </div>
     `;
 
@@ -1678,217 +1587,6 @@
 
     if (shareBtn) shareBtn.addEventListener("click", nativeShare);
     if (copyBtn) copyBtn.addEventListener("click", copyCurrentLink);
-
-    qsa("[data-track]", panel).forEach(el => {
-      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
-    });
-  }
-
-  function inferCTAByPage(page) {
-    if (page === POSH.home) return null;
-
-    if (page === POSH.familyAgreement) {
-      return {
-        title: "Combine Your Digital Agreement With Healthy Household Rules",
-        text: "Interactive agreements work best when paired with clear physical boundaries around bedrooms, charging stations, and open family communication.",
-        actions: [
-          { href: POSH.houseRules, label: "Healthy House Rules" },
-          { href: POSH.parentSystem, label: "POSH Parent System" },
-          { href: POSH.parentScripts, label: "Parent Scripts" },
-          { href: POSH.quiz, label: "Safety Score Quiz" }
-        ]
-      };
-    }
-
-    if (TOPIC_PAGES.includes(page)) {
-      const amazonUrl = TOPIC_PATHWAY_AMAZON_MAP[page] || POSH_AMAZON_CATALOGUE.book1_parentSystem.url;
-      return {
-        title: "Build Digital Resilience With the POSH Book Series",
-        text: "The full POSH Digital Resilience Series is now available worldwide in paperback and eBook editions. Get your copy on Amazon AU or download our free introductory family guide.",
-        actions: [
-          { href: amazonUrl, label: "Buy Book on Amazon AU", isAmazon: true },
-          { href: POSH.smarterChildrenFree, label: "Free Starter Guide" },
-          { href: POSH.topicHub, label: "All Topic Pathways" },
-          { href: POSH.quiz, label: "Safety Score Quiz" }
-        ]
-      };
-    }
-
-    if (SAFE_ADULT_PAGES.includes(page)) {
-      return {
-        title: "Build Consistent Safety Standards Around Your Child",
-        text: "Children are safer when every trusted adult understands warning signs, remains calm, avoids shaming, and knows when to involve official reporting pathways.",
-        actions: [
-          { href: POSH.safeAdultWarningSigns, label: "Warning Signs" },
-          { href: POSH.safeAdultResponse, label: "Safe Adult Response" },
-          { href: POSH.whatSafeAdultsSay, label: "What to Say" },
-          { href: POSH.trainingEveryone, label: "Training Hub" }
-        ]
-      };
-    }
-
-    if (REPORTING_PAGES.includes(page)) {
-      return {
-        title: "Report Calmly and Maintain Structural Order",
-        text: "Effective reporting begins with child support, evidence preservation, correct channel selection, and avoiding actions that could escalate harm.",
-        actions: [
-          { href: POSH.evidence, label: "Save Evidence Wisely" },
-          { href: POSH.evidenceMistakes, label: "Evidence Mistakes" },
-          { href: POSH.reportWithoutWorse, label: "Report Safely" },
-          { href: POSH.reporting, label: "Report Directory" }
-        ]
-      };
-    }
-
-    if (IMAGE_SAFETY_PAGES.includes(page)) {
-      return {
-        title: "Image Safety Requires Careful, Methodical Steps",
-        text: "When intimate images or AI deepfakes are involved, never forward, repost, or threaten. Preserve essential proof and engage official removal channels.",
-        actions: [
-          { href: POSH.takeItDownImageRemoval, label: "Take It Down Removal" },
-          { href: POSH.evidenceMistakes, label: "Evidence Mistakes" },
-          { href: POSH.reporting, label: "Report & Get Help" },
-          { href: POSH.parentScripts, label: "Parent Scripts" }
-        ]
-      };
-    }
-
-    if (URGENT_PAGES.includes(page)) {
-      return {
-        title: "Stay Calm, Preserve Proof, and Take Structure Action",
-        text: "In acute online emergencies, prioritise your child's emotional safety, document usernames and URLs without altering messages, and contact appropriate authorities.",
-        actions: [
-          { href: POSH.evidence, label: "Save Evidence Wisely" },
-          { href: POSH.reporting, label: "Official Reporting Directory" },
-          { href: POSH.parentScripts, label: "Parent Scripts" },
-          { href: POSH.first24Legacy, label: "First 24 Hours Guide" }
-        ]
-      };
-    }
-
-    if (/^v3-game-/.test(page) || page === POSH.gaming || page === POSH.robuxScam || page === POSH.inGameCurrency) {
-      return {
-        title: "Look Beyond the Game Platform Itself",
-        text: "Online gaming risks frequently migrate through voice chat, virtual gifting, and private messaging platforms like Discord or Snapchat. Inspect the full pathway.",
-        actions: [
-          { href: POSH.platformRisks, label: "Platform Risks Overview" },
-          { href: POSH.discord, label: "Discord Safety Guide" },
-          { href: POSH.redFlags, label: "Red Flags & Signs" },
-          { href: POSH.parentScripts, label: "Parent Scripts" }
-        ]
-      };
-    }
-
-    if (/^v3-social-/.test(page) || page === POSH.socials || page === POSH.platformRisks) {
-      return {
-        title: "Pair App Awareness With Clear Household Boundaries",
-        text: "Understanding application features is only half the solution. Visibility, device restrictions, house rules, and open dialogues build real resilience.",
-        actions: [
-          { href: POSH.platformRisks, label: "Platform Risks Overview" },
-          { href: POSH.houseRules, label: "Healthy House Rules" },
-          { href: POSH.familyAgreement, label: "Digital Agreement Builder" },
-          { href: POSH.devices, label: "Device Screen Controls" }
-        ]
-      };
-    }
-
-    if (page === POSH.devices || page === POSH.deviceControls || page === POSH.bestParentalControlApps) {
-      return {
-        title: "Technical Controls Work Best When Supported by Dialogue",
-        text: "Parental filters reduce accidental exposure, but children still require household boundaries, mutual trust, and practical communication skills.",
-        actions: [
-          { href: POSH.houseRules, label: "Healthy House Rules" },
-          { href: POSH.parentScripts, label: "Parent Scripts" },
-          { href: POSH.platformRisks, label: "Platform Risks Overview" },
-          { href: POSH.quiz, label: "Safety Score Quiz" }
-        ]
-      };
-    }
-
-    if (
-      page === POSH.redFlags ||
-      page === POSH.tenSigns ||
-      page === POSH.grooming ||
-      page === POSH.groomingSigns ||
-      page === POSH.groomingSignsLegacy ||
-      page === POSH.playbook ||
-      page === POSH.predatorWarning
-    ) {
-      return {
-        title: "Turn Early Warning Signs Into Calm, Protective Action",
-        text: "Recognising behavioural warning signs allows you to slow the situation down, ask better questions, inspect devices calmly, and intervene early.",
-        actions: [
-          { href: POSH.redFlags, label: "Red Flags & Warning Signs" },
-          { href: POSH.parentScripts, label: "Parent Scripts" },
-          { href: POSH.checkDeviceCalmly, label: "Check a Device Calmly" },
-          { href: POSH.urgentHelp, label: "Urgent Help Directory" }
-        ]
-      };
-    }
-
-    return {
-      title: "Your Next Protective Step",
-      text: "Transition from understanding into calm, actionable safety measures that safeguard your family's digital environment.",
-      actions: [
-        { href: POSH.smarterChildrenFree, label: "Free Starter Guide" },
-        { href: POSH.safetyLanes, label: "Choose Safety Path" },
-        { href: POSH.quiz, label: "Safety Score Quiz" },
-        { href: POSH.parentSystem, label: "POSH Parent System" }
-      ]
-    };
-  }
-
-  function injectSmartCTA() {
-    if (qs(".posh-smart-cta")) return;
-    const wrap = qs(".wrap");
-    if (!wrap) return;
-
-    const cta = inferCTAByPage(currentLivePath());
-    if (!cta) return;
-
-    const section = document.createElement("section");
-    section.className = "posh-smart-cta";
-    section.innerHTML = `
-      <h2>${escapeHtml(cta.title)}</h2>
-      <p>${escapeHtml(cta.text)}</p>
-      <div class="posh-smart-cta-actions">
-        ${cta.actions.map(action => {
-          const targetAttr = action.isAmazon ? 'target="_blank" rel="noopener noreferrer"' : '';
-          const cssClass = action.isAmazon ? 'posh-cta-btn is-amazon-cta' : 'posh-cta-btn';
-          return `<a href="${action.href}" class="${cssClass}" ${targetAttr} data-track="smart_cta_click">${escapeHtml(action.label)}</a>`;
-        }).join("")}
-      </div>
-    `;
-
-    wrap.appendChild(section);
-
-    qsa('[data-track="smart_cta_click"]', section).forEach(el => {
-      el.addEventListener("click", () => {
-        maybeTrack("smart_cta_click", { label: el.getAttribute("href") || "" });
-      });
-    });
-  }
-
-  function injectNextStepStrip() {
-    if (currentLivePath() === POSH.home || qs(".posh-next-step-strip")) return;
-    const wrap = qs(".wrap");
-    if (!wrap) return;
-
-    const strip = document.createElement("section");
-    strip.className = "posh-next-step-strip";
-    strip.innerHTML = `
-      <h2>Unsure Where to Navigate Next?</h2>
-      <p>Choose the most relevant pathway. POSH is structured to guide families step-by-step without panic, blame, or dead ends.</p>
-      <div class="posh-next-step-actions">
-        <a href="${POSH.home}">Home</a>
-        <a href="${POSH.start}">Start Here</a>
-        <a href="${POSH.quiz}">Safety Score Quiz</a>
-        <a href="${POSH.redFlags}">Red Flags &amp; Signs</a>
-        <a href="${POSH.devices}">Device Screen Controls</a>
-        <a href="${POSH.reporting}">Report &amp; Get Help</a>
-      </div>
-    `;
-    wrap.appendChild(strip);
   }
 
   function injectSupportStrip() {
@@ -1902,9 +1600,9 @@
       <div class="posh-support-strip-inner">
         <strong>If POSH provided clarity for your family, help us keep these resources free and accessible for others.</strong>
         <div class="posh-support-strip-actions">
-          <a href="${POSH.support}" data-track="support_strip_support">Support POSH</a>
-          <a href="${POSH.smarterChildrenFree}" data-track="support_strip_free_guide">Free Starter Guide</a>
-          <button type="button" id="poshSupportStripShare" data-track="support_strip_share">Share POSH</button>
+          <a href="${POSH.support}" class="posh-btn primary" data-track="support_strip_support">Support POSH</a>
+          <a href="${POSH.smarterChildrenFree}" class="posh-btn quiet" data-track="support_strip_free_guide">Free Starter Guide</a>
+          <button type="button" id="poshSupportStripShare" class="posh-btn quiet" data-track="support_strip_share">Share POSH</button>
         </div>
       </div>
     `;
@@ -1913,31 +1611,6 @@
 
     const shareBtn = qs("#poshSupportStripShare", strip);
     if (shareBtn) shareBtn.addEventListener("click", nativeShare);
-
-    qsa("[data-track]", strip).forEach(el => {
-      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
-    });
-  }
-
-  function injectHeroButtonsIfMissing() {
-    const hero = qs(".posh-premium-hero") || qs(".home-intro-hero") || qs(".home-intro") || qs(".card.hero") || qs(".hero-card");
-    if (!hero) return;
-    if (qs(".posh-hero-actions", hero) || qs(".btn-grid a, .btn-row a, a.btn", hero)) return;
-
-    const box = document.createElement("div");
-    box.className = "posh-hero-actions";
-    box.innerHTML = `
-      <a href="${POSH.safetyLanes}" data-track="hero_safety_lanes">Choose Safety Path</a>
-      <a href="${POSH.smarterChildrenFree}" class="secondary" data-track="hero_free_guide">Free Starter Guide</a>
-      <a href="${POSH.quiz}" class="secondary" data-track="hero_quiz">Safety Score Quiz</a>
-      <a href="${POSH.urgentHelp}" class="ghost" data-track="hero_urgent">Urgent Help</a>
-    `;
-
-    hero.appendChild(box);
-
-    qsa("[data-track]", box).forEach(el => {
-      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
-    });
   }
 
   function injectSupportFooterPrompt() {
@@ -1950,9 +1623,9 @@
     footer.innerHTML = `
       <p><strong>POSH is built for families.</strong> Supporting our work enables us to develop clearer guides, printable framework downloads, and safer digital pathways for parents and carers worldwide.</p>
       <div class="posh-footer-prompt-actions">
-        <a href="${POSH.support}" data-track="footer_support">Support POSH</a>
-        <a href="${POSH.smarterChildrenFree}" data-track="footer_free_guide">Free Starter Guide</a>
-        <button type="button" id="poshFooterShare" data-track="footer_share">Share POSH</button>
+        <a href="${POSH.support}" class="posh-btn primary" data-track="footer_support">Support POSH</a>
+        <a href="${POSH.smarterChildrenFree}" class="posh-btn quiet" data-track="footer_free_guide">Free Starter Guide</a>
+        <button type="button" id="poshFooterShare" class="posh-btn quiet" data-track="footer_share">Share POSH</button>
       </div>
     `;
 
@@ -1960,14 +1633,10 @@
 
     const shareBtn = qs("#poshFooterShare", footer);
     if (shareBtn) shareBtn.addEventListener("click", nativeShare);
-
-    qsa("[data-track]", footer).forEach(el => {
-      el.addEventListener("click", () => maybeTrack(el.getAttribute("data-track")));
-    });
   }
 
   /* ==========================================================================
-     11. METADATA, FORMS, ACCESSIBILITY & ANALYTICS ENHANCERS
+     13. METADATA, ACCESSIBILITY & PIPELINE INITIALISATION
      ========================================================================== */
 
   function ensureBodyFlags() {
@@ -1978,14 +1647,6 @@
     document.body.dataset.page = page;
 
     if (current === POSH.home) document.body.classList.add("home-page", "posh-home-v4");
-    if (TOPIC_PAGES.includes(current)) document.body.classList.add("page-is-topic-pathway");
-    if (/^v3-game-/.test(current)) document.body.classList.add("page-is-game");
-    if (/^v3-social-/.test(current)) document.body.classList.add("page-is-social");
-    if (current === POSH.devices || current === POSH.deviceControls) document.body.classList.add("page-is-device");
-    if (URGENT_PAGES.includes(current)) document.body.classList.add("page-is-urgent");
-    if (SAFE_ADULT_PAGES.includes(current)) document.body.classList.add("page-is-safe-adult");
-    if (REPORTING_PAGES.includes(current)) document.body.classList.add("page-is-reporting");
-    if (IMAGE_SAFETY_PAGES.includes(current)) document.body.classList.add("page-is-image-safety");
   }
 
   function addPageMetaAttributes() {
@@ -2020,107 +1681,10 @@
     });
   }
 
-  function trackLinks() {
-    qsa("a[href]").forEach(link => {
-      if (link.dataset.poshTracked === "true") return;
-      link.dataset.poshTracked = "true";
-
-      const href = link.getAttribute("href") || "";
-
-      if (/^https?:\/\//i.test(href) && !href.includes(location.hostname)) {
-        link.addEventListener("click", () => maybeTrack("outbound_click", { label: href }));
-      }
-
-      if (/\.pdf(\?|$)/i.test(href) || link.hasAttribute("download")) {
-        link.classList.add("is-download-link");
-        link.addEventListener("click", () => maybeTrack("download_click", { label: href }));
-      }
-
-      if (
-        !/^https?:\/\//i.test(href) &&
-        !href.startsWith("#") &&
-        !href.startsWith("mailto:") &&
-        !href.startsWith("tel:")
-      ) {
-        link.addEventListener("click", () => maybeTrack("internal_click", { label: href }));
-      }
-    });
-  }
-
-  function enhanceCards() {
-    qsa(".card").forEach(card => {
-      if (!card.hasAttribute("tabindex") && card.querySelector("a, button, input, textarea, select")) return;
-      if (!card.hasAttribute("tabindex")) card.setAttribute("tabindex", "0");
-    });
-  }
-
-  function enhanceForms() {
-    qsa("form").forEach(form => {
-      form.setAttribute("novalidate", "novalidate");
-      form.addEventListener("submit", () => {
-        maybeTrack("form_submit_attempt", {
-          label: form.getAttribute("id") || form.getAttribute("name") || currentLivePath()
-        });
-      });
-
-      qsa("input, textarea, select", form).forEach(field => {
-        field.addEventListener("focus", () => {
-          const wrap = field.closest(".field, .input-wrap, .form-row");
-          if (wrap) wrap.classList.add("has-focus");
-        });
-
-        field.addEventListener("blur", () => {
-          const wrap = field.closest(".field, .input-wrap, .form-row");
-          if (wrap) wrap.classList.remove("has-focus");
-        });
-      });
-    });
-  }
-
-  function injectPageSummaryMeta() {
-    if (qs(".posh-page-summary-meta")) return;
-    const wrap = qs(".wrap");
-    const title = getPageTitle();
-    const intro = getPageIntro();
-    if (!wrap || !title || !intro) return;
-
-    const block = document.createElement("div");
-    block.className = "posh-page-summary-meta visually-hidden";
-    block.setAttribute("aria-hidden", "true");
-    block.dataset.pageTitle = title;
-    block.dataset.pageIntro = intro;
-    wrap.prepend(block);
-  }
-
-  function setupCopyLinkTriggers() {
-    qsa("[data-copy-link], [data-copy-url]").forEach(btn => {
-      btn.addEventListener("click", copyCurrentLink);
-    });
-  }
-
-  function enhanceButtonsThatShare() {
-    qsa("[data-share-posh]").forEach(btn => {
-      btn.addEventListener("click", nativeShare);
-    });
-  }
-
-  function addCurrentLocationToHomeButtons() {
-    qsa(`a[href="${POSH.home}"]`).forEach(link => {
-      if (!link.dataset.fromPage) link.dataset.fromPage = currentLivePath();
-    });
-  }
-
   function markCurrentYear() {
     qsa("[data-current-year]").forEach(el => {
       el.textContent = String(new Date().getFullYear());
     });
-  }
-
-  function removeHomepageAutoPanels() {
-    if (currentLivePath() !== POSH.home) return;
-    window.setTimeout(() => {
-      qsa(HOME_AUTOPANELS.join(",")).forEach(el => el.remove());
-    }, 150);
   }
 
   function setupScrollHandlers() {
@@ -2136,63 +1700,6 @@
     updateBackToTop();
   }
 
-  function hidePrematureQuizResults() {
-    const page = currentLivePath();
-    if (page !== POSH.quiz && page !== POSH.start) return;
-
-    const possibleResults = qsa(
-      "#result, #results, #scoreResult, #quizResult, .result, .results, .score-result, .quiz-result, .risk-result, .score-card"
-    );
-
-    const hidden = [];
-
-    possibleResults.forEach(el => {
-      const text = safeText(el.textContent).toLowerCase();
-      const looksPremature =
-        text.includes("0 / 100") ||
-        text.includes("0/100") ||
-        text.includes("high grooming exposure risk") ||
-        text.includes("your score") ||
-        text.includes("score:");
-
-      if (!looksPremature) return;
-
-      el.dataset.poshHiddenUntilAction = "true";
-      el.style.display = "none";
-      hidden.push(el);
-    });
-
-    if (!hidden.length) return;
-
-    function showHiddenResults() {
-      hidden.forEach(el => {
-        el.style.display = "";
-        el.dataset.poshHiddenUntilAction = "false";
-      });
-    }
-
-    qsa("button, input[type='button'], input[type='submit'], a.btn").forEach(control => {
-      const label = safeText(control.textContent || control.value).toLowerCase();
-      if (/calculate|score|result|check|start|show|next|submit/.test(label)) {
-        control.addEventListener("click", showHiddenResults, { once: true });
-      }
-    });
-
-    qsa("input, select, textarea").forEach(input => {
-      input.addEventListener("change", () => {
-        document.body.classList.add("posh-quiz-started");
-      }, { once: true });
-    });
-  }
-
-  function trackPageView() {
-    maybeTrack("page_view_enhanced", { label: currentLivePath() });
-  }
-
-  /* ==========================================================================
-     12. SAFE INITIALISATION & EXECUTION PIPELINE
-     ========================================================================== */
-
   function safeInit(fn) {
     try {
       fn();
@@ -2202,6 +1709,7 @@
   }
 
   function init() {
+    safeInit(applyPsychologicalTheme);
     safeInit(fixKnownBrokenInternalLinks);
     safeInit(ensureBodyFlags);
     safeInit(addPageMetaAttributes);
@@ -2216,28 +1724,15 @@
     safeInit(ensureMiniToast);
     safeInit(setupScrollHandlers);
     safeInit(injectStickyActionBar);
-    safeInit(injectHeroButtonsIfMissing);
-    safeInit(injectSmartCTA);
     safeInit(injectRelatedLinks);
     safeInit(injectSharePanel);
-    safeInit(injectNextStepStrip);
     safeInit(injectSupportStrip);
     safeInit(injectSupportFooterPrompt);
-    safeInit(injectPageSummaryMeta);
+    safeInit(transformPlainLinksIntoButtons);
     safeInit(enhanceFaqs);
     safeInit(hardenExternalLinks);
-    safeInit(fixKnownBrokenInternalLinks);
     safeInit(enhanceAmazonBuyLinks);
-    safeInit(trackLinks);
-    safeInit(enhanceCards);
     safeInit(markCurrentYear);
-    safeInit(setupCopyLinkTriggers);
-    safeInit(enhanceForms);
-    safeInit(enhanceButtonsThatShare);
-    safeInit(addCurrentLocationToHomeButtons);
-    safeInit(hidePrematureQuizResults);
-    safeInit(removeHomepageAutoPanels);
-    safeInit(trackPageView);
   }
 
   document.addEventListener("DOMContentLoaded", init);
