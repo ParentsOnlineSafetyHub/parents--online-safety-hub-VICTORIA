@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * POSH app.js — Parents Online Safety Hub | Complete Safety Ecosystem
- * Version: 2026-08-05-v7-WorldClass-Executive-Amazon
+ * Version: 2026-08-05-v8-WorldClass-Executive-Amazon
  * Purpose:
  * - Keep POSH fast, accessible, intuitive, and easy to navigate across devices.
  * - Route users directly to live Amazon AU Buy Now pages for published books.
@@ -236,6 +236,7 @@
     checkDeviceCalmly: "v3-how-to-check-a-device-without-causing-panic.html",
     trustProtection: "v3-it-is-not-about-not-trusting-your-child.html",
     houseRules: "v3-house-rules.html",
+    familyAgreement: "v3-family-agreement.html",
     parentScripts: "v3-parent-scripts.html",
     talkOnlineSafety: "v3-how-to-talk-to-your-child-about-online-safety.html",
 
@@ -465,7 +466,7 @@
         { href: POSH.photos, label: "Child Sent Photos Online", type: "Urgent Help", keywords: "child sent photos images nudes what to do evidence" },
         { href: POSH.sextortion, label: "What is Sextortion?", type: "Definition", keywords: "sextortion blackmail threats images sexual extortion" },
         { href: POSH.sextortionLegacy, label: "Sextortion Response System", type: "Urgent Help", keywords: "sextortion response blackmail threats images evidence report" },
-        { href: POSH.evidence, label: "Save Evidence Wisely", type: "Reporting", keywords: "evidence reporting screenshots messages usernames links do not delete" },
+        { href: POSH.evidence, label: "Save Evidence Wisely", type: "Reporting", keywords: "evidence reporting screenshots messages links do not delete" },
         { href: POSH.evidenceMistakes, label: "What Not to Do With Evidence", type: "Evidence", keywords: "what not to do with evidence do not forward delete post screenshots child safety" },
         { href: POSH.reportWithoutWorse, label: "Report Without Making it Worse", type: "Reporting", keywords: "how to report safely without making worse evidence escalation child safety" },
         { href: POSH.reporting, label: "Report & Get Help Directory", type: "Reporting", keywords: "report get help police esafety accce sextortion urgent help" },
@@ -545,6 +546,7 @@
       title: "Parent Tools, Scripts & Executive Skills",
       links: [
         { href: POSH.houseRules, label: "Healthy House Rules", type: "Rules", keywords: "house rules boundaries devices bedrooms passcodes healthy boundaries online offline book 10" },
+        { href: POSH.familyAgreement, label: "Family Digital Agreement Builder", type: "Interactive Tool", keywords: "family agreement digital contract house rules screen limits boundaries printable parent tool interactive" },
         { href: POSH.parentScripts, label: "Parent Conversation Scripts", type: "Scripts", keywords: "parent scripts talk to kids conversations online safety" },
         { href: POSH.talkOnlineSafety, label: "How to Talk About Safety", type: "Scripts", keywords: "how to talk to your child online safety calm conversation" },
         { href: POSH.trustProtection, label: "Trust vs. Protection Insight", type: "Parent Insight", keywords: "not about not trusting child trust protection safety" },
@@ -1062,7 +1064,9 @@
     report: ["report & get help directory", "save evidence wisely", "reporting in australia"],
     questions: ["parent questions", "parent conversation scripts"],
     scripts: ["parent conversation scripts", "how to talk about safety", "what safe adults should say"],
-    rules: ["healthy house rules", "posh parent system"],
+    rules: ["healthy house rules", "posh parent system", "family digital agreement builder"],
+    agreement: ["family digital agreement builder", "healthy house rules"],
+    contract: ["family digital agreement builder", "healthy house rules"],
     disclaimer: ["warning & legal disclaimer"],
     warning: ["warning & legal disclaimer", "red flags & warning signs", "safe adult warning signs"],
     support: ["support the posh mission"],
@@ -1085,7 +1089,7 @@
     manipulation: ["online manipulation tactics", "red flags & warning signs", "grooming behaviour signs"],
     executive: ["executive functioning & safety", "pause before reacting skill", "impulse control & online choices"],
     confidence: ["confidence is a safety skill", "what safe adults should say"],
-    boundaries: ["healthy house rules", "trust vs. protection insight"],
+    boundaries: ["healthy house rules", "family digital agreement builder", "trust vs. protection insight"],
     "which book": ["which book should i start with", "digital resilience topic pathways"],
     "which topic": ["which book should i start with", "digital resilience topic pathways"],
     grandparent: ["grandparents guide", "training for every adult", "safe adult warning signs"],
@@ -1515,7 +1519,7 @@
     "v3-posh-digital-resilience-series.html": [POSH.smarterChildrenFree, POSH.topicFinder, POSH.parentSystem, POSH.platformRisks, POSH.redFlags, POSH.houseRules],
     "v3-which-posh-book-should-i-read-first.html": [POSH.smarterChildrenFree, POSH.topicHub, POSH.parentSystem, POSH.platformRisks, POSH.redFlags, POSH.trainingEveryone],
     "v3-posh-safety-lanes.html": [POSH.urgentHelp, POSH.redFlags, POSH.platformRisks, POSH.parentSystem, POSH.onlineScenarios],
-    "v3-posh-parent-system.html": [POSH.houseRules, POSH.monitorTrust, POSH.parentScripts, POSH.onlineScenarios, POSH.quiz, POSH.smarterChildrenFree],
+    "v3-posh-parent-system.html": [POSH.houseRules, POSH.familyAgreement, POSH.monitorTrust, POSH.parentScripts, POSH.onlineScenarios, POSH.quiz, POSH.smarterChildrenFree],
     "v3-entry-system.html": [POSH.start, POSH.quiz, POSH.whatNow, POSH.response],
     "v3-what-to-do-now.html": [POSH.urgentHelp, POSH.reporting, POSH.redFlags, POSH.evidence],
     "v3-response-system.html": [POSH.whatNow, POSH.reporting, POSH.parentQuestions, POSH.redFlags],
@@ -1523,7 +1527,7 @@
     "v3-safety-score.html": [POSH.parentSystem, POSH.redFlags, POSH.devices, POSH.houseRules, POSH.topicFinder],
     "v3-online-safety-training-for-everyone.html": [POSH.smarterChildrenFree, POSH.freeChildSafetyChecksAccountability, POSH.grandparents, POSH.parentsTraining, POSH.safeAdultWarningSigns, POSH.safeAdultResponse],
     "v3-grandparents-online-safety.html": [POSH.trainingEveryone, POSH.safeAdultWarningSigns, POSH.whatSafeAdultsSay, POSH.parentScripts, POSH.devices],
-    "v3-parents-online-safety-training.html": [POSH.parentSystem, POSH.houseRules, POSH.safeAdultWarningSigns, POSH.devices, POSH.parentScripts],
+    "v3-parents-online-safety-training.html": [POSH.parentSystem, POSH.houseRules, POSH.familyAgreement, POSH.safeAdultWarningSigns, POSH.devices, POSH.parentScripts],
     "v3-carers-online-safety-training.html": [POSH.safeAdultResponse, POSH.safeAdultWarningSigns, POSH.parentScripts, POSH.reporting],
     "v3-teachers-online-safety-training.html": [POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.whatSafeAdultsSay, POSH.reporting],
     "v3-coaches-online-safety-training.html": [POSH.safeAdultWarningSigns, POSH.safeAdultResponse, POSH.whatSafeAdultsSay, POSH.reporting],
@@ -1574,7 +1578,8 @@
     "v3-devices.html": [POSH.deviceControls, POSH.bestParentalControlApps, POSH.houseRules, POSH.checkDeviceCalmly],
     "v3-device-controls.html": [POSH.devices, POSH.bestParentalControlApps, POSH.houseRules],
     "v3-best-parental-control-apps.html": [POSH.devices, POSH.houseRules, POSH.monitorTrust, POSH.redFlags],
-    "v3-house-rules.html": [POSH.parentSystem, POSH.devices, POSH.monitorTrust, POSH.parentScripts],
+    "v3-house-rules.html": [POSH.parentSystem, POSH.familyAgreement, POSH.devices, POSH.monitorTrust, POSH.parentScripts],
+    "v3-family-agreement.html": [POSH.houseRules, POSH.parentSystem, POSH.parentScripts, POSH.devices, POSH.monitorTrust],
     "v3-parent-scripts.html": [POSH.talkOnlineSafety, POSH.whyKidsDontTell, POSH.parentQuestions, POSH.whatSafeAdultsSay, POSH.redFlags],
     "v3-online-scenarios-training.html": [POSH.robloxScenarios, POSH.snapchatScenarios, POSH.sextortionScenarios, POSH.executiveOnlineSafety],
     "v3-executive-functioning.html": [POSH.onlineScenarios, POSH.pauseBeforeReacting, POSH.impulseControl, POSH.emotionalRegulation],
@@ -1706,6 +1711,19 @@
   function inferCTAByPage(page) {
     if (page === POSH.home) return null;
 
+    if (page === POSH.familyAgreement) {
+      return {
+        title: "Combine Your Digital Agreement With Healthy Household Rules",
+        text: "Interactive agreements work best when paired with clear physical boundaries around bedrooms, charging stations, and open family communication.",
+        actions: [
+          { href: POSH.houseRules, label: "Healthy House Rules" },
+          { href: POSH.parentSystem, label: "POSH Parent System" },
+          { href: POSH.parentScripts, label: "Parent Scripts" },
+          { href: POSH.quiz, label: "Safety Score Quiz" }
+        ]
+      };
+    }
+
     if (TOPIC_PAGES.includes(page)) {
       const amazonUrl = TOPIC_PATHWAY_AMAZON_MAP[page] || POSH_AMAZON_CATALOGUE.book1_parentSystem.url;
       return {
@@ -1792,8 +1810,8 @@
         actions: [
           { href: POSH.platformRisks, label: "Platform Risks Overview" },
           { href: POSH.houseRules, label: "Healthy House Rules" },
-          { href: POSH.devices, label: "Device Screen Controls" },
-          { href: POSH.redFlags, label: "Red Flags & Signs" }
+          { href: POSH.familyAgreement, label: "Digital Agreement Builder" },
+          { href: POSH.devices, label: "Device Screen Controls" }
         ]
       };
     }
@@ -2091,7 +2109,7 @@
     if (!wrap || !title || !intro) return;
 
     const block = document.createElement("div");
-    backToTopButton: block.className = "posh-page-summary-meta visually-hidden";
+    block.className = "posh-page-summary-meta visually-hidden";
     block.setAttribute("aria-hidden", "true");
     block.dataset.pageTitle = title;
     block.dataset.pageIntro = intro;
