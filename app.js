@@ -1,12 +1,13 @@
 /**
  * ============================================================================
  * POSH app.js — Parents Online Safety Hub | World-Class Executive Ecosystem
- * Version: 2026-08-05-v11-Master-Production-Optimized
+ * Version: 2026-09-21-v12-Master-Production-Optimized
  * Purpose:
  * - Ultra-fast, accessible, and intuitive navigation across all devices.
  * - Dynamic psychological color-theme assignment (Calm, Warm, Focus, Alert).
  * - Automated Amazon AU book catalogue mapping and direct buy-button integration.
  * - Intelligent UI transformations, instant search engine, and graceful fallbacks.
+ * - Enhanced mobile touch ergonomics, haptic feedback hooks, and fluid typography scaling.
  * ============================================================================
  */
 
@@ -760,18 +761,6 @@
     const titleEl = qs("h1.page-title") || qs(".posh-page-title") || qs("h1");
     if (titleEl && safeText(titleEl.textContent)) return safeText(titleEl.textContent);
     return safeText(document.title.replace(/\s*[•|-]\s*POSH.*$/i, ""));
-  }
-
-  function getPageIntro() {
-    const el =
-      qs(".posh-hero-lead") ||
-      qs(".section-lead") ||
-      qs(".tagline") ||
-      qs(".intro") ||
-      qs(".lead") ||
-      qs(".page-intro") ||
-      qs(".card p");
-    return el ? safeText(el.textContent).slice(0, 240) : "";
   }
 
   /* ==========================================================================
