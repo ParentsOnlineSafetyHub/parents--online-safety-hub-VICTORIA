@@ -1,12 +1,13 @@
 /**
  * ============================================================================
  * POSH style.css — Parents Online Safety Hub | Complete Safety Ecosystem
- * Version: 2026-08-05-v12-Master-Psychological-Ecosystem
+ * Version: 2026-09-21-v14-Master-Psychological-Ecosystem
  * Purpose:
  * - Brighten and elevate visual comfort with positive, calm color psychology.
  * - Map distinct topic themes (Calm, Warm, Focus, Alert) to specific page areas.
  * - Maintain an immaculate, accessible, high-performance visual design system.
  * - Replace plain text lists and footers with intuitive interactive button grids.
+ * - Buttonize all footer metadata and boxes with pill-style text buttons and bubbles.
  * ============================================================================
  */
 
@@ -223,7 +224,7 @@ textarea {
   padding: 12px 18px;
   border-radius: var(--radiusMd);
   border: 1px solid rgba(255, 107, 129, 0.42);
-  background: linear-gradient(90deg, rgba(255, 107, 129, 0.16), rgba(19, 51, 100, 0.88));
+  background: linear-gradient(90deg, rgba(255, 107, 129, 0.16), rgba(13, 51, 100, 0.88));
   box-shadow: 0 8px 24px rgba(255, 107, 129, 0.14);
 }
 
@@ -1418,6 +1419,55 @@ button.cta-btn:hover {
 .posh-footer-nav-btn.gold:hover,
 .posh-hub-btn.gold:hover {
   background: var(--theme-glow);
+}
+
+/* ============================================================================
+   NEW: BUTTONIZED FOOTER METADATA, BUBBLES & TEXT BUTTONS (Missed Areas Fixed)
+   ============================================================================ */
+
+.posh-footer-meta-wrap,
+footer .footer-links,
+.footer-bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 24px auto 0;
+  max-width: 1000px;
+}
+
+.posh-footer-bubble,
+footer a,
+.footer-text-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--readableText) !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.posh-footer-bubble:hover,
+footer a:hover,
+.footer-text-btn:hover {
+  background: var(--theme-glow);
+  border-color: var(--theme-accent);
+  color: #fff !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadowSoft);
+}
+
+.posh-footer-bubble.highlight-bubble {
+  background: rgba(223, 192, 106, 0.14);
+  border-color: rgba(223, 192, 106, 0.35);
+  color: #fff4ce !important;
 }
 
 /* ============================================================================
